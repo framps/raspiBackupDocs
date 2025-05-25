@@ -10,4 +10,4 @@ Es wird gerade auch die Toolchain erstellt/getestet...
 
 ---
 
-Version: {{#include TIMESTAMP.md}}
+Version: {{#include VERSION.md}}
