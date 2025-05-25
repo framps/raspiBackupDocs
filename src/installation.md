@@ -1,4 +1,4 @@
-Installation
+# Installation
 
 Der schnellste und Standardweg raspiBackup in ca. 5 Minuten zu installieren und
 dann sofort einen Backup zu erstellen ist auf [raspiBackup Schnellstart](installation-in-5-minuten.md) beschrieben.

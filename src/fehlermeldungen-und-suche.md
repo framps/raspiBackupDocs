@@ -1,4 +1,4 @@
-Fehlermeldungen und -suche
+# Fehlermeldungen und -suche
 
 Die Fehlermeldungen sind i.d.Regel selbsterklärend. Informationsmeldungen haben
 eine Nummer, die mit I endet. Warnungsmeldungen enden mit W und Fehlermeldungen

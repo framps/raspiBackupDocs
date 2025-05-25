@@ -5,8 +5,11 @@
 [Einführung](einfuehrung.md)
 
 [Kontakmöglichkeiten](kontaktmoeglichkeiten.md)   @BH
+
 [Danksagungen](danksagungen.md)    @BH
+
 [Trinkgeld](trinkgeld.md)   @WS
+
 [Haftungsausschluss](haftungsausschluss.md)    @BH
 
 - [Funktionsübersicht von Webseite](funktionsuebersicht.md)   @WS
