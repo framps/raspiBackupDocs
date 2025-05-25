@@ -1,5 +1,5 @@
 publish:
-	../zgo.sh
+	@../zgo.sh
 
 build:
 	mdbook build
