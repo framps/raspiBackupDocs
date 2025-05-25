@@ -1,5 +1,5 @@
 [book]
-authors = ["simonz"]
+authors = ["framp", "simonz"]
 language = "de"
 src = "src"
 title = "raspiBackup"
