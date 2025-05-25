@@ -6,7 +6,7 @@ Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", i
 
 Also bitte nur als **Prototyp** sehen!
 
-Es wird gerade auch die Toolchain erstellt/getestet...
+Es wird gerade auch die Toolchain erstellt/getestet... Klappt schon gut!
 
 ---
 
