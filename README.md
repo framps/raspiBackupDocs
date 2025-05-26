@@ -37,19 +37,19 @@ Ich habe mich erst einmal für *mdbook* entschieden. *mdbook* verwendet den Mark
 TODO: Installation von mdbook.
 
 
+## Das Arbeitsverzeichnis
+
+    $ mkdir ~/mein_buch
+    $ cd ~/mein_buch
+
+
 ## README.md
 
 Zur Dokumentation der Dokumentation habe ich eine Datei `README.md` angelegt, die z.B. von GitHub angezeigt wird.
 Das ist die Datei, die ihr gerade lest.
 
-    ├── book
-    │   ├── ...
-    ├── book.toml
     ├── README.md
-    └── src
-        ├── faq.md
-        ├── SUMMARY.md
-        ...
+
 
 ## Verwendung von *mdbook*
 
@@ -61,10 +61,9 @@ TODO: Link zur Doku von mdbook
 Und in der Datei `book.toml` sind ein paar Verwaltungsdaten.
 
 
-Hier der Ablauf der Einrichtung eines neuen "Buches":
+Hier der Ablauf der Einrichtung eines neuen "Buches" im ursprünglich leeren Arbeitsverzeichnis:
 
-    $ mkdir mein_buch
-    $ cd mein_buch
+    $ cd ~/mein_buch
 
     $ mdbook init
 
