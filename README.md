@@ -53,16 +53,34 @@ Ich habe erst einmal *mdbook* gewählt.  Siehe <https://rust-lang.github.io/mdBo
 
 Siehe <https://rust-lang.github.io/mdBook/guide/installation.html>
 
+##### Binaries
+
 Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
+
+##### Compilation aus den Quelltexten
 
 Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren.
 
 Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
 Dabei ist zu beachten, dass die Rust-Version ziemlich aktuell sein sollte, damit das aktuelle *mdbook* kompilierbar ist.
 
-Bei Bedarf erfolgt hier noch etwas mehr Info.
+> mdBook currently requires at least Rust version 1.82.
 
-Macht es Sinn, das auf einem Raspberry Pi einzurichten? Und dann hier zu beschreiben?
+Beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.63 in den Repositories, also zu alt.
+
+Es ist aber aufgrund der häufigen Updates von Rust sowieso sinnvoll,
+eine Userspezifische (also ohne `sudo`) lokale Installation des aktuellen `rustc` durchzuführen:
+https://www.rust-lang.org/learn/get-started
+
+Wenn der `rustc`-Compiler dann installiert ist, wird *mdbook* compiliert:
+
+    cargo install mdbook
+
+Optional kann dann noch ein Präprozessor installiert werden, den ich in der Doku für schönere Hinweise verwendet habe:
+
+    cargo install mdbook-admonish
+
+Das Ganze dauert auf einem Pi5 nur wenige Minuten!
 
 
 ## Das Arbeitsverzeichnis
