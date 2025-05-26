@@ -4,10 +4,11 @@ Diese Dokumentation entsteht gerade erst. Und zwar initial aus den Original-Text
 
 Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
 
-Also bitte im Moment als Prototyp sehen!
+**Also bitte im Moment als Prototyp sehen!**
 
-Die generierte Dokumentation ist über folgenden Link (GitHub Pages) zu erreichen:
+Die generierte Dokumentation ist über folgenden Link (GitHub Pages) zu erreichen:  
 https://rpi-simonz.github.io/raspiBackupDocs/
+
 
 ## Der Plan
 
@@ -46,7 +47,7 @@ Als nächstes kommt der "Generator", der die Markdown-Textdateien einliest und n
 
 Ich habe erst einmal *mdbook* gewählt.
 
-**Hinweis:** *mdbook* verwendet einen erweiterten Markdown-"Dialekt" CommonMark.
+**Hinweis:** *mdbook* verwendet einen erweiterten Markdown-"Dialekt" CommonMark. <https://rust-lang.github.io/mdBook/format/markdown.html>
 
 #### Installation
 
@@ -54,10 +55,14 @@ Siehe https://rust-lang.github.io/mdBook/guide/installation.html
 
 Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
 
-Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren. Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
+Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren.
+
+Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
 Dabei ist zu beachten, dass die Rust-Version ziemlich aktuell sein sollte, damit das aktuelle *mdbook* kompilierbar ist.
 
 Bei Bedarf erfolgt hier noch etwas mehr Info.
+
+Macht es Sinn, das auf einem Raspberry Pi einzurichten? Und dann hier zu beschreiben?
 
 
 ## Das Arbeitsverzeichnis
@@ -72,6 +77,12 @@ Für die Arbeit am Dokument/Buch wird ein neues Verzeichnis angelegt
 
 Zur Dokumentation der Dokumentation habe ich im Arbeitsverzeichnis eine Datei `README.md` angelegt,
 die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
+
+Die `README.md` ist wie auch die "normalen" Seite (Wiki etc.) auf *GitHub* in GitHub-flavored-Markdown geschrieben,
+siehe z.B. hier: <https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>
+
+[!NOTE]
+Das von *mdbook* verwendete Markdown ist sehr ähnlich, ein erweitertes CommonMark.  <https://rust-lang.github.io/mdBook/format/markdown.html>
 
 
 ## Verwendung von *mdbook*
