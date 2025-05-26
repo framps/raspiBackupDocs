@@ -33,9 +33,9 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 21. [Der Inhalt der Bootpartition ändert sich doch nicht. Warum wir trotzdem immer die Bootpartition bei jedem Backup neu gesichert?](#faq21)
 22. [Wie kann man verschiedene Backupkonfigurationen in verschiedenen Backupläufen benutzen?](#faq22)
 23. [Ich möchte den Backupfortschritt verfolgen. Gibt es eine Option um einen Fortschrittsbalken zu erhalten?](#faq23)
-24. [raspiBackup meldet einen Fehler ACL_TYPE_ACCESS, Operation not supported bei der Benutzung des Backuptypen rsync](#faq24)
-25. [Fehlermeldung dev/... has unsupported feature(s): metadata_csum E2FSCK: Get a newer version of e2fsck](#faq25)
-26. [Wieso bekommen ich die die Meldung ??? RBK0160E: Ziel /dev/sda mit xx GiB ist kleiner als die Backupquelle mit yy GiB obwohl beide SD Karten gleich gross sind?](#faq26)
+24. [raspiBackup meldet einen Fehler `ACL_TYPE_ACCESS, Operation not supported` bei der Benutzung des Backuptypen rsync](#faq24)
+25. [Fehlermeldung `dev/... has unsupported feature(s): metadata_csum E2FSCK: Get a newer version of e2fsck`](#faq25)
+26. [Wieso bekommen ich die die Meldung `??? RBK0160E: Ziel /dev/sda mit xx GiB ist kleiner als die Backupquelle mit yy GiB`, obwohl beide SD Karten gleich gross sind?](#faq26)
 27. [Ich habe ein tar oder rsync Backup und möchte das in ein dd Backup umwandeln. Geht das?](#faq27)
 28. [Wieso verschwinden Dateiänderungen nach einem Reboot wieder von einem zurückgespieltem Backup?](#faq28)
 29. [Ich bekomme die Meldung rsync: chown "(datei-fad)" failed: Operation not permitted (1). Wie kann ich das lösen?](#faq29)
@@ -75,7 +75,8 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 ## Details
 
-* <a name="faq0"></a>  **Wie entstand raspiBackup?**
+* <a name="faq0"></a>
+   **Wie entstand raspiBackup?**
 
    Bei mir laufen zu Hause drei Raspis. Zwei davon 7/24 - also rund um die Uhr.
    Ein jeder Server sollte regelmäßig gesichert werden denn es können immer mal
@@ -92,7 +93,9 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
    raspiBackup. Siehe auch 10 Jahre raspiBackup
 
 
-1. <a name="faq1"></a>  **Ist ein Backup eines laufenden Systems zuverlässig? Sollte nicht das gesamte System vor dem Backup gestoppt werden ?**
+1. <a name="faq1"></a>
+   **Ist ein Backup eines laufenden Systems zuverlässig?
+   Sollte nicht das gesamte System vor dem Backup gestoppt werden ?**
 
    Die sicherste Methode ist natürlich das System vollständig zu stoppen. Das
    kann man aber leider nicht regelmäßig und automatisch von cron gesteuert
@@ -106,7 +109,8 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
    Alternativ kann ein Beispielwrapperscript erweitert werden (Siehe hier).
 
 
-2. <a name="faq2"></a>  **Wie kann ich ein Backup wiederherstellen?**
+2. <a name="faq2"></a>
+   **Wie kann ich ein Backup wiederherstellen?**
 
    Mit raspiBackup kann jedes Backup wieder zurückgespielt werden (Siehe hier
    die Details). Es wird aber ein Linux benötigt. Als Windowsbenutzer kann man
@@ -219,7 +223,8 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 9. <a name="faq9"></a>
-   **Wie kann ich die Funktion von raspiBackup noch erweitern und zusätzlich etwas vor oder nach dem Backup und/oder Restore ausführen lassen?**
+   **Wie kann ich die Funktion von raspiBackup noch erweitern und zusätzlich
+   etwas vor oder nach dem Backup und/oder Restore ausführen lassen?**
 
    Da gibt es verschiedene Möglichkeiten:
 
@@ -302,7 +307,8 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 15. <a name="faq15"></a>
-    **Wie kann ich auf eine vorhergehende raspiBackup Version zurückgehen wenn ich nach einem Upgrade bemerke, dass die neue Version nicht so funktioniert wie ich es erwarte?**
+    **Wie kann ich auf eine vorhergehende raspiBackup Version zurückgehen,
+    wenn ich nach einem Upgrade bemerke, dass die neue Version nicht so funktioniert wie ich es erwarte?**
 
     raspiBackup erstelt jedes mal wenn mit der Option -U eine neue Version
     aktiviert wird eine Sicherungskopie. Mit der Option -V kann man jederzeit
@@ -312,7 +318,8 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 16. <a name="faq16"></a>
-    **Ich habe eine 32GB SD Karte wovon ich nur 8GB benötige. Ein dd Backup sichert aber immer 32GB, d.h 24GB zu viel.**
+    **Ich habe eine 32GB SD Karte wovon ich nur 8GB benötige.
+    Ein dd Backup sichert aber immer 32GB, d.h 24GB zu viel.**
 
     Der dd Backup sichert immer die ganze SD Karte. Es gibt den
     Konfigurationsparameter DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY, der
@@ -327,7 +334,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 17. <a name="faq17"></a>
-    **Wie kann ich feststellen, dass der rsync tatsächlich Backup Hardlinks benutzt um Speicherplatz zu sparen?**
+    **Wie kann ich feststellen, dass der rsync Backup tatsächlich Hardlinks benutzt, um Speicherplatz zu sparen?**
 
     Hardlinks werden erfolgreich von raspiBackup benutzt wenn ein lokaler USB
     Stick, eine lokale USB Platte oder auch eine per nfs gemountete Partition,
@@ -507,7 +514,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 24. <a name="faq24"></a>
-    **raspiBackup meldet einen Fehler ACL_TYPE_ACCESS, Operation not supported bei der Benutzung des Backuptypen rsync**
+    **raspiBackup meldet einen Fehler `ACL_TYPE_ACCESS, Operation not supported` bei der Benutzung des Backuptypen rsync**
 
     Die Fehlermeldung sieht in etwas wie folgt aus:
 
@@ -558,7 +565,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 25. <a name="faq25"></a>
-    **Fehlermeldung dev/... has unsupported feature(s): metadata_csum E2FSCK: Get a newer version of e2fsck**
+    **Fehlermeldung `dev/... has unsupported feature(s): metadata_csum E2FSCK: Get a newer version of e2fsck`**
 
     Lösung:
     Vor dem Restore die /etc/mke2fs.conf editieren und bei beiden ext4 Optionen
@@ -568,7 +575,8 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 26. <a name="faq26"></a>
-    **Wieso bekommen ich die die Meldung ??? RBK0160E: Ziel /dev/sda mit xx GiB ist kleiner als die Backupquelle mit yy GiB obwohl beide SD Karten gleich gross sind?**
+    **Wieso bekommen ich die die Meldung `??? RBK0160E: Ziel /dev/sda mit xx GiB ist kleiner als die Backupquelle mit yy GiB`
+    obwohl beide SD Karten gleich gross sind?**
 
     SD Karten die mit einer bestimmten Grösse angegeben sind (z.B. 16GB) sind
     trotzdem unterschiedlich gross. Mit dem Befehl `sudo fdisk -l /dev/mmcblk0`
