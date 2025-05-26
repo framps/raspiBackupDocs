@@ -60,13 +60,14 @@ Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
 ##### Compilation aus den Quelltexten
 
 Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren.
+<https://rust-lang.github.io/mdBook/guide/installation.html#build-from-source-using-rust>
 
 Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
 Dabei ist zu beachten, dass die Rust-Version ziemlich aktuell sein sollte, damit das aktuelle *mdbook* kompilierbar ist.
 
 > mdBook currently requires at least Rust version 1.82.
 
-Beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.63 in den Repositories, also zu alt.
+Zum Beispiel beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.63 in den Repositories, also zu alt.
 
 Es ist aber aufgrund der häufigen Updates von Rust sowieso sinnvoll,
 eine Userspezifische (also ohne `sudo`) lokale Installation des aktuellen `rustc` durchzuführen:
@@ -76,7 +77,8 @@ Wenn der `rustc`-Compiler dann installiert ist, wird *mdbook* compiliert:
 
     cargo install mdbook
 
-Optional kann dann noch ein Präprozessor installiert werden, den ich in der Doku für schönere Hinweise verwendet habe:
+Aktuell, aber eigentlich optional, sollte dann noch ein Präprozessor installiert werden, den ich in der Doku für schönere Hinweise verwendet habe.  
+Den gibt es leider nur per Quelltext:
 
     cargo install mdbook-admonish
 
