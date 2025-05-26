@@ -15,8 +15,9 @@ https://rpi-simonz.github.io/raspiBackupDocs/
 Die neue Dokumentation von raspiBackup könnte in Zukunft als eine Sammlung von thematisch aufgeteilten Dateien im Markdown-Format vorliegen.
 
 Dies sind Textdateien, die sich gut bearbeiten und, zum Beispiel mit *git*, versionieren lassen.
+Über ein Repository wäre dann auch eine Teamarbeit an der Dokumentation möglich (über *Pull-Requests*).
 
-Markdown ist eine von vielen Auszeichnungssprachen, die sich mit Hilfe von Software gut in andere Formate umwandeln lassen.
+*Markdown* ist eine von vielen Auszeichnungssprachen, die sich mit Hilfe von Software gut in andere Formate umwandeln lassen.
 Als Zielformat ist hier HTML sinnvoll.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, ist natürlich noch etwas mehr "Drumherum" nötig.
@@ -29,7 +30,7 @@ Der **Arbeitsablauf** ist dann folgendermaßen:
  4. Hochladen der Webseite
  5. bei Bedarf weiter bei 1.
 
-Dafür werden natürlich Tools benötigt...
+Dafür werden Tools benötigt...
 
 
 ## Die Tools
@@ -45,13 +46,12 @@ Grundlegend ist ein Texteditor. Sinnvollerweise kann er Syntax-Highlighting für
 
 Als nächstes kommt der "Generator", der die Markdown-Textdateien einliest und nach HTML umwandelt.
 
-Ich habe erst einmal *mdbook* gewählt.
+Ich habe erst einmal *mdbook* gewählt.  Siehe <https://rust-lang.github.io/mdBook>
 
-**Hinweis:** *mdbook* verwendet einen erweiterten Markdown-"Dialekt" CommonMark. <https://rust-lang.github.io/mdBook/format/markdown.html>
 
 #### Installation
 
-Siehe https://rust-lang.github.io/mdBook/guide/installation.html
+Siehe <https://rust-lang.github.io/mdBook/guide/installation.html>
 
 Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
 
@@ -96,8 +96,13 @@ Offizielle Dokumentation: <https://rust-lang.github.io/mdBook/index.html>
 
 <https://rust-lang.github.io/mdBook/guide/creating.html>
 
+> [!NOTE]
+> *mdbook* verwendet einen erweiterten Markdown-"Dialekt": CommonMark. <https://rust-lang.github.io/mdBook/format/markdown.html>
+> der sich vom hier in der README.md verwendeten* GitHub Flavored Markdown* etwas unterscheidet!
+
+
 *mdbook* gibt eine gewisse - einfache - Verzeichnis-/Dateistruktur vor und legt diese auch an.
-Inklusive der Datei `book.toml` mit ein paar Verwaltungsdaten.
+Inklusive der Datei `book.toml`, die ein paar Verwaltungsdaten enthält.
 
 Hier der Ablauf der Einrichtung eines neuen "Buches" im ursprünglich leeren Arbeitsverzeichnis:
 
