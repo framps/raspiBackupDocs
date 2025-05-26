@@ -44,10 +44,20 @@ Grundlegend ist ein Texteditor. Sinnvollerweise kann er Syntax-Highlighting für
 
 Als nächstes kommt der "Generator", der die Markdown-Textdateien einliest und nach HTML umwandelt.
 
-Ich habe mich erst einmal für *mdbook* entschieden.
-Hinweis: *mdbook* verwendet den Markdown-"Dialekt" CommonMark.
+Ich habe erst einmal *mdbook* gewählt.
 
-#### TODO: Installation von mdbook. (Die Installation ist simpel)
+**Hinweis:** *mdbook* verwendet einen erweiterten Markdown-"Dialekt" CommonMark.
+
+#### Installation
+
+Siehe https://rust-lang.github.io/mdBook/guide/installation.html
+
+Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
+
+Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren. Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
+Dabei ist zu beachten, dass die Rust-Version ziemlich aktuell sein sollte, damit das aktuelle *mdbook* kompilierbar ist.
+
+Bei Bedarf erfolgt hier noch etwas mehr Info.
 
 
 ## Das Arbeitsverzeichnis
@@ -66,9 +76,12 @@ die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
 
 ## Verwendung von *mdbook*
 
-TODO: Link zur Doku von mdbook
+Offizielle Dokumentation: <https://rust-lang.github.io/mdBook/index.html>
+
 
 ### Grundlagen
+
+<https://rust-lang.github.io/mdBook/guide/creating.html>
 
 *mdbook* gibt eine gewisse - einfache - Verzeichnis-/Dateistruktur vor und legt diese auch an.
 Inklusive der Datei `book.toml` mit ein paar Verwaltungsdaten.
@@ -195,7 +208,7 @@ natürlich noch veröffentlicht werden.
 
 Dies kann durch Hochladen zu einem Webserver/Webhoster o.Ä. geschehen.
 
-Aktuelle nutze ich hier *GitHub Pages*.
+Aktuelle nutze ich hier zur Demonstration *GitHub Pages*.
 
 Dazu wird mit `git` eine neue Version erzeugt und zu *GitHub* ins Repository `push`ed.
 
@@ -214,5 +227,8 @@ Hier muss unterschieden werden, wie die *GitHub Pages* entstehen.
 
 Ich habe aktuell den zweiten - lokalen - Weg gewählt.
 
-TODO: Beschreiben...
+TODO: Mehr Details beschreiben...
+
+- https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Actions
+- https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Pages-%28Deploy-from-branch%29
 
