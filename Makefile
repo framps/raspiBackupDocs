@@ -1,5 +1,8 @@
-publish:
+pubsrc:
 	@../zgo.sh
+
+puball:
+	@../zgo.sh -all
 
 build:
 	mdbook build

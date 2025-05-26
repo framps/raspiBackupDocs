@@ -20,15 +20,15 @@ Als Zielformat ist hier HTML sinnvoll.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, ist natürlich noch etwas mehr "Drumherum" nötig.
 
-Der Arbeitsablauf ist dann folgendermaßen:
+Der **Arbeitsablauf** ist dann folgendermaßen:
 
- 1. Editieren von Markdown-Datei(en)
+ 1. Editieren von Markdown-Datei(en) für Struktur und Inhalt
  2. Generieren der Webseite
  3. optional: Versionisieren
  4. Hochladen der Webseite
  5. bei Bedarf weiter bei 1.
 
-Dafür werden natürlich Tools benötigt.
+Dafür werden natürlich Tools benötigt...
 
 
 ## Die Tools
@@ -47,7 +47,7 @@ Als nächstes kommt der "Generator", der die Markdown-Textdateien einliest und n
 Ich habe mich erst einmal für *mdbook* entschieden.
 Hinweis: *mdbook* verwendet den Markdown-"Dialekt" CommonMark.
 
-#### TODO: Installation von mdbook.
+#### TODO: Installation von mdbook. (Die Installation ist simpel)
 
 
 ## Das Arbeitsverzeichnis
