@@ -78,11 +78,13 @@ Für die Arbeit am Dokument/Buch wird ein neues Verzeichnis angelegt
 Zur Dokumentation der Dokumentation habe ich im Arbeitsverzeichnis eine Datei `README.md` angelegt,
 die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
 
-Die `README.md` ist wie auch die "normalen" Seite (Wiki etc.) auf *GitHub* in GitHub-flavored-Markdown geschrieben,
-siehe z.B. hier: <https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>
+> [!NOTE]
+> Die `README.md` ist wie auch die "normalen" Seite (Wiki etc.) auf *GitHub* in GitHub-flavored-Markdown geschrieben,
+> siehe z.B. hier: <https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>
 
-[!NOTE]
-Das von *mdbook* verwendete Markdown ist sehr ähnlich, ein erweitertes CommonMark.  <https://rust-lang.github.io/mdBook/format/markdown.html>
+> [!IMPORTANT]
+> Das von *mdbook* verwendete Markdown ist sehr ähnlich, nämlich ein erweitertes CommonMark.
+> Siehe <https://rust-lang.github.io/mdBook/format/markdown.html>
 
 
 ## Verwendung von *mdbook*
