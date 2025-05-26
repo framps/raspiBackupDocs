@@ -57,6 +57,7 @@ Siehe <https://rust-lang.github.io/mdBook/guide/installation.html>
 
 Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
 
+<a name="compile-from-sources"></a>
 ##### Compilation aus den Quelltexten
 
 Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren.
@@ -71,14 +72,18 @@ Zum Beispiel beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.6
 
 Es ist aber aufgrund der häufigen Updates von Rust sowieso sinnvoll,
 eine Userspezifische (also ohne `sudo`) lokale Installation des aktuellen `rustc` durchzuführen:
-https://www.rust-lang.org/learn/get-started
+
+- https://www.rust-lang.org/tools/install
+- https://www.rust-lang.org/learn/get-started
 
 Wenn der `rustc`-Compiler dann installiert ist, wird *mdbook* compiliert:
 
     cargo install mdbook
 
-Aktuell, aber eigentlich optional, sollte dann noch ein Präprozessor installiert werden, den ich in der Doku für schönere Hinweise verwendet habe.  
-Den gibt es leider nur per Quelltext:
+Aktuell, aber eigentlich optional, sollte dann noch ein Präprozessor installiert werden,
+den ich in der Doku für schönere Hinweise verwendet habe.
+
+Den gibt es aber nur per Quelltext:
 
     cargo install mdbook-admonish
 
@@ -265,4 +270,29 @@ TODO: Mehr Details beschreiben...
 
 - https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Actions
 - https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Pages-%28Deploy-from-branch%29
+
+
+## Aktuelle Hinweise
+
+Da die Doku hier im Repository noch nicht fertig ist, kann es sein, dass beim `mdbook build` Fehler auftreten.
+
+- Falls der Präprozessor `mdbook-admonish` nicht installiert ist:
+
+        2025-05-27 02:53:49 [INFO] (mdbook::book): Book building has started
+        2025-05-27 02:53:49 [WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "admonish" preprocessor installed?
+        2025-05-27 02:53:49 [WARN] (mdbook::preprocess::cmd): 	Command: mdbook-admonish
+
+  Siehe dazu oben bei [Compilation aus den Quelltexten](#compile-from-sources)
+
+- Fehlende Datei `VERSION.md`:
+-
+    2025-05-27 02:53:49 [ERROR] (mdbook::preprocess::links): Error updating "{{#include VERSION.md}}", Could not read file for link {{#include VERSION.md}} (/home/peter/github.com/framps/raspiBackupDocs/src/VERSION.md)
+    2025-05-27 02:53:49 [WARN] (mdbook::preprocess::links): Caused By: No such file or directory (os error 2)
+    2025-05-27 02:53:49 [INFO] (mdbook::book): Running the html backend
+
+    Das wird zwar als Fehler ausgewiesen, aber die Generierung läuft trotzdem durch!
+
+    Ursache: Ich habe zur Zeit ein Script drumherum im Einsatz, das die Datei VERSION.md temporär erstellt
+    und dann auf der Seite "Wichtiger Hinweis: Work in progress" einbindet und anzeigt.
+    Ohne dieses Script bleibt halt der Platzhalter unverändert und es gibt obige Meldung.
 
