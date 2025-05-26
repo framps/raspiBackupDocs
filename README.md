@@ -20,7 +20,16 @@ Als Zielformat ist hier HTML sinnvoll.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, ist natürlich noch etwas mehr "Drumherum" nötig.
 
-Dafür werden dann Tools benötigt.
+Der Arbeitsablauf ist dann folgendermaßen:
+
+ 1. Editieren von Markdown-Datei(en)
+ 2. Generieren der Webseite
+ 3. optional: Versionisieren
+ 4. Hochladen der Webseite
+ 5. bei Bedarf weiter bei 1.
+
+Dafür werden natürlich Tools benötigt.
+
 
 ## Die Tools
 
@@ -28,27 +37,31 @@ Dafür werden dann Tools benötigt.
 
 Grundlegend ist ein Texteditor. Sinnvollerweise kann er Syntax-Highlighting für Markdown.
 
-### mdbook - der Generator
+(Ich nutze *vim* mit ein paar Plugins.)
+
+
+### Generator - mdbook
 
 Als nächstes kommt der "Generator", der die Markdown-Textdateien einliest und nach HTML umwandelt.
 
-Ich habe mich erst einmal für *mdbook* entschieden. *mdbook* verwendet den Markdown-"Dialekt" CommonMark.
+Ich habe mich erst einmal für *mdbook* entschieden.
+Hinweis: *mdbook* verwendet den Markdown-"Dialekt" CommonMark.
 
-TODO: Installation von mdbook.
+#### TODO: Installation von mdbook.
 
 
 ## Das Arbeitsverzeichnis
+
+Für die Arbeit am Dokument/Buch wird ein neues Verzeichnis angelegt
 
     $ mkdir ~/mein_buch
     $ cd ~/mein_buch
 
 
-## README.md
+### README.md
 
-Zur Dokumentation der Dokumentation habe ich eine Datei `README.md` angelegt, die z.B. von GitHub angezeigt wird.
-Das ist die Datei, die ihr gerade lest.
-
-    ├── README.md
+Zur Dokumentation der Dokumentation habe ich im Arbeitsverzeichnis eine Datei `README.md` angelegt,
+die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
 
 
 ## Verwendung von *mdbook*
@@ -57,9 +70,8 @@ TODO: Link zur Doku von mdbook
 
 ### Grundlagen
 
-*mdbook* gibt eine gewisse - einfache - Verzeichnis-/Dateistruktur vor.
-Und in der Datei `book.toml` sind ein paar Verwaltungsdaten.
-
+*mdbook* gibt eine gewisse - einfache - Verzeichnis-/Dateistruktur vor und legt diese auch an.
+Inklusive der Datei `book.toml` mit ein paar Verwaltungsdaten.
 
 Hier der Ablauf der Einrichtung eines neuen "Buches" im ursprünglich leeren Arbeitsverzeichnis:
 
@@ -75,6 +87,7 @@ Hier der Ablauf der Einrichtung eines neuen "Buches" im ursprünglich leeren Arb
 
         All done, no errors...
 
+Das Ergebnis:
 
     $ tree
 
@@ -87,6 +100,7 @@ Hier der Ablauf der Einrichtung eines neuen "Buches" im ursprünglich leeren Arb
 
         3 directories, 3 files
 
+mit diesem Inhalt in der `book.toml`:
 
     $ cat book.toml
 
@@ -97,7 +111,7 @@ Hier der Ablauf der Einrichtung eines neuen "Buches" im ursprünglich leeren Arb
         title = "raspiBackup Dokumentation"
 
 
-### meine aktuelle book.toml
+#### meine aktuelle book.toml
 
 Meine, inzwischen etwas erweitere `book.toml` sieht folgendermaßen aus.
 Das hängt vor Allem mit der Nutzung eines optionalen Präprozessor-Programmes zusammen.
@@ -123,7 +137,7 @@ Das hängt vor Allem mit der Nutzung eines optionalen Präprozessor-Programmes z
 ### Das Inhaltsverzeichnis / Die Struktur des Buches
 
 In der Datei `src/SUMMARY.md` (Groß-/Kleinschreibung ist relevant!) wird die Struktur des zu erzeugenden Buches erfasst.
-Und zwar durch einen "Baum" von Kapitelnamen und den dazugehörigen Dateien im Filesystem (src/*.md).
+Und zwar durch einen "Baum" von Links mit Kapitelnamen und den dazugehörigen Dateien im Filesystem (src/*.md).
 
 Das entspricht dem zukünftigen Inhaltsverzeichnis.
 
@@ -141,7 +155,9 @@ Beispiel:
 
 Wenn dort die Links schon Dateinamen enthalten, werden diese Dateien automatisch angelegt
 und sie sind im Inhaltsverzeichnis anklickbar.
-Bei leeren Links (wie bei `[Updates]()`) wird nur ein nicht anklickbarer Eintrag erzeugt.
+
+Bei leeren Links (wie bei `[Updates]()`) wird nur ein nicht anklickbarer Eintrag erzeugt,
+die Struktur also auch im HTML-Dokument gut sichtbar
 
 Beim Aufruf von
 
@@ -166,7 +182,7 @@ welches einen lokalen Webserver auf Port 3000 startet.
     2025-05-26 13:24:49 [INFO] (warp::server): listening on http://[::1]:3000
 
 Dieser bemerkt Änderungen an Dateien im Verzeichnis `src/` und generiert immer aktuell neu,
-so dass im lokalen Browser immer synchron ist (manchmal ist allerdings ein Auffrischen - F5 erforderlich).
+so dass der lokalen Browser synchron ist (manchmal ist allerdings ein Auffrischen - F5 erforderlich).
 
 
 ## Veröffentlichung
@@ -178,6 +194,21 @@ natürlich noch veröffentlicht werden.
 Dies kann durch Hochladen zu einem Webserver/Webhoster o.Ä. geschehen.
 
 Aktuelle nutze ich hier *GitHub Pages*.
+
+Dazu wird mit `git` eine neue Version erzeugt und zu *GitHub* ins Repository ge`push`ed.
+
+hier muss unterschiden werden, wie die *GitHub Pages* entstehen.
+
+  - Entweder automatisch per *GitHub Actions*
+
+    Dann ist nur das `push`en der Quelldateien erforderlich. Der Rest geschieht
+    auf dem *GitHub*-Server. Dazu ist aber dort einige Konfiguration erforderlich!
+
+  - oder die Inhalte des lokalen Verzeichnisses `book/` werden mit `git`
+    in einen extra Branch versioniert und ge`push`ed.
+    Dazu ist lokal etwas git-Konfiguration erforderlich.
+
+Ich habe aktuell den zweiten - lokalen - Weg gewählt.
 
 TODO: Beschreiben...
 
