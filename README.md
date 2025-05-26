@@ -79,7 +79,7 @@ Zur Dokumentation der Dokumentation habe ich im Arbeitsverzeichnis eine Datei `R
 die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
 
 > [!NOTE]
-> Die `README.md` ist wie auch die "normalen" Seite (Wiki etc.) auf *GitHub* in GitHub-flavored-Markdown geschrieben,
+> Die `README.md` ist wie auch die "normalen" Seite (Wiki etc.) auf *GitHub* in *GitHub Flavored Markdown* geschrieben,
 > siehe z.B. hier: <https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>
 
 > [!IMPORTANT]
@@ -97,8 +97,8 @@ Offizielle Dokumentation: <https://rust-lang.github.io/mdBook/index.html>
 <https://rust-lang.github.io/mdBook/guide/creating.html>
 
 > [!NOTE]
-> *mdbook* verwendet einen erweiterten Markdown-"Dialekt": CommonMark. <https://rust-lang.github.io/mdBook/format/markdown.html>
-> der sich vom hier in der README.md verwendeten* GitHub Flavored Markdown* etwas unterscheidet!
+> *mdbook* verwendet einen anderen Markdown-"Dialekt": Erweitertes CommonMark. <https://rust-lang.github.io/mdBook/format/markdown.html>
+> der sich vom hier in der README.md verwendeten *GitHub Flavored Markdown* etwas unterscheidet!
 
 
 *mdbook* gibt eine gewisse - einfache - Verzeichnis-/Dateistruktur vor und legt diese auch an.
