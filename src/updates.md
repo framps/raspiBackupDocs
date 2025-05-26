@@ -18,13 +18,13 @@ zum Regressiontest finden sich hier.
 
 ## Versionshistorie
 
-Quelle: https://linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie
+Quelle: <https://linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie>
 
 Die aktuelle Liste der raspiBackup Releases sowie deren Neuerungen und Bugfixe finden sich [hier](https://github.com/framps/raspiBackup/releases).
 
 ## Regressiontests
 
-Quelle: https://linux-tips-and-tricks.de/de/raspberryd/509-raspibackup-ausgefuehrte-regressiontests
+Quelle: <https://linux-tips-and-tricks.de/de/raspberryd/509-raspibackup-ausgefuehrte-regressiontests>
 
 Jede neue Version von raspiBackup wird vor der Veröffentlichung einem Regressionstest unterzogen. Bedingt durch die vielen Optionen und möglichen Hardware- und Softwareumgebungen ist leider kein vollständiger Regressiontest möglich. Anbei die Beschreibung wie und was genau im Regressiontest getestet wird.
 

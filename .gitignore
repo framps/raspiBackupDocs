@@ -1,3 +1,6 @@
+.private-conf.sh
+# the following one is kept for backwards compatibility only:
 .gitconfig.sh
+
 book
 **/*.swp

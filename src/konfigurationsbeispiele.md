@@ -1,6 +1,6 @@
 # Konfigurationsbeispiele
 
-Quelle: https://linux-tips-and-tricks.de/de/konfigurationsbeispiele
+Quelle: <https://linux-tips-and-tricks.de/de/konfigurationsbeispiele>
 
 Auf den folgenden Seiten werden verschiedene Anwendungsbeispiele von raspiBackup sowie ihrer Konfiguration vorgestellt und erklärt. Sie sollen helfen aus der Vielzahl der Anwendungsmöglichkeiten die Richtige zu finden oder das Beispiel dann noch den eigenen Ansprüchen entsprechend anzupassen. Eine Übersicht aller Optionen findet sich hier. Verschiedene Methoden ein Backup zu restoren sind hier beschrieben.
 

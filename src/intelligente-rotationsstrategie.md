@@ -1,6 +1,6 @@
 # Rotationsstrategie
 
-Quelle: https://linux-tips-and-tricks.de/de/rotationsstrategie
+Quelle: <https://linux-tips-and-tricks.de/de/rotationsstrategie>
 
 
 

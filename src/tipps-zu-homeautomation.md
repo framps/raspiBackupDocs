@@ -1,6 +1,6 @@
 # Tipps für Homeautomation
 
-Quelle: https://linux-tips-and-tricks.de/de/anwendungstipps
+Quelle: <https://linux-tips-and-tricks.de/de/anwendungstipps>
 
 Auf den folgenden Seiten werden Hinweise zu verschiedenen Anwendungen gegeben:
 Ob und welche Services zu stoppen und zu starten sind, welche Besonderheiten zu
