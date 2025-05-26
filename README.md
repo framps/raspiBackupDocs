@@ -159,6 +159,8 @@ und sie sind im Inhaltsverzeichnis anklickbar.
 Bei leeren Links (wie bei `[Updates]()`) wird nur ein nicht anklickbarer Eintrag erzeugt,
 die Struktur also auch im HTML-Dokument gut sichtbar
 
+## Generieren der Webseite
+
 Beim Aufruf von
 
         mdbook build
@@ -166,7 +168,7 @@ Beim Aufruf von
 wird anhand der `SUMMARY.md` eine Webseite im Verzeichnis `book/` generiert.
 
 
-### Lokaler Webserver während der Entwicklung des Buches
+## Lokaler Webserver während der Entwicklung des Buches
 
 Zum lokalen Ansehen gibt es
 
@@ -195,17 +197,19 @@ Dies kann durch Hochladen zu einem Webserver/Webhoster o.Ä. geschehen.
 
 Aktuelle nutze ich hier *GitHub Pages*.
 
-Dazu wird mit `git` eine neue Version erzeugt und zu *GitHub* ins Repository ge`push`ed.
+Dazu wird mit `git` eine neue Version erzeugt und zu *GitHub* ins Repository `push`ed.
 
-hier muss unterschiden werden, wie die *GitHub Pages* entstehen.
+Hier muss unterschieden werden, wie die *GitHub Pages* entstehen.
 
   - Entweder automatisch per *GitHub Actions*
 
     Dann ist nur das `push`en der Quelldateien erforderlich. Der Rest geschieht
     auf dem *GitHub*-Server. Dazu ist aber dort einige Konfiguration erforderlich!
 
-  - oder die Inhalte des lokalen Verzeichnisses `book/` werden mit `git`
-    in einen extra Branch versioniert und ge`push`ed.
+    Das habe ich noch nicht getestet.
+
+  - Oder die Inhalte des lokalen Verzeichnisses `book/` werden mit `git`
+    in einen extra Branch versioniert und `push`ed.
     Dazu ist lokal etwas git-Konfiguration erforderlich.
 
 Ich habe aktuell den zweiten - lokalen - Weg gewählt.
