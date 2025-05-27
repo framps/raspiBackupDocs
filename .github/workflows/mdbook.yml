@@ -40,10 +40,14 @@ jobs:
         env:
           cache-name: cache-cargo-modules
         with:
+          #~/.cargo/
+          #~/.rustup/
           path: |
-            ~/.cargo
-            ~/.rustup
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-X-${{ hashFiles('**/.global-cache') }}
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/.Cargo.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
