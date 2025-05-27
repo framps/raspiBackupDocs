@@ -11,5 +11,3 @@ Also bitte nur als **Prototyp** sehen!
 Die lokale Toolchain für meine Tests klappt schon gut.
 
 Und seit eben auch die "Automatik" auf *GitHub*. :-))
-
-Dann ist iin Kürze auch das im `Makefile` aufgerufene Hilfsscript `zgo.sh` nicht mehr erforderlich.
