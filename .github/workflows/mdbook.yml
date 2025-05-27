@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # MDBOOK_VERSION: 0.4.36
+      # Use a pinned version to allow caching (later)
       MDBOOK_VERSION: 0.4.51
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +37,6 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
-          # cargo install mdbook
           cargo install --version ${MDBOOK_VERSION} mdbook
           cargo install --locked mdbook-admonish
       - name: Setup Pages

@@ -266,7 +266,9 @@ Hier muss unterschieden werden, wie die *GitHub Pages* entstehen.
 
      **Hinweis**: Da bei jedem `git push` nun der Rust-Compiler installiert
      und sowohl `mdbook` als auch der Präprozessor `mdbook-admonish` compiliert werden,
-     dauert es ca. 4 minuten, bis die jeweilige neue Version der Webseite online geht!
+     dauert es ca. 4 Minuten, bis die jeweilige neue Version der Webseite online geht!
+     Um das zu minimieren, kann caching verwendet werden, muss aber hier noch eingerichtet werden.
+     Siehe https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
 
   2. Oder die Inhalte des lokalen Verzeichnisses `book/` werden mit `git`
      in einen extra Branch versioniert und `push`ed.
