@@ -1,26 +1,16 @@
 # raspiBackup Dokumentation
 
-Diese Dokumentation entsteht gerade erst. Und zwar initial aus den Original-Texten der Webseite von framp.
-
-Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
-
-**Also bitte im Moment als Prototyp sehen!**
-
-Die generierte Dokumentation ist über folgenden Link (GitHub Pages) zu erreichen:  
-https://rpi-simonz.github.io/raspiBackupDocs/
-
-
-## README.md
-
-Zur Dokumentation der Dokumentation habe ich im Arbeitsverzeichnis eine Datei `README.md` angelegt,
-die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
 
 > [!NOTE]
-> Die `README.md` ist wie auch die "normalen" Seite (Wiki etc.) auf *GitHub* in *GitHub Flavored Markdown* geschrieben,
-> siehe z.B. hier: <https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>
+> Diese Dokumentation entsteht gerade erst. Und zwar initial aus den Original-Texten der Webseite von framp.
+>
+> Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
+>
+> **Also bitte im Moment als Prototyp sehen!**
+>
+> Die generierte Dokumentation ist über folgenden Link (GitHub Pages) zu erreichen:  
+> https://rpi-simonz.github.io/raspiBackupDocs/
 
-
-----------------
 
 
 ## Der Plan
