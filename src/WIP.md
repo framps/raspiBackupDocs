@@ -14,3 +14,5 @@ Und seit eben auch die "Automatik" auf *GitHub*. Sogar mit caching. :-))
 Bugfix gefunden... Und nun noch .rustup in den cache...
 
 Leider sind die Beispiele/Doku zum Caching sehr widersprüchlich. Also weiter testen... Und weiter.
+
+War's das jetzt endlich?
