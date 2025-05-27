@@ -1,8 +1,4 @@
-# Einführung
-
-** Work in progress**
-
-``` admonish info title="Hinweis"
+``` admonish info title="Work in progress"
 Diese Dokumentation entsteht gerade erst.
 Und zwar initial aus den Original-Texten der Webseite von framp.
 
@@ -10,6 +6,8 @@ Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", i
 
 Also bitte nur als **Prototyp** sehen!
 ```
+
+# Einführung
 
 raspiBackup - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
 
