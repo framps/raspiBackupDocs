@@ -40,9 +40,9 @@ jobs:
         env:
           cache-name: cache-cargo-modules
         with:
+          # ~/.rustup/
           path: |
             ~/.cargo/
-            ~/.rustup/
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
@@ -60,7 +60,7 @@ jobs:
 
       - name: Install mdBook
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
           # above fix found in
           #  - https://github.com/rust-lang-deprecated/rustup.sh/issues/83
           #  - https://github.com/kata-containers/tests/issues/2187
