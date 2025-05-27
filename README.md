@@ -253,20 +253,29 @@ Dazu wird mit `git` eine neue Version erzeugt und zu *GitHub* ins Repository `pu
 
 Hier muss unterschieden werden, wie die *GitHub Pages* entstehen.
 
-  - Entweder automatisch per *GitHub Actions*
+  1. Entweder automatisch per *GitHub Actions*
 
-    Dann ist nur das `push`en der Quelldateien erforderlich. Der Rest geschieht
-    auf dem *GitHub*-Server. Dazu ist aber dort einige Konfiguration erforderlich!
+     Dann ist nur das `push`en der Quelldateien erforderlich. Der Rest geschieht
+     auf dem *GitHub*-Server.
 
-    Das habe ich noch nicht getestet.
+     Dazu wurde die Datei `.github/workflows/mdbook.yml` angelegt und bei GitHub Pages
+     von "deploy from a branch" zu "GitHub Actions" umgestellt.
+     Und dort dann "mdbook" (im Gegensatz zur "Static HTML pages") ausgewählt.
 
-  - Oder die Inhalte des lokalen Verzeichnisses `book/` werden mit `git`
-    in einen extra Branch versioniert und `push`ed.
-    Dazu ist lokal etwas git-Konfiguration erforderlich.
+     https://docs.github.com/de/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#creating-a-custom-github-actions-workflow-to-publish-your-site
 
-Ich habe aktuell den zweiten - lokalen - Weg gewählt.
+     **Hinweis**: Da bei jedem `git push` nun der Rust-Compiler installiert
+     und sowohl `mdbook` als auch der Präprozessor `mdbook-admonish` compiliert werden,
+     dauert es ca. 4 minuten, bis die jeweilige neue Version der Webseite online geht!
 
-TODO: Mehr Details beschreiben...
+  2. Oder die Inhalte des lokalen Verzeichnisses `book/` werden mit `git`
+     in einen extra Branch versioniert und `push`ed.
+     Dazu ist lokal etwas git-Konfiguration erforderlich.
+
+Ich hatte erst den zweiten - lokalen - Weg gewählt.
+Dies erfordert aber auch lokale "Basteleien" mit `git`. Nicht schlimm, aber nicht jedem User zumutbar.
+
+Deshalb nehme ich nun den ersten - automatischen - Weg.
 
 - https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Actions
 - https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Pages-%28Deploy-from-branch%29
