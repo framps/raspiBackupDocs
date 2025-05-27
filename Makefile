@@ -2,10 +2,6 @@
 src:
 	@../zgo.sh
 
-.PHONY: all
-all:
-	@../zgo.sh -all
-
 .PHONY: build
 build:
 	mdbook build

@@ -12,4 +12,4 @@ Die lokale Toolchain klappt schon gut. Nun wird noch die "Automatik" auf *GitHub
 
 Dann ist auch das im `Makefile` aufgerufene Hilfsscript `zgo.sh` nicht mehr erforderlich.
 
-Erster Test...  Und zweiter gleich dabei!
+Erster Test...  Und zweiter gleich dabei! Nummer drei.
