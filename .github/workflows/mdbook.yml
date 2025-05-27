@@ -40,9 +40,9 @@ jobs:
         env:
           cache-name: cache-cargo-modules
         with:
-          #~/.cargo/
-          #~/.rustup/
           path: |
+            ~/.cargo/
+            ~/.rustup/
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
