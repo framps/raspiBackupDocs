@@ -20,6 +20,9 @@ die z.B. von GitHub angezeigt wird. Das ist die Datei, die ihr gerade lest.
 > siehe z.B. hier: <https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github>
 
 
+----------------
+
+
 ## Der Plan
 
 Die neue Dokumentation von raspiBackup könnte in Zukunft als eine Sammlung von thematisch aufgeteilten Dateien im Markdown-Format vorliegen.
@@ -42,17 +45,15 @@ Der allgemeine Arbeitsablauf ist dann folgendermaßen:
   1. Hochladen der Webseite (nur beim manuellen Generieren)
   1. bei Bedarf weiter bei 1.
 
-#### für Repo-Owner
+Im einfachsten Fall, der automatischen Generierung, ist das dann...
 
-Im einfachsten Fall, der automatischen Generierung, ist das dann für den Repo-Owner:
+#### ... für den Repo-Eigentümer
 
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
   1. commit / push
   1. ca. 30 Sekunden warten, bis die neue Doku generiert und deployed wurde
 
-#### Für Contributors
-
-Für "externe" Contributors:
+#### ... für andere Nutzer, die etwas beitragen möchten
 
   1. Das Repository clonen/forken
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
@@ -61,13 +62,17 @@ Für "externe" Contributors:
   1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
 
-<https://rust-lang.github.io/mdBook/guide/creating.html>
+### Arbeiten an/in/mit dem Buch
+
+Siehe <https://rust-lang.github.io/mdBook/guide/creating.html>
 
 > [!NOTE]
-> *mdbook* verwendet einen anderen Markdown-"Dialekt": Erweitertes CommonMark (<https://rust-lang.github.io/mdBook/format/markdown.html>),
+> *mdbook* verwendet den Markdown-"Dialekt"
+> Erweitertes CommonMark (<https://rust-lang.github.io/mdBook/format/markdown.html>),
 > der sich vom hier in der `README.md` verwendeten *GitHub Flavored Markdown* etwas unterscheidet!
 
-### Das Inhaltsverzeichnis / Die Struktur des Buches
+
+#### Das Inhaltsverzeichnis / Die Struktur des Buches
 
 In der Datei `src/SUMMARY.md` (Groß-/Kleinschreibung ist relevant!) wird die Struktur des zu erzeugenden Buches erfasst.
 Und zwar durch einen "Baum" von Links mit Kapitelnamen und den dazugehörigen Dateien im Filesystem (src/*.md).
@@ -92,6 +97,7 @@ und sie sind im Inhaltsverzeichnis anklickbar.
 Bei leeren Links (wie bei `[Updates]()`) wird nur ein nicht anklickbarer Eintrag erzeugt,
 die Struktur also auch im HTML-Dokument gut sichtbar
 
+-----------------------------
 
 **Das war es eigentlich auch schon für das "normale" Arbeiten an der Dokumentation.**
 
