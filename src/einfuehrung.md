@@ -2,6 +2,7 @@
 
 raspiBackup - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
 
+--- Minor change by framp to test build ---
 
 raspiBackup ermöglicht eine Sicherung von Raspberries manuell oder automatisch
 in regelmäßigen Abständen von einem laufenden System zu erstellen. D.h. es wird
