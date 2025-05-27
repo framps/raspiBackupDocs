@@ -5,14 +5,3 @@ Diese Dokumentation entsteht gerade erst. Und zwar initial aus den Original-Text
 Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
 
 Also bitte nur als **Prototyp** sehen!
-
-----
-
-Die lokale Toolchain für meine Tests klappt schon gut.
-
-Und seit eben auch die "Automatik" auf *GitHub*. Sogar mit caching. :-))
-Bugfix gefunden... Und nun noch .rustup in den cache...
-
-Leider sind die Beispiele/Doku zum Caching sehr widersprüchlich. Also weiter testen... Und weiter.
-
-War's das jetzt endlich?
