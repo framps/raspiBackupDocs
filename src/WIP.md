@@ -7,4 +7,5 @@ Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", i
 Also bitte nur als **Prototyp** sehen!
 
 Die lokale Toolchain klappt schon gut. Nun wird noch die "Automatik" auf *GitHub* aufgebaut.
+
 Dann ist auch das im `Makefile` aufgerufene Hilfsscript `zgo.sh` nicht mehr erforderlich.
