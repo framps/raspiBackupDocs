@@ -93,8 +93,14 @@ Bei leeren Links (wie bei `[Updates]()`) wird nur ein nicht anklickbarer Eintrag
 die Struktur also auch im HTML-Dokument gut sichtbar
 
 
+**Das war es eigentlich auch schon für das "normale" Arbeiten an der Dokumentation.**
 
----------------------------------------------------------------------------
+Der Rest dieser Beschreibung richtet sich an Entwicker und technisch Neugierige.
+
+
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 
 
 
