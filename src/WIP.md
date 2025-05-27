@@ -8,10 +8,8 @@ Also bitte nur als **Prototyp** sehen!
 
 ----
 
-Die lokale Toolchain klappt schon gut. Nun wird noch die "Automatik" auf *GitHub* aufgebaut.
+Die lokale Toolchain für meine Tests klappt schon gut.
 
-Dann ist auch das im `Makefile` aufgerufene Hilfsscript `zgo.sh` nicht mehr erforderlich.
+Und seit eben auch die "Automatik" auf *GitHub*. :-))
 
-Erster Test...  Und zweiter gleich dabei! Nummer drei. Nummer vier ohne expliziten admonish-install.
-
-Immer eine Version nachlaufend???
+Dann ist iin Kürze auch das im `Makefile` aufgerufene Hilfsscript `zgo.sh` nicht mehr erforderlich.
