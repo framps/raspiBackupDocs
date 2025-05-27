@@ -284,16 +284,3 @@ Da die Doku hier im Repository noch nicht fertig ist, kann es sein, dass beim `m
 
    Siehe dazu oben bei [Compilation aus den Quelltexten](#compile-from-sources)
 
-2. Fehlende Datei `VERSION.md`:
-
-        2025-05-27 02:53:49 [ERROR] (mdbook::preprocess::links): Error updating "{{#include VERSION.md}}", Could not read file for link {{#include VERSION.md}} (/home/peter/github.com/framps/raspiBackupDocs/src/VERSION.md)
-        2025-05-27 02:53:49 [WARN] (mdbook::preprocess::links): Caused By: No such file or directory (os error 2)
-        2025-05-27 02:53:49 [INFO] (mdbook::book): Running the html backend
-
-   Das wird zwar als Fehler ausgewiesen, aber die Generierung läuft trotzdem durch!
-
-   Ursache: Ich habe zur Zeit ein Script drumherum im Einsatz, das die Datei VERSION.md temporär erstellt
-   und dann auf der Seite "Wichtiger Hinweis: Work in progress" einbindet und anzeigt.
-
-   Ohne dieses Script bleibt halt der Platzhalter unverändert und es gibt obige Meldung.
-
