@@ -1,17 +1,15 @@
 
 ``` admonish info title="Work in progress"
-Diese Dokumentation entsteht gerade erst.
-Und zwar initial aus den Original-Texten der Webseite von framp.
+This documentation is being built with new tools on a new platform...
 
-Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
+Initially by copying the original text from framp's website. The part in German language is built first.
 
-Also bitte nur als **Prototyp** sehen!
+Currently the structure isn't finalized and many pages are empty or "broken", especially regarding links and formatting.
+
+That means: For now it's only a **prototype**.
 ```
 
 # Introduction
 
-raspiBackup - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
+raspiBackup - Create backup versions of your Raspberry Pis regularly/automatically.
 
-
-raspiBackup ermöglicht eine Sicherung von Raspberries manuell oder automatisch
-in regelmäßigen Abständen von einem laufenden System zu erstellen. D.h. es wird
