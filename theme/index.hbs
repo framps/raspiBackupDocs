@@ -166,7 +166,7 @@
 
                     <div class="right-buttons">
                         <button id="language-toggle" class="icon-button" type="button"
-                                title="Change language right" aria-label="Change language"
+                                title="Change language" aria-label="Change language"
                                 aria-haspopup="true" aria-expanded="false"
                                 aria-controls="language-list">
                             <i class="fa fa-globe"></i>
@@ -193,19 +193,14 @@
 
                           // The path to the root, taking the current
                           // language into account.
-                          {{#if (eq language "en")}}
-                          let full_path_to_root = "{{ path_to_root }}";
-                          {{else}}
-                          let full_path_to_root = "{{ path_to_root }}../";
-                          {{/if}}
                           // The page path (mdbook only gives us
                           // access to the path to the Markdown file).
                           let path = "{{ path }}".replace(/\.md$/, ".html");
                           for (let lang of langList.querySelectorAll("a")) {
                               if (lang.id == "en") {
-                                  lang.href = `${full_path_to_root}${path}`;
+                                  lang.href = `${path_to_root}${path}`;
                               } else {
-                                  lang.href = `${full_path_to_root}${lang.id}/${path}`;
+                                  lang.href = `${path_to_root}${lang.id}/${path}`;
                               }
                           }
 
