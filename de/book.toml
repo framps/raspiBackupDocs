@@ -1,8 +1,15 @@
 [book]
 authors = ["framp", "simonz"]
 language = "de"
+# default:
 src = "src"
+#src = "en/src"
 title = "raspiBackup"
+
+[build]
+# default:
+#build-dir = "book"
+#build-dir = "book/en"
 
 [preprocessor]
 
