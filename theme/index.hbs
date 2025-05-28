@@ -204,9 +204,9 @@
                           let path = "{{ path }}".replace(/\.md$/, ".html");
                           for (let lang of langList.querySelectorAll("a")) {
                               if (lang.id == "en") {
-                                  lang.href = `${path_to_root}${path}`;
+                                  lang.href = `${full_path_to_root}${path}`;
                               } else {
-                                  lang.href = `${path_to_root}../${lang.id}/${path}`;
+                                  lang.href = `${full_path_to_root}../${lang.id}/${path}`;
                               }
                           }
 
