@@ -8,8 +8,10 @@
 >
 > **Also bitte im Moment als Prototyp sehen!**
 >
-> Die generierte Dokumentation ist über folgenden Link (GitHub Pages) zu erreichen:  
-> https://rpi-simonz.github.io/raspiBackupDocs/
+> Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreichen:
+
+>  - https://rpi-simonz.github.io/raspiBackupDocs/de
+>  - https://rpi-simonz.github.io/raspiBackupDocs/en
 
 
 
