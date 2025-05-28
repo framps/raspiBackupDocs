@@ -1,6 +1,6 @@
 [book]
 authors = ["framp", "simonz"]
-language = "de"
+language = "en"
 # default:
 src = "src"
 #src = "en/src"
