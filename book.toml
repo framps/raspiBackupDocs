@@ -1,15 +1,12 @@
 [book]
 authors = ["framp", "simonz"]
 language = "en"
-# default:
 src = "src"
-#src = "en/src"
 title = "raspiBackup"
 
 [build]
 # default:
 #build-dir = "book"
-#build-dir = "book/en"
 
 [preprocessor]
 
@@ -20,4 +17,4 @@ assets_version = "3.0.3" # do not edit: managed by `mdbook-admonish install`
 [output]
 
 [output.html]
-additional-css = ["mdbook-admonish.css"]
+additional-css = ["mdbook-admonish.css", "language-picker.css"]
