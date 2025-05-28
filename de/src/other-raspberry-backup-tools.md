@@ -9,3 +9,4 @@
 - rpi-backup: Script um recht schnell direkt ein img Backup zu erstellen ohne dd zu benutzen. Cmdlinetool
 - pibackup: Erstellt ein dd Backup, shrinked das dd Image und hält eine konfigurierbare Anzahl von Backups vor. Cmdlinetool.
 - shrink-backup: Ein weiteres Backuptool was ähnlich wie rpi-clone und image-backup arbeitet. Cmdlinetool.
+

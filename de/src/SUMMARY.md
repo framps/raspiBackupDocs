@@ -1,47 +1,47 @@
 # raspiBackup
 
-[Einführung](einfuehrung.md)
+[Einführung](introduction.md)
 
-[Kontakmöglichkeiten](kontaktmoeglichkeiten.md)   @BH
+[Kontakmöglichkeiten](contact.md)   @BH
 
-[Danksagungen](danksagungen.md)    @BH
+[Danksagungen](thanks.md)    @BH
 
-[Trinkgeld](trinkgeld.md)   @WS
+[Trinkgeld](donations.md)   @WS
 
-[Haftungsausschluss](haftungsausschluss.md)    @BH
+[Haftungsausschluss](legals.md)    @BH
 
-- [Funktionsübersicht von Webseite](funktionsuebersicht.md)   @WS
-- [Funktionsübersicht aus Benutzerhandbuch](funktionsuebersicht2.md)  @BH
+- [Funktionsübersicht von Website](function-overview.md)   @WS
+- [Funktionsübersicht aus Benutzerhandbuch](function-overview2.md)  @BH
 
-- [Benutzerhandbuch](benutzerhandbuch.md)   @WS
+- [Benutzerhandbuch](usermanual.md)   @WS
 
-- [Unterstützte Hardware und Software](unterstuetzte-hardware-und-software.md)   @WS
-- [Sprachunterstützung](sprachunterstuetzung.md)    @BH
+- [Unterstützte Hardware und Software](supported-hardware-and-software.md)   @WS
+- [Sprachunterstützung](language-support.md)    @BH
 
 - [Installation](installation.md)   @WS
-    - [Installation in 5 Minuten](installation-in-5-minuten.md)   @WS
-    - [Manuelle Installation und Konfiguration](manuelle-installation-und-konfiguration.md)
+    - [Installation in 5 Minuten](installation-in-5-minutes.md)   @WS
+    - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
     - [Updates](updates.md)    @BH
-    - [Erweiterungsmöglichkeiten](erweiterungsmoeglichkeiten.md)    @BH
-    - [Statistiken](statistiken.md)    @BH
+    - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)    @BH
+    - [Statistiken](statistics.md)    @BH
 
-- [Backuptypen und Entscheidungsbaum](backuptypen.md)    @BH
-- [Vergleich partitionsorientierter Backup und normaler Backup](normaler-oder-partitions-backup.md)    @BH
-- [Backupverzeichnisstruktur](backup-verzeichnisstruktur.md)    @BH
-- [Rotationsstrategie](intelligente-rotationsstrategie.md)   @WS
-- [Snapshots](schnappschuesse-snapshots.md)   @WS  @BH
+- [Backuptype und Entscheidungsbaum](backuptypes.md)    @BH
+- [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)    @BH
+- [Backupverzeichnisstruktur](backup-directory-structure.md)    @BH
+- [Rotationsstrategie](intelligent-rotation-strategy.md)   @WS
+- [Snapshots](snapshots.md)   @WS  @BH
 
-- [Wiederherstellen](wiederherstellen.md)   @WS
+- [Wiederherstellen/Restore](restore.md)   @WS
 
-- [Konfigurationsbeispiele](konfigurationsbeispiele.md)   @WS
+- [Konfigurationsbeispiele](configuration-examples.md)   @WS
 
-- [Aufruf und Optionen](aufrufsyntax-und-optionen.md)   @WS / @BH
+- [Aufruf und Optionen](usage-and-options.md)   @WS / @BH
 
-- [Häufige Fragen (FAQ)](faq.md)   @WS @BH
-- [Fehlermeldungen und -suche](fehlermeldungen-und-suche.md)    @BH
+- [FAQ](faq.md)   @WS @BH
+- [Fehlermeldungen und -suche](error-messages.md)    @BH
 
-- [Hilfreiche Links zum Thema Backup](hilfreiche-links.md)    @BH
-- [Weitere Backuptools fuer die Raspberry](andere-raspberry-backup-tools.md)    @BH
-- [Tipps für Homeautomation](tipps-zu-homeautomation.md)   @WS
-- [Synology/NAS](synology-als-backupspace.md)   @WS @BH
-- [Ubuntu-Unterstützung](ubuntu-unterstuetzung.md)
+- [Hilfreiche Links zum Thema Backup](helpful-links.md)    @BH
+- [Weitere Backuptools fuer die Raspberry](other-raspberry-backup-tools.md)    @BH
+- [Tipps zur Homeautomation](tips-homeautomation.md)   @WS
+- [Synology/NAS](synology-as-backupspace.md)   @WS @BH
+- [Ubuntu Support](ubuntu-support.md)
