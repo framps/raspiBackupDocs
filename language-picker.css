@@ -11,3 +11,7 @@
 #language-list a {
   color: inherit;
 }
+
+#language-toggle {
+  font-size: 1.2em;
+}
