@@ -73,10 +73,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # does this work???
-          path: |
-            ./en/book
-            ./de/book
+          path: ./book
 
   # Deployment job
   deploy:
