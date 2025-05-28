@@ -67,8 +67,8 @@ jobs:
 
       - name: Build with mdBook
         run: |
-          mdbook build en
-          mdbook build de
+          mdbook build -d ../book/en en
+          mdbook build -d ../book/de de
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
