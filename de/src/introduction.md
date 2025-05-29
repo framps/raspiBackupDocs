@@ -5,7 +5,12 @@ Und zwar initial aus den Original-Texten der Webseite von framp.
 Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt",
 insbesondere bezüglich Formatierung und Verlinkung.
 
-Also bitte nur als **Prototyp** sehen!
+Also bitte zur Zeit nur als **Prototyp** bzw. **In Arbeit** sehen!
+
+Es gibt zwei Sprachversionen, *deutsch* und *englisch*, zwischen denen dynamisch
+mit dem Sprachwähler oben rechts umgeschaltet werden kann.
+(*Englisch* ist aktuell noch ziemlich "leer".)
+
 ```
 
 # Einführung
