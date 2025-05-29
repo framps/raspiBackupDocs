@@ -5,4 +5,4 @@ dann sofort einen Backup zu erstellen ist auf [raspiBackup Schnellstart](install
 Wer raspiBackup sehr schnell aus der Befehlszeile mit seiner
 Standardkonfiguration installieren will findet dort auch die notwendige
 Information. Wer raspiBackup manuell installieren sollte der Beschreibung auf
-[dieser Seite](manuelle-installation-und-konfiguration.md) folgen.
+[dieser Seite](manual-installation-and-configuration.md) folgen.

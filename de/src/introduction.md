@@ -2,7 +2,8 @@
 Diese Dokumentation entsteht gerade erst.
 Und zwar initial aus den Original-Texten der Webseite von framp.
 
-Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
+Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt",
+insbesondere bezüglich Formatierung und Verlinkung.
 
 Also bitte nur als **Prototyp** sehen!
 ```
@@ -29,7 +30,7 @@ SSD. Auch können beide Partitionen ausschliesslich auf einem USB Gerät liegen
 und mit dem USB Boot Modus gestartet werden.
 
 
-Bitte erst lesen: [Unterstützte Hard- und Software](unterstuetzte-hardware-und-software.md)
+Bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
 -------------------
 

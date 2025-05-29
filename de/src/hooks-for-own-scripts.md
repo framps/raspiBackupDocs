@@ -2,7 +2,8 @@
 
 Es bestehen folgende Möglichkeiten die Funktionalität des Backupscripts durch eigenen Code zu erweitern.
 
-1) Benutzung eines selbstgeschriebenen Scriptes welches das Backupscript aufruft und Aktionen vor und nach dem Aufruf vornimmt
+1. Benutzung eines selbstgeschriebenen Scriptes welches das Backupscript
+   aufruft und Aktionen vor und nach dem Aufruf vornimmt
 
    Dazu gibt es das folgende Beispielscript welches individuelle
    Anpassungsmöglichkeiten bietet und muss nur geringfügig an den gekennzeichneten
@@ -22,7 +23,7 @@ Es bestehen folgende Möglichkeiten die Funktionalität des Backupscripts durch 
    aufzurufen. Der Quellcode vom Wrapperscript findet sich auch auf github und
    kann durch einen Pull Request erweitert werden.
 
-2) Benutzung von Plugins in die eigene Scripts eingehängt werden
+2. Benutzung von Plugins in die eigene Scripts eingehängt werden
 
    Vor und nach dem eigentlichen Backup wie auch dem Restore können Scripte als
    Plugins eingehängt werden. Details dazu finden sich in der Detailbeschreibung

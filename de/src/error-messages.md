@@ -21,14 +21,16 @@ Aufräumen in das Homeverzeichnis des Aufrufers gesichert. Weiterhin kann auch
 der Parameter -v weiterhelfen wenn Fehler in den Linux Backuptools auftreten.
 3) Falls die Informationen in der Logdatei nicht helfen die Fehlerursache
 selbst zu finden besteht die Möglichkeit den Fehler zu berichten. Siehe dazu
-die [Hinweise](https://linux-tips-and-tricks.de/de/faq#a12) wie Probleme berichtet werden können.
+die [Hinweise](faq.md#faq12) wie Probleme berichtet werden können.
 
 
 
 ----------------------
 
 
-Quelle: <https://linux-tips-and-tricks.de/de/raspibackupmeldungen>
+``` admonish note title="Quelle"
+<https://linux-tips-and-tricks.de/de/raspibackupmeldungen>
+```
 
 Es gibt drei Typen von Meldungen:
 

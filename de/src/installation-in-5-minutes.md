@@ -25,9 +25,9 @@ Test herausstellen sollte das raspiBackup nicht den Anforderungen genügt.
 nicht hat braucht natürlich länger trotz dass der Installer hilft eine
 raspiBackup Anfangskonfiguration schnell zu erstellen - leider.
 
-Bitte erst lesen: [Unterstützte Hard- und Software]()
+Bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
-Supportkanäle: [Die sind hier beschrieben](kontaktmoeglichkeiten.md)
+Supportkanäle: [Die sind hier beschrieben](contact.md)
 
 
 

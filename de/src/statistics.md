@@ -1,4 +1,4 @@
-Statistiken
+# Statistiken
 
  raspiBackup prüft bei jedem Start einmal pro Tag ob es eine neue raspiBackup
  Release oder eine Beta gibt und weist dann mit einer Meldung darauf hin so
@@ -15,7 +15,6 @@ Statistiken
 
 
 Die Informationen die übertragen werden sind
-
 
     Release
     Backuptyp

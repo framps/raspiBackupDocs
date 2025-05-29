@@ -1,6 +1,8 @@
 # Häufige Fragen (FAQ)
 
-Quelle: <https://linux-tips-and-tricks.de/de/faq>
+``` admonish note title="Quelle"
+<https://linux-tips-and-tricks.de/de/faq>
+```
 
 Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich einmal alle Fragen und Antworten durchlesen.
 
