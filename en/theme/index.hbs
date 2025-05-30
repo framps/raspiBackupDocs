@@ -193,21 +193,13 @@
 
                           // The path to the root, taking the current
                           // language into account.
-                          {{#if (eq language "en")}}
-                          let full_path_to_root = "{{ path_to_root }}";
-                          {{else}}
                           let full_path_to_root = "{{ path_to_root }}../";
-                          {{/if}}
 
                           // The page path (mdbook only gives us
                           // access to the path to the Markdown file).
                           let path = "{{ path }}".replace(/\.md$/, ".html");
                           for (let lang of langList.querySelectorAll("a")) {
-                              if (lang.id == "en") {
-                                  lang.href = `${full_path_to_root}${path}`;
-                              } else {
-                                  lang.href = `${full_path_to_root}${lang.id}/${path}`;
-                              }
+                              lang.href = `${full_path_to_root}${lang.id}/${path}`;
                           }
 
                           // When the user clicks a list item, the page jump is performed, just like clicking the internal <a> tag.
@@ -221,7 +213,6 @@
                             });
                           });
                         </script>
-
                         {{#if print_enable}}
                         <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>

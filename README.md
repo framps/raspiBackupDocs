@@ -8,11 +8,9 @@
 >
 > **Also bitte im Moment als Prototyp sehen!**
 >
-> Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreichen:
-
->  - https://rpi-simonz.github.io/raspiBackupDocs/
->  - https://rpi-simonz.github.io/raspiBackupDocs/de/
-
+> Die generierte Dokumentation ist über folgenden Link zu erreichen:
+>
+>   - TODO
 
 
 ## Der Plan
@@ -29,21 +27,14 @@ Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, is
 
 ### Arbeitsablauf
 
-Der allgemeine Arbeitsablauf ist dann folgendermaßen:
+Der  Arbeitsablauf ist dann folgendermaßen:
 
-  1. Editieren von Markdown-Datei(en) für Struktur und Inhalt
-  1. Versionieren (git)
-  1. Generieren der Webseite (automatisch oder manuell)
-  1. Hochladen der Webseite (nur beim manuellen Generieren)
-  1. bei Bedarf weiter bei 1.
+#### ... für den Repo-Eigentümer und Webserver-Admin
 
-Im einfachsten Fall, der automatischen Generierung, ist das dann...
-
-#### ... für den Repo-Eigentümer
-
-  1. Editieren von Markdown-Datei(en), lokal oder im Browser
+  1. Editieren von Markdown-Datei(en)
+  1. lokales Generieren der Webseite
+  1. Hochladen der Webseite
   1. commit / push
-  1. ca. 30 Sekunden warten, bis die neue Doku generiert und deployed wurde
 
 #### ... für andere Nutzer, die etwas beitragen möchten
 
