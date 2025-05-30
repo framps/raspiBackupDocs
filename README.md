@@ -34,8 +34,8 @@ Der  Arbeitsablauf ist dann folgendermaßen:
   1. Editieren von Markdown-Datei(en)
   1. lokales Generieren der Webseite(n) (Zielverzeichnis ist `book`.)
 
-         mdbook de
-         mdbook en
+         mdbook build de
+         mdbook build en
 
   1. Hochladen der Webseite (Beispiel)
 
