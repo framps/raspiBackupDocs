@@ -32,9 +32,36 @@ Der  Arbeitsablauf ist dann folgendermaßen:
 #### ... für den Repo-Eigentümer und Webserver-Admin
 
   1. Editieren von Markdown-Datei(en)
-  1. lokales Generieren der Webseite
-  1. Hochladen der Webseite
+  1. lokales Generieren der Webseite(n) (Zielverzeichnis ist `book`.)
+
+         mdbook de
+         mdbook en
+
+  1. Hochladen der Webseite (Beispiel)
+
+         lftp mirror -R book httpdocs/raspiBackupDocs
+
   1. commit / push
+
+
+Je nach Webserverkonfiguration macht eventuell noch eine `.htaccess`
+im Verzeichnis `raspiBackupDocs` Sinn (Beispiel):
+
+    RewriteEngine on
+
+    RewriteCond %{HTTP:Accept-Language} ^de [NC]
+    RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
+    RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
+
+    RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
+    RewriteRule .* /raspiBackupDocs/en/ [L,R=301]
+
+Damit werden Besucher, die in ihrem Browser die "bevorzugte Sprache" für Webseiten
+auf "de[...]" stehen haben, direkt zur deutschsprachigen Version geleitet.
+Alle anderen zur englischsprachigen Version.
+
+TODO: Die `.htaccess` genauer prüfen (lassen).
+
 
 #### ... für andere Nutzer, die etwas beitragen möchten
 
