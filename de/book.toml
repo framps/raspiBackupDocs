@@ -5,8 +5,7 @@ src = "src"
 title = "raspiBackup"
 
 [build]
-# default:
-#build-dir = "book"
+build-dir = "book"
 
 [preprocessor]
 
