@@ -32,20 +32,23 @@ Der  Arbeitsablauf ist dann folgendermaßen:
 #### ... für den Repo-Eigentümer und Webserver-Admin
 
   1. Editieren von Markdown-Datei(en)
-  1. lokales Generieren der Webseite(n) (Zielverzeichnis ist `book`.)
+  1. lokales Generieren der Webseite(n) (Zielverzeichnis ist `book`.)  
+     Hinweis: Reihenfolge beachten!!!
 
-         mdbook build de
-         mdbook build en
+         mdbook build en     # "en" ist Default und Fallback
+         mdbook build de     # "de" ist eine von evtl. mehreren zusätzlichen Übersetzungen
 
   1. Hochladen der Webseite (Beispiel)
 
-         lftp mirror -R book httpdocs/raspiBackupDocs
+         lftp sftp://hosting.server -e "cd httpdocs ; rm -r raspiBackupDocs; mirror -R book raspiBackupDocs ; dir ; quit"
 
   1. commit / push
 
 
 Je nach Webserverkonfiguration macht eventuell noch eine `.htaccess`
-im Verzeichnis `raspiBackupDocs` Sinn (Beispiel):
+im Server-Ziel-Verzeichnis `raspiBackupDocs` Sinn (Beispiel):
+
+    ErrorDocument 404 /raspiBackupDocs/404.html
 
     RewriteEngine on
 
@@ -53,15 +56,18 @@ im Verzeichnis `raspiBackupDocs` Sinn (Beispiel):
     RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
     RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
 
-    RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
-    RewriteRule .* /raspiBackupDocs/en/ [L,R=301]
 
 Damit werden Besucher, die in ihrem Browser die "bevorzugte Sprache" für Webseiten
 auf "de[...]" stehen haben, direkt zur deutschsprachigen Version geleitet.
 Alle anderen zur englischsprachigen Version.
 
-TODO: Die `.htaccess` genauer prüfen (lassen).
+TODO: Die `.htaccess` genau testen (lassen).
 
+Also folgt auf die `mdbook build ...`s noch ein:
+
+         cp htaccess book/.htaccess
+
+und zwar jedes Mal erneut, da book/ vom `mdbook build` komplett zurückgesetzt wird
 
 #### ... für andere Nutzer, die etwas beitragen möchten
 

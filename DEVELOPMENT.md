@@ -153,31 +153,7 @@ natürlich noch veröffentlicht werden.
 
 Dies kann im einfachsten Fall durch Hochladen zu einem Webserver/Webhoster o.Ä. geschehen.
 
-Oder aber bei GitHub über *GitHub Pages* wie hier bei der raspiBackup Dokumentation.
-
-Dazu wird mit `git` eine neue Version erzeugt und zu *GitHub* ins Repository `push`ed.
-
-Bei entsprechender Konfiguration im Repository geschieht die Generierung dann online bei GitHub,
-eben angestoßen durch den `push`.
-
-Die Konfiguration geschieht
-
- - in der Datei `.github/workflows/mdbook.yml`
- - bei *GitHub Pages*: Statt "deploy from branch" wird "GitHub Actions" eingestellt  
-   und dort dann "mdbook" (im Gegensatz zur "Static HTML pages") ausgewählt
-
-- https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Actions
-- https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Pages-%28Deploy-from-branch%29
-- https://docs.github.com/de/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#creating-a-custom-github-actions-workflow-to-publish-your-site
-
-> [!NOTE]
-> Da bei jedem `git push` nun der Rust-Compiler installiert
-> und sowohl `mdbook` als auch der Präprozessor `mdbook-admonish` compiliert würden,
-> dauert es ca. 4 Minuten, bis die jeweilige neue Version der Webseite online geht!
-> Um das zu minimieren (aktuell auf ca. 30 Sekunden), kann Caching verwendet werden.
-> Das ist in der obigen `mdbook.yml` schon eingefügt.
-> Siehe https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
-
+Siehe [README.md](README.md)
 
 
 
