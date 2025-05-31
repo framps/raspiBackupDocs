@@ -22,7 +22,7 @@
     - [Installation in 5 minutes](installation-in-5-minutes.md)   @WS
     - [Manual installation and configuration](manual-installation-and-configuration.md)
     - [Updates](updates.md)    @BH
-    - [Erweiterungsmöglichkeiten]()    @BH
+    - [Hooks for own scripts](hooks-for-own-scripts.md)    @BH
     - [Statistics](statistics.md)    @BH
 
 - [Backup types and decision tree](backuptypes.md)    @BH
@@ -38,7 +38,7 @@
 - [Usage and options](usage-and-options.md)   @WS / @BH
 
 - [FAQ](faq.md)   @WS @BH
-- [Fehlermeldungen und -suche]()    @BH
+- [Error messages](error-messages.md)    @BH
 
 - [Helpful links regarding backup](helpful-links.md)    @BH
 - [Other backup tools for Raspberry Pi](other-raspberry-backup-tools.md)    @BH
