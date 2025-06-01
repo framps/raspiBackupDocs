@@ -1,0 +1,61 @@
+# Tipps für Homeautomation
+
+``` admonish note title="Quelle"
+<https://linux-tips-and-tricks.de/de/anwendungstipps>
+```
+
+Auf den folgenden Seiten werden Hinweise zu verschiedenen Anwendungen gegeben:
+Ob und welche Services zu stoppen und zu starten sind, welche Besonderheiten zu
+berücksichtigen sind, ob und welche Aktionen vor und nach dem Backup und/oder
+vor und nach dem Restore vorzunehmen sind.
+
+Diese Seite lebt vom Feedback der raspiBackup Nutzer die sich mit den
+jeweiligen Anwendungen auskennen und genau beschreiben können worauf bei den
+jeweiligen Anwendungen zu achten ist. Deshalb ist Feedback in Kommentaren
+erwünscht.
+raspiBackup Tipps für bestimmte Anwendungen
+
+OpenHAB
+
+Funtioniert ohne Probleme. Siehe hier.
+
+
+IOBroker
+
+IOBroker nutzt ACLs. Wer sein Backup auf eine Synology oder QNAP per nfs sichert muss das Sichern von ACLs ausschalten damit rsync nicht abbricht. Siehe dazu hier wie man das erreichen kann. Wenn man dann ein Backup wiederherstellt kann man mit iobroker fix die fehlenden ACLs wieder erstellen. Ausserdem sollte man den IOBroker vor dem Backup mit systemctl stop iobroker stoppen und nach dem Backup mit systemctl start iobroker wieder starten. Das kann man entweder direkt in der raspiBackup Konfigurationsdatei bei DEFAULT_START_SERVICES und DEFAULT_STOP_SERVICES eingeben oder man nutzt den raspiBackup Installer und wählt dort den IOBroker als Service aus der zu stoppen und zu starten ist. Der Installer generiert dann die entsprechenden Befehle in der Konfigurationsdatei.
+
+
+FHEM
+
+FHEM nutzt keine ACLs.
+
+FHEM läuft als System Service und taucht somit im Installer als Service auf und kann dort einfach mit M3->C6 ausgewählt werden so dass FHEM vor dem Backup gestoppt und am Ende wieder gestartet wird.
+
+ Wer es manuell in der Config konfigurieren will muss folgende Befehle aufnehmen:
+
+systemctl stop fhem
+
+bei DEFAULT_STOPSERVICES
+
+bzw
+
+systemctl start fhem
+
+bei DEFAULT_STARTSERVICES
+
+
+SmartHomeNG
+
+SmartHomeNG läuft als System Service und taucht somit im Installer als Service auf und kann dort einfach mit M3->C6 ausgewählt werden so dass SmartHomeNG vor dem Backup gestoppt und am Ende wieder gestartet wird.
+
+Wer es manuell in der Config konfigurieren will muss folgende Befehle aufnehmen:
+
+systemctl stop smarthome
+
+bei DEFAULT_STOPSERVICES
+
+bzw
+
+systemctl start smarthome
+
+bei DEFAULT_STARTSERVICES
