@@ -1,7 +1,7 @@
 ErrorDocument 404 /raspiBackupDocs/404.html
 
-RewriteEngine on
-
-RewriteCond %{HTTP:Accept-Language} ^de [NC]
-RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
-RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
+#RewriteEngine on
+#
+#RewriteCond %{HTTP:Accept-Language} ^de [NC]
+#RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
+#RewriteRule .* /raspiBackupDocs/de/ [L,R=301]

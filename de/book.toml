@@ -5,7 +5,7 @@ src = "src"
 title = "raspiBackup"
 
 [build]
-build-dir = "../book/de"
+build-dir = "book"
 
 [preprocessor]
 

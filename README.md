@@ -24,6 +24,10 @@ Dies sind Textdateien, die sich gut bearbeiten und, zum Beispiel mit *git*, vers
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, ist natürlich noch etwas mehr "Drumherum" nötig.
 
+> [!NOTE]
+> Im folgenden nutze ich den Verzeichnis-/Projektnamen bzw. Teil der URL **raspiBackupDocs** an verschiedenen Stellen.
+> Das ist natürlich an die eigenen Bedürfnisse anpassbar.
+
 
 ### Arbeitsablauf
 
@@ -32,42 +36,28 @@ Der  Arbeitsablauf ist dann folgendermaßen:
 #### ... für den Repo-Eigentümer und Webserver-Admin
 
   1. Editieren von Markdown-Datei(en)
-  1. lokales Generieren der Webseite(n) (Zielverzeichnis ist `book`.)  
-     Hinweis: Reihenfolge beachten!!!
+  1. lokales Generieren der Webseite(n) (Zielverzeichnis ist jeweils `book` in den Sprachverzeichnissen.)
 
          mdbook build en     # "en" ist Default und Fallback
          mdbook build de     # "de" ist eine von evtl. mehreren zusätzlichen Übersetzungen
 
-  1. Hochladen der Webseite (Beispiel)
+     Testen mit einem lokalen Development-Webservice im Broweser: http://localhost:3000  
+     Da `mdbook serve` bei jeder Änderung der Quelldateien intern ein 'build' aufruft,
+     kann lokal nur jede Sprache einzeln getestet werden.
 
-         lftp sftp://hosting.server -e "cd httpdocs ; rm -r raspiBackupDocs; mirror -R book raspiBackupDocs ; dir ; quit"
+         mdbook serve en
+
+     beziehungsweise
+
+         mdbook serve en
+
+  1. Hochladen der Webseite zu einem Webserver
+
+     Beispiel siehe unten bei [Hochladen der Webseite zu einem Webserver](upload)
 
   1. commit / push
 
 
-Je nach Webserverkonfiguration macht eventuell noch eine `.htaccess`
-im Server-Ziel-Verzeichnis `raspiBackupDocs` Sinn (Beispiel):
-
-    ErrorDocument 404 /raspiBackupDocs/404.html
-
-    RewriteEngine on
-
-    RewriteCond %{HTTP:Accept-Language} ^de [NC]
-    RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
-    RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
-
-
-Damit werden Besucher, die in ihrem Browser die "bevorzugte Sprache" für Webseiten
-auf "de[...]" stehen haben, direkt zur deutschsprachigen Version geleitet.
-Alle anderen zur englischsprachigen Version.
-
-TODO: Die `.htaccess` genau testen (lassen).
-
-Also folgt auf die `mdbook build ...`s noch ein:
-
-         cp htaccess book/.htaccess
-
-und zwar jedes Mal erneut, da book/ vom `mdbook build` komplett zurückgesetzt wird
 
 #### ... für andere Nutzer, die etwas beitragen möchten
 
@@ -76,6 +66,48 @@ und zwar jedes Mal erneut, da book/ vom `mdbook build` komplett zurückgesetzt w
   1. commit / push
   1. Pull-Request (PR) erstellen
   1. warten, bis der Repo-Owner den PR annimmt  ;-)
+
+
+
+### Webserver
+
+#### .htaccess
+
+Zur Webserverkonfiguration (Apache) ist noch eine Datei `.htaccess`
+im Server-Ziel-Verzeichnis `raspiBackupDocs` erforderlich (Beispiel).
+
+hauptsächlich wird dort eine individuelle Fehlerseite definiert:
+
+    ErrorDocument 404 /raspiBackupDocs/404.html
+
+Außerdem könnten dort noch Redirects/Rewrites definiert werden,
+durch die Besucher, die in ihrem Browser die "bevorzugte Sprache" für Webseiten
+auf "de[...]" stehen haben, direkt zur deutschsprachigen Version geleitet werden.
+Alle anderen Besucher zur englischsprachigen Version.
+
+Leider gibt das (noch) kleine Probleme bei nicht gefundenen Seiten.
+Deshalb ist das zur Zeit auskommentiert.
+
+    # RewriteEngine on
+    #
+    # RewriteCond %{HTTP:Accept-Language} ^de [NC]
+    # RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
+    # RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
+
+
+
+Die Datei liegt hier lokal als `htaccess` (ohne führenden Punkt) vor und wird
+beim Upload zum Webserver entsprechend umbenannt hochgeladen.
+
+
+<a name="upload"></a>
+#### Hochladen der Webseite zu einem Webserver
+
+Hier eine mögliche Variante mit `lftp` zum Hochladen der Webseite(n):
+
+Hinweis: Reihenfolge des Sprachen-Uploads beachten!
+
+    lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDocs; mirror -R en/book raspiBackupDocs; cd raspiBackupDocs ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
 
 
 ### Arbeiten an/in/mit dem Buch
