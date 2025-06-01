@@ -79,14 +79,17 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
      Hier eine mögliche Variante mit `lftp`:
 
-     Hinweis: Reihenfolge des Sprachen-Uploads beachten!
+     **Hinweis**: Beim Upload die Reihenfolge und Zielverzeichnisse der Sprachen beachten, "en" ist Default und damit Erster!
 
          lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDocs; mirror -R en/book raspiBackupDocs; cd raspiBackupDocs ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
 
-     Details zur Konfiguration siehe [README.webserver.md](README.webserver.md)
+     Details zur Konfiguration des Webservers siehe [README.webserver.md](README.webserver.md)
 
   1. commit + push
 
+Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung gestellt.
+
+TODO: URL der generierten Dokumentation besprechen und hier nachtragen.
 
 
 #### ... für andere Nutzer, die etwas beitragen möchten
