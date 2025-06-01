@@ -25,7 +25,7 @@ Dies sind Textdateien, die sich gut bearbeiten und, zum Beispiel mit *git*, vers
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, ist natürlich noch etwas mehr "Drumherum" nötig.
 
 > [!NOTE]
-> Im folgenden nutze ich den Verzeichnis-/Projektnamen bzw. Teil der URL **raspiBackupDocs** an verschiedenen Stellen.
+> Im Folgenden nutze ich den Verzeichnis-/Projektnamen bzw. Teil der URL **raspiBackupDocs** an verschiedenen Stellen.
 > Das ist natürlich an die eigenen Bedürfnisse anpassbar.
 
 
@@ -41,7 +41,7 @@ Der  Arbeitsablauf ist dann folgendermaßen:
          mdbook build en     # "en" ist Default und Fallback
          mdbook build de     # "de" ist eine von evtl. mehreren zusätzlichen Übersetzungen
 
-     Testen mit einem lokalen Development-Webservice im Broweser: http://localhost:3000  
+     Testen mit einem lokalen Development-Webservice im Browser: http://localhost:3000  
      Da `mdbook serve` bei jeder Änderung der Quelldateien intern ein 'build' aufruft,
      kann lokal nur jede Sprache einzeln getestet werden.
 
@@ -49,11 +49,11 @@ Der  Arbeitsablauf ist dann folgendermaßen:
 
      beziehungsweise
 
-         mdbook serve en
+         mdbook serve de
 
   1. Hochladen der Webseite zu einem Webserver
 
-     Beispiel siehe unten bei [Hochladen der Webseite zu einem Webserver](upload)
+     Beispiel siehe unten bei [Hochladen der Webseite zu einem Webserver](#upload)
 
   1. commit / push
 
@@ -85,7 +85,7 @@ durch die Besucher, die in ihrem Browser die "bevorzugte Sprache" für Webseiten
 auf "de[...]" stehen haben, direkt zur deutschsprachigen Version geleitet werden.
 Alle anderen Besucher zur englischsprachigen Version.
 
-Leider gibt das (noch) kleine Probleme bei nicht gefundenen Seiten.
+Leider gibt es damit (noch) kleine Probleme bei nicht gefundenen Seiten.
 Deshalb ist das zur Zeit auskommentiert.
 
     # RewriteEngine on
@@ -93,7 +93,6 @@ Deshalb ist das zur Zeit auskommentiert.
     # RewriteCond %{HTTP:Accept-Language} ^de [NC]
     # RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
     # RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
-
 
 
 Die Datei liegt hier lokal als `htaccess` (ohne führenden Punkt) vor und wird
