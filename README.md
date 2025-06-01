@@ -41,9 +41,9 @@ Der allgemeine Arbeitsablauf ist dann folgendermaßen:
 
 Im Detail also ...
 
-#### ... mit automatischer Generierung bei z.B. *GitHub Pages*
+#### ... für den Repo-Eigentümer (bzw. Webserver-Admin)
 
-##### ... für den Repo-Eigentümer
+##### ... mit automatischer Generierung bei z.B. *GitHub Pages*
 
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
   1. commit + push
@@ -56,18 +56,16 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
 
 
-#### ... mit Veröffentlichung auf einen (eigenen?) Webserver
+##### ... mit Veröffentlichung auf einem (normalen) Webserver
 
-##### ... für den Repo-Eigentümer und Webserver-Admin
-
-  1. Editieren von Markdown-Datei(en)
+  1. lokales Editieren von Markdown-Datei(en)
   1. lokales Generieren der Webseite(n)
      (Zielverzeichnis ist jeweils `book` in den Sprachverzeichnissen.)
 
          mdbook build en     # "en" ist Default und Fallback
          mdbook build de     # "de" ist eine von evtl. mehreren zusätzlichen Übersetzungen
 
-     Testen mit einem lokalen Development-Webservice im Browser: http://localhost:3000  
+     Testen geht mit einem lokalen Development-Webservice im Browser: http://localhost:3000  
      Da `mdbook serve` bei jeder Änderung der Quelldateien intern ein 'build' aufruft,
      kann lokal nur jede Sprache einzeln getestet werden.
 
@@ -79,8 +77,7 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
   1. Hochladen der Webseite zu einem Webserver
 
-
-     Hier eine mögliche Variante mit `lftp` zum Hochladen der Webseite(n):
+     Hier eine mögliche Variante mit `lftp`:
 
      Hinweis: Reihenfolge des Sprachen-Uploads beachten!
 
@@ -88,15 +85,15 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
      Details zur Konfiguration siehe [README.webserver.md](README.webserver.md)
 
-  1. commit / push
+  1. commit + push
 
 
 
-#### für andere Nutzer, die etwas beitragen möchten
+#### ... für andere Nutzer, die etwas beitragen möchten
 
   1. Das Repository clonen/forken
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
-  1. commit / push
+  1. commit + push
   1. Pull-Request (PR) erstellen
   1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
