@@ -58,6 +58,15 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
 ##### ... mit Veröffentlichung auf einem (normalen) Webserver
 
+Voraussetzungen beim lokalen Generieren:
+
+Die Rust-Umgebung inkl. Compiler `rustc`, `mdbook` und der Präprozessor `mdbook-admonish` müssen installiert sein.
+
+Siehe [DEVELOPMENT.md](DEVELOPMENT.md).
+
+
+Danach geht's los:
+
   1. lokales Editieren von Markdown-Datei(en)
   1. lokales Generieren der Webseite(n)
      (Zielverzeichnis ist jeweils `book` in den Sprachverzeichnissen.)
