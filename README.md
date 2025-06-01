@@ -89,7 +89,15 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
 Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung gestellt.
 
-TODO: URL der generierten Dokumentation besprechen und hier nachtragen.
+``` admonish warning title="TODO"
+URL der generierten Dokumentation besprechen und hier nachtragen.
+```
+
+``` admonish note title="Nachtrag"
+Wenn unbedingt nötig, geht es auch ohne lokales Generieren:  
+Man kann aus dem *GitGub Actions Workflow* die automatisch gebauten Artifacts herunterladen und auspacken.
+Dann ist allerdings obiger Aufruf von `lftp` noch anzupassen!
+```
 
 
 #### ... für andere Nutzer, die etwas beitragen möchten
