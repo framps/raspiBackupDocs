@@ -2,27 +2,28 @@
 
 
 > [!NOTE]
-> Diese Dokumentation entsteht gerade erst. Und zwar initial aus den Original-Texten der Webseite von framp.
+> Diese Dokumentation entsteht gerade erst.
+> Und zwar initial aus den Original-Texten der Webseite von framp.
 >
-> Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt", insbesondere bezüglich Formatierung und Verlinkung.
+> Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt",
+> insbesondere bezüglich Formatierung und Verlinkung.
 >
 > **Also bitte im Moment als Prototyp sehen!**
->
-> Die generierte Dokumentation ist über folgenden Link zu erreichen:
->
->   - TODO
 
 
 ## Der Plan
 
-Die neue Dokumentation von raspiBackup könnte in Zukunft als eine Sammlung von thematisch aufgeteilten Dateien im Markdown-Format vorliegen.
+Die neue Dokumentation von raspiBackup könnte in Zukunft als eine Sammlung
+von thematisch aufgeteilten Dateien im Markdown-Format vorliegen.
 
 Dies sind Textdateien, die sich gut bearbeiten und, zum Beispiel mit *git*, versionieren lassen.
 Über ein Repository wäre dann auch eine Teamarbeit an der Dokumentation möglich (über *Pull-Requests*).
 
-*Markdown* ist eine von vielen Auszeichnungssprachen, die sich mit Hilfe von Software gut in andere Formate umwandeln lassen.
+*Markdown* ist eine von vielen Auszeichnungssprachen,
+die sich mit Hilfe von Software gut in andere Formate umwandeln lassen.
 
-Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, ist natürlich noch etwas mehr "Drumherum" nötig.
+Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
+ist natürlich noch etwas mehr "Drumherum" nötig.
 
 > [!NOTE]
 > Im Folgenden nutze ich den Verzeichnis-/Projektnamen bzw. Teil der URL **raspiBackupDocs** an verschiedenen Stellen.
@@ -31,12 +32,37 @@ Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen, is
 
 ### Arbeitsablauf
 
-Der  Arbeitsablauf ist dann folgendermaßen:
+Der allgemeine Arbeitsablauf ist dann folgendermaßen:
 
-#### ... für den Repo-Eigentümer und Webserver-Admin
+  1. Editieren von Markdown-Datei(en) für Struktur und Inhalt
+  1. Versionieren (git)
+  1. Generieren der Webseite (automatisch oder manuell)
+  1. bei Bedarf weiter bei 1.
+
+Im Detail also ...
+
+#### ... mit automatischer Generierung bei z.B. *GitHub Pages*
+
+##### ... für den Repo-Eigentümer
+
+  1. Editieren von Markdown-Datei(en), lokal oder im Browser
+  1. commit + push
+  1. ca. 30 Sekunden warten, bis die neue Doku generiert und deployed wurde
+
+Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreichen:
+
+  - https://rpi-simonz.github.io/raspiBackupDocs/
+  - https://rpi-simonz.github.io/raspiBackupDocs/de/
+
+
+
+#### ... mit Veröffentlichung auf einen (eigenen?) Webserver
+
+##### ... für den Repo-Eigentümer und Webserver-Admin
 
   1. Editieren von Markdown-Datei(en)
-  1. lokales Generieren der Webseite(n) (Zielverzeichnis ist jeweils `book` in den Sprachverzeichnissen.)
+  1. lokales Generieren der Webseite(n)
+     (Zielverzeichnis ist jeweils `book` in den Sprachverzeichnissen.)
 
          mdbook build en     # "en" ist Default und Fallback
          mdbook build de     # "de" ist eine von evtl. mehreren zusätzlichen Übersetzungen
@@ -53,13 +79,20 @@ Der  Arbeitsablauf ist dann folgendermaßen:
 
   1. Hochladen der Webseite zu einem Webserver
 
-     Beispiel siehe unten bei [Hochladen der Webseite zu einem Webserver](#upload)
+
+     Hier eine mögliche Variante mit `lftp` zum Hochladen der Webseite(n):
+
+     Hinweis: Reihenfolge des Sprachen-Uploads beachten!
+
+         lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDocs; mirror -R en/book raspiBackupDocs; cd raspiBackupDocs ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
+
+     Details zur Konfiguration siehe [README.webserver.md](README.webserver.md)
 
   1. commit / push
 
 
 
-#### ... für andere Nutzer, die etwas beitragen möchten
+#### für andere Nutzer, die etwas beitragen möchten
 
   1. Das Repository clonen/forken
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
@@ -68,45 +101,6 @@ Der  Arbeitsablauf ist dann folgendermaßen:
   1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
 
-
-### Webserver
-
-#### .htaccess
-
-Zur Webserverkonfiguration (Apache) ist noch eine Datei `.htaccess`
-im Server-Ziel-Verzeichnis `raspiBackupDocs` erforderlich (Beispiel).
-
-hauptsächlich wird dort eine individuelle Fehlerseite definiert:
-
-    ErrorDocument 404 /raspiBackupDocs/404.html
-
-Außerdem könnten dort noch Redirects/Rewrites definiert werden,
-durch die Besucher, die in ihrem Browser die "bevorzugte Sprache" für Webseiten
-auf "de[...]" stehen haben, direkt zur deutschsprachigen Version geleitet werden.
-Alle anderen Besucher zur englischsprachigen Version.
-
-Leider gibt es damit (noch) kleine Probleme bei nicht gefundenen Seiten.
-Deshalb ist das zur Zeit auskommentiert.
-
-    # RewriteEngine on
-    #
-    # RewriteCond %{HTTP:Accept-Language} ^de [NC]
-    # RewriteCond %{REQUEST_URI} ^/raspiBackupDocs/$ [NC]
-    # RewriteRule .* /raspiBackupDocs/de/ [L,R=301]
-
-
-Die Datei liegt hier lokal als `htaccess` (ohne führenden Punkt) vor und wird
-beim Upload zum Webserver entsprechend umbenannt hochgeladen.
-
-
-<a name="upload"></a>
-#### Hochladen der Webseite zu einem Webserver
-
-Hier eine mögliche Variante mit `lftp` zum Hochladen der Webseite(n):
-
-Hinweis: Reihenfolge des Sprachen-Uploads beachten!
-
-    lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDocs; mirror -R en/book raspiBackupDocs; cd raspiBackupDocs ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
 
 
 ### Arbeiten an/in/mit dem Buch
