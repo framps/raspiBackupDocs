@@ -1,5 +1,9 @@
 # raspiBackup Dokumentation
 
+<!-- Hinweis:
+     Hier in der `README.md` und den anderen GitHub-Dateien wird *GitHub Flavored Markdown* verwendet.
+     Siehe z.B. https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+-->
 
 > [!NOTE]
 > Diese Dokumentation entsteht gerade erst.
@@ -23,10 +27,10 @@ Dies sind Textdateien, die sich gut bearbeiten und, zum Beispiel mit *git*, vers
 die sich mit Hilfe von Software gut in andere Formate umwandeln lassen.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
-ist natürlich noch etwas mehr "Drumherum" nötig.
+ist natürlich noch etwas mehr "Drumherum" nötig, das hier kurz beschrieben wird.
 
 > [!NOTE]
-> Im Folgenden nutze ich den Verzeichnis-/Projektnamen bzw. Teil der URL **raspiBackupDocs** an verschiedenen Stellen.
+> Im Folgenden wird in den Verzeichnis-/Projektnamen bzw. in der URL an verschiedenen Stellen **raspiBackupDocs** verwendet.
 > Das ist natürlich an die eigenen Bedürfnisse anpassbar.
 
 
@@ -106,8 +110,7 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 > Dann ist allerdings obiger Aufruf von `lftp` noch anzupassen, weil die Webseite schon in finaler Struktur vorliegt.
 
 
-> [!IMPORTANT]
-> **TODO**: URL der generierten Dokumentation besprechen und hier nachtragen.
+**TODO**: URL der generierten Dokumentation besprechen und hier nachtragen.
 
 
 
@@ -126,10 +129,8 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
 Siehe <https://rust-lang.github.io/mdBook/guide/creating.html>
 
-> [!NOTE]
-> *mdbook* verwendet den Markdown-"Dialekt"
-> Erweitertes CommonMark (<https://rust-lang.github.io/mdBook/format/markdown.html>),
-> der sich vom hier in der `README.md` verwendeten *GitHub Flavored Markdown* etwas unterscheidet!
+**Hinweis**: *mdbook* verwendet den Markdown-"Dialekt"
+Erweitertes CommonMark (<https://rust-lang.github.io/mdBook/format/markdown.html>).
 
 
 ### Das Inhaltsverzeichnis / Die Struktur des Buches
