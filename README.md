@@ -17,21 +17,25 @@
 
 ## Der Plan
 
-Die neue Dokumentation von raspiBackup könnte in Zukunft als eine Sammlung
-von thematisch aufgeteilten Dateien im Markdown-Format vorliegen.
+Die neue Dokumentation von raspiBackup könnte in Zukunft anders gestaltet sein.
+Nicht mehr als integraler Bestandteil eines CMS (Joomla), sondern als eigenständiges
+"Projekt".
 
-Dies sind Textdateien, die sich gut bearbeiten und, zum Beispiel mit *git*, versionieren lassen.
-Über ein Repository wäre dann auch eine Teamarbeit an der Dokumentation möglich (über *Pull-Requests*).
+Dafür bietet sich ein Repository von thematisch aufgeteilten Dateien
+in einer einfachen Auszeichnungssprache, z.B. *Markdown* an.
+
+Dies sind Textdateien, die sich gut bearbeiten und versionieren lassen.
+Über das Repository wäre dann sogar eine Teamarbeit an der Dokumentation möglich (über *Pull-Requests*).
 
 *Markdown* ist eine von vielen Auszeichnungssprachen,
 die sich mit Hilfe von Software gut in andere Formate umwandeln lassen.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
-ist natürlich noch etwas mehr "Drumherum" nötig, das hier kurz beschrieben wird.
+ist natürlich noch etwas mehr "Drumherum" nötig, das nun kurz beschrieben wird.
 
-> [!NOTE]
-> Im Folgenden wird in den Verzeichnis-/Projektnamen bzw. in der URL an verschiedenen Stellen **raspiBackupDocs** verwendet.
-> Das ist natürlich an die eigenen Bedürfnisse anpassbar.
+Aktuell werden hier *mdbook* zum Generieren und *GitHub Pages* (bzw. ein normaler Webserver) zum Anzeigen verwendet.
+Das ist Dank des Quelltext-Formats *Markdown* aber relativ leicht - auch nachträglich - änderbar.
+Mögliche Alternativen: [Sphinx](https://www.sphinx-doc.org/en/master/index.html), [MkDocs](https://www.mkdocs.org/), [readthedocs](https://readsthedocs.com/) und Einige mehr...
 
 
 ## Arbeitsablauf
