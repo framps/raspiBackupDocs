@@ -4,10 +4,8 @@ Folgende Informationen sind für Entwickler und technisch Interessierte.
 
 Entwickler, die die Dokumentation (auch) lokal generieren möchten, benötigen ein paar Tools.
 
-## Tools
-
 <a name="rust-compiler"></a>
-### Rust-Compiler
+## Rust-Compiler
 
 Ein Rust-Compiler ist Grundlage, da die weiteren Tools in Rust programmiert sind,
 und zumindest teilweise compiliert werden müssen.
@@ -23,7 +21,7 @@ Zum Beispiel beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.6
   - https://www.rust-lang.org/learn/get-started
 
 
-### Generator - mdbook
+## Generator - mdbook
 
 Das Wichtigste ist der "Generator", der die Markdown-Textdateien einliest und nach HTML umwandelt.
 
@@ -31,18 +29,18 @@ Ich habe erst einmal *mdbook* gewählt.
 Dieses Tools kommt aus dem Rust-Umfeld und wird auch für die Rust-Dokumentation selbst eingesetzt.
 Siehe <https://rust-lang.github.io/mdBook>
 
-#### Installation
+### Installation
 
 Siehe <https://rust-lang.github.io/mdBook/guide/installation.html>
 
 Kurzfassung hier:
 
-##### Binaries
+#### Binaries
 
 Für Apple, Windows und x86_64-Linux gibt es fertige Binaries zum Herunterladen.
 
 <a name="compile-from-sources"></a>
-##### Compilation aus den Quelltexten
+#### Compilation aus den Quelltexten
 
 Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren.
 <https://rust-lang.github.io/mdBook/guide/installation.html#build-from-source-using-rust>
@@ -63,7 +61,7 @@ Den gibt es aber nur per Quelltext:
 Das ganze Prozedere inklusive *Rust* dauert selbst auf einem Pi5 nur wenige Minuten!
 
 
-### Das Arbeitsverzeichnis und die Quelldateien
+## Das Arbeitsverzeichnis und die Quelldateien
 
 Offizielle Dokumentation:
 
@@ -117,7 +115,7 @@ mit diesem Inhalt in der `book.toml`:
         title = "Das erste Buch"
 
 
-### Generieren der Webseite
+## Generieren der Webseite
 
 Beim Aufruf von
 
@@ -126,7 +124,7 @@ Beim Aufruf von
 wird anhand der `SUMMARY.md` eine Webseite im Verzeichnis `book/` generiert.
 
 
-### Lokaler Webserver während der Entwicklung des Buches
+## Lokaler Webserver während der Entwicklung des Buches
 
 Zum lokalen Ansehen im Browser <http://localhost:3000> gibt es
 
@@ -145,7 +143,7 @@ Dieser Webserver bemerkt Änderungen an Dateien im Verzeichnis `src/` und generi
 so dass der lokalen Browser synchron ist (manchmal ist allerdings ein Auffrischen - F5 erforderlich).
 
 
-### Veröffentlichung
+## Veröffentlichung
 
 Wenn nun das Ergebnis im lokalen Webserver/Browser zufriedenstellend ist,
 muss die Webseite, also die Sammlung von HTML- und anderen Dateien im Verzeichnis `book/`,
@@ -157,7 +155,7 @@ Siehe [README.md](README.md)
 
 
 
-## Mögliche Fehlermeldungen
+# Mögliche Fehlermeldungen
 
 Da die Doku hier im Repository noch nicht fertig ist, kann es sein, dass beim `mdbook build` Fehler auftreten.
 

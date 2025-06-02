@@ -30,7 +30,7 @@ ist natürlich noch etwas mehr "Drumherum" nötig.
 > Das ist natürlich an die eigenen Bedürfnisse anpassbar.
 
 
-### Arbeitsablauf
+## Arbeitsablauf
 
 Der allgemeine Arbeitsablauf ist dann folgendermaßen:
 
@@ -41,9 +41,9 @@ Der allgemeine Arbeitsablauf ist dann folgendermaßen:
 
 Im Detail also ...
 
-#### ... für den Repo-Eigentümer (bzw. Webserver-Admin)
+### ... für den Repo-Eigentümer (bzw. Webserver-Admin)
 
-##### ... mit automatischer Generierung bei z.B. *GitHub Pages*
+#### ... mit automatischer Generierung bei z.B. *GitHub Pages*
 
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
   1. commit + push
@@ -56,7 +56,7 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
 
 
-##### ... mit Veröffentlichung auf einem (normalen) Webserver
+#### ... mit Veröffentlichung auf einem (normalen) Webserver
 
 Voraussetzungen beim lokalen Generieren:
 
@@ -111,7 +111,7 @@ Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung ges
 
 
 
-#### ... für andere Nutzer, die etwas beitragen möchten
+### ... für andere Nutzer, die etwas beitragen möchten
 
   1. Das Repository clonen/forken
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
@@ -122,7 +122,7 @@ Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung ges
 
 
 
-### Arbeiten an/in/mit dem Buch
+## Arbeiten an/in/mit dem Buch
 
 Siehe <https://rust-lang.github.io/mdBook/guide/creating.html>
 
@@ -132,7 +132,7 @@ Siehe <https://rust-lang.github.io/mdBook/guide/creating.html>
 > der sich vom hier in der `README.md` verwendeten *GitHub Flavored Markdown* etwas unterscheidet!
 
 
-#### Das Inhaltsverzeichnis / Die Struktur des Buches
+### Das Inhaltsverzeichnis / Die Struktur des Buches
 
 In der Datei `src/SUMMARY.md` (Groß-/Kleinschreibung ist relevant!) wird die Struktur des zu erzeugenden Buches erfasst.
 Und zwar durch einen "Baum" von Links mit Kapitelnamen und den dazugehörigen Dateien im Filesystem (src/*.md).
