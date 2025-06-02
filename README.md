@@ -58,14 +58,11 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
 #### ... mit Veröffentlichung auf einem (normalen) Webserver
 
-Voraussetzungen beim lokalen Generieren:
 
-Die Rust-Umgebung inkl. Compiler `rustc`, `mdbook` und der Präprozessor `mdbook-admonish` müssen installiert sein.
-
-Siehe [DEVELOPMENT.md](DEVELOPMENT.md).
-
-
-Danach geht's los:
+> [!IMPORTANT]
+> Voraussetzungen beim lokalen Generieren:
+> Die Rust-Umgebung inkl. Compiler `rustc`, `mdbook` und der Präprozessor `mdbook-admonish` müssen installiert sein.
+> Siehe [DEVELOPMENT.md](DEVELOPMENT.md).
 
   1. lokales Editieren von Markdown-Datei(en)
   1. lokales Generieren der Webseite(n)
@@ -96,18 +93,21 @@ Danach geht's los:
 
   1. commit + push
 
-Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung gestellt.
 
-> [!NOTE]
-> **TODO**: URL der generierten Dokumentation besprechen und hier nachtragen.
+> [!TIP]
+> Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung gestellt.
 
-> [!NOTE]
-> **Nachtrag**:
+
+> [!TIP]
 > Wenn unbedingt nötig, geht es auch ohne lokales Generieren:  
 > Man kann aus dem *GitGub Actions Workflow* die automatisch gebauten Artifacts herunterladen und auspacken.
 > Das ist dann die generierte Webseite.
 >
-> Dann ist allerdings obiger Aufruf von `lftp` noch anzupassen!
+> Dann ist allerdings obiger Aufruf von `lftp` noch anzupassen, weil die Webseite schon in finaler Struktur vorliegt.
+
+
+> [!IMPORTANT]
+> **TODO**: URL der generierten Dokumentation besprechen und hier nachtragen.
 
 
 
