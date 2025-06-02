@@ -58,7 +58,7 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
 
          lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDocs; mirror -R en/book raspiBackupDocs; cd raspiBackupDocs ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
 
-     Details zur Konfiguration des Webservers siehe [README.webserver.md](README.webserver.md)
+     Details zur Konfiguration des Webservers am Beispiel *Apache* siehe [README-apache.md](README-apache.md)
 
   1. commit + push
 
