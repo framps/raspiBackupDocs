@@ -16,6 +16,12 @@
 > insbesondere bezüglich Formatierung und Verlinkung.
 >
 > **Also dies hier bitte im Moment als Prototyp sehen!**
+>
+> Die generierte Dokumentation ist momentan über folgende Links zu erreichen:
+>
+>  - https://rpi-simonz.github.io/raspiBackupDocs/
+>  - https://rpi-simonz.github.io/raspiBackupDocs/de
+
 
 
 ## Der Plan
