@@ -167,3 +167,13 @@ Da die Doku hier im Repository noch nicht fertig ist, kann es sein, dass beim `m
 
    Siehe dazu oben bei [Compilation aus den Quelltexten](#compile-from-sources)
 
+
+# Alternativen
+
+Dank des Quelltext-Formats *Markdown* wäre es - auch nachträglich - möglich,
+auf ein anderes Produkt bzw. eine andere Zielplattform umzustellen.
+
+Mögliche Alternativen: [Sphinx](https://www.sphinx-doc.org/en/master/index.html), [MkDocs](https://www.mkdocs.org/), [readthedocs](https://readsthedocs.com/) und Einige mehr...
+
+Bisher hat sich aber *mdbook* als angenehm zu nutzen und sehr tauglich erwiesen.
+

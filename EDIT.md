@@ -7,6 +7,10 @@ Alle Inhalte befinden sich sprachabhängig in den Unterverzeichnissen
     `de/src/`
     `en/src/`
 
+Es sind Textdateien (im *Markdown*-Format), die sich mit jedem Texteditor bearbeiten lassen.
+
+Hilfreich ist aber ein Editor, der bei der Darstellung unterstützt. **TODO**: Beispiele.
+
 
 ## Das Inhaltsverzeichnis / Die Struktur der Dokumentation
 

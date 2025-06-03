@@ -38,14 +38,9 @@ ist natürlich noch etwas mehr "Drumherum" nötig, das nun kurz beschrieben wird
 
 Aktuell werden hier *mdbook* zum Generieren und *GitHub Pages* (bzw. ein normaler Webserver) zum Anzeigen verwendet.
 
-Das könnte bei Bedarf Dank des Quelltext-Formats *Markdown* aber relativ leicht - auch nachträglich -
-auf ein anderes Produkt umgestellt werden.
-Mögliche Alternativen: [Sphinx](https://www.sphinx-doc.org/en/master/index.html), [MkDocs](https://www.mkdocs.org/), [readthedocs](https://readsthedocs.com/) und Einige mehr...
-
-Bisher hat sich aber *mdbook* als sehr tauglich erwiesen.
 
 ## Weitere Details ...
 
   - [für Mitwirkende am Inhalt](CONTRIBUTE.md)
   - [für Maintainer](MAINTAIN.md)
-  - [für Entwicker und technisch Neugierige](DEVELOPMENT.md)
+  - [für Entwicker und technisch Neugierige](DEVELOP.md)
