@@ -1,7 +1,8 @@
 # Nutzung von Synology als Backupspace
 
 ``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/synology>
+- <https://linux-tips-and-tricks.de/de/synology>
+- <https://www.linux-tips-and-tricks.de/en/synology>
 ```
 
 

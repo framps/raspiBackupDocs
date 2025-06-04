@@ -1,5 +1,8 @@
 # Erweiterungsmöglichkeiten von raspiBackup
 
+- <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/442-raspibackup-erweiterungen>
+- <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/443-raspibackup-extensions>
+
 Es bestehen folgende Möglichkeiten die Funktionalität des Backupscripts durch eigenen Code zu erweitern.
 
 1. Benutzung eines selbstgeschriebenen Scriptes welches das Backupscript

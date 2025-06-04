@@ -1,4 +1,7 @@
 # Aufrufsyntax und -optionen
 
-Siehe [diese Seite, noch bei framp direkt](https://linux-tips-and-tricks.de/de/aufruf-und-optionen).
+Siehe diese Seiten:
+
+- <https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen>
+- <https://www.linux-tips-and-tricks.de/en/invocation-and-options>
 

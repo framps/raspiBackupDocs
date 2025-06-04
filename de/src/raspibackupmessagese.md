@@ -1,1 +1,0 @@
-# Fehlermeldungen, Ursachen und Aktionen

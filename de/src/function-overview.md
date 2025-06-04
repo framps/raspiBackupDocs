@@ -1,5 +1,8 @@
 # Funktionsübersicht
 
+- <https://www.linux-tips-and-tricks.de/de/funktionsuebersicht>
+- <https://www.linux-tips-and-tricks.de/en/features>
+
 Auf dieser Seite findet sich eine high Level übersicht zu raspiBackup. Detailiertere Informationen zu raspiBackup finden sich auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
 **Sichere Deine Raspberries**

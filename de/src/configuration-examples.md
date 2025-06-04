@@ -1,7 +1,8 @@
 # Konfigurationsbeispiele
 
 ``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/konfigurationsbeispiele>
+- <https://linux-tips-and-tricks.de/de/konfigurationsbeispiele>
+- <https://www.linux-tips-and-tricks.de/en/configuration-samples>
 ```
 
 Auf den folgenden Seiten werden verschiedene Anwendungsbeispiele von

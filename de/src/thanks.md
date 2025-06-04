@@ -1,5 +1,8 @@
 # Danksagungen
 
+- <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/456-danksagungen>
+- <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/457-credits>
+
 Mittlerweile haben so viele Leute aus der Community durch Kommentare,
 Erweiterungsvorschläge und Beta- und Fixtests zu raspiBackup beigetragen, dass
 es an der Zeit wird sie dankend zu nennen. Sich an alle rückwirkend zu erinnern

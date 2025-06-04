@@ -1,7 +1,8 @@
 # Rotationsstrategie
 
 ``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/rotationsstrategie>
+- <https://linux-tips-and-tricks.de/de/rotationsstrategie>
+- <https://www.linux-tips-and-tricks.de/en/smart-recycle>
 ```
 
 

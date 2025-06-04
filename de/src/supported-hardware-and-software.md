@@ -1,7 +1,8 @@
 # Unterstützte Hardware und Software
 
 ``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/raspibackupcategoried/608-unterstuetzte-hard-und-software/>
+- <https://linux-tips-and-tricks.de/de/raspibackupcategoried/608-unterstuetzte-hard-und-software/>
+- <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/609-supported-hard-and-software>
 ```
 
 

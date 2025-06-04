@@ -1,4 +1,5 @@
 ``` admonish info title="Work in progress"
+
 Diese Dokumentation entsteht gerade erst.
 Und zwar initial aus den Original-Texten der Webseite von framp.
 
@@ -12,6 +13,10 @@ mit dem Sprachwähler oben rechts umgeschaltet werden kann.
 (*Englisch* ist aktuell noch ziemlich "leer".)
 
 ```
+
+- <https://www.linux-tips-and-tricks.de/de/raspibackup>
+- <https://www.linux-tips-and-tricks.de/en/backup>
+
 
 # Einführung
 

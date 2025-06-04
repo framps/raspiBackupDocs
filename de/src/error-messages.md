@@ -1,5 +1,8 @@
 # Fehlermeldungen und -suche
 
+- <https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen>
+- <https://www.linux-tips-and-tricks.de/en/raspibackupmessagese>
+
 Die Fehlermeldungen sind i.d.Regel selbsterklärend. Informationsmeldungen haben
 eine Nummer, die mit I endet. Warnungsmeldungen enden mit W und Fehlermeldungen
 enden mit E. Eine Liste der am häufigsten auftretenden Fehlermeldungen mit

@@ -80,41 +80,10 @@
 
   - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
 
+- [English-only pages -- integration required]()
 
-# WORK-IN-PROGRESS - Originalseiten zur Recherche
+  - [How to restore single files or directories from the backup](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+  - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)
+  - [Manual restore of a tgz backup](manual-restore-of-a-tgz-backup.md)
+  - [/usr/sbin/NetworkManager: error while loading shared libraries: libhogweed.so.4: cannot open shared object file: No such file or directory](usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md)
 
-#  English-only pages ...
-
-  - [How to restore single files or directories from the backup](how-to-retrieve-single-files-or-directories-from-the-backup.md)  # https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/596-how-to-retrieve-single-files-or-directories-from-the-backup ←→
-  - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)  # https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/603-local-language-support-for-languages-other-than-de-and-en-l10n ←→
-  - [Manual restore of a tgz backup](manual-restore-of-a-tgz-backup.md)  # https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/646-raspibackup-manual-restore-of-a-tgz-backup ←→
-  - [/usr/sbin/NetworkManager: error while loading shared libraries: libhogweed.so.4: cannot open shared object file: No such file or directory](usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md)  # https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/677-usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory ←→
-
-## Doppelte Dateinamen
-
-  Häufige Fragen (FAQ) faq.md  # https://www.linux-tips-and-tricks.de/de/faq ←→ https://www.linux-tips-and-tricks.de/en/faq
-  Installation und Konfiguration in 5 Minuten  installation.md   # https://www.linux-tips-and-tricks.de/de/installation ←→ https://www.linux-tips-and-tricks.de/en/installation
-  How to restore single files or directories from the backup  how-to-retrieve-single-files-or-directories-from-the-backup.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/596-how-to-retrieve-single-files-or-directories-from-the-backup ←→
-  Local language support for languages other than DE and EN (L10N)  local-language-support-for-languages-other-than-de-and-en-l10n.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/603-local-language-support-for-languages-other-than-de-and-en-l10n ←→
-  Trinkgeld  donations.md  # https://www.linux-tips-and-tricks.de/de/trinkgeld ←→ https://www.linux-tips-and-tricks.de/en/donations
-  Wiederherstellen eines Backups  restore.md  # https://www.linux-tips-and-tricks.de/de/wiederherstellen ←→ https://www.linux-tips-and-tricks.de/en/restore
-  /usr/sbin/NetworkManager: error while loading shared libraries: libhogweed.so.4: cannot open shared object file: No such file or directory  usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/677-usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory ←→
-  Manual restore of a tgz backup  raspibackup-manual-restore-of-a-tgz-backup.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/646-raspibackup-manual-restore-of-a-tgz-backup ←→
-  raspiBackup Schnappschüsse (Snapshots)  snapshots.md  # https://www.linux-tips-and-tricks.de/de/snapshots ←→ https://www.linux-tips-and-tricks.de/en/snapshots
-
-## war schon erledigt
-
-  Tipps zu Homeautomation  anwendungstipps.md  # https://www.linux-tips-and-tricks.de/de/anwendungstipps ←→
-  Aufrufsyntax und Optionen  invocation-and-options.md  # https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen ←→ https://www.linux-tips-and-tricks.de/en/invocation-and-options
-  Einführung und Installation - Youtube Video in Deutsch  introductional-video.md  # https://www.linux-tips-and-tricks.de/de/einfuehrungsvideo ←→ https://www.linux-tips-and-tricks.de/en/introductional-video
-  Übersicht  features.md  # https://www.linux-tips-and-tricks.de/de/funktionsuebersicht ←→ https://www.linux-tips-and-tricks.de/en/features
-  Anwendungs- und Konfigurationsbeispiele  configuration-samples.md   # https://www.linux-tips-and-tricks.de/de/konfigurationsbeispiele ←→ https://www.linux-tips-and-tricks.de/en/configuration-samples
-  Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries  backup.md  # https://www.linux-tips-and-tricks.de/de/raspibackup ←→ https://www.linux-tips-and-tricks.de/en/backup
-  Nutzung von Synology als Backupspace  synology.md   # https://www.linux-tips-and-tricks.de/de/synology ←→ https://www.linux-tips-and-tricks.de/en/synology
-  Intelligente Rotationsstrategie  smart-recycle.md   # https://www.linux-tips-and-tricks.de/de/rotationsstrategie ←→ https://www.linux-tips-and-tricks.de/en/smart-recycle
-  Fehlermeldungen, Ursachen und Aktionen  raspibackupmessagese.md  # https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen ←→ https://www.linux-tips-and-tricks.de/en/raspibackupmessagese
-  Ubuntu Unterstützung  raspibackup-ubuntu-support.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/632-raspibackup-ubuntu-unterstuetzung ←→ https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/633-raspibackup-ubuntu-support
-  Erweiterungen (Plugins)  raspibackup-extensions.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/442-raspibackup-erweiterungen ←→ https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/443-raspibackup-extensions
-  Danksagungen  credits.md  # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/456-danksagungen ←→ https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/457-credits
-  Unterstützte Hardware und Software  supported-hard-and-software.md   # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/608-unterstuetzte-hard-und-software ←→ https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/609-supported-hard-and-software
-  Manuelle Installation und Konfiguration  raspibackup-manual-installation.md   # https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/538-raspibackup-manuelle-installation ←→ https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/539-raspibackup-manual-installation
