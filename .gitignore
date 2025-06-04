@@ -3,5 +3,6 @@
 book
 tmp.gh-pages
 theme.orig
+collect
 
 **/*.swp
