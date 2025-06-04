@@ -1,1 +1,0 @@
-# Unterstützte Hardware und Software

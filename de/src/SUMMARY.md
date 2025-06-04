@@ -36,7 +36,7 @@
 - [Backuptype und Entscheidungsbaum](backuptypes.md)
 - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
 - [Backupverzeichnisstruktur](backup-directory-structure.md)
-- [Rotationsstrategie](intelligent-rotation-strategy.md)
+- [Rotationsstrategie](smart-recycle.md)
 - [Snapshots](snapshots.md)
 
 - [Wiederherstellen/Restore](restore.md)

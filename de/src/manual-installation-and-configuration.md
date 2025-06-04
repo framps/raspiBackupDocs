@@ -1,7 +1,9 @@
 # Manuelle Installation und Konfiguration
 
+``` admonish note title="Quelle"
 - <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/538-raspibackup-manuelle-installation>
 - <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/539-raspibackup-manual-installation>
+```
 
 Die Installation mit dem [Installer](installation-in-5-minutes.md) ist die schnellste Methode.
 Man kann auch per Befehlszeile raspiBackup sehr schnell in einer Standardinstallation installieren.

@@ -1,7 +1,9 @@
 # Danksagungen
 
+``` admonish note title="Quelle"
 - <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/456-danksagungen>
 - <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/457-credits>
+```
 
 Mittlerweile haben so viele Leute aus der Community durch Kommentare,
 Erweiterungsvorschläge und Beta- und Fixtests zu raspiBackup beigetragen, dass

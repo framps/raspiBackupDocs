@@ -1,7 +1,9 @@
 # Fehlermeldungen und -suche
 
+``` admonish note title="Quelle"
 - <https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen>
 - <https://www.linux-tips-and-tricks.de/en/raspibackupmessagese>
+```
 
 Die Fehlermeldungen sind i.d.Regel selbsterklärend. Informationsmeldungen haben
 eine Nummer, die mit I endet. Warnungsmeldungen enden mit W und Fehlermeldungen
@@ -30,10 +32,6 @@ die [Hinweise](faq.md#faq12) wie Probleme berichtet werden können.
 
 ----------------------
 
-
-``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/raspibackupmeldungen>
-```
 
 Es gibt drei Typen von Meldungen:
 

@@ -1,7 +1,9 @@
 # Ubuntu-Unterstützung
 
+``` admonish note title="Quelle"
 - <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/632-raspibackup-ubuntu-unterstuetzung>
 - <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/633-raspibackup-ubuntu-support>
+```
 
 raspiBackup wurde bislang nur für RaspbianOS unterstützt. Mit dem Aufkommen der Raspi mit 8GB und der Raspberry400 ist Ubuntu ein gerne genutztes Betriebssystem auch auf der Raspberry. Deshalb wird raspiBackup im nächsten Release 0.6.9 auch Ubuntu Desktop und Ubuntu Server offiziell unterstützen.
 
