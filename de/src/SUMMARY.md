@@ -4,7 +4,7 @@
 
 [Kontakmöglichkeiten](contact.md)
 
-[Danksagungen](thanks.md)
+[Danksagungen](credits.md)
 
 [Trinkgeld](donations.md)
 

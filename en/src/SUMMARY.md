@@ -4,7 +4,7 @@
 
 [Contact](contact.md)   @BH
 
-[Thanks](thanks.md)    @BH
+[Thanks](credits.md)    @BH
 
 [Donations](donations.md)   @WS
 
