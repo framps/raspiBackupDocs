@@ -12,7 +12,7 @@ mit dem Sprachwähler oben rechts umgeschaltet werden kann.
 Während des Aufbaus befindet auf den meisten Seiten eine Quellenangabe, so wie hier direkt unterhalb.
 
 Wenn die Seiten dann (irgendwann) fertig sind, verschwinden diese Quellenabgaben
-in einem HTML-Kommentar. `<!-- ... -->`, so dass sie nur noch für den Entwickler
+in einem Kommentar, so dass sie nur noch für den Entwickler
 aber nicht mehr für den Leser sichtbar sind.
 ```
 
