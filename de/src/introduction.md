@@ -1,15 +1,19 @@
-``` admonish info title="Work in progress"
+``` admonish info title="Work in progress - In Arbeit"
 Diese Dokumentation entsteht gerade erst.
 Und zwar initial aus den Original-Texten der Webseite von framp.
 
-Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt",
+Aktuell ist die **Struktur noch nicht final** und auch viele Seiten noch "kaputt",
 insbesondere bezüglich Formatierung und Verlinkung.
-
-Also bitte zur Zeit nur als **Prototyp** bzw. **In Arbeit** sehen!
 
 Es gibt zwei Sprachversionen, *deutsch* und *englisch*, zwischen denen dynamisch
 mit dem Sprachwähler oben rechts umgeschaltet werden kann.
 (*Englisch* ist aktuell noch ziemlich "leer".)
+
+Während des Aufbaus befindet auf den meisten Seiten eine Quellenangabe, so wie hier direkt unterhalb.
+
+Wenn die Seiten dann (irgendwann) fertig sind, verschwinden diese Quellenabgaben
+in einem HTML-Kommentar. `<!-- ... -->`, so dass sie nur noch für den Entwickler
+aber nicht mehr für den Leser sichtbar sind.
 ```
 
 ``` admonish note title="Quelle"

@@ -1,8 +1,8 @@
 # Kontaktmöglichkeiten
 
-``` admonish note title="Quelle"
+<!--
 - <https://www.linux-tips-and-tricks.de/de/raspibackup>
-```
+-->
 
 * Klicke [![Github](images/icons/GitHub-Mark-32px.png)](https://github.com/framps/raspiBackup/issues),
   um auf Github Fragen oder Probleme zu raspiBackup als Issues zu erstellen.
