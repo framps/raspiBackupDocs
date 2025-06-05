@@ -5,6 +5,8 @@
 - <https://www.linux-tips-and-tricks.de/en/features> → <https://raspibackup.linux-tips-and-tricks.de/en/home/>
 ```
 
+TODO: Mit der anderen Funktionsbeschreibung konsolidieren.
+
 Auf dieser Seite findet sich eine high Level übersicht zu raspiBackup. Detailiertere Informationen zu raspiBackup finden sich auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
 **Sichere Deine Raspberries**

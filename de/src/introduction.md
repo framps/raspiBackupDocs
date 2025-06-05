@@ -1,5 +1,4 @@
 ``` admonish info title="Work in progress"
-
 Diese Dokumentation entsteht gerade erst.
 Und zwar initial aus den Original-Texten der Webseite von framp.
 
@@ -11,7 +10,6 @@ Also bitte zur Zeit nur als **Prototyp** bzw. **In Arbeit** sehen!
 Es gibt zwei Sprachversionen, *deutsch* und *englisch*, zwischen denen dynamisch
 mit dem Sprachwähler oben rechts umgeschaltet werden kann.
 (*Englisch* ist aktuell noch ziemlich "leer".)
-
 ```
 
 ``` admonish note title="Quelle"
@@ -19,10 +17,10 @@ mit dem Sprachwähler oben rechts umgeschaltet werden kann.
 - <https://www.linux-tips-and-tricks.de/en/backup>
 ```
 
+
 # Einführung
 
 raspiBackup - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
-
 
 raspiBackup ermöglicht eine Sicherung von Raspberries manuell oder automatisch
 in regelmäßigen Abständen von einem laufenden System zu erstellen. D.h. es wird
@@ -44,7 +42,6 @@ und mit dem USB Boot Modus gestartet werden.
 Bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
 -------------------
-
 
 # Zusammenfassung
 
@@ -91,9 +88,8 @@ von raspiBackup erfolgen in Deutsch oder Englisch
 
 # Einführungsvideo
 
-
-
-Nun habe ich mich endlich dazu durchgerungen auch mal ein [Video zu raspiBackup](https://youtu.be/PuK_FNK674s) zu erstellen und auf Youtube zu veröffentlichen.
+Nun habe ich (framp) mich endlich dazu durchgerungen, auch mal ein
+[Video zu raspiBackup](https://youtu.be/PuK_FNK674s) zu erstellen und auf Youtube zu veröffentlichen.
 
 Behandelte Themen sind
 
@@ -104,9 +100,9 @@ Behandelte Themen sind
 
 Die dort verwendeten Slides können zum Lesen [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download) runtergeladen werden.
 
-Nachdem ich das Einführungsvideo erstellt hatte,
-habe ich Gefallen am Erstellen von Videos gefunden
-ein viele weitere Vidoes zu allen möglichen Themen zu raspiBackup erstellt.
-Sie finden sich [hier](https://www.youtube.com/watch?v=VP5N_cDrUNU) auf youtube.
+Nachdem ich das Einführungsvideo erstellt hatte, habe ich Gefallen am Erstellen von Videos gefunden
+und viele weitere Vidoes zu allen möglichen Themen zu raspiBackup erstellt.
 
+Sie finden sich [hier auf YouTube](https://www.youtube.com/@raspiBackup).
 
+TODO: Check [Alter Link auf YouTube](https://www.youtube.com/watch?v=VP5N_cDrUNU).

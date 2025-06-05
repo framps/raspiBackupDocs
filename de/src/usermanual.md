@@ -5,7 +5,8 @@
 <https://linux-tips-and-tricks.de/en/backup>
 ```
 
-Auf Youtube existiert ein [Kanal zu raspiBackup](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg) mit Videos zu diversen Themen (Installation, Funktionsumfang, ...).
+Auf Youtube existiert ein [Kanal zu raspiBackup](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg)
+mit Videos zu diversen Themen (Installation, Funktionsumfang, ...).
 
 Für Freunde von Facebook exisitiert eine [Facebookgruppe zu raspiBackup](https://www.facebook.com/pages/raspiBackup/1390788211249738) wo
 aktuelle Neuigkeiten und Randinformationen zu raspiBackup publiziert werden.
@@ -24,9 +25,9 @@ Wo lese ich jetzt weiter?
 sofort ein Backup erstellt werden kann.**
 
 Wer sich einen schnellen Überblick über die Funktionalität von raspiBackup
-verschaffen will sollte die **TODO: Link reparieren** [Zusammenfassung](zusammenfassung.md) lesen. Im [FAQ Teil](faq.md) finden sich
-häufig gestellte Fragen sowie deren Antworten, die man sich immer durchlesen
-sollte.
+verschaffen will, sollte die [Zusammenfassung](introduction.md#zusammenfassung) lesen.
+Im [FAQ Teil](faq.md) finden sich häufig gestellte Fragen sowie deren Antworten,
+die man sich immer durchlesen sollte.
 
 Alle Funktionen und Einsatzgebiete von raspiBackup sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen. Wer raspiBackup installieren will findet

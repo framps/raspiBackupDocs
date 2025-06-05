@@ -80,10 +80,3 @@
 
   - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
 
-- [English-only pages -- integration required]()
-
-  - [How to restore single files or directories from the backup](how-to-retrieve-single-files-or-directories-from-the-backup.md)
-  - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)
-  - [Manual restore of a tgz backup](manual-restore-of-a-tgz-backup.md)
-  - [/usr/sbin/NetworkManager: error while loading shared libraries: libhogweed.so.4: cannot open shared object file: No such file or directory](usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md)
-
