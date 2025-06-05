@@ -9,13 +9,13 @@
 > Diese Dokumentation entsteht gerade erst.
 > Und zwar initial aus den Original-Texten der Webseite von framp.
 >
-> Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
-> Zum Wechseln der Sprache wird oben rechts ein kleines Globus-Icon vorhanden sein.
->
-> Aktuell ist die Struktur noch nicht final und auch viele Seiten noch "kaputt",
+> Aktuell ist die **Struktur noch nicht final** und auch viele Seiten noch "kaputt",
 > insbesondere bezüglich Formatierung und Verlinkung.
 >
-> **Also dies hier bitte im Moment als Prototyp sehen!**
+> Also dies hier bitte im Moment als **Noch in Arbeit** sehen!
+>
+> Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
+> Zum Wechseln der Sprache wird oben rechts ein kleines Globus-Icon vorhanden sein.
 >
 > Die generierte Dokumentation ist momentan über folgende Links zu erreichen:
 >
