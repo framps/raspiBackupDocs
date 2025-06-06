@@ -573,7 +573,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     Vor dem Restore die /etc/mke2fs.conf editieren und bei beiden ext4 Optionen
     das metadata_csum entfernen. Dann den Restore mit raspiBackup durchführen.
 
-    <!-- _ TODO: Workaround für Problem beim Syntax-Highlighting in vim-markdown (non-balanced-underlines -->
+    [.workaround]: _ "Probleme beim Syntax-Highlighting in vim-markdown bei non-balanced-underlines"
 
 
 26. <a name="faq26"></a>

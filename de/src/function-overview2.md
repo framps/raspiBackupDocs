@@ -5,7 +5,7 @@
 - <https://www.linux-tips-and-tricks.de/en/backup>
 ```
 
-TODO: Mit der anderen Funktionsbeschreibung konsolidieren.
+[.status]: todo "Mit der anderen Funktionsbeschreibung konsolidieren"
 
 - Automatische regelmäßige Sicherung einer laufenden Raspberry Pi (Sie sichert sich selbst)
 - Raspberry3 und Folgende wenn sie ohne SD Karte im USB boot mode betrieben werden sind unterstützt

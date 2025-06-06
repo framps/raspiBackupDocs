@@ -1,6 +1,6 @@
 # Weitere Backuptools als raspiBackup fuer die Raspberry
 
-**TODO: Links**
+[.status]: todo "Links"
 
 - rpi-clone: Sicherung einer Raspberry per rsync. Cmdlinetool
 - piclone: Klonen einer SD Karte per cp. Das UI ist im RaspbianOS Desktop enthalten. Keine Cmdlineversion.
