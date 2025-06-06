@@ -2,75 +2,76 @@
 
 ## Normaler Backup
 
-Jeder Backuplauf erstellt im Backupverzeichnis ein Unterverzeichnis welches
+Jeder Backuplauf erstellt im Backupverzeichnis ein Unterverzeichnis, welches
 folgendes Format hat: <hostname>. Darunter wird ein weiteres Verzeichnis
-<hostname>-<backuptyp>-<backupdatum> erstellt. Wenn man die Option -M benutzt
+<hostname>-<backuptyp>-<backupdatum> erstellt. Wenn man die Option `-M` benutzt,
 sieht der Unterordner wie folgt aus: <hostname>-<-M parameter> und darunter
 wird dann das weitere Verzeichnis <hostname>-<backuptyp>-<backupdatum>
 erstellt.
 
-Beispiele: Die Raspberry hat den Hostnamen raspberrypi und es wird ein dd
+Beispiele: Die Raspberry hat den Hostnamen `raspberrypi` und es wird ein `dd`
 Backup am 15.04.2016 um 22:29:00 erstellt. Dann wird ein Verzeichnis
-raspberrypi erstellt sowie ein Unterverzeichnis
-raspberrypi-dd-backup-20160415-222900. Gibt man als Parameter für die Option -M
-"Hello world" mit wird das Verzeichnis raspberrypi-Hello_world sowie das
-Unterverzeichnis raspberrypi-dd-backup-20160415-222900 erstellt.
+`raspberrypi` erstellt sowie ein Unterverzeichnis
+`raspberrypi-dd-backup-20160415-222900`. Gibt man als Parameter für die Option `-M
+"Hello world"` mit, wird das Verzeichnis `raspberrypi-Hello_world` sowie das
+Unterverzeichnis `raspberrypi-dd-backup-20160415-222900` erstellt.
 
 Anbei die Verzeichnisstruktur meines Backupservers, der in diesem Falle auch
 eine Raspberry Pi ist. Verschiedene Backuptypen können pro Pi kombiniert
 werden. Jedes Backup wird in einem neuen Unterverzeichnis abgelegt.
 
 Pro Raspberry System werden drei bzw fünf weitere Dateien immer zum
-eigentlichen Backup erstellt und sind notwendig für den Restore wenn es kein dd
+eigentlichen Backup erstellt und sind notwendig für den Restore, wenn es kein `dd`
 Backup ist:
 
-    .img - Bootpartition der SD Karte
-    .mbr - Master Boot Record der SD Karte
-    .sfdisk - Partitionslayout der SD Karte - Ausgabe des sfdisk Befehls
-    .blkid - (Partitionsorientierter Modus) - Ausgabe des blkid Befehls
-    .parted - (Partitionsorientierter Modus) - Ausgabe des parted Befehls
+  - .img - Bootpartition der SD Karte
+  - .mbr - Master Boot Record der SD Karte
+  - .sfdisk - Partitionslayout der SD Karte - Ausgabe des sfdisk Befehls
+  - .blkid - (Partitionsorientierter Modus) - Ausgabe des blkid Befehls
+  - .parted - (Partitionsorientierter Modus) - Ausgabe des parted Befehls
 
 
-    root@jessie:/mnt/backup/raspberrypi# tree -L 2
-    .
-    ├── raspberrypi-dd-backup-20160415-222900
-    │   └── raspberrypi-dd-backup-20160415-222900.img
-    ├── raspberrypi-rsync-backup-20160416-094106
-    │   ├── backup
-    │   ├── bin
-    │   ├── boot
-    │   ├── boot.bak
-    │   ├── dev
-    │   ├── etc
-    │   ├── home
-    │   ├── lib
-    │   ├── lost+found
-    │   ├── media
-    │   ├── mnt
-    │   ├── opt
-    │   ├── proc
-    │   ├── raspberrypi-backup.img
-    │   ├── raspberrypi-backup.mbr
-    │   ├── raspberrypi-backup.sfdisk
-    │   ├── raspiBackup.log
-    │   ├── raspiBackup.msg
-    │   ├── remote
-    │   ├── root
-    │   ├── run
-    │   ├── sbin
-    │   ├── selinux
-    │   ├── srv
-    │   ├── sys
-    │   ├── tmp
-    │   ├── usr
-    │   └── var
-    └── raspberrypi-tar-backup-20160415-204305
-        ├── raspberrypi-backup.img
-        ├── raspberrypi-backup.mbr
-        ├── raspberrypi-backup.sfdisk
-        ├── raspberrypi-tar-backup-20160415-204305.tar
-        ├── raspiBackup.log
-        └── raspiBackup.msg
+`root@jessie:/mnt/backup/raspberrypi# tree -L 2`
+
+     .
+     ├── raspberrypi-dd-backup-20160415-222900
+     │   └── raspberrypi-dd-backup-20160415-222900.img
+     ├── raspberrypi-rsync-backup-20160416-094106
+     │   ├── backup
+     │   ├── bin
+     │   ├── boot
+     │   ├── boot.bak
+     │   ├── dev
+     │   ├── etc
+     │   ├── home
+     │   ├── lib
+     │   ├── lost+found
+     │   ├── media
+     │   ├── mnt
+     │   ├── opt
+     │   ├── proc
+     │   ├── raspberrypi-backup.img
+     │   ├── raspberrypi-backup.mbr
+     │   ├── raspberrypi-backup.sfdisk
+     │   ├── raspiBackup.log
+     │   ├── raspiBackup.msg
+     │   ├── remote
+     │   ├── root
+     │   ├── run
+     │   ├── sbin
+     │   ├── selinux
+     │   ├── srv
+     │   ├── sys
+     │   ├── tmp
+     │   ├── usr
+     │   └── var
+     └── raspberrypi-tar-backup-20160415-204305
+         ├── raspberrypi-backup.img
+         ├── raspberrypi-backup.mbr
+         ├── raspberrypi-backup.sfdisk
+         ├── raspberrypi-tar-backup-20160415-204305.tar
+         ├── raspiBackup.log
+         └── raspiBackup.msg
 
 
 ## Partitionsorientierter Backup
@@ -152,3 +153,6 @@ Backup ist:
     ├── raspiBackup.log
     └── raspiBackup.msg
 
+
+[.status]: todo "Quelle"
+[.source]: todo

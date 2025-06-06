@@ -39,7 +39,7 @@
 - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
 - [Backupverzeichnisstruktur](backup-directory-structure.md)
 - [Rotationsstrategie](smart-recycle.md)
-- [Snapshots](snapshots.md)
+- [Snapshots](snapshots.md)  #@@
 
 - [Wiederherstellen/Restore](restore.md)
     - [Manueller Restore eines Backups](manual-restore.md)
