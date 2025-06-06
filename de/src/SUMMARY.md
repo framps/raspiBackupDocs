@@ -27,10 +27,10 @@
 
 - [Installation](installation.md)
     - [Installation in 5 Minuten](installation-in-5-minutes.md)
-    - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)  #@@
+    - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
     - [Updates](updates.md)
     - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
-    - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
+    - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)   # TODO
     - [Statistiken](statistics.md)
 
 - [Installation, Grundeinstellungen, Erstes Backup und Restore](installation-grundeinstellungen-erstes-backup-und-restore.md)
