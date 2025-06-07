@@ -64,15 +64,6 @@ Vorgängerversionen. **Deshalb lieber immer gleich dasselbe OS zum Restore nehme
   - [Manuelle Wiederherstellung eines Backups](manual-restore.md)
 
 
-### Inhaltsverzeichnis
-
-  - [Aufrufsyntax und -optionen](#usage-options)
-  - [Wiederherstellungsszenario für Windows- und Macbenutzer](#win-mac)
-  - [Wiederherstellungsszenario für Linuxbenutzer](#linux)
-  - [Beispielaufrufe](#examples)
-    - [Restore auf eine SD Karte](#sd-card)
-    - [Restore auf eine SD Karte und eine externe Partition](#sd-plus-extpart)
-
 
 <a name="usage-options"></a>
 ### Aufrufsyntax und -optionen
