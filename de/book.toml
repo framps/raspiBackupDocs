@@ -16,6 +16,7 @@ assets_version = "3.0.3" # do not edit: managed by `mdbook-admonish install`
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
+max-level = 3
 
 [output]
 
