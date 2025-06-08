@@ -5,16 +5,9 @@
  dass ein Upgrade geplant und durchgeführt werden kann. Bei dieser Prüfung
  werden auch ein paar Informationen übermittelt, die es ermöglichen, allgemeine
  Nutzungsdaten von *raspiBackup* zu ermitteln und sich einen Überblick über die
- jeweilige Nutzung zu verschaffen. Z.B. gibt es für den Januar 2022 folgende
- Nutzungsdaten von raspiBackup:
+ jeweilige Nutzung zu verschaffen.
 
-  - 1500 Aufrufe pro Tag im Mittel
-  - 2300 Aufrufe am Sonntag im Mittel
-  - `rsync` und `dd` werden jeweils zu 40% genutzt. `tar` wird zu 20% genutzt
-  - Partitionsorientierter Modus wird so gut wie nicht genutzt
-
-
-Die Informationen, die übertragen werden sind
+Die Informationen, die übertragen werden, sind
 
   - Release
   - Backuptyp
@@ -31,6 +24,13 @@ Das Senden dieser o.g. Informationen kann mit der Option
 
 in der Konfigurationsdatei `/usr/local/etc/raspiBackup.conf` ausgeschaltet werden.
 
+
+Z.B. gibt es für den Januar 2022 folgende Nutzungsdaten von raspiBackup:
+
+  - 1500 Aufrufe pro Tag im Mittel
+  - 2300 Aufrufe am Sonntag im Mittel
+  - `rsync` und `dd` werden jeweils zu 40% genutzt. `tar` wird zu 20% genutzt
+  - Partitionsorientierter Modus wird so gut wie nicht genutzt
 
 
 Im Monat Mai 2024 sehen die Nutzungsdaten wie folgt aus:

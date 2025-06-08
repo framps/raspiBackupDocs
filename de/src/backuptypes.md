@@ -1,5 +1,7 @@
 # Backupmethoden
 
+TODO: Heisst es nun "Backupmethoden" oder "Backuptypen"???
+
 Es gibt verschiedene Backupmethoden und eine jede hat ihre Vor- und Nachteile.
 Anbei eine Auflistung eben dieser für die verschiedenen unterstützten
 Backuptypen. Es können auch unterschiedliche Backupmethoden kombiniert werden.

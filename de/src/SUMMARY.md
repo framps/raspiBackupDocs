@@ -37,54 +37,48 @@ Dies ermöglicht einige kleine Kniffe:
 
 [Einführung](introduction.md)
 
-[Kontakmöglichkeiten](contact.md)
-
-[Danksagungen](credits.md)
+[Kontaktmöglichkeiten](contact.md)
 
 [Trinkgeld](donations.md)
 
 [Haftungsausschluss](legals.md)
 
-- [Funktionsübersicht von Website](function-overview.md)    @TODO
-- [Funktionsübersicht aus Benutzerhandbuch](function-overview2.md)    @TODO
-
-- [Benutzerhandbuch](usermanual.md)
+- [Funktionsübersicht](function-overview.md)
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
     - [Unterstützung für Raspberry Compute Module 4 und NVMe](support-for-raspberry-compute-module-4-and-nvme.md)
     - [Raspberry3 USB Boot Unterstützungstestmatrix](raspberry3-support-test-matrix.md)
-    - [Nutzung von WEBDAV als Backupziel für raspiBackup](nutzung-von-webdav-als-backupziel-fuer-raspibackup.md)
-    - [Nutzung einer AVM Fritzbox als Backupziel für raspiBackup](nutzung-einer-avm-fritzbox-als-backupziel-fuer-raspibackup.md)
 
 - [Sprachunterstützung](language-support.md)
 
-- [Installation](installation.md)
-    - [Installation in 5 Minuten](installation-in-5-minutes.md)
+- [Installation und erstes Backup](installation.md)
+    - [Schnellstart - Installation in 5 Minuten](installation-in-5-minutes.md)
     - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
+    - [Statistiken](statistics.md)
     - [Updates](updates.md)
+
+- [Wiederherstellen/Restore](restore.md)
+    - [Restore mittels raspiBackup](full-restore.md)
+    - [Manueller Restore](manual-restore.md)
+    - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+
+- [Mehr Details]()
+    - [Aufruf und Optionen](usage-and-options.md)
+    - [Backuptype und Entscheidungsbaum](backuptypes.md)
+    - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
+    - [Backupverzeichnisstruktur](backup-directory-structure.md)
+    - [Rotationsstrategie](smart-recycle.md)
+    - [Snapshots](snapshots.md)
+
     - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
     - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
-    - [Statistiken](statistics.md)
 
-- [Installation, Grundeinstellungen, Erstes Backup und Restore](installation-grundeinstellungen-erstes-backup-und-restore.md)
+    - [Konfigurationsbeispiele](configuration-examples.md)
+        - [Konfiguration von raspiBackup mit mSMTP für einen web.de Account](konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account.md)
+        - [exim4 konfigurieren](exim4-configuration.md)
+        - [nullmailer konfigurieren](nullmailer-configuration.md)
 
-- [Backuptype und Entscheidungsbaum](backuptypes.md)
-- [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
-- [Backupverzeichnisstruktur](backup-directory-structure.md)
-- [Rotationsstrategie](smart-recycle.md)
-- [Snapshots](snapshots.md)
-
-- [Wiederherstellen/Restore](restore.md)  #@WIP
-    - [Manueller Restore eines Backups](manual-restore.md)
-
-- [Konfigurationsbeispiele](configuration-examples.md)
-    - [Konfiguration von raspiBackup mit mSMTP für einen web.de Account](konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account.md)
-    - [exim4 konfigurieren](exim4-konfigurieren.md)
-    - [nullmailer konfigurieren](nullmailer-konfigurieren.md)
-
-- [Aufruf und Optionen](usage-and-options.md)
-
-- [Fragen und Antworten]()
+- [Fragen und Antworten](questions-and-answers.md)
     - [FAQ](faq.md)
     - [Allgemeine Fragen](general-questions.md)
     - [Welches Dateisystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
@@ -100,18 +94,30 @@ Dies ermöglicht einige kleine Kniffe:
     - [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [Nützliche Hilfsprogramme](useful-helper-scripts.md)
 
-- [Hilfreiche Links zum Thema Backup](helpful-links.md)
-- [Weitere Backuptools fuer die Raspberry](other-raspberry-backup-tools.md)
-- [Tipps zur Homeautomation](tips-homeautomation.md)
-- [Synology/NAS](synology-as-backupspace.md)
+- [Weitere Backup-Ziele](more-backupspaces.md)
+    - [Synology/NAS als Backupziel](synology-as-backupspace.md)
+    - [AVM Fritzbox als Backupziel](nutzung-einer-avm-fritzbox-als-backupziel-fuer-raspibackup.md)
+    - [WEBDAV als Backupziel](nutzung-von-webdav-als-backupziel-fuer-raspibackup.md)
+
 - [Ubuntu Support](ubuntu-support.md)
+- [Tipps zur Homeautomation](tips-homeautomation.md)
+
+- [Hilfreiche Links zum Thema Backup](helpful-links.md)
+- [Weitere Backuptools für die Raspberry Pis](other-raspberry-backup-tools.md)
 
 - [Internes]()
-  - [Versionshistorie](versionshistory.md)
-  - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
-  - [10 Jahre raspiBackup](10-years-raspibackup.md)
-  - [Ausgeführte Regressiontests vor der Veröffentlichung einer neuen Release](regressiontests-executed.md)
-  - [Entwicklungsumgebung](developmentenvironment.md)
+    - [Versionshistorie](version-history.md)
+    - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
+    - [10 Jahre raspiBackup](10-years-raspibackup.md)
+    - [Ausgeführte Regressiontests vor der Veröffentlichung einer neuen Release](regressiontests-executed.md)
+    - [Entwicklungsumgebung](developmentenvironment.md)
+    - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
 
-  - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
+
+```
+TO CHECK/TRANSLATE!
+
+  manual-restore-of-a-tgz-backup.md
+  usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md
+```
 

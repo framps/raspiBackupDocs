@@ -1,7 +1,5 @@
 # Updates
 
-# Updatestrategie
-
 Von Zeit zu Zeit wird eine neue Version von *raspiBackup* zum Download
 bereitgestellt, die neue Funktionen, Erweiterungen und kleine Fixes enthält.
 
