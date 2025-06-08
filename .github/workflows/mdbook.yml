@@ -44,14 +44,12 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/
-            ~/.cargo/registry/src/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
           # ~/.rustup
 
-          # hashFiles() below doesn't work?!
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/.Cargo.lock') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
           #restore-keys: |
           #  ${{ runner.os }}-build-${{ env.cache-name }}-
           #  ${{ runner.os }}-build-
