@@ -45,6 +45,7 @@ jobs:
           path: |
             ~/.cargo/bin/
             ~/.cargo/registry/index/
+            ~/.cargo/registry/src/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
           # ~/.rustup
