@@ -43,14 +43,14 @@ jobs:
           cache-name: cache-cargo-modules
         with:
           path: |
-            ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
+          # ~/.cargo/bin/
           # ~/.cargo/registry/src/
           # ~/.rustup
 
-          # the hashFiles always return an emtpy string here. Why? 
+          # the hashFiles always return an emtpy string here. Why?
           # key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_ADMONISH_VERSION }}-${{ env.MDBOOK_TOC_VERSION }}
           #restore-keys: |
