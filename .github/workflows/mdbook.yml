@@ -45,14 +45,14 @@ jobs:
           path: |
             ~/.cargo/bin/
             ~/.cargo/registry/index/
-            ~/.cargo/registry/src/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
+          # ~/.cargo/registry/src/
           # ~/.rustup
 
           # the hashFiles always return an emtpy string here. Why? 
           # key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${MDBOOK_VERSION}-${MDBOOK_ADMONISH_VERSION}-${MDBOOK_TOC_VERSION}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_ADMONISH_VERSION }}-${{ env.MDBOOK_TOC_VERSION }}
           #restore-keys: |
           #  ${{ runner.os }}-build-${{ env.cache-name }}-
           #  ${{ runner.os }}-build-
