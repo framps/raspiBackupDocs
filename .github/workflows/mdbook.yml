@@ -43,20 +43,16 @@ jobs:
           cache-name: cache-cargo-modules
         with:
           path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-          # ~/.cargo/registry/src/
-          # ~/.rustup
+            ~/.cargo/
+            ~/.rustup
 
           # the hashFiles always return an emtpy string here. Why?
           # key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_ADMONISH_VERSION }}-${{ env.MDBOOK_TOC_VERSION }}
-          #restore-keys: |
-          #  ${{ runner.os }}-build-${{ env.cache-name }}-
-          #  ${{ runner.os }}-build-
-          #  ${{ runner.os }}-
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - if: ${{ steps.cache-cargo.outputs.cache-hit != 'true' }}
         name: List the state
@@ -66,9 +62,9 @@ jobs:
       - name: Install mdBook
         run: |
           rustup update
-          cargo install --force --version ${MDBOOK_VERSION} mdbook
-          cargo install --force --version ${MDBOOK_ADMONISH_VERSION} mdbook-admonish
-          cargo install --force --version ${MDBOOK_TOC_VERSION} mdbook-toc
+          cargo install --version ${MDBOOK_VERSION} mdbook
+          cargo install --version ${MDBOOK_ADMONISH_VERSION} mdbook-admonish
+          cargo install --version ${MDBOOK_TOC_VERSION} mdbook-toc
 
       - name: Setup Pages
         id: pages
