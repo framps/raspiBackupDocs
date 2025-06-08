@@ -44,6 +44,7 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/
+            ~/.cargo/registry/src/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
