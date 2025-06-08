@@ -30,9 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Use pinned versions to allow caching (?)
-      MDBOOK_VERSION: 0.4.51
-      MDBOOK_ADMONISH_VERSION: "^1.20"
-      MDBOOK_TOC_VERSION: 0.14.2
+      # Don't use MDBOOK_... because those env variables give warnings in "mdbook build"
+      MDB_VERSION: 0.4.51
+      MDB_ADMONISH_VERSION: "^1.20"
+      MDB_TOC_VERSION: 0.14.2
     steps:
       - uses: actions/checkout@v4
 
@@ -48,7 +49,7 @@ jobs:
 
           # the hashFiles always return an emtpy string here. Why?
           # key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_ADMONISH_VERSION }}-${{ env.MDBOOK_TOC_VERSION }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.MDB_VERSION }}-${{ env.MDB_ADMONISH_VERSION }}-${{ env.MDB_TOC_VERSION }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -62,9 +63,9 @@ jobs:
       - name: Install mdBook
         run: |
           rustup update
-          cargo install --version ${MDBOOK_VERSION} mdbook
-          cargo install --version ${MDBOOK_ADMONISH_VERSION} mdbook-admonish
-          cargo install --version ${MDBOOK_TOC_VERSION} mdbook-toc
+          cargo install --version ${MDB_VERSION} mdbook
+          cargo install --version ${MDB_ADMONISH_VERSION} mdbook-admonish
+          cargo install --version ${MDB_TOC_VERSION} mdbook-toc
 
       - name: Setup Pages
         id: pages
