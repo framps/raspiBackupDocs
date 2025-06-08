@@ -43,14 +43,18 @@ jobs:
           cache-name: cache-cargo-modules
         with:
           path: |
-            ~/.rustup
-            ~/.cargo
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          # ~/.rustup
+
           # hashFiles() below doesn't work?!
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/.Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          #restore-keys: |
+          #  ${{ runner.os }}-build-${{ env.cache-name }}-
+          #  ${{ runner.os }}-build-
+          #  ${{ runner.os }}-
 
       - if: ${{ steps.cache-cargo.outputs.cache-hit != 'true' }}
         name: List the state
