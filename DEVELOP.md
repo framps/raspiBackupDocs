@@ -51,12 +51,13 @@ Wenn der `rustc`-Compiler dann installiert ist, wird *mdbook* installiert/compil
 
     cargo install mdbook
 
-Aktuell, aber eigentlich optional, sollte dann noch ein Präprozessor installiert werden,
-der in der Doku für schöneres Rendering von Hinweisen verwendet wird.
+Aktuell genutzt, aber eigentlich optional, sollten dann noch zwei Präprozessoren installiert werden.
+Sie werden in der Doku für schöneres Rendering von Hinweisen und zur Erzeugung lokaler Inhaltsverzeichnisse verwendet.
 
-Den gibt es aber nur per Quelltext:
+Diese gibt es aber nur per Quelltext:
 
     cargo install mdbook-admonish
+    cargo install mdbook-toc
 
 Das ganze Prozedere inklusive *Rust* dauert selbst auf einem Pi5 nur wenige Minuten!
 
@@ -113,6 +114,11 @@ mit diesem Inhalt in der `book.toml`:
         language = "en"
         src = "src"
         title = "Das erste Buch"
+
+
+## Editieren/Erstellen des Inhalts
+
+Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
 
 ## Generieren der Webseite

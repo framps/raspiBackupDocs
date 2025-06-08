@@ -4,6 +4,8 @@
 <https://linux-tips-and-tricks.de/de/raspibackup>
 <https://linux-tips-and-tricks.de/en/backup>
 ```
+[.status]: todo "check"
+
 
 Auf Youtube existiert ein [Kanal zu raspiBackup](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg)
 mit Videos zu diversen Themen (Installation, Funktionsumfang, ...).

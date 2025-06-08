@@ -49,4 +49,4 @@ Aktuell werden hier *mdbook* zum Generieren und *GitHub Pages* (bzw. ein normale
 
   - [für Mitwirkende am Inhalt](CONTRIBUTE.md)
   - [für Maintainer](MAINTAIN.md)
-  - [für Entwicker und technisch Neugierige](DEVELOP.md)
+  - [für Entwickler und technisch Neugierige](DEVELOP.md)

@@ -9,8 +9,10 @@ Der allgemeine Arbeitsablauf ist folgendermaßen:
   1. Generieren der Webseite (automatisch oder manuell)
   1. bei Bedarf weiter bei 1.
 
-Im Detail also ...
+Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
+
+Im Detail also ...
 
 ### ... für den Repo-Eigentümer (bzw. Webserver-Admin)
 
