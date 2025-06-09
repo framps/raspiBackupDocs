@@ -62,7 +62,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Manueller Restore](manual-restore.md)
     - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
 
-- [Mehr Details]()
+- [Details zum Aufruf und zur Konfiguration](details.md)
     - [Aufruf und Optionen](usage-and-options.md)
     - [Backuptype und Entscheidungsbaum](backuptypes.md)
     - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
@@ -90,7 +90,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Fehlermeldungen und -suche](error-messages.md)
 
-- [Hilfsprogramme]()
+- [Hilfsprogramme](helper-scripts.md)
     - [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [Nützliche Hilfsprogramme](useful-helper-scripts.md)
 
@@ -105,7 +105,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Hilfreiche Links zum Thema Backup](helpful-links.md)
 - [Weitere Backuptools für die Raspberry Pis](other-raspberry-backup-tools.md)
 
-- [Internes]()
+- [Internes](internals.md)
     - [Versionshistorie](version-history.md)
     - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
     - [10 Jahre raspiBackup](10-years-raspibackup.md)
