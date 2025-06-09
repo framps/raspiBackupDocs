@@ -23,6 +23,11 @@ max-level = 3
 [output.html]
 additional-css = ["mdbook-admonish.css", "language-picker.css"]
 site-url = "/raspiBackupDocs/"
+no-section-label = false
+git-repository-url = "https://github.com/rpi-simonz/raspiBackupDocs"
+git-repository-icon = "fa-github"
+# doesn't work when there are more than one language versions, unfortunately:
+edit-url-template = "https://github.com/rpi-simonz/raspiBackupDocs/edit/main/{path}"
 
 [output.html.fold]
 enable = true
