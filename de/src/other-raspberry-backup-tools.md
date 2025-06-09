@@ -1,4 +1,4 @@
-# Weitere Backuptools als raspiBackup fuer die Raspberry
+# Weitere Backuptools als raspiBackup für die Raspberry
 
 [.status]: todo "Links"
 

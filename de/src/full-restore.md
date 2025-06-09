@@ -27,10 +27,11 @@ Es wird ein Backup erstellt und dann auf einer anderen SD Karte restored.
 
 ------------------
 
-## Inhaltsverzeichnis
+Weitere Themen auf dieser Seite:
 
 <!-- toc -->
 
+------------------
 
 ## Wiederherstellungsszenario für Alle
 
