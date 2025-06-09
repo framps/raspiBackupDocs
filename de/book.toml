@@ -23,3 +23,6 @@ max-level = 3
 [output.html]
 additional-css = ["mdbook-admonish.css", "language-picker.css"]
 site-url = "/raspiBackupDocs/"
+
+[output.html.fold]
+enable = true
