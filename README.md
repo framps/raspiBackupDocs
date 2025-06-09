@@ -7,10 +7,12 @@
 
 > [!NOTE]
 > Diese Dokumentation entsteht gerade erst.
-> Und zwar initial aus den Original-Texten der Webseite von framp.
+> Und zwar initial durch Übertragung der Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup).
 >
-> Aktuell ist die **Struktur noch nicht final** und auch viele Seiten noch "kaputt",
-> insbesondere bezüglich Formatierung und Verlinkung.
+>  - Die **Struktur ist noch nicht final**.
+>  - Manche Seiten enthalten noch Formatierungsfehler.
+>  - Einige Seiten sind noch unvollständig und enthalten nur
+>    einen Link zur Originalseite.
 >
 > Also dies hier bitte im Moment als **Noch in Arbeit** sehen!
 >
@@ -19,8 +21,8 @@
 >
 > Die generierte Dokumentation ist momentan über folgende Links zu erreichen:
 >
->  - https://rpi-simonz.github.io/raspiBackupDocs/
 >  - https://rpi-simonz.github.io/raspiBackupDocs/de
+>  - https://rpi-simonz.github.io/raspiBackupDocs/
 
 
 

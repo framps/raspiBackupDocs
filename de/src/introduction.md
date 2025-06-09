@@ -1,19 +1,15 @@
 ``` admonish info title="Work in progress - In Arbeit"
 Diese Dokumentation entsteht gerade.
-Und zwar initial aus den Original-Texten der Webseite von framp.
+Und zwar initial durch Übertragung der Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup).
 
-Aktuell ist die **Struktur noch nicht final** und auch einige Seiten noch "kaputt",
-insbesondere bezüglich Formatierung und Verlinkung.
+ - Die **Struktur ist noch nicht final**.
+ - Manche Seiten enthalten noch Formatierungsfehler.
+ - Einige Seiten sind noch unvollständig und enthalten nur
+   einen Link zur Originalseite.
 
 Es gibt zwei Sprachversionen, *deutsch* und *englisch*, zwischen denen dynamisch
 mit dem Sprachwähler oben rechts umgeschaltet werden kann.
-(*Englisch* ist aktuell noch ziemlich "leer".)
-
-Während des Aufbaus befindet auf den meisten Seiten eine Quellenangabe.
-
-Wenn die Seiten dann fertig sind, verschwinden diese Quellenabgaben
-in einem Kommentar, so dass sie nur noch für den Entwickler
-aber nicht mehr für den Leser sichtbar sind.
+(*Englisch* ist aktuell ebenfalls noch ziemlich "leer".)
 ```
 
 
@@ -49,7 +45,7 @@ Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 
 ---
 
-Weitere Themen auf dieser Seite:
+Weitere Abschnitte auf dieser Seite:
 
 <!-- toc -->
 
