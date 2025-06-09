@@ -72,9 +72,9 @@ Dies ermöglicht einige kleine Kniffe:
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)
 
-- [Fragen und Antworten](questions-and-answers.md)
-    - [FAQ](faq.md)
-    - [Allgemeine Fragen](general-questions.md)
+- [Häufige Fragen / FAQ](faq.md)
+
+- [Weitere Fragen und Antworten](more-questions-and-answers.md)
     - [Welches Dateisystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
     - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
     - [Warum sollte man dd als Backupmethode besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-method.md)
@@ -99,7 +99,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Hilfreiche Links zum Thema Backup](helpful-links.md)
 - [Weitere Backuptools für die Raspberry Pis](other-raspberry-backup-tools.md)
 
-- [Internes](internals.md)
+- [Verschiedenes](any-other-business.md)
     - [Versionshistorie](version-history.md)
     - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
     - [10 Jahre raspiBackup](10-years-raspibackup.md)

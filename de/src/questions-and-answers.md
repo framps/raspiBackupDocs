@@ -1,3 +1,0 @@
-# Fragen und Antworten
-
-... in den weiteren Unterkapiteln ...
