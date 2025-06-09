@@ -1,61 +1,77 @@
-# Tipps für Homeautomation
-
-``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/anwendungstipps>
-```
+# Tipps zur Homeautomation
 
 Auf den folgenden Seiten werden Hinweise zu verschiedenen Anwendungen gegeben:
 Ob und welche Services zu stoppen und zu starten sind, welche Besonderheiten zu
 berücksichtigen sind, ob und welche Aktionen vor und nach dem Backup und/oder
 vor und nach dem Restore vorzunehmen sind.
 
-Diese Seite lebt vom Feedback der raspiBackup Nutzer die sich mit den
-jeweiligen Anwendungen auskennen und genau beschreiben können worauf bei den
+Diese Seite lebt vom Feedback der *raspiBackup* Nutzer, die sich mit den
+jeweiligen Anwendungen auskennen und genau beschreiben können, worauf bei den
 jeweiligen Anwendungen zu achten ist. Deshalb ist Feedback in Kommentaren
 erwünscht.
-raspiBackup Tipps für bestimmte Anwendungen
 
-OpenHAB
+## *raspiBackup* Tipps für bestimmte Anwendungen
 
-Funtioniert ohne Probleme. Siehe hier.
+### OpenHAB
 
-
-IOBroker
-
-IOBroker nutzt ACLs. Wer sein Backup auf eine Synology oder QNAP per nfs sichert muss das Sichern von ACLs ausschalten damit rsync nicht abbricht. Siehe dazu hier wie man das erreichen kann. Wenn man dann ein Backup wiederherstellt kann man mit iobroker fix die fehlenden ACLs wieder erstellen. Ausserdem sollte man den IOBroker vor dem Backup mit systemctl stop iobroker stoppen und nach dem Backup mit systemctl start iobroker wieder starten. Das kann man entweder direkt in der raspiBackup Konfigurationsdatei bei DEFAULT_START_SERVICES und DEFAULT_STOP_SERVICES eingeben oder man nutzt den raspiBackup Installer und wählt dort den IOBroker als Service aus der zu stoppen und zu starten ist. Der Installer generiert dann die entsprechenden Befehle in der Konfigurationsdatei.
+Funktioniert ohne Probleme. Siehe [hier](https://community.openhab.org/t/usage-of-raspibackup-within-openhabian/145926).
 
 
-FHEM
+### IOBroker
+
+IOBroker nutzt ACLs. Wer sein Backup auf eine Synology oder QNAP per nfs
+sichert, muss das Sichern von ACLs ausschalten, damit rsync nicht abbricht. Siehe
+dazu [FAQ24](faq.md#faq24), wie man das erreichen kann.
+
+Wenn man dann ein Backup wiederherstellt, kann man mit iobroker fix die
+fehlenden ACLs wieder erstellen. Ausserdem sollte man den IOBroker vor dem
+Backup mit systemctl stop iobroker stoppen und nach dem Backup mit systemctl
+start iobroker wieder starten. Das kann man entweder direkt in der
+*raspiBackup* Konfigurationsdatei bei DEFAULT_START_SERVICES und
+DEFAULT_STOP_SERVICES eingeben oder man nutzt den *raspiBackup* Installer und
+wählt dort den IOBroker als Service aus, der zu stoppen und zu starten ist. Der
+Installer generiert dann die entsprechenden Befehle in der Konfigurationsdatei.
+
+
+### FHEM
 
 FHEM nutzt keine ACLs.
 
-FHEM läuft als System Service und taucht somit im Installer als Service auf und kann dort einfach mit M3->C6 ausgewählt werden so dass FHEM vor dem Backup gestoppt und am Ende wieder gestartet wird.
+FHEM läuft als System Service und taucht somit im Installer als Service auf und
+kann dort einfach mit M3->C6 ausgewählt werden, so dass FHEM vor dem Backup
+gestoppt und am Ende wieder gestartet wird.
 
- Wer es manuell in der Config konfigurieren will muss folgende Befehle aufnehmen:
+Wer es manuell in der Config konfigurieren will muss folgende Befehle aufnehmen:
 
 systemctl stop fhem
 
 bei DEFAULT_STOPSERVICES
 
-bzw
+bzw.
 
 systemctl start fhem
 
 bei DEFAULT_STARTSERVICES
 
 
-SmartHomeNG
+### SmartHomeNG
 
-SmartHomeNG läuft als System Service und taucht somit im Installer als Service auf und kann dort einfach mit M3->C6 ausgewählt werden so dass SmartHomeNG vor dem Backup gestoppt und am Ende wieder gestartet wird.
+SmartHomeNG läuft als System Service und taucht somit im Installer als Service
+auf und kann dort einfach mit M3->C6 ausgewählt werden, so dass SmartHomeNG vor
+dem Backup gestoppt und am Ende wieder gestartet wird.
 
-Wer es manuell in der Config konfigurieren will muss folgende Befehle aufnehmen:
+Wer es manuell in der Config konfigurieren will, muss folgende Befehle aufnehmen:
 
 systemctl stop smarthome
 
 bei DEFAULT_STOPSERVICES
 
-bzw
+bzw.
 
 systemctl start smarthome
 
 bei DEFAULT_STARTSERVICES
+
+
+[.status]: done
+[.source]: https://linux-tips-and-tricks.de/de/anwendungstipps

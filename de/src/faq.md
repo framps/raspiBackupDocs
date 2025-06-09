@@ -1,32 +1,27 @@
 # Häufige Fragen (FAQ)
 
-``` admonish note title="Quelle"
-<https://linux-tips-and-tricks.de/de/faq>
-```
-
-Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich einmal alle Fragen und Antworten durchlesen.
-
+Häufige Fragen zu *raspiBackup*. Jeder neue Benutzer von *raspiBackup* sollte sich einmal alle Fragen und Antworten durchlesen.
 
 ## Übersicht
 
-* [Wie entstand raspiBackup?](#faq0)
-<!-- Workaround für not allowed ordered-list-entry "0" -->
+* [Wie entstand *raspiBackup*?](#faq0)
+<!-- Workaround for disallowed ordered-list-entry "0" -->
 
 1. [Ist ein Backup eines laufenden Systems zuverlässig? Sollte nicht das gesamte System vor dem Backup gestoppt werden?](#faq1)
 2. [Wie kann ich ein Backup wiederherstellen](#faq2)?
-3. [Was kann raspiBackup alles sichern und wiederherstellen?](#faq3)
+3. [Was kann *raspiBackup* alles sichern und wiederherstellen?](#faq3)
 4. [Welche Linux Sicherungsmethoden stehen zur Verfügung?](#faq4)
-5. [Kann man die Sicherung auch ohne raspiBackup wiederherstellen?](#faq5)
-6. [Kann man die Sicherungen mit raspiBackup auch auf kleiner und größere SD Karten wiederherstellen?](#faq6)
+5. [Kann man die Sicherung auch ohne *raspiBackup* wiederherstellen?](#faq5)
+6. [Kann man die Sicherungen mit *raspiBackup* auch auf kleiner und größere SD Karten wiederherstellen?](#faq6)
 7. [Wie kann ich die Partitionierung der Ziel SD Karte beeinflussen?](#faq7)
-8. [Auf welchen Medien kann man mit raspiBackup die Backups ablegen?](#faq8)
-9. [Wie kann ich die Funktion von raspiBackup noch erweitern und zusätzlich etwas vor oder nach dem Backup und/oder Restore ausführen lassen?](#faq9)
-10. [Welche eMailClients werden von raspiBackup unterstützt?](#faq10)
-11. [Mein eMailClient wird leider nicht von raspiBackup unterstützt. Wie kann ich trotzdem eMails erhalten?](#faq11)
-12. [Ich habe eine Frage zu oder Problem mit raspiBackup. Wie bekomme ich Hilfe?](#faq12)
-13. [Ich habe einen Fehler in raspiBackup gefunden. Wo kann ich den Fehler melden und wann bekomme ich einen Fix dafür?](#faq13)
-14. [Bekomme ich irgendwie automatisch mit dass es eine neue Version von raspiBackup gibt?](#faq14)
-15. [Wie kann ich auf eine vorhergehende raspiBackup Version zurückgehen wenn ich nach einem Upgrade bemerke, dass die neue Version nicht so funktioniert wie ich es erwarte?](#faq15)
+8. [Auf welchen Medien kann man mit *raspiBackup* die Backups ablegen?](#faq8)
+9. [Wie kann ich die Funktion von *raspiBackup* noch erweitern und zusätzlich etwas vor oder nach dem Backup und/oder Restore ausführen lassen?](#faq9)
+10. [Welche eMailClients werden von *raspiBackup* unterstützt?](#faq10)
+11. [Mein eMailClient wird leider nicht von *raspiBackup* unterstützt. Wie kann ich trotzdem eMails erhalten?](#faq11)
+12. [Ich habe eine Frage zu oder Problem mit *raspiBackup*. Wie bekomme ich Hilfe?](#faq12)
+13. [Ich habe einen Fehler in *raspiBackup* gefunden. Wo kann ich den Fehler melden und wann bekomme ich einen Fix dafür?](#faq13)
+14. [Bekomme ich irgendwie automatisch mit dass es eine neue Version von *raspiBackup* gibt?](#faq14)
+15. [Wie kann ich auf eine vorhergehende *raspiBackup* Version zurückgehen wenn ich nach einem Upgrade bemerke, dass die neue Version nicht so funktioniert wie ich es erwarte?](#faq15)
 16. [Ich habe eine 32GB SD Karte wovon ich nur 8GB benötige. Ein dd Backup sichert aber immer 32GB, d.h 24GB zu viel.](#faq16)
 17. [Wie kann ich feststellen, dass der rsync tatsächlich Backup Hardlinks benutzt um Speicherplatz zu sparen?](#faq17)
 18. [Welche Services muss man vor dem Backup stoppen und anschliessend wieder starten?](#faq18)
@@ -41,34 +36,34 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 27. [Ich habe ein tar oder rsync Backup und möchte das in ein dd Backup umwandeln. Geht das?](#faq27)
 28. [Wieso verschwinden Dateiänderungen nach einem Reboot wieder von einem zurückgespieltem Backup?](#faq28)
 29. [Ich bekomme die Meldung rsync: chown "(datei-fad)" failed: Operation not permitted (1). Wie kann ich das lösen?](#faq29)
-30. [Mir gefällt raspiBackup und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?](#faq30)
-31. [Ich bekomme eine Fehlermeldung von raspiBackup. Was kann ich tun um sie zu beseitgen?](#faq31)
+30. [Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?](#faq30)
+31. [Ich bekomme eine Fehlermeldung von *raspiBackup*. Was kann ich tun um sie zu beseitgen?](#faq31)
 32. [Nach dem Upgrade auf v0.6.3.2 bekomme ich Fehlermeldungen RBK0021E: Backupprogramm des Typs tar beendete sich mit RC 1 oder RBK0021E: Backupprogramm des Typs rsync beendete sich mit RC 23.](#faq32)
 33. [Ich habe einen Cubieboard, Banana Pi, Odroid, Hummingboard, oder Beagle Board. Kann nraspiBackup diese auch sichern?](#faq33)
 34. [Ich möchte mein 16GB dd Backup zurückspielen und bekommen die Meldung dass die Ziel SDKarte zu klein ist. Wieso?](#faq34)
-35. [Ich möchte mein Rootfilesystem auf eine USB Platte verschieben. Kann ich das mit raspiBackup beim Restore machen?](#faq35)
-36. [Was bedeuten die Returncodes (RC) mit denen raspiBackup im Fehlerfalle endet?](#faq36)
+35. [Ich möchte mein Rootfilesystem auf eine USB Platte verschieben. Kann ich das mit *raspiBackup* beim Restore machen?](#faq35)
+36. [Was bedeuten die Returncodes (RC) mit denen *raspiBackup* im Fehlerfalle endet?](#faq36)
 37. [Der eMail Betreff hat manchmal am Anfang ein Smiley. Was bedeuten sie?](#faq37)
-38. [Wo kann ich Fragen stellen und Hilfe bekommen zu Linuxfragen und -problemen die im eigentlichen Sinne nichts mit raspiBackup zu tun haben?](#faq38)
+38. [Wo kann ich Fragen stellen und Hilfe bekommen zu Linuxfragen und -problemen die im eigentlichen Sinne nichts mit *raspiBackup* zu tun haben?](#faq38)
 39. [Wo finde ich das Debuglog von raspiBackup?](#faq39)
 40. [Wie kann ich meine Konfigurationsdatei nach einem Versionsupdate auf den neuesten Stand bringen?](#faq40)
 41. [Wo finde ich das Debuglog von raspiBackup?](#faq41)
 42. [Wo können die /boot und /root Partition liegen (SD Karte und SSD bzw Platte)](#faq42)
-43. [Wie finde ich alle Dokumentationsseiten zu raspiBackup bzw Seiten zu einem speziellen Thema?](#faq43)
+43. [Wie finde ich alle Dokumentationsseiten zu *raspiBackup* bzw Seiten zu einem speziellen Thema?](#faq43)
 44. [Warum startet das Image mit dem restorten Backup nicht.?](#faq44)
 45. [Wie kann ich temporär im Aufruf Optionen an- und ausschalten?](#faq45)
 46. [Warum ist es nicht zu empfehlen den Backuptyp dd zu benutzen?](#faq46)
-47. [Wo bekomme ich Hilfe bei Linuxfragen oder -problemen die nichts mit raspiBackup im eigentlichen Sinne zu tun haben?](#faq47)
+47. [Wo bekomme ich Hilfe bei Linuxfragen oder -problemen die nichts mit *raspiBackup* im eigentlichen Sinne zu tun haben?](#faq47)
 48. [Kann ich einen Backup auf ein laufendes System zurückspielen?](#faq48)
 49. [Mein Backup welche ist auch SD Karte restored habe startet nicht. Warum nicht?](#faq49)
 50. [Mein Backup dauert ewig. Woran kann das liegen?](#faq50)
 51. [Wie werden die Statistiken der Fortschrittsanzeige berechnet ?](#faq51)
 52. [Wie kann ich eine Testversion oder einen temporären Fix aus dem github downloaden und ausführen?](#faq52)
-53. [Was sind raspiBackup Snapshots?](#faq53)
+53. [Was sind *raspiBackup* Snapshots?](#faq53)
 54. [Wie kann ich auf die boot Partitionsdateien im Backupverzeichnis zugreifen?](#faq54)
 55. [Warum habe ich pötzlich PARTUUIDs doppelt auf meinem System?](#faq55)
-56. [Wie kann ich raspiBackup auf einem unsupporteten System automatisch starten lassen?](#faq56)
-57. [Wie kann ich raspiBackup auf ein neues Release updaten?](#faq57)
+56. [Wie kann ich *raspiBackup* auf einem unsupporteten System automatisch starten lassen?](#faq56)
+57. [Wie kann ich *raspiBackup* auf ein neues Release updaten?](#faq57)
 58. [Was muß ich beachten wenn ich mit rsync auf eine nfs gemountete Backuppartition sichern will?](#faq58)
 59. [rsync meldet dass Dateien während des Backuprozesses am System verschwunden sind und bricht mit Returncode 24 ab. Wie kann ich das verhindern?](#faq59)
 
@@ -78,7 +73,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 ## Details
 
 * <a name="faq0"></a>
-   **Wie entstand raspiBackup?**
+   **Wie entstand *raspiBackup*?**
 
    Bei mir laufen zu Hause drei Raspis. Zwei davon 7/24 - also rund um die Uhr.
    Ein jeder Server sollte regelmäßig gesichert werden denn es können immer mal
@@ -92,7 +87,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
    und -space zu sparen. Nachdem ich dann mehrere Male eine Wiederherstellung
    vornehmen musste und alles gut klappte dachte ich mir dass es vielleicht
    auch anderen Raspberryfreunden hilfreich sein könnte und publizierte
-   raspiBackup. Siehe auch 10 Jahre raspiBackup
+   *raspiBackup*. Siehe auch [10 Jahre *raspiBackup*](10-years-raspibackup.md)
 
 
 1. <a name="faq1"></a>
@@ -114,25 +109,25 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 2. <a name="faq2"></a>
    **Wie kann ich ein Backup wiederherstellen?**
 
-   Mit raspiBackup kann jedes Backup wieder zurückgespielt werden (Siehe hier
+   Mit *raspiBackup* kann jedes Backup wieder zurückgespielt werden (Siehe hier
    die Details). Es wird aber ein Linux benötigt. Als Windowsbenutzer kann man
    win32diskimager benutzen um dd Backups wiederherzustellen. Für andere
    Backuptypen wie tar oder rsync ist ein Linux notwendig.
 
    Allerdings kann man dazu die Raspberry benutzen: Man bespielt eine neue SD
-   Karte mit Raspbian und kopiert darauf raspiBackup. Dann schließt man einen
+   Karte mit Raspbian und kopiert darauf *raspiBackup*. Dann schließt man einen
    externen SD Kartenleser, in die man eine SD Karte, die den Restore erhalten
    soll, einschiebt - sowie das Medium mit dem Backup an die Raspberry an.
-   Danach ruft man raspiBackup auf und läßt ein gewünschtes Backup auf die
+   Danach ruft man *raspiBackup* auf und läßt ein gewünschtes Backup auf die
    externe SD Karte zurückschreiben. Anschliessend fährt man das System runter,
    legt die SD Karte mit dem zurückgespielten Backup ein und startet die
    Raspberry wieder.
 
 
 3. <a name="faq3"></a>
-   **Was kann raspiBackup alles sichern und wiederherstellen?**
+   **Was kann *raspiBackup* alles sichern und wiederherstellen?**
 
-   Im normalen Modus kann raspiBackup entweder zwei Partitionen sichern mit tar
+   Im normalen Modus kann *raspiBackup* entweder zwei Partitionen sichern mit tar
    oder rsync: Die Boot und die Rootpartition die auf der SD Karte liegen. Wenn
    die Rootpartition auf ein externes Medium verlagert wurde wird auch die
    externe Rootpartition gesichert. Mit dem dd Backup wird die gesamte SD Karte
@@ -151,9 +146,9 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 5. <a name="faq5"></a>
-   **Kann man die Sicherung auch ohne raspiBackup wiederherstellen?**
+   **Kann man die Sicherung auch ohne *raspiBackup* wiederherstellen?**
 
-   Das ist eine Grundvoraussetzung für raspiBackup gewesen: Es muss möglich
+   Das ist eine Grundvoraussetzung für *raspiBackup* gewesen: Es muss möglich
    sein das Backup mit entprechenden Linuxkenntnissen zu Fuss restoren zu
    können.
 
@@ -165,7 +160,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 6. <a name="faq6"></a>
-   **Kann man die Sicherungen mit raspiBackup auch auf kleiner und größere SD Karten wiederherstellen?**
+   **Kann man die Sicherungen mit *raspiBackup* auch auf kleiner und größere SD Karten wiederherstellen?**
 
    Beim dd Backuptyp muss man nach den Restore auf eine größere SD Karte mit
    Linux Repartitionierungstools nach der Wiederherstellung die Paritionsgröße
@@ -199,18 +194,18 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 7. <a name="faq7"></a>
    **Wie kann ich die Partitionierung der Ziel SD Karte beeinflussen?**
 
-   Es gibt zwei Optionen die das Partitionierungsverhalten von raspiBackup
-   beeinflussen: Option -1 (eins) zwingt raspiBackup die Partitionierung der
+   Es gibt zwei Optionen die das Partitionierungsverhalten von *raspiBackup*
+   beeinflussen: Option -1 (eins) zwingt *raspiBackup* die Partitionierung der
    Backup SD Karte auf die Ziel SD Karte zu erstellen auch wenn die Partitionen
    kleiner oder größer als die Ziel SD Karte sind. Mit der Option -0 (Null)
-   nimmt raspiBackup keine Paritionierung vor und verwendet die existiernde
+   nimmt *raspiBackup* keine Paritionierung vor und verwendet die existiernde
    Partition der Ziel SD Karte. Somit kann man vor dem Restore die Partitionen
    anlegen und formatieren wie man sie haben möchte und diese wird dann von
-   raspiBackup benutzt.
+   *raspiBackup* benutzt.
 
 
 8. <a name="faq8"></a>
-   **Auf welchen Medien kann man mit raspiBackup die Backups ablegen?**
+   **Auf welchen Medien kann man mit *raspiBackup* die Backups ablegen?**
 
    Generell auf jedem Device welches unter Linux gemounted werden kann
 
@@ -225,7 +220,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 9. <a name="faq9"></a>
-   **Wie kann ich die Funktion von raspiBackup noch erweitern und zusätzlich
+   **Wie kann ich die Funktion von *raspiBackup* noch erweitern und zusätzlich
    etwas vor oder nach dem Backup und/oder Restore ausführen lassen?**
 
    Da gibt es verschiedene Möglichkeiten:
@@ -234,24 +229,24 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
      Backuplauf weitere Aktionen vor wie z.B. weitere Dinge zu sichern.
 
    - Beliebige Erweiterungspunkte (Extensions) können vor und nach dem Backup
-     und/oder restore von raspiBackup aufgerufen werden. Zwei
+     und/oder restore von *raspiBackup* aufgerufen werden. Zwei
      Beispielerweiterungen (Siehe hier) melden zusätzlich die CPU Temperatur vor
      und nach dem Backuplauf sowie den belegten Hauptspeicher. Eine
      eMailExtension erlaubt es beliebige andere eMailClients anzusteuern.
 
 
 10. <a name="faq10"></a>
-    **Welche eMailClients werden von raspiBackup unterstützt?**
+    **Welche eMailClients werden von *raspiBackup* unterstützt?**
 
-    raspiBackup unterstützt exim4, postfix und nullmailer, ssmtp, msmtp und
+    *raspiBackup* unterstützt exim4, postfix und nullmailer, ssmtp, msmtp und
     sendEmail. Andere eMailClients können über ein eMail Erweiterung (Extension)
     angesprochen werden (Details siehe hier).
 
 
 11. <a name="faq11"></a>
-    **Mein eMailClient wird leider nicht von raspiBackup unterstützt. Wie kann ich trotzdem eMails erhalten?**
+    **Mein eMailClient wird leider nicht von *raspiBackup* unterstützt. Wie kann ich trotzdem eMails erhalten?**
 
-    raspiBackup kann eine eMailErweiterung (extension plugpoint) zum Senden der
+    *raspiBackup* kann eine eMailErweiterung (extension plugpoint) zum Senden der
     eMail benutzen. Dazu muss ein kleines Script geschrieben werden, welches die
     eMailParameter entsprechende dem verwendeteten eMailClient aufbereitet und
     den eMailClient mit der korrekten Syntax aufruft. Eine Beispielerweiterung
@@ -259,9 +254,9 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 12. <a name="faq12"></a>
-    **Ich habe eine Frage zu oder ein Problem mit raspiBackup. Wie bekomme ich Hilfe?**
+    **Ich habe eine Frage zu oder ein Problem mit *raspiBackup*. Wie bekomme ich Hilfe?**
 
-    Eines vorweg: Die Betonung liegt auf raspiBackup Fragen. Für Linuxfragen
+    Eines vorweg: Die Betonung liegt auf *raspiBackup* Fragen. Für Linuxfragen
     oder -probleme siehe FAQ38 und FAQ47.
 
     Es gibt verschiedene Optionen:
@@ -271,7 +266,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
       Registrierung notwendig. Diese sowie die Benutzung von github ist kostenlos.
 
     - Im Raspberry Forum gibt es ein Unterforum zu Backups wo Fragen zu
-      raspiBackup gestellt und Probleme berichtet werden können. Ich werde über
+      *raspiBackup* gestellt und Probleme berichtet werden können. Ich werde über
       alle neuen Threads informiert und werde mich dem Thread widmen.
 
     - Am Ende jeder Webseite können Kommentare erstellt werden. Diese sind ideal
@@ -291,17 +286,17 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 13. <a name="faq13"></a>
-    **Ich habe einen Fehler in raspiBackup gefunden. Wo kann ich den Fehler melden und wann bekomme ich einen Fix dafür?**
+    **Ich habe einen Fehler in *raspiBackup* gefunden. Wo kann ich den Fehler melden und wann bekomme ich einen Fix dafür?**
 
-    Wie in jeder Software kann es vorkommen, dass auch raspiBackup Fehler hat.
+    Wie in jeder Software kann es vorkommen, dass auch *raspiBackup* Fehler hat.
     Die verschiedenen Kanäle über die Probleme berichtet werden können sind
     hier beschrieben.
 
 
 14. <a name="faq14"></a>
-    **Bekomme ich irgendwie automatisch mit dass es eine neue Version von raspiBackup gibt?**
+    **Bekomme ich irgendwie automatisch mit dass es eine neue Version von *raspiBackup* gibt?**
 
-    raspiBackup prüft bei jedem Aufruf ob es eine neuere Version gibt. Wenn ja
+    *raspiBackup* prüft bei jedem Aufruf ob es eine neuere Version gibt. Wenn ja
     wird eine entsprechende Meldung ausgegeben und die Benachrichtigungsemail
     weist im Titel mit einem Smiley ;-) darauf hin. Dann kann man auf dieser
     Seite nachlesen was die neue Version bringt und dann mit dem Parameter -U
@@ -309,13 +304,13 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 15. <a name="faq15"></a>
-    **Wie kann ich auf eine vorhergehende raspiBackup Version zurückgehen,
+    **Wie kann ich auf eine vorhergehende *raspiBackup* Version zurückgehen,
     wenn ich nach einem Upgrade bemerke, dass die neue Version nicht so funktioniert wie ich es erwarte?**
 
-    raspiBackup erstelt jedes mal wenn mit der Option -U eine neue Version
+    *raspiBackup* erstelt jedes mal wenn mit der Option -U eine neue Version
     aktiviert wird eine Sicherungskopie. Mit der Option -V kann man jederzeit
     auf eine vorhergehende Version zurückgehen. Es wird eine Liste von alle
-    gesicherten raspiBackup Versionen angezeigt und man kann die Version, die
+    gesicherten *raspiBackup* Versionen angezeigt und man kann die Version, die
     zurückgespielt werden soll daraus auswählen.
 
 
@@ -331,14 +326,14 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     man mit dem Befehl lsblk kontrollieren.
 
     Alternativ kann man per raspiBackupWrapper Script nach dem Backup mit
-    raspiBackup pishrink aufrufen lassen und das dd Image auf das möglichste
+    *raspiBackup* pishrink aufrufen lassen und das dd Image auf das möglichste
     Minimum verkleinern.
 
 
 17. <a name="faq17"></a>
     **Wie kann ich feststellen, dass der rsync Backup tatsächlich Hardlinks benutzt, um Speicherplatz zu sparen?**
 
-    Hardlinks werden erfolgreich von raspiBackup benutzt wenn ein lokaler USB
+    Hardlinks werden erfolgreich von *raspiBackup* benutzt wenn ein lokaler USB
     Stick, eine lokale USB Platte oder auch eine per nfs gemountete Partition,
     die mit ext3/ext4 formatiert ist, benutzt wird. Samba sowie sshfs
     unterstützt keine Hardlinks.
@@ -475,9 +470,9 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 20. <a name="faq20"></a>
     **Ich habe Probleme beim Sichern meiner Backups auf einer Synology. Wie kann ich die beseitigen?**
 
-    Es gibt diverse Benutzer von raspiBackup die ihre Backups per nfs auf einer
+    Es gibt diverse Benutzer von *raspiBackup* die ihre Backups per nfs auf einer
     Synology erfolgreich sichern. Es gibt eine spezielle Seite wo ich und
-    Benutzer von raspiBackup beschrieben haben, was sie an der Synology
+    Benutzer von *raspiBackup* beschrieben haben, was sie an der Synology
     konfiguriert haben, damit alles funktioniert.
 
 
@@ -497,7 +492,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 22. <a name="faq22"></a>
     **Wie kann man verschiedene Backupkonfigurationen in verschiedenen Backupläufen benutzen?**
 
-    Die Konfigurationsparameter von raspiBackup werden in folgender Reihenfolge
+    Die Konfigurationsparameter von *raspiBackup* werden in folgender Reihenfolge
     eingelesen und wirksam. Dabei können spätere Dateien bzw Optionen vorherige
     Optionen überschreiben.
 
@@ -512,7 +507,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     **Ich möchte den Backupfortschritt verfolgen. Gibt es eine Option um einen Fortschrittsbalken zu erhalten?**
 
     Es gibt dazu die Option -g fuer dd, tar und rsync. Die Option sollte nur
-    genutzt werden wenn man raspiBackup manuell startet.
+    genutzt werden wenn man *raspiBackup* manuell startet.
 
 
 24. <a name="faq24"></a>
@@ -530,7 +525,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
         default_mntopts = acl,user_xattr
 
     bewirkt dass jeder mount immer die acl für eine Partition einschaltet. Das
-    trifft dann auch für die Backuppartition von raspiBackup zu, die
+    trifft dann auch für die Backuppartition von *raspiBackup* zu, die
     standardmäßig auf /backup gemounted wird. Somit wird immer versucht acl
     Daten zu schreiben was von rsync nicht unterstützt wird.
 
@@ -561,7 +556,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
        (Nur für erfahrene Benutzer).
 
     In Bullseye hat Debian persistentes Journaling eingeführt und somit
-    existiert /var/log/journal mit ACLs auf dem System. Wer raspiBackup Release
+    existiert /var/log/journal mit ACLs auf dem System. Wer *raspiBackup* Release
     0.6.6 oder früher nutzt muss mindestens auf Release 0.6.6.1 upgraden oder
     den Workaround, der [hier](https://github.com/framps/raspiBackup/issues/393) beschrieben ist, anwenden.
 
@@ -571,7 +566,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
     Lösung:
     Vor dem Restore die /etc/mke2fs.conf editieren und bei beiden ext4 Optionen
-    das metadata_csum entfernen. Dann den Restore mit raspiBackup durchführen.
+    das metadata_csum entfernen. Dann den Restore mit *raspiBackup* durchführen.
 
     [.workaround]: _ "Probleme beim Syntax-Highlighting in vim-markdown bei non-balanced-underlines"
 
@@ -645,15 +640,15 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 30. <a name="faq30"></a>
-    **Mir gefällt raspiBackup und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?**
+    **Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?**
 
     Details zu einem Trinkgeld finden sich [hier](trinkgeld.md)
 
 
 31. <a name="faq31"></a>
-    **Ich bekomme eine Fehlermeldung von raspiBackup. Was kann ich tun um sie zu beseitgen?**
+    **Ich bekomme eine Fehlermeldung von *raspiBackup*. Was kann ich tun um sie zu beseitgen?**
 
-    Es gibt eine Seite wo alle häufigsten Fehlermeldungen von raspiBackup
+    Es gibt eine Seite wo alle häufigsten Fehlermeldungen von *raspiBackup*
     genauer beschrieben sind inklusive Aktionen, mit denen man sie beseitigen
     kann. Besuche dazu diese Seite.
 
@@ -694,7 +689,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     **Ich habe einen Cubieboard, Banana Pi, Odroid, Hummingboard, oder Beagle Board. Kann nraspiBackup diese auch sichern?**
 
     Prinzipiell sollte das gehen bzw geht es schon für bestimmte nicht
-    Raspberry Hardware. Einfach ausprobieren. raspiBackup wird aber nur für
+    Raspberry Hardware. Einfach ausprobieren. *raspiBackup* wird aber nur für
     RaspbianOS und Raspberry HW unterstützt. D.h. wenn es funktioniert sei
     glücklich. Wenn es nicht funktioniert frage aber nicht nach Support. :-)
 
@@ -709,22 +704,22 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     SD Karte erwischt. Deshalb sollte man bei einem DD Backup die letzte
     Partition immer etwas kleiner als maximal möglich erstellen. Siehe dazu
     auch FAQ16. Man kann aber mit pishrink das dd Image verkleinern und danach
-    mit raspiBackup zurücksichern.
+    mit *raspiBackup* zurücksichern.
 
 
 35. <a name="faq35"></a>
-    **Ich möchte mein Rootfilesystem auf eine USB Platte verschieben. Kann ich das mit raspiBackup beim Restore machen?**
+    **Ich möchte mein Rootfilesystem auf eine USB Platte verschieben. Kann ich das mit *raspiBackup* beim Restore machen?**
 
     Sofern es ein tar oder rsync Backup ist geht das. Einfach bei Restore die
     Option -R nutzen.
 
 
 36. <a name="faq36"></a>
-    **Was bedeuten die Returncodes (RC) mit denen raspiBackup im Fehlerfalle endet?**
+    **Was bedeuten die Returncodes (RC) mit denen *raspiBackup* im Fehlerfalle endet?**
 
         101 - Ein Programmfehler wurde festgestellt
         102 - Ein Linux Befehl liefert einen Fehler
-        103 - raspiBackup wurde mit CTRLC beendet.
+        103 - *raspiBackup* wurde mit CTRLC beendet.
         104 - Eine Erweiterung hat einen Fehler gemeldet
         105 - Beim Stoppen von Services gab es Fehler
         106 - Beim Starten von Services gab es Fehler
@@ -741,7 +736,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
         118 - Angegebene Geraete wurden nicht gefunden
         119 - Ein Verzeichnis kann nicht angelegt werden
-        120 - Linux Tools fehlen die von raspiBackup benötigt werden
+        120 - Linux Tools fehlen die von *raspiBackup* benötigt werden
         121 - Es konnte keine gültige Bootpartition gefunden werden
 
 
@@ -750,31 +745,31 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
     | smiley | Bedeutung |
     | ------ | --------- |
-    | ;-)    | Es gibt eine neuere Release von raspiBackup. Ein Upgrade sollte mit der Option -U vorgenommen werden. Zurückgehen kann man wieder mit der Option -V. |
-    | :-D    | Es existiert eine Betaversion der nächsten raspiBackup Release. Beta Tester sind willkommen und können mit der Option -U die Beta installieren. Nach dem test kann man auf die aktuelle Version wieder mit der Option -V zurückgehen. |
+    | ;-)    | Es gibt eine neuere Release von *raspiBackup*. Ein Upgrade sollte mit der Option -U vorgenommen werden. Zurückgehen kann man wieder mit der Option -V. |
+    | :-D    | Es existiert eine Betaversion der nächsten *raspiBackup* Release. Beta Tester sind willkommen und können mit der Option -U die Beta installieren. Nach dem test kann man auf die aktuelle Version wieder mit der Option -V zurückgehen. |
     | O.o    | Eine Warnmeldung wurde geschrieben. |
-    | :-(    |Die raspiBackup Release ist veraltet und enthält einen schwerwiegenden Fehler. Sie sollte dringend durch die aktuelle Release mit der Option -U ersetzt werden. |
+    | :-(    |Die *raspiBackup* Release ist veraltet und enthält einen schwerwiegenden Fehler. Sie sollte dringend durch die aktuelle Release mit der Option -U ersetzt werden. |
 
 
 38. <a name="faq38"></a>
-    **Wo kann ich Fragen stellen und Hilfe bekommen zu Linuxfragen und -problemen die im eigentlichen Sinne nichts mit raspiBackup zu tun haben?**
+    **Wo kann ich Fragen stellen und Hilfe bekommen zu Linuxfragen und -problemen die im eigentlichen Sinne nichts mit *raspiBackup* zu tun haben?**
 
-    raspiBackup wurde entwickelt um auch Linux Einsteigern das Sichern ihrer
+    *raspiBackup* wurde entwickelt um auch Linux Einsteigern das Sichern ihrer
     Raspberry einfach zu ermöglichen. Allerdings sind dazu trotzdem gewisse
-    Linuxkenntnisse notwendig.  Häufige Probleme mit raspiBackup sind bei Linux
+    Linuxkenntnisse notwendig.  Häufige Probleme mit *raspiBackup* sind bei Linux
     Einsteigern einfache Linuxprobleme. Diese hier auf der Webseite zu
     beantworten sprengt den Rahmen dieser Webseite. Dazu gibt es Foren mit
     kompetenten Mitgliedern die gerne helfen. Eines was ich empfehle ist das
     Deutsche Raspberry Pi Forum. Wenn man dort im Beitrag @framp einfügt werde
     ich über den Beitrag automatisch informiert und kann ggf Informationen zu
-    raspiBackup zufügen.
+    *raspiBackup* zufügen.
 
 
 39. <a name="faq39"></a>
     **Wo finde ich das Debuglog von raspiBackup?**
 
-    Das Debuglog eines Backuplaufes raspiBackup.log sowie die Meldungen
-    raspiBackup.msg wird während des Backuplaufes im /tmp Verzeichnis angelegt.
+    Das Debuglog eines Backuplaufes *raspiBackup*.log sowie die Meldungen
+    *raspiBackup*.msg wird während des Backuplaufes im /tmp Verzeichnis angelegt.
     Wenn der Backuplauf erfolgreich war werden die Dateien ins
     Backupverzeichnis kopiert. Wenn der Backup fehlerhaft abbricht werden die
     Logs ins Homeverzeichnis des Aufrufers kopiert. Bricht der automatischen
@@ -799,21 +794,21 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 41. <a name="faq41"></a>
     **Wo finde ich das Debuglog von raspiBackup?**
 
-    Das Debuglog heisst raspiBackup.log beim Backup und raspiBackup.logr beim
+    Das Debuglog heisst *raspiBackup*.log beim Backup und *raspiBackup*.logr beim
     Restore.
 
-    - Wenn raspiBackup erfolgreich endet steht das Logfile im Backupverzeichnis
-    - Wenn raspiBackup nicht erfolgreich endet steht das Logfile im Heimverzeichnis des Aufrufers
-        - Wenn raspiBackup über die Konsole gestartet wurde steht das Logfile entweder in /home/<user> oder /root
-        - Wenn raspiBackup über Cron oder systemd im Hintergrund gestartet wurde steht das Logfile in /root
-    - Wenn raspiBackup unerwartet ende oder mit kill gestoppt wurde findet sich das Logfile in /tmp
+    - Wenn *raspiBackup* erfolgreich endet steht das Logfile im Backupverzeichnis
+    - Wenn *raspiBackup* nicht erfolgreich endet steht das Logfile im Heimverzeichnis des Aufrufers
+        - Wenn *raspiBackup* über die Konsole gestartet wurde steht das Logfile entweder in /home/<user> oder /root
+        - Wenn *raspiBackup* über Cron oder systemd im Hintergrund gestartet wurde steht das Logfile in /root
+    - Wenn *raspiBackup* unerwartet ende oder mit kill gestoppt wurde findet sich das Logfile in /tmp
     - Das Logfile beim Restore steht entweder in  /home/<user> oder /root
 
 
 42. <a name="faq42"></a>
     **Wo können die /boot und /root Partition liegen (SD Karte und SSD bzw Platte)**
 
-    raspiBackup unterstützt folgende Konfigurationen wobei immer nur die /boot
+    *raspiBackup* unterstützt folgende Konfigurationen wobei immer nur die /boot
     und /root gesichert werden. Weitere Partitionen werden ignoriert.
 
     - /boot und /root auf SD Karte
@@ -822,12 +817,12 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 43. <a name="faq43"></a>
-    **Wie finde ich alle Dokumentationsseiten zu raspiBackup bzw Seiten zu einem speziellen Thema?**
+    **Wie finde ich alle Dokumentationsseiten zu *raspiBackup* bzw Seiten zu einem speziellen Thema?**
 
-    In dem Menu zu raspiBackup auf der rechten Seite finden sich die
-    wichtigsten Links zu der raspiBackup Dokumentation. Alle Seiten zu
-    raspiBackup werden über den letzten Menupunkt Liste aller Seiten zu
-    raspiBackup angezeigt. Sucht man etwas zu einem speziellen Thema kann man
+    In dem Menu zu *raspiBackup* auf der rechten Seite finden sich die
+    wichtigsten Links zu der *raspiBackup* Dokumentation. Alle Seiten zu
+    *raspiBackup* werden über den letzten Menupunkt Liste aller Seiten zu
+    *raspiBackup* angezeigt. Sucht man etwas zu einem speziellen Thema kann man
     das Stichwort auch oben rechts in das Suchfeld eintragen und danach auf
     dieser Webseite suchen.
 
@@ -857,11 +852,11 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 47. <a name="faq47"></a>
-    **Wo bekomme ich Hilfe bei reinen Linuxfragen oder -problemen die nichts mit raspiBackup im eigentlichen Sinne zu tun haben?**
+    **Wo bekomme ich Hilfe bei reinen Linuxfragen oder -problemen die nichts mit *raspiBackup* im eigentlichen Sinne zu tun haben?**
 
-    Häufig gibt es Fragen oder Probleme bei der Konfiguration von raspiBackup
+    Häufig gibt es Fragen oder Probleme bei der Konfiguration von *raspiBackup*
     die reine Linuxfragen oder -probleme sind. Diese werden in keinen
-    Kontaktkanälen beantwortet denn das geht über den Support von raspiBackup
+    Kontaktkanälen beantwortet denn das geht über den Support von *raspiBackup*
     den ich gebe hinaus und werden mit einem Hinweis auf FAQ 47 beantwortet.
     Ansonsten bin ich 7/24 beschäftigt.
 
@@ -875,7 +870,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     **Kann ich den Backup auf ein laufendes System zurückspielen?**
 
     Technisch geht das aber das Ergebnis ist alles andere als ein laufendes
-    System. Deshalb bricht raspiBackup sofort ab wenn man das versucht. Man
+    System. Deshalb bricht *raspiBackup* sofort ab wenn man das versucht. Man
     muss immer den Restore auf eine weitere SD Karte die per USB SD Kartenlesen
     an die Raspberry angeschlossen ist vornehmen.
 
@@ -914,14 +909,14 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     Falls mount Option sync genutzt wird sollte diese durch die Option async
     ersetzt werden.
 
-    Option --timestamps hilft den Schritt zu finden wo raspiBackup so lange
+    Option --timestamps hilft den Schritt zu finden wo *raspiBackup* so lange
     braucht. Danach hilft das Debuglog weiter.
 
 
 51. <a name="faq51"></a>
     **Wie werden die Statistiken der Fortschrittsanzeige berechnet ?**
 
-    raspiBackup berechnet nichts. Stattdessen nutzt werden die Optionen der
+    *raspiBackup* berechnet nichts. Stattdessen nutzt werden die Optionen der
     angebotenen Fortschrittsanzeige genutzt. Dei dd ist es die Option
     status=progress und bei rsync die Option info=progress2. tar hat keine
     eigene Fortschrittsanzeige und es wird deshalb der Datenstrom durch pv
@@ -938,22 +933,22 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
         curl -s https://raw.githubusercontent.com/framps/raspiBackup/master/scripts/raspiBackupDownloadFromGit.sh | sudo bash -s -- <Branchname>
 
     Dabei muss <Branchname> der github Branch sein von dem man sich
-    raspibackup.sh downloaden möchte. Danach ruft man diese raspiBackup Version
+    raspibackup.sh downloaden möchte. Danach ruft man diese *raspiBackup* Version
     wie folgt auf:
 
         sudo ./raspiBackup.sh <Optionen>
 
 
 53. <a name="faq53"></a>
-    **Was sind raspiBackup Snapshots?**
+    **Was sind *raspiBackup* Snapshots?**
 
-    raspiBackup Snapshots sind spezielle Backups mit zwei besonderen
+    *raspiBackup* Snapshots sind spezielle Backups mit zwei besonderen
     Eigenschaften:
 
     - Sie werden nicht beim Backuprecycle berücksichtigt und müssen somit
       manuell im Backupverzeichnis gelöscht werden
     - Sie haben eine Beschreibung im Backupverzeichnisnamen anhand derer ein
-      raspiBackup Snapshot leicht zu erkennen ist und mit dem man eine
+      *raspiBackup* Snapshot leicht zu erkennen ist und mit dem man eine
       sprechende Beschreibung dem Snapshot geben kann damit er leicht zu
       erkennen ist.
 
@@ -967,7 +962,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 54. <a name="faq54"></a>
     **Wie kann ich auf die boot Partitionsdateien im Backupverzeichnis zugreifen?**
 
-    raspiBackup speichert die Bootpartitionsdaten in einem Imagefile. Mit den
+    *raspiBackup* speichert die Bootpartitionsdaten in einem Imagefile. Mit den
     folgenden Befehlen kann man auf die Dateien in diesem Image zugreifen:
 
         sudo losetup -f <hostname>-backup.img
@@ -988,7 +983,7 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 56. <a name="faq56"></a>
-    **Wie kann ich raspiBackup auf einem unsupporteten System automatisch starten lassen?**
+    **Wie kann ich *raspiBackup* auf einem unsupporteten System automatisch starten lassen?**
 
     Dazu muss die Datei /etc/systemd/system/raspiBackup.service geändert
     werden:
@@ -999,9 +994,9 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
 
 
 57. <a name="faq57"></a>
-    **Wie kann ich raspiBackup auf ein neues Release updaten?**
+    **Wie kann ich *raspiBackup* auf ein neues Release updaten?**
 
-    raspiBackup meldet wenn eine neue Release oder eine Beta verfügbar ist. Ein
+    *raspiBackup* meldet wenn eine neue Release oder eine Beta verfügbar ist. Ein
     Update wird mit der Option -U gestartet. Mit der Option -V kann man wieder
     auf eine vorhergehende Release zurückgehen. Betas werden oft mehrere Male
     ergneuert. Um dann den neuesten Stand zu installieren müssen die Optionen
@@ -1022,9 +1017,13 @@ Häufige Fragen zu raspiBackup. Jeder neue Benutzer von raspiBackup sollte sich 
     - Der Service der die Datei löscht wird vor dem Backup gestoppt und wieder gestartet
     - Die Datei oder auch das Verzeichnis in der sich die Datei befindet wird vom Backup excluded
     - Wenn das alles nicht genutzt werden kann gibt es noch die Option
-      DEFAULT_RSYNC_IGNORE_ERRORS="24" mit dem raspiBackup den RC24 ignoriert.
+      DEFAULT_RSYNC_IGNORE_ERRORS="24" mit dem *raspiBackup* den RC24 ignoriert.
 
     Achtung:  Es gibt seltene Umstände in denen ein rsync RC 24 ein nicht zu
     ignorierender Fehler ist. Siehe dazu hier. D.h. man sollte möglichst
     versuchen den Fehler mit Möglichkeit 1 oder 2 zu beseitigen.
+
+
+[.status]: todo "Links ergänzen/prüfen"
+[.source]: https://linux-tips-and-tricks.de/de/faq
 
