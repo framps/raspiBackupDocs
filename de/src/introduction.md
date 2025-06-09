@@ -71,7 +71,7 @@ Weiterhin gibt es [Erweiterungspunkte](hooks-for-own-scripts.md) für Plugins in
 um eigene Scripts vor und nach dem Backupvorgang einzubinden.
 
 
-## optional ausgelagerte Root-Partition
+## Optional ausgelagerte Root-Partition
 
 Eine eventuell ausgelagerte Rootpartition kann mitgesichert werden.
 
