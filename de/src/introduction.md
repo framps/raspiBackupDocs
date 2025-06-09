@@ -47,8 +47,17 @@ natürlich auch vor.
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
-Bitte lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
+---
 
+Weitere Themen auf dieser Seite:
+
+<!-- toc -->
+
+---
+
+## Unterstützte Hard- und Software
+
+Dazu gibt es extra Kapitel: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
 ## Stoppen und Starten von Diensten/Services
 
@@ -100,6 +109,50 @@ Sie finden sich [hier auf YouTube](https://www.youtube.com/@raspiBackup).
 [.status]: todo "Check [Alter Link auf YouTube](https://www.youtube.com/watch?v=VP5N_cDrUNU)"
 
 
+
+## Kontaktmöglichkeiten
+
+* Klicke [![Github](images/icons/GitHub-Mark-32px.png)](https://github.com/framps/raspiBackup/issues),
+  um auf Github Fragen oder Probleme zu *raspiBackup* als Issues zu erstellen.
+  Die Issues können gerne auch in Deutsch erstellt werden.
+  So kann ich Fragen und Problemberichte tracken und Du bekommst eine Benachrichtigung über meine Antworten.
+
+* Klicke [![Facebook](images/icons/FB-f-Logo__blue_29.png)](https://www.facebook.com/raspiBackup/),
+  um auf Facebook aktuelle Aktivitäten und Randinformationen zu *raspiBackup* zu erfahren.
+  Fragen zu *raspiBackup* sind auch möglich. Probleme bitte nur im [github](https://github.com/framps/raspiBackup/issues) melden.
+
+* Klicke [![Twitter](images/icons/Twitter-f-Logo__blue_29.png)](https://www.twitter.com/linuxframp),
+  um *raspiBackup* auf Twitter zu folgen.
+
+* Klicke [![Youtube](images/icons/Youtube.png)](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg),
+  um auf Youtube Videos zu *raspiBackup* zu sehen.
+
+* Klicke [![Kommentar](images/icons/Question_29.png)](https://linux-tips-and-tricks.de/de/raspibackup#Comments),
+  um eine Frage zu *raspiBackup* in einem Kommentar zu erstellen. Probleme bitte nur im [github](https://github.com/framps/raspiBackup/issues) melden.
+
+* Klicke [![RaspberryForum](images/icons/RaspberryForumSmall.png)](https://forum-raspberrypi.de/forum/board/153-backup/),
+  um im deutschen Raspberryforum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder
+  existierende Threads zu *raspiBackup* zu lesen.
+
+``` admonish info title="Hinweis"
+Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
+```
+
+## Trinkgeld
+
+Eine Anerkennung des Entwicklungs- und Wartungsaufwands sowie Supports für
+*raspiBackup* ist gerne gesehen und wie folgt möglich:
+
+1. Werde ein [github sponsor](https://github.com/sponsors/framps) für *raspiBackup*
+2. Paypal: Die eMail `framp att linux-tips-and-tricks dott de` ist PayPal bekannt
+   und ein jeder kann mit einem PayPal Konto an diese eMail ein Trinkgeld geben.
+3. Keines von beidem: Einfach bei der o.g. eMail nachfragen. Es findet sich
+   gewiss eine Alternative. Z.B. wurde mir Trinkgeld schon mehrmals auf die
+   gute alte Art per Brief zugeschickt :-)
+
+Die letzte Spende kam am 25.2.2024.
+
+
 ## Danksagungen
 
 Es haben im Laufe der Zeit sehr viele Leute aus der Community durch Kommentare,
@@ -114,6 +167,23 @@ Daher einfach: Vielen Dank euch allen!
 Der Code von *raspiBackup* ist reiner bash Code und steht unter der GPL auf [github](https://github.com/framps/raspiBackup) zur Verfügung.
 
 
+## Haftungsausschluss
+
+Das Backup- und Restorescript *raspiBackup* wurde für den persönlichen Gebrauch
+erstellt und, da es sich als sehr nützlich erwies, der Allgemeinheit zur
+Verfügung gestellt.
+
+Es wird im Rahmen des Möglichen die korrekte Funktionalität getestet
+aber es kann nicht ausgeschlossen werden, dass durch Fehler in
+*raspiBackup* die erwartete Funktionalität nicht gewährleistet ist.
+Jeder, der *raspiBackup* benutzt, tut das auf sein eigenes Risiko.
+
+Der Ersteller von *raspiBackup* ist in keiner Weise haftbar für
+irgendwelche Fehlfunktionen des Scripts.
+
+
+[.status]: todo "update or delete last donation info?"
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
+[.source]: https://linux-tips-and-tricks.de/de/trinkgeld
 

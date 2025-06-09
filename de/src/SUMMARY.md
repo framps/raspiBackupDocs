@@ -37,12 +37,6 @@ Dies ermöglicht einige kleine Kniffe:
 
 [Einführung](introduction.md)
 
-[Kontaktmöglichkeiten](contact.md)
-
-[Trinkgeld](donations.md)
-
-[Haftungsausschluss](legals.md)
-
 - [Funktionsübersicht](function-overview.md)
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
