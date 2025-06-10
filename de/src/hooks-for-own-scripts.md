@@ -58,11 +58,9 @@ Partitionsbelegung vor und nach dem Backup ausgegeben. Die letzte
 Erweiterung wird nur am Ende des Backups aufgerufen und kann bei Erfolg
 bzw Misserfolg des Backups unterschiedliche Aktionen auslösen.
 
-Wer nützliche Plugins für die Community erstellt hat kann sie gerne hier
-in einem Kommentar beschreiben und die Downloadlocation nennen. Sollten
-Fähigkeiten der Plugins fehlen, einfach einen Kommentar dazu hier
-hinterlassen und ich prüfe in wieweit die fehlende Funktion eingepflegt
-werden kann.
+Wer nützliche Plugins für die Community erstellt hat kann sie gerne im
+Forum (TODO Link) vorstellen und die Downloadlocation nennen. Sollten
+Fähigkeiten der Plugins fehlen, bitte einen Isuu bei GitHub (TODO Link) anlegen.
 
 ### Pluginaufrufstellen beim Backup
 

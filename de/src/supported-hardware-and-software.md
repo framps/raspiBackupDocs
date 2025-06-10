@@ -10,17 +10,17 @@ beiden Partitionen /boot und /root benötigt, wie sie bei *Raspberry Pi OS* exis
 D.h. Du kannst *raspiBackup* auf dem jeweiligen Environment ausprobieren und wenn
 es erfolgreich läuft kannst Du Dich freuen und es nutzen. Wenn es aber nicht
 läuft bzw. Fehlermeldungen bringt, wird **kein** Support gegeben. Du kannst einen
-Issue in github erstellen und das Debuglog beifügen und ich prüfe, ob mit ein
+Issue in github erstellen und das Debuglog beifügen. So kann *framp* prüfen, ob mit ein
 paar kleinen Änderungen das Problem beseitigt werden kann. Aber auch dann
 bleibt das Environment nicht unterstützt.
 
-Unter der Tatsache, dass **raspiBackup ~~umsonst~~ gratis** ist, ist es
+Unter der Tatsache, dass **raspiBackup ~~umsonst~~ gratis** ist, ist es zu teuer/zu aufwändig für *framp*,
 
- 1) zu teuer für mich, sich alle mögliche Hardware für die Tests anzuschaffen
- 1) zu aufwändig für mich, alle mögliche Hardware- und Softwaretestkombinationen aufzubauen
- 1) zu aufwändig für mich, jeweils alles bei einer neuen Release zu testen
+ 1) sich alle mögliche Hardware für die Tests anzuschaffen
+ 1) alle mögliche Hardware- und Softwaretestkombinationen aufzubauen
+ 1) jeweils alles bei einer neuen Release zu testen
 
-kann ich *raspiBackup* nur unter den genannten Voraussetzungen unterstüzen.
+Also kann *framp* *raspiBackup* nur unter den genannten Voraussetzungen unterstützen.
 
 Es besteht die Möglichkeit der Donation und je nach Aufwand besteht die Möglichkeit,
 dass auch ein nicht unterstütztes Environment von *raspiBackup* unterstützt wird.

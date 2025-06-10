@@ -85,8 +85,7 @@ gesichert werden ab der release 0.6.6.
 
 ## Einführungsvideo und Youtube-Channel
 
-Nun habe ich (framp) mich endlich dazu durchgerungen, auch mal ein
-[Video zu raspiBackup](https://youtu.be/PuK_FNK674s) zu erstellen und auf Youtube zu veröffentlichen.
+Es gibt ein [Einführungsvideo zu raspiBackup](https://youtu.be/PuK_FNK674s) auf Youtube.
 
 Behandelte Themen sind
 
@@ -97,12 +96,7 @@ Behandelte Themen sind
 
 Die dort verwendeten Slides können zum Lesen [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download) runtergeladen werden.
 
-Nachdem ich das Einführungsvideo erstellt hatte, habe ich Gefallen am Erstellen von Videos gefunden
-und viele weitere Vidoes zu allen möglichen Themen zu *raspiBackup* erstellt.
-
-Sie finden sich [hier auf YouTube](https://www.youtube.com/@raspiBackup).
-
-[.status]: todo "Check [Alter Link auf YouTube](https://www.youtube.com/watch?v=VP5N_cDrUNU)"
+Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im [raspiBackup-Channel](https://www.youtube.com/@raspiBackup).
 
 
 
@@ -111,7 +105,7 @@ Sie finden sich [hier auf YouTube](https://www.youtube.com/@raspiBackup).
 * Klicke [![Github](images/icons/GitHub-Mark-32px.png)](https://github.com/framps/raspiBackup/issues),
   um auf Github Fragen oder Probleme zu *raspiBackup* als Issues zu erstellen.
   Die Issues können gerne auch in Deutsch erstellt werden.
-  So kann ich Fragen und Problemberichte tracken und Du bekommst eine Benachrichtigung über meine Antworten.
+  So lassen sich Fragen und Problemberichte tracken und Du bekommst eine Benachrichtigung über Antworten.
 
 * Klicke [![Facebook](images/icons/FB-f-Logo__blue_29.png)](https://www.facebook.com/raspiBackup/),
   um auf Facebook aktuelle Aktivitäten und Randinformationen zu *raspiBackup* zu erfahren.
@@ -122,9 +116,6 @@ Sie finden sich [hier auf YouTube](https://www.youtube.com/@raspiBackup).
 
 * Klicke [![Youtube](images/icons/Youtube.png)](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg),
   um auf Youtube Videos zu *raspiBackup* zu sehen.
-
-* Klicke [![Kommentar](images/icons/Question_29.png)](https://linux-tips-and-tricks.de/de/raspibackup#Comments),
-  um eine Frage zu *raspiBackup* in einem Kommentar zu erstellen. Probleme bitte nur im [github](https://github.com/framps/raspiBackup/issues) melden.
 
 * Klicke [![RaspberryForum](images/icons/RaspberryForumSmall.png)](https://forum-raspberrypi.de/forum/board/153-backup/),
   um im deutschen Raspberryforum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder
@@ -143,10 +134,8 @@ Eine Anerkennung des Entwicklungs- und Wartungsaufwands sowie Supports für
 2. Paypal: Die eMail `framp att linux-tips-and-tricks dott de` ist PayPal bekannt
    und ein jeder kann mit einem PayPal Konto an diese eMail ein Trinkgeld geben.
 3. Keines von beidem: Einfach bei der o.g. eMail nachfragen. Es findet sich
-   gewiss eine Alternative. Z.B. wurde mir Trinkgeld schon mehrmals auf die
+   gewiss eine Alternative. Z.B. wurde Trinkgeld schon mehrmals auf die
    gute alte Art per Brief zugeschickt :-)
-
-Die letzte Spende kam am 25.2.2024.
 
 
 ## Danksagungen

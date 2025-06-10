@@ -8,11 +8,11 @@ Häufige Fragen zu *raspiBackup*. Jeder neue Benutzer von *raspiBackup* sollte s
 <a name="faq0"></a>
 ### 0) Wie entstand *raspiBackup*?
 
-Bei mir laufen zu Hause drei Raspis. Zwei davon 7/24 - also rund um die Uhr.
+Bei mir (*framp*) laufen zu Hause drei Raspis. Zwei davon 7/24 - also rund um die Uhr.
 Ein jeder Server sollte regelmäßig gesichert werden denn es können immer mal
 unvorhergesehene Umstände eintreten, die eine Wiederherstellung eines
-vorherigen Standes erfordern. Speziell die SD Karte der Raspberry neigt dazu
-immer mal wieder auszufallen. Um dafür gewappnet zu sein habe ich mir ein
+vorherigen Standes erfordern. Speziell die SD Karte der Raspberry neigt dazu,
+immer mal wieder auszufallen. Um dafür gewappnet zu sein, habe ich mir ein
 kleines Script geschrieben, welches zuerst ein dd Backup, dann später, da
 ein dd Backup ja immer die gesamte SD Karte sichert obwohl nur Bruchteile
 davon benutzt werden, ein tar Backup automatisch erstellte. Zum Schluss
@@ -196,8 +196,8 @@ Es gibt verschiedene Optionen:
   Registrierung notwendig. Diese sowie die Benutzung von github ist kostenlos.
 
 - Im Raspberry Forum gibt es ein [Unterforum zu Backups](https://forum-raspberrypi.de/forum/board/153-backup/), wo Fragen zu
-  *raspiBackup* gestellt und Probleme berichtet werden können. Ich werde über
-  alle neuen Threads informiert und werde mich dem Thread widmen.
+  *raspiBackup* gestellt und Probleme berichtet werden können. *framp* wird über
+  alle neuen Threads informiert und kann sich dem Thread widmen.
 
 - Am Ende jeder Webseite können Kommentare erstellt werden. Diese sind ideal
   um Fragen zu stellen aber für Problemberichte ungeeignet. Um Spam zu

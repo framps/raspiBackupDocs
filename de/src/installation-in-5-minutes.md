@@ -3,7 +3,7 @@
 
 Hinweis: Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
 wie man *raspiBackup* installiert, konfiguriert und ein Backup restored.
-Bevor ich hier alles dupliziere, verlinke ich einfach auf [seine Anleitung](https://forum-raspberrypi.de/article/7-raspibackup-installation-grundeinstellungen-erstes-backup-und-restore/) im deutschen Raspberryforum.
+Bevor hier alles dupliziert wird: [Seine Anleitung](https://forum-raspberrypi.de/article/7-raspibackup-installation-grundeinstellungen-erstes-backup-und-restore/) im deutschen Raspberryforum.
 
 
 Die Dokumentation von *raspiBackup* ist durch Erweiterungswünsche von Benutzern

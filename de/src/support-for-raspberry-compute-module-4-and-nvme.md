@@ -1,14 +1,14 @@
 # Unterstützung für Raspberry Compute Module 4 und NVMe
 
-Gestern habe ich eine *CM4* mit 1GB main memory, 32GB eMMC und 128 GB NVMe gespendet bekommen.
+Es wurde eine *CM4* mit 1GB main memory, 32GB eMMC und 128 GB NVMe gespendet.
 Vielen Dank an den Spender!
 
 CM4 war schon von *raspiBackup* unterstützt, aber nur wenn es von einer SD Karte,
 dem eMMC oder per USB Boot gestartet wurde. Man kann NVMe schon nutzen, aber nur
 wenn er sich in einem USB Stick befindet, da er als normale Platte als `/dev/sdx`
 exposed wird, aber es gibt bislang keinen Weg, NVMe zu nutzen, wenn es in die PCi
-Lane gesteckt wurde, da er dann als `/dev/nvme` exposed wird. Jetzt war ich in
-der Lage, auch diesen Support in *raspiBackup* einzubauen.
+Lane gesteckt wurde, da er dann als `/dev/nvme` exposed wird.
+So war es möglich, auch diesen Support in *raspiBackup* einzubauen.
 Der Support ist ab Release 0.6.8 verfügbar.
 
 ![Foto eines Compute Moduls CM4](images/CM4.jpg)
