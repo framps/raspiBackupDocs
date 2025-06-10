@@ -6,18 +6,14 @@
 -->
 
 > [!NOTE]
-> Diese Dokumentation entsteht gerade erst.
-> Und zwar initial durch Übertragung der Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup).
+> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung der
+> Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
 >
 > - Die Struktur ist weitestgehend fertig.
 > - Manche Seiten enthalten noch Formatierungsfehler.
-> - Einige Seiten sind noch unvollständig und enthalten
->   einen Link zur Originalseite.
->
-> Also dies hier bitte im Moment als **Noch in Arbeit** sehen!
 >
 > Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
-> Zum Wechseln der Sprache wird oben rechts ein kleines Globus-Icon vorhanden sein.
+> Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
 >
 > Die generierte Dokumentation ist momentan über folgende Links zu erreichen:
 >
