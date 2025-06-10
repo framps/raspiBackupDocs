@@ -4,14 +4,14 @@ This documentation is being built with new tools on a new platform...
 
 Initially by copying the original text from framp's website.
 
-Currently the structure isn't finalized and many pages are empty or "broken",
+Currently the structure isn't finalized and most pages are empty or "broken",
 especially regarding links and formatting.
+The German version is more complete yet.
 
-That means: For now it's only a **prototype** or ** work in progress**.
+That means: For now it's **work in progress**.
 
 There are two language versions, *german* and *english*.
 Dynamically selectable with the language selector on the top right.
-(*English* is more or less empty currently.)
 ```
 
 # Introduction
