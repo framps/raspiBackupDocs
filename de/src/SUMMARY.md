@@ -61,7 +61,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Backuptype und Entscheidungsbaum](backuptypes.md)
     - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
     - [Backupverzeichnisstruktur](backup-directory-structure.md)
-    - [Rotationsstrategie](smart-recycle.md)
+    - [Intelligente Rotationsstrategie](smart-recycle.md)
     - [Snapshots](snapshots.md)
 
     - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)

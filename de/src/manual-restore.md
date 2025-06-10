@@ -1,15 +1,11 @@
 # Manueller Restore eines Backups
 
-``` admonish note title="Quelle"
-- <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/497-raspibackup-manueller-restore-eines-backups>
-- <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/498-raspibackup-manual-restore>
-```
-
 Ein von *raspiBackup* erstelltes Backup enthält alle für einen Restore
-notwendigen Informationen. Der Benutzer "Micha" wollte aus verschiedenen Gründen
-den Backup manuell restoren und hat das freundlicherweise detailiert in einem
-Kommentar beschrieben. Anbei die Zusammenfassung seiner Beschreibung, die sich
-über 3 Kommentare erstreckte.
+notwendigen Informationen.
+
+Der Benutzer "Micha" wollte aus verschiedenen Gründen den Backup manuell
+restoren und hat das freundlicherweise detailiert in einem Kommentar
+beschrieben. Anbei die Zusammenfassung seiner Beschreibung:
 
 
     # Manuelles Anlegen der Partitionen:
@@ -66,5 +62,12 @@ Kommentar beschrieben. Anbei die Zusammenfassung seiner Beschreibung, die sich
     # SD-Karte in Pi stecken und testen!!!
     # Boing! geht :-)
 
-So kann ich mir selber helfen und das reicht mir alle mal. Vielen Dank für das Skript!
-Solange das Backup da ist, ist nun der Restore auch nicht mehr schlimm. :-)
+Micha beendete seine Beschreibung mit:
+
+> So kann ich mir selber helfen und das reicht mir alle mal. Vielen Dank für das Skript!
+> Solange das Backup da ist, ist nun der Restore auch nicht mehr schlimm. :-)
+
+[.status]: done
+[.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/497-raspibackup-manueller-restore-eines-backups
+[.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/498-raspibackup-manual-restore
+

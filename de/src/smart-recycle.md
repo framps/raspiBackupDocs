@@ -1,16 +1,11 @@
-# Rotationsstrategie
+# Intelligente Rotationsstrategie - Smart Recycle
 
-``` admonish note title="Quelle"
-- <https://linux-tips-and-tricks.de/de/rotationsstrategie>
-- <https://www.linux-tips-and-tricks.de/en/smart-recycle>
-```
-
-Mit dem Release 0.6.5 von *raspiBackup* ist es möglich, eine intelligente
-Rotationsstrategie des Backups zu benutzen. Es wird auch "Generationenprinzip in
-der Datensicherung" genannt. Die Implementierung wurde von Manuel Dewalds
-Artikel "Automating backups on a Raspberry Pi NAS" inspiriert. Standardmässig
-werden dann von *raspiBackup* immer folgende Backups vorgehalten, wenn täglich
-Backups erstellt werden:
+Seit dem Release 0.6.5 von *raspiBackup* ist es möglich, eine intelligente
+Rotationsstrategie des Backups zu benutzen. Es wird auch ["Generationenprinzip in
+der Datensicherung"](https://de.wikipedia.org/wiki/Generationenprinzip)  genannt. Die Implementierung wurde von Manuel Dewalds
+Artikel [Automating backups on a Raspberry Pi NAS](https://opensource.com/article/18/8/automate-backups-raspberry-pi) inspiriert.
+Standardmässig werden dann von *raspiBackup* immer folgende Backups
+vorgehalten, wenn täglich Backups erstellt werden:
 
   1. Backups des aktuellen Tages und der letzten 6 Tage
   2. Backups der aktuellen Woche sowie der letzten 3 Wochen
@@ -30,9 +25,6 @@ Analog ist bei einem wöchentlichen Backup am Sonntag der monatliche Backup
 immer der erste Sonntag im Monat. Das jährliche Backup ist dann immer der erste
 Sonntag im Jahr.
 
-
-## *raspiBackup* - Intelligente Rotationsstrategie
-
 ``` admonish info title="Hinweis"
 Bei mehreren möglichen täglichen Backups wird immer das neueste tägliche
 Backups ausgewählt. Bei den wöchentlichen, monatlichen oder jährlichen Backups
@@ -48,10 +40,10 @@ jährliche Backups immer vom 1.1. des Jahres.
 
 ## Grafische Darstellung
 
-smartStrategy TODO
+![smartStrategy](images/smartStrategy.jpg)
 
 
-## Intelligente Rotationsstrategie Beispiel - Backupverzeichnis (täglicher Backuplauf, Standardoptionen: 7/4/12/3)
+## Beispiel - Backupverzeichnis (täglicher Backuplauf, Standardoptionen: 7/4/12/3)
 
     (Backuplauf am 17.11.2019)
 
@@ -83,7 +75,7 @@ smartStrategy TODO
     20170101 3. jährliches Backup
 
 
-## Intelligente Rotationsstrategie - Optionen
+## Optionen
 
 Die intelligente Rotationsstrategie schaltet man mit der Option `--smartRecycle`
 an. Mit der Option `--smartRecycleOptions` kann man die Aufbewahrungsmengen falls
@@ -94,24 +86,31 @@ wöchentlichen und die letzten 12 monatlichen Backups vorgehalten.
 ``` admonish caution title="Wichtiger Hinweis"
 Solange man nicht die Option `--smarteRecycleDryrun` ausgeschaltet hat, schreibt
 *raspiBackup* in Meldungen, welche Backups gelöscht und aufgehoben werden würden.
+
 Man kann somit erst einmal kontrollieren, ob das Ergebnis dem entspricht, wie man
 es haben möchte. Dadurch kann man verhindern, dass man sich unbeabsichtigt
-existierende Backups löscht. Das ist besonders wichtig, wenn man das bisherige
-Backupverzeichnis nach Umstellung auf die intelligente Rotationsstrategie
-weiterhin benutzen will und kein neues Verzeichnis benutzt. Hat man sorgfältig
-geprüft, dass die intelligente Rotationstrategie die richtigen Backups löscht
-und die gewünschten Backups aufhebt, wird mit der Option mit
-`--smartRecycleDryrun` -in jedem Backuplauf die intelligente Rotationstrategie
-angewendet und nicht mehr benötigte Backups werden unwideruflich gelöscht.
+existierende Backups löscht.
+
+Das ist besonders wichtig, wenn man das bisherige Backupverzeichnis nach
+Umstellung auf die intelligente Rotationsstrategie weiterhin benutzen will und
+kein neues Verzeichnis benutzt.
+
+Hat man sorgfältig geprüft, dass die intelligente Rotationstrategie die
+richtigen Backups löscht und die gewünschten Backups aufhebt, wird mit der
+Option mit `--smartRecycleDryrun` -in jedem Backuplauf die intelligente
+Rotationstrategie angewendet und nicht mehr benötigte Backups werden
+unwideruflich gelöscht.
+
 Alternativ bewirkt die Konfigurationsoption
 `DEFAULT_SMART_RECYCLE_DRYRUN=0` dasselbe Ergebnis.
 ```
-TODO: Formatierung und Text in obigem Hinweis prüfen!!
 
-Auf Wikipedia **TODO: Link** - Generationenprinzip wird auch schön erklärt,
+Auf Wikipedia - [Generationenprinzip](https://de.wikipedia.org/wiki/Generationenprinzip) wird auch schön erklärt,
 wie das Rotationsprinzip funktioniert.
-Speziell die Grafik ist eine andere Möglichkeit das Prinzip zu erklären.
+Speziell die Grafik ist eine andere Möglichkeit, das Prinzip zu erklären.
 
 
 [.status]: todo "Formatierung und Text"
-[.source]: todo
+[.source]: https://www.linux-tips-and-tricks.de/de/rotationsstrategie
+[.source]: https://www.linux-tips-and-tricks.de/en/smart-recycle
+
