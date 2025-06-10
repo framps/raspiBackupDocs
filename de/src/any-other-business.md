@@ -1,5 +1,5 @@
-# Internes
+# Verschiedenes
 
-Hier nun einige technische Interna zu *raspiBackup*. Und weiteres...
+Hier nun einige Themen ...
 
 [.status]: todo "Mehr Text!"

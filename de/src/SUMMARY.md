@@ -68,7 +68,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
 
     - [Konfigurationsbeispiele](configuration-examples.md)
-        - [Konfiguration von raspiBackup mit mSMTP für einen web.de Account](konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account.md)
+        - [msmtp konfigurieren für einen web.de Account](konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account.md)
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)
 
