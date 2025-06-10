@@ -90,8 +90,8 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Weitere Backup-Ziele](more-backupspaces.md)
     - [Synology/NAS als Backupziel](synology-as-backupspace.md)
-    - [AVM Fritzbox als Backupziel](nutzung-einer-avm-fritzbox-als-backupziel-fuer-raspibackup.md)
-    - [WEBDAV als Backupziel](nutzung-von-webdav-als-backupziel-fuer-raspibackup.md)
+    - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
+    - [WEBDAV als Backupziel](how-to-use-webdav-on-linux.md)
 
 - [Ubuntu Support](ubuntu-support.md)
 - [Tipps zur Homeautomation](tips-homeautomation.md)

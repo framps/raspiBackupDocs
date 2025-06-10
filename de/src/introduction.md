@@ -1,15 +1,17 @@
 ``` admonish info title="Work in progress - In Arbeit"
 Diese Dokumentation entsteht gerade.
-Und zwar initial durch Übertragung der Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup).
+Und zwar initial durch Übertragung der Original-Texte von der
+[Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup).
 
- - Die **Struktur ist noch nicht final**.
+ - Die Struktur ist weitestgehend fertig.
  - Manche Seiten enthalten noch Formatierungsfehler.
- - Einige Seiten sind noch unvollständig und enthalten nur
+ - Einige Seiten sind noch unvollständig und enthalten
    einen Link zur Originalseite.
 
 Es gibt zwei Sprachversionen, *deutsch* und *englisch*, zwischen denen dynamisch
 mit dem Sprachwähler oben rechts umgeschaltet werden kann.
-(*Englisch* ist aktuell ebenfalls noch ziemlich "leer".)
+(*Englisch* ist aktuell noch ziemlich "leer". Das kann nachgearbeitet werden,
+wenn die deutschen Seiten ziemlich komplett sind.)
 ```
 
 

@@ -9,10 +9,10 @@
 > Diese Dokumentation entsteht gerade erst.
 > Und zwar initial durch Übertragung der Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup).
 >
->  - Die **Struktur ist noch nicht final**.
->  - Manche Seiten enthalten noch Formatierungsfehler.
->  - Einige Seiten sind noch unvollständig und enthalten nur
->    einen Link zur Originalseite.
+> - Die Struktur ist weitestgehend fertig.
+> - Manche Seiten enthalten noch Formatierungsfehler.
+> - Einige Seiten sind noch unvollständig und enthalten
+>   einen Link zur Originalseite.
 >
 > Also dies hier bitte im Moment als **Noch in Arbeit** sehen!
 >
