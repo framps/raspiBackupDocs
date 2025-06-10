@@ -51,7 +51,7 @@ kann unter Linux erstellt werden. Den Restore muss man auch wieder mit
 *raspiBackup* auf einer Raspberry vornehmen.
 
 
-## Weitere Nachteile von dd Backups
+## Weitere Nachteile von einem dd Backup
 
 Bei einem dd Backup wird immer die gesamte Partition gesichert - selbst wenn
 nur ein Bruchteil der Partition (z.B. 33%) genutzt wird. Dass heisst bei einer

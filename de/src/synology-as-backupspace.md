@@ -1,10 +1,4 @@
-# Nutzung von Synology als Backupspace
-
-``` admonish note title="Quelle"
-- <https://linux-tips-and-tricks.de/de/synology>
-- <https://www.linux-tips-and-tricks.de/en/synology>
-```
-
+# Synology NAS als Backupziel
 
 Das Backupscript *raspiBackup* wird immer mehr benutzt, um die Backups auf
 einem *Synology*-NAS abzulegen. Lange besaß ich (*framp*) keine Synology und konnte keinerlei
@@ -237,4 +231,10 @@ Squash-Option: "Nur root-Benutzer zuordnen"
 Anonymer GID: guest
 Anonymer UID: guest
 ```
+
+
+[.status]: todo "Prüfen/Formatieren"
+[.source]: https://linux-tips-and-tricks.de/de/synology
+[.source]: https://www.linux-tips-and-tricks.de/en/synology
+
 

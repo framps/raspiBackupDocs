@@ -1,4 +1,4 @@
-# Nutzung von WEBDAV als Backupziel für raspiBackup
+# WEBDAV als Backupziel
 
 ``` admonish note title="Quelle"
 - <https://www.linux-tips-and-tricks.de/de/12-networking/190-wie-kann-man-medienspeicher-oder-smartdrive-unter-linux-einbinden>

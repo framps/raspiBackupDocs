@@ -1,6 +1,9 @@
 # Versionshistorie
 
-``` admonish note title="Quelle"
-- <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie>
-- <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/433-raspibackup-versionshistory>
-```
+Die aktuelle Liste der *raspiBackup* Releases sowie deren Neuerungen und
+Bugfixe finden sich [hier](https://github.com/framps/raspiBackup/releases).
+
+
+[.status]: done
+[.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie
+[.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/433-raspibackup-versionshistory
