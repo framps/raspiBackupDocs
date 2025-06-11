@@ -68,7 +68,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
 
     - [Konfigurationsbeispiele](configuration-examples.md)
-        - [msmtp konfigurieren für einen web.de Account](konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account.md)
+        - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)
 
@@ -104,7 +104,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
     - [10 Jahre raspiBackup](10-years-raspibackup.md)
     - [Ausgeführte Regressiontests vor der Veröffentlichung einer neuen Release](regressiontests-executed.md)
-    - [Entwicklungsumgebung](developmentenvironment.md)
+    - [Entwicklungsumgebung](development-environment.md)
     - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
 

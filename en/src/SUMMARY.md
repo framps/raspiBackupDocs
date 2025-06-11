@@ -68,7 +68,7 @@ That allows for some tricks:
     - [Hooks for own scripts](hooks-for-own-scripts.md)
 
     - [Configuration examples](configuration-examples.md)
-        - [Konfiguration von raspiBackup mit mSMTP für einen web.de Account](konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account.md)
+        - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
         - [exim4 configuration](exim4-configuration.md)
         - [nullmailer configuration](nullmailer-configuration.md)
 
@@ -104,7 +104,7 @@ That allows for some tricks:
     - [raspiBackup has a new logo](raspibackup-has-a-new-logo.md)
     - [10 years raspiBackup](10-years-raspibackup.md)
     - [Executed regression tests](regressiontests-executed.md)
-    - [Development environment](developmentenvironment.md)
+    - [Development environment](development-environment.md)
     - [Users all over the world](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version of this documentation](doc-version-info-automatically-generated.md)
 
