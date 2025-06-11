@@ -35,16 +35,19 @@ Hier nun der einfachste Weg zuerst beschrieben:
 1. Den Inhalt der Datei editieren, die Änderungen bestätigen ("commit changes")
    und dann den weiteren Schritten zum neuen Branch und Senden des Pull-Request folgen.
 
-![Info zum Branchen](readme-images/e3-new-branch-to-send-pull-request.png)
+   ![Info zum Branchen](readme-images/e3-new-branch-to-send-pull-request.png)
+
+  1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
 --------------------
 
-### Manuell über GitHub im Browser
+### Manuell über GitHub
 
   1. Das Repository kopieren: "Fork"
   1. Editieren von Markdown-Datei(en) in Verzeichnis `<sprache>/src/`
   1. Eine neue Version erstellen: "Commit"
   1. Pull-Request (PR) erstellen: "Create pull request"
+  1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
 #### Ausführlicher beschrieben
 
@@ -81,15 +84,20 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
   1. Das Repository kopieren
 
-     `git clone https://github.com/rpi-simonz/raspiBackupDocs.git`
+     ```
+     git clone https://github.com/rpi-simonz/raspiBackupDocs.git
+     ```
 
   1. Editieren von Markdown-Datei(en) in Verzeichnis `<sprache>/src/`
 
      Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
-  1. Eine neue Version erstellen
+  1. Eine neue Version erstellen und hochladen
 
-     `git commit ...` && `git push ...`
+     ```
+     git commit ...
+     git push ...
+     ```
 
   1. Pull-Request (PR) erstellen, online bei GitHub
 
