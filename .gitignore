@@ -4,6 +4,7 @@ book
 tmp.gh-pages
 theme.orig
 collect
+WIP
 
 **/src/doc-version-info-automatically-generated.md
 **/*.swp
