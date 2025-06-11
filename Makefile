@@ -1,4 +1,4 @@
-# This is just a littel helper Makefile. Not really sophisticated...
+# This is just a little helper Makefile. Not really sophisticated...
 #
 # Note: WEBSERVER and WEBSERVER_ROOTDIR are set as shell environment variables
 #       outside of this Makefile for privacy.
@@ -12,6 +12,9 @@ help:
 	@echo ""
 	@echo "  - build  : build the docs locally"
 	@echo "  - upload : upload the locally built docs to webserver"
+	@echo ""
+	@echo ""
+	@echo "Note: Please do not run a 'mdbook serve ...' in parallel!"
 
 
 all: build upload
