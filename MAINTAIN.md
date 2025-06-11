@@ -27,6 +27,11 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
   - https://rpi-simonz.github.io/raspiBackupDocs/
   - https://rpi-simonz.github.io/raspiBackupDocs/de/
 
+Bei GitHub muss dazu in den Einstellungen des Repositories unter
+"Build and deployment" "GitHub Actions" ausgewählt werden:
+
+![github-pages-settings](readme-images/m1-github-pages-settings.png)
+
 
 
 #### ... mit Veröffentlichung auf einem (normalen) Webserver

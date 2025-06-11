@@ -17,9 +17,16 @@ damit das aktuelle *mdbook* kompilierbar ist (siehe unten).
 
 Zum Beispiel beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.63 in den Repositories, also zu alt.
 
+Installation siehe:
+
   - https://www.rust-lang.org/tools/install
   - https://www.rust-lang.org/learn/get-started
 
+Am Einfachsten geht die Installation von Rust so:
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 ## Generator - mdbook
 
@@ -47,7 +54,7 @@ Ansonsten lässt es sich auch aus den Sourcen selbst kompilieren.
 
 Dafür ist ein [Rust-Compiler](#rust-compiler) mit der entsprechenden Umgebung erforderlich.
 
-Wenn der `rustc`-Compiler dann installiert ist, wird *mdbook* installiert/compiliert:
+Wenn der `rustc`-Compiler dann installiert ist (s.o.), wird *mdbook* installiert/compiliert:
 
     cargo install mdbook
 
