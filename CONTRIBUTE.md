@@ -13,30 +13,40 @@ Bitte einen "Issue" bei *GitHub* anlegen: <https://github.com/rpi-simonz/raspiBa
 Im *Raspberry Pi Forum*, Unterforum "raspiBackup": <https://forum-raspberrypi.de/forum/board/164-raspibackup/>
 
 
-## Inhalte ändern, ergänzen oder neu erstellen
+## Selber Inhalte ändern, ergänzen oder neu erstellen
 
-  1. Das Repository kopieren, wahlweise
-       - online bei GitHub: "Fork"
-       - lokal: `git clone https://github.com/rpi-simonz/raspiBackupDocs.git`
+Dazu gibt es (mindestens) drei mögliche Wege.
 
+Da das Repository mit der Dokumentation auf *GitHub* gehosted wird,
+ist ein (kostenloser) GitHub-Account erforderlich.
+
+Hier nun der einfachste Weg zuerst beschrieben:
+
+### Über das "Editieren"-Icon auf jeder Seite der Dokumentation
+
+1. Das "Editieren"-Icon auf der zu ändernden Seite der Doku anklicken
+
+   ![Icon zum Editieren](readme-images/e1-edit-icon.png)
+
+1. Hinweis zum Forken bestätigen (das kommt nur beim ersten Mal)
+
+   ![Info über das Forken](readme-images/e2-you-need-to-fork-this-repo-to-propose-changes.png)
+
+1. Den Inhalt der Datei editieren, die Änderungen bestätigen ("commit changes")
+   und dann den weiteren Schritten zum neuen Branch und Senden des Pull-Request folgen.
+
+![Info zum Branchen](readme-images/e3-new-branch-to-send-pull-request.png)
+
+--------------------
+
+### Manuell über GitHub im Browser
+
+  1. Das Repository kopieren: "Fork"
   1. Editieren von Markdown-Datei(en) in Verzeichnis `<sprache>/src/`
-       - online: im Browser
-       - lokal: mit einem beliebigen Editor
+  1. Eine neue Version erstellen: "Commit"
+  1. Pull-Request (PR) erstellen: "Create pull request"
 
-     Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
-
-  1. Eine neue Version erstellen
-       - online: "Commit"
-       - lokal: `git commit ...` && `git push ...`
-
-  1. Pull-Request (PR) erstellen
-       - online: "Create pull request"
-
-  1. warten, bis der Repo-Owner den PR annimmt  ;-)
-
-----
-
-### Beschreibung obiger "online"-Schritte bei GitHub
+#### Ausführlicher beschrieben
 
 1. Erzeugen eines Forks des Original-Repository
 
@@ -54,6 +64,8 @@ Im *Raspberry Pi Forum*, Unterforum "raspiBackup": <https://forum-raspberrypi.de
    ![Editieren anklicken](readme-images/06-click-edit.png)
    ![Editieren und commiten](readme-images/07-edit-and-commit.png)
 
+   Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
+
 1. und in einem neuen Branch speichern
 
    ![Commit-Meldung ausfüllen und branchen](readme-images/08-fill-commit-message-and-branch.png)
@@ -62,4 +74,26 @@ Im *Raspberry Pi Forum*, Unterforum "raspiBackup": <https://forum-raspberrypi.de
 
    ![Änderungen ansehen und PR erstellen](readme-images/09-view-changes-and-create-pr.png)
    ![Beschreibung ausfüllen und PR erstellen](readme-images/10-fill-description-and-create-pr.png)
+
+--------------------
+
+### Manuell lokal
+
+  1. Das Repository kopieren
+
+     `git clone https://github.com/rpi-simonz/raspiBackupDocs.git`
+
+  1. Editieren von Markdown-Datei(en) in Verzeichnis `<sprache>/src/`
+
+     Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
+
+  1. Eine neue Version erstellen
+
+     `git commit ...` && `git push ...`
+
+  1. Pull-Request (PR) erstellen, online bei GitHub
+
+     "Create pull request"
+
+  1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
