@@ -135,6 +135,8 @@ wird anhand der `SUMMARY.md` eine Webseite im Verzeichnis `book/` generiert.
 Zum lokalen Ansehen im Browser <http://localhost:3000> gibt es
 
     mdbook serve
+    
+und dabei muss noch die Sprache de oder en als Parameter mitgegeben werden. 
 
 welches einen lokalen Webserver startet.
 
