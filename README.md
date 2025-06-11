@@ -24,7 +24,7 @@
 
 ## Der Plan
 
-Die neue Dokumentation von raspiBackup könnte in Zukunft anders gestaltet sein.
+Die neue Dokumentation von *raspiBackup* könnte in Zukunft anders gestaltet sein.
 Nicht mehr als integraler Bestandteil eines CMS (framps Joomla), sondern als eigenständiges
 "Projekt".
 
