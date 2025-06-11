@@ -5,4 +5,5 @@ tmp.gh-pages
 theme.orig
 collect
 
+**/src/doc-version-info-automatically-generated.md
 **/*.swp

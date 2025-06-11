@@ -106,6 +106,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Ausgeführte Regressiontests vor der Veröffentlichung einer neuen Release](regressiontests-executed.md)
     - [Entwicklungsumgebung](developmentenvironment.md)
     - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
+    - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
 
 
 ```
