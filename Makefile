@@ -17,6 +17,9 @@ help:
 all: build upload
 
 build:
+	echo -e "# Version of this documentation\n\n\`\`\`" > en/src/doc-version-info-automatically-generated.md
+	echo -e "# Version dieser Dokumentation\n\n\`\`\`"  > de/src/doc-version-info-automatically-generated.md
+	( git log -n 1 ; echo "" ; git status --porcelain '*.md' ; echo -e "\`\`\`\n\nBuild: $$(date --iso-8601=minutes)" ) | tee -a  en/src/doc-version-info-automatically-generated.md  de/src/doc-version-info-automatically-generated.md
 	mdbook build en
 	mdbook build de
 
