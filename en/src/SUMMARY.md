@@ -77,7 +77,7 @@ That allows for some tricks:
 - [More questions and answers](more-questions-and-answers.md)
     - [Which filesystem can be used on the backup partition](which-filesystem-can-be-used-on-the-backup-partition.md)
     - [How do hardlinks work with rsync](how-do-hardlinks-work-with-rsync.md)
-    - [Why shouldn't you use dd as backup method](why-shouldn-t-you-use-dd-as-backup-method.md)
+    - [Why shouldn't you use dd as backup type](why-shouldn-t-you-use-dd-as-backup-type.md)
     - [How to create a cold standby clone with raspiBackup](how-to-create-a-cold-standby-clone-with-raspibackup.md)
     - [Migrate the Raspberry OS from sd-card to ssd, usb-disk or usb-pen-drive](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
     - [How can I install and test the beta version](how-can-i-install-and-test-the-beta-version.md)
@@ -106,6 +106,7 @@ That allows for some tricks:
     - [Executed regression tests](regressiontests-executed.md)
     - [Development environment](developmentenvironment.md)
     - [Users all over the world](list-of-countries-raspibackup-is-used-in-the-world.md)
+    - [Version of this documentation](doc-version-info-automatically-generated.md)
 
 
 - [English-only pages -- translation/integration required]()
