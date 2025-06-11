@@ -7,3 +7,4 @@ collect
 
 **/src/doc-version-info-automatically-generated.md
 **/*.swp
+**/*.pdf
