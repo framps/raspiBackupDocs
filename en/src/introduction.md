@@ -18,6 +18,7 @@ Dynamically selectable with the language selector on the top right.
 
 raspiBackup - Create backup versions of your Raspberry Pis regularly/automatically.
 
+[.de]: ../../de/src/introduction.md
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld

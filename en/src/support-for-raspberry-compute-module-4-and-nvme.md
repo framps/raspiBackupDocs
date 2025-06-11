@@ -47,5 +47,7 @@ raspiBackup requires the restore device partitions not to be mounted. Now
 umount the NVMe partitions (e.g. `/dev/nvme0n1p1` and `/dev/nvme0n1p2)` and use the
 NVMe device (e.g. `/dev/nvme0n1`) as parameter for restore option -d.
 
+
+[.de]: ../../de/src/support-for-raspberry-compute-module-4-and-nvme.md
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/613-unterstuetzung-fuer-raspberry-compute-module-4-und-nvme
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/612-support-for-raspberry-compute-module-4-and-nvme
