@@ -1,6 +1,6 @@
 # 10 Jahre *raspiBackup*
 
-Heute (08. August 2023) vor 10 Jahren wurde die erste Version von *raspiBackup*
+Heute (07. August 2023) vor 10 Jahren wurde die erste Version von *raspiBackup*
 in meinem lokalen cvs abgelegt.
 
 ```
