@@ -3,6 +3,8 @@
 # Note: WEBSERVER and WEBSERVER_ROOTDIR are set as shell environment variables
 #       outside of this Makefile for privacy.
 
+SHELL = /usr/bin/bash
+
 .PHONY: help all build upload
 
 help:
@@ -14,7 +16,7 @@ help:
 	@echo "  - upload : upload the locally built docs to webserver"
 	@echo ""
 	@echo ""
-	@echo "Note: Please do not run a 'mdbook serve ...' in parallel!"
+	@echo "Note: Better do not run a 'mdbook serve ...' in parallel!"
 
 
 all: build upload
