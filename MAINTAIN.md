@@ -27,8 +27,11 @@ Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreich
   - https://rpi-simonz.github.io/raspiBackupDocs/
   - https://rpi-simonz.github.io/raspiBackupDocs/de/
 
-Bei GitHub muss dazu in den Einstellungen des Repositories unter
-"Build and deployment" "GitHub Actions" ausgewählt werden:
+Die automatische Generierung wird durch die im Repository enthaltene Datei
+`.github/workflows/mdbook.yml` initiiert und gesteuert.
+
+Bei GitHub muss dazu noch in den Einstellungen des Repositories unter
+"Build and deployment" ausgewählt werden: "GitHub Actions":
 
 ![github-pages-settings](readme-images/m1-github-pages-settings.png)
 
@@ -46,12 +49,16 @@ Bei GitHub muss dazu in den Einstellungen des Repositories unter
   1. lokales Generieren der Webseite(n)
      (Zielverzeichnis ist jeweils `book` in den Sprachverzeichnissen.)
 
+     Die Angabe von "en/de" ist erforderlich, weil in diesem Projekt
+     die Dokumentation in mehreren Sprachen erzeugt wird,
+     deren Quelltexte in eben diesen beiden Unterverzeichnissen liegen.
+
          mdbook build en     # "en" ist Default und Fallback
          mdbook build de     # "de" ist eine von evtl. mehreren zusätzlichen Übersetzungen
 
      Testen geht mit einem lokalen Development-Webservice im Browser: http://localhost:3000  
      Da `mdbook serve` bei jeder Änderung der Quelldateien intern ein 'build' aufruft,
-     kann lokal nur jede Sprache einzeln getestet werden.
+     kann **lokal nur jede Sprache einzeln** getestet werden.
 
          mdbook serve en
 
@@ -73,7 +80,13 @@ Bei GitHub muss dazu in den Einstellungen des Repositories unter
 
 
 > [!TIP]
-> Zur Vereinfachung wird ein einfaches `Makefile` im Repository zur Verfügung gestellt.
+> Zur Vereinfachung ist ein einfaches `Makefile` im Repository enthalten.
+>
+> Es bietet die Kommandos
+>
+>   - make build
+>   - make upload
+>   - make all   # (führt beide obigen Kommandos hintereinander aus)
 
 
 > [!TIP]

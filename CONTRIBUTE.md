@@ -17,7 +17,7 @@ Im *Raspberry Pi Forum*, Unterforum "raspiBackup": <https://forum-raspberrypi.de
 
 Dazu gibt es (mindestens) drei mögliche Wege.
 
-Da das Repository mit der Dokumentation auf *GitHub* gehosted wird,
+**Hinweis**: Da das Repository mit der Dokumentation auf *GitHub* gehosted wird,
 ist ein (kostenloser) GitHub-Account erforderlich.
 
 Hier nun der einfachste Weg zuerst beschrieben:
@@ -82,7 +82,7 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
 ### Manuell lokal
 
-  1. Das Repository kopieren
+  1. Das Repository kopieren/clonen
 
      ```
      git clone https://github.com/rpi-simonz/raspiBackupDocs.git
@@ -103,5 +103,5 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
      "Create pull request"
 
-  1. warten, bis der Repo-Owner den PR annimmt  ;-)
+  1. hoffen, bis der Repo-Owner den PR annimmt  ;-)
 

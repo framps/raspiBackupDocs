@@ -25,8 +25,8 @@
 ## Der Plan
 
 Die neue Dokumentation von *raspiBackup* könnte in Zukunft anders gestaltet sein.
-Nicht mehr als integraler Bestandteil eines CMS (framps Joomla), sondern als eigenständiges
-"Projekt".
+Nicht mehr als integraler Bestandteil eines CMS (framps Joomla),
+sondern als eigenständiges "Projekt".
 
 Dafür bietet sich ein Repository mit thematisch aufgeteilten Dateien
 in einer einfachen Auszeichnungssprache, z.B. *Markdown* an.
