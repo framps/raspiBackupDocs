@@ -13,24 +13,28 @@ stehen auf der [Projektseite bei GitHub](https://github.com/rpi-simonz/raspiBack
 > *raspiBackup* - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
 
 Eine regelmäßige Sicherung von Raspberry Pis ist wichtig, um im Falle eines
-SD Kartenausfalls oder auch von unbeabsichtigten Änderungen das System wieder
+Ausfalls des Systemspeichergerätes (SD Karte, USB Disk, SSD, NVMe ...) oder auch von
+unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft bootet, das System wieder
 auf einen vorherigen Zustand zurücksetzen zu können.
 
 *raspiBackup* erstellt eine Sicherung eines Raspberry Pis **bei laufendem System**.
-Das kann manuell oder automatisch in regelmäßigen Abständen (per `crontab`) erfolgen.
-Optional bekommt man eine eMail zugeschickt, die einen über das
-Ergebnis des Backups informiert.
+Das kann manuell oder automatisch in regelmäßigen Abständen per erfolgen.
+Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
-werden (USB Stick, USB Platte, nfs, samba, sshfs, usw.).
+werden (USB Stick, USB Platte, SSD, NVMe, nfs, samba, sshfs, usw.).
 
 Wer eine Synology oder andere Backupziele für den Backup benutzen möchte,
 findet [hier](more-backupspaces.md) nützliche Tipps.
 
-Als Backupmethoden stehen zur Auswahl: `dd` Backup, `tar` Backup, (beides auch
-gezipped) und ein `rsync` Backup mit und ohne Hardlinks.
+Als Backuptools stehen zur Auswahl: `dd` Backup, `tar` Backup, (beides auch
+gezipped) und ein `rsync` Backup mit Hardlinkbenutzung um Deltabackups zu erzeugen.
 Die einzelnen Backupmethoden sind im Detail [hier](backuptypes.md) nachzulesen.
 Dort befindet sich auch ein Entscheidungsbaum, um schneller die richtige Backupmethode zu finden.
+
+Zur Installation und Konfiguration raspiBackup gibt es einen Installer mit dem,
+wie bei raspi-config, menugesteuert relativ schnell die wichtigsten Optionen von raspiBackup konfiguriert werden können.
+Alle weiteren Optionen müssen in einer Konfigurationsdatei definiert werden.
 
 Eine einfache [Wiederherstellung](restore.md) eines gesicherten Backups nimmt *raspiBackup*
 natürlich auch vor.
@@ -53,30 +57,28 @@ Dazu gibt es extra Kapitel: [Unterstützte Hard- und Software](supported-hardwar
 ## Stoppen und Starten von Diensten/Services
 
 Um eine konsistente Sicherung bei laufendem System zu ermöglichen, müssen
-nur alle wichtigen Services vor dem Backup gestoppt und nach erfolgtem
-Backup wieder gestartet werden (konfigurierbar und damit automatisch).
+nur alle wichtigen Services die Daten im Speicher halten, vor dem Backup gestoppt und nach erfolgtem
+Backup wieder gestartet werden.
 
-Die notwendigen Befehle dazu können entweder über Parameter definiert werden oder
-es kann ein Beispielwrapperscript benutzt werden, welches dann wesentlich mehr
-und programmatisch gesteuerter Aktionen vor und und nach dem Backup vornehmen
-kann. Das automatische Mounten und Unmounten des Backupspaces ist schon im
-[Beispielwrapperscript](https://github.com/framps/raspiBackup/blob/master/helper/raspiBackupWrapper.sh) enthalten.
+Die notwendigen Befehle dazu können manuell über Parameter in der Konfigurationsdatei definiert werden. 
+Der Installer von raspiBackup kann auch genutzt werden um alle per Systemd gestarteten Services zu stoppen
+und nach dem Backup wieder zu starten. 
 
 Weiterhin gibt es [Erweiterungspunkte](hooks-for-own-scripts.md) für Plugins in *raspiBackup*,
 um eigene Scripts vor und nach dem Backupvorgang einzubinden.
 
-
 ## Optional ausgelagerte Root-Partition
 
-Eine eventuell ausgelagerte Rootpartition kann mitgesichert werden.
+Eine eventuell ausgelagerte Rootpartition kann mitgesichert werden. Dieses ist nur notwendig wenn eine
+ältere Raspberry gesichert werden soll die noch kein USB Boot unterstützt.
 
-Im normalen Backupmodus werden die beiden SD Kartenpartitionen `mmcblk0p1`
-und `mmcblk0p2` gesichert. Sofern die Rootpartition `mmcblk0p2` auf eine externe
+Im normalen Backupmodus werden die beiden RaspbianOSppartitionen 
+/boot und /root. Sofern die Rootpartition auf eine externe
 Partition (USB Stick, USB Platte, ...) ausgelagert wurde, wird diese externe
-Partition anstatt `mmcblk0p2` gesichert.
+Partition gesichert.
 
-Ein USB Boot System kann mit einer beliebigen Anzahl von externen Partitionen
-gesichert werden ab der release 0.6.6.
+Ein USB Boot System kann mit einer beliebigen Anzahl von Partitionen
+gesichert werden ab der Release 0.6.6. Dazu muss der partitionsorientierte Modus genutzt werden.
 
 ## Einführungsvideo und Youtube-Channel
 
@@ -117,6 +119,9 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
   um im deutschen Raspberryforum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder
   existierende Threads zu *raspiBackup* zu lesen.
 
+* Klicke [![Reddit](images/icons/reddit-icon.png)](https://www.reddit.com/r/raspiBackup/),
+  um auf Reddit *raspiBackup* zu folgen.
+
 ``` admonish info title="Hinweis"
 Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
 ```
@@ -140,7 +145,7 @@ Es haben im Laufe der Zeit sehr viele Leute aus der Community durch Kommentare,
 Erweiterungsvorschläge und Beta- und Fixtests zu *raspiBackup* beigetragen.
 In Anbetracht der grossen Anzahl ist es leider nicht möglich, jeden einzelnen aufzuführen.
 
-Daher einfach: Vielen Dank euch allen!
+Daher einfach: Vielen Dank Euch allen!
 
 
 ## Lizenz und GitHub-Link
@@ -150,8 +155,7 @@ Der Code von *raspiBackup* ist reiner bash Code und steht unter der GPL auf [git
 
 ## Haftungsausschluss
 
-Das Backup- und Restorescript *raspiBackup* wurde für den persönlichen Gebrauch
-erstellt und, da es sich als sehr nützlich erwies, der Allgemeinheit zur
+*raspiBackup* wurde für den persönlichen Gebrauch erstellt und, da es sich als sehr nützlich erwies, der Allgemeinheit zur
 Verfügung gestellt.
 
 Es wird im Rahmen des Möglichen die korrekte Funktionalität getestet
@@ -162,8 +166,6 @@ Jeder, der *raspiBackup* benutzt, tut das auf sein eigenes Risiko.
 Der Ersteller von *raspiBackup* ist in keiner Weise haftbar für
 irgendwelche Fehlfunktionen des Scripts.
 
-
-[.status]: todo "update or delete last donation info?"
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld
