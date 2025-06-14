@@ -40,9 +40,6 @@ die sich mit Hilfe von Software gut in andere Formate, z.B. eben auch in eine We
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
 ist natürlich noch etwas mehr "Drumherum" nötig, das nun kurz beschrieben wird.
 
-Aktuell werden hier *mdbook* zum Generieren und *GitHub Pages* (bzw. ein normaler Webserver) zum Anzeigen verwendet.
-
-
 ## Weitere Details ...
 
   - [für Mitwirkende am Inhalt](CONTRIBUTE.md)

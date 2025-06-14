@@ -42,7 +42,7 @@ Bei GitHub muss dazu noch in den Einstellungen des Repositories unter
 
 > [!IMPORTANT]
 > Voraussetzungen beim lokalen Generieren:
-> Die Rust-Umgebung inkl. Compiler `rustc`, `mdbook` und der Präprozessor `mdbook-admonish` müssen installiert sein.
+> Die Rust-Umgebung inkl. Compiler `rustc`, `mdbook` und Präprozessoren für `mdbook` müssen installiert sein.
 > Siehe [DEVELOP.md](DEVELOP.md).
 
   1. lokales Editieren von Markdown-Datei(en)
