@@ -18,7 +18,7 @@ unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft boo
 auf einen vorherigen Zustand zurücksetzen zu können.
 
 *raspiBackup* erstellt eine Sicherung eines Raspberry Pis **bei laufendem System**.
-Das kann manuell oder automatisch in regelmäßigen Abständen per erfolgen.
+Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen.
 Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
