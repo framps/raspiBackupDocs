@@ -1,14 +1,10 @@
 ``` admonish info title="Work in progress - In Arbeit"
-Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung der
-Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
+Dies ist die Dokumentation zu *raspiBackup* in neuer Form.
 
- - Die Struktur ist weitestgehend fertig.
- - Manche Seiten enthalten noch Formatierungsfehler.
+Zum Wechseln der Sprache (deutsch/englisch) ist oben rechts ein kleines Globus-Icon vorhanden.
 
-Es gibt zwei Sprachversionen, *deutsch* und *englisch*, zwischen denen dynamisch
-mit dem Sprachwähler oben rechts umgeschaltet werden kann.
-(*Englisch* ist aktuell noch ziemlich "leer". Das kann nachgearbeitet werden,
-wenn die deutschen Seiten komplett sind.)
+Infos zum aktuellen Stand und zur Möglichkeit der Mitarbeit an dieser Dokumentation
+stehen auf der [Projektseite bei GitHub](https://github.com/rpi-simonz/raspiBackupDocs).
 ```
 
 
@@ -99,6 +95,7 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 
 
 
+<a name="kontakt"></a>
 ## Kontaktmöglichkeiten
 
 * Klicke [![Github](images/icons/GitHub-Mark-32px.png)](https://github.com/framps/raspiBackup/issues),

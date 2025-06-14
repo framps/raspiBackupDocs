@@ -35,7 +35,7 @@ Das bitte **ohne** `sudo` aufrufen, da es eine benutzerspezifische Installation 
 
 Das Wichtigste ist der "Generator", der die Markdown-Textdateien einliest und nach HTML umwandelt.
 
-Ich habe erst einmal *mdbook* gewählt.
+Ich habe *mdbook* gewählt.
 
 Dieses Tools kommt aus dem Rust-Umfeld und wird auch für die Rust-Dokumentation selbst eingesetzt.
 Siehe <https://rust-lang.github.io/mdBook>
@@ -59,7 +59,7 @@ macht es Sinn, auch *mdbook* zu compilieren:
 Alle benötigten Tools lassen sich auch aus den Sourcen selbst kompilieren.
 <https://rust-lang.github.io/mdBook/guide/installation.html#build-from-source-using-rust>
 
-Dafür ist ein [Rust-Compiler] mit der entsprechenden Umgebung erforderlich.
+Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
 
 Wenn der Compiler `rustc` dann installiert ist ([s.o.](#rust-compiler)), wird *mdbook* compiliert und installiert:
 
@@ -191,7 +191,7 @@ Oder per *GitHub Pages*. Siehe [MAINTAIN.md](MAINTAIN.md)
 
 Es kann natürlich sein, dass beim `mdbook build` Fehler auftreten.
 
-1. Falls der Präprozessor `mdbook-admonish` nicht installiert ist:
+ - Falls der Präprozessor `mdbook-admonish` nicht installiert ist:
 
         2025-05-27 02:53:49 [INFO] (mdbook::book): Book building has started
         2025-05-27 02:53:49 [WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "admonish" preprocessor installed?

@@ -6,8 +6,8 @@ Alle Inhalte befinden sich standardmäßig im Unterverzeichnis `src/`.
 Da die Dokumentation von *raspiBackup* aber mehrsprachig aufgebaut ist,
 befinden sich die Inhalte sprachabhängig in den Unterverzeichnissen
 
-    `de/src/`
-    `en/src/`
+    de/src/
+    en/src/
 
 Es sind Textdateien (im *Markdown*-Format), die sich mit jedem Texteditor bearbeiten lassen.
 

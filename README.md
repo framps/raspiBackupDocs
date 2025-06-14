@@ -6,14 +6,13 @@
 -->
 
 > [!NOTE]
-> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung der
+> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
 > Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
->
-> - Die Struktur ist weitestgehend fertig.
-> - Manche Seiten enthalten noch Formatierungsfehler.
 >
 > Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
 > Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
+>
+> Manche Seiten enthalten noch Formatierungsfehler und *Englisch* ist aktuell noch "leer".
 >
 > Die generierte Dokumentation ist momentan über folgende Links zu erreichen:
 >
@@ -24,24 +23,22 @@
 
 ## Der Plan
 
-Die neue Dokumentation von *raspiBackup* könnte in Zukunft anders gestaltet sein.
-Nicht mehr als integraler Bestandteil eines CMS (framps Joomla),
-sondern als eigenständiges "Projekt".
+Die neue Dokumentation von *raspiBackup* ist nun anders gestaltet als bisher.
+Sie ist nicht mehr integraler Bestandteil eines CMS (framps Joomla),
+sondern ein eigenständiges "Projekt".
 
-Dafür bietet sich ein Repository mit thematisch aufgeteilten Dateien
-in einer einfachen Auszeichnungssprache, z.B. *Markdown* an.
+Die Dokumentation - beziehungsweise die Quelltexte davon - befindet sich nun
+in einem Repository mit thematisch aufgeteilten Dateien,
+geschrieben in einer einfachen Auszeichnungssprache, *Markdown*.
 
 Dies sind Textdateien, die sich gut bearbeiten und versionieren lassen.
 Über das Repository ist dann sogar eine Teamarbeit an der Dokumentation möglich (über *Pull-Requests*). ;-)
 
 *Markdown* ist eine von vielen Auszeichnungssprachen,
-die sich mit Hilfe von Software gut in andere Formate, z.B. auch eine Webseite, umwandeln lassen.
+die sich mit Hilfe von Software gut in andere Formate, z.B. eben auch in eine Webseite, umwandeln lassen.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
 ist natürlich noch etwas mehr "Drumherum" nötig, das nun kurz beschrieben wird.
-
-Aktuell werden hier *mdbook* zum Generieren und *GitHub Pages* (bzw. ein normaler Webserver) zum Anzeigen verwendet.
-
 
 ## Weitere Details ...
 
