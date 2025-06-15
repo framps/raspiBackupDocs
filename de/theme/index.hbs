@@ -61,6 +61,23 @@
         </script>
         <!-- Start loading toc.js asap -->
         <script src="{{ resource "toc.js" }}"></script>
+
+        <script>
+        function getUserPreferredLanguage() {
+          // Modern browsers support navigator.language
+          if (navigator.language) {
+            return navigator.language;
+          }
+
+          // For IE and older versions of Microsoft Edge, use navigator.userLanguage
+          if (navigator.userLanguage) {
+            return navigator.userLanguage;
+          }
+
+          // If none of the above is available, use a default language code
+          return 'en';
+        }
+        </script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -103,6 +120,17 @@
             html.classList.remove('{{ default_theme }}')
             html.classList.add(theme);
             html.classList.add("js");
+        </script>
+
+        <!-- language redirection -->
+        <script>
+            if (getUserPreferredLanguage().startsWith('de')) {
+                if (! "{{ language }}".startsWith('de')) {
+                    if (window.location.pathname.endsWith("/")) {
+                        window.location.href = window.location.href + "de/";
+                    }
+                }
+            }
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
