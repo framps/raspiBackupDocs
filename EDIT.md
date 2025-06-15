@@ -135,6 +135,7 @@ Hier einige Beispiele:
 [.status]: done
 [.status]: todo
 [.status]: todo "Links überprüfen und Formatierung optimieren"
+[.status]: wip "Work in progress by framp"
 ```
 
 #### weitere variable Anwendungsmöglichkeiten
