@@ -41,6 +41,8 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
 --------------------
 
+--------------------
+
 **Die folgenden Wege sind eher für technisch Interessierte und Entwickler von Bedeutung:**
 
 --------------------

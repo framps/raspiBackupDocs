@@ -1,22 +1,8 @@
 # Maintainer, Repo-Owner, Webserver-Admin
 
-## Arbeitsablauf
-
-Der allgemeine Arbeitsablauf ist folgendermaßen:
-
-  1. Editieren von Markdown-Datei(en) für Struktur und Inhalt
-  1. Versionieren (git)
-  1. Generieren der Webseite (automatisch oder manuell)
-  1. bei Bedarf weiter bei 1.
-
 Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
-
-Im Detail also ...
-
-### ... für den Repo-Eigentümer (bzw. Webserver-Admin)
-
-#### ... mit automatischer Generierung bei z.B. *GitHub Pages*
+## Arbeitsablauf bei automatischer Generierung bei z.B. *GitHub Pages*
 
   1. Editieren von Markdown-Datei(en), lokal oder im Browser
   1. commit + push
@@ -37,7 +23,7 @@ Bei GitHub muss dazu noch in den Einstellungen des Repositories unter
 
 
 
-#### ... mit Veröffentlichung auf einem (normalen) Webserver
+## Ablauf bei Veröffentlichung auf einem (normalen) Webserver
 
 
 > [!IMPORTANT]
@@ -98,5 +84,4 @@ Bei GitHub muss dazu noch in den Einstellungen des Repositories unter
 
 
 **TODO**: URL der generierten Dokumentation besprechen und hier nachtragen.
-
 
