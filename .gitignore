@@ -5,6 +5,7 @@ tmp.gh-pages
 theme.orig
 collect
 WIP
+Session.vim
 
 **/src/doc-version-info-automatically-generated.md
 **/*.swp
