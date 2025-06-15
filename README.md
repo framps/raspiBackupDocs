@@ -44,4 +44,3 @@ ist natürlich noch etwas mehr "Drumherum" nötig, das nun kurz beschrieben wird
 
   - [für Mitwirkende am Inhalt](CONTRIBUTE.md)
   - [für Maintainer](MAINTAIN.md)
-  - [für Entwickler und technisch Neugierige](DEVELOP.md)
