@@ -1,7 +1,7 @@
 # Mitwirken an der Dokumentation
 
 Leser/Nutzer, die etwas zur Dokumentation beitragen möchten,
-können dies folgendermaßen tun (Kurzfassung):
+können dies folgendermaßen tun:
 
 ## Vorschläge machen, Probleme melden usw.
 
@@ -15,14 +15,27 @@ Im *Raspberry Pi Forum*, Unterforum "raspiBackup": <https://forum-raspberrypi.de
 
 ## Selber Inhalte ändern, ergänzen oder neu erstellen
 
-Dazu gibt es (mindestens) drei mögliche Wege.
-
 **Hinweis**: Da das Repository mit der Dokumentation auf *GitHub* gehosted wird,
 ist ein (kostenloser) GitHub-Account erforderlich.
 
-Hier nun der einfachste Weg zuerst beschrieben:
+Es gibt (mindestens) drei Wege:
 
+  - Am einfachsten: [Über das "Editieren"-Icon auf jeder Seite der Dokumentation](#edit_icon)
+  - [Manuell über GitHub](#github_manual)
+  - [Manuell lokal](local_manual)
+
+Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
+
+<br/>
+<br/>
+<br/>
+
+--------------------
+
+<a name="edit_icon"></a>
 ### Über das "Editieren"-Icon auf jeder Seite der Dokumentation
+
+Dies ist der einfachste Weg!
 
 1. Das "Editieren"-Icon auf der zu ändernden Seite der Doku anklicken
 
@@ -39,6 +52,7 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
   1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
+
 --------------------
 
 --------------------
@@ -47,6 +61,9 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
 --------------------
 
+--------------------
+
+<a name="github_manual"></a>
 ### Manuell über GitHub
 
   1. Das Repository kopieren: "Fork"
@@ -73,8 +90,6 @@ Hier nun der einfachste Weg zuerst beschrieben:
    ![Editieren anklicken](readme-images/06-click-edit.png)
    ![Editieren und commiten](readme-images/07-edit-and-commit.png)
 
-   Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
-
 1. und in einem neuen Branch speichern
 
    ![Commit-Meldung ausfüllen und branchen](readme-images/08-fill-commit-message-and-branch.png)
@@ -86,6 +101,7 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
 --------------------
 
+<a name="local_manual"></a>
 ### Manuell lokal
 
   1. Das Repository kopieren/clonen
@@ -95,8 +111,6 @@ Hier nun der einfachste Weg zuerst beschrieben:
      ```
 
   1. Editieren von Markdown-Datei(en) in Verzeichnis `<sprache>/src/`
-
-     Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
   1. Eine neue Version erstellen und hochladen
 
