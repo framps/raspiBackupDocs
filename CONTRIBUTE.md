@@ -41,6 +41,10 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
 --------------------
 
+**Die folgenden Wege sind eher für technisch Interessierte und Entwickler von Bedeutung:**
+
+--------------------
+
 ### Manuell über GitHub
 
   1. Das Repository kopieren: "Fork"
@@ -103,5 +107,5 @@ Hier nun der einfachste Weg zuerst beschrieben:
 
      "Create pull request"
 
-  1. hoffen, bis der Repo-Owner den PR annimmt  ;-)
+  1. warten, bis der Repo-Owner den PR annimmt  ;-)
 

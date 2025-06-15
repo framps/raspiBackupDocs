@@ -66,10 +66,16 @@ damit der Browser des Lesers korrekt damit umgehen kann.
 Im Unterverzeichnis `src/` stehen die Inhalte in Markdown-formatierten Dateien.
 Die `SUMMARY.md` gibt den Aufbau und das Inhaltsverzeichnis wieder.
 
+Beispiel:
+
+    # Mein erstes Buch
+
+    [Vorwort](introduction.md)
+
+    - [Erstes Kapitel](chapter_1.md)
+
 Hier in `src/` können auch Bilder, Icons etc. untergebracht werden, sinnvollerweise
 in passend benannten Unterverzeichnissen.
-
-Mehr Details zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
 
 ## Generieren der Webseite
@@ -108,7 +114,7 @@ kann die Webseite, also die generierte Sammlung von HTML- und anderen Dateien im
 natürlich noch veröffentlicht werden.
 
 Dies kann .z.B. durch Hochladen zu einem Webserver/Webhoster o.Ä. geschehen.
-Oder per *GitHub Pages*. Siehe [MAINTAIN.md](MAINTAIN.md)
+Oder per *GitHub Pages*.
 
 
 
@@ -122,5 +128,5 @@ Es kann natürlich sein, dass beim `mdbook build` Fehler auftreten.
         2025-05-27 02:53:49 [WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "admonish" preprocessor installed?
         2025-05-27 02:53:49 [WARN] (mdbook::preprocess::cmd): 	Command: mdbook-admonish
 
-   Siehe dazu oben bei [Compilation aus den Quelltexten](INSTALL.md#compile-from-sources)
+   Siehe dazu bei [Compilation aus den Quelltexten](INSTALL.md#compile-from-sources)
 
