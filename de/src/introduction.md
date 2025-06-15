@@ -14,30 +14,27 @@ stehen auf der [Projektseite bei GitHub](https://github.com/rpi-simonz/raspiBack
 
 Eine regelmäßige Sicherung von Raspberry Pis ist wichtig, um im Falle eines
 Ausfalls des Systemspeichergerätes (SD Karte, USB Disk, SSD, NVMe ...) oder auch von
-unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft bootet, das System wieder
-auf einen vorherigen Zustand zurücksetzen zu können.
+unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft bootet, das System wieder auf einen vorherigen Zustand zurücksetzen zu können.
 
 *raspiBackup* erstellt eine Sicherung eines Raspberry Pis **bei laufendem System**.
-Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen.
-Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
+Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen. Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
-werden (USB Stick, USB Platte, SSD, NVMe, nfs, samba, sshfs, usw.).
+werden (USB Stick, USB Platte, SSD, NVMe, nfs, samba/cifs, sshfs, webdav usw).
 
 Wer eine Synology oder andere Backupziele für den Backup benutzen möchte,
 findet [hier](more-backupspaces.md) nützliche Tipps.
 
-Als Backuptools stehen zur Auswahl: `dd` Backup, `tar` Backup, (beides auch
-gezipped) und ein `rsync` Backup mit Hardlinkbenutzung um Deltabackups zu erzeugen.
-Die einzelnen Backupmethoden sind im Detail [hier](backuptypes.md) nachzulesen.
+Es exitsieren zwei Backupmodi: Der **normale Backupmodus** sichert nur die Boot- und Rootpartition. Sollen weitere Partitionen gesichert werden, z.B. eine reine dritte Datenpartition, muss der **partitionsorientierte Modus** gewählt werden.
+
+Folgende Linux Backuptools können genutzt werden: `dd` Backup, `tar` Backup, (beides auch gezipped) und ein `rsync` Backup mit Hardlinkbenutzung um Deltabackups zu erzeugen.
+Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) nachzulesen.
 Dort befindet sich auch ein Entscheidungsbaum, um schneller die richtige Backupmethode zu finden.
 
-Zur Installation und Konfiguration raspiBackup gibt es einen Installer mit dem,
-wie bei raspi-config, menugesteuert relativ schnell die wichtigsten Optionen von raspiBackup konfiguriert werden können.
-Alle weiteren Optionen müssen in einer Konfigurationsdatei definiert werden.
+Zur **Installation und Konfiguration** von raspiBackup gibt es einen Installer mit dem,
+wie bei raspi-config, menugesteuert, einfach und schnell die wichtigsten Optionen von raspiBackup konfiguriert werden können. Sollen spezielle Dinge bei raspiBackup konfiguriert werden muss eine Konfigurationsdatei manuell geändert werden.
 
-Eine einfache [Wiederherstellung](restore.md) eines gesicherten Backups nimmt *raspiBackup*
-natürlich auch vor.
+raspiBackup kann natürlich nicht nur eine Sicherung erstellen sondern auch eine Sicherung **wiederherstellen**. Siehe dazu [Wiederherstellung](restore.md).
 
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
@@ -57,28 +54,25 @@ Dazu gibt es extra Kapitel: [Unterstützte Hard- und Software](supported-hardwar
 ## Stoppen und Starten von Diensten/Services
 
 Um eine konsistente Sicherung bei laufendem System zu ermöglichen, müssen
-nur alle wichtigen Services die Daten im Speicher halten, vor dem Backup gestoppt und nach erfolgtem
-Backup wieder gestartet werden.
+nur alle wichtigen Services die Daten im Speicher halten, vor dem Backup gestoppt und nach erfolgtem Backup wieder gestartet werden.
 
-Die notwendigen Befehle dazu können manuell über Parameter in der Konfigurationsdatei definiert werden. 
-Der Installer von raspiBackup kann auch genutzt werden um alle per Systemd gestarteten Services zu stoppen
-und nach dem Backup wieder zu starten. 
+Die notwendigen Befehle dazu können manuell über Parameter in der Konfigurationsdatei definiert werden. Mit dem raspiBackup Installer können alle per Systemd gestarteten Services ausgewählt werden die dann vor dem Backup gestoppt werden und nach dem Backup werden sie wieder in umgekehrter Reihenfolge gestartet.
 
-Weiterhin gibt es [Erweiterungspunkte](hooks-for-own-scripts.md) für Plugins in *raspiBackup*,
-um eigene Scripts vor und nach dem Backupvorgang einzubinden.
+## Erweiterungspunkte
+
+Weiterhin gibt es [Erweiterungspunkte](hooks-for-own-scripts.md) für Plugins in *raspiBackup*, um eigene Scripts an bestimmten Stellen im Backupscript einzubinden und kann somit die Funktionalität von raspiBackup den eigenen Bedürfnissen anpassen.
 
 ## Optional ausgelagerte Root-Partition
 
-Eine eventuell ausgelagerte Rootpartition kann mitgesichert werden. Dieses ist nur notwendig wenn eine
-ältere Raspberry gesichert werden soll die noch kein USB Boot unterstützt.
+Eine eventuell ausgelagerte Rootpartition kann mitgesichert werden. Dieses ist nur notwendig wenn eine ältere Raspberry gesichert werden soll die noch kein USB Boot unterstützt.
 
-Im normalen Backupmodus werden die beiden RaspbianOSppartitionen 
+Im normalen Backupmodus werden die beiden RaspbianOSppartitionen
 /boot und /root. Sofern die Rootpartition auf eine externe
 Partition (USB Stick, USB Platte, ...) ausgelagert wurde, wird diese externe
 Partition gesichert.
 
 Ein USB Boot System kann mit einer beliebigen Anzahl von Partitionen
-gesichert werden ab der Release 0.6.6. Dazu muss der partitionsorientierte Modus genutzt werden.
+gesichert werden. Dazu muss der partitionsorientierte Modus genutzt werden.
 
 ## Einführungsvideo und Youtube-Channel
 
@@ -103,7 +97,7 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 * Klicke [![Github](images/icons/GitHub-Mark-32px.png)](https://github.com/framps/raspiBackup/issues),
   um auf Github Fragen oder Probleme zu *raspiBackup* als Issues zu erstellen.
   Die Issues können gerne auch in Deutsch erstellt werden.
-  So lassen sich Fragen und Problemberichte tracken und Du bekommst eine Benachrichtigung über Antworten.
+  So lassen sich Fragen und Problemberichte tracken und man bekommt eine Benachrichtigung über Antworten.
 
 * Klicke [![Facebook](images/icons/FB-f-Logo__blue_29.png)](https://www.facebook.com/raspiBackup/),
   um auf Facebook aktuelle Aktivitäten und Randinformationen zu *raspiBackup* zu erfahren.
@@ -116,8 +110,7 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
   um auf Youtube Videos zu *raspiBackup* zu sehen.
 
 * Klicke [![RaspberryForum](images/icons/RaspberryForumSmall.png)](https://forum-raspberrypi.de/forum/board/153-backup/),
-  um im deutschen Raspberryforum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder
-  existierende Threads zu *raspiBackup* zu lesen.
+  um im deutschen Raspberryforum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder existierende Threads zu *raspiBackup* zu lesen.
 
 * Klicke [![Reddit](images/icons/reddit-icon.png)](https://www.reddit.com/r/raspiBackup/),
   um auf Reddit *raspiBackup* zu folgen.
@@ -169,4 +162,4 @@ irgendwelche Fehlfunktionen des Scripts.
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld
-
+[.status]: Review by framp ongoing

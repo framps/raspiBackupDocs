@@ -20,14 +20,16 @@ Dynamically selectable with the language selector on the top right.
 
 A regular backup of your Raspberry Pis is important. In case of a failure of the system device
 (SD Card, USB disk, USB flash drive, SSD, NVMe ...) or unintended updates which cause the system either
-not to boot any more or boot with errors this backup enables you to restore a previous functional backup. 
+not to boot any more or boot with errors this backup enables you to restore a previous functional backup.
 
 *raspiBackup* creates a backup of Raspberry Pis **from a running system**.
 You can either start the backup manually or have the backups be started automatically with systemd or crontab.
 Optionally you can let you notified about the backup result with eMail, Pushover, Slack or Telegram.
 
-Backups can be created ony an devices which can be mounted on a Linux system 
-(USB flash drive, USB disk, SSD, NVMe, nfs, samba, sshfs, etc.).
+Backups can be saved ony an partition which can be mounted on a Linux system
+(USB flash drive, USB disk, SSD, NVMe, nfs, samba/cifs, sshfs, webdav etc).
+
+There exist two backup modes: The **normal backup mode** just saves the boot and root parition. If additional partitions should be saved, for example a 3rd data only partition, the **partition oriented mode** has to be used.
 
 If you own an Synology or another NAS device see [here](more-backupspaces.md) for configuration hints.
 
@@ -36,11 +38,10 @@ with hardlink usage to create a delta backup can be used.
 For details about the different backup methods see [here](backuptypes.md).
 There you will find a decision tree to decide which backup methods is the right one to use.
 
-There exists an installer for raspiBackup to install and configure raspiBackup 
-similar to raspi-config, menuedriven to configure raspiBackup with it's most important options to be able to use raspiBackup.
+To **install and configure** raspiBackup there exists an installer similar to raspi-config, which allows menuedriven, simple and fast to configure raspiBackup with it's most important options to use raspiBackup.
 All more sophisticated options have to be configured in a configuration file.
 
-raspiBackup also restores a backup [Restore](restore.md). 
+raspiBackup also **restores** a backup [Restore](restore.md).
 
 All functions and usage scenarios of *raspiBackup* are listed in
 [Functionoverview](function-overview.md)..
@@ -59,14 +60,13 @@ See [Supported hard- and software](supported-hardware-and-software.md)
 
 ## Stop and start of services
 
-To get a consistent backup of a running system all services which keep important information in memory
-have to be stopped before a backup starts and should be started when the backup finishes, 
+To get a consistent backup of a running system all services which keep important information in memory have to be stopped before a backup starts and should be started when the backup finishes,
 
-The required commands can be specified in the configuration file. The raspiBackup installer allows to
-select systemd services to be stopped and started and no configuration file update is required.
+The required commands can be specified in the configuration file. The raspiBackup installer allows to select systemd services to be stopped and started and no configuration file update is required.
 
-There exist [extensionpoints](hooks-for-own-scripts.md) for plugins in *raspiBackup*, to hock in any
-additonal custom logic at different points of the backup and restore processing.
+## Extensionpoints
+
+There exist [extensionpoints](hooks-for-own-scripts.md) for plugins in *raspiBackup*, to hock in any additonal custom logic at different points of the backup and restore processing.
 
 ## Optionally external root partition
 
@@ -87,7 +87,7 @@ Topics are
   * Introduction of github as a question and problemreporting tools
   * Liveinstallation of *raspiBackup* with the menuedriven installer
 
-Alls slides used in the videos can be downloaded from [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download).
+All slides used in the videos can be downloaded from [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download).
 
 A lot of additional videos about various features of *raspiBackup* are available in the [raspiBackup-Channel](https://www.youtube.com/@raspiBackup).
 
@@ -101,7 +101,7 @@ or [![Github issues](https://github.com/framps/raspiBackup/issues)
 
 * Click [![Facebook](images/icons/FB-f-Logo__blue_29.png)](https://www.facebook.com/raspiBackup/),
   to follow *raspiBackup* on facebook
-  
+
 * Click [![Twitter](images/icons/Twitter-f-Logo__blue_29.png)](https://www.twitter.com/linuxframp),
   to follow *raspiBackup* on twitter
 
@@ -143,8 +143,9 @@ This backupscript *raspiBackup* was initally created for personal use only.
 But it's very useful and therefore was published for general use.
 It's seriously tested but it's not possible to guarantee the script works as expected in all possible environments.
 Everybody uses this script on his own risk. The creator of this script is not liable in any case for any malfunction.
- 
+
 [.de]: ../../de/src/introduction.md
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld
+[.status]: Review by framp ongoing
