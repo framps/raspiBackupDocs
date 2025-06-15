@@ -2,17 +2,25 @@
 
 **Tipp**: Siehe auch Originalbeschreibung von *mdbook* <https://rust-lang.github.io/mdBook/guide/creating.html>
 
-Alle Inhalte befinden sich standardmäßig im Unterverzeichnis `src/`.
-Da die Dokumentation von *raspiBackup* aber mehrsprachig aufgebaut ist,
-befinden sich die Inhalte sprachabhängig in den Unterverzeichnissen
+Alle Inhalte befinden sich standardmäßig in einem direkten Unterverzeichnis `src/`.
+
+Da die Dokumentation von *raspiBackup* mehrsprachig aufgebaut ist,
+befinden sich die Inhalte hier im Projekt sprachabhängig in den Unterverzeichnissen
 
     de/src/
     en/src/
 
-Es sind Textdateien (im *Markdown*-Format), die sich mit jedem Texteditor bearbeiten lassen.
+In den (jeweiligen!) Verzeichnissen `src/` können bei Bedarf auch Bilder, Icons etc. untergebracht werden,
+sinnvollerweise in passend benannten Unterverzeichnissen. Das heisst: Für jede Sprache extra.
+Diese eventuelle mehrfache Speicherung von gleichen Dateien beruht auf der zugrundeliegenden Technik
+und lässt sich zur Zeit nicht vermeiden.
 
-Hilfreich ist aber ein Editor, der bei der Darstellung unterstützt ("Syntax Highlighting").
+Die eigentlichen Inhalte sind Textdateien (im *Markdown*-Format), die sich mit jedem Texteditor bearbeiten lassen.
+
+Hilfreich ist ein Editor, der bei der Darstellung unterstützt ("Syntax Highlighting").
 **TODO**: Beispiele.
+
+Eine kurze Einführung zum verwendeten Generierungstool *mdbook* gibt es [hier](MDBOOK_INTRO.md).
 
 
 ## Das Inhaltsverzeichnis / Die Struktur der Dokumentation
@@ -22,7 +30,7 @@ Dies ist der wichtigste Teil der Dokumentation.
 In der Datei `SUMMARY.md` wird die Struktur des zu erzeugenden Buches erfasst.
 Und zwar durch einen "Baum" von (Markdown-)Links mit Kapitelnamen und den dazugehörigen Dateien im Filesystem (`*.md`).
 
-Das bildet das zukünftige Inhaltsverzeichnis!
+Das bildet das Inhaltsverzeichnis!
 
 Beispiel:
 
