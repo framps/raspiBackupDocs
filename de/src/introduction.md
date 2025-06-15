@@ -14,15 +14,13 @@ stehen auf der [Projektseite bei GitHub](https://github.com/rpi-simonz/raspiBack
 
 Eine regelmäßige Sicherung von Raspberry Pis ist wichtig, um im Falle eines
 Ausfalls des Systemspeichergerätes (SD Karte, USB Disk, SSD, NVMe ...) oder auch von
-unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft bootet, das System wieder
-auf einen vorherigen Zustand zurücksetzen zu können.
+unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft bootet, das System wieder auf einen vorherigen Zustand zurücksetzen zu können.
 
 *raspiBackup* erstellt eine Sicherung eines Raspberry Pis **bei laufendem System**.
-Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen.
-Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
+Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen. Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
-werden (USB Stick, USB Platte, SSD, NVMe, nfs, samba, sshfs, usw.).
+werden (USB Stick, USB Platte, SSD, NVMe, nfs, samba/cifs, sshfs, webdav usw).
 
 Wer eine Synology oder andere Backupziele für den Backup benutzen möchte,
 findet [hier](more-backupspaces.md) nützliche Tipps.
