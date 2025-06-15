@@ -22,7 +22,7 @@ Es gibt (mindestens) drei Wege:
 
   - Am einfachsten: [Über das "Editieren"-Icon auf jeder Seite der Dokumentation](#edit_icon)
   - [Manuell über GitHub](#github_manual)
-  - [Manuell lokal](local_manual)
+  - [Manuell lokal](#local_manual)
 
 Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
@@ -52,6 +52,10 @@ Dies ist der einfachste Weg!
 
   1. warten, bis der Repo-Owner den PR annimmt  ;-)
 
+
+<br/>
+<br/>
+<br/>
 
 --------------------
 
