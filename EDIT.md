@@ -1,7 +1,5 @@
 # Arbeiten an/in/mit den Inhalten der Dokumentation
 
-**Tipp**: Siehe auch Originalbeschreibung von *mdbook* <https://rust-lang.github.io/mdBook/guide/creating.html>
-
 Alle Inhalte befinden sich standardmäßig in einem direkten Unterverzeichnis `src/`.
 
 Da die Dokumentation von *raspiBackup* mehrsprachig aufgebaut ist,
@@ -21,6 +19,8 @@ Hilfreich ist ein Editor, der bei der Darstellung unterstützt ("Syntax Highligh
 **TODO**: Beispiele.
 
 Eine kurze Einführung zum verwendeten Generierungstool *mdbook* gibt es [hier](MDBOOK_INTRO.md).
+
+**Tipp**: Siehe auch Originalbeschreibung von *mdbook* <https://rust-lang.github.io/mdBook/guide/creating.html>
 
 
 ## Das Inhaltsverzeichnis / Die Struktur der Dokumentation
@@ -72,4 +72,74 @@ Der **Inhalt** der Dateien ist mit der Auszeichnungssprache *Markdown* formatier
 
 **Hinweis**: *mdbook* verwendet den Markdown-"Dialekt"
 *Erweitertes CommonMark* (<https://rust-lang.github.io/mdBook/format/markdown.html>).
+
+Wie der Name "Erweitertes Commonmark" ahnen lässt, bietet es zusätzliche Features.
+
+Eines davon sind [Link-Referenzen](https://spec.commonmark.org/0.31.2/#link-reference-definitions).
+
+Diese werden zur leichteren Verlinkung (z.B. bei Mehrfachnennung) eingesetzt:
+
+```
+Siehe in [hier](ein_langer_pfad_und_dateiname_zum_hinweis23.md "Wichtigster Hinweis! Bitte beachten")
+Bla, blubb ...
+Und nicht vergessen: siehe [hier](ein_langer_pfad_und_dateiname_zum_hinweis23.md "Wichtigster Hinweis! Bitte beachten")
+```
+
+kann damit übersichtlicher werden zu (Achtung, andere Klammerung beachten!):
+
+```
+Siehe in [hier][hinweis23]
+Bla, blubb ...
+Und nicht vergessen: siehe [hier][hinweis23]
+
+
+Und irgendwo auf der Seite dann:
+
+[hinweis23]: ein_langer_pfad_und_dateiname_zum_hinweis23.md "Wichtigster Hinweis! Bitte beachten"
+[hinweis24]: ein_pfad_und_dateiname.md
+```
+
+Die Definitionen bestehen aus `[name]: Linkadresse` bzw.
+mit optionalem Link-Titel: `[name]: Linkadresse "Link Title"`.
+
+
+### Spezielle, hier in diesem Projekt genutzte, Dinge
+
+Um die Arbeit an den Inhalten der Dateien und auch an den Übersetzungen besser organisieren zu können,
+gibt es in diesem Projekt in vielen Markdown-Dateien ergänzende "Tags", Markierungen, Kommentare.
+
+Da *Markdown* aber nativ keine Kommentare unterstützt, werden oben beschiebene *Commonmarks Link References* zweckentfremdet.
+Allerdings muss die Syntax auch dann eingehalten werden: `[name]: Linkadresse "Link Title"`.
+
+Um diese Spezial-Nutzung, also die gewünschte Unsichtbarkeit für den normalen Nutzer,
+deutlich zu machen, beginnen die Namen mit einem Punkt `.`.
+
+Bei einheitlicher Benennung lassen sich damit auch gut `grep` oder andere Tools
+(vimgrep,...) einsetzen, um die Dokumentenmenge im Griff zu haben.
+
+Der optionale Linktitel (in `""`!) lässt sich gut für etwas längeren (also mehrwortigen) Text nutzen.
+
+Hier einige Beispiele:
+
+#### Angabe von Referenzen auf Übersetzungs- oder Quelldateien
+
+```
+[.de]: ../../de/src/10-years-raspibackup.md
+
+[.source]: https://linux-tips-and-tricks.de/de/anwendungstipps
+```
+
+#### Angaben zum Status der jeweiligen Datei
+
+```
+[.status]: done
+[.status]: todo
+[.status]: todo "Links überprüfen und Formatierung optimieren"
+```
+
+#### weitere variable Anwendungsmöglichkeiten
+
+```
+[.workaround]: _ "Probleme beim Syntax-Highlighting in vim-markdown bei non-balanced-underlines"
+```
 
