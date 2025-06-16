@@ -1,5 +1,3 @@
-# raspiBackup Dokumentation
-
 <!-- Hinweis:
      Hier in der `README.md` und den anderen GitHub-Dateien wird *GitHub Flavored Markdown* verwendet.
      Siehe z.B. https://docs.github.com/de/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
@@ -19,27 +17,27 @@
 >  - https://rpi-simonz.github.io/raspiBackupDocs/
 
 
-
-## Der Plan
+# raspiBackup Dokumentation
 
 Die neue Dokumentation von *raspiBackup* ist nun anders gestaltet als bisher.
 Sie ist nicht mehr integraler Bestandteil eines CMS (framps Joomla),
 sondern ein eigenständiges "Projekt".
 
 Die Dokumentation - beziehungsweise die Quelltexte davon - befindet sich nun
-in einem Repository von Dateien, die in einer einfachen Auszeichnungssprache, *Markdown*,
-geschrieben sind.
+in einem Repository von Dateien, die in einer einfachen Auszeichnungssprache,
+*Markdown*, geschrieben sind.
 
 Dies sind Textdateien, die sich gut bearbeiten und versionieren lassen.
-Über das Repository ist dann sogar eine Teamarbeit an der Dokumentation möglich. ;-)
+Über das Repository ist eine Teamarbeit an der Dokumentation möglich. ;-)
 
 *Markdown* ist eine von vielen Auszeichnungssprachen,
-die sich mit Hilfe von Software gut in andere Formate, z.B. eben auch in eine Webseite, umwandeln lassen.
+die sich mit Hilfe von Software gut in andere Formate,
+z.B. eben auch in eine Webseite, umwandeln lassen.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
-ist natürlich noch etwas mehr "Drumherum" nötig, das hier beschrieben wird.
+ist natürlich noch etwas mehr "Drumherum" nötig.
 
-## Weitere Details ...
+Details dazu finden sich in den Kapiteln
 
   - [für Mitwirkende am Inhalt](CONTRIBUTE.md)
   - [für Maintainer](MAINTAIN.md)
