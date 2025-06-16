@@ -12,11 +12,10 @@
 > Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
 > Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
 >
-> Manche Seiten enthalten noch Formatierungsfehler und *Englisch* ist aktuell noch "leer".
+> Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
 >
-> Die generierte Dokumentation ist momentan über folgende Links zu erreichen:
+> Die generierte Dokumentation ist momentan zu erreichen unter:
 >
->  - https://rpi-simonz.github.io/raspiBackupDocs/de
 >  - https://rpi-simonz.github.io/raspiBackupDocs/
 
 
@@ -28,17 +27,17 @@ Sie ist nicht mehr integraler Bestandteil eines CMS (framps Joomla),
 sondern ein eigenständiges "Projekt".
 
 Die Dokumentation - beziehungsweise die Quelltexte davon - befindet sich nun
-in einem Repository mit thematisch aufgeteilten Dateien,
-geschrieben in einer einfachen Auszeichnungssprache, *Markdown*.
+in einem Repository von Dateien, die in einer einfachen Auszeichnungssprache, *Markdown*,
+geschrieben sind.
 
 Dies sind Textdateien, die sich gut bearbeiten und versionieren lassen.
-Über das Repository ist dann sogar eine Teamarbeit an der Dokumentation möglich (über *Pull-Requests*). ;-)
+Über das Repository ist dann sogar eine Teamarbeit an der Dokumentation möglich. ;-)
 
 *Markdown* ist eine von vielen Auszeichnungssprachen,
 die sich mit Hilfe von Software gut in andere Formate, z.B. eben auch in eine Webseite, umwandeln lassen.
 
 Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
-ist natürlich noch etwas mehr "Drumherum" nötig, das nun kurz beschrieben wird.
+ist natürlich noch etwas mehr "Drumherum" nötig, das hier beschrieben wird.
 
 ## Weitere Details ...
 
