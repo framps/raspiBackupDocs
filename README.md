@@ -23,7 +23,7 @@
 >
 > Die generierte Dokumentation ist momentan zu erreichen unter:
 >
->  - https://framps.github.io/raspiBackupDocs/
+>  - https://raspibackupdev.github.io/raspiBackupDoc/
 
 
 # raspiBackup Dokumentation

@@ -10,8 +10,8 @@ Zum Aufbau der Markdown-Dateien siehe [EDIT.md](EDIT.md)
 
 Die generierte Dokumentation ist über folgenden Links (GitHub Pages) zu erreichen:
 
-  - https://framps.github.io/raspiBackupDocs/
-  - https://framps.github.io/raspiBackupDocs/de/
+  - https://raspibackupdev.github.io/raspiBackupDoc/
+  - https://raspibackupdev.github.io/raspiBackupDoc/de/
 
 Die automatische Generierung wird durch die im Repository enthaltene Datei
 `.github/workflows/mdbook.yml` initiiert und gesteuert.
