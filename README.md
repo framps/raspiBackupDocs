@@ -4,44 +4,40 @@
 -->
 
 > [!NOTE]
-> This documentation for raspiBackup was initially created by transferring and editing the original texts from 
-> [Framps website](https://linux-tips-and-tricks.de/de/raspibackup).
+> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
+> Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
 >
-> This repository was originally created by [rpi-simonz](https://github.com/rpi-simonz) with all its logic and all German pages taken 
-> from the above mentioned website. Finally this repository was transferred from him to framp to have raspiBackup and the raspiBackupDoc in one hand.
+> Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
+> Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
 >
-> A big thank you goes to [rpi-simonz](https://github.com/rpi-simonz), who has done all the preparatory work with a lot of enthusiasm
-> and commitment to bring the raspiBackup documentation into a new format and to make it clearer. 
-> He also initiated a revision of the documentation that was long overdue.
+> Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
 >
-> The documentation is bilingual, first German and English will be available soon. There is a small globe icon at the top right to change the language manually.
-> A browser configured to display German pages will open the German pages and the English pages will be opened for all other languages.
+> Die generierte Dokumentation ist momentan zu erreichen unter:
 >
-> Currently teh German pages are reviewed and updatd and later on translated into English also.
->
-> The generated documentation can be accessed on 
->
->  - https://framps.github.io/raspiBackupDocs/
+>  - https://rpi-simonz.github.io/raspiBackupDocs/
 
 
-# raspiBackup documentation 
+# raspiBackup Dokumentation
 
-The new documentation of *raspiBackup* is now differently organized. It's no longer 
-published via Joomla on framps website and now is a dedicated project.
+Die neue Dokumentation von *raspiBackup* ist nun anders gestaltet als bisher.
+Sie ist nicht mehr integraler Bestandteil eines CMS (framps Joomla),
+sondern ein eigenständiges "Projekt".
 
-The source code of the documentation is no located in a repository and the documentation
-is written in a *markdown*. The text files now can be edited very easily and are versioned.
-That way it's possible to have multipe people - the *raspiBackup documentaion team* - to work on the 
-documentation in parallel.
+Die Dokumentation - beziehungsweise die Quelltexte davon - befindet sich nun
+in einem Repository von Dateien, die in einer einfachen Auszeichnungssprache,
+*Markdown*, geschrieben sind.
 
-*Markdown* is one of many markup languages which can be used to convert  the contents
-die sich mit Hilfe von Software gut in andere Formate, 
-with help of software into different formats, e.g. a website.
+Dies sind Textdateien, die sich gut bearbeiten und versionieren lassen.
+Über das Repository ist eine Teamarbeit an der Dokumentation möglich. ;-)
 
-To bring the result into an appealing and easy-to-navigate form,
-naturally requires a little more "fiddling around".
+*Markdown* ist eine von vielen Auszeichnungssprachen,
+die sich mit Hilfe von Software gut in andere Formate,
+z.B. eben auch in eine Webseite, umwandeln lassen.
 
-Details how to contribute contents and how to maintain the code are available on
+Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
+ist natürlich noch etwas mehr "Drumherum" nötig.
 
-  - [contributors](CONTRIBUTE.md)
-  - [maintainer](MAINTAIN.md)
+Details dazu finden sich in den Kapiteln
+
+  - [für Mitwirkende am Inhalt](CONTRIBUTE.md)
+  - [für Maintainer](MAINTAIN.md)
