@@ -136,6 +136,7 @@ Hier einige Beispiele:
 [.status]: todo
 [.status]: todo "Links überprüfen und Formatierung optimieren"
 [.status]: wip "Work in progress by framp"
+[.status]: rft "Ready for translation"
 ```
 
 #### weitere variable Anwendungsmöglichkeiten
