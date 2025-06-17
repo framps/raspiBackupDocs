@@ -4,49 +4,44 @@
 -->
 
 > [!NOTE]
-> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
-> Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
+> This documentation for raspiBackup was initially created by transferring and editing the original texts from 
+> [Framps website](https://linux-tips-and-tricks.de/de/raspibackup).
 >
-> Dieses Repository wurde von [rpi-simonz](https://github.com/rpi-simonz) ursprünglich erstellt mit all seiner Logik
-> sowie allen deutschen Seiten, die von der o.g. Webseite übernommen wurden. Final wurde dieses Reporsitory von ihm an framp
-> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte.
+> This repository was originally created by [rpi-simonz](https://github.com/rpi-simonz) with all its logic and all German pages taken 
+> from the above mentioned website. Finally this repository was transferred from him to framp to have raspiBackup and the raspiBackupDoc in one hand.
 >
-> Ein herzliches Dankeschön geht deshalb an rpi-simonz, der ganz alleine mit viel Elan und Einsatz die ganze Vorarbeit geleistet hat
-> um die raspiBackup
-> Dokumentation in ein neues Format zu bringen und übersichtlicher zu gestalten. Dadurch hat er auch eine Überarbeitung der Dokumentation angestoßen die längst 
-> mal fällig war.
+> A big thank you goes to [rpi-simonz](https://github.com/rpi-simonz), who has done all the preparatory work with a lot of enthusiasm
+> and commitment to bring the raspiBackup documentation into a new format and to make it clearer. 
+> He also initiated a revision of the documentation that was long overdue.
 >
-> Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
-> Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
+> The documentation is bilingual, first German and English will be available soon. There is a small globe icon at the top right to change the language manually.
+> A browser configured to display German pages will open the German pages and the English pages will be opened for all other languages.
 >
-> Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
+> Currently teh German pages are reviewed and updatd and later on translated into English also.
 >
-> Die generierte Dokumentation ist momentan zu erreichen unter:
+> The generated documentation can be accessed on 
 >
 >  - https://framps.github.io/raspiBackupDocs/
 
 
-# raspiBackup Dokumentation
+# raspiBackup documentation 
 
-Die neue Dokumentation von *raspiBackup* ist nun anders gestaltet als bisher.
-Sie ist nicht mehr integraler Bestandteil eines CMS (framps Joomla),
-sondern ein eigenständiges "Projekt".
+The new documentation of *raspiBackup* is now differently organized. It's no longer 
+published via Joomla on framps website and now is a dedicated project.
 
-Die Dokumentation - beziehungsweise die Quelltexte davon - befindet sich nun
-in einem Repository von Dateien, die in einer einfachen Auszeichnungssprache,
-*Markdown*, geschrieben sind.
+The source code of the documentation is no located in a repository and the documentation
+is written in a *markdown*. The text files now can be edited very easily and are versioned.
+That way it's possible to have multipe people - the *raspiBackup documentaion team* - to work on the 
+documentation in parallel.
 
-Dies sind Textdateien, die sich gut bearbeiten und versionieren lassen.
-Über das Repository ist eine Teamarbeit an der Dokumentation möglich. ;-)
+*Markdown* is one of many markup languages which can be used to convert  the contents
+die sich mit Hilfe von Software gut in andere Formate, 
+with help of software into different formats, e.g. a website.
 
-*Markdown* ist eine von vielen Auszeichnungssprachen,
-die sich mit Hilfe von Software gut in andere Formate,
-z.B. eben auch in eine Webseite, umwandeln lassen.
+To bring the result into an appealing and easy-to-navigate form,
+naturally requires a little more "fiddling around".
 
-Um das Ergebnis in eine ansprechende und gut zu navigierende Form zu bringen,
-ist natürlich noch etwas mehr "Drumherum" nötig.
+Details how to contribute contents and how to maintain the code are available on
 
-Details dazu finden sich in den Kapiteln
-
-  - [für Mitwirkende am Inhalt](CONTRIBUTE.md)
-  - [für Maintainer](MAINTAIN.md)
+  - [contributors](CONTRIBUTE.md)
+  - [maintainer](MAINTAIN.md)
