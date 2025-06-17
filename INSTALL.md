@@ -1,66 +1,73 @@
-# For developers
+# Für Entwickler
 
-Developer who waht to generated the documentaion also locally do have to install some tools:
+Entwickler, die die Dokumentation (auch) lokal generieren möchten, benötigen ein paar Tools.
+
 <a name="rust-compiler"></a>
 ## Rust-Compiler
 
-Base is a Rust-Compiler because all following tools are programmed in Rust and some of them have to be compiled.
+Ein Rust-Compiler ist Grundlage, da die weiteren Tools in Rust programmiert sind,
+und zumindest teilweise compiliert werden müssen.
 
-Please note the Rust version ahs to be current to get **mdbook** compiled (See below)
+Dabei ist zu beachten, dass die Rust-Version ziemlich aktuell sein sollte,
+damit das aktuelle *mdbook* kompilierbar ist (siehe unten).
 
 > mdBook currently requires at least Rust version 1.82.
 
-The current *Raspberry Pi OS* *Bookworm* has *rustc* Version 1.63 in it's repos which are too old.
+Zum Beispiel beim aktuellen *Raspberry Pi OS* *Bookworm* ist *rustc* Version 1.63 in den Repositories, also zu alt.
 
-For the Rust installation see *Rust*:
+Zur Installation von *Rust* siehe:
 
   - https://www.rust-lang.org/tools/install
   - https://www.rust-lang.org/learn/get-started
 
-Following curl is the easiest way to install the Rust compiler.
+Am Einfachsten geht die Installation von Rust folgendermassen:
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-**Don't use** `sudo` because it's a user specific installation.
+Das bitte **ohne** `sudo` aufrufen, da es eine benutzerspezifische Installation ist!
 
 
 ## Generator - mdbook
 
-The most important tool is the generator which generates the html pages from the markdown textfiles.
+Das Wichtigste ist der "Generator", der die Markdown-Textdateien einliest und nach HTML umwandelt.
 
-*mdbook* ist used in this prject.
+Ich habe *mdbook* gewählt.
 
-This tool is used for the Rust documentation and is also written in Rust. See also <https://rust-lang.github.io/mdBook>
+Dieses Tools kommt aus dem Rust-Umfeld und wird auch für die Rust-Dokumentation selbst eingesetzt.
+Siehe <https://rust-lang.github.io/mdBook>
 
 ### Installation
 
 Siehe <https://rust-lang.github.io/mdBook/guide/installation.html>
 
-Outline:
+Kurzfassung hier:
 
 #### Binaries
 
-For Apple, Windows and x86_64-Linux there exist complete binaries for download. But because additional tools have to be compiled in any case it 
-makes sense to compile *mdbook* also:
+Für Apple, Windows und x86_64-Linux gibt es zwar fertige Binaries zum Herunterladen.
+
+Da aber die weiteren erforderlichen Tool auf jeden Fall compiliert werden müssen,
+macht es Sinn, auch *mdbook* zu compilieren:
 
 <a name="compile-from-sources"></a>
+#### Compilation aus den Quelltexten
 
-#### Compilation from source
-
-All required tools can be built from source.
+Alle benötigten Tools lassen sich auch aus den Sourcen selbst kompilieren.
 <https://rust-lang.github.io/mdBook/guide/installation.html#build-from-source-using-rust>
 
-and requires a Rust compile environment.
+Dafür ist ein Rust-Compiler mit der entsprechenden Umgebung erforderlich.
 
-When the `rustc` compiler was installed ([s.o.](#rust-compiler)), *mdbook* will be compiled and installed.
+Wenn der Compiler `rustc` dann installiert ist ([s.o.](#rust-compiler)), wird *mdbook* compiliert und installiert:
 
     cargo install mdbook
 
-Next two preprocessores are required. They enable nice rendering of notes and generate a local contents. 
+Dann kommen noch zwei Präprozessoren dazu.
+Sie werden in der Doku für schöneres Rendering von Hinweisen
+und zur Erzeugung lokaler Inhaltsverzeichnisse verwendet.
 
     cargo install mdbook-admonish
     cargo install mdbook-toc
 
-The whole process including *Rust* installation takes on a PI5 just a couple of minutes.
+Das ganze Prozedere inklusive *Rust* dauert selbst auf einem Pi5 nur wenige Minuten!
