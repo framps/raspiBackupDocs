@@ -40,8 +40,9 @@ Dies ermöglicht einige kleine Kniffe:
 - [Funktionsübersicht](function-overview.md)
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
-    - [Unterstützung für Raspberry Compute Module 4 und NVMe](support-for-raspberry-compute-module-4-and-nvme.md)
-    - [Raspberry3 USB Boot Unterstützungstestmatrix](raspberry3-support-test-matrix.md)
+    - [RaspbianOS](support-for-raspianos.md)
+    - [Ubuntu](support-for-ubuntu.md)
+    - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
 
 - [Sprachunterstützung](language-support.md)
 

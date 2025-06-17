@@ -173,6 +173,8 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
   - Unterstuetzung von Volumio
 
+  - Unterstützung von gpt Partitionen
+
 
 ![Übersichtsbild](images/raspiBackupOverview.jpg)
 
@@ -182,4 +184,4 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/features
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
-
+[.status]: rft "Ready for translation"
