@@ -1,5 +1,4 @@
 <!-- vim: set conceallevel=0: -->
-
 # raspiBackup
 
 ```
@@ -41,8 +40,8 @@ That allows for some tricks:
 
 - [Supported hardware and software](supported-hardware-and-software.md)
     - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
-    - [Unterstützung für Raspberry Compute Module 4 und NVMe](support-for-raspberry-compute-module-4-and-nvme.md)
-    - [Raspberry3 USB Boot Unterstützungstestmatrix](raspberry3-support-test-matrix.md)
+    - [Ubuntu](ubuntu-support.md)
+    - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
 
 - [Language support](language-support.md)
 
@@ -94,7 +93,6 @@ That allows for some tricks:
     - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
     - [WEBDAV as backupspace](how-to-use-webdav-on-linux.md)
 
-- [Ubuntu support](ubuntu-support.md)
 - [Tips for homeautomation](tips-homeautomation.md)
 
 - [Helpful links regarding backup](helpful-links.md)

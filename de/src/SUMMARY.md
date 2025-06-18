@@ -1,5 +1,4 @@
 <!-- vim: set conceallevel=0: -->
-
 # raspiBackup
 
 ```
