@@ -3,11 +3,11 @@
 ## .htaccess
 
 Zur Webserverkonfiguration (Apache) ist noch eine Datei `.htaccess`
-im Server-Ziel-Verzeichnis `raspiBackupDocs` erforderlich (Beispiel).
+im Server-Ziel-Verzeichnis `raspiBackupDoc` erforderlich (Beispiel).
 
 Dort wird eine individuelle Fehlerseite definiert:
 
-    ErrorDocument 404 /raspiBackupDocs/404.html
+    ErrorDocument 404 /raspiBackupDoc/404.html
 
 Die Datei liegt hier lokal als `htaccess` (ohne führenden Punkt) vor und wird
 beim Upload zum Webserver entsprechend umbenannt hochgeladen.

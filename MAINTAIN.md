@@ -58,7 +58,7 @@ Bei GitHub muss dazu noch in den Einstellungen des Repositories unter
 
      **Hinweis**: Beim Upload die Reihenfolge und Zielverzeichnisse der Sprachen beachten, "en" ist Default und damit Erster!
 
-         lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDocs; mirror -R en/book raspiBackupDocs; cd raspiBackupDocs ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
+         lftp sftp://${WEBSERVER} -e "cd ${WEBSERVER_ROOTDIR} ; rm -r raspiBackupDoc; mirror -R en/book raspiBackupDoc; cd raspiBackupDoc ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
 
      Details zur Konfiguration des Webservers am Beispiel *Apache* siehe [README-apache.md](README-apache.md)
 

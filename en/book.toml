@@ -22,7 +22,7 @@ max-level = 3
 
 [output.html]
 additional-css = ["mdbook-admonish.css", "language-picker.css"]
-site-url = "/raspiBackupDocs/"
+site-url = "/raspiBackupDoc/"
 no-section-label = false
 git-repository-url = "https://github.com/raspibackupdev/raspiBackupDoc"
 git-repository-icon = "fa-github"
