@@ -16,11 +16,13 @@ help:
 	@echo "  - build  : build the docs locally"
 	@echo "  - upload : upload the locally built docs to webserver"
 	@echo ""
+	@echo "  - check  : check if files are synced and in SUMMARY.md"
+	@echo ""
 	@echo ""
 	@echo "Note: Better do not run a 'mdbook serve ...' in parallel!"
 
 
-all: build upload
+all: build push upload check
 
 build:
 	@echo -e "# Version of this documentation\n\n" > en/src/doc-version-info-automatically-generated.md
@@ -38,3 +40,6 @@ push:
 upload:
 	@[ -d en/book -a -d de/book ] || { echo "Missing directory(ies) 'book/'! Build them first!" ; exit 1; }
 	lftp sftp://$(WEBSERVER) -e "cd $(WEBSERVER_ROOTDIR) ; rm -r raspiBackupDoc; mirror -R en/book raspiBackupDoc; cd raspiBackupDoc ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
+
+check:
+	@./check_files.sh
