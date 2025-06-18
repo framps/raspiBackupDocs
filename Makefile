@@ -39,6 +39,7 @@ push:
 
 upload:
 	@[ -d en/book -a -d de/book ] || { echo "Missing directory(ies) 'book/'! Build them first!" ; exit 1; }
+	@[ -n "$(WEBSERVER)" -a -n "$(WEBSERVER_ROOTDIR)" ] || { echo "Environment variables WEBSERVER and WEBSERVER_ROOTDIR need to be set!"; exit 2; }
 	lftp sftp://$(WEBSERVER) -e "cd $(WEBSERVER_ROOTDIR) ; rm -r raspiBackupDoc; mirror -R en/book raspiBackupDoc; cd raspiBackupDoc ; mirror -R de/book de ; put htaccess -o .htaccess ; dir ; quit"
 
 check:
