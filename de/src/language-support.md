@@ -14,5 +14,5 @@ Wer helfen möchte, *raspiBackup* eine weitere Sprache zu geben, ist herzlich ei
 dieses zu tun. Details dazu finden sich [hier](../local-language-support-for-languages-other-than-de-and-en-l10n.md).
 
 [.status]: done
+[.status]: translated
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/603-raspibackup-local-language-support-for-languages-other-than-de-and-en-l10n
-[.status]: rft "Ready for translation"
