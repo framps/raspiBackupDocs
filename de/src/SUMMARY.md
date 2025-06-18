@@ -94,7 +94,6 @@ Dies ermöglicht einige kleine Kniffe:
     - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
     - [WEBDAV als Backupziel](how-to-use-webdav-on-linux.md)
 
-- [Ubuntu Support](ubuntu-support.md)
 - [Tipps zur Homeautomation](tips-homeautomation.md)
 
 - [Hilfreiche Links zum Thema Backup](helpful-links.md)
