@@ -13,6 +13,5 @@ Unterstützte Sprachen sind
 Wer helfen möchte, *raspiBackup* eine weitere Sprache zu geben, ist herzlich eingeladen,
 dieses zu tun. Details dazu finden sich [hier](../local-language-support-for-languages-other-than-de-and-en-l10n.md).
 
-[.status]: done
-[.status]: translated
+[.status]: done/translated
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/603-raspibackup-local-language-support-for-languages-other-than-de-and-en-l10n
