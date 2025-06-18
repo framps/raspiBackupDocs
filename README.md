@@ -21,9 +21,9 @@
 >
 > Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
 >
-> Die generierte Dokumentation ist momentan zu erreichen unter:
+> Die generierte Dokumentation ist zu erreichen unter:
 >
->  - https://raspibackupdev.github.io/raspiBackupDoc/
+>  - https://framps.github.io/raspiBackupDoc/
 
 
 # raspiBackup Dokumentation
