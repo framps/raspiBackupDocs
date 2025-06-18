@@ -28,9 +28,9 @@ max-level = 3
 additional-css = ["mdbook-admonish.css", "language-picker.css"]
 site-url = "/raspiBackupDoc/"
 no-section-label = false
-git-repository-url = "https://github.com/raspibackupdev/raspiBackupDoc"
+git-repository-url = "https://github.com/framps/raspiBackupDoc"
 git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/raspibackupdev/raspiBackupDoc/edit/main/de/{path}"
+edit-url-template = "https://github.com/framps/raspiBackupDoc/edit/main/de/{path}"
 
 [output.html.fold]
 enable = true
