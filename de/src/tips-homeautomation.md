@@ -7,8 +7,8 @@ vor und nach dem Restore vorzunehmen sind.
 
 Diese Seite lebt vom Feedback der *raspiBackup* Nutzer, die sich mit den
 jeweiligen Anwendungen auskennen und genau beschreiben können, worauf bei den
-jeweiligen Anwendungen zu achten ist. Deshalb ist Feedback in Kommentaren
-erwünscht.
+jeweiligen Anwendungen zu achten ist. Deshalb ist Feedback auf der [github Diskussionsseite](https://github.com/framps/raspiBackupDoc/discussions)
+sehr erwünscht. Gerne auch in Deutsch.
 
 ## *raspiBackup* Tipps für bestimmte Anwendungen
 
@@ -31,7 +31,6 @@ start iobroker wieder starten. Das kann man entweder direkt in der
 DEFAULT_STOP_SERVICES eingeben oder man nutzt den *raspiBackup* Installer und
 wählt dort den IOBroker als Service aus, der zu stoppen und zu starten ist. Der
 Installer generiert dann die entsprechenden Befehle in der Konfigurationsdatei.
-
 
 ### FHEM
 
@@ -74,4 +73,5 @@ bei DEFAULT_STARTSERVICES
 
 
 [.status]: done
+[.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/anwendungstipps
