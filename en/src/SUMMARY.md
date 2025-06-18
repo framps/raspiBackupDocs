@@ -40,6 +40,7 @@ That allows for some tricks:
 - [Function overview](function-overview.md)
 
 - [Supported hardware and software](supported-hardware-and-software.md)
+    - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
     - [Unterstützung für Raspberry Compute Module 4 und NVMe](support-for-raspberry-compute-module-4-and-nvme.md)
     - [Raspberry3 USB Boot Unterstützungstestmatrix](raspberry3-support-test-matrix.md)
 

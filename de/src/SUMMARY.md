@@ -40,7 +40,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Funktionsübersicht](function-overview.md)
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
-    - [RaspbianOS](support-for-raspianos.md)
+    - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
     - [Ubuntu](ubuntu-support.md)
     - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
 
