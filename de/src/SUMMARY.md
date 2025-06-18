@@ -41,7 +41,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
     - [RaspbianOS](support-for-raspianos.md)
-    - [Ubuntu](support-for-ubuntu.md)
+    - [Ubuntu](ubuntu-support.md)
     - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
 
 - [Sprachunterstützung](language-support.md)
