@@ -4,7 +4,7 @@ Dies ist die Dokumentation zu *raspiBackup* in neuer Form.
 Zum Wechseln der Sprache (deutsch/englisch) ist oben rechts ein kleines Globus-Icon vorhanden.
 
 Infos zum aktuellen Stand und zur Möglichkeit der Mitarbeit an dieser Dokumentation
-stehen auf der [Projektseite bei GitHub](https://github.com/framps/raspiBackupDocs).
+stehen auf der [Projektseite bei GitHub](https://github.com/raspibackupdev/raspiBackupDoc).
 ```
 
 

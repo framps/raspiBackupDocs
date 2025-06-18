@@ -5,7 +5,7 @@ können dies folgendermaßen tun:
 
 ## Vorschläge machen, Probleme melden usw.
 
-Bitte einen "Issue" bei *GitHub* anlegen: <https://github.com/framps/raspiBackupDocs/issues>
+Bitte einen "Issue" bei *GitHub* anlegen: <https://github.com/raspibackupdev/raspiBackupDoc/issues>
 
 
 ## Sich über die Doku mit anderen Nutzern austauschen
@@ -111,7 +111,7 @@ Dies ist der einfachste Weg!
   1. Das Repository kopieren/clonen
 
      ```
-     git clone https://github.com/framps/raspiBackupDocs.git
+     git clone https://github.com/raspibackupdev/raspiBackupDoc.git
      ```
 
   1. Editieren von Markdown-Datei(en) in Verzeichnis `<sprache>/src/`

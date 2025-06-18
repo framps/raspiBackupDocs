@@ -7,7 +7,7 @@ Offizielle Dokumentation:
 
 
 **Hinweis**: Folgende Beschreibung bezieht sich allgemein auf das Arbeiten mit *mdbook*.
-Bei *raspiBackupDocs* werden mehrere Zielsprachen erstellt, daher ist dort die
+Bei *raspiBackupDoc* werden mehrere Zielsprachen erstellt, daher ist dort die
 Aufteilung der Quelldateien und der Aufruf der Tools etwas anders.
 Die Sprachen liegen dort in Unterverzeichnissen je Sprache, was den Tools mitgeteilt werden muss.
 Siehe [EDIT.md](EDIT.md) und [MAINTAIN.md](MAINTAIN.md).
