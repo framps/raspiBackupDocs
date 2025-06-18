@@ -1,10 +1,8 @@
 # raspiBackup Schnellstart - Installation in 5 Minuten
 
-
 Hinweis: Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
 wie man *raspiBackup* installiert, konfiguriert und ein Backup restored.
 Bevor hier alles dupliziert wird: [Seine Anleitung](https://forum-raspberrypi.de/article/7-raspibackup-installation-grundeinstellungen-erstes-backup-und-restore/) im deutschen Raspberryforum.
-
 
 Die Dokumentation von *raspiBackup* ist durch Erweiterungswünsche von Benutzern
 mittlerweile sehr umfangreich geworden. Auf dieser Seite wird deshalb kurz und
@@ -31,11 +29,9 @@ sollte, dass *raspiBackup* nicht den Anforderungen genügt.
 nicht hat, braucht natürlich länger trotz dass der Installer hilft, eine
 *raspiBackup* Anfangskonfiguration schnell zu erstellen - leider.
 
-Bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
+Vor der Nutzung von *raspiBackup* bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
-Supportkanäle: [Die sind hier beschrieben](contact.md)
-
-
+Die Supportkanäle [sind hier beschrieben](contact.md)
 
 ## Anwendungs- und Konfigurationsbeispiele
 
@@ -43,7 +39,6 @@ Auf dieser Seite werden verschiedene Beispiele gegeben wie man *raspiBackup* bei
 sich einsetzen kann. Diese Beispiele sollten sich vor der eigentlichen
 Installation angesehen werden, um bei der Konfiguration während der Installation
 die richtigen Parameter zu benutzen.
-
 
 ## *raspiBackup* installieren und automatisch regelmäßig ein Backup erstellen
 
@@ -55,21 +50,18 @@ lassen sich recht einfach jederzeit die primären Optionen durch erneuten Aufruf
 von `raspiBackupInstallUI` nachträglich ändern. Dazu gehört auch eine
 Updatefunktion für den Installer sowie für *raspiBackup*. Die
 Installationsführung erfolgt über Menus sowie Auswahllisten. Die Menüsprache
-kann Deutsch, Englisch. Finnisch, Chinesisch oder Französisch sein. Falls es
-Probleme geben sollte, bitte das Problem hier in einem Kommentar berichten oder
-noch besser - im github einen Issue aufmachen (Gerne auch in Deutsch).
+kann Deutsch, Englisch. Finnisch, Chinesisch oder Französisch sein. 
 
 Wer *raspiBackup* einfach nur mit einer Standardkonfiguration ohne individuelle
 Konfiguration schnell installieren will, kann das mit den Aufrufoptionen `-i` und
-`-e` starten (`-h` fuer Hilfe benutzen). Danach ist dann aber sämtliche *raspiBackup*
-Konfiguration manuell vorzunehmen. Wer *raspiBackup* manuell installiere will,
+`-e` starten (`-h` fuer Hilfe benutzen). Danach kann der Installer genutzt werden um
+die Basiskonfiguration von *raspiBackup* vorzunehmen bzw zu ändern.
+Wer *raspiBackup* manuell installiere will,
 findet [hier](manual-installation-and-configuration.md) die Anleitung dazu.
 Auf Youtube existiert auch ein Video auf dem *raspiBackup* vorgestellt wird
 sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 
 ![Screenshot Konfiguration (2019)](images/Screenshot_at_2019-04-10_07-52-15.png)
-
-
 
 Zum Download, der Installation und Start des *raspiBackup* Installers folgendes
 auf der Raspberry in der Befehlszeile eingeben:
@@ -77,11 +69,8 @@ auf der Raspberry in der Befehlszeile eingeben:
     curl -o install -L https://raspibackup.linux-tips-and-tricks.de/install; sudo bash ./install
 
 
-
 **Hinweis**: Es existiert auch eine [Anleitung](manual-installation-and-configuration.md),
 um *raspiBackup* manuell ohne `sudo` Nutzung zu installieren.
-
-
 
 Danach kann man die Installation wählen, bei der eine Standardkonfiguration
 benutzt wird. Anschliessend ist es möglich, die wesentlichen
@@ -94,13 +83,13 @@ Diesen sollte man mit `sudo mkdir /backup` erstellen und dann dort das externe
 Backupverzeichnis mounten.
 
 Der Installer kann jederzeit wieder in der Befehlszeile mit
-`sudo raspiBackupInstallUI.sh` aufgerufen werden, um *raspiBackup* Konfigurationen
+`sudo raspiBackupInstallUI` aufgerufen werden, um *raspiBackup* Konfigurationen
 zu ändern oder auch *raspiBackup* zu deinstallieren.
 
 **Hinweis**: Die *raspiBackup* Systemd Konfigurationsdatei ist
 `/etc/systemd/system/raspiBackup.timer`. Die Systemdkonfiguration sollte immer
 mit dem Installer geändert werden. Manuelle Änderungen in der Datei sollten
-vorsichtig vorgenommen werden. Sie könnte dazu führeni, dass der Installer die
+vorsichtig vorgenommen werden. Sie könnte dazu führen, dass der Installer die
 Konfigurationsdatei nicht mehr ändern kann.
 
 Sollte es Probleme geben: Es wird vom Installer immer ein Debuglog
@@ -127,9 +116,9 @@ feststellt, dass das Backup nicht zu gebrauchen ist. Desshalb sollte man nach
 dem ersten erfolgreichen Backup auch sofort den Restore testen und immer wieder
 von Zeit zu Zeit den ganzen Restoreprozess durchexerzieren und damit testen, ob
 die erstellten Backups OK sind und sich ein System damit funktionsfähig
-restaurieren läßt. Ab der Version 0.6.4.1 erinnert *raspiBackup* in regelmäßigen
-Abständen daran. Das Erinnerungsintervall ist konfigurierbar. Der Standardwert
-ist alle 6 Monate.
+restaurieren läßt. *raspiBackup* erinnert in regelmäßigen
+Abständen daran einen Restoretest vorzunehmen. Das Erinnerungsintervall ist konfigurierbar. Der Standardwert
+ist 6 Monate.
 
 Besonders wichtig ist das auch, wenn ein neues System mit einem neuen
 Betriebssystem wieder mit *raspiBackup* gesichert wird. Es gibt immer wieder
@@ -144,8 +133,6 @@ Downloadlink ansehen:
 
   - [Download *raspiBackup*](https://github.com/framps/raspiBackup/blob/master/raspiBackup.sh)
   - [Download raspiBackupInstallUI](https://github.com/framps/raspiBackup/blob/master/installation/raspiBackupInstallUI.sh)
-
-
 
 ## Erstellen und Wiederherstellen eines Backups
 
@@ -220,7 +207,7 @@ Der Installer erstellt folgende Dateien:
    | Backuptag            | Sonntag              |
    | Backupzeit           | 05:00 Uhr            |
 
-   Details zu den Optionen finden sich hier.  TODO: Wo ist "hier"?
+   Details zu den Optionen finden sich [hier](usage-and-options.md).
 
 2. *Systemd timer* Konfiguration wird in `/etc/systemd/system/raspiBackup.timer` vorgenommen.
 
@@ -271,19 +258,20 @@ Der Aufruf dazu ist
     curl https://raspibackup.linux-tips-and-tricks.de/install | sudo bash -s -- -i
 
 Jedwede Änderungen an der Konfiguration können nun manuell mit einem Editor
-vorgenommen werden. Ebenso das Einschalten des wöchentlichen Backup in der
-`crontab`. Man kann aber auch den Installer mit seinen Menus benutzen, um die
+vorgenommen werden.
+Ebenso das Einschalten des wöchentlichen Backup per systemd Timer. 
+Man kann aber auch den Installer mit seinen Menus benutzen, um die
 Konfiguration der primären Optionen anzupassen sowie den regulären Backup ein-
 oder auszuschalten. Der Aufruf dazu ist
 
-    sudo raspiBackupInstallUI.sh
+    sudo raspiBackupInstallUI
 
 Weitere Details zu den verschiedenen Funktionen des Installationsskriptes
 erfährt man durch den Aufruf der Hilfefunktion
 
-    sudo raspiBackupInstallUI.sh -h
+    sudo raspiBackupInstallUI -h
 
-Ab Release 0.4.8 des Installers gibt es die Option `-t`, mit der man den Daemon
+Will man nicht systemd sondern cron nutzen existiert dafür die Option `-t`, mit der man den Daemon
 auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond` oder
 `systemd`. `systemd` ist der Default.
 
@@ -297,8 +285,8 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 
 3. Start des Backups:  `sudo bash ./raspiBackup.sh`
 
-4. Falls kein `dd` Backup gewünscht wird, muss der Backuptyp `tar` oder `rsync` mit Option `-t`
-   mitgegeben werden, also `sudo bash ./raspiBackup.sh -t tar` oder `sudo bash ./raspiBackup.sh -t rsync`
+4. Falls kein `rsync` Backup gewünscht wird, muss der Backuptyp `tar` oder `dd` mit Option `-t`
+   mitgegeben werden, also `sudo bash ./raspiBackup.sh -t tar` oder `sudo bash ./raspiBackup.sh -t dd`
 
 5. Kurzinfo zu allen Aufrufoptionen von *raspiBackup* erhält man mit `bash ./raspiBackup.sh -`
 
@@ -308,4 +296,6 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 siehe [hier](manuelle-installation-und-konfiguration.md)
 
 [.status]: done
+[.status]: rft 
 [.source]: https://linux-tips-and-tricks.de/de/installation
+
