@@ -1,29 +1,31 @@
 # Wiederherstellen - Restore mittels raspiBackup
 
-*raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung.
+*raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung, d.h. alle Partitionen werden i.d.R. wiederhergestellt.
+Beim paritionsorientierten Modus kann man die zu restorenden Paritionen auswählen.
 
 Bei einem Restore werden auf dem Ziel-Datenträger (SD-Karte, USB-Platte, ...)
 neue Partitionen angelegt und dann mit dem entsprechenden Tool (`dd`, `tar` oder `rsync`)
 die Daten dorthin restored.
 
 Der Ziel-Datenträger darf also aktuell nicht vom Betriebssystem selbst benutzt werden.
-Es muss eine weitere, mit einem Kartenleser angeschlossene Karte, oder USB-Platte sein.
+Es muss eine weitere, mit einem Kartenleser angeschlossene Karte, USB-Platte, SSD oder NVMe Gerät sein..
 
-Ein Restore benötigt ein **Linuxsystem**. Das ist in der Regel der/ein Raspberry Pi.
+Ein Restore benötigt ein **Linuxsystem**. Dazu sollte man i.d.R. eine Raspberry nehmen. Andere Linuxsysteme
+funktionieren i.d.R. auch. Es ist aber nicht 100% garantiert dass es damit immer funktioniert.
 
 Sollte ein externes Rootfilesystem gesichert worden sein, wird es auch wieder
 auf ein externes Gerät zurückgespielt
 (Nur bei normalem Backupmodus mit `tar` oder `rsync` Backup).
 
 Bei USB Boot Systemen kann eine beliebige Anzahl von externen Partitionen restored
-werden (ab Release 0.6.6)
+werden.
 
 Ein [manueller Restore](manual-restore.md)  der Daten mit den zuvor benutzten Backuptools `dd`, `tar` oder `rsync`
 ist natürlich auch möglich. Ebenso ist (manuell) auch die Wiederherstellung einzelner Dateien
 möglich, insbesondere beim `rsync` Backup sehr einfach.
 
-Das Backupscript kann auch genutzt werden, um SD Karten zu kopieren:
-Es wird ein Backup erstellt und dann auf einer anderen SD Karte restored.
+Das Backupscript kann auch genutzt werden, um Systeme zu kopieren: Es wird ein Backup erstellt und dann auf einem anderen Gerät restored.
+Typische Anwendung ist eine SD Karte auf eine SSD oder NVMe zu kopieren und danach das System nicht mehr mit einer SD Karte zu betreiben.
 
 ------------------
 
@@ -41,8 +43,7 @@ Jedes Backup kann mit der/einer Raspberry Pi wiederhergestellt werden.
 
 1. *raspiBackup* installieren
 
-1. Die SD Karte, auf die wiederhergestellt werden soll, in einem SD
-   Kartenleser anschließen
+1. Das System, das wiederhergestellt werden soll, per USB anschließen.
 
 1. Das Medium, welches das Backup enthält (z.B. eine Platte), anschließen
    und mounten bzw. ein Netzwerklaufwerk mit den Backupdaten mounten
@@ -55,9 +56,11 @@ Jedes Backup kann mit der/einer Raspberry Pi wiederhergestellt werden.
 
 Dabei wird üblicherweise
 
-  - die SD Karte `/dev/sda`
+  - das Systemgerät `/dev/sda`
   - die Backuppartition `/dev/sdbx`
   - und eine eventuelle Rootpartition `/dev/sdcx`
+
+genutzt.  
 
 Wird ein Netzlaufwerk benutzt, ist die Rootpartition dann üblicherweise `/dev/sdbx`
 
@@ -95,23 +98,14 @@ Rootfilesystem bereitgestellt.
 
 Dann *raspiBackup* zum Restore starten, Aufruf siehe [unten](#devicenames).
 
-
-
-
 ## Aufrufsyntax und -optionen
 
 *raspiBackup* muss als Benutzer *root* oder per `sudo` aufgerufen werden.
 
     raspiBackup Option1 Option2 Option3 ... Backupverzeichnis
 
-``` admonish note title="Hinweis"
-Vor Release 0.6.6 musste die Extension `.sh` mit angegeben werden:
 
-    raspiBackup.sh Option1 Option2 Option3 ... Backupverzeichnis
-```
-
-
-Ab Version 0.6.3.2 können alle Optionen, die etwas ein- oder ausschalten, durch
+Alle Optionen, die etwas ein- oder ausschalten, können durch
 ein angehängtes `+` oder `-` gezielt ein oder ausgeschaltet werden.
 
 Beispiel: Die Option `-z` sowie die Option `-z+` schaltet die Backupcompression ein.
@@ -125,7 +119,7 @@ Hier nun die möglichen Optionen einzeln erläutert:
 ### -C
 
 Beim Formatieren wird mittels `mkfs.ext4 -c` auf Bad Blocks geprüft.  
-Hinweis: Die Restorezeit wird dadurch erhöht. Verfügbar ab V0.6.3.2
+Hinweis: Die Restorezeit wird dadurch erhöht. 
 
 Default: Aus
 
@@ -138,14 +132,11 @@ Beispiel: `-/dev/sda`
 Hinweis:  Der Parameter muss ein Device sein und keine Partition. Es darf keine
 Partitionsnummer wie z.B. bei `/dev/sda1` vorhanden sein.
 
-Achtung: Dieses Device wird vollständig gelöscht und neu angelegt! Beim `tar` und
+Achtung: Dieses Device wird i.d.R. vollständig gelöscht und neu angelegt! Beim `tar` und
 `rsync` Backup wird automatisch die Größe der root Partition entsprechend
-verkleinert oder vergrößert, wenn die SD Karte oder USB Stick eine andere Größe
-hat als die SD Karte des Backups.
-
-Hinweis: Diese SD Karte darf nicht die aktuell vom Betriebssystem benutzte SD
-Karte sein. Es muss eine zweite mit einem Kartenleser angeschlossene Karte
-sein.
+verkleinert oder vergrößert, wenn das Zielgerät eine andere Größe
+hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch genügend Platz für die
+Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz wird der Restore abbrechen.
 
 ### -g
 
@@ -163,6 +154,7 @@ werden soll.  Beispiel: `/dev/sdb1`.
 
 Hinweis: Diese Option nur benutzen, wenn sowohl eine SD Karte als auch ein
 externes Rootfilesystem auf USB Stick benutzt wird. Sonst reicht die Option `-d`.
+Die Option ist nur sinnvoll bei älteren Raspberries die noch keinen USB Boot unterstützen.
 
 Achtung: Die Partition wird **neu formatiert**. Deshalb aufpassen, dass es die
 richtige Partition ist und dass die Partition gross genug ist, um die Partition
@@ -172,10 +164,9 @@ Hinweis: Diese Option steht nur zur Verfuegung, wenn der normale Backupmodus
 benuzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
 Rootpartition mitgesichert werden.
 
-
 ### -T
 
-Ab Release 0.7.0: Beim partitionsorientierten `rsync` Backup können damit
+Beim partitionsorientierten `rsync` Backup können damit
 gezielt Partitionen ausgewählt werden, die zu restoren sind. Mit `"*"` werden
 alle Partitionen restored.
 
@@ -200,35 +191,34 @@ DEFAULT_YES_NO_RESTORE_DEVICE="loop"
 
 ### --resizeRootFS
 
-Ab Version 0.6.3.2:
-
 Während der Wiederherstellung kann die Rootpartition auf die maximal verfügbare
-Größe der SD Karte oder der externen Partition ausgedehnt werden. Wird die
+Größe des Zielgerätes der externen Partition ausgedehnt werden. Wird die
 Option ausgeschaltet mit --resizeRootFS- wird die Rootpartition so gross
-angelegt wie sie auf dem Originalsystem war. Diese Option wirkt nicht wenn die
-Option -P genutzt wurde beim Backup.
+angelegt wie sie auf dem Originalsystem war. Nutze man die Option -P so wird die letzte
+Partition auf dem Gerät erweitert. Liegen megr als 2 Paritionen vor ist es dann nicht die Rootpartition.
 
 Default: Ein
 
 ### --updateUUIDs
 
-Verfügbar ab Release 0.6.5: Beim Restore werden immer die PARTUUIDs und LABELs
+Beim Restore werden immer die PARTUUIDs, UUIDs und LABELs
 des Originals restored. Dieses erzeugt i.d.R. Probleme, wenn man das restorte
-System am Originalsystem mounted. Mit dieser Option werden neue PARTUUIDs beim
-restore generiert.
+System am Originalsystem mounted. Mit dieser Option werden neue PARTUUIDs, UUIDs und LABEL beim
+Restore generiert.
 
 Default: Aus
 
 ### -0
 
-Es wird kein neues Paritionslayout auf der SD Karte erstellt, sondern das
-existierende benutzt. Details dazu siehe [FAQ #6](faq.md#faq6)
+Es wird kein neues Paritionslayout auf dem Zielgerät erstellt, sondern das
+existierende benutzt. Somit kann man eine gewünschte Partitionierung vor dem Restore vornehmen
+und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 
 Default: Aus
 
 ### -00
 
-Ab Release 0.7.0: Hiermit wird keine Formatierung der mit der Option `-T`
+Hiermit wird keine Formatierung der mit der Option `-T`
 ausgewählen Partitionen bei einem `rsync` partitionsorientierten Backup
 vorgenommen. Dadurch wird der Restoreprozess extrem beschleunigt, da nur neue,
 geänderte oder gelöschte Dateien gesyncted werden.
@@ -237,17 +227,15 @@ Default: Aus
 
 ### -1
 
-Das Partitionslayout wird auf der SD Karte erstellt so wie es auf der Original
-SD Karte existiert und dabei werden sämtliche Fehler, die entdeckt werden - inklusive des
-Fehlers, dass die Ziel SD Karte zu klein ist - ignoriert.  Siehe [FAQ #6](faq.md#faq6) für
+Das Partitionslayout wird auf der SD Karte erstellt so wie es auf dem Quellgerät
+existiert und dabei werden sämtliche Fehler, die entdeckt werden - inklusive des
+Fehlers, dass das Zielgerät zu klein ist - ignoriert.  Siehe [FAQ #6](faq.md#faq6) für
 weitere Details.
 
 Default: Aus
 
 Hinweis: Diese Option kann unerwartete Ergebnisse haben.
 Benutze die Option nur, wenn Du weisst, was Du tust.
-
-
 
 ## Beispielaufrufe
 
@@ -256,7 +244,7 @@ Notwendige Hardware für den Restore:
 1. Eine laufende Raspberry Pi mit einem laufenden *Raspberry Pi OS* oder einem anderen
    Linux Betriebssystem oder ein anderer Linux Rechner mit installiertem *raspiBackup*.
 
-1. Einen angeschlossener SD Kartenleser und eingelegte neue SD Karte
+1. Ein angeschlossenes Zielgerät des Backups
 
 1. Ein angeschlossenes Backupdevice (per USB oder Netz)
 
@@ -264,13 +252,12 @@ Notwendige Hardware für den Restore:
    Mode benutzt wird, wo keine SD Karte mehr benutzt wird, muss noch per USB eine
    weitere Platte angeschlossen sein.
 
-
 Gemeinsamkeiten der Beispieleaufrufe:
 
 1. Das gesicherte System heisst im Beispielaufruf "raspberrypi".
-1. Der **Ziel**-Datenträger (SD-Karte bzw. USB-Platte), der den Restore der Boot-/bzw.
+1. Der **Ziel**-Datenträger, der den Restore der Boot-/bzw.
    Boot- und Root-Partition erhalten soll, ist im Beispiel als `/dev/sdf` verfügbar.  
-   [Weiter unten](#wie-device) ist beschrieben, wie man den aktuellen Wert für `-d` herausfinden kann
+   [Weiter unten](#devicenames) ist beschrieben, wie man den aktuellen Wert für `-d` herausfinden kann
 1. **Achtung**: Alle bestehenden Daten der **Ziel**-Datenträger werden nach einer Sicherheitsabfrage
    von *raspiBackup* vor dem Restore gelöscht.
 1. Das zu restorende Backup ist verfügbar unter
@@ -283,7 +270,7 @@ Gemeinsamkeiten der Beispieleaufrufe:
 sudo raspiBackup.sh -d /dev/sdf /remote/raspifix/disks/backup/rsync/raspberrypi/raspberrypi-rsync-backup-20141230-213032/
 ```
 
-### Restore auf eine USB Platte ohne SD Karte (USB boot mode)
+### Restore auf ein USB Gerät ohne SD Karte (USB boot mode)
 
 ```
 sudo raspiBackup.sh -d /dev/sdf /remote/raspifix/disks/backup/rsync/raspberrypi/raspberrypi-rsync-backup-20141230-213032/
@@ -297,8 +284,6 @@ sudo raspiBackup.sh -d /dev/sdf /remote/raspifix/disks/backup/rsync/raspberrypi/
 ```
 sudo raspiBackup.sh -d /dev/sdf -R /dev/sda1 /remote/raspifix/disks/backup/rsync/raspberrypi/raspberrypi-rsync-backup-20141230-213032/
 ```
-
-
 
 <a name="devicenames"></a>
 ## Wie kann man die Gerätenamen der externen SD Karte und externen Platte herausfinden?
@@ -349,8 +334,7 @@ von der neuen SD-Karte booten.
 Falls aus irgendwelchen Gründen der Restore mit dem Script fehlschlägt, kann man
 natürlich jederzeit die vom Script gesicherten Daten mit den Standard
 Linuxtools, die zum Backup genutzt wurden - `dd`, `tar` oder `rsync` - wieder
-restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script. ;-)
-
+restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script und es sind entsprechende Linux Kenntnisse erforderlich ;-)
 
 [.status]: todo
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#restore
