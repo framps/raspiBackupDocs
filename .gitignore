@@ -1,12 +1,14 @@
+# Ignore ...
+#  ... possibly generated local files/directories
+**/src/doc-version-info-automatically-generated.md
+book
+
+# ... possibly generated/"printed" PDF files
+**/*.pdf
+
+# ... my (rpi-simonz) local/private file with ssh-handling infos
 .private-conf.sh
 
-book
-tmp.gh-pages
-theme.orig
-collect
-WIP
+# ... vim editor files
 Session.vim
-
-**/src/doc-version-info-automatically-generated.md
 **/*.swp
-**/*.pdf
