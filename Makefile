@@ -10,7 +10,8 @@ SHELL = /usr/bin/bash
 help:
 	@echo "This Makefile has the following targets:"
 	@echo ""
-	@echo "  - all    : build locally and then upload"
+	@echo "  - push   : build locally to check and if successful push to GitHub for deployment"
+	@echo "  - all    : build locally and then upload to webserver"
 	@echo ""
 	@echo "  - build  : build the docs locally"
 	@echo "  - upload : upload the locally built docs to webserver"
@@ -28,6 +29,11 @@ build:
 
 	mdbook build en
 	mdbook build de
+
+push:
+	mdbook build en
+	mdbook build de
+	git push
 
 upload:
 	@[ -d en/book -a -d de/book ] || { echo "Missing directory(ies) 'book/'! Build them first!" ; exit 1; }
