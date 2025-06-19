@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 echo "Define helpful functions and aliases:"
 
 edit_diffed_summaries() {
@@ -8,14 +9,22 @@ edit_diffed_summaries() {
 }
 
 edit_translate_all_rft() {
-    (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
-    read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-    for f in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
-    do
-        vi -O {de,en}/src/"$f"
+    if command -pv fzf >/dev/null ; then
+        while true; do
+            FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --select-1 --exact --preview='head -$FZF_PREVIEW_LINES {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
+            [ -z "$FILE" ] && break
+            vi -O {de,en}/src/"$FILE"
+        done
+    else
+        (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-        echo  "$inp"
-    done
+        for FILE in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
+        do
+            vi -O {de,en}/src/"$FILE"
+            read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
+            echo  "$inp"
+        done
+    fi
 }
 
 alias vita=edit_translate_all_rft
