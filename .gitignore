@@ -6,7 +6,7 @@ book
 # ... possibly generated/"printed" PDF files
 **/*.pdf
 
-# ... my (rpi-simonz) local/private file with ssh-handling infos
+# ... my (rpi-simonz) local/private file with ssh-handling data etc.
 .private-conf.sh
 
 # ... vim editor files

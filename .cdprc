@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+echo "Define helpful functions and aliases:"
+
+edit_diffed_summaries() {
+    #vi -O {de,en}/src/SUMMARY.md
+    vimdiff -c "syntax off" {de,en}/src/SUMMARY.md
+}
+
+edit_translate_all_rft() {
+    (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
+    read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
+    for f in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
+    do
+        vi -O {de,en}/src/"$f"
+        read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
+        echo  "$inp"
+    done
+}
+
+alias vita=edit_translate_all_rft
+alias vids=edit_diffed_summaries
+
+alias vita
+alias vids
+
+echo ""
+
+
+check_ssh_id() {
+    IDFILE="$1"
+    [ -f "$IDFILE" ] || return 1
+    echo "$2"
+    if ! ssh-add -T "$IDFILE" 2>/dev/null
+    then
+        ssh-add "$IDFILE"
+    fi
+    ssh-add -T "$IDFILE"
+}
+
+echo "Check/unlock SSH keys (and set possibly more private settings):"
+
+# Examples, can/should be set to real values in .private-conf.sh
+#check_ssh_id  ~/.ssh/id_my_github    "Checking ssh key(s) for GitHub ..."
+#check_ssh_id  ~/.ssh/id_my_webserver "Checking ssh key(s) for webserver ..."
+#export WEBSERVER="user:DUMMYPASSWORD@myserver.com"
+#export WEBSERVER_ROOTDIR="httpdocs"
+source .private-conf.sh
