@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# vim: set expandtab:
 
 echo "Define helpful functions and aliases:"
 
@@ -11,7 +11,7 @@ edit_diffed_summaries() {
 edit_translate_all_rft() {
     if command -pv fzf >/dev/null ; then
         while true; do
-            FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --select-1 --exact --preview='head -$FZF_PREVIEW_LINES {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
+            FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
             [ -z "$FILE" ] && break
             vi -O {de,en}/src/"$FILE"
         done
@@ -27,11 +27,31 @@ edit_translate_all_rft() {
     fi
 }
 
+edit_by_status() {
+    if command -pv fzf >/dev/null ; then
+        while true; do
+            # TODO: this preview fails when there is a status with second field "...". Probably a quoting problem!
+            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='rg --files-with-matches "^\[\.status\]:\s\s*{r2}(\s\s*\"{r3}\s{r4}\s{r5}\s{r6}\s{r7}\")*" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
+            [ -z "$STATUS" ] && break
+            VALUE=${STATUS#* }
+            #echo "VALUE=$VALUE"
+            while true; do
+                FILE=$(rg --files-with-matches "^\[\.status\]:\s\s*${VALUE}" --glob="**/*.md" | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<")
+                [ -z "$FILE" ] && break
+                vi "$FILE"
+            done
+        done
+    fi
+}
+
+
 alias vita=edit_translate_all_rft
 alias vids=edit_diffed_summaries
+alias vibs=edit_by_status
 
 alias vita
 alias vids
+alias vibs
 
 echo ""
 
