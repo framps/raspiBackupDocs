@@ -31,7 +31,7 @@ edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
             # TODO: this preview fails when there is a status with second field "...". Probably a quoting problem!
-            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='rg --files-with-matches "^\[\.status\]:\s\s*{r2}(\s\s*\"{r3}\s{r4}\s{r5}\s{r6}\s{r7}\")*" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
+            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='V={}; V=${V#* }; rg --files-with-matches "^\[\.status\]: \s*${V}" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             VALUE=${STATUS#* }
             #echo "VALUE=$VALUE"
