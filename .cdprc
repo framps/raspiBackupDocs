@@ -30,10 +30,10 @@ edit_translate_all_rft() {
 edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
-            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='V={}; V=${V#* }; V=${V//?/.} ; rg --files-with-matches "^\[\.status\]: \s*${V}" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
+            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='V={}; V=${V#* }; V=${V//\?/.} ; rg --files-with-matches "^\[\.status\]: \s*${V}" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             VALUE=${STATUS#* }
-            VALUE=${VALUE//?/.}
+            VALUE=${VALUE//\?/.}
             while true; do
                 # Solution for opening multiple file found here:
                 # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
