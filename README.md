@@ -6,7 +6,7 @@
 > [!NOTE]
 > Dieses Repository wurde initial von [rpi-simonz](https://github.com/rpi-simonz) erstellt mit all seiner Logik
 > sowie allen deutschen Seiten, die von der o.g. Webseite übernommen wurden um die angestaubte Dokumention auf Vordermann zu bringen. Letztendlich wurde dieses Reporsitory von ihm an framp
-> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte. [rpi-simonz](https://github.com/rpi-simonz) wurde natürlich somit github Collaborator an diesem Repository.
+> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte. [rpi-simonz](https://github.com/rpi-simonz) wurde natürlich somit Collaborator an diesem Repository.
 > 
 > Ein herzliches Dankeschön geht deshalb an rpi-simonz, der ganz alleine mit viel Elan und Einsatz die ganze Vorarbeit geleistet hat
 > um die raspiBackup
