@@ -13,14 +13,14 @@ edit_translate_all_rft() {
         while true; do
             FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
             [ -z "$FILE" ] && break
-            vi -O {de,en}/src/"$FILE"
+            vim -O {de,en}/src/"$FILE"
         done
     else
         (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         do
-            vi -O {de,en}/src/"$FILE"
+            vim -O {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -30,15 +30,17 @@ edit_translate_all_rft() {
 edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
-            # TODO: this preview fails when there is a status with second field "...". Probably a quoting problem!
-            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='V={}; V=${V#* }; rg --files-with-matches "^\[\.status\]: \s*${V}" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
+            STATUS=$(rg "^\[\.status\]:" --no-filename | sort -u | fzf --reverse --select-1 --exact --preview='V={}; V=${V#* }; V=${V//?/.} ; rg --files-with-matches "^\[\.status\]: \s*${V}" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             VALUE=${STATUS#* }
-            #echo "VALUE=$VALUE"
+            VALUE=${VALUE//?/.}
             while true; do
-                FILE=$(rg --files-with-matches "^\[\.status\]:\s\s*${VALUE}" --glob="**/*.md" | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<")
-                [ -z "$FILE" ] && break
-                vi "$FILE"
+                # Solution for opening multiple file found here:
+                # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
+                # Otherwise the LF isn't interpreted correctly by the editor.
+                IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:\s\s*${VALUE}" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<"))
+                [ -z "$FILES" ] && break
+                vim -p "${FILES[@]}"
             done
         done
     fi
