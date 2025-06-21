@@ -14,17 +14,17 @@
 > mal fällig war.
 >
 
-> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
-> Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
->
-> Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
-> Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
->
-> Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
->
-> Die generierte Dokumentation ist zu erreichen unter:
->
->  - https://framps.github.io/raspiBackupDoc/
+Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
+Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
+
+Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
+Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
+
+Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
+
+Die generierte Dokumentation ist zu erreichen unter:
+
+ - https://framps.github.io/raspiBackupDoc/
 
 # raspiBackup Dokumentation
 
