@@ -6,13 +6,11 @@
 > [!NOTE]
 > Dieses Repository wurde initial von [rpi-simonz](https://github.com/rpi-simonz) erstellt mit all seiner Logik
 > sowie allen deutschen Seiten, die von der o.g. Webseite übernommen wurden um die angestaubte Dokumention auf Vordermann zu bringen. Letztendlich wurde dieses Reporsitory von ihm an framp
-> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte. [rpi-simonz](https://github.com/rpi-simonz) wurde natürlich somit Collaborator an diesem Repository.
+> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte. [rpi-simonz](https://github.com/rpi-simonz) ist natürlich seitdem Collaborator an diesem Repository.
 > 
-> Ein herzliches Dankeschön geht deshalb an rpi-simonz, der ganz alleine mit viel Elan und Einsatz die ganze Vorarbeit geleistet hat
-> um die raspiBackup
+> Ein herzliches Dankeschön geht deshalb an rpi-simonz, der ganz alleine mit viel Elan und Einsatz die ganze Vorarbeit geleistet hat um die raspiBackup
 > Dokumentation in ein neues Format zu bringen und übersichtlicher zu gestalten. Dadurch hat er auch eine Überarbeitung der Dokumentation angestoßen die längst 
 > mal fällig war.
->
 
 Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
 Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
