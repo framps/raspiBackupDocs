@@ -13,16 +13,16 @@ Es gibt drei Typen von *raspiBackup*-Meldungen:
 Die Fehlermeldungen sind selbsterklärend und sollten auf die konkrete Ursache hinweisen.
 Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
 
-1. Start von *raspiBackup* in der Befehlszeile und nicht in der crontab, um
-   Fehlkonfigurationen in der Crontab zu eliminieren
+1. Start von *raspiBackup* in der Befehlszeile und nicht automatisch per systemd, um
+   systemd Fehlkonfigurationen auszuschliessen
 
-1. Es wird bei jedem Lauf eine Logdatei `raspiBackup.log` im Backupverzeichnis
-   erzeugt, die eine Menge detaillierte Informationen enthält.
+1. Es wird bei jedem erfolgreichen Lauf eine Logdatei `raspiBackup.log` im Backupverzeichnis
+   erzeugt, die eine Menge detaillierte Informationen enthält und hilft Fehlerursachen zu finden.
    Ein Suchen nach Fehlermeldungen und -ursachen in dieser Logdatei kann helfen,
    den Fehler zu lokalisieren.
 
    Falls das Backup fehlerhaft abbricht, wird die Logdatei vor dem Aufräumen
-   in das Homeverzeichnis des Aufrufers gesichert.
+   in das Homeverzeichnis des Aufrufers gesichert. 
 
    Weiterhin kann auch der Parameter `-v` weiterhelfen, wenn Fehler in den
    Linux Backuptools auftreten.
@@ -41,9 +41,8 @@ und im Detail zu erklären, ist sehr viel Aufwand.
 
 Wer also eine Erklärung für eine Fehlermeldung sucht und hier nicht findet,
 sollte erst einmal eine Suchmaschine benutzen und nach der
-Fehlermeldungsnummer suchen. Falls das nicht zum Erfolg führt, muss diese in
-einem Kommentar am Ende dieser Seite genau angeben werden und dann wird sie
-hier aufgenommen. So werden dann nach und nach alle häufigen und wichtigen
+Fehlermeldungsnummer suchen. Falls das nicht zum Erfolg führt, sollte ein Issue in github
+erstellt werden und dann wird sie hier aufgenommen. So werden dann nach und nach alle häufigen und wichtigen
 Fehlermeldungen von *raspiBackup* hier gesammelt und erläutert.
 
 Meldungen im Nummernbereich von 0-999 werden von *raspiBackup* geschrieben.
@@ -62,29 +61,25 @@ hinweist. Eine Liste der Fehlercodes findet sich am [Ende dieser Seite](#exitcod
 
 Ursache:
 
-*raspiBackup* endete mit einem Fehler und hat kein Backup erstellt.
+*raspiBackup* endete mit einem Fehler und hat kein Backup erstellt. Ein Debuglog wurde im Homeverzeichnis des Aufrufers erstellt.
 
 Weitere Aktionen:
 
-Eine vorangehende Fehlermeldung beschreibt die genau Ursache des Abbruchs.
-Diese suchen und deren Ursache beheben.
-
+Eine vorangehende Fehlermeldung beschreibt die genau Ursache des Abbruchs. Diese suchen und deren Ursache beheben.
 
 
 ### RBK0013E: Es existieren mehr als zwei Partitionen, die nur mit dem Backuptype DD oder DDZ oder der Option -P gesichert werden können
 
 Ursache:
 
-*raspiBackup* sichert nur die ersten beiden Partitionen. Wenn mehr Partitionen existieren wird diese Meldung ausgegeben.
+*raspiBackup* sichert nur die ersten beiden Partitionen im normalen Backupmodus. Wenn mehr Partitionen existieren wird diese Meldung ausgegeben.
 
 Weitere Aktionen:
 
 Entweder löscht man die weiteren Partitionen oder man benutzt die Option
 `--ignoreAdditionalPartitions`. Damit wird explizit gesagt, dass weitere
 Partitionen existieren dürfen aber NICHT gesichert werden. Alternativ kann man
-alles sichern mit dem Backuptyp `dd` oder dem partitionsorientierten Modus.
-
-
+alles sichern mit dem Backuptyp `dd` oder den partitionsorientierten Modus nutzen.
 
 ### RBK0015E: Es ist schon eine Instanz von *raspiBackup* aktiv.
 
@@ -100,8 +95,6 @@ Mit `ps -ef | grep raspiBackup` kann man überprüfen, ob *raspiBackup* gerade l
 Wenn ja, muss man warten bis sich *raspiBackup* beendet hat.
 Wenn nein, muss die Lockdatei gelöscht werden mit `sudo rm /var/lock/raspiBackup`.
 
-
-
 ### RBK0019E: Option -a und -o nicht angegeben.
 
 Ursache:
@@ -112,12 +105,13 @@ um kein inkonsistentes Backup zu erstellen. Wenn man keine zu stoppenden und zu
 startenden Services per Installer definiert hat, müssen die Services mit den
 beiden Optionen im Aufruf angegeben werden.
 
+Diese Optionen können mit dem raspiBackup Installer für Systemd Services konfiguriert werden.
+
 Weitere Aktionen:
 
 Die beiden Optionen mit entsprechenden Parametern müssen beim Aufruf mitgegeben
 werden oder die Services müssen mit dem Installer in der Konfigurationsdatei
 definiert sein. Details dazu finden sich in [FAQ18](faq.md#faq18).
-
 
 
 ### RBK0020E: Dateisystem des rsync Backupverzeichnisses %s unterstützt keine softlinks.
@@ -132,7 +126,6 @@ Weitere Aktionen:
 
 Entweder muss die Backuppartition mit EXT2, 3 oder 4 formatiert werden oder es
 muss ein anderer Backuptyp wie `dd` oder `tar` benutzt werden.
-
 
 
 ### RBK0021E: Backupprogramm des Typs %1 beendete sich mit RC %2.
@@ -188,16 +181,14 @@ angebundene Partition (nfs, samba) ist - das Problem. Meist sind es
 Netzwerkprobleme oder -fehlkonfigurationen. Auch kam es schon vor, dass die
 Partition auf einem Gerät lag, welches Schreibfehler hatte.
 
-Sollte ein Lesefehler vorliegen, ist das ein Hinweis darauf, dass die SD Karte
-ersetzt werden sollte. Dazu dann das letzte Backup auf eine neue SD Karte
+Sollte ein Lesefehler vorliegen, ist das ein Hinweis darauf, dass das Systemgerät bzw SD Karte
+ersetzt werden sollte. Dazu dann das letzte Backup auf ein neues Systemgerät 
 restoren.
 
 Falls die Backuppartition per nfs gemounted ist, [diesen Artikel](https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen/2-uncategorised/605-wie-kann-man-acls-mit-rsync-auf-nfs-gemounteten-partitionen-sichern) lesen.
 
 Falls Berechtigungsprobleme existieren, muss sichergestellt sein, dass der
 Benutzer root sämtliche Rechte auf dem Backupgerät hat.
-
-
 
 ### RBK0027E: Kein externes Gerät an %1 verbunden. Die SD Karte würde für das Backup benutzt werden.
 
@@ -209,9 +200,9 @@ macht und wenn die SD Karte klein ist, wird sie überlaufen.
 
 Weitere Aktionen:
 
-Sei nun %1 `/backup`, welches der Standardpfad ist. Die lokale Backuppartition von
-einerm USB Stick oder USB Platte muss an `/backup` gemounted werden. Benutze
-einen entsprechenden Eintrag in der `/etc/fstab`, um den Mountpunkt `/backup` mit
+Sei nun %1 `/backup`, welches der Standardpfad ist. And diesem Verzeichnis 
+muss ein externes Backupgerät gemounted werden. 
+Ein entsprechender Eintrag in der `/etc/fstab` kann genutzt werden um den Mountpunkt `/backup` mit
 einer externen Partition zu verbinden. Man kann das prüfen mit
 
 ```
@@ -222,18 +213,21 @@ Wenn man weiss, was man tut, kann man die Fehlermeldung mit der Option -c
 ausschalten.
 
 
-
 ### RBK0028E: %s ist kein Wiederherstellungsverzeichnis von $MYNAME."
 
 Ursache:
 
-Es darf keine Datei angegeben werden wie z.B. die tar Datei. Es muss das
-Backupverzeichnis sein.
+raspiBackup erstellt auf der Backupartition ein Verzeichnis mit
+dem Hostnamen des gesicherten Systems und darunter werden die jeweiligen Backups in Unterverzeichnissen abgelegt.
+So ein Backup Unterverzeichnis muss angegeben werden.
+
+Das Format des Backupverzeichnisses hat folgendes Aussehen:
+
+  - troubadix@raspbian12-rsync-backup-20250615-050123
 
 Weitere Aktionen:
 
-Den Dateinamen weglassen und nur das Backupverzeichnis angeben.
-
+Ein korrektes Backupverzeichnis angeben.
 
 
 ### RBK0030E: %s Datei Erzeugung mit dd endet fehlerhaft mit RC %s.
@@ -249,7 +243,6 @@ Beim Restore ist ziemlich sicher die SD Karte korrupt und eine andere SD Karte
 sollte benutzt werden. Beim Backup gibt es Schreibprobleme auf das Backupmedium,
 welche gelöst werden müssen. Vorhergehende Meldungen vom Backuptool geben
 weitere Hinweis auf die Fehlerursache.
-
 
 
 ### RBK0039E: Mail Program %s ist nicht installiert um eMail zu senden.
@@ -281,23 +274,18 @@ Man muss herausfinden, welcher der Startbefehle/Stopbefehle einen Fehler hat.
 Deshalb gibt man jeden Startbefehl/Stopbefehl einmal per `sudo` ein und achtet
 auf Fehlermeldungen. Danach ist die Ursache der Fehlermeldung zu beseitigen.
 
-
-
 ### RBK0051W: Ziel %s mit %s ist größer als 2TB und erfordert gpt statt mbr. Ansonsten werden nur 2TB genutzt.
 
 Ursache:
 
-Die Zielpartition ist größer als 2TB und deshalb ist darauf eine *GPT*i-Partitonierung notwendig.
+Die Zielpartition ist größer als 2TB und deshalb ist darauf eine *GPT*-Partitionierung notwendig.
 Wenn das Backup nur ein MBR hat, kann die Zielpartition nur bis 2TB erweitert werden.
 
 Weitere Aktionen:
 
-Sofern im Backup schon ein GPT genutzt wird, kann die Meldung ignoriert werden.
-Ansonsten muss die Zielpartition manuell mit einem GPT versehen werden und die
-Partitionen entsprechend manuell angelegt werden. Danach kann dann das Backup
-mit der Option -0 restoren und die Zielpartition wird auf die maximale
-Kapazität erweitert.
-
+Das System welches restored werden soll nutzt noch *mbr* und muss in *gpt* konverttiert werden.
+Danach muss noch einmal ein Backup - dieses mal mit *gpt* erstellt werden. Dieses kann kann dann
+auf Platten größer als 2TB restored werden.
 
 ### RBK0061E: Keine Bootpartitionsdateien in %s gefunden die mit %s beginnen.
 
@@ -314,7 +302,6 @@ Backupverzeichnis befinden müssen. Ein Backupverzeichnis beginnt immer mit dem
 Hostnamen der Raspberry gefolgt von dem Backuptyp und dem Erstellungsdatum des
 Backups. Beispiele: raspberrypi-dd-backup-20160415-222900 oder
 raspberrypi-rsync-backup-20160416-094106
-
 
 
 ### RBK0077E: Restore wurde fehlerhaft beendet. Siehe vorhergehende Fehlermeldungen.
@@ -350,8 +337,8 @@ oder manuell die 5te Zeile in der Datei mit der Extension .sfdisk im Backupverze
 
 Ursache:
 
-*raspiBackup* will beim Wiederherstellen des Backups auf der SD Karte
-Partitionen anlegen. Dazu muss die ganze SD Karte als Zielgerät angegeben
+*raspiBackup* will beim Wiederherstellen des Backups 
+Partitionen anlegen. Dazu muss das ganze Gerät als Zielgerät angegeben
 werde. Eine einzelne Partition ist nicht erlaubt.
 
 Weitere Aktionen:
@@ -361,8 +348,6 @@ Anstelle von z.B. `/dev/sdb1`, was eine einzelne Partition ist, muss z.B.
 werden dann überschrieben. Also vorher sicherstellen, dass keine anderen Daten
 auf anderen Partitionen noch benötigt werden. Siehe auch [diese Seite](restore.md) zur
 Wiederherstellung.
-
-
 
 ### RBK0087E: Restore directory %s was not created by *raspiBackup*.
 
@@ -378,7 +363,6 @@ Weitere Aktionen:
 Das Backupverzeichnis muss gemäß der o.g. Form umbenannt werden.
 
 
-
 ### RBK0105I: Neues Backupverzeichnis %1 wird gelöscht.
 
 Ursache:
@@ -389,7 +373,6 @@ neue Backupverzeichnis.
 Weitere Aktionen:
 
 Eine vorhergehende Meldung weist auf einen Fehler hin, der beseitigt werden muss.
-
 
 
 ### RBK0109E: Nicht unterstütztes Filesystem %s auf Partition %s.
@@ -404,19 +387,17 @@ Erstelle einen Issue in github und es kann sein,
 dass dann der Filesystem Support in *raspiBackup* eingebaut wird.
 
 
-
 ### RBK0142E: Bootgerät kann nicht erkannt werden.
 
 Ursache:
 
 *raspiBackup* kann das Bootgerät nicht erkennen. Das passiert normalerweise, wenn eine
 andere Hardware als eine Raspberry benutzt wird oder ein anderes
-Operatingsystem als *Raspberry Pi OS* benutzt wird.
+Operatingsystem als *Raspberry Pi OS* oder *Ubuntu* benutzt wird.
 
 Weitere Aktionen:
 
-Das Problem auf github oder in einem Kommentar am Ende dieser Seite berichten.
-
+Das Problem auf github berichten.
 
 
 ### RBK0147E: Sicherung der Partition %1 schlug fehl mit RC %2.
@@ -429,7 +410,6 @@ Sichern einer Parition im partitioneorientierten Modus.
 Weitere Aktionen:
 
 Siehe RBK0021E
-
 
 
 ### RBK0150W: Maximale Dateigröße im Backupverzeichnis %s ist auf 4GB begrenzt.
@@ -460,21 +440,20 @@ rausfinden, welche Partition gemounted ist und mit `sudo umount <partition>` wob
 freigeben.
 
 
-
 ### RBK0160E: Ziel %1 mit %2 ist kleiner als die Backupquelle mit %3.
 
 Ursache:
 
-Das Backup ist größer als die SD Karte, auf die es zurückgespielt werden soll
+Das Backup ist größer als das gerät, auf die es zurückgespielt werden soll
 und kann deshalb nicht zurückgespielt werden. Die Meldung kommt nur beim dd
-Backup. Bei tar oder rsync Backup wird automatisch die Größe angepasst.
+Backup. Bei tar oder rsync Backup ist je nach Belegung nicht die volle Größe des
+Gerätes notwendig.
 
 Weitere Aktionen:
 
 Es muss eine größere SD Karte benutzt werden. Alternativ kann man mit dem Tool
 pishrink das dd Image verkleinern und dann mit *raspiBackup* zurückspielen.
 Siehe auch [FAQ26](faq.md#faq26).
-
 
 
 ### RBK0164E: Es können keine Hardlinks erstellt werden. RC %s.
@@ -490,7 +469,6 @@ Entweder einen anderen Backuptyp wie tar oder dd wählen oder eine
 Backuppartition nutzen, die ext3 oder ext4 formatiert ist.
 
 
-
 ### RBK0172E: Verzeichnis %s kann nicht erstellt werden.
 
 Ursache:
@@ -504,7 +482,6 @@ NO_ROOT_SQUASH in der Datei /etc/exports des nfs Servers. Ansonsten ist das
 Backupverzeichnis mit nicht ausreichenden Rechten gemounted.
 
 
-
 ### RBK0178E: Erzeugung von %s Datei endet fehlerhaft mit RC %s."
 
 Ursache:
@@ -516,7 +493,6 @@ Weitere Aktionen:
 
 Siehe nach, was der Fehlercode von dd bedeutet.
 Wenn es RC1 ist, prüfe die Bootpartition und/oder die Backuppartition.
-
 
 
 ### RBK0196W: %1 unterstützt keine Hardlinks.
@@ -534,7 +510,6 @@ den tar oder dd backup. Berücksichtige aber, dass dann jeder Backup ein Vollbac
 ist und entsprechend mehr Zeit und Platz benötigt.
 
 
-
 ### RBK0197W: eMail mit %s versenden endet fehlerhaft mit RC %s.
 
 Ursache:
@@ -545,7 +520,7 @@ Weitere Aktionen:
 
 Fast immer liegt die Ursache beim Aufsetzen der Benachrichtigung meist in einer
 Fehlkonfiguration des genutzten MTAs. Häufig bekommt *raspiBackup* auch keinen
-Fehler beim Sensden der eMail aber sie kommt trotzdem nicht an.
+Fehler beim Senden der eMail aber sie kommt trotzdem nicht an.
 
 Die Konfiguration eines MTAs ist sehr oft kompliziert und ist kein Problem von
 *raspiBackup*. Im Log des verwendeten MTAs findet man Fehlermeldungen, die
@@ -567,18 +542,12 @@ Weitere Aktionen:
 Es sollte in github Issue erstellt werden, in dem das Debuglog angehängt ist,
 um die Ursache zu finden.
 
-Hinweis: NVMe Speicher ist nicht unterstützt. Für die Entwicklung des NVME
-Supports sowie einen sorgfältigen Test fehlt NVMe Speicher sowie ein Adapter.
-Wer will, kann für den NVMe Support in *raspiBackup* spenden. Details dazu
-finden sich [hier](introduction.md#trinkgeld).
-
-
 
 ### RBK0211E: Externe Partition %s die an %s gemounted ist wird mit Option -P nicht gesichert.
 
 Ursache:
 
-Mit der Option -P kann mit *raspiBackup* nur eine SD Karte gesichert werden.
+Mit der Option -P können mit *raspiBackup* nur die Partitionen des Systemgerätes gesichert werden.
 
 Weitere Aktionen:
 
@@ -586,7 +555,6 @@ Mit der Benutzung des normalen Backup Modus kann auch ein Backup bei einem USB
 Boot vorgenommen werden. Sollten mehr als 2 Partitionen vorhanden sein, kann mit
 der Option --ignoreAdditionalPartitions die Sicherung der weiteren Partitionen
 ausgeschlossen werden.
-
 
 
 ### RBK0263E: Dateisystem auf %s unterstützt keine Linux Dateiattribute.
@@ -605,8 +573,6 @@ Entweder muss die Backupmethode dd oder tar gewählt werden oder es muss eine
 Backuppartition genutzt werden, die Linux Dateiattribute unterstützt.
 Details dazu finden sich auf [dieser Seite](which-filesystem-can-be-used-on-the-backup-partition.md).
 
-
-
 ### RBK0266E: Es fehlt die Berechtigung um Linux Dateiattribute auf %s zu erstellen (Dateisystem: %s)
 
 Ursache:
@@ -622,13 +588,11 @@ Weitere Aktionen:
 
 Mit no_root_squash die Backuppartition auf dem NFS Server exportieren.
 
-
-
 ### RBK0268E: Es werden nur Raspberries mit Raspberry PI OS unterstützt.
 
 Ursache:
 
-*raspiBackup* wird nur für Raspberries und Raspbian unterstützt. Man kann mit
+*raspiBackup* wird nur für Raspberries und RaspbianOS unterstützt. Man kann mit
 der Option --unsupportedEnvironment trotzdem versuchen, *raspiBackup* zu nutzen,
 denn es läuft auch unter vielen anderen Linux Distributionen und
 raspberrykompatibler Hardware. Bei Fehlern wird aber wegen fehlender Testhard-
@@ -638,8 +602,6 @@ Weitere Aktionen:
 
 Nutzung der Option --unsupportedEnvironment und hoffen, dass *raspiBackup* mit
 der vorhandenen Software und Hardware umgehen kann.
-
-
 
 ### RBK0273E: %s ungültige Backupverzeichnis(se) oder Dateien in %s gefunden."
 
@@ -656,7 +618,6 @@ Löschen oder Verschieben der nicht von *raspiBackup* erstellten Verzeichnisse
 oder Dateien an andere Plätze.
 
 
-
 ### RBK0274E: Das Restoregerät %s hat gemountete Partitionen. Hinweis: Ein Restore auf das aktive System ist nicht mögich.
 
 Ursache:
@@ -671,7 +632,6 @@ Weitere Aktionen:
 Das Restoregerät muss mit umount freigegeben werden oder usbmount deaktiviert werden.
 
 
-
 ### RBK0277E: Restore ist nicht möglich wenn 'usbmount' installiert ist.
 
 Ursache:
@@ -684,7 +644,6 @@ Deinstallation von usbmount mit dem Befehl `sudo apt-get remobe usbmount`.
 Noch besser ist es, eine dedizierte SD Karte mit einem kleinen *Raspberry Pi OS* (*Raspberyy Pi OS
 lite*) vorzubereiten und diese SD Karte zum Restore nutzen. Dort ist kein
 usbmount installiert.
-
 
 
 ### RBK1005E: bc nicht gefunden. bc muss installiert werden mit 'sudo apt-get install bc'.
@@ -707,7 +666,6 @@ Fehlermeldung gibt noch genauere Informationen zur Fehlerursache aus.
   - RC_ASSERTION=101
   - RC_MISC_ERROR=102
   - RC_CTRLC=103
-  - RC_EXTENSION_ERROR=104
   - RC_STOP_SERVICES_ERROR=105
   - RC_START_SERVICES_ERROR=106
   - RC_PARAMETER_ERROR=107
@@ -728,10 +686,6 @@ Fehlermeldung gibt noch genauere Informationen zur Fehlerursache aus.
   - RC_BEFORE_STOP_SERVICES_ERROR=123
   - RC_EMAILPROG_ERROR=124
   - RC_MISSING_PARTITION=125
-  - RC_UUIDS_NOT_UNIQUE=126
-  - RC_INCOMPLETE_PARMS=127
-  - RC_CONFIGVERSION_MISMATCH=128
-  - RC_TELEGRAM_ERROR=129
   - RC_FILE_OPERATION_ERROR=130
   - RC_MOUNT_FAILED=131
   - RC_UNSUPPORTED_ENVIRONMENT=132
@@ -740,9 +694,16 @@ Fehlermeldung gibt noch genauere Informationen zur Fehlerursache aus.
   - RC_DOWNLOAD_FAILED=135
   - RC_BACKUP_DIRNAME_ERROR=136
   - RC_RESTORE_IMPOSSIBLE=137
-
+  - RC_INVALID_BOOTDEVICE=138
+  - RC_ENVIRONMENT_ERROR=139
+  - RC_CLEANUP_ERROR=140
+  - RC_NOT_SUPPORTED=143
+  - RC_TEMPMOVE_FAILED=144
+  - RC_RESIZE_ERROR=145
+  - RC_UUID_UPDATE_IMPOSSIBLE=147
 
 [.status]: done
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#fehler
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupmessagese
