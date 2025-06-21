@@ -4,9 +4,6 @@
 -->
 
 > [!NOTE]
-> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
-> Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
->
 > Dieses Repository wurde von [rpi-simonz](https://github.com/rpi-simonz) ursprünglich erstellt mit all seiner Logik
 > sowie allen deutschen Seiten, die von der o.g. Webseite übernommen wurden. Final wurde dieses Reporsitory von ihm an framp
 > übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte.
@@ -16,6 +13,10 @@
 > Dokumentation in ein neues Format zu bringen und übersichtlicher zu gestalten. Dadurch hat er auch eine Überarbeitung der Dokumentation angestoßen die längst 
 > mal fällig war.
 >
+
+> Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
+> Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
+>
 > Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
 > Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
 >
@@ -24,7 +25,6 @@
 > Die generierte Dokumentation ist zu erreichen unter:
 >
 >  - https://framps.github.io/raspiBackupDoc/
-
 
 # raspiBackup Dokumentation
 
