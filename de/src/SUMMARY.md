@@ -111,7 +111,10 @@ Dies ermöglicht einige kleine Kniffe:
 ```
 TO CHECK/TRANSLATE!
 
+  local-language-support-for-languages-other-than-de-and-en-l10n.md
   manual-restore-of-a-tgz-backup.md
   usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md
 ```
 
+[.status]: translated
+[.status]: todo "Check the three english-only files"
