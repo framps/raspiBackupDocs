@@ -134,8 +134,8 @@ Hier einige Beispiele:
 ```
 [.status]: done
 [.status]: todo
-[.status]: todo "Links überprüfen und Formatierung optimieren"
-[.status]: wip "Work in progress by framp"
+[.status]: todo "z.B.: Links überprüfen und Formatierung optimieren"
+[.status]: wip "Work in progress by ..."
 
 [.status]: rft "Ready for translation"
 [.status]: rft

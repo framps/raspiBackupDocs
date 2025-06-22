@@ -977,6 +977,6 @@ ignorierender Fehler ist. Siehe dazu hier. D.h. man sollte möglichst
 versuchen den Fehler mit Möglichkeit 1 oder 2 zu beseitigen.
 
 
-[.status]: todo "Links ergänzen/prüfen"
+[.status]: todo "Links prüfen"
 [.source]: https://linux-tips-and-tricks.de/de/faq
 

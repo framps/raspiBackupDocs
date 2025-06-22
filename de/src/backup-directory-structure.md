@@ -154,5 +154,5 @@ Backup ist:
     └── raspiBackup.msg
 
 
-[.status]: todo "Quelle"
-[.source]: todo
+[.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#Vergleichtodo
+[.source]: https://www.linux-tips-and-tricks.de/en/backup

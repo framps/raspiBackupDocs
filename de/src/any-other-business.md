@@ -2,4 +2,4 @@
 
 Hier nun einige Themen ...
 
-[.status]: todo "Mehr Text!"
+[.status]: todo "Mehr Infos auf dieser Startseite?"

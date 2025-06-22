@@ -255,4 +255,4 @@ Dort ist aller Plugins im Quellcode verfügbar um ihn zu erweitern und
 neuen zuzufügen.
 
 
-[.status]: todo "So Einiges..."
+[.status]: todo "Formatierung und Text"

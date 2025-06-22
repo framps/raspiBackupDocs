@@ -233,7 +233,7 @@ Anonymer UID: guest
 ```
 
 
-[.status]: todo "Prüfen/Formatieren"
+[.status]: todo "Formatierung und Text"
 [.source]: https://linux-tips-and-tricks.de/de/synology
 [.source]: https://www.linux-tips-and-tricks.de/en/synology
 

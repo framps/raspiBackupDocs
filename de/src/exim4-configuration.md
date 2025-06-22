@@ -41,6 +41,6 @@ Folgende Variablen werden in der folgenden Beschreibung genutzt:
 
 
 
-[.status]: todo "schöner formatieren"
+[.status]: todo "Formatierung und Text"
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/573-exim4-konfigurieren
 

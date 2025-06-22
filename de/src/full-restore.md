@@ -336,7 +336,6 @@ natürlich jederzeit die vom Script gesicherten Daten mit den Standard
 Linuxtools, die zum Backup genutzt wurden - `dd`, `tar` oder `rsync` - wieder
 restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script und es sind entsprechende Linux Kenntnisse erforderlich ;-)
 
-[.status]: todo
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#restore
 [.source]: https://linux-tips-and-tricks.de/de/wiederherstellen
