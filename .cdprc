@@ -8,6 +8,25 @@ edit_diffed_summaries() {
     vimdiff -c "syntax off" {de,en}/src/SUMMARY.md
 }
 
+edit_all_translated() {
+    if command -pv fzf >/dev/null ; then
+        while true; do
+            FILE=$(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to check translation and press ENTER. (ESC to cancel.) <<")
+            [ -z "$FILE" ] && break
+            vim -O {de,en}/src/"$FILE"
+        done
+    else
+        (cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
+        read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
+        for FILE in $(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
+        do
+            vim -O {de,en}/src/"$FILE"
+            read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
+            echo  "$inp"
+        done
+    fi
+}
+
 edit_translate_all_rft() {
     if command -pv fzf >/dev/null ; then
         while true; do
@@ -54,6 +73,8 @@ edit_by_status() {
 
 
 alias vita=edit_translate_all_rft
+alias vitar=edit_translate_all_rft
+alias vitat=edit_all_translated
 alias vids=edit_diffed_summaries
 alias vibs=edit_by_status
 
