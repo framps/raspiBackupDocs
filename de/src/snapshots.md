@@ -17,6 +17,6 @@ Wenn er erfolgreich war löscht man den Snapshot im Backupverzeichnis.
 Es gibt auch ein [Youtube Video](https://www.youtube.com/watch?v=8BlF9B8EX6k),
 in dem die *raspiBackup* Snapshots erklärt werden sowie eine Demo gegeben wird.
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://linux-tips-and-tricks.de/de/snapshots
 

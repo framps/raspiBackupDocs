@@ -137,6 +137,7 @@ Hier einige Beispiele:
 [.status]: todo "z.B.: Links überprüfen und Formatierung optimieren"
 [.status]: wip "Work in progress by ..."
 
+[.status]: review-needed
 [.status]: rft "Ready for translation"
 [.status]: rft
 [.status]: translated

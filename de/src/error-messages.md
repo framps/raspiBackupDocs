@@ -702,7 +702,6 @@ Fehlermeldung gibt noch genauere Informationen zur Fehlerursache aus.
   - RC_RESIZE_ERROR=145
   - RC_UUID_UPDATE_IMPOSSIBLE=147
 
-[.status]: done
 [.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#fehler
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen

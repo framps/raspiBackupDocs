@@ -12,5 +12,4 @@ der Daten mit den zuvor benutzten Backuptools `dd`, `tar` oder `rsync` möglich.
 
 Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md) möglich.
 
-[.status]: done
 [.status]: rft "Ready for translation"

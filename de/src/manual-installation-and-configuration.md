@@ -54,7 +54,7 @@ keine Benachrichtigungen geschickt werden können wie auch keine
 Benachrichtigungen von *raspiBackup* bei neuen Versionen erhalten werden.
 
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/538-raspibackup-manuelle-installation
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/539-raspibackup-manual-installation
 

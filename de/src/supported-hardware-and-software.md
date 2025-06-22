@@ -31,7 +31,6 @@ und beendet sich sonst. Mit der Option `--unsupportedEnvironment` wird diese
 Prüfung nicht vorgenommen und führt u.U. zu Fehlern und Programmabbrüchen.
 
 
-[.status]: done
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/608-unterstuetzte-hard-und-software/
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/609-supported-hard-and-software/
 [.status]: rft "Ready for translation"

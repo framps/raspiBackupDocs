@@ -154,5 +154,6 @@ Backup ist:
     └── raspiBackup.msg
 
 
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#Vergleichtodo
 [.source]: https://www.linux-tips-and-tricks.de/en/backup

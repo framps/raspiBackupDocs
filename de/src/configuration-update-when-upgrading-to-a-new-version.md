@@ -88,7 +88,7 @@ vorgenommen. Alle anderen Konfigurationsdateien müssen manuell erweitert
 werden. Dazu muss man die als neu gekennzeichneten Konfigurationszeilen
 nehmen und in die anderen Konfigurationsdateien kopieren.
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/567-raspibackup-konfigurationsupdate-nach-einem-upgrade-auf-eine-neue-version
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/570-raspibackup-configuration-update-when-upgrading-to-a-new-version
 

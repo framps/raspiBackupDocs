@@ -67,7 +67,6 @@ Micha beendete seine Beschreibung mit:
 > So kann ich mir selber helfen und das reicht mir alle mal. Vielen Dank für das Skript!
 > Solange das Backup da ist, ist nun der Restore auch nicht mehr schlimm. :-)
 
-[.status]: done
 [.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/497-raspibackup-manueller-restore-eines-backups
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/498-raspibackup-manual-restore

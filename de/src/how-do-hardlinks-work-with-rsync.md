@@ -49,6 +49,6 @@ Speicherplatz real bei der Nutzung von Hardlinks belegt wird.
 - [du counting harldinks towards filesize](https://stackoverflow.com/questions/19951883/du-counting-hardlinks-towards-filesize) - Ein Artikel, der erklärt warum der Befehl du über mehrere Verzeichnisses ausgeführt werden muss, um die Einsparungen durch Hardlinks zu sehen
 
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/571-wie-funktioniert-der-rsync-backup-typ-mit-hardlinks
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/572-how-do-hardlinks-work-with-rsync

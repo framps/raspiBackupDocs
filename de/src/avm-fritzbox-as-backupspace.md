@@ -77,3 +77,5 @@ Backup auf die Synology dauert 16 Minuten
 D.h. der Backup dauert auf der Fritzbox um die 50% länger als bei der Synology
 und wichtige Services (Hausautomation et al), die in der Backupzeit gestoppt
 werden müssen, sind länger nicht verfügbar.
+
+[.status]: review-needed

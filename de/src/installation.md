@@ -8,6 +8,5 @@ Information.
 
 Wer *raspiBackup* manuell installieren möchte, sollte der Beschreibung auf [dieser Seite](manual-installation-and-configuration.md) folgen.
 
-[.status]: done
 [.status]: rft "Ready for translation"
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#installation

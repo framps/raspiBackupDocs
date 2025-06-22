@@ -16,6 +16,6 @@ Anbei eine Auswahl von Logos die in der Diskussion entstanden sind:
 ![Auswahl an Icons](images/icons/icon-collection.png)
 
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/653-raqspibackup-has-a-new-logo
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/654-raspibackup-has-a-new-logo

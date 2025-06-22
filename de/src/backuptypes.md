@@ -80,4 +80,5 @@ Tabelle sind die verschiedenen Dateisysteme pro Backupmethode gekennzeichnet.
 | nfs      | möglich | möglich | **empfohlen** <br/><br/>  Die Sicherung von ACLs geht auch aber nur über den Umweg der Nutzung eines Loopdevices. Siehe dazu auch hier FAQ-24. |
 
 
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach

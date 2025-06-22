@@ -42,6 +42,6 @@ Im Monat Mai 2024 sehen die Nutzungsdaten wie folgt aus:
   - Keep Strategie wird zu 64% genutzt und smart recycle Strategie zu 36%
 
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#stats
 

@@ -36,7 +36,7 @@ der Rest des USB Gerätes für weitere Partitionen genutzt werden.
 Details zum Restore können [hier](restore.md) nachgelesen werden.
 
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/592-umziehen-des-raspberry-betriebssystems-von-sd-karte-auf-ssd-usb-platte-oder-usb-stick
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/593-migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive
 

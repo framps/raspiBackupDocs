@@ -19,5 +19,6 @@ Es existieren zwei Backupmodi:
    Partitionen beliebig. Falls die Ziel SD Karte beim Restore größer ist als die
    Quell SD Karte wird der zusätzliche Platz nicht benutzt.
 
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#Vergleich
 [.source]: https://www.linux-tips-and-tricks.de/en/backup

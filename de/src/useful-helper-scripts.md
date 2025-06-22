@@ -25,7 +25,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    *raspiBackup* eMail Konfigurationsparameter benutzt.
    Das Script erfordert keine Änderungen.
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/507-raspibackup-nuetzliche-hilfsprogramme
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/508-raspibackup-nuetzliche-hilfsprogramme-2
 

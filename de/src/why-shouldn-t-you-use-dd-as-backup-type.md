@@ -77,6 +77,6 @@ benutzen will, sei hier auf Benutzung von [Synology als Backupspace](synology-as
   - [Welches Dateisystem kann auf dem Backupgerät benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
 
 
-[.status]: done
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/579-warum-sollte-man-dd-als-backupmethode-besser-nicht-benutzen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/581-why-shouldn-t-you-use-dd-as-backup-method

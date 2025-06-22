@@ -25,7 +25,6 @@ eine neue Version sofort bereitgestellt.
 Jede neue Version wird vor der Veröffentlichung regression getestet. Details
 zum Regressiontest finden sich [hier](regressiontests-executed.md).
 
-[.status]: done
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#updatestrategie
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie
