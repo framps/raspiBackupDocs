@@ -27,7 +27,8 @@ all: build push upload check
 build:
 	@echo -e "# Version of this documentation\n\n" > en/src/doc-version-info-automatically-generated.md
 	@echo -e "# Version dieser Dokumentation\n\n"  > de/src/doc-version-info-automatically-generated.md
-	@( echo -e "## Last commit\n\n\`\`\`" ; git log -n 1 ; echo '```' ; UNCOMMITED=$$(git status --porcelain) ; [ -n "$$UNCOMMITED" ] && { echo -e "\n\n## Plus yet uncommited changes\n\n\`\`\`\n$$UNCOMMITED\n\`\`\`"; } ; echo -e "\nBuild: $$(date --iso-8601=minutes)" ) | tee -a  en/src/doc-version-info-automatically-generated.md  de/src/doc-version-info-automatically-generated.md
+	@( echo -e "## Last commit\n\n\`\`\`" ; git log -n 1 ; echo '```' ; UNCOMMITED=$$(git status --porcelain) ; [ -n "$$UNCOMMITED" ] && { echo -e "\n\n## Plus yet uncommited changes\n\n\`\`\`\n$$UNCOMMITED\n\`\`\`"; } ; echo -e "\nBuild: $$(date --iso-8601=minutes)\n\n\n[.status]: automatically-generated  \"do not edit manually\"'" ) | tee -a  en/src/doc-version-info-automatically-generated.md  de/src/doc-version-info-automatically-generated.md
+
 
 	mdbook build en
 	mdbook build de

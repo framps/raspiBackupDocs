@@ -32,7 +32,7 @@ edit_by_status() {
         while true; do
             shopt -s extglob
             WITHOUT_STATUS=$(rg --files-without-match --glob="**/*.md" "^\[\.status\]:" | wc -l)
-            STATUS=$( (rg "^\[\.status\]:" --no-filename --glob="**/*.md" | sort | uniq -c ; printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") | fzf --reverse --select-1 --exact --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; rg --files-with-matches "^\[\.status\]:${V}$" | sort -u' --header=">> Please select status and press ENTER. (ESC to cancel.) <<")
+            STATUS=$( (rg "^\[\.status\]:" --no-filename --glob="**/*.md" | sort | uniq -c ; printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") | fzf --reverse --select-1 --exact --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; (if [ "${V}" == " --NO-STATUS--" ] ; then rg --files-without-match "^\[\.status\]:" --glob="**/*.md" ; else rg --files-with-matches "^\[\.status\]:${V}$"  --glob="**/*.md" ; fi) | sort' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             VALUE="${STATUS#*\]:}"
             VALUE=${VALUE//\?/.}
