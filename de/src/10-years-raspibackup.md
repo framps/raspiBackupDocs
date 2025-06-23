@@ -102,25 +102,6 @@ Im Mai 2025 hat [simonz](https://github.com/rpi-simonz/) viel Einsatz und Energi
 Zusätzlich entstanden viele [kleine Scripte](https://github.com/framps/raspiBackup/tree/master/scripts), die *raspiBackup* in seiner Nutzung
 unterstützen.
 
-Ein paar Statistiken zu raspiBackup:
-
-* 5 Sprachen werden unterstützt (Deutsch, Englisch, Finnish, Französisch und
-  Chinesisch)
-
-* *raspiBackup* besteht aus knapp 12000 lines of code. Dabei sind 376 Meldungen
-  in den verschiedenen Sprachen enthalten.
-
-* Knapp 55000 Aufrufe von *raspiBackup* im Monat Juli 2023
-
-* Durchschnittlich 1700 Aufrufe von *raspiBackup* pro Tag im Monat Juli 2023
-
-* Durchschnitt 2800 Aufrufe am Sonntag. Sonntag ist der Defaulttag eines
-  wöchentlichen Backups von *raspiBackup*
-
-* 602 Githubnutzer haben *raspiBackup* mit einem Stern versehen und
-  signalisieren damit dass sie es gut finden
-
-
 Hiemit gebe ich eine virtuelle Runde Freibier zur Feier des Tages aus.
 
 
