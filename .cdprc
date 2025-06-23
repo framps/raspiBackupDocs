@@ -12,11 +12,6 @@ EDIT_IN_TABS="vim -p"
 
 echo -e "\n*** Define helpful functions and aliases:\n"
 
-edit_diffed_summaries() {
-    #vi -O {de,en}/src/SUMMARY.md
-    vimdiff -c "syntax off" {de,en}/src/SUMMARY.md
-}
-
 edit_translate_already_translated() {
     if command -pv fzf >/dev/null ; then
         while true; do
@@ -84,7 +79,7 @@ edit_by_status() {
 alias vibs='EDIT_IN_TABS="vim -p" edit_by_status'
 alias vitar='EDIT_IN_SPLIT_WINDOWS="vim -O" edit_translate_all_rft'
 alias vitat='EDIT_IN_SPLIT_WINDOWS="vim -O" edit_translate_already_translated'
-alias vids=edit_diffed_summaries
+alias vids='vimdiff -c "syntax off" {de,en}/src/SUMMARY.md'
 
 alias mibs='EDIT_IN_TABS="micro" edit_by_status'
 alias mitar='EDIT_IN_SPLIT_WINDOWS="micro -multiopen=vsplit" edit_translate_all_rft'
