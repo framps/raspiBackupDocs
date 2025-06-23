@@ -1,8 +1,12 @@
 # Backuptypen
 
-Es gibt verschiedene Backupmtypen und eine jede hat ihre Vor- und Nachteile.
-Anbei eine Auflistung eben dieser für die verschiedenen unterstützten
-Backuptypen. Es können auch unterschiedliche Backuptypen kombiniert werden.
+Es gibt verschiedene Backuptypen und eine jede hat ihre Vor- und Nachteile.
+Es können auch unterschiedliche Backuptypen kombiniert werden. Z.B. kann alle
+Monate ein Vollbackup mit tar erstellt werden und dazwischen wöchentlich ein rsync Delta Backup.
+Das erfordert aber eine manuelle Konfiguration von Systemd Timern und erfordet
+gute Systemd kenntnisse. Der raspiBackupInstaller konfiguriert nur genau einen
+Backuptypen.
+
 Sämtliche Backuptypen können mit *raspiBackup* vollständig wiederhergestellt
 werden.
 
