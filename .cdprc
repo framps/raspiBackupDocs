@@ -55,18 +55,18 @@ edit_by_status() {
         while true; do
             shopt -s extglob
             WITHOUT_STATUS=$(rg --files-without-match --glob="**/*.md" "^\[\.status\]:" | wc -l)
-            STATUS=$( (rg "^\[\.status\]:" --no-filename --glob="**/*.md" | sort | uniq -c ; printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") | fzf --reverse --select-1 --exact --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; (if [ "${V}" == " --NO-STATUS--" ] ; then rg --files-without-match "^\[\.status\]:" --glob="**/*.md" ; else rg --files-with-matches "^\[\.status\]:${V}$"  --glob="**/*.md" ; fi) | sort' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<")
+            STATUS=$( (rg "^\[\.status\]:" --no-filename --glob="**/*.md" | sort | uniq -c ; printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") | fzf --reverse --select-1 --exact --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; (if [ "${V}" == " --NO-STATUS--" ] ; then rg --files-without-match "^\[\.status\]:" --glob="**/*.md" ; else rg --files-with-matches "^\[\.status\]:${V}$"  --glob="**/*.md" ; fi) | sort' --header=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             VALUE="${STATUS#*\]:}"
             VALUE=${VALUE//\?/.}
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
-                    IFS=$'\n' FILES=($(rg --files-without-match "^\[\.status\]:" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<"))
+                    IFS=$'\n' FILES=($(rg --files-without-match "^\[\.status\]:" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
                 else
                     # Solution for opening multiple file found here:
                     # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
                     # Otherwise the LF isn't interpreted correctly by the editor.
-                    IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<"))
+                    IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
                 fi
                 [ -z "$FILES" ] && break
                 # see https://www.shellcheck.net/wiki/SC2294
