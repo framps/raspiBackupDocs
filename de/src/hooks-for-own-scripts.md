@@ -27,7 +27,7 @@ Es bestehen folgende Möglichkeiten, die Funktionalität des Backupscripts durch
    aufzurufen. Der Quellcode vom Wrapperscript findet sich auch auf [github](https://github.com/framps/raspiBackup/blob/master/raspiBackupWrapper.sh)
    und kann durch einen Pull Request erweitert werden.
 
-2. Benutzung von Plugins in die eigene Scripts eingehängt werden
+2. Benutzung von Plugins, in die eigene Scripts eingehängt werden
 
    Vor und nach dem eigentlichen Backup wie auch dem Restore können Scripte als
    Plugins eingehängt werden. Details dazu finden sich in der Detailbeschreibung
@@ -254,5 +254,3 @@ einen Pullrequest auf [github.](https://github.com/framps/raspiBackup)
 Dort ist aller Plugins im Quellcode verfügbar um ihn zu erweitern und
 neuen zuzufügen.
 
-
-[.status]: todo "Formatierung und Text"

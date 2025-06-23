@@ -1,6 +1,6 @@
 # Synology NAS als Backupziel
 
-Das Backupscript *raspiBackup* wird immer mehr benutzt, um die Backups auf
+Das Backupscript [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup) wird immer mehr benutzt, um die Backups auf
 einem *Synology*-NAS abzulegen. Lange besaß ich (*framp*) keine Synology und konnte keinerlei
 Tests vornehmen, um bei Problemen zu helfen.s
 
@@ -12,15 +12,15 @@ Diskussion beteiligen.
 Ergebnisse und Empfehlungen, die aus Diskussionen entstehen, wurden natürlich
 hier dokumentiert.
 
-Mittlerweile ist eine Synology DS418play im Gerätepark und es ist möglich,
+Mittlerweile ist eine Synology *DS418play* im Gerätepark und es ist möglich,
 genauer zu beschreiben, was zu tun ist, um mit *raspiBackup* seine Raspberries
 auf einer Synology sichern zu können. Die Beschreibung erklärt, wie man die mit
-der empfohlenen Backupmethode rsync auf nfs Backupspace sichert.
+der empfohlenen Backupmethode *rsync* auf *nfs* Backupspace sichert.
 
 ## *raspiBackup* - Nutzung von Synology als Backupspace
 
-**Wichtig**: Die Partition auf der Synology muss mit no_root_squash exportiert werden,
-damit rsync genutzt werden kann. Im UI muss dann bei Squash No-mapping eingetragen
+**Wichtig**: Die Partition auf der Synology muss mit `no_root_squash` exportiert werden,
+damit *rsync* genutzt werden kann. Im UI muss dann bei Squash No-mapping eingetragen
 werden.
 
 ![Synology Konfiguration](images/synology-nfs-defs.png)
@@ -38,9 +38,9 @@ Im Wesentlichen sind folgende Schritte durchzuführen:
 
 1) Gemeinsamen nfs Ordner auf der Syno erstellen
 2) mount des gemeinsamen nfs Ordners auf der Raspi in der fstab
-3) Installation und Konfiguration von *raspiBackup* per Installer (keinen automatischen Backup konfigurieren)
+3) Installation und Konfiguration von *raspiBackup* per [Installer](installation.md) (keinen automatischen Backup konfigurieren)
 4) Test des Backups und Restores von der Commandline
-5) Einrichten des regelmaessigen Backups in der Crontab per Installer
+5) Einrichten des regelmaessigen Backups in der Crontab per [Installer](installation.md)
 
 
 
@@ -51,43 +51,44 @@ Fragen und Antworten zu *raspiBackup* zusammengestellt sind.
 
 Im DSM, Systemsteuerung -> Gemeinsamer Ordner -> Erstellen erstellt man einen
 gemeinsamen Ordner z.B. mit dem Namen raspiBackups. Eine Papierkorb braucht man
-nicht. Die nfs Berechtigungen muessen wie folgt eingestellt werden (Hinweis:
-*raspiBackup* laeuft als root). Hostname oder IP: Hostname oder IP des nfs
+nicht. Die nfs Berechtigungen müssen wie folgt eingestellt werden (Hinweis:
+*raspiBackup* läuft als root). Hostname oder IP: Hostname oder IP des nfs
 Clients, z.B. 192.168.0.10. Privileg: lesen/schreiben, Squash: keine Zuordnung,
 Sicherheit: sys.
 
 ### Eintrag des gemeinsamen nfs Ordners auf der Raspi in der fstab
 
-Folgender Eintrag in der /etc/fstab bewirkt das Mounten des Synology nfs Orders
-unter dem Mountpoint /backup unter der Annahme, dass 192.168.0.11 die Synology
+Folgender Eintrag in der `/etc/fstab` bewirkt das Mounten des Synology nfs Orders
+unter dem Mountpoint `/backup` unter der Annahme, dass 192.168.0.11 die Synology
 ist:
 
 ```
 192.168.0.11:/volume1/raspiBackups /backup nfs rw,nfsvers=3 0 0
 ```
 
-Es ist dringend zu empfehlen, den Mountpoint /backup zu nutzen und nicht z.B.
-/home/pi/backup oder andere Verzeichnisse.
+**Es ist dringend zu empfehlen, den Mountpoint `/backup` zu nutzen und nicht z.B.
+`/home/pi/backup` oder andere Verzeichnisse.**
+
 
 ### Manueller mount des gemeinsamen nfs Ordners
 
-Jetzt kann man prüfen ob der Backupspace auf der Synology freigegeben ist mit
-showmount -e 192.168.0.11 . Danach kann man mit sudo mount /backup den nfs
-Ordner manuell mounten.Durch den obigen Eintrag in der /etc/fstab wird der
-Mount nach jedem Neustart automatisch vorgenommen und es ist kein manueller
+Jetzt kann man prüfen, ob der Backupspace auf der Synology freigegeben ist mit
+`showmount -e 192.168.0.11`. Danach kann man mit `sudo mount /backup` den nfs
+Ordner manuell mounten.Durch den obigen Eintrag in der `/etc/fstab` wird der
+Mount nach jedem Neustart automatisch vorgenommen, und es ist kein manueller
 Mount mehr notwendig.
 
 ### Test des Schreibzugriffs
 
-Den Schreibzugriff kann man nun testen mit sudo bash -c 'echo "Raspberry war
-hier" > /backup/killroy.txt' und sudo cat /backup/killroy.txt Falls es Probleme
-gibt Hinweise von erfahrenen Synologybenutzern zu Synology und *raspiBackup*
-lesen.
+Den Schreibzugriff kann man nun testen mit `sudo bash -c 'echo "Raspberry war
+hier" > /backup/killroy.txt'` und `sudo cat /backup/killroy.txt`.
+Falls es Probleme gibt, Hinweise von erfahrenen Synologybenutzern zu Synology
+und *raspiBackup* lesen.
 
 ### Installation und Konfiguration von *raspiBackup*
 
-Installation von *raspiBackup* gemäß [dieser Anleitung](installation-in-5-minutes.md).
-Dabei dann rsync als Backupmethode und /backup als Backuppfad angeben.
+Installation von *raspiBackup* gemäß [dieser Anleitung](installation.md).
+Dabei dann `rsync` als Backupmethode und `/backup` als Backuppfad angeben.
 Den regelmäßigen Backup noch nicht konfigurieren.
 
 ### Test des Backups und Restores von der Commandline
@@ -106,28 +107,30 @@ Aufruf des Installers und Konfiguration des regelmäßigen Backupzeitpunktes.
 
 ## Hinweis zu ACLs
 
-Eigentlich kann man ACLs mit nfs V3 sichern. Das klappt z.B. wenn man eine
-Raspberry als nfs Server aufsetzt (Siehe hier). Allerdings funktioniert das
-nicht mit einer Synology - auch wenn sie nsf V3 nutzt.
+Eigentlich kann man ACLs mit *nfs V3* sichern. Das klappt z.B., wenn man eine
+Raspberry als nfs Server aufsetzt (Siehe [hier](https://linux-tips-and-tricks.de/de/synology/2-uncategorised/605-wie-kann-man-acls-mit-rsync-auf-nfs-gemounteten-partitionen-sichern)).
+Allerdings funktioniert das nicht mit einer *Synology* - auch wenn sie *nfs V3* nutzt.
 
 Eine Anfrage bei Synology am 13.5.2022 lieferte folgende Antwort:
 
-    Unfortunately, I have to inform you that both Linux ACL and setfacl are not supported by DSM.
-    I would be pass this on as feedback to our development department as a function request.
+> Unfortunately, I have to inform you that both Linux ACL and setfacl are not supported by DSM.
+> I would be pass this on as feedback to our development department as a function request.
 
 
 ## Hinweise und Tipps von *raspiBackup* Benutzern die eine Synology als Backupspace benutzen
 
 ### Beitrag von Udo (Kommentar #45)
 
-Udo hat im Kommentar beschrieben was man tun muss dass der Automount der
+Udo hat im Kommentar beschrieben was man tun muss, dass der Automount der
 Synology beim Booten der Raspberry funktioniert.
 
 
 Es wurde verschiedentlich berichtet, dass es mit Synologies Probleme mit
 Hardlinks geben kann, die von rsync benutzt werden, wenn nfs4 benutzt wird. Mit
 
+```
 192.168.0.42:/backup /backup nfs rw,nfsvers=3 0 0
+```
 
 wird das nfs3 Protokoll benutzt so dass das Backupskript dann erfolgreich durchläuft.
 Weiterhin werden Softlinks mit CIFS nicht unterstützt wenn nicht wenigstens CIFS Version 3 benutzt wird.
@@ -157,9 +160,9 @@ Raspberry Pi fstab Einträge für NFS3 und NFS4
 Anmerkung zum Mounten mit NFS4:
 Der Benutzer Jean hat auf der englischen Seite von raspibackup beschrieben wie
 man das Backup auf ein Share welches mit NFS4 eingebunden ist durchführen kann.
-Konnte es bisher noch nicht testen. Hier der Permalink
+Konnte es bisher noch nicht testen. Hier der [Permalink](https://linux-tips-and-tricks.de/en/raspberry/303-pi-creates-automatic-backups-of-itself#comment-530) TODO: Link belassen?
 
-Auszug aus der raspiBackup.conf abgelegt unter /usr/local/etc/
+Auszug aus der raspiBackup.conf abgelegt unter `/usr/local/etc/`
 
 ```
 cat /usr/local/etc/raspiBackup.conf
@@ -171,7 +174,7 @@ DEFAULT_KEEPBACKUPS=4
 DEFAULT_BACKUPTYPE="rsync"
 ```
 
-Ich hoffe das einigen Synology Benutzern hiermit geholfen ist.
+Ich hoffe, dass einigen Synology Benutzern hiermit geholfen ist.
 
 
 ### Entdeckungen von Alfred
@@ -204,7 +207,7 @@ Dieser Befehl funktionierte ohne Fehlermeldung. Es lag aber daran dass ich
 vergessen hatte 'sudo' zu benutzen. Als ich den Befehl dann nochmal mit sudo
 ausführte kam die Fehlermeldung wieder. Das weist IMHO auf ein Zugriffsproblem
 auf der Synology NAS hin. Nachdem ich dann auf der NAS die NFS permissions von
-'map all users to admin' auf 'no mapping' geändert hatte, bingo, funktionierte
+**'map all users to admin'** auf **'no mapping'** geändert hatte, bingo, funktionierte
 es auch mit sudo.
 
 ### Kommentar von Chris
@@ -212,7 +215,7 @@ es auch mit sudo.
 „Ich habe es so eben auch mit einem TAR-Backup via NFS 4.1 auf ein QNAP-NAS geschafft.
 
 
-Inhalt - /etc/fstab:
+Inhalt - `/etc/fstab`:
 
 ```
 <NAS-IP/-Hostname>:/<Share name>  /backup   nfs4    defaults,_netdev,noatime    0    2
@@ -233,7 +236,6 @@ Anonymer UID: guest
 ```
 
 
-[.status]: todo "Formatierung und Text"
 [.source]: https://linux-tips-and-tricks.de/de/synology
 [.source]: https://www.linux-tips-and-tricks.de/en/synology
 

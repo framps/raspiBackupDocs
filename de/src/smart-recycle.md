@@ -97,9 +97,9 @@ kein neues Verzeichnis benutzt.
 
 Hat man sorgfältig geprüft, dass die intelligente Rotationstrategie die
 richtigen Backups löscht und die gewünschten Backups aufhebt, wird mit der
-Option mit `--smartRecycleDryrun` -in jedem Backuplauf die intelligente
-Rotationstrategie angewendet und nicht mehr benötigte Backups werden
-unwideruflich gelöscht.
+Option mit `--smartRecycleDryrun-` in jedem Backuplauf die intelligente
+Rotationstrategie angewendet und
+**nicht mehr benötigte Backups werden unwideruflich gelöscht**.
 
 Alternativ bewirkt die Konfigurationsoption
 `DEFAULT_SMART_RECYCLE_DRYRUN=0` dasselbe Ergebnis.
@@ -110,7 +110,6 @@ wie das Rotationsprinzip funktioniert.
 Speziell die Grafik ist eine andere Möglichkeit, das Prinzip zu erklären.
 
 
-[.status]: todo "Formatierung und Text"
 [.source]: https://www.linux-tips-and-tricks.de/de/rotationsstrategie
 [.source]: https://www.linux-tips-and-tricks.de/en/smart-recycle
 
