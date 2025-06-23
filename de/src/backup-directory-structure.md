@@ -4,17 +4,17 @@
 
 Jeder Backuplauf erstellt im Backupverzeichnis ein Unterverzeichnis, welches
 folgendes Format hat: <hostname>. Darunter wird ein weiteres Verzeichnis
-<hostname>-<backuptyp>-<backupdatum> erstellt. Wenn man die Option `-M` benutzt,
+<hostname>@<osversion>-<backuptyp>-<backupdatum> erstellt. Wenn man die Option `-M` benutzt,
 sieht der Unterordner wie folgt aus: <hostname>-<-M parameter> und darunter
 wird dann das weitere Verzeichnis <hostname>-<backuptyp>-<backupdatum>
 erstellt.
 
-Beispiele: Die Raspberry hat den Hostnamen `raspberrypi` und es wird ein `dd`
-Backup am 15.04.2016 um 22:29:00 erstellt. Dann wird ein Verzeichnis
+Beispiele: Die Raspberry hat den Hostnamen `raspberrypi` und es wird ein `rsync`
+Backup von einem Boockworm OS am 15.04.2016 um 22:29:00 erstellt. Dann wird ein Verzeichnis
 `raspberrypi` erstellt sowie ein Unterverzeichnis
-`raspberrypi-dd-backup-20160415-222900`. Gibt man als Parameter für die Option `-M
+`raspberrypi@debian12-rsync-backup-20160415-222900`. Gibt man als Parameter für die Option `-M
 "Hello world"` mit, wird das Verzeichnis `raspberrypi-Hello_world` sowie das
-Unterverzeichnis `raspberrypi-dd-backup-20160415-222900` erstellt.
+Unterverzeichnis `raspberrypi@debian12-rsync-backup-20160415-222900` erstellt.
 
 Anbei die Verzeichnisstruktur meines Backupservers, der in diesem Falle auch
 eine Raspberry Pi ist. Verschiedene Backuptypen können pro Pi kombiniert
@@ -22,21 +22,20 @@ werden. Jedes Backup wird in einem neuen Unterverzeichnis abgelegt.
 
 Pro Raspberry System werden drei bzw fünf weitere Dateien immer zum
 eigentlichen Backup erstellt und sind notwendig für den Restore, wenn es kein `dd`
-Backup ist:
+Backup ist. Damit ist es auch Linuxkundigen möglich ein Backup manuell zu restoren. Siehe dazu [hier](manual-restore.md).
 
-  - .img - Bootpartition der SD Karte
-  - .mbr - Master Boot Record der SD Karte
-  - .sfdisk - Partitionslayout der SD Karte - Ausgabe des sfdisk Befehls
+  - .img - Bootpartition
+  - .mbr - Master Boot Record des Systems
+  - .sfdisk - Partitionslayout des Sywstems - Ausgabe des sfdisk Befehls
   - .blkid - (Partitionsorientierter Modus) - Ausgabe des blkid Befehls
   - .parted - (Partitionsorientierter Modus) - Ausgabe des parted Befehls
 
-
-`root@jessie:/mnt/backup/raspberrypi# tree -L 2`
+`root@raspiBackup:/mnt/backup/raspberrypi# tree -L 2`
 
      .
-     ├── raspberrypi-dd-backup-20160415-222900
-     │   └── raspberrypi-dd-backup-20160415-222900.img
-     ├── raspberrypi-rsync-backup-20160416-094106
+     ├── raspberrypi@debian12-dd-backup-20160415-222900
+     │   └── raspberrypi@debian12-dd-backup-20160415-222900.img
+     ├── raspberrypi@debian12-rsync-backup-20160416-094106
      │   ├── backup
      │   ├── bin
      │   ├── boot
@@ -65,7 +64,7 @@ Backup ist:
      │   ├── tmp
      │   ├── usr
      │   └── var
-     └── raspberrypi-tar-backup-20160415-204305
+     └── raspberrypi@debian12-tar-backup-20160415-204305
          ├── raspberrypi-backup.img
          ├── raspberrypi-backup.mbr
          ├── raspberrypi-backup.sfdisk
@@ -77,7 +76,7 @@ Backup ist:
 ## Partitionsorientierter Backup
 
 
-    root@buster:/mnt/backup/raspberrypi# tree -L 2
+    root@boockworm:/mnt/backup/raspberrypi# tree -L 2
     .
 
     ├── raspberrypi-backup.blkid
@@ -154,6 +153,6 @@ Backup ist:
     └── raspiBackup.msg
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#Vergleichtodo
 [.source]: https://www.linux-tips-and-tricks.de/en/backup

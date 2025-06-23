@@ -1,33 +1,36 @@
-# Backupmethoden
+# Backuptypen
 
-TODO: Heisst es nun "Backupmethoden" oder "Backuptypen"???
-
-Es gibt verschiedene Backupmethoden und eine jede hat ihre Vor- und Nachteile.
+Es gibt verschiedene Backupmtypen und eine jede hat ihre Vor- und Nachteile.
 Anbei eine Auflistung eben dieser für die verschiedenen unterstützten
-Backuptypen. Es können auch unterschiedliche Backupmethoden kombiniert werden.
-Sämtliche Backupmethoden können mit *raspiBackup* vollständig wiederhergestellt
+Backuptypen. Es können auch unterschiedliche Backuptypen kombiniert werden.
+Sämtliche Backuptypen können mit *raspiBackup* vollständig wiederhergestellt
 werden.
 
-Ein `dd` Backup erstellt ein in sich konsistentes binäres Abbild der SD Karte.
-Dabei wird immer die ganze SD Karte gelesen und gesichert. Das bedeutet, dass
+Ein `dd` Backup erstellt ein in sich konsistentes binäres Abbild des Systems.
+Dabei wird immer das ganze Gerät mit dem System gelesen und gesichert. Das bedeutet, dass
 auch Daten gesichert werden, die sich nicht geändert haben. Auch bedeutet es,
-dass zum Restore die SD Karte wieder wenigstens so gross sein muss wie die
-Original SD Karte. Es wird keine Parition irgendwie in der Größe angepasst.
-Diese Methode belastet die SD Karte sehr stark. Allerdings kann ein `dd` Backup
-unter Windows mit *disk32imager* wiederhergestellt werden.
+dass zum Restore das restorgerät wieder wenigstens so gross sein muss wie das Originalsystem.
+Es wird keine Parition irgendwie in der Größe angepasst. Das bereite besonders
+bei SD Karten immer wieder Probleme da die SD Karten - obwohl z.B. 32 GB gross - doch immer
+leichte Untesrschiede haben und somit ein Restore eines 32GB Systems auf eine andere 32GB SD Karte
+nicht erfolgreich sein kann da die SD Karte geringfügig kleiner ist.
 
-Ein `ddz` Backup sichert die gesamte SD Karte, wie ein `dd` Backup. Diese Methode
+Ein `dd` Backup kann unter Windows mit entsprechenden Tools wiederhergestellt werden.
+
+Aber es wird **nicht** empfohlen den Backuptyp dd zu nutzen. Warum wird [hier](why-shouldn-t-you-use-dd-as-backup-type.md)
+im Detail beschrieben.
+
+Ein `ddz` Backup sichert das gesammte System, wie ein `dd` Backup. Diese Methode
 belastet die CPU stark, da die Datenmenge reduziert wird. (Es ist ein `dd` Backup
-mit eingeschaltetem Zippen mit `-z`). Ein Restore mit dem *win32diskimager* ist
-nicht möglich.
+mit eingeschaltetem Zippen mit `-z`). Ein Restore mit Windowstools it nicht möglich.
 
-Ein `tar` Backup sichert die gesamte SD Karte, wobei allerdings das Backup nicht
+Ein `tar` Backup sichert alle auf dem Systemgerät gespeicherten Daten, wobei allerdings das Backup nicht
 so gross ist, wie bei einem `dd` Backup, da nur die Daten gesichert werden, die
-tatsächlich existieren. Deshalb kann auch ein `tar` Backup auf eine SD Karte
-restored werden, die kleiner ist als die original SD Karte - sofern die
-gesicherten Daten auf die neue SD Karte passen.
+tatsächlich existieren. Deshalb kann auch ein `tar` Backup auf Geräten
+restored werden, die kleiner ist als das Originalgerät. Natürlich nur sofern alle 
+gesicherten Daten auf das neue Device passen.
 
-Ein `tgz` Backup sichert die gesamte SD Karte, wie ein `tar` Backup. Diese Methode
+Ein `tgz` Backup sichert das gesamte System, wie ein `tar` Backup. Diese Methode
 belastet die CPU stark, da die Datenmenge reduziert wird. (Es ist ein `tar` Backup
 mit eingeschaltetem Zippen mit `-z`)
 
@@ -60,7 +63,6 @@ Je nachdem, welche Backupmethode man bei *raspiBackup* benutzt, sollte man sich
 für das richtige Dateisystem auf dem Backupgerät entscheiden. In der folgenden
 Tabelle sind die verschiedenen Dateisysteme pro Backupmethode gekennzeichnet.
 
-
 ### Lokal angeschlossene Backuppartitionen
 
 |          | dd        | tar       | rsync         |
@@ -73,12 +75,11 @@ Tabelle sind die verschiedenen Dateisysteme pro Backupmethode gekennzeichnet.
 
 ### Remote angeschlossene Backuppartitionen
 
-
 |          | dd      | tar     | rsync |
 |----------|---------|---------|-------|
 | smb/cifs | möglich | möglich | eingeschränkt <br/><br/>  Geht über den Umweg mit der Nutzung eines Loopdevices. Siehe dazu auch hier FAQ-24. |
 | nfs      | möglich | möglich | **empfohlen** <br/><br/>  Die Sicherung von ACLs geht auch aber nur über den Umweg der Nutzung eines Loopdevices. Siehe dazu auch hier FAQ-24. |
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach
