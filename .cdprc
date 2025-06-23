@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 # vim: set expandtab:
 
-echo "Define helpful functions and aliases:"
+# Open two files with vertical split, if possible:
+#   - vim -O <file> <file>
+#   - micro -multiopen=vsplit <file> <file>
+# Geany doesn't have a real split window feature
+#   - geany <file> <file>
+
+EDIT_IN_SPLIT_WINDOWS="vim -O"
+EDIT_IN_TABS="vim -p"
+
+echo -e "\n*** Define helpful functions and aliases:\n"
 
 edit_diffed_summaries() {
     #vi -O {de,en}/src/SUMMARY.md
@@ -13,14 +22,14 @@ edit_translate_already_translated() {
         while true; do
             FILE=$(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to check translation and press ENTER. (ESC to cancel.) <<")
             [ -z "$FILE" ] && break
-            vim -O {de,en}/src/"$FILE"
+            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
         done
     else
         (cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
         do
-            vim -O {de,en}/src/"$FILE"
+            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -32,14 +41,14 @@ edit_translate_all_rft() {
         while true; do
             FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
             [ -z "$FILE" ] && break
-            vim -O {de,en}/src/"$FILE"
+            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
         done
     else
         (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         do
-            vim -O {de,en}/src/"$FILE"
+            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -65,24 +74,42 @@ edit_by_status() {
                     IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<"))
                 fi
                 [ -z "$FILES" ] && break
-                vim -p "${FILES[@]}"
+                eval ${EDIT_IN_TABS} "${FILES[@]}"
             done
         done
     fi
 }
 
 
-alias vita=edit_translate_all_rft
-alias vitar=edit_translate_all_rft
-alias vitat=edit_translate_already_translated
+alias vibs='EDIT_IN_TABS="vim -p" edit_by_status'
+alias vitar='EDIT_IN_SPLIT_WINDOWS="vim -O" edit_translate_all_rft'
+alias vitat='EDIT_IN_SPLIT_WINDOWS="vim -O" edit_translate_already_translated'
 alias vids=edit_diffed_summaries
-alias vibs=edit_by_status
 
-#alias vita
+alias mibs='EDIT_IN_TABS="micro" edit_by_status'
+alias mitar='EDIT_IN_SPLIT_WINDOWS="micro -multiopen=vsplit" edit_translate_all_rft'
+alias mitat='EDIT_IN_SPLIT_WINDOWS="micro -multiopen=vsplit" edit_translate_already_translated'
+
+alias gebs='EDIT_IN_TABS="geany" edit_by_status'
+alias getar='EDIT_IN_SPLIT_WINDOWS="geany" edit_translate_all_rft'
+alias getat='EDIT_IN_SPLIT_WINDOWS="geany" edit_translate_already_translated'
+
+alias vibs
 alias vitar
 alias vitat
 alias vids
-alias vibs
+
+echo ""
+
+alias mibs
+alias mitar
+alias mitat
+
+echo ""
+
+alias gebs
+alias getar
+alias getat
 
 echo ""
 
@@ -98,7 +125,7 @@ check_ssh_id() {
     ssh-add -T "$IDFILE"
 }
 
-echo "Check/unlock SSH keys (and set possibly more private settings):"
+echo "*** Check/unlock SSH keys (and set possibly more private settings):"
 
 # Examples, can/should be set to real values in .private-conf.sh
 #check_ssh_id  ~/.ssh/id_my_github    "Checking ssh key(s) for GitHub ..."
