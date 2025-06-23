@@ -107,6 +107,7 @@ alias getar
 alias getat
 
 echo ""
+echo ""
 
 
 check_ssh_id() {
@@ -121,6 +122,7 @@ check_ssh_id() {
 }
 
 echo "*** Check/unlock SSH keys (and set possibly more private settings):"
+echo ""
 
 # Examples, can/should be set to real values in .private-conf.sh
 #check_ssh_id  ~/.ssh/id_my_github    "Checking ssh key(s) for GitHub ..."
@@ -128,3 +130,20 @@ echo "*** Check/unlock SSH keys (and set possibly more private settings):"
 #export WEBSERVER="user:DUMMYPASSWORD@myserver.com"
 #export WEBSERVER_ROOTDIR="httpdocs"
 source .private-conf.sh
+
+cat <<EOF
+
+
+*******************************************************************************
+
+This project directory is for maintaining the 'raspiBackup' documentation.
+
+There are some aliases defined as shown above.
+
+The directory is tracked by git and is connected to the git repo listed below.
+
+*******************************************************************************
+
+
+EOF
+
