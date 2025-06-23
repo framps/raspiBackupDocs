@@ -17,14 +17,14 @@ edit_translate_already_translated() {
         while true; do
             FILE=$(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to check translation and press ENTER. (ESC to cancel.) <<")
             [ -z "$FILE" ] && break
-            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
         done
     else
         (cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
         do
-            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -36,14 +36,14 @@ edit_translate_all_rft() {
         while true; do
             FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
             [ -z "$FILE" ] && break
-            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
         done
     else
         (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
         do
-            eval ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -69,7 +69,11 @@ edit_by_status() {
                     IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file to edit and press ENTER. (ESC to cancel.) <<"))
                 fi
                 [ -z "$FILES" ] && break
-                eval ${EDIT_IN_TABS} "${FILES[@]}"
+                # see https://www.shellcheck.net/wiki/SC2294
+                # see https://www.shellcheck.net/wiki/SC2086
+                # see https://www.shellcheck.net/wiki/SC2048
+                # TODO: check, optimize or whatever...
+                eval "${EDIT_IN_TABS}" ${FILES[*]@Q}
             done
         done
     fi
