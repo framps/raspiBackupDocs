@@ -1,8 +1,5 @@
 # Erweiterungsmöglichkeiten von *raspiBackup*
 
-``` admonish note title="Quelle"
-- <https://www.linux-tips-and-tricks.de/de/raspibackup#wrapper>
-```
 
 Es bestehen folgende Möglichkeiten, die Funktionalität des Backupscripts durch eigenen Code zu erweitern.
 
@@ -254,3 +251,6 @@ einen Pullrequest auf [github.](https://github.com/framps/raspiBackup)
 Dort ist aller Plugins im Quellcode verfügbar um ihn zu erweitern und
 neuen zuzufügen.
 
+
+[.status]: review-needed
+[.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#wrapper

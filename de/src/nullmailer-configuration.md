@@ -22,4 +22,5 @@ Folgende Variablen werden in der folgenden Beschreibung genutzt (Provider ist He
 2 und 3 sind nur notwendig, wenn der Hostname kein gueltiger Hostname beim eMailProvider ist.
 
 
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/675-nullmailer-konfigurieren

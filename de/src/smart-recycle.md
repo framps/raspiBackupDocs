@@ -110,6 +110,7 @@ wie das Rotationsprinzip funktioniert.
 Speziell die Grafik ist eine andere Möglichkeit, das Prinzip zu erklären.
 
 
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/rotationsstrategie
 [.source]: https://www.linux-tips-and-tricks.de/en/smart-recycle
 
