@@ -12,17 +12,17 @@ EDIT_IN_TABS="vim -p"
 
 echo -e "\n*** Define helpful functions and aliases:\n"
 
-edit_translate_already_translated() {
+edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
-            FILE=$(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to check translation and press ENTER. (ESC to cancel.) <<")
+            FILE=$(cd de/src || exit ; rg --files-with-matches "$1" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header="$FZF_HEADER")
             [ -z "$FILE" ] && break
             eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
         done
     else
-        (cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
+        (cd de/src || exit ; rg --files-with-matches "$1" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-        for FILE in $(cd de/src || exit ; rg --files-with-matches "^\[\.status\]:\s\s*translated" -- *.md | sort)
+        for FILE in $(cd de/src || exit ; rg --files-with-matches "$1" -- *.md | sort)
         do
             eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
@@ -31,23 +31,14 @@ edit_translate_already_translated() {
     fi
 }
 
+edit_translate_already_translated() {
+    FZF_HEADER=">> Please select file to check translation and press ENTER. (ESC to cancel.) <<"
+    edit_translate_by_status "^\[\.status\]:\s\s*translated"
+}
+
 edit_translate_all_rft() {
-    if command -pv fzf >/dev/null ; then
-        while true; do
-            FILE=$(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header=">> Please select file to translate and press ENTER. (ESC to cancel.) <<")
-            [ -z "$FILE" ] && break
-            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
-        done
-    else
-        (cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
-        read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-        for FILE in $(cd de/src || exit ; rg --files-with-matches " rft" -- *.md | sort)
-        do
-            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
-            read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-            echo  "$inp"
-        done
-    fi
+    FZF_HEADER=">> Please select file to translate and press ENTER. (ESC to cancel.) <<"
+    edit_translate_by_status " rft"
 }
 
 edit_by_status() {
