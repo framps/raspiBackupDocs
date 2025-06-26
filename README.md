@@ -20,9 +20,10 @@ Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
 
 Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
 
-Die generierte Dokumentation ist zu erreichen unter:
+Die generierte Dokumentation ist zu erreichen unter: https://framps.github.io/raspiBackupDoc/
 
- - https://framps.github.io/raspiBackupDoc/
+[![Screenshot von raspiBackupDoc](readme-images/Screenshot_raspiBackupDoc.png)](Screenshot_raspiBackupDoc.png)
+
 
 # raspiBackup Dokumentation
 
