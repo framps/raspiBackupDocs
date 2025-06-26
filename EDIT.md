@@ -13,17 +13,35 @@ sinnvollerweise in passend benannten Unterverzeichnissen. Das heisst: Für jede 
 Diese eventuelle mehrfache Speicherung von gleichen Dateien beruht auf der zugrundeliegenden Technik
 und lässt sich zur Zeit nicht vermeiden.
 
+Beispiel:
+
+    ├── de
+    │   ├── book.toml
+    │   ├── language-picker.css
+    │   ├── mdbook-admonish.css
+    │   ├── src
+    │   │   ├── 10-years-raspibackup.md
+    │   │   ├── images
+    │   │   │   ├── CM4.jpg
+    │   │   │   ├── icons
+    │   │   │   │   └── ...
+    │   │   │   └── ...
+    │   │   ├── installation.md
+    │   │   ├── SUMMARY.md
+    │   │   └── ...
+    │   └── theme
+    │       └── index.hbs
+
 Die eigentlichen Inhalte sind Textdateien (im *Markdown*-Format), die sich mit jedem Texteditor bearbeiten lassen.
 
 Hilfreich ist ein Editor, der bei der Darstellung unterstützt ("Syntax Highlighting").
-**TODO**: Beispiele.
 
 Eine kurze Einführung zum verwendeten Generierungstool *mdbook* gibt es [hier](MDBOOK_INTRO.md).
 
 **Tipp**: Siehe auch Originalbeschreibung von *mdbook* <https://rust-lang.github.io/mdBook/guide/creating.html>
 
 
-## Das Inhaltsverzeichnis / Die Struktur der Dokumentation
+## SUMMARY.md - Das Inhaltsverzeichnis / Die Struktur der Dokumentation
 
 Dies ist der wichtigste Teil der Dokumentation.
 
@@ -103,7 +121,7 @@ Die Definitionen bestehen aus `[name]: Linkadresse` bzw.
 mit optionalem Link-Titel: `[name]: Linkadresse "Link Title"`.
 
 
-### Spezielle, hier in diesem Projekt genutzte, Dinge
+### Spezielle hier in diesem Projekt genutzte Dinge
 
 Um die Arbeit an den Inhalten der Dateien und auch an den Übersetzungen besser organisieren zu können,
 gibt es in diesem Projekt in vielen Markdown-Dateien ergänzende "Tags", Markierungen, Kommentare.
@@ -118,6 +136,19 @@ Bei einheitlicher Benennung lassen sich damit auch gut `grep` oder andere Tools
 (vimgrep,...) einsetzen, um die Dokumentenmenge im Griff zu haben.
 
 Der optionale Linktitel (in `""`!) lässt sich gut für etwas längeren (also mehrwortigen) Text nutzen.
+
+> [!NOTE]
+> Zur weiteren Unterstützung der Autoren sind einige kleine Tools entstanden.
+>
+> Diese befinden sich in der Datei `.cdprc`, die nur gesource'd werden muss und so einige Aliases definiert:
+>
+>   - zur Auswahl von Datei(en) mit einem gewünschten Status
+>   - noch zu übersetzende/schon übersetzte Dateien in parallelen Editor-Fenstern
+>   - Synchronisierung der SUMMARY.md in den beiden Sprachen
+>
+> `.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
+> kann aber auch wie beschrieben eigenständig verwendet werden.
+
 
 Hier einige Beispiele:
 

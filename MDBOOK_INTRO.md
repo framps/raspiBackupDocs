@@ -1,4 +1,4 @@
-## mdbook - Eine kurze Einführung
+# mdbook - Eine kurze Einführung
 
 Offizielle Dokumentation:
 
