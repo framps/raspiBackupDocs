@@ -17,8 +17,6 @@ Beispiel:
 
     ├── de
     │   ├── book.toml
-    │   ├── language-picker.css
-    │   ├── mdbook-admonish.css
     │   ├── src
     │   │   ├── 10-years-raspibackup.md
     │   │   ├── images
@@ -29,8 +27,6 @@ Beispiel:
     │   │   ├── installation.md
     │   │   ├── SUMMARY.md
     │   │   └── ...
-    │   └── theme
-    │       └── index.hbs
 
 Die eigentlichen Inhalte sind Textdateien (im *Markdown*-Format), die sich mit jedem Texteditor bearbeiten lassen.
 
@@ -132,15 +128,16 @@ Allerdings muss die Syntax auch dann eingehalten werden: `[name]: Linkadresse "L
 Um diese Spezial-Nutzung, also die gewünschte Unsichtbarkeit für den normalen Nutzer,
 deutlich zu machen, beginnen die Namen mit einem Punkt `.`.
 
-Bei einheitlicher Benennung lassen sich damit auch gut `grep` oder andere Tools
+Bei einheitlicher Benennung lassen sich damit auch `grep` oder andere Tools
 (vimgrep,...) einsetzen, um die Dokumentenmenge im Griff zu haben.
 
-Der optionale Linktitel (in `""`!) lässt sich gut für etwas längeren (also mehrwortigen) Text nutzen.
+Der optionale Linktitel (in `""`!) lässt sich für etwas längeren (also mehrwortigen) Text nutzen.
 
 > [!NOTE]
-> Zur weiteren Unterstützung der Autoren sind einige kleine Tools entstanden.
+> Zur weiteren Unterstützung der Autoren sind kleine Tools entstanden.
 >
-> Diese befinden sich in der Datei `.cdprc`, die nur gesource'd werden muss und so einige Aliases definiert:
+> Einige davon befinden sich in der Datei `.cdprc`,
+> die nur gesource'd werden muss und so einige Aliases definiert:
 >
 >   - zur Auswahl von Datei(en) mit einem gewünschten Status
 >   - noch zu übersetzende/schon übersetzte Dateien in parallelen Editor-Fenstern
