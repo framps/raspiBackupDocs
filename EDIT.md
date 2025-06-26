@@ -139,15 +139,16 @@ Der optionale Linktitel (in `""`!) lässt sich für etwas längeren (also mehrwo
 > Einige davon befinden sich in der Datei `.cdprc`,
 > die nur gesource'd werden muss und so einige Aliases definiert:
 >
->   - zur Auswahl von Datei(en) mit einem gewünschten Status
 >   - noch zu übersetzende/schon übersetzte Dateien in parallelen Editor-Fenstern
 >   - Synchronisierung der SUMMARY.md in den beiden Sprachen
+>   - zur Auswahl von Datei(en) mit einem gewünschten Status
+>     ![Beispiel für vibs](readme-images/vibs.png)
 >
 > `.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
 > kann aber auch wie beschrieben eigenständig verwendet werden.
 
 
-Hier einige Beispiele:
+Hier einige Beispiele für diese Tags/"Kommentare":
 
 #### Angabe von Referenzen auf Übersetzungs- oder Quelldateien
 
