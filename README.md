@@ -22,7 +22,7 @@ Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englis
 
 Die generierte Dokumentation ist zu erreichen unter: https://framps.github.io/raspiBackupDoc/
 
-[![Screenshot von raspiBackupDoc](readme-images/Screenshot_raspiBackupDoc.png)](Screenshot_raspiBackupDoc.png)
+[![Screenshot von raspiBackupDoc](readme-images/Screenshot_raspiBackupDoc.png)](https://framps.github.io/raspiBackupDoc/)
 
 
 # raspiBackup Dokumentation
