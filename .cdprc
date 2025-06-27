@@ -52,25 +52,15 @@ edit_by_status() {
             VALUE="${STATUS#*\]:}"
             VALUE=${VALUE//\?/.}
             while true; do
-                # https://unix.stackexchange.com/questions/640062/how-to-temporarily-save-and-restore-the-ifs-variable-properly
-                unset saved_IFS
-                [ -n "${IFS+set}" ] && saved_IFS=$IFS
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
-                    IFS=$'\n' FILES=($(rg --files-without-match "^\[\.status\]:" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
+                    FILES=($(rg --files-without-match "^\[\.status\]:" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
                 else
-                    # Solution for opening multiple file found here:
+                    # Solutions for opening multiple file found here:
                     # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
-                    # Otherwise the LF isn't interpreted correctly by the editor.
-                    IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
+                    # Otherwise the LFs aren't interpreted correctly by the editor.
+                    FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
                 fi
-                unset IFS
-                [ -n "${saved_IFS+set}" ] && { IFS=$saved_IFS; unset saved_IFS; }
-
                 [ -z "$FILES" ] && break
-                # see https://www.shellcheck.net/wiki/SC2294
-                # see https://www.shellcheck.net/wiki/SC2086
-                # see https://www.shellcheck.net/wiki/SC2048
-                # TODO: check, optimize or whatever...
                 ${EDIT_IN_TABS} "${FILES[@]}"
             done
         done
