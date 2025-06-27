@@ -47,9 +47,13 @@ edit_by_status() {
         while true; do
             shopt -s extglob
             WITHOUT_STATUS=$(rg --files-without-match --glob="**/*.md" "^\[\.status\]:" | wc -l)
+            # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
+            # Because that string is passed to fzf's preview option!
             STATUS=$( (rg "^\[\.status\]:" --no-filename --glob="**/*.md" | sort | uniq -c ; printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") | fzf --reverse --select-1 --exact --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; (if [ "${V}" == " --NO-STATUS--" ] ; then rg --files-without-match "^\[\.status\]:" --glob="**/*.md" ; else rg --files-with-matches "^\[\.status\]:${V}$"  --glob="**/*.md" ; fi) | sort' --header=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
+            # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
+            # Substitute any '?' with '.' because a '?' would break the regex below.
             VALUE=${VALUE//\?/.}
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
@@ -62,7 +66,7 @@ edit_by_status() {
                     # And so it is now:
                     mapfile -t FILES < <(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
                 fi
-                [ -z "$FILES" ] && break
+                [[ "${FILES[*]}" ]] || break
                 ${EDIT_IN_TABS} "${FILES[@]}"
             done
         done
