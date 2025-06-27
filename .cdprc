@@ -17,14 +17,14 @@ edit_translate_by_status() {
         while true; do
             FILE=$(cd de/src || exit ; rg --files-with-matches "$1" -- *.md | sort | fzf --reverse --exact --preview='cat {}' --header="$FZF_HEADER")
             [ -z "$FILE" ] && break
-            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
+            ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
         done
     else
         (cd de/src || exit ; rg --files-with-matches "$1" -- *.md | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit ; rg --files-with-matches "$1" -- *.md | sort)
         do
-            eval "${EDIT_IN_SPLIT_WINDOWS}" {de,en}/src/"$FILE"
+            ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -41,6 +41,7 @@ edit_translate_all_rft() {
     edit_translate_by_status " rft"
 }
 
+
 edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
@@ -51,6 +52,9 @@ edit_by_status() {
             VALUE="${STATUS#*\]:}"
             VALUE=${VALUE//\?/.}
             while true; do
+                # https://unix.stackexchange.com/questions/640062/how-to-temporarily-save-and-restore-the-ifs-variable-properly
+                unset saved_IFS
+                [ -n "${IFS+set}" ] && saved_IFS=$IFS
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     IFS=$'\n' FILES=($(rg --files-without-match "^\[\.status\]:" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
                 else
@@ -59,12 +63,15 @@ edit_by_status() {
                     # Otherwise the LF isn't interpreted correctly by the editor.
                     IFS=$'\n' FILES=($(rg --files-with-matches "^\[\.status\]:${VALUE}$" --glob="**/*.md" | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"))
                 fi
+                unset IFS
+                [ -n "${saved_IFS+set}" ] && { IFS=$saved_IFS; unset saved_IFS; }
+
                 [ -z "$FILES" ] && break
                 # see https://www.shellcheck.net/wiki/SC2294
                 # see https://www.shellcheck.net/wiki/SC2086
                 # see https://www.shellcheck.net/wiki/SC2048
                 # TODO: check, optimize or whatever...
-                eval "${EDIT_IN_TABS}" ${FILES[*]@Q}
+                ${EDIT_IN_TABS} "${FILES[@]}"
             done
         done
     fi
