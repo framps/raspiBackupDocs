@@ -139,7 +139,7 @@ echo ""
 #check_ssh_id  ~/.ssh/id_my_webserver "Checking ssh key(s) for webserver ..."
 #export WEBSERVER="user:DUMMYPASSWORD@myserver.com"
 #export WEBSERVER_ROOTDIR="httpdocs"
-source .private-conf.sh
+[[ -f .private-conf.sh ]] && source .private-conf.sh
 
 cat <<EOF
 
