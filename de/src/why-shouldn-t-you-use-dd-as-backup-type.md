@@ -33,10 +33,6 @@ zu benutzen.
    vorzunehmen, ist das Problem verschwunden. Diese Problemberichte sind
    unnötiger Aufwand, der vermieden werden sollte.
 
-3. Will man den restorten Backup parallel zum laufenden System verfügbar haben,
-   bekommt man dadurch i.d.R. Bootprobleme, da das wiederhergestellte Backup
-   dieselben UUIDs und PARTUUIDs hat.
-
 ## Was nun?
 
 Eine Umstellung auf tar ist schnell gemacht. Es kann dasselbe Filesystem auf
@@ -50,17 +46,17 @@ Für rsync benötigt man ein etx2/3/4 Filesystem auf der Backuppartition. Dieses
 kann unter Linux erstellt werden. Den Restore muss man auch wieder mit
 *raspiBackup* auf einer Raspberry vornehmen.
 
-
 ## Weitere Nachteile von einem dd Backup
 
 Bei einem dd Backup wird immer die gesamte Partition gesichert - selbst wenn
 nur ein Bruchteil der Partition (z.B. 33%) genutzt wird. Dass heisst bei einer
 64GB Partition werden immer 42GB umsonst gesichert, der Sicherungsprozess
 dauert unnötigerweise 66% länger und die Sicherung belegt unnütz 66% mehr
-Speicherplatz.
+Speicherplatz. Es gibt die Option **DD_BACKUP_SAVE_USED_PARTITIONS_ONLY* mit der
+man nur die existierende Rootpartition sichert und nicht das gesamte Gerät. Z.b.
+hat man eine 512GB Platte und dir Rootpartition ist nur 32GB gross. 
 
-
-## Welchen Backuptyp empfehle ich?
+## Welchen Backuptyp ist der Beste?
 
 Die effizienteste Backuptyp ist rsync. Durch die Benutzung von Hardlinks
 werden nur Dateien kopiert, die sich geändert haben und somit ist jeder ausser
@@ -77,6 +73,6 @@ benutzen will, sei hier auf Benutzung von [Synology als Backupspace](synology-as
   - [Welches Dateisystem kann auf dem Backupgerät benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/579-warum-sollte-man-dd-als-backupmethode-besser-nicht-benutzen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/581-why-shouldn-t-you-use-dd-as-backup-method
