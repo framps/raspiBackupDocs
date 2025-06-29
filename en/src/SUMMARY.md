@@ -112,6 +112,4 @@ That allows for some tricks:
 
   - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)
   - [Manual restore of a tgz backup](manual-restore-of-a-tgz-backup.md)
-  - [/usr/sbin/NetworkManager: error while loading shared libraries: libhogweed.so.4: cannot open shared object file: No such file or directory](usr-sbin-networkmanager-error-while-loading-shared-libraries-libhogweed-so-4-cannot-open-shared-object-file-no-such-file-or-directory.md)
-
 [.status]: todo "Check the three english-only files"
