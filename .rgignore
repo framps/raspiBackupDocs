@@ -1,0 +1,12 @@
+# Files to be ignored by the 'rg' calls in .cdprc
+CONTRIBUTE.md
+EDIT.md
+INSTALL.md
+MAINTAIN.md
+MDBOOK_INTRO.md
+README-apache.md
+README.md
+#
+# If files should NOT be ignored even they are in .gitignore
+# they could be set here with an "!" in front of it:
+#!**/src/doc-version-info-automatically-generated.md
