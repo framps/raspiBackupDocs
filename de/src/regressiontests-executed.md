@@ -9,7 +9,7 @@ Der Regressiontest wird in einer virtualisierten Umgebung auf einem Linux
 Desktop, in der eine [Raspi per Qemu](https://linux-tips-and-tricks.de/de/raspberryd/22-wie-kann-man-raspberry-pi-unter-kvm-emulieren) simuliert, wird durchgeführt.
 Ansonsten würde der Verschleiss von SD Karten sehr hoch sein.
 
-Als Basis wird ein *Raspbian Lite* genommen.
+Als Basis wird ein *RaspbianOS Lite* genommen.
 Dieses wird mit den Standardoptionen mit *raspiBackup* per
 `dd`, `tar` und `rsync` im normalen Modus gesichert. Das sowohl für ein reines SD
 Kartensystem wie auch ein reines USB Bootsystem. Ausserdem wird ein `tar` und
@@ -29,6 +29,6 @@ Restore wieder sorgfältig zu testen. Es wird in diesem Kontext auf den
 [Haftungsausschluss](introduction.md#haftungsausschluss) hingewiesen.
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/509-raspibackup-ausgefuehrte-regressiontests
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/510-raspibackup-regressiontests-executed

@@ -7,18 +7,21 @@ Es existieren zwei Backupmodi:
    In diesem Modus werden die ersten zwei Partitionen (die Bootpartition und die
    Rootpartition) der SD Karte gesichert. Ausserdem wird beim `tar` und `rsync` Backup
    auch eine externe Rootpartition, d.h. eine auf einen USB Stick oder USB Platte
-   ausgelagerte Rootpartition, gesichert. Mit dem `dd` Backup kann auch die gesamte
-   SD Karte gesichert werden. Dieses kann man benutzen, um z.B. NOOBS Images zu
-   sichern. Falls die Ziel SD Karte beim Restore größer ist als die Quell SD Karte,
+   ausgelagerte Rootpartition, gesichert. 
+   Falls das Zielgerät beim Restore größer ist als das Quelgerät,
    wird automatisch die zweite Partition entsprechend erweitert.
+
+   Mit dem `dd` Backup kann auch die gesamte
+   SD Karte gesichert werden. Es wird aber dringend davon abgeraten ein dd Backup zu nutzen. 
+   Detailsdazu siehe [hier](why-shouldn-t-you-use-dd-as-backup-type.md)
 
 2. Partitionsorientierter Backup
 
-   In diesem Modus wird jede auf der SD Karte befindliche oder eine bestimmte
+   In diesem Modus wird jede auf dem System befindliche oder eine bestimmte
    Anzahl von Partitionen als `tar` oder `rsync` gesichert. Dabei ist die Anzahl der
-   Partitionen beliebig. Falls die Ziel SD Karte beim Restore größer ist als die
-   Quell SD Karte wird der zusätzliche Platz nicht benutzt.
+   Partitionen beliebig. Falls das Zielgerät beim Restore größer ist als das
+   Quellgerät wird die letzte Partition soweit erweitert dass das gesamte Gerät genutzt wird. 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#Vergleich
 [.source]: https://www.linux-tips-and-tricks.de/en/backup

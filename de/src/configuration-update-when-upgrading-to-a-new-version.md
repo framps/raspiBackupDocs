@@ -1,7 +1,7 @@
 # Konfigurationsupdate bei einem Upgrade auf eine neue Version
 
 Wann immer ein Upgrade einer *raspiBackup* Version vorgenommen wird,
-erfolgt ab der Version 0.6.5 sofort eine Prüfung, ob die neue Version ein
+erfolgt sofort eine Prüfung, ob die neue Version ein
 neues Konfigurationsversion benötigt. Sofern eine neue
 Konfigurationsversion benutzt wird, erfolgt eine automatische
 Zusammenführung der lokalen Konfiguration mit der neuen Konfiguration in
@@ -88,7 +88,7 @@ vorgenommen. Alle anderen Konfigurationsdateien müssen manuell erweitert
 werden. Dazu muss man die als neu gekennzeichneten Konfigurationszeilen
 nehmen und in die anderen Konfigurationsdateien kopieren.
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/567-raspibackup-konfigurationsupdate-nach-einem-upgrade-auf-eine-neue-version
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/570-raspibackup-configuration-update-when-upgrading-to-a-new-version
 
