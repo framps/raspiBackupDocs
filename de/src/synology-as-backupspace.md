@@ -1,21 +1,7 @@
 # Synology NAS als Backupziel
 
-Das Backupscript [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup) wird immer mehr benutzt, um die Backups auf
-einem *Synology*-NAS abzulegen. Lange besaß ich (*framp*) keine Synology und konnte keinerlei
-Tests vornehmen, um bei Problemen zu helfen.s
-
-Deshalb entstand diese Webseite, um allen Nutzern einer Synology eine Möglichkeit des
-Informationsaustausches über Kommentare zu dieser Seite zu geben. Wer eine
-Synology besitzt, konnte kurz einen Kommentar posten und sich damit an der
-Diskussion beteiligen.
-
-Ergebnisse und Empfehlungen, die aus Diskussionen entstehen, wurden natürlich
-hier dokumentiert.
-
-Mittlerweile ist eine Synology *DS418play* im Gerätepark und es ist möglich,
-genauer zu beschreiben, was zu tun ist, um mit *raspiBackup* seine Raspberries
-auf einer Synology sichern zu können. Die Beschreibung erklärt, wie man die mit
-der empfohlenen Backupmethode *rsync* auf *nfs* Backupspace sichert.
+Es macht sehr viel Sinn die Backups von [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup) 
+auf einer *Synology*-NAS abzulegen.
 
 ## *raspiBackup* - Nutzung von Synology als Backupspace
 
@@ -30,8 +16,6 @@ Es darf **NICHT** *NFS4* aktiviert werden wie im Screenshot zu sehen ist!!! Es m
 
 ![Synology NFS Konfiguration](images/synologyNFSAddtlSettings.png)
 
-
-
 ## Konfiguration einer Synology und der Raspberry, um ein rsync Backup per nfs auf einer Synology zu sichern
 
 Im Wesentlichen sind folgende Schritte durchzuführen:
@@ -41,8 +25,6 @@ Im Wesentlichen sind folgende Schritte durchzuführen:
 3) Installation und Konfiguration von *raspiBackup* per [Installer](installation.md) (keinen automatischen Backup konfigurieren)
 4) Test des Backups und Restores von der Commandline
 5) Einrichten des regelmaessigen Backups in der Crontab per [Installer](installation.md)
-
-
 
 Es empfielt sich, vor dem Beginn die [FAQ](faq.md) zu lesen, wo die wichtigsten
 Fragen und Antworten zu *raspiBackup* zusammengestellt sind.
@@ -74,7 +56,7 @@ ist:
 
 Jetzt kann man prüfen, ob der Backupspace auf der Synology freigegeben ist mit
 `showmount -e 192.168.0.11`. Danach kann man mit `sudo mount /backup` den nfs
-Ordner manuell mounten.Durch den obigen Eintrag in der `/etc/fstab` wird der
+Ordner manuell mounten. Durch den obigen Eintrag in der `/etc/fstab` wird der
 Mount nach jedem Neustart automatisch vorgenommen, und es ist kein manueller
 Mount mehr notwendig.
 
@@ -116,14 +98,12 @@ Eine Anfrage bei Synology am 13.5.2022 lieferte folgende Antwort:
 > Unfortunately, I have to inform you that both Linux ACL and setfacl are not supported by DSM.
 > I would be pass this on as feedback to our development department as a function request.
 
-
 ## Hinweise und Tipps von *raspiBackup* Benutzern die eine Synology als Backupspace benutzen
 
-### Beitrag von Udo (Kommentar #45)
+### Hinweis von Udo
 
 Udo hat im Kommentar beschrieben was man tun muss, dass der Automount der
 Synology beim Booten der Raspberry funktioniert.
-
 
 Es wurde verschiedentlich berichtet, dass es mit Synologies Probleme mit
 Hardlinks geben kann, die von rsync benutzt werden, wenn nfs4 benutzt wird. Mit
@@ -135,7 +115,7 @@ Hardlinks geben kann, die von rsync benutzt werden, wenn nfs4 benutzt wird. Mit
 wird das nfs3 Protokoll benutzt so dass das Backupskript dann erfolgreich durchläuft.
 Weiterhin werden Softlinks mit CIFS nicht unterstützt wenn nicht wenigstens CIFS Version 3 benutzt wird.
 
-### Beitrag von Markus (Kommentar #2)
+### Hinweis von Markus
 
 Bei mir läuft das Backup mit *raspiBackup* in folgender Konfiguration:
 
@@ -158,7 +138,7 @@ Raspberry Pi fstab Einträge für NFS3 und NFS4
 ```
 
 Anmerkung zum Mounten mit NFS4:
-Der Benutzer Jean hat auf der englischen Seite von raspibackup beschrieben wie
+Der Benutzer Jean hat auf der englischen Seite von raspiBackup beschrieben wie
 man das Backup auf ein Share welches mit NFS4 eingebunden ist durchführen kann.
 Konnte es bisher noch nicht testen. Hier der [Permalink](https://linux-tips-and-tricks.de/en/raspberry/303-pi-creates-automatic-backups-of-itself#comment-530) TODO: Link belassen?
 
@@ -174,10 +154,7 @@ DEFAULT_KEEPBACKUPS=4
 DEFAULT_BACKUPTYPE="rsync"
 ```
 
-Ich hoffe, dass einigen Synology Benutzern hiermit geholfen ist.
-
-
-### Entdeckungen von Alfred
+### Hinwesie von Alfred
 
 Alfred bekam folgende Fehlermeldung von rsync
 
@@ -195,25 +172,23 @@ sudo mkdir /tmp/mmcblk0p1
 sudo mount /dev/mmcblk0p1 /tmp/mmcblk0p1
 ```
 
-
-Ich machte dann zufällig einen Fehler der zur Lösung führte: Das ist der rsync
-Befehl den ich ausführte:
+Er machte dann zufällig einen Fehler der zur Lösung führte: Das ist der rsync
+Befehl den er ausführte:
 
 ```
 rsync --exclude="/mnt/nas" --exclude=/proc/* --exclude=/lost+found/* --exclude=/sys/* --exclude=/dev/* --exclude=/boot/* --exclude=/tmp/* --exclude=/run/* --exclude=mmcblk0p1/overlays/* --numeric-ids -aHAXx -v /tmp/mmcblk0p1 "/mnt/nas/test.backup"
 ```
 
-Dieser Befehl funktionierte ohne Fehlermeldung. Es lag aber daran dass ich
-vergessen hatte 'sudo' zu benutzen. Als ich den Befehl dann nochmal mit sudo
+Dieser Befehl funktionierte ohne Fehlermeldung. Es lag aber daran dass 
+vergessen wurde 'sudo' zu benutzen. Als der Befehl dann nochmal mit sudo
 ausführte kam die Fehlermeldung wieder. Das weist IMHO auf ein Zugriffsproblem
-auf der Synology NAS hin. Nachdem ich dann auf der NAS die NFS permissions von
-**'map all users to admin'** auf **'no mapping'** geändert hatte, bingo, funktionierte
+auf der Synology NAS hin. Nachdem dann auf der NAS die NFS permissions von
+**'map all users to admin'** auf **'no mapping'** geändert wurde, bingo, funktionierte
 es auch mit sudo.
 
-### Kommentar von Chris
+### Hinweis von Chris
 
-„Ich habe es so eben auch mit einem TAR-Backup via NFS 4.1 auf ein QNAP-NAS geschafft.
-
+„Wie folgt wurde erfolgreich ein TAR-Backup via NFS 4.1 auf einer QNAP-NAS erstellt.
 
 Inhalt - `/etc/fstab`:
 
@@ -236,7 +211,7 @@ Anonymer UID: guest
 ```
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/synology
 [.source]: https://www.linux-tips-and-tricks.de/en/synology
 

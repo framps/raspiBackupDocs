@@ -8,7 +8,6 @@ einfach ist besonders der Restore durchzuführen: Vor dem Restore wird die Liste
 der vorhandenen Backups angezeigt und man kann auswählen welches Backup man
 restoren will.
 
-
 ## Installation und Aufruf
 
 `raspiBackupDialog` steht als Hilfsscript im github Repository zur Verfügung.
@@ -83,7 +82,7 @@ n
 raspiBackup wird jetzt gestartet
 ```
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/637-raspibackupdialog-ein-komfortables-hilfsscript-fuer-raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/642-raspibackupdialog-a-convenient-helper-script-for-raspibackup
 

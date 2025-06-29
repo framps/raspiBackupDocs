@@ -1,9 +1,9 @@
 # Restore einzelner Dateien/Verzeichnisse aus einem Backup
 
-Manchmal ist nicht ein kompletter Restore de ganzen Systems, sondern nur
+Manchmal ist nicht ein kompletter Restore des ganzen Systems, sondern nur
 einzelner Datei(en) oder Verzeichnisse gewünscht.
-Dies wird aber nicht direkt con *raspiBackup* unterstützt.
-Da *raspiBackup* zum restore des Gesamtsystem nur Standard-Linux-Tools
+Dies wird aber nicht direkt von *raspiBackup* unterstützt.
+Da *raspiBackup* zum Restore des Gesamtsystem nur Standard-Linux-Tools
 verwendet, ist das für alle Backuptypen manuell möglich.
 
 Allerdings müssen deshalb diese Aktivitäten auf einem Linux-System durchgeführt
@@ -79,13 +79,13 @@ Im folgenden Beispiel ist die USB-Platten-Partition `/dev/sda1` und wird nach `/
 sudo mount -o ro /dev/sda1 /mnt
 ```
 
-Angenommen, auf das gesamte Verzeichnis /etc in der tar-Datei soll zugegriffen werden. Das geht mit folgendem Kommando. Aber bitte etwas gedulfig sein, je nach Größe der tar-Datei kann das etwas dauern.
+Angenommen, auf das gesamte Verzeichnis /etc in der tar-Datei soll zugegriffen werden. Das geht mit folgendem Kommando. Aber dabei muss man etwas geduldig sein, denn je nach Größe der tar-Datei kann das etwas dauern.
 
 ```
 tar -xf raspberrypi-tar-backup-20171028-205746.tar -C /tmp etc
 ```
 
-So wurde das /etc-Verzeichnis aus de tar-Datei nach /tmp extrahiert. Dort ist der Zugriff nun möglich.
+Schliesslich wurde das /etc-Verzeichnis aus der tar-Datei nach /tmp extrahiert. Dort ist der Zugriff nun möglich.
 
 
 ## rsync backup
@@ -139,6 +139,6 @@ drwxr-xr-x 10  root root     4096 Dec 15 2012 usr
 drwxr-xr-x 12  root root     4096 Jul 8 2014 var
 ```
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/596-how-to-retrieve-single-files-or-directories-from-the-backup
 

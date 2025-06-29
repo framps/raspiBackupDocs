@@ -1,7 +1,7 @@
 # Intelligente Rotationsstrategie - Smart Recycle
 
-Seit dem Release 0.6.5 von *raspiBackup* ist es möglich, eine intelligente
-Rotationsstrategie des Backups zu benutzen. Es wird auch ["Generationenprinzip in
+*raspiBackup* ikann entweder eine konfigurierbare Anzahl von Backups vorhalten oder eine intelligente
+Rotationsstrategie des Backups nutzen. Es wird auch ["Generationenprinzip in
 der Datensicherung"](https://de.wikipedia.org/wiki/Generationenprinzip)  genannt. Die Implementierung wurde von Manuel Dewalds
 Artikel [Automating backups on a Raspberry Pi NAS](https://opensource.com/article/18/8/automate-backups-raspberry-pi) inspiriert.
 Standardmässig werden dann von *raspiBackup* immer folgende Backups
@@ -11,6 +11,8 @@ vorgehalten, wenn täglich Backups erstellt werden:
   2. Backups der aktuellen Woche sowie der letzten 3 Wochen
   3. Backups des aktuellen Monats sowie der letzten 11 Monate
   4. Backup des aktuellen Jahres sowie der letzten 2 Jahre
+
+Dieses läßt sich mit dem Installer den jeweiligen Bedürfnissen anpassen.
 
 Werden wöchentliche Backups erstellt, entfallen natürlich die täglichen Backups.
 Die jeweiligen Aufbewahrungsgrössen für täglich, wöchentlich, monatlich und
@@ -27,7 +29,7 @@ Sonntag im Jahr.
 
 ``` admonish info title="Hinweis"
 Bei mehreren möglichen täglichen Backups wird immer das neueste tägliche
-Backups ausgewählt. Bei den wöchentlichen, monatlichen oder jährlichen Backups
+Backup aufbewahrt. Bei den wöchentlichen, monatlichen oder jährlichen Backups
 werden immer die ältesten wöchentlichen, monatlichen oder jährlichen Backups
 genommen. D.h. z.B. dass bei zwei existierenden täglichen Backups um 10:00 und
 um 13:00 der um 13:00 erstellt Backup gewählt wird. Gibt es in der Woche Montag
@@ -110,7 +112,7 @@ wie das Rotationsprinzip funktioniert.
 Speziell die Grafik ist eine andere Möglichkeit, das Prinzip zu erklären.
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/rotationsstrategie
 [.source]: https://www.linux-tips-and-tricks.de/en/smart-recycle
 
