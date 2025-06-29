@@ -136,14 +136,14 @@ Der optionale Linktitel (in `""`!) lässt sich für etwas längeren (also mehrwo
 > [!NOTE]
 > Zur weiteren Unterstützung der Autoren sind kleine Tools entstanden.
 >
-> Einige davon befinden sich in der Datei `.cdprc`,
-> die nur gesource'd werden muss und so einige Aliases definiert:
+> Einige davon befinden sich als Aliase in der Datei `.cdprc`,
+> die nur gesource'd werden muss:
 >
->   - zur Auswahl von Datei(en) mit einem gewünschten Status
+>   - Tool zur Auswahl von Datei(en) mit einem gewünschten Status
 >     ![Beispiel für vibs](readme-images/vibs.png "Auswahl nach Status")
->   - noch zu übersetzende/schon übersetzte Dateien in parallelen Editor-Fenstern
+>   - Tools zur Auswahl noch zu übersetzender/schon übersetzter Dateien
 >     ![Beispiel für vitar](readme-images/vitar.png "Auswahl von Übersetzungen")
->   - Synchronisierung der SUMMARY.md in den beiden Sprachen
+>   - Synchronisierung der SUMMARY.md in den (beiden) Sprachen
 >
 > `.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
 > kann aber auch wie beschrieben eigenständig verwendet werden.
