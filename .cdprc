@@ -22,6 +22,19 @@
 EDIT_IN_SPLIT_WINDOWS="vim -O"
 EDIT_IN_TABS="vim -p"
 
+MISSING=()
+for TOOL in fzf rg ; do
+    if ! command -pv "$TOOL" >/dev/null; then
+        echo "$TOOL can't be found!"
+        MISSING+=("$TOOL")
+    fi
+done
+if [[ "${MISSING}" ]] ; then
+    echo "The programs 'fzf' (fuzzy finder) and 'ripgrep'/'rg' are required!"
+    echo "Please install: ${MISSING[*]}. Usually using your distros package management."
+    return 1
+fi
+
 echo -e "\n*** Define helpful functions and aliases:\n"
 
 edit_translate_by_status() {
