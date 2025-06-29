@@ -143,7 +143,8 @@ Der optionale Linktitel (in `""`!) lässt sich für etwas längeren (also mehrwo
 >     ![Beispiel für vibs](readme-images/vibs.png "Auswahl nach Status")
 >   - Tools zur Auswahl noch zu übersetzender/schon übersetzter Dateien
 >     ![Beispiel für vitar](readme-images/vitar.png "Auswahl von Übersetzungen")
->   - Synchronisierung der SUMMARY.md in den (beiden) Sprachen
+>   - Abgleich der SUMMARY.md in den (beiden) Sprachen
+>     ![Beispiel für vids](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
 >
 > `.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
 > kann aber auch wie beschrieben eigenständig verwendet werden.
