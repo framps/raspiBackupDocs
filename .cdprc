@@ -10,7 +10,7 @@
 #       to be listed as well when using the below helper tools.
 #       But that does only work as intended, as long there are no commandline
 #       parameters regarding files to search (like --glob)!
-#       In contrast: --type="markdown" is okay here.
+#       In contrast: --type=markdown is okay here.
 #
 # Note: Some hints regarding different editors:
 #       Open two files with vertical split, if possible:
@@ -29,7 +29,7 @@ for TOOL in fzf rg ; do
         MISSING+=("$TOOL")
     fi
 done
-if [[ "${MISSING}" ]] ; then
+if [[ "${MISSING[*]}" ]] ; then
     echo "The programs 'fzf' (fuzzy finder) and 'ripgrep'/'rg' are required!"
     echo "Please install: ${MISSING[*]}. Usually using your distros package management."
     return 1
@@ -40,16 +40,24 @@ echo -e "\n*** Define helpful functions and aliases:\n"
 edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
-            FILE=$(cd de/src || exit ; rg --files-with-matches --type="markdown" --no-ignore-parent "$1" | sort | fzf --reverse --exact --preview='cat {}' --header="$FZF_HEADER")
+            FILE=$(cd de/src || exit
+                   rg --type=markdown --no-ignore-parent --files-with-matches "$1" \
+                   | sort \
+                   | fzf --reverse --exact --preview='cat {}' --header="$FZF_HEADER")
             [ -z "$FILE" ] && break
             ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
         done
     else
-        (cd de/src || exit ; rg --files-with-matches --type="markdown" --no-ignore-parent "$1" | sort)
+        (cd de/src || exit
+         rg --type=markdown --no-ignore-parent --files-with-matches "$1" \
+         | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-        for FILE in $(cd de/src || exit ; rg --files-with-matches --type="markdown" --no-ignore-parent "$1" | sort)
+        for FILE in $(cd de/src || exit
+                      rg --type=markdown --no-ignore-parent --files-with-matches "$1" \
+                      | sort)
         do
             ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+            echo ""
             read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
             echo  "$inp"
         done
@@ -71,10 +79,20 @@ edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
             shopt -s extglob
-            WITHOUT_STATUS=$(rg --files-without-match --type="markdown" --no-ignore-parent "^\[\.status\]:" | wc -l)
+            WITHOUT_STATUS=$(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
-            STATUS=$( (rg "^\[\.status\]:" --no-filename --type="markdown" --no-ignore-parent | sort | uniq -c ; printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") | fzf --reverse --select-1 --exact --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; (if [ "${V}" == " --NO-STATUS--" ] ; then rg --files-without-match --type="markdown" --no-ignore-parent "^\[\.status\]:" ; else rg --files-with-matches --type="markdown" --no-ignore-parent "^\[\.status\]:${V}$" ; fi) | sort' --header=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<")
+            STATUS=$( (rg --type=markdown --no-ignore-parent --no-filename "^\[\.status\]:" \
+                       | sort | uniq -c
+                       printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
+                      | fzf --reverse --select-1 --exact \
+                            --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; \
+                                       (if [ "${V}" == " --NO-STATUS--" ] ; then \
+                                            rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" ; \
+                                        else \
+                                            rg --type=markdown --no-ignore-parent --files-with-matches  "^\[\.status\]:${V}$" ; \
+                                        fi) | sort' \
+                            --header=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
@@ -82,14 +100,22 @@ edit_by_status() {
             VALUE=${VALUE//\?/.}
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
-                    mapfile -t FILES < <(rg --files-without-match "^\[\.status\]:" --type="markdown" --no-ignore-parent | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
+                    mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
+                                         | sort \
+                                         | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
+                                               --preview='cat {}' \
+                                               --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
                 else
                     # Solutions for opening multiple file found here:
                     # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
                     # Otherwise the LFs aren't interpreted correctly by the editor.
                     # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
                     # And so it is now:
-                    mapfile -t FILES < <(rg --files-with-matches "^\[\.status\]:${VALUE}$" --type="markdown" --no-ignore-parent | sort | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}' --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
+                    mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-with-matches "^\[\.status\]:${VALUE}$"\
+                                         | sort \
+                                         | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
+                                               --preview='cat {}' \
+                                               --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
                 fi
                 [[ "${FILES[*]}" ]] || break
                 ${EDIT_IN_TABS} "${FILES[@]}"
