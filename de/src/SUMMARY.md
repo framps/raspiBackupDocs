@@ -116,4 +116,4 @@ TO CHECK/TRANSLATE!
 ```
 
 [.status]: translated
-[.status]: todo "Check the three english-only files"
+[.status]: todo "Check the remaining english-only file(s)"

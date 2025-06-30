@@ -20,5 +20,4 @@ Die Beschreibung findet sich auf der entsprechenden [englischsprachigen Seite](.
 
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/613-unterstuetzung-fuer-raspberry-compute-module-4-und-nvme
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/612-support-for-raspberry-compute-module-4-and-nvme
-[.status]: rft "Ready for translation"
-
+[.status]: rft

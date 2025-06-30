@@ -914,7 +914,7 @@ werden. Beispiel: "SF" oder "SM".
 
 
 [.status]: review-needed
-[.status]: todo "Links prüfen"
+[.status]: todo "Check links"
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
 [.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options
 

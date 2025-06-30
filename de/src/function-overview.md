@@ -179,7 +179,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 ![Übersichtsbild](images/raspiBackupOverview.jpg)
 
 
-[.status]: rft "Ready for translation"
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/funktionsuebersicht
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/features
