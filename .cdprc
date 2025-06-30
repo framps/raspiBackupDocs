@@ -88,7 +88,7 @@ edit_by_status() {
                       | fzf --reverse --select-1 --exact \
                       --preview='V={}; \
                                  V="${V#*\]:}" ; \
-                                 V=${V//[?|()\{\}[\].*+^\$]/\\&} ; \
+                                 V=${V//[?|()\{\}[\].*+^\$\\]/\\&} ; \
                                  (if [ "${V}" == " --NO-STATUS--" ] ; then \
                                       rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" ; \
                                   else \
@@ -99,7 +99,7 @@ edit_by_status() {
             # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
             # Escape many regex special characters with '\' because they would break the regex above and below.
-            VALUE=${VALUE//[?|()\{\}[\].*+^\$]/\\&}
+            VALUE=${VALUE//[?|()\{\}[\].*+^\$\\]/\\&}
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
