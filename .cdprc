@@ -74,11 +74,11 @@ edit_translate_all_rft() {
     edit_translate_by_status " rft"
 }
 
-
 edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
-            shopt -s extglob
+            shopt -s extglob               # disabled by default
+            shopt -s patsub_replacement    # enabled by default
             WITHOUT_STATUS=$(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
@@ -86,19 +86,20 @@ edit_by_status() {
                        | sort | uniq -c
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | fzf --reverse --select-1 --exact \
-                            --preview='V={}; V="${V#*\]:}"; V=${V//\?/\\?} ; V=${V//(/\\(} ; V=${V//)/\\)} ; \
-                                       (if [ "${V}" == " --NO-STATUS--" ] ; then \
-                                            rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" ; \
-                                        else \
-                                            rg --type=markdown --no-ignore-parent --files-with-matches  "^\[\.status\]:${V}$" ; \
-                                        fi) | sort' \
+                      --preview='V={}; \
+                                 V="${V#*\]:}" ; \
+                                 V=${V//[?|()\{\}[\].*+]/\\&} ; \
+                                 (if [ "${V}" == " --NO-STATUS--" ] ; then \
+                                      rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" ; \
+                                  else \
+                                      rg --type=markdown --no-ignore-parent --files-with-matches  "^\[\.status\]:${V}$" ; \
+                                  fi) | sort' \
                             --header=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<")
             [ -z "$STATUS" ] && break
             # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
-            # Substitute any '?' with '\?' because a '?' would break the regex below. Same for '(' and ')'.
-            # TODO: Improve This hack! Same above.
-            VALUE=${VALUE//\?/\\?} ; VALUE=${VALUE//\(/\\(} ; VALUE=${VALUE//\)/\\)}
+            # Escape many/any(?) regex special character here with '\' etc. because they would break the regex above and below.
+            VALUE=${VALUE//[?|()\{\}[\].*+]/\\&}
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
