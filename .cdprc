@@ -86,7 +86,7 @@ edit_by_status() {
                        | sort | uniq -c
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | fzf --reverse --select-1 --exact \
-                            --preview='V={}; V="${V#*\]:}"; V=${V//\?/.} ; \
+                            --preview='V={}; V="${V#*\]:}"; V=${V//\?/\\?} ; V=${V//(/\\(} ; V=${V//)/\\)} ; \
                                        (if [ "${V}" == " --NO-STATUS--" ] ; then \
                                             rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" ; \
                                         else \
@@ -96,8 +96,9 @@ edit_by_status() {
             [ -z "$STATUS" ] && break
             # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
-            # Substitute any '?' with '.' because a '?' would break the regex below.
-            VALUE=${VALUE//\?/.}
+            # Substitute any '?' with '\?' because a '?' would break the regex below. Same for '(' and ')'.
+            # TODO: Improve This hack! Same above.
+            VALUE=${VALUE//\?/\\?} ; VALUE=${VALUE//\(/\\(} ; VALUE=${VALUE//\)/\\)}
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
