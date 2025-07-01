@@ -1,45 +1,6 @@
 # Erweiterungsmöglichkeiten von *raspiBackup*
 
 
-Es bestehen folgende Möglichkeiten, die Funktionalität des Backupscripts durch eigenen Code zu erweitern.
-
-1. Benutzung eines selbstgeschriebenen Scriptes, welches das Backupscript
-   aufruft und Aktionen vor und nach dem Aufruf vornimmt
-
-   Dazu gibt es das folgende Beispielscript, welches individuelle
-   Anpassungsmöglichkeiten bietet und muss nur geringfügig an den gekennzeichneten
-   Stellen den lokalen Gegebenheiten angepasst werden. Es enthält schon Code, der
-   automatisch Geräte mounted und unmounted. Das Script kann [hier](https://github.com/framps/raspiBackup) runtergeladen
-   werden.
-
-   Voraussetzung ist, dass der Mountpoint in der `/etc/fstab` bereits definiert
-   wurde. Anschliessend muss das Script noch an ein paar Stellen den jeweiligen
-   lokalen Gegebenheiten mit einem Editor angepasst werden und dann aktiviert
-   werden mit
-
-       sudo mv raspiBackupWrapper.sh /usr/local/bin
-       sudo chmod +x /usr/local/bin/raspiBackupWrapper.sh
-
-   und dann ist `raspiBackupWrapper.sh` anstelle von `raspiBackup.sh` in der `crontab`
-   aufzurufen. Der Quellcode vom Wrapperscript findet sich auch auf [github](https://github.com/framps/raspiBackup/blob/master/raspiBackupWrapper.sh)
-   und kann durch einen Pull Request erweitert werden.
-
-2. Benutzung von Plugins, in die eigene Scripts eingehängt werden
-
-   Vor und nach dem eigentlichen Backup wie auch dem Restore können Scripte als
-   Plugins eingehängt werden. Details dazu finden sich in der Detailbeschreibung
-   zu Plugins:
-
-## Details
-
-
-**TODO**: Zusammenfassen oder trennen?
-
-``` admonish note title="Quelle"
-- <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/442-raspibackup-erweiterungen>
-- <https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/443-raspibackup-extensions>
-```
-
 Es besteht die Möglichkeit, eigene Codeerweiterungen vor und nach dem
 Backupprozess des Scripts einzubinden. Dieses ist sinnvoll, wenn
 eigentlich Änderungen im Backupscript notwendig sind, aber dann natürlich
@@ -56,8 +17,9 @@ Erweiterung wird nur am Ende des Backups aufgerufen und kann bei Erfolg
 bzw Misserfolg des Backups unterschiedliche Aktionen auslösen.
 
 Wer nützliche Plugins für die Community erstellt hat kann sie gerne im
-Forum (TODO Link) vorstellen und die Downloadlocation nennen. Sollten
-Fähigkeiten der Plugins fehlen, bitte einen Isuu bei GitHub (TODO Link) anlegen.
+deutsche [Raspberryforum Forum](https://https://forum-raspberrypi.de/forum/board/164-raspibackup/) 
+vorstellen und die Downloadlocation nennen. Sollten
+Fähigkeiten der Plugins fehlen, bitte einen [Issue bei GitHub](https://github.com/framps/raspiBackup/issues) anlegen.
 
 ### Pluginaufrufstellen beim Backup
 
@@ -93,8 +55,6 @@ aufgerufen:
  
 
 ### Pluginaufrufstellen beim Restore
-
-(Verfügbar ab Releae 0.6.7)
 
 Die verschiedenen Plugins werden an folgenden Stellen im Restoreverlauf
 aufgerufen:
@@ -154,13 +114,15 @@ Aufrufparameter bei *raspiBackup* notwendig:
 
     DEFAULT_EXTENSIONS="temp mem disk execute"
 
-Details zu den Aufrufparametern bzw den Konfigurationsparametern siehe
-[hier](https://www.linux-tips-and-tricks.de/de/13-raspberry/23-pi-erstellt-automatisch-backups-von-sich-selbst-pi-creates-automatic-backups-of-itself)
+### Notification Plugins
 
-There is no need for notification extensions for slack, pushover and
-telegram. Just configure the corresponding config definitions. If you
-want to use your own notification extension provide a script called
-`raspiBackup_notify.sh`.
+Für Notifications per Slack, Pushover und Telegram müssen keine
+Extension geschrieben werden. Es reicht die Notifications in raspiBackup
+zu konfigurieren. 
+Wer andere Notificationziele benachrichtgen will kann das n einem Script
+mit dem Namen `raspiBackup_notify.sh` tun. 
+
+### Beispielerweiterungen 
 
 Die folgenden Extensions können ein `pre` und/oder `post` Script haben und
 müssen raspiBackup\_\<extension\>\_pre.sh und/oder
@@ -171,8 +133,6 @@ raspiBackup\_\<extension\>\_post.sh heissen. 
   3.  disk
 
 Alle anderen Extensions müssen kein \_pre and \_post am Ende haben.
-
-For details of the parameters and config file see [this page.](https://www.linux-tips-and-tricks.de/de/13-raspberry/303-pi-creates-automatic-backups-of-itself)
 
 Die Plugins erzeugen folgende Meldungen:
 
@@ -189,7 +149,6 @@ beginnen wie z.B. RBK1000I. Wer eigene Plugins erstellt, sollte, sofern
 sie Meldungen schreiben, diese bei 2000 beginnen lassen und nicht den
 Bereich unter 1999 benutzen.
 
-
 ### Interface
 
 Das Plugin bekommt im Aufruf den aktuellen Statuscode von *raspiBackup*
@@ -197,20 +156,14 @@ mitgegeben. Ein Statuscode von 0 bedeutet in den Postplugins der Backup
 war erfolgreich. Jeder andere Statuscode bedeutet, dass der Backup
 beendet wurde.
 
- 
-
 ### eMailPlugin
 
-Ab der Version 0.6.1.1 gibt es ein emailPlugin. D.h., man kann die
-email-Versendung selbst programmieren. Das ist dann besonders hilfreich,
-wenn die vom Script unterstützen eMailProgramme den eigenen eMailClient
-nicht unterstützen. Ausserdem kann das Aussehen der eMail beliebig
-geändert werden. Ein Beispielplugin, das `mailx` benutzt, befindet sich in
-den Beispielplugins.
+Möchte man die eMailversendung selbst programmieren kann man das
+emailPlugin nutzen.  
+Das ist dann besonders hilfreich, wenn die vom Script unterstützen eMailProgramme 
+den eigenen eMailClient nicht unterstützen. 
+Ausserdem kann das Aussehen der eMail beliebig geändert werden. Ein Beispielplugin, das mailx benutzt, befindet sich in den Beispielplugins.
 
-Das Mailplugin wird dadurch aktiviert, dass für den Parameter `-s mailext`
-definiert wird. Dann wird das Mailplugin mit dem Namen
-`raspiBackup_mail.sh` aufgerufen, die dann den Mailversand vornehmen muss.
 Die folgenden Parameter werden dem Mailplugin Script übergeben:
 
     email="$1"        # target email address
@@ -218,11 +171,6 @@ Die folgenden Parameter werden dem Mailplugin Script übergeben:
     content="$3"      # email contents
     parms="$4"        # addtl email parms passed with -E
     append="$5"       # file to append
-
-Wenn jemand ein eMailPlugin schreibt, wäre es gut, wenn dieses Plugin in
-einem Kommentar am Ende dieser Seite erläutert wird, so dass der Code
-vielleicht mit anderen ausgetauscht werden kann.
-
 
 ### Hinweise
 
@@ -247,10 +195,12 @@ mögliche Konflikte mit Variablennamen, die von *raspiBackup* benutzt werden
 zu vermeiden.
 
 6. Wenn jemand seinen Plugincode sharen möchte, geht das einfach über
-einen Pullrequest auf [github.](https://github.com/framps/raspiBackup)
+einen Pullrequest auf [github](https://github.com/framps/raspiBackup).
 Dort ist aller Plugins im Quellcode verfügbar um ihn zu erweitern und
-neuen zuzufügen.
-
+neue zuzufügen.
 
 [.status]: review-needed
-[.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#wrapper
+[.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/442-raspibackup-erweiterungen
+[.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/443-raspibackup-extensions
+
+
