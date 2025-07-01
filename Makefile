@@ -5,7 +5,7 @@
 
 SHELL = /usr/bin/bash
 
-.PHONY: help all build upload
+.PHONY: help all build buildAndServe push upload check
 
 help:
 	@echo "This Makefile has the following targets:"
@@ -32,6 +32,9 @@ build:
 
 	mdbook build en
 	mdbook build de
+
+buildAndServe: build
+	mdbook serve --open de
 
 push:
 	mdbook build en
