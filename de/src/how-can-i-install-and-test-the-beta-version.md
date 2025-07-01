@@ -45,13 +45,13 @@ Ausgabe von `sudo *raspiBackup*.sh --version`, damit genau klar ist, welcher
 Codestand benutzt wird.
 
 Da auch von internationalen *raspiBackup* Nutzern
-die Records gelesen werden,wäre es gut, sie in Englisch zu erstellen. Es ist
+die Records gelesen werden, wäre es gut, sie in Englisch zu erstellen. Es ist
 aber auch kein Problem, nur Deutsch zu schreiben. Die Records werden dann
 bearbeitet und gefixed. Wenn eine neue Version bereitsteht, wird der Ersteller
 über github informiert werden und sie kann mit `sudo *raspiBackup*.sh -U -S`
 erneut runtergeladen und der Fix verifiziert werden.
 
-[.status]: review-needed
+[.status]: rft 
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/594-wie-kann-ich-die-betaversion-installieren-und-ausprobieren
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/595-how-can-i-install-and-test-the-beta-version
 
