@@ -119,9 +119,10 @@ edit_by_status() {
             [ -z "$STATUS" ] && break
             VALUE=$( get_escaped_status "$STATUS" )
             while true; do
+                TMPFILE=$( mktemp tmp.XXXXXXXX )
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
-                                         | sort \
+                                         | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
                                                --preview='cat {}' \
                                                --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
@@ -132,14 +133,23 @@ edit_by_status() {
                     # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
                     # And so it is now:
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-with-matches "^\[\.status\]:${VALUE}$"\
-                                         | sort \
+                                         | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
+                                               --bind="load:pos($POS)" \
                                                --preview='cat {}' \
                                                --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
                 fi
                 [[ "${FILES[*]}" ]] || break
+                unset POS
+                # remember position of (first) selected entry to be able to re-position fzf to it
+                if [[ -f "${TMPFILE}" ]] ; then
+                    POS=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+                    rm -f "${TMPFILE}"
+                fi
                 ${EDIT_IN_TABS} "${FILES[@]}"
             done
+            [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+            unset POS
         done
     fi
 }
