@@ -99,6 +99,7 @@ edit_by_status() {
             # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
             # Escape many regex special characters with '\' because they would break the regex above and below.
+            # shellcheck disable=2001
             VALUE=$( sed -e 's/\([][\?\|()\{\}.*\+\$^]\)/\\\1/g' <<< "$VALUE" )
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
@@ -197,4 +198,3 @@ The directory is tracked by git and is connected to the git repo listed below.
 
 
 EOF
-
