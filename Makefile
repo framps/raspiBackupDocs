@@ -18,6 +18,9 @@ help:
 	@echo ""
 	@echo "  - check  : check if files are synced and in SUMMARY.md"
 	@echo ""
+	@echo "serveDe    : Build; and serve 'de' version locally via browser"
+	@echo "serveEn    : Build; and serve 'en' version locally via browser"
+	@echo ""
 	@echo ""
 	@echo "Note: Better do not run a 'mdbook serve ...' in parallel!"
 
@@ -35,6 +38,12 @@ build:
 
 buildAndServe: build
 	mdbook serve --open de
+
+serveDe: build
+	mdbook serve --open de
+
+serveEn: build
+	mdbook serve --open en
 
 push:
 	mdbook build en
