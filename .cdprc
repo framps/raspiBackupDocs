@@ -78,7 +78,7 @@ edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
             shopt -s extglob               # disabled by default
-            shopt -s patsub_replacement    # enabled by default
+
             WITHOUT_STATUS=$(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
@@ -88,7 +88,7 @@ edit_by_status() {
                       | fzf --reverse --select-1 --exact \
                       --preview='V={}; \
                                  V="${V#*\]:}" ; \
-                                 V=${V//[?|()\{\}[\].*+^\$\\]/\\&} ; \
+                                 V=$( echo "$V" | sed -e "s/\([][\?\|()\{\}.*\+\$^]\)/\\\\\1/g" ) ; \
                                  (if [ "${V}" == " --NO-STATUS--" ] ; then \
                                       rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" ; \
                                   else \
@@ -99,7 +99,7 @@ edit_by_status() {
             # Remove the prefix to keep only the status text itself
             VALUE="${STATUS#*\]:}"
             # Escape many regex special characters with '\' because they would break the regex above and below.
-            VALUE=${VALUE//[?|()\{\}[\].*+^\$\\]/\\&}
+            VALUE=$( echo "$VALUE" | sed -e 's/\([][\?\|()\{\}.*\+\$^]\)/\\\1/g' )
             while true; do
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
