@@ -75,8 +75,13 @@ edit_translate_all_rft() {
 }
 
 get_escaped_status () {
-    # Remove the prefix to keep only the status text itself
-    # Escape many regex special characters with '\' because they would break the regex above and below.
+    # Remove the prefix to keep only the status text itself.
+    # Escape many regex special characters with '\'
+    # because they would break the regex expression above and below
+    # as they are meant to be normal characters here.
+    #
+    # Example:  [.status]: todo "Check the remaining english-only file(s)"
+    #     ==>    todo "Check the remaining english-only file\(s\)"
     # shellcheck disable=2001
     sed -e 's/\([][\?\|()\{\}.*\+\$^]\)/\\\1/g' <<< "${1#*\]:}"
 }
@@ -84,6 +89,8 @@ get_escaped_status () {
 # ------------------------------------------------------------------------
 # NOTE: The following two functions are special,
 #       because the are used within 'fzf's preview option!!!
+#       So the quoting and the backslash handling are different
+#       compared to the almost identical function above.
 
 __get_escaped_status () {
     # shellcheck disable=2001
