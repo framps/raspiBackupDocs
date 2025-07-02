@@ -92,6 +92,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Synology/NAS als Backupziel](synology-as-backupspace.md)
     - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
     - [WEBDAV als Backupziel](how-to-use-webdav-on-linux.md)
+    - [CIFS/Samba mit autoFS als Backupziel](use-a-synology-with-cifs-and-autofs.md)
 
 - [Tipps zur Homeautomation](tips-homeautomation.md)
 

@@ -92,6 +92,7 @@ That allows for some tricks:
     - [Synology/NAS as backupspace](synology-as-backupspace.md)
     - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
     - [WEBDAV as backupspace](how-to-use-webdav-on-linux.md)
+    - [CIFS/Samba wth autoFS as backupspace](use-a-synology-with-cifs-and-autofs.md)
 
 - [Tips for homeautomation](tips-homeautomation.md)
 
