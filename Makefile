@@ -36,9 +36,6 @@ build:
 	mdbook build en
 	mdbook build de
 
-buildAndServe: build
-	mdbook serve --open de
-
 serveDe: build
 	mdbook serve --open de
 
