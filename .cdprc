@@ -35,6 +35,12 @@ if [[ "${MISSING[*]}" ]] ; then
     return 1
 fi
 
+FZF_VERSION=$(fzf --version | awk '{print $1}')
+if [[ "$FZF_VERSION" < "0.36.0" ]] ; then
+    echo "Problem: The installed program 'fzf' ${FZF_VERSION} is too old. At least version 0.36.0 is required."
+    return 1
+fi
+
 echo -e "\n*** Define helpful functions and aliases:\n"
 unset FZFPOS
 
@@ -53,7 +59,7 @@ edit_translate_by_status() {
             # remember position of selected entry to be able to re-position fzf to it
             if [[ -f "${TMPFILE}" ]] ; then
                 FZFPOS=$( grep "${FILE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-                #rm -f "${TMPFILE}"
+                rm -f "${TMPFILE}"
             fi
             ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
         done
