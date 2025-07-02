@@ -149,6 +149,7 @@ edit_by_status() {
                     mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" \
                                          | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
+                                               --bind="load:pos($FZFPOS)" \
                                                --preview='cat {}' \
                                                --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
                 else
