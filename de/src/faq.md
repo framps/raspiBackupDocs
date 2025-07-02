@@ -291,8 +291,8 @@ root@raspberrypi:/media/nas-backup/raspberrypi# du -shl *
 4,7G raspberrypi-rsync-backup-20160822-2016
 ```
 
-Hinweis: Wie Hardlinks funktionieren, [hier](how-do-hardlinks-work-with-rsync.md) im Detail
-beschrieben. Ein Youtube Video dazu findet sich [hier](https://www.youtube.com/watch?v=pIhSca_q2lo&t=4s).
+Hinweis: [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md).
+Und dazu noch ein [Youtube Video](https://www.youtube.com/watch?v=pIhSca_q2lo&t=4s).
 
 
 <a name="faq18"></a>
@@ -500,7 +500,7 @@ Mögliche Lösungen:
 In Bullseye hat Debian persistentes Journaling eingeführt und somit
 existiert /var/log/journal mit ACLs auf dem System. Wer *raspiBackup* Release
 0.6.6 oder früher nutzt muss mindestens auf Release 0.6.6.1 upgraden oder
-den Workaround, der [hier](https://github.com/framps/raspiBackup/issues/393) beschrieben ist, anwenden.
+den Workaround, der auf Github in [Issue 393](https://github.com/framps/raspiBackup/issues/393) beschrieben ist, anwenden.
 
 
 <a name="faq25"></a>
@@ -545,8 +545,8 @@ Lösung:
 <a name="faq27"></a>
 ### 27) Ich habe ein tar oder rsync Backup und möchte das in ein dd Backup umwandeln. Geht das?
 
-Es gibt ein Script mit dem Namen raspiBackupRestore2Image.sh welches [hier](https://github.com/framps/raspiBackup)
-zu finden ist. Damit kann man im Backupverzeichnis ein dd aus einem tar
+Es gibt ein Script [raspiBackupRestore2Image.sh](https://github.com/framps/raspiBackup).
+Damit kann man im Backupverzeichnis ein dd aus einem tar
 oder rsync Backup erzeugen.
 
 
@@ -566,7 +566,7 @@ zurückgespielt werden.
 ### 29) Ich bekomme die Meldung rsync: chown "(datei-fad)" failed: Operation not permitted (1). Wie kann ich das lösen?
 
 Kurt hat dieses Problem bekommen, die Lösung gefunden und freundlicherweise
-mitgeteilt. DougieLawson hat [hier](https://www.raspberrypi.org/forums/viewtopic.php?t=122066#p831840) die Lösung des Problems beschrieben.
+mitgeteilt. DougieLawson hat die [Lösung des Problems beschrieben](https://www.raspberrypi.org/forums/viewtopic.php?t=122066#p831840) .
 
 Letztendlich musste der folgende Eintrag in der /etc/fstab
 
@@ -589,7 +589,7 @@ BastiFanta hat einen anderen Grund dafür gefunden:
 <a name="faq30"></a>
 ### 30) Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?
 
-Details zu einem Trinkgeld finden sich [hier](trinkgeld.md)
+Zum Beispiel ein [Trinkgeld](trinkgeld.md) geben.
 
 
 <a name="faq31"></a>
@@ -734,8 +734,9 @@ In der Regel gibt es bei Versionsudates neue Konfigurationsoptionen. Diese
 kann man natürlich manuell einpflegen. Einfacher geht es aber mit einem
 kleinen Script, welches automatisch eine neue Konfigurationsdatei erstellt,
 die alle aktuellen Optionen beinhaltet und die eigenen lokalen Optionen
-automatisch zusammenfügt. Sofern es Konflikte beim Zusammenfügen gibt gibt
-muss man diese manuell lösen. Details zu dem Script finden sich [hier](configuration-update-when-upgrading-to-a-new-version.md).
+automatisch zusammenfügt.
+Sofern es Konflikte beim Zusammenfügen gibt, muss man diese manuell lösen.
+Details zu dem Script finden sich im Kapitel [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md).
 
 
 <a name="faq41"></a>

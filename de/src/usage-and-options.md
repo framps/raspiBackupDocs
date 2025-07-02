@@ -262,7 +262,7 @@ Coloring mit einer separaten Option steuert.
 <a name="parm_f"></a>
 ### -f
 
-Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [hier](#configfiles)
+Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [oben](#configfiles).
 alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
 
 
@@ -524,9 +524,8 @@ aktualisieren.
 
 [@inst]
 
-Ab Version 0.6.5 schaltet diese Option die intelligente Rotationsstrategie ein.
-Details dazu sind [hier](smart-recycle.md) beschrieben. Damit werden auch die --keep Optionen
-ignoriert und müssen nicht auf 0 gesetzt werden.
+Ab Version 0.6.5 schaltet diese Option die [intelligente Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
+Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt werden.
 
 
 
@@ -543,8 +542,7 @@ Rotationsstrategie ein. Details dazu sind hier beschrieben.
 
 [@inst]
 
-Ab Version 0.6.5 definiert diese Option Parameter der intelligenten
-Rotationsstrategie. Details dazu sind [hier](smart-recycle.md) beschrieben.
+Ab Version 0.6.5 definiert diese Option Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
 
 
 
@@ -682,8 +680,7 @@ Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verz
 <a name="parm_unsupportedEnvironment"></a>
 ### --unsupportedEnvironment ⇌ [aus]
 
-Ab der Release 0.6.7 started *raspiBackup* auch auf nicht unterstützten
-Umgebungen. Siehe dazu auch [hier](supported-hardware-and-software.md).
+Ab der Release 0.6.7 started *raspiBackup* auch auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md).
 
 
 
@@ -839,9 +836,8 @@ vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
 ### DEFAULT_SEND_STATS [ja]
 
-Ab Version 0.6.6.1 vom 13.2.2022: Es werden ein paar genutzte *raspiBackup*
-Optionen die für Statistikzwecke genutzt werden beim Versionscheck übermittelt.
-Details dazu siehe [hier](statistics.md).
+Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBackup*
+Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
 
 
 

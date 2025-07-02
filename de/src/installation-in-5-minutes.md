@@ -291,7 +291,7 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 
 ## Manuelle Installation und Konfiguration von *raspiBackup*
 
-Siehe [hier](manuelle-installation-und-konfiguration.md)
+Siehe im gleichnamigen Kapitel: [Manuelle Installation und Konfiguration](manuelle-installation-und-konfiguration.md)
 
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/installation

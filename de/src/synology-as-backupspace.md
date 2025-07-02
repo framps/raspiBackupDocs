@@ -90,7 +90,7 @@ Aufruf des Installers und Konfiguration des regelmäßigen Backupzeitpunktes.
 ## Hinweis zu ACLs
 
 Eigentlich kann man ACLs mit *nfs V3* sichern. Das klappt z.B., wenn man eine
-Raspberry als nfs Server aufsetzt (Siehe [hier](https://linux-tips-and-tricks.de/de/synology/2-uncategorised/605-wie-kann-man-acls-mit-rsync-auf-nfs-gemounteten-partitionen-sichern)).
+Raspberry als nfs Server aufsetzt (Siehe [https://linux-tips-and-tricks.de](https://linux-tips-and-tricks.de/de/synology/2-uncategorised/605-wie-kann-man-acls-mit-rsync-auf-nfs-gemounteten-partitionen-sichern)).
 Allerdings funktioniert das nicht mit einer *Synology* - auch wenn sie *nfs V3* nutzt.
 
 Eine Anfrage bei Synology am 13.5.2022 lieferte folgende Antwort:
@@ -172,14 +172,14 @@ sudo mkdir /tmp/mmcblk0p1
 sudo mount /dev/mmcblk0p1 /tmp/mmcblk0p1
 ```
 
-Er machte dann zufällig einen Fehler der zur Lösung führte: Das ist der rsync
-Befehl den er ausführte:
+Er machte dann zufällig einen Fehler, der zur Lösung führte: Das ist der rsync
+Befehl, den er ausführte:
 
 ```
 rsync --exclude="/mnt/nas" --exclude=/proc/* --exclude=/lost+found/* --exclude=/sys/* --exclude=/dev/* --exclude=/boot/* --exclude=/tmp/* --exclude=/run/* --exclude=mmcblk0p1/overlays/* --numeric-ids -aHAXx -v /tmp/mmcblk0p1 "/mnt/nas/test.backup"
 ```
 
-Dieser Befehl funktionierte ohne Fehlermeldung. Es lag aber daran dass 
+Dieser Befehl funktionierte ohne Fehlermeldung. Es lag aber daran, dass
 vergessen wurde 'sudo' zu benutzen. Als der Befehl dann nochmal mit sudo
 ausführte kam die Fehlermeldung wieder. Das weist IMHO auf ein Zugriffsproblem
 auf der Synology NAS hin. Nachdem dann auf der NAS die NFS permissions von
