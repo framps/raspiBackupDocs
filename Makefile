@@ -5,7 +5,7 @@
 
 SHELL = /usr/bin/bash
 
-.PHONY: help all build buildAndServe push upload check
+.PHONY: help all build serveDe serveEn push upload check
 
 help:
 	@echo "This Makefile has the following targets:"
