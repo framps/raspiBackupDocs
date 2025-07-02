@@ -8,7 +8,7 @@ Im Folgenden wird beschrieben wie das bei einer Synology zu konfigurieren ist. D
 Um automatisch die CIFS BackupPartition zu mounten wenn raspiBackup sie nutzt muss natürlich auf der Synology
 ein shared folder definiert und konfiguriert sein. Im Folgenden wird der shared folder Name raspiBackup angenommen. Danach muss AutoFS installiert werden:
 
-sudo apt install autofs
+`sudo apt install autofs`
 
 Danach muss autofs konfiguriert werden:
 
@@ -22,8 +22,8 @@ sorgt dafür dass in /mnt/synoRaspiBackup die CIFS Partition der Synology automa
 
 Die Zugangsdaten müssen noch definiert werden:
   - `/home/pi/raspiBackup.conf`: 
-	`user=<AdministratorName>`
-	`password=<AdministratorKennwort>`
+	`user=<AdministratorName>
+	password=<AdministratorKennwort>`
 
 `/home/pi/raspiBackup.conf` sollte dann noch mit `chmod 600 /home/pi/raspiBackup.conf`nur für den Nutzer pi lesbar gemacht werden.
 
