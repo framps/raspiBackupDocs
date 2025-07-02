@@ -64,10 +64,12 @@ Wenn der Compiler `rustc` dann installiert ist ([s.o.](#rust-compiler)), wird *m
     cargo install mdbook
 
 Dann kommen noch zwei Präprozessoren dazu.
-Sie werden in der Doku für schöneres Rendering von Hinweisen
-und zur Erzeugung lokaler Inhaltsverzeichnisse verwendet.
+Sie werden in der Doku für schöneres Rendering von Hinweisen,
+zur Erzeugung lokaler Inhaltsverzeichnisse
+und zur Größenkonfiguration/Ausrichtung von Bildern verwendet.
 
     cargo install mdbook-admonish
     cargo install mdbook-toc
+    cargo install mdbook-image-size
 
 Das ganze Prozedere inklusive *Rust* dauert selbst auf einem Pi5 nur wenige Minuten!
