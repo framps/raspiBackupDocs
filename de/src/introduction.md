@@ -7,10 +7,14 @@ Infos zum aktuellen Stand und zur Möglichkeit der Mitarbeit an dieser Dokumenta
 stehen auf der [Projektseite bei GitHub](https://github.com/framps/raspiBackupDoc).
 ```
 
-![Icon](images/icons/Icon_rot_blau_final_128.png)
-
+![Icon](images/icons/Icon_rot_blau_final_128.png =128x center)
 
 # Einführung
+
+<center>
+
+![Icon](images/icons/Icon_rot_blau_final_128.png)
+</center>
 
 > *raspiBackup* - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
 

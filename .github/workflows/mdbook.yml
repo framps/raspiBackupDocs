@@ -34,6 +34,7 @@ jobs:
       MDB_VERSION: 0.4.51
       MDB_ADMONISH_VERSION: "^1.20"
       MDB_TOC_VERSION: 0.14.2
+      MDB_IMAGE_SIZE_VERSION: 0.2.1
     steps:
       - uses: actions/checkout@v4
 
@@ -66,6 +67,7 @@ jobs:
           cargo install --version ${MDB_VERSION} mdbook
           cargo install --version ${MDB_ADMONISH_VERSION} mdbook-admonish
           cargo install --version ${MDB_TOC_VERSION} mdbook-toc
+          cargo install --version ${MDB_IMAGE_SIZE_VERSION} mdbook-image-size
 
       - name: Setup Pages
         id: pages

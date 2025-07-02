@@ -19,6 +19,9 @@ command = "mdbook-toc"
 #renderers = ["html", "markdown"]
 max-level = 3
 
+[preprocessor.image-size]
+command = "mdbook-image-size"
+
 [output]
 
 # optionally for debugging. Note: Changes output structure!!!
