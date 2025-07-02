@@ -7,8 +7,10 @@ Infos zum aktuellen Stand und zur Möglichkeit der Mitarbeit an dieser Dokumenta
 stehen auf der [Projektseite bei GitHub](https://github.com/framps/raspiBackupDoc).
 ```
 
+<center>     <!-- The blank line before the image definition is required! -->
+  
 ![Icon](images/icons/Icon_rot_blau_final_128.png)
-
+</center>
 
 # Einführung
 
