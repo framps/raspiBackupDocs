@@ -41,7 +41,7 @@ edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
             FILE=$(cd de/src || exit
-                   rg --type=markdown --no-ignore-parent --files-with-matches "$1" \
+                   rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-with-matches "$1" \
                    | sort \
                    | fzf --reverse --exact --preview='cat {}' --header="$FZF_HEADER")
             [ -z "$FILE" ] && break
@@ -49,11 +49,11 @@ edit_translate_by_status() {
         done
     else
         (cd de/src || exit
-         rg --type=markdown --no-ignore-parent --files-with-matches "$1" \
+         rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-with-matches "$1" \
          | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit
-                      rg --type=markdown --no-ignore-parent --files-with-matches "$1" \
+                      rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-with-matches "$1" \
                       | sort)
         do
             ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
@@ -100,9 +100,9 @@ __get_escaped_status () {
 __list_files_with_status() {
     V=$(__get_escaped_status "$1" )
     (if [ "${V}" == " --NO-STATUS--" ] ; then
-        rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:"
+        rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:"
     else
-        rg --type=markdown --no-ignore-parent --files-with-matches  "^\[\.status\]:${V}$"
+        rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-with-matches  "^\[\.status\]:${V}$"
     fi) | sort
 }
 
@@ -114,10 +114,10 @@ edit_by_status() {
         while true; do
             shopt -s extglob               # disabled by default
 
-            WITHOUT_STATUS=$(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" | wc -l)
+            WITHOUT_STATUS=$(rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
-            STATUS=$( (rg --type=markdown --no-ignore-parent --no-filename "^\[\.status\]:" \
+            STATUS=$( (rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --no-filename "^\[\.status\]:" \
                        | sort | uniq -c
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | fzf --reverse --select-1 --exact \
@@ -128,7 +128,7 @@ edit_by_status() {
             while true; do
                 TMPFILE=$( mktemp tmp.XXXXXXXX )
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
-                    mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-without-match "^\[\.status\]:" \
+                    mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" \
                                          | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
                                                --preview='cat {}' \
@@ -139,7 +139,7 @@ edit_by_status() {
                     # Otherwise the LFs aren't interpreted correctly by the editor.
                     # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
                     # And so it is now:
-                    mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --files-with-matches "^\[\.status\]:${VALUE}$"\
+                    mapfile -t FILES < <(rg --type=markdown --no-ignore-parent --ignore-file=.rgignore_cdprc --files-with-matches "^\[\.status\]:${VALUE}$"\
                                          | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
                                                --bind="load:pos($POS)" \
