@@ -7,6 +7,8 @@ Infos zum aktuellen Stand und zur Möglichkeit der Mitarbeit an dieser Dokumenta
 stehen auf der [Projektseite bei GitHub](https://github.com/framps/raspiBackupDoc).
 ```
 
+![Icon](images/icons/Icon_rot_blau_final_128.png)
+
 
 # Einführung
 
