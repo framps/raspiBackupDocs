@@ -33,7 +33,7 @@ Wenn auf ein grosses USB Gerät umgezogen werden soll, ist die Option
 `--resizeRootFS-` sinnvoll, die die Rootpartition nicht expandiert, denn dann kann
 der Rest des USB Gerätes für weitere Partitionen genutzt werden.
 
-Details zum Restore können [hier](restore.md) nachgelesen werden.
+Details zum Restore können bei "[Wiederherstellen/Restore](restore.md)" nachgelesen werden.
 
 
 [.status]: rft

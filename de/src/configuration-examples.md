@@ -4,8 +4,8 @@ Hier werden verschiedene Anwendungsbeispiele von
 *raspiBackup* sowie ihrer Konfiguration vorgestellt und erklärt. Sie sollen
 helfen, aus der Vielzahl der Anwendungsmöglichkeiten die Richtige zu finden oder
 das Beispiel dann nach den eigenen Ansprüchen entsprechend anzupassen. Eine
-Übersicht aller Optionen findet sich [hier](usage-and-options.md).
-Verschiedene Methoden, ein Backup zu restoren sind [hier](restore.md) beschrieben.
+Übersicht aller Optionen findet sich in [Aufruf und Optionen](usage-and-options.md).
+Verschiedene Methoden, ein Backup zu restoren, sind im Kapitel [Wiederherstellen/Restore](restore.md) beschrieben.
 
 Alle Konfigurationen, die kein dd Backup benutzen, sichern auch ein externes
 Rootfilesystem zusammen mit den SD Bootpartition. Wenn der USB Bootmode benutzt

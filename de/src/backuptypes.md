@@ -21,7 +21,7 @@ nicht erfolgreich sein kann da die SD Karte geringfügig kleiner ist.
 
 Ein `dd` Backup kann unter Windows mit entsprechenden Tools wiederhergestellt werden.
 
-Aber es wird **nicht** empfohlen den Backuptyp dd zu nutzen. Warum wird [hier](why-shouldn-t-you-use-dd-as-backup-type.md)
+Aber es wird **nicht** empfohlen, den Backuptyp `dd` zu nutzen. Erklärungen dazu sind in [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
 im Detail beschrieben.
 
 Ein `ddz` Backup sichert das gesammte System, wie ein `dd` Backup. Diese Methode

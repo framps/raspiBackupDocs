@@ -22,7 +22,8 @@ werden. Jedes Backup wird in einem neuen Unterverzeichnis abgelegt.
 
 Pro Raspberry System werden drei bzw fünf weitere Dateien immer zum
 eigentlichen Backup erstellt und sind notwendig für den Restore, wenn es kein `dd`
-Backup ist. Damit ist es auch Linuxkundigen möglich ein Backup manuell zu restoren. Siehe dazu [hier](manual-restore.md).
+Backup ist. Damit ist es Linuxkundigen möglich, ein Backup auch manuell zu restoren.
+Dies ist im Kapitel [Manueller Restore](manual-restore.md) beschrieben.
 
   - .img - Bootpartition
   - .mbr - Master Boot Record des Systems

@@ -15,8 +15,8 @@ wie sich das Script in den 10 Jahren verändert hat. Initial waren es um die 50
 Codezeilen. Jetzt sind es 8000 Codezeilen.
 
 In der wayback machine habe ich auf dieser Webseite 6/2013 eine
-initiale Version von *raspiBackup* gefunden. Ich habe sie [hier](https://www.linux-tips-and-tricks.de/raspiBackup/raspiBackup_201306.sh) abgelegt. Es
-waren nicht 50 sondern 314 lines of code.
+initiale Version von *raspiBackup* gefunden. Ich habe sie auf meiner Webseite als [raspiBackup_201306.sh](https://www.linux-tips-and-tricks.de/raspiBackup/raspiBackup_201306.sh) abgelegt.
+Es waren nicht 50 sondern 314 lines of code.
 
 Weihnachten 2013 schenkte mir mein Sohn eine Raspberry. Mit Begeisterung begann
 ich, mit ihr zu arbeiten und schnell kam eine zweite Raspberry dazu, die dann

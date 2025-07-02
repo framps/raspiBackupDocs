@@ -8,7 +8,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    Backuppartition und unmounted sie falls sie vorher nicht gemounted war. Es
    ist etwas bash Script Kenntnis notwendig um das Script dem eigenen Bedarf
    anzupassen.
- 
+
    **Hinweis**
    Dieses Script entstand als raspiBackup noch keine Erweiterungspunkte hatte. Normalerweise
    reicht es die vorhandenen [Erweiterungspunkte](https://framps.github.io/raspiBackupDoc/de/hooks-for-own-scripts.md)
@@ -22,7 +22,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    Backup, welches in normalen Backupmodus erstellt wurde, in ein dd Backup
    umgewandelt werden. Dazu wird pishrink benutzt, um die Größe des dd Images
    minimal zu halten. kmbach hat die Erstellung des Scripts angeregt.
-   Das Script erfordert keine Änderungen. 
+   Das Script erfordert keine Änderungen.
 
 4. **raspiImageMail.sh**: Dieses Script wurde von dem *raspiBackup* Benutzer kmbach
    erstellt, weil er wollte, dass er am Ende von dem Aufruf von
@@ -31,14 +31,14 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    Das Script erfordert keine Änderungen.
 
 5. **raspiBackupAndClone.sh**: Dieses Script erstellt eine Backupversion mit raspiBackup
-   und restored anschliessend das aktuelle Backup auf ein angeschlossenens Device. Somit hat 
+   und restored anschliessend das aktuelle Backup auf ein angeschlossenens Device. Somit hat
    man nach dem Backup immer sofort ein aktuelles Backupsystem von welchem man booten kann
    wenn das Systemdevice korrupt wurde. Nimmt man den partitionsorientierten Backup mit rsync
    ist der Restore nur eine Synchronisation der Änderungen zum vorherigen Stand und das geht
    wesentlich schneller als ein Vollrestore mit tar oder dd.
-   
+
    **Hinweis**: Falls das System durch irgendwelche Fehlconfiguration nicht mehr bootet hilft das geclonte Backup
-   natürlich nicht denn darin befindet sich dieselbe Fehlkonfiguration. In diesem Falle muss man ein 
+   natürlich nicht denn darin befindet sich dieselbe Fehlkonfiguration. In diesem Falle muss man ein
    älteres noch funktionierendes Backup manuell restoren.
 
 6. **raspiBackupAndJSON.sh**: Wer die von raspiBackup erzeugten Meldungen nach dem Backup untersuchen will
@@ -46,11 +46,11 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    wie z.B. mit jq.
 
 7. **raspiBackupDialog.sh**: Dieses von [Franjo](https://github.com/franjo-G) erstellte Script ist ein raspiBackup vorgeschaltetes
-   Script mit welchem einfacher Backups erstellt wie auch restored werden können. Details dazu finden sich 
-   [hier](https://framps.github.io/raspiBackupDoc/de/raspibackupdialog-a-convenient-helper-script-for-raspibackup.md). 
+   Script mit welchem einfacher Backups erstellt wie auch restored werden können.
+   Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](https://framps.github.io/raspiBackupDoc/de/raspibackupdialog-a-convenient-helper-script-for-raspibackup.md).
 
 ``` admonish info title="Hinweis"
-   Es ist empfehlenwert raspiBackupDialog nach erfolgreicher Installation und Konfiguration von raspiBackup einfach mal downizuloaden und auszuprobieren. 
+   Es ist empfehlenwert raspiBackupDialog nach erfolgreicher Installation und Konfiguration von raspiBackup einfach mal downizuloaden und auszuprobieren.
 ```
 
 [.status]: rft

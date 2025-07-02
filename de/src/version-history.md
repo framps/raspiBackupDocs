@@ -1,7 +1,7 @@
 # Versionshistorie
 
 Die aktuelle Liste der *raspiBackup* Releases sowie deren Neuerungen und
-Bugfixe finden sich [hier](https://github.com/framps/raspiBackup/releases).
+Bugfixe finden sich [auf Github](https://github.com/framps/raspiBackup/releases).
 
 
 [.status]: rft

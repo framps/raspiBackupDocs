@@ -22,8 +22,7 @@ neuen Version enthalten sind. Diese Information dazu findet sich in der
 Sollte einmal ein gravierender Fehler entdeckt werden, wird
 eine neue Version sofort bereitgestellt.
 
-Jede neue Version wird vor der Veröffentlichung regression getestet. Details
-zum Regressiontest finden sich [hier](regressiontests-executed.md).
+Jede neue Version wird [vor der Veröffentlichung regression getestet](regressiontests-executed.md).
 
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#updatestrategie

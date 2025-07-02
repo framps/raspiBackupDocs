@@ -296,12 +296,13 @@ findet es nicht.
 
 Weitere Aktionen:
 
-Es wurde ein Verzeichnis als Backupverzeichnis angegeben welche keine oder
-unvollständige Backupdaten enthält. Siehe [hier](backup-directory-structure.md), welche Dateien sich im
-Backupverzeichnis befinden müssen. Ein Backupverzeichnis beginnt immer mit dem
-Hostnamen der Raspberry gefolgt von dem Backuptyp und dem Erstellungsdatum des
-Backups. Beispiele: raspberrypi-dd-backup-20160415-222900 oder
-raspberrypi-rsync-backup-20160416-094106
+Es wurde ein Verzeichnis als Backupverzeichnis angegeben, welche keine oder
+unvollständige Backupdaten enthält. Im Kapitel [Backupverzeichnisstruktur](backup-directory-structure.md) ist dokumentiert,
+welche Dateien sich im Backupverzeichnis befinden müssen.
+Ein Backupverzeichnis beginnt immer mit dem Hostnamen der Raspberry gefolgt
+von dem Backuptyp und dem Erstellungsdatum des Backups.
+Beispiele: `raspberrypi-dd-backup-20160415-222900` oder
+`raspberrypi-rsync-backup-20160416-094106`
 
 
 ### RBK0077E: Restore wurde fehlerhaft beendet. Siehe vorhergehende Fehlermeldungen.
@@ -356,7 +357,7 @@ Ursache:
 *raspiBackup* generiert ein Backupverzeichnis, welches einem bestimmten Format
 gehorcht. Sein Format muss wie folgt aussehen:
 `<hostname>-<backuptyp>-backup-<datum>-<zeit>`.
-Siehe dazu auch [hier](backup-directory-structure.md).
+Weitere Infos dazu im Kapitel [Backupverzeichnisstruktur](backup-directory-structure.md).
 
 Weitere Aktionen:
 
@@ -596,7 +597,7 @@ Ursache:
 der Option --unsupportedEnvironment trotzdem versuchen, *raspiBackup* zu nutzen,
 denn es läuft auch unter vielen anderen Linux Distributionen und
 raspberrykompatibler Hardware. Bei Fehlern wird aber wegen fehlender Testhard-
-und Software und -zeit kein Support geliefert. Siehe dazu auch [hier](supported-hardware-and-software.mda.)
+und Software und -zeit kein Support geliefert. [Unterstützte Hardware und Software](supported-hardware-and-software.mda.)
 
 Weitere Aktionen:
 

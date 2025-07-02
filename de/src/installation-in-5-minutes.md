@@ -10,7 +10,7 @@ knapp Schritt für Schritt erklärt, wie man *raspiBackup* direkt benutzt, um so
 ein Backup zu erstellen oder in 5 Minuten *raspiBackup* installiert und
 konfiguriert und dann ein Backup der Raspberry erstellen kann.
 
-Der Restore ist dann [hier](restore.md) für die unterschiedlichen Benutzer mit
+Das [Wiederherstellen](restore.md) ist detailliert für die unterschiedlichen Benutzer mit
 ihren jeweiligen primären Platformen (Linux, Mac oder Windows) beschrieben.
 
 Nachdem man dann sowohl den Backup als auch den Restore getestet hat und
@@ -50,15 +50,14 @@ lassen sich recht einfach jederzeit die primären Optionen durch erneuten Aufruf
 von `raspiBackupInstallUI` nachträglich ändern. Dazu gehört auch eine
 Updatefunktion für den Installer sowie für *raspiBackup*. Die
 Installationsführung erfolgt über Menus sowie Auswahllisten. Die Menüsprache
-kann Deutsch, Englisch. Finnisch, Chinesisch oder Französisch sein. 
+kann Deutsch, Englisch. Finnisch, Chinesisch oder Französisch sein.
 
 Wer *raspiBackup* einfach nur mit einer Standardkonfiguration ohne individuelle
 Konfiguration schnell installieren will, kann das mit den Aufrufoptionen `-i` und
 `-e` starten (`-h` fuer Hilfe benutzen). Danach kann der Installer genutzt werden um
 die Basiskonfiguration von *raspiBackup* vorzunehmen bzw zu ändern.
-Wer *raspiBackup* manuell installiere will,
-findet [hier](manual-installation-and-configuration.md) die Anleitung dazu.
-Auf Youtube existiert auch ein Video auf dem *raspiBackup* vorgestellt wird
+Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md) ist ebenfalls möglich.
+Auf Youtube existiert auch ein Video, auf dem *raspiBackup* vorgestellt wird
 sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 
 ![Screenshot Konfiguration (2019)](images/Screenshot_at_2019-04-10_07-52-15.png)
@@ -150,9 +149,9 @@ USB Platte bzw. ein externer USB Stick gemountet.
     sudo mount /dev/sda1 /backup
 
 Dabei ist zu beachten, dass die Partition je nach gewünschtem Backuptyp ein
-gewisses Filesystem voraussetzt. Die Anhängigkeiten sind [hier](which-filesystem-can-be-used-on-the-backup-partition.md) erklärt.
+gewisses Filesystem voraussetzt. Die Anhängigkeiten sind in "[Welches Dateisystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)" erklärt.
 Außerdem sollte man, wenn es denn nicht unbedingt erforderlich ist, den Backuptyp *dd* vermeiden.
-Details dazu finden sich [hier](why-shouldn-t-you-use-dd-as-backup-method.md).
+Details dazu finden sich in "[Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-method.md)".
 
 Beim ersten Backup sollte man noch prüfen, ob man auf das richtige Backupgerät
 bzw. die richtige Backuppartition sichert. Hilfreich sind dabei folgende Befehle:
@@ -207,7 +206,7 @@ Der Installer erstellt folgende Dateien:
    | Backuptag            | Sonntag              |
    | Backupzeit           | 05:00 Uhr            |
 
-   Details zu den Optionen finden sich [hier](usage-and-options.md).
+   [Aufruf und Optionen](usage-and-options.md) sind ausführlich beschrieben.
 
 2. *Systemd timer* Konfiguration wird in `/etc/systemd/system/raspiBackup.timer` vorgenommen.
 
@@ -235,9 +234,8 @@ so dass beim Aufruf keine weitere Optionen angegeben werden müssen.
 Es existieren auch Optionen, die sich nur über die Konfigurationsdatei einstellen lassen.
 Details dazu finden sich auf der [Optionsbeschreibungsseite](usage-and-options.md).
 
-Es gibt ein nützliches Script mit dem Namen *raspiBackupDialog*,
+Ebenfalls nützlich: [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md),
 welches die Nutzung und den Aufruf von *raspiBackup* vereinfacht.
-Einfach [hier](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md) nachlesen, wie man *raspiBackupDialog* installiert und nutzen kann.
 
 
 ## Deinstallation
@@ -293,7 +291,7 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 
 ## Manuelle Installation und Konfiguration von *raspiBackup*
 
-siehe [hier](manuelle-installation-und-konfiguration.md)
+Siehe [hier](manuelle-installation-und-konfiguration.md)
 
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/installation

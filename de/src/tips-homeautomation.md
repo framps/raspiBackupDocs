@@ -14,7 +14,7 @@ sehr erwünscht. Gerne auch in Deutsch.
 
 ### OpenHAB
 
-Funktioniert ohne Probleme. Siehe [hier](https://community.openhab.org/t/usage-of-raspibackup-within-openhabian/145926).
+Funktioniert ohne Probleme. Siehe [hier auf der OpenHAB-Webseite](https://community.openhab.org/t/usage-of-raspibackup-within-openhabian/145926).
 
 
 ### IOBroker
