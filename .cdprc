@@ -47,7 +47,10 @@ fi
 echo -e "\n*** Define helpful functions and aliases:\n"
 unset FZFPOS
 
-export RG_OPTIONS=(--type=markdown --no-ignore-parent)
+RG_OPTIONS=(--type=markdown --no-ignore-parent)
+# Since arrays are not exportable(!?) as required for __list_files_with_status
+# a normal variable is used for that:
+export RG_OPTIONS2="${RG_OPTIONS[*]}"
 
 edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
@@ -123,11 +126,11 @@ __get_escaped_status () {
 __list_files_with_status() {
     V=$(__get_escaped_status "$1" )
     if [ "${V}" == " --NO-STATUS--" ] ; then
-            set -x
-        rg "${RG_OPTIONS[@]}" --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | sort
-            set +x
+        # shellcheck disable=2086
+        rg ${RG_OPTIONS2} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | sort
     else
-        rg "${RG_OPTIONS[@]}" --ignore-file=.rgignore_cdprc --files-with-matches  "^\[\.status\]:${V}$" | sort
+        # shellcheck disable=2086
+        rg ${RG_OPTIONS2} --ignore-file=.rgignore_cdprc --files-with-matches  "^\[\.status\]:${V}$" | sort
     fi
 }
 
@@ -139,7 +142,9 @@ edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
             shopt -s extglob               # disabled by default
-
+            echo "here it's working..."
+            __list_files_with_status " rft"
+            echo "... but not in the preview function below! :-("
             WITHOUT_STATUS=$(rg "${RG_OPTIONS[@]}" --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
