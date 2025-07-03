@@ -44,13 +44,18 @@ if [[ "$FZF_VERSION" < "0.36.0" ]] ; then
     return 1
 fi
 
-echo -e "\n*** Define helpful functions and aliases:\n"
 unset FZFPOS
 
 # Since arrays are not exportable(!?) as required for __list_files_with_status
 # a normal variable is used for that:
 unset RG
 export RG="rg --type=markdown --no-ignore-parent"
+
+FZF=(fzf --reverse --exact)
+# shellcheck disable=2054
+FZF_MULTI=("${FZF[@]}" --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}')
+
+echo -e "\n*** Define helpful functions and aliases:\n"
 
 edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
@@ -60,9 +65,10 @@ edit_translate_by_status() {
                    # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                    ${RG} --files-with-matches "$1" \
                    | sort | tee "../../${TMPFILE}" \
-                   | fzf --reverse --exact \
-                         --bind="load:pos($FZFPOS)" \
-                         --preview='cat {}' --header="$FZF_HEADER")
+                   | "${FZF[@]}" \
+                        --header="$FZF_HEADER" \
+                        --bind="load:pos($FZFPOS)" \
+                        --preview='cat {}')
             [ -z "$FILE" ] && break
             unset FZFPOS
             # remember position of selected entry to be able to re-position fzf to it
@@ -144,10 +150,8 @@ export -f __list_files_with_status __get_escaped_status
 edit_by_status() {
     if command -pv fzf >/dev/null ; then
         while true; do
+            FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
             shopt -s extglob               # disabled by default
-            echo "here it's working..."
-            __list_files_with_status " rft"
-            echo "... but not in the preview function below! :-("
             # shellcheck disable=2086  # to get the RG_OPTION word-splitted
             WITHOUT_STATUS=$(${RG} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
@@ -155,21 +159,23 @@ edit_by_status() {
             STATUS=$( (${RG} --ignore-file=.rgignore_cdprc --no-filename "^\[\.status\]:" \
                        | sort | uniq -c
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
-                      | fzf --reverse --select-1 --exact \
-                            --preview='V={}; __list_files_with_status "$V"' \
-                            --header=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<")
+                      | "${FZF[@]}" \
+                           --header="${FZF_HEADER}" \
+                           --select-1 \
+                           --preview='V={}; __list_files_with_status "$V"')
             [ -z "$STATUS" ] && break
+
             VALUE=$( get_escaped_status "$STATUS" )
+            FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
             while true; do
                 TMPFILE=$( mktemp tmp.XXXXXXXX )
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                     mapfile -t FILES < <(${RG} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" \
                                          | sort | tee "${TMPFILE}" \
-                                         | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
-                                               --bind="load:pos($FZFPOS)" \
-                                               --preview='cat {}' \
-                                               --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
+                                         | "${FZF_MULTI[@]}" \
+                                              --header="${FZF_HEADER}" \
+                                              --bind="load:pos($FZFPOS)")
                 else
                     # Solutions for opening multiple file found here:
                     # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
@@ -179,10 +185,9 @@ edit_by_status() {
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                     mapfile -t FILES < <(${RG} --ignore-file=.rgignore_cdprc --files-with-matches "^\[\.status\]:${VALUE}$"\
                                          | sort | tee "${TMPFILE}" \
-                                         | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
-                                               --bind="load:pos($FZFPOS)" \
-                                               --preview='cat {}' \
-                                               --header=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<")
+                                         | "${FZF_MULTI[@]}" \
+                                              --header="${FZF_HEADER}" \
+                                              --bind="load:pos($FZFPOS)")
                 fi
                 [[ "${FILES[*]}" ]] || break
                 unset FZFPOS
