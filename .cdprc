@@ -38,6 +38,8 @@ fi
 FZF_VERSION=$(fzf --version | awk '{print $1}')
 if [[ "$FZF_VERSION" < "0.36.0" ]] ; then
     echo "Problem: The installed program 'fzf' ${FZF_VERSION} is too old. At least version 0.36.0 is required."
+    echo "         If your distro doesn't provide a recent version you might want to look at"
+    echo "         https://github.com/junegunn/fzf/releases  for binary releases."
     return 1
 fi
 
