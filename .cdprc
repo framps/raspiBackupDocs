@@ -49,8 +49,8 @@ unset FZFPOS
 
 # Since arrays are not exportable(!?) as required for __list_files_with_status
 # a normal variable is used for that:
-unset RG_OPTIONS
-export RG_OPTIONS="--type=markdown --no-ignore-parent"
+unset RG
+export RG="rg --type=markdown --no-ignore-parent"
 
 edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
@@ -58,7 +58,7 @@ edit_translate_by_status() {
             TMPFILE=$( mktemp tmp.XXXXXXXX )
             FILE=$(cd de/src || exit
                    # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                   rg ${RG_OPTIONS} --files-with-matches "$1" \
+                   ${RG} --files-with-matches "$1" \
                    | sort | tee "../../${TMPFILE}" \
                    | fzf --reverse --exact \
                          --bind="load:pos($FZFPOS)" \
@@ -77,12 +77,12 @@ edit_translate_by_status() {
     else
         (cd de/src || exit
          # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-         rg ${RG_OPTIONS} --files-with-matches "$1" \
+         ${RG} --files-with-matches "$1" \
          | sort)
         read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
         for FILE in $(cd de/src || exit
                       # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                      rg ${RG_OPTIONS} --files-with-matches "$1" \
+                      ${RG} --files-with-matches "$1" \
                       | sort)
         do
             ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
@@ -130,10 +130,10 @@ __list_files_with_status() {
     V=$(__get_escaped_status "$1" )
     if [ "${V}" == " --NO-STATUS--" ] ; then
         # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-        rg ${RG_OPTIONS} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | sort
+        ${RG} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | sort
     else
         # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-        rg ${RG_OPTIONS} --ignore-file=.rgignore_cdprc --files-with-matches  "^\[\.status\]:${V}$" | sort
+        ${RG} --ignore-file=.rgignore_cdprc --files-with-matches  "^\[\.status\]:${V}$" | sort
     fi
 }
 
@@ -149,10 +149,10 @@ edit_by_status() {
             __list_files_with_status " rft"
             echo "... but not in the preview function below! :-("
             # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-            WITHOUT_STATUS=$(rg ${RG_OPTIONS} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | wc -l)
+            WITHOUT_STATUS=$(${RG} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" | wc -l)
             # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
-            STATUS=$( (rg ${RG_OPTIONS} --ignore-file=.rgignore_cdprc --no-filename "^\[\.status\]:" \
+            STATUS=$( (${RG} --ignore-file=.rgignore_cdprc --no-filename "^\[\.status\]:" \
                        | sort | uniq -c
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | fzf --reverse --select-1 --exact \
@@ -164,7 +164,7 @@ edit_by_status() {
                 TMPFILE=$( mktemp tmp.XXXXXXXX )
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                    mapfile -t FILES < <(rg ${RG_OPTIONS} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" \
+                    mapfile -t FILES < <(${RG} --ignore-file=.rgignore_cdprc --files-without-match "^\[\.status\]:" \
                                          | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
                                                --bind="load:pos($FZFPOS)" \
@@ -177,7 +177,7 @@ edit_by_status() {
                     # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
                     # And so it is now:
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                    mapfile -t FILES < <(rg ${RG_OPTIONS} --ignore-file=.rgignore_cdprc --files-with-matches "^\[\.status\]:${VALUE}$"\
+                    mapfile -t FILES < <(${RG} --ignore-file=.rgignore_cdprc --files-with-matches "^\[\.status\]:${VALUE}$"\
                                          | sort | tee "${TMPFILE}" \
                                          | fzf --reverse --exact --multi --bind alt-a:select-all,alt-d:deselect-all \
                                                --bind="load:pos($FZFPOS)" \
