@@ -5,14 +5,19 @@ if ! command -pv rg >/dev/null; then
     exit 9
 fi
 
+unset FD
 if command -pv fdfind >/dev/null; then
     FD=fdfind
 else
-    if command -pv fd >/dev/null; then FD=fd ; fi
+    if command -pv fd >/dev/null; then
+        if [[ ! -d /etc/fdclone ]] ; then
+            FD=fd
+        fi
+    fi
 fi
 
 if [ -z "$FD" ] ; then
-    echo "Required tool 'fdfind'/'fd' not found!"
+    echo "Required tool 'fd-find'/'fdfind'/'fd' not found!"
     exit 9
 fi
 
