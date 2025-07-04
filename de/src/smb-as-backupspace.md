@@ -8,8 +8,8 @@ Aber trotzdem mag es Gründe geben warum man ein raspiBackup auf einem
 SMB Laufwerk ablegen will.
 
 Im Folgenden wird beschrieben wie das bei einer Synology zu
-konfigurieren ist. Dabei wird AutoFS genutzt.
-Nutzt man nicht schon autoFS erreicht man bei raspiBackup mit der
+konfigurieren ist. Dabei wird auch autoFSkonfiguriert. 
+Wird nicht bereits autoFS genutzt erreicht man bei raspiBackup mit der
 Option DynamicMount dasselbe Verhalten.
 
 Um automatisch die SMB BackupPartition zu mounten wenn raspiBackup sie

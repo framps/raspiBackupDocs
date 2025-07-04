@@ -1,1 +1,0 @@
-# SMB als Backupziel
