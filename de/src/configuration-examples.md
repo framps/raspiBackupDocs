@@ -8,7 +8,7 @@ das Beispiel dann nach den eigenen Ansprüchen entsprechend anzupassen. Eine
 Verschiedene Methoden, ein Backup zu restoren, sind im Kapitel [Wiederherstellen/Restore](restore.md) beschrieben.
 
 Alle Konfigurationen, die kein dd Backup benutzen, sichern auch ein externes
-Rootfilesystem zusammen mit den SD Bootpartition. Wenn der USB Bootmode benutzt
+Rootfilesystem zusammen mit einer SD Bootpartition. Wenn der USB Bootmode benutzt
 wird und keine SD Karte mehr benutzt wird, wird auch die ganze Rootpartition
 gesichert.
 
@@ -18,9 +18,9 @@ Folgende Anwendungsbeispiele werden beschrieben:
 <!-- toc -->
 
 
-## Ein Windowsbenutzer möchte seine Raspberry sichern und per windisk32imager auf Windows restoren können.
+## Ein Windowsbenutzer möchte seine Raspberry sichern und auf Windows restoren können.
 
-Um ein Image unter Windows mit windisk32manager restoren zu können muss ein dd
+Um ein Image unter Windows restoren zu können muss ein dd
 Image von *raspiBackup* erstellt werden. Folgende Konfigurationsoptionen sind
 dazu wenigstens notwendig:
 
@@ -38,7 +38,7 @@ DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY=1
 ```
 
 Allerdings ist dazu auch notwendig die Rootpartition der Raspberry zu
-verkleinern, da standardmäßig der gesamte freien Platz der SD Karte benutzt
+verkleinern, da standardmäßig der gesamte freien Platz der SD Karte gesichert 
 wird. Dieses geht aber nicht unter Windows sondern es muss ein Linux benutzt
 werden und mit den Tools gparted oder resize2fs dann die Rootpartition
 verkleinert werden.
@@ -53,14 +53,13 @@ das dd Image per pishrink verkleinern kann. Die Option
 DEFAULT_ZIP_BACKUP=1
 ```
 
-verkleinert zwar auch noch mal das Image aber das kann nicht direkt vom
-windisk32imager restored werden. Es muss erst unzipped werden bevor es mit
-win32diskimager restored werden kann.
+verkleinert zwar auch noch mal das Image aber das kann nicht direkt 
+iunter Windows restored werden. Es muss uvorher unzipped werden.
 
-## Eine Raspberry soll möglichst schnell gesichert werden. Die Backuppartition ist ein per nfs gemountetes EXT4 Dateisystem welches von einer Synology zur Verfügung gestellt wird.
+## Eine Raspberry soll möglichst schnell gesichert werden. Die Backuppartition ist ein per nfs gemountetes EXT4 Dateisystem welches von einer NAS zur Verfügung gestellt wird.
 
-Zuerst muss die Backuppartition der Synology gemounted werden. Dazu sollte in
-/etc/fstab die nfs Partition definiert sein aund automatisch unter /backup
+Zuerst muss die Backuppartition der NAS gemounted werden. Dazu sollte in
+/etc/fstab die nfs Partition definiert und automatisch unter /backup
 gemounted sein.
 
 ```
@@ -78,12 +77,12 @@ Ein Beispieleintrag in der /etc/fstab könnte wie folgt aussehen:
 asterix:/backup    /backup    nfs    users,rw,sync,hard,intr,noauto,user    0    0
 ```
 
-Dabei ist asterix der hostname der Synology und /backup der exportierte nfs
+Dabei ist asterix der hostname der NAS und /backup der exportierte nfs
 Mount. Weitere Hinweise zu Synology spezifischen Einstellungen und
-Problemlösungen finden sich hier
+Problemlösungen finden sich [hier](nfs-as-backupspace.md)
 
 
-## Eine Raspberry soll auf ein per Samba gemountetes Dateisystem gesichert werden, welches von einem Windowssystem zur Verfügung gestellt wird.
+## Eine Raspberry soll auf ein per SMB gemountetes Dateisystem gesichert werden, welches von einem Windowssystem zur Verfügung gestellt wird.
 
 ```
 DEFAULT_BACKUPTYPE=tar
@@ -91,10 +90,10 @@ DEFAULT_KEEPBACKUPS=n
 ```
 
 Das remote Windows Backupfilesystem sollte in der /etc/fstab definiert sein und
-automatisch gemounted werden. Es wird jedes Mal die gesamte SD Karte gesichert.
-Dabei ist darauf zu achten dass das Filesystem auf dem Sambalaufwerk Dateien >
+automatisch gemounted werden. Es wird jedes Mal das gesamte iSystem gesichert.
+Dabei ist darauf zu achten dass das Filesystem auf dem SMB Laufwerk Dateien >
 4GB unterstützen muss, denn die tar Dateien sind i.d.R. > 4GB. FAT32 reicht
-dazu nicht.
+dazu nicht. Siehe dazu auch [Welches Filesystem kann man auf der Backuppartition nutzen](which-filesystem-can-be-used-on-the-backup-partition.md)
 
 Ein Beispieleintrag in der /etc/fstab könnte wie folgt aussehen:
 
@@ -113,6 +112,7 @@ vorhergehende Beispiele). Dann muss *raspiBackup* nur noch mit der Aufrufoption
 
 aufgerufen werden und es wird ein Backup mit genau diesem sprechenden Namen im Backupverzeichnis /backup erstellt.
 
+**Hinweis**: Dieses Backup wird nicht beim Backuprecycle berücksichtigt und muss manuell gelöscht werden.
 
 ## Ein USB Boot System soll mit weiteren Partitionen gesichert werden.
 
@@ -141,6 +141,10 @@ Backuppartition mit ext3/4 formatiert sein. Will man Daten mit Windows
 austauschen und die Partition wurde mit Windows formatiert ist tar als
 Backuptype zu benutzen. Dann dauert aber das Backup länger und das Backup
 benötigt viel mehr Platz.
+
+**Hinweis**: Falls die USB Partition von Windows aus zugreifbar sein soll muss sie mit NTFS formatiert sein.
+Dann ist aber kein Backuptyp rsync möglich. NTFS kann nur mit dem Backuptype `dd` und `tar` genutzt werden und
+der DEFAULT_BACKUPTYPE muss dann entsprechend gesetzt werden.
 
 Ein Beispieleintrag in der /etc/fstab könnte wie folgt aussehen:
 
