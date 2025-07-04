@@ -21,9 +21,9 @@ In der folgenden Anleitung wird der shared Folder Name *raspiBackup*
 
 ## Installation von autoFS
 
-  ```
-  sudo apt install autofs
-  ```
+```
+sudo apt install autofs
+```
 
 ### AutoFS konfiguration
 
