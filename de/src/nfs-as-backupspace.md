@@ -1,11 +1,12 @@
-# Synology NAS als Backupziel
+# NFS als Backupziel
 
 Es macht sehr viel Sinn die Backups von [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup) 
-auf einer *Synology*-NAS abzulegen.
+auf einer NAS abzulegen und das NFS Protokoll dazu zu nutzen. Im Folgenden wird beschrieben wie 
+das bei einer Synology zu konfigurieren ist. Natürlich kann man auch jede andere NAS nutzen sofern sie NFS unterstützt. Auch eine Raspberry kann als NFS Server konfiguriert und genutzt werden. 
 
-## *raspiBackup* - Nutzung von Synology als Backupspace
+## *raspiBackup* - Nutzung von NFS am Beispiel einer Synology
 
-**Wichtig**: Die Partition auf der Synology muss mit `no_root_squash` exportiert werden,
+**Wichtig**: Die Partition auf der NAS muss mit `no_root_squash` exportiert werden,
 damit *rsync* genutzt werden kann. Im UI muss dann bei Squash No-mapping eingetragen
 werden.
 

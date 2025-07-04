@@ -89,10 +89,10 @@ Dies ermöglicht einige kleine Kniffe:
     - [Nützliche Hilfsprogramme](useful-helper-scripts.md)
 
 - [Weitere Backup-Ziele](more-backupspaces.md)
-    - [Synology/NAS als Backupziel](synology-as-backupspace.md)
+    - [NFS als Backupziel](nfs-as-backupspace.md)
     - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
-    - [WEBDAV als Backupziel](how-to-use-webdav-on-linux.md)
-    - [CIFS/Samba mit autoFS als Backupziel](use-a-synology-with-cifs-and-autofs.md)
+    - [WEBDAV als Backupziel](webdav-as-backupspace.md)
+    - [SMB als Backupziel](smb-as-backupspace.md)
 
 - [Tipps zur Homeautomation](tips-homeautomation.md)
 
