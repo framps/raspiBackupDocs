@@ -9,7 +9,7 @@ eingepflegt werden müssen. Die Extensions (Plugins) sind unabhängig vom
 jeweiligen Codestand von *raspiBackup* und deshalb in diesem Falle zu
 empfehlen.
 
-Verschiedene Plugins stehen zur Verfügung und dienen als Beispiele für
+Beispielplugins stehen zur Verfügung und dienen als Beispiele für
 eigene Erweiterungen. Durch die ersten wird die CPU Temperatur sowie
 die Hauptspeicher- und Backuppartitionsbelegung sowie die
 Partitionsbelegung vor und nach dem Backup ausgegeben. Die letzte
@@ -73,7 +73,7 @@ aufgerufen:
 1.  Der einfachste Weg ist die Beispielplugins mit dem [Installer](https://www.linux-tips-and-tricks.de/de/installation) zu
     installieren und zu aktivieren. Entweder über die Menufolge
     **Installiere Komponenten-\>Installiere Beispielerweiterungen** oder
-    direkt über die Befehlszeile (Benutze die Option `-e`)
+    direkt über die Befehlszeile imit der Option `-e`.
 
         raspiBackupInstallUI.sh
 
@@ -89,7 +89,7 @@ aufgerufen:
         wget http://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz -O raspiBackupSampleExtensions.tgz
         tar -xzf raspiBackupSampleExtensions.tgz -C /usr/local/bin
 
-Dadurch werden die folgenden Scripte in `/usr/local/sbin` kopiert:
+Dadurch werden die folgenden Scripte in `/usr/local/bin` kopiert:
 
 1. `raspiBackup_mem_pre.sh` und `raspiBackup_mem_post.sh` -
    Berichtet Memory Usage der Raspberry vor und nach dem Backup
@@ -118,11 +118,11 @@ Aufrufparameter bei *raspiBackup* notwendig:
 
 Für Notifications per Slack, Pushover und Telegram müssen keine
 Extension geschrieben werden. Es reicht die Notifications in raspiBackup
-zu konfigurieren. 
+zu konfigurieren.
 Wer andere Notificationziele benachrichtgen will kann das n einem Script
-mit dem Namen `raspiBackup_notify.sh` tun. 
+mit dem Namen `raspiBackup_notify.sh` tun.
 
-### Beispielerweiterungen 
+### Beispielerweiterungen
 
 Die folgenden Extensions können ein `pre` und/oder `post` Script haben und
 müssen raspiBackup\_\<extension\>\_pre.sh und/oder
@@ -159,9 +159,9 @@ beendet wurde.
 ### eMailPlugin
 
 Möchte man die eMailversendung selbst programmieren kann man das
-emailPlugin nutzen.  
-Das ist dann besonders hilfreich, wenn die vom Script unterstützen eMailProgramme 
-den eigenen eMailClient nicht unterstützen. 
+emailPlugin nutzen.
+Das ist dann besonders hilfreich, wenn die vom Script unterstützen eMailProgramme
+den eigenen eMailClient nicht unterstützen.
 Ausserdem kann das Aussehen der eMail beliebig geändert werden. Ein Beispielplugin, das mailx benutzt, befindet sich in den Beispielplugins.
 
 Die folgenden Parameter werden dem Mailplugin Script übergeben:
@@ -188,9 +188,9 @@ Scriptdurchlauf sehr schnell.
 Parameter weitergereicht. 0 \<=\> OK, \<\>0 Fehler
 
 5. Da die Plugins im Scope von *raspiBackup* aufgerufen werden, besteht
-Zugriff auf interne Scriptvariablen. Davon ist abzuraten, da sich die
+Zugriff auf interne Scriptvariablen. Davon ist dringend abzuraten, da sich die
 Internas jederzeit ändern können. Aus diesem Grunde ist es auch ratsam,
-eigene Variablen mit einem pluginspzifischen Prefix zu versehen umd
+eigene Variablen mit einem pluginspiezifischen Prefix zu versehen umd
 mögliche Konflikte mit Variablennamen, die von *raspiBackup* benutzt werden
 zu vermeiden.
 
@@ -199,7 +199,7 @@ einen Pullrequest auf [github](https://github.com/framps/raspiBackup).
 Dort ist aller Plugins im Quellcode verfügbar um ihn zu erweitern und
 neue zuzufügen.
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/442-raspibackup-erweiterungen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/443-raspibackup-extensions
 
