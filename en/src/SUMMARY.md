@@ -89,10 +89,10 @@ That allows for some tricks:
     - [More helpful scripts](useful-helper-scripts.md)
 
 - [Other backupspaces](more-backupspaces.md)
-    - [Synology/NAS as backupspace](synology-as-backupspace.md)
+    - [NFS as backupspace](infs-as-backupspace.md)
     - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
-    - [WEBDAV as backupspace](how-to-use-webdav-on-linux.md)
-    - [CIFS/Samba wth autoFS as backupspace](use-a-synology-with-cifs-and-autofs.md)
+    - [WEBDAV as backupspace](webdav-as-backupspace.md)
+    - [SMB as backupspace](smb-as-backupspace.md)
 
 - [Tips for homeautomation](tips-homeautomation.md)
 

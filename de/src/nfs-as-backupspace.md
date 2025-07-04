@@ -1,4 +1,4 @@
-# Synology NAS als Backupziel
+# NFS als Backupziel
 
 Es macht sehr viel Sinn die Backups von [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup) 
 auf einer *Synology*-NAS abzulegen.
