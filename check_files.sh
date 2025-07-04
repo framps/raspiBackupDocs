@@ -23,8 +23,8 @@ fi
 
 check_files_are_synced() {
     echo -e "*** Check file existence in de/src <-> en/src ***"
-    echo -e "(Files only in de/src are listed left aligned. Files only in en/src are indented.)\n"
-    comm --nocheck-order -3 <($FD --base-directory de/src) <($FD --base-directory en/src)
+    echo -e "(Files only in de/src are listed in the left column, files only in en/src in the right one.)\n"
+    sdiff --suppress-common-lines  <($FD --base-directory de/src) <($FD --base-directory en/src)
 }
 
 check_files_are_in_summary() {
