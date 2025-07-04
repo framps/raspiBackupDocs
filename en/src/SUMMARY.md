@@ -89,7 +89,7 @@ That allows for some tricks:
     - [More helpful scripts](useful-helper-scripts.md)
 
 - [Other backupspaces](more-backupspaces.md)
-    - [NFS as backupspace](infs-as-backupspace.md)
+    - [NFS as backupspace](nfs-as-backupspace.md)
     - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
     - [WEBDAV as backupspace](webdav-as-backupspace.md)
     - [SMB as backupspace](smb-as-backupspace.md)
