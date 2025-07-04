@@ -5,20 +5,17 @@
 
 > [!NOTE]
 > Dieses Repository wurde initial von [rpi-simonz](https://github.com/rpi-simonz) erstellt mit all seiner Logik
-> sowie allen deutschen Seiten, die von der o.g. Webseite übernommen wurden um die angestaubte Dokumention auf Vordermann zu bringen. Letztendlich wurde dieses Reporsitory von ihm an framp
-> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte. [rpi-simonz](https://github.com/rpi-simonz) ist natürlich seitdem Collaborator an diesem Repository.
+> sowie allen deutschen Seiten, die von [framps Webseite](https://www.linux-tips-and-tricks.de/de/raspibackup) übernommen wurden um die angestaubte Dokumentation auf Vordermann zu bringen. Letztendlich wurde dieses Repository von ihm an framp
+> übertragen, da es logisch zu raspiBackup gehört und denselben Owner haben sollte. [rpi-simonz](https://github.com/rpi-simonz) ist natürlich seitdem Collaborator an diesem Repository 😀
 > 
-> Ein herzliches Dankeschön geht deshalb an rpi-simonz, der ganz alleine mit viel Elan und Einsatz die ganze Vorarbeit geleistet hat um die raspiBackup
+> Ein herzliches Dankeschön geht deshalb an [rpi-simonz](https://github.com/rpi-simonz/), der ganz alleine mit viel Elan und Einsatz die ganze Vorarbeit geleistet hat um die raspiBackup
 > Dokumentation in ein neues Format zu bringen und übersichtlicher zu gestalten. Dadurch hat er auch eine Überarbeitung der Dokumentation angestoßen die längst 
 > mal fällig war.
 
-Diese Dokumentation zu *raspiBackup* ist initial durch Übertragung und Bearbeitung der
-Original-Texte von der [Webseite von framp](https://linux-tips-and-tricks.de/de/raspibackup) entstanden.
-
-Die Dokumentation wird (mindestens) zweisprachig ausgeführt, zuerst Englisch und Deutsch.
+Die Dokumentation wird zweisprachig ausgeführt, Englisch als Default und Deutsch für Besucher aus den deutschsprachigen Ländern.
 Zum Wechseln der Sprache ist oben rechts ein kleines Globus-Icon vorhanden.
 
-Aktuell erfolgt ein Review der deutschen Seiten und die Übersetzung nach Englisch.
+Aktuell erfolgt ein Review der deutschen Seiten und danach die Übersetzung nach Englisch.
 
 Die generierte Dokumentation ist zu erreichen unter: https://framps.github.io/raspiBackupDoc/
 
