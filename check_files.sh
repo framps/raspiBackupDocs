@@ -17,7 +17,7 @@ if [ -z "$FD" ] ; then
 fi
 
 check_files_are_synced() {
-    echo -e "Check file existence in de/src <-> en/src"
+    echo -e "*** Check file existence in de/src <-> en/src ***"
     echo -e "(Files only in de/src are listed left aligned. Files only in en/src are indented.)\n"
     comm --nocheck-order -3 <($FD --base-directory de/src) <($FD --base-directory en/src)
 }
@@ -35,6 +35,6 @@ check_files_are_in_summary() {
 }
 
 check_files_are_synced
-echo -e "\nCheck if files from <lang>/src are in <lang>/src/SUMMARY.md\n"
+echo -e "\n*** Check if files from <lang>/src are in <lang>/src/SUMMARY.md ***\n"
 check_files_are_in_summary de
 check_files_are_in_summary en
