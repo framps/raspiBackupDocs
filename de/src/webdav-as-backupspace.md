@@ -61,11 +61,11 @@ sudo ln -s /usr/sbin/mount.davfs /sbin/mount.davfs
 Durch einen Fehler in der webdav Implementierung bei t-online können
 keine Dateien angelegt werden. Es kommt immer die Meldung dass die Datei
 existiert - obwohl sie es nicht tut. Deshalb muss in der
-/etc/davfs2/davfs2.conf die folgende Zeile eingefügt werden um die locks
+`/etc/davfs2/davfs2.conf` die folgende Zeile eingefügt werden um die locks
 auszuschalten.
 
 ```
-    use_locks       0
+use_locks       0
 ```
 
 
