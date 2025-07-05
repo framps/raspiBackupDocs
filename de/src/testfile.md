@@ -2,6 +2,18 @@
 
 Diese Seite ist gedacht zum Testen von Markdown-Features und -Syntax.
 
+## Unterschied zwischen Codeblock und Inline-Code
+
+Inline-Code mit Single-Backticks stellt Code wie z.B. `print("Good Morning")` innerhalb normalen Textes dar.
+
+`Dies ist eine ganze Zeile mit Inline-Code`
+
+Sie wird anders dargestellt als ein Codeblock:
+
+```
+Und dies ein echter Codeblock.
+```
+
 ## Einrückungen
 
 Text steht linksbündig.
