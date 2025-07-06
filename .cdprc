@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 # vim: set expandtab:
 
+# Script for defining helpful functions etc. while working on raspiBackupDoc.
+#
+# It's usually part of 'cdp', but can be used independently by just sourcing it.
+#
+#
 # Note: ripgrep(rg) respects e.g. '.gitignore', so possibly ignored file therein
 #       are ignored by ripgrep as well!
 #
-# Note: There might be an optional file '.rgignore' in the project root directory.
+# Note: There might be an optional file '.rgignore_cdprc' in the project root
+#       directory.
 #       It contains file names to be ignored by ripgrep (rg). One per line.
 #       That way it's possible to exclude e.g. the meta docu (README.md etc.)
-#       to be listed as well when using the below helper tools.
-#       But that does only work as intended, as long there are no commandline
+#       from being listed as well when using the below helper tools.
+#       But that does only work as intended as long there are no commandline
 #       parameters regarding files to search (like --glob)!
 #       In contrast: --type=markdown is okay here.
 #
@@ -18,6 +24,8 @@
 #           - micro -multiopen=vsplit <file> <file>
 #       Geany doesn't have a real split window feature
 #           - geany <file> <file>
+#
+#       So in this version of the script only 'vim' is supported.
 
 MISSING=()
 for TOOL in fzf rg ; do
@@ -55,8 +63,6 @@ export FZF="fzf --reverse --exact"
 export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
 
 unset FZFPOS
-
-echo -e "\n*** Define helpful functions and aliases:\n"
 
 edit_translate_by_status() {
     if command -pv fzf >/dev/null ; then
@@ -213,37 +219,6 @@ edit_by_status() {
 
 
 alias vibs='EDIT_IN_TABS="vim -p" edit_by_status'
-alias vitar='EDIT_IN_SPLIT_WINDOWS="vim -O" edit_translate_all_rft'
-alias vitat='EDIT_IN_SPLIT_WINDOWS="vim -O" edit_translate_already_translated'
-alias vids='vimdiff -c "syntax off" {de,en}/src/SUMMARY.md'
-
-alias mibs='EDIT_IN_TABS="micro" edit_by_status'
-alias mitar='EDIT_IN_SPLIT_WINDOWS="micro -multiopen=vsplit" edit_translate_all_rft'
-alias mitat='EDIT_IN_SPLIT_WINDOWS="micro -multiopen=vsplit" edit_translate_already_translated'
-
-alias gebs='EDIT_IN_TABS="geany" edit_by_status'
-alias getar='EDIT_IN_SPLIT_WINDOWS="geany" edit_translate_all_rft'
-alias getat='EDIT_IN_SPLIT_WINDOWS="geany" edit_translate_already_translated'
-
-alias vibs
-alias vitar
-alias vitat
-alias vids
-
-echo ""
-
-alias mibs
-alias mitar
-alias mitat
-
-echo ""
-
-alias gebs
-alias getar
-alias getat
-
-echo ""
-echo ""
 
 
 check_ssh_id() {
@@ -257,15 +232,17 @@ check_ssh_id() {
     ssh-add -T "$IDFILE"
 }
 
-echo "*** Check/unlock SSH keys (and set possibly more private settings):"
-echo ""
+if [[ -f .private-conf.sh ]] ; then
+    echo "*** Check/unlock SSH keys (and set possibly more private settings):"
+    echo ""
+    # Examples, can/should be set to real values in .private-conf.sh
+    #check_ssh_id  ~/.ssh/id_my_github    "Checking ssh key(s) for GitHub ..."
+    #check_ssh_id  ~/.ssh/id_my_webserver "Checking ssh key(s) for webserver ..."
+    #export WEBSERVER="user:DUMMYPASSWORD@myserver.com"
+    #export WEBSERVER_ROOTDIR="httpdocs"
+    source .private-conf.sh
+fi
 
-# Examples, can/should be set to real values in .private-conf.sh
-#check_ssh_id  ~/.ssh/id_my_github    "Checking ssh key(s) for GitHub ..."
-#check_ssh_id  ~/.ssh/id_my_webserver "Checking ssh key(s) for webserver ..."
-#export WEBSERVER="user:DUMMYPASSWORD@myserver.com"
-#export WEBSERVER_ROOTDIR="httpdocs"
-[[ -f .private-conf.sh ]] && source .private-conf.sh
 
 cat <<EOF
 
@@ -274,9 +251,17 @@ cat <<EOF
 
 This project directory is for maintaining the 'raspiBackup' documentation.
 
-There are some aliases defined as shown above.
+A new command (alias) 'vibs' is defined now. ("vi by status")
 
-The directory is tracked by git and is connected to the git repo listed below.
+It starts a TUI for selecting files by their status for normal editing.
+
+Within the main screen of the TUI there are additional hotkeys active:
+
+  * Alt-R / Alt-T for more selection screens, meant for supporting translation.
+    They list files "(R)eady for translation" / "(T)ranslated" and open
+    the selected file in both language versions in a split editor window.
+
+  * Alt-S for calling 'vimdiff' with the SUMMARY.md files of both languages.
 
 *******************************************************************************
 
