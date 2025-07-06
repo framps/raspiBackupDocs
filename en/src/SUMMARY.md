@@ -67,7 +67,7 @@ That allows for some tricks:
         - [exim4 configuration](exim4-configuration.md)
         - [nullmailer configuration](nullmailer-configuration.md)
 
-- [Restore](restore.md)
+-- [Restore](restore.md)
     - [Restore with raspiBackup](full-restore.md)
     - [Manual restore](manual-restore.md)
     - [Restore single files/directories](how-to-retrieve-single-files-or-directories-from-the-backup.md)
