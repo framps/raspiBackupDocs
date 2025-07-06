@@ -165,6 +165,7 @@ edit_by_status() {
                            --header="${FZF_HEADER}" \
                            --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
                            --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
+                           --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
                            --select-1 \
                            --preview='V={}; __list_files_with_status "$V"')
             [ -z "$STATUS" ] && break
