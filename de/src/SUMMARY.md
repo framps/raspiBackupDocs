@@ -67,7 +67,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
     - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
 
-    - [Konfigurationsbeispiele](configuration-examples.md)
+    - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
         - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)

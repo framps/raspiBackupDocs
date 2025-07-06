@@ -67,7 +67,7 @@ That allows for some tricks:
     - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
     - [Hooks for own scripts](hooks-for-own-scripts.md)
 
-    - [Configuration examples](configuration-examples.md)
+    - [eMail configuration examples](email-configuration-examples.md)
         - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
         - [exim4 configuration](exim4-configuration.md)
         - [nullmailer configuration](nullmailer-configuration.md)
