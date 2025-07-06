@@ -65,43 +65,29 @@ export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
 unset FZFPOS
 
 edit_translate_by_status() {
-    if command -pv fzf >/dev/null ; then
-        while true; do
-            TMPFILE=$( mktemp tmp.XXXXXXXX )
-            FILE=$(cd de/src || exit
-                   # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                   ${RG} --files-with-matches "$1" | sort \
-                   | tee "../../${TMPFILE}" \
-                   | ${FZF} \
-                        --header="$FZF_HEADER" \
-                        --bind="load:pos($FZFPOS)" \
-                        --preview='cat {}')
-            [ -z "$FILE" ] && break
-            unset FZFPOS
-            # remember position of selected entry to be able to re-position fzf to it
-            if [[ -f "${TMPFILE}" ]] ; then
-                FZFPOS=$( grep "${FILE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-                rm -f "${TMPFILE}"
-            fi
-            ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
-        done
-        [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+    while true; do
+        TMPFILE=$( mktemp tmp.XXXXXXXX )
+        FILE=$(cd de/src || exit
+               # shellcheck disable=2086  # to get the RG_OPTION word-splitted
+               ${RG} --files-with-matches "$1" | sort \
+               | tee "../../${TMPFILE}" \
+               | ${FZF} \
+                    --header="$FZF_HEADER" \
+                    --bind="load:pos($FZFPOS)" \
+                    --bind="left:abort" \
+                    --bind="right:accept" \
+                    --preview='cat {}')
+        [ -z "$FILE" ] && break
         unset FZFPOS
-    else
-        (cd de/src || exit
-         # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-         ${RG} --files-with-matches "$1" | sort)
-        read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-        for FILE in $(cd de/src || exit
-                      # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                      ${RG} --files-with-matches "$1" | sort)
-        do
-            ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
-            echo ""
-            read -r -p "Continue? ENTER, or Ctrl-C to cancel: " inp
-            echo  "$inp"
-        done
-    fi
+        # remember position of selected entry to be able to re-position fzf to it
+        if [[ -f "${TMPFILE}" ]] ; then
+            FZFPOS=$( grep "${FILE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+            rm -f "${TMPFILE}"
+        fi
+        ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+    done
+    [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+    unset FZFPOS
 }
 
 
@@ -169,6 +155,8 @@ edit_by_status() {
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | ${FZF} \
                            --header="${FZF_HEADER}" \
+                           --bind="left:abort" \
+                           --bind="right:accept" \
                            --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
                            --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
                            --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
@@ -187,6 +175,8 @@ edit_by_status() {
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
                                               --bind="load:pos($FZFPOS)" \
+                                              --bind="left:abort" \
+                                              --bind="right:accept" \
                                               --preview='cat {}')
                 else
                     # Solutions for opening multiple file found here:
@@ -200,6 +190,8 @@ edit_by_status() {
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
                                               --bind="load:pos($FZFPOS)" \
+                                              --bind="left:abort" \
+                                              --bind="right:accept" \
                                               --preview='cat {}')
                 fi
                 [[ "${FILES[*]}" ]] || break
