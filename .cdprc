@@ -19,9 +19,6 @@
 #       Geany doesn't have a real split window feature
 #           - geany <file> <file>
 
-EDIT_IN_SPLIT_WINDOWS="vim -O"
-EDIT_IN_TABS="vim -p"
-
 MISSING=()
 for TOOL in fzf rg ; do
     if ! command -pv "$TOOL" >/dev/null; then
@@ -44,17 +41,20 @@ if [[ "$FZF_VERSION" < "0.36.0" ]] ; then
     return 1
 fi
 
-unset FZFPOS
+export EDIT_IN_SPLIT_WINDOWS="vim -O"
+export EDIT_IN_TABS="vim -p"
 
-RG="rg --type=markdown --no-ignore-parent"
-# Since arrays are not exportable(!?) as required for __list_files_with_status
+# Since arrays are not exportable(!?) as required for e.g. __list_files_with_status
 # a normal variable is used for that:
-unset RG_IGN
+unset RG RG_IGN
+export RG="rg --type=markdown --no-ignore-parent"
 export RG_IGN="${RG} --ignore-file=.rgignore_cdprc"
 
-FZF=(fzf --reverse --exact)
-# shellcheck disable=2054
-FZF_MULTI=("${FZF[@]}" --multi --bind alt-a:select-all,alt-d:deselect-all --preview='cat {}')
+unset FZF FZF_MULTI
+export FZF="fzf --reverse --exact"
+export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
+
+unset FZFPOS
 
 echo -e "\n*** Define helpful functions and aliases:\n"
 
@@ -66,7 +66,7 @@ edit_translate_by_status() {
                    # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                    ${RG} --files-with-matches "$1" | sort \
                    | tee "../../${TMPFILE}" \
-                   | "${FZF[@]}" \
+                   | ${FZF} \
                         --header="$FZF_HEADER" \
                         --bind="load:pos($FZFPOS)" \
                         --preview='cat {}')
@@ -98,6 +98,7 @@ edit_translate_by_status() {
     fi
 }
 
+
 edit_translate_already_translated() {
     FZF_HEADER=">> Please select file to check translation and press ENTER. (ESC to cancel.) <<"
     edit_translate_by_status "^\[\.status\]:\s\s*translated"
@@ -107,6 +108,8 @@ edit_translate_all_rft() {
     FZF_HEADER=">> Please select file to translate and press ENTER. (ESC to cancel.) <<"
     edit_translate_by_status " rft"
 }
+
+export -f edit_translate_by_status edit_translate_all_rft  edit_translate_already_translated
 
 get_escaped_status () {
     # Remove the prefix to keep only the status text itself.
@@ -158,8 +161,10 @@ edit_by_status() {
             STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" \
                        | sort | uniq -c
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
-                      | "${FZF[@]}" \
+                      | ${FZF} \
                            --header="${FZF_HEADER}" \
+                           --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
+                           --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
                            --select-1 \
                            --preview='V={}; __list_files_with_status "$V"')
             [ -z "$STATUS" ] && break
@@ -172,9 +177,10 @@ edit_by_status() {
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                     mapfile -t FILES < <(${RG_IGN} --files-without-match "^\[\.status\]:" \
                                          | sort | tee "${TMPFILE}" \
-                                         | "${FZF_MULTI[@]}" \
+                                         | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
-                                              --bind="load:pos($FZFPOS)")
+                                              --bind="load:pos($FZFPOS)" \
+                                              --preview='cat {}')
                 else
                     # Solutions for opening multiple file found here:
                     # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
@@ -184,9 +190,10 @@ edit_by_status() {
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                     mapfile -t FILES < <(${RG_IGN} --files-with-matches "^\[\.status\]:${VALUE}$"\
                                          | sort | tee "${TMPFILE}" \
-                                         | "${FZF_MULTI[@]}" \
+                                         | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
-                                              --bind="load:pos($FZFPOS)")
+                                              --bind="load:pos($FZFPOS)" \
+                                              --preview='cat {}')
                 fi
                 [[ "${FILES[*]}" ]] || break
                 unset FZFPOS
