@@ -51,7 +51,7 @@ That allows for some tricks:
     - [Statistics](statistics.md)
     - [Updates](updates.md)
 
- [Details zum Aufruf und zur Konfiguration](details.md)
+- [Details zum Aufruf und zur Konfiguration](details.md)
     - [Usage and options](usage-and-options.md)
     - [Backup types and decision tree](backuptypes.md)
     - [Comparing partition orientated and normal backup](normal-or-partition-backup.md)
