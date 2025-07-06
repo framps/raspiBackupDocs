@@ -51,11 +51,6 @@ Dies ermöglicht einige kleine Kniffe:
     - [Statistiken](statistics.md)
     - [Updates](updates.md)
 
-- [Wiederherstellen/Restore](restore.md)
-    - [Restore mittels raspiBackup](full-restore.md)
-    - [Manueller Restore](manual-restore.md)
-    - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
-
 - [Details zum Aufruf und zur Konfiguration](details.md)
     - [Aufruf und Optionen](usage-and-options.md)
     - [Backuptype und Entscheidungsbaum](backuptypes.md)
@@ -71,6 +66,11 @@ Dies ermöglicht einige kleine Kniffe:
         - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)
+
+- [Wiederherstellen/Restore](restore.md)
+    - [Restore mittels raspiBackup](full-restore.md)
+    - [Manueller Restore](manual-restore.md)
+    - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
 
 - [Häufige Fragen / FAQ](faq.md)
 
@@ -88,11 +88,11 @@ Dies ermöglicht einige kleine Kniffe:
     - [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [Nützliche Hilfsprogramme](useful-helper-scripts.md)
 
-- [Weitere Backup-Ziele](more-backupspaces.md)
+- [Backupziele](backup-targets.md)
     - [NFS als Backupziel](nfs-as-backupspace.md)
+    - [SMB als Backupziel](smb-as-backupspace.md)
     - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
     - [WEBDAV als Backupziel](webdav-as-backupspace.md)
-    - [SMB als Backupziel](smb-as-backupspace.md)
 
 - [Tipps zur Homeautomation](tips-homeautomation.md)
 

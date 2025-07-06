@@ -79,7 +79,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
       - Externer USB Stick
       - Externe USB Platte
       - Synology
-      - cifs/samba Netzwerklaufwerk
+      - smb Netzwerklaufwerk
       - nfs Netzwerklaufwerk
       - sshfs Netzwerklaufwerk
       - webdav Netzwerklaufwerk

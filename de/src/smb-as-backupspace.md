@@ -8,7 +8,7 @@ Aber trotzdem mag es Gründe geben warum man ein raspiBackup auf einem
 SMB Laufwerk ablegen will.
 
 Im Folgenden wird beschrieben wie das bei einer Synology zu
-konfigurieren ist. Dabei wird auch autoFSkonfiguriert. 
+konfigurieren ist. Dabei wird auch autoFSkonfiguriert.
 Wird nicht bereits autoFS genutzt erreicht man bei raspiBackup mit der
 Option DynamicMount dasselbe Verhalten.
 
@@ -45,7 +45,7 @@ auf der NAS definiert mit dem Mountpoint synoRaspiBackup.
 sorgt dafür dass in /mnt/synoRaspiBackup die SMB Partition der NAS
 automatisch gemountet wird wenn darauf zugegriffen wird.
 
-## Definition der cifs/samba Zugangsdaten
+## Definition der smb Zugangsdaten
 
   - `/home/pi/raspiBackup.conf`
     ```

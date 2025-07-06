@@ -177,7 +177,7 @@ daraus die Ursache des Abbruchs ersehen.
 Alternativ kann man Fehler von tar und rsync ignorieren lassen. Siehe dazu [FAQ32](faq.md#faq32).
 
 Häufig ist aber auch die Backuppartition - speziell, wenn es eine über das Netz
-angebundene Partition (nfs, samba) ist - das Problem. Meist sind es
+angebundene Partition (nfs, smb) ist - das Problem. Meist sind es
 Netzwerkprobleme oder -fehlkonfigurationen. Auch kam es schon vor, dass die
 Partition auf einem Gerät lag, welches Schreibfehler hatte.
 

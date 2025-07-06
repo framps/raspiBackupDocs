@@ -24,7 +24,7 @@ unbeabsichtigten Änderungen durch die das System nicht mehr oder fehlerhaft boo
 Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen. Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
-werden (USB Stick, USB Platte, SSD, NVMe, nfs, samba/cifs, sshfs, webdav usw).
+werden (USB Stick, USB Platte, SSD, NVMe, nfs, smb, sshfs, webdav usw).
 
 Wer eine Synology oder andere Backupziele für den Backup benutzen möchte,
 findet [hier](more-backupspaces.md) nützliche Tipps.

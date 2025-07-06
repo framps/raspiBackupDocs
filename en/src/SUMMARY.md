@@ -51,12 +51,7 @@ That allows for some tricks:
     - [Statistics](statistics.md)
     - [Updates](updates.md)
 
-- [Restore](restore.md)
-    - [Restore with raspiBackup](full-restore.md)
-    - [Manual restore](manual-restore.md)
-    - [Restore single files/directories](how-to-retrieve-single-files-or-directories-from-the-backup.md)
-
-- [Details zum Aufruf und zur Konfiguration](details.md)
+ [Details zum Aufruf und zur Konfiguration](details.md)
     - [Usage and options](usage-and-options.md)
     - [Backup types and decision tree](backuptypes.md)
     - [Comparing partition orientated and normal backup](normal-or-partition-backup.md)
@@ -71,6 +66,11 @@ That allows for some tricks:
         - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
         - [exim4 configuration](exim4-configuration.md)
         - [nullmailer configuration](nullmailer-configuration.md)
+
+- [Restore](restore.md)
+    - [Restore with raspiBackup](full-restore.md)
+    - [Manual restore](manual-restore.md)
+    - [Restore single files/directories](how-to-retrieve-single-files-or-directories-from-the-backup.md)
 
 - [Frequently asked questions / FAQ](faq.md)
 
@@ -88,11 +88,11 @@ That allows for some tricks:
     - [raspiBackupDialog - a convenient helper script](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [More helpful scripts](useful-helper-scripts.md)
 
-- [Other backupspaces](more-backupspaces.md)
+- [Backup targets](backup-targets.md)
     - [NFS as backupspace](nfs-as-backupspace.md)
+    - [SMB as backupspace](smb-as-backupspace.md)
     - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
     - [WEBDAV as backupspace](webdav-as-backupspace.md)
-    - [SMB as backupspace](smb-as-backupspace.md)
 
 - [Tips for homeautomation](tips-homeautomation.md)
 

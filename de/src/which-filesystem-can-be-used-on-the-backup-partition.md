@@ -1,8 +1,9 @@
 # Welches Filesystem kann auf der Backuppartition benutzt werden?
 
-Je nachdem, welche Backupmethode man bei *raspiBackup* benutzt, sollte man sich
-für das richtige Filesystem auf dem Backupgerät entscheiden. In der folgenden
-Tabelle sind die verschiedenen Filesysteme pro Backupmethode gekennzeichnet.
+Je nachdem, welche Backupmethode man bei *raspiBackup* benutzt, muss das
+richtige Filesystem auf dem Backupgerät vorhanden sein. In der folgenden
+Tabelle sind die verschiedenen Filesysteme pro Backupmethode gekennzeichnet
+sowie ihre Restriktionen.
 
 ## Lokal angeschlossene Backuppartitionen
 
@@ -18,7 +19,7 @@ Tabelle sind die verschiedenen Filesysteme pro Backupmethode gekennzeichnet.
 
 | Filesystem | dd         | tar      | rsync      |
 |------------|------------|----------|------------|
-| smbs       | ja | ja | eingeschränkt <br> Geht über den Umweg mit der Nutzung eines Loopdevices. Siehe dazu auch [FAQ24](faq.md#faq24). |
+| smb        | ja | ja | eingeschränkt <br> Geht über den Umweg mit der Nutzung eines Loopdevices. Siehe dazu auch [FAQ24](faq.md#faq24). |
 | nfs        | ja | ja | **empfohlen** <br> Die Sicherung von ACLs geht auch, aber nur über den Umweg der Nutzung eines Loopdevices. Oder man schaltet die Sicherung von ACLs aus. Siehe dazu auch [FAQ24](faq.md#faq24). |
 
 [.status]: rft

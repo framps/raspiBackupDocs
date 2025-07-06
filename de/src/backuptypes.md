@@ -58,32 +58,8 @@ einmal ein initiales Backup erstellt wurde.
 
 ![Entscheidungsbaum](images/decisiontree_de.dia.jpg)
 
-
-## Detailiertere Informationen über die möglichen Dateiformate auf dem Backupspace
-
-Welches Dateisystem kann auf der Backuppartition benutzt werden?
-
-Je nachdem, welche Backupmethode man bei *raspiBackup* benutzt, sollte man sich
-für das richtige Dateisystem auf dem Backupgerät entscheiden. In der folgenden
-Tabelle sind die verschiedenen Dateisysteme pro Backupmethode gekennzeichnet.
-
-### Lokal angeschlossene Backuppartitionen
-
-|          | dd        | tar       | rsync         |
-|----------|-----------|-----------|---------------|
-| fat16    | eingeschränkt (4GB Limit) | eingeschränkt (4G Limit) | nicht möglich |
-| fat32    | möglich   | möglich   | nicht möglich |
-| exFat    | möglich   | möglich   | nicht möglich |
-| ntfs     | möglich   | möglich   | nicht möglich |
-| ext2/3/4 | **empfohlen** | **empfohlen** | **empfohlen**     |
-
-### Remote angeschlossene Backuppartitionen
-
-|          | dd      | tar     | rsync |
-|----------|---------|---------|-------|
-| smb/cifs | möglich | möglich | eingeschränkt <br/><br/>  Geht über den Umweg mit der Nutzung eines Loopdevices. Siehe dazu auch hier FAQ-24. |
-| nfs      | möglich | möglich | **empfohlen** <br/><br/>  Die Sicherung von ACLs geht auch aber nur über den Umweg der Nutzung eines Loopdevices. Siehe dazu auch hier FAQ-24. |
-
+``` admonish info title="Filesysteme"
+Die [Vor- und Nachteile der möglichen Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md) muss man auch beachten.
 
 [.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach
