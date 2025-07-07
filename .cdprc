@@ -59,8 +59,9 @@ export RG="rg --type=markdown --no-ignore-parent"
 export RG_IGN="${RG} --ignore-file=.rgignore_cdprc"
 
 unset FZF FZF_MULTI
-export FZF="fzf --reverse --exact"
+export FZF="fzf --reverse --exact --no-sort --bind=left:abort,right:accept"
 export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
+
 
 unset FZFPOS
 
@@ -74,8 +75,6 @@ edit_translate_by_status() {
                | ${FZF} \
                     --header="$FZF_HEADER" \
                     --bind="load:pos($FZFPOS)" \
-                    --bind="left:abort" \
-                    --bind="right:accept" \
                     --preview='cat {}')
         [ -z "$FILE" ] && break
         unset FZFPOS
@@ -155,8 +154,6 @@ edit_by_status() {
                        printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | ${FZF} \
                            --header="${FZF_HEADER}" \
-                           --bind="left:abort" \
-                           --bind="right:accept" \
                            --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
                            --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
                            --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
@@ -175,8 +172,6 @@ edit_by_status() {
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
                                               --bind="load:pos($FZFPOS)" \
-                                              --bind="left:abort" \
-                                              --bind="right:accept" \
                                               --preview='cat {}')
                 else
                     # Solutions for opening multiple file found here:
