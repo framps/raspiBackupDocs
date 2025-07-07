@@ -74,7 +74,7 @@ edit_translate_by_status() {
         TMPFILE=$( mktemp tmp.XXXXXXXX )
         FILE=$(cd de/src || exit
                # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-               ${RG} --files-with-matches "$1" | sort \
+               ${RG} --files-with-matches "$1" 2>/dev/null | sort \
                | tee "../../${TMPFILE}" \
                | ${FZF} \
                     --header="$FZF_HEADER" \
@@ -133,10 +133,10 @@ __list_files_with_status() {
     V=$(__get_escaped_status "$1" )
     if [ "${V}" == " --NO-STATUS--" ] ; then
         # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-        ${RG_IGN} --files-without-match "^\[\.status\]:" | sort
+        ${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | sort
     else
         # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-        ${RG_IGN} --files-with-matches  "^\[\.status\]:${V}$" | sort
+        ${RG_IGN} --files-with-matches  "^\[\.status\]:${V}$" 2>/dev/null | sort
     fi
 }
 
@@ -150,12 +150,12 @@ edit_by_status() {
             FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
             shopt -s extglob               # disabled by default
             # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-            WITHOUT_STATUS=$(${RG_IGN} --files-without-match "^\[\.status\]:" | wc -l)
+            WITHOUT_STATUS=$(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | wc -l)
             # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
-            STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" \
+            STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
                        | sort | uniq -c
-                       printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
+                      (( WITHOUT_STATUS > 0 )) && printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
                       | ${FZF} \
                            --header="${FZF_HEADER}" \
                            --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
@@ -181,7 +181,7 @@ edit_by_status() {
                 TMPFILE=$( mktemp tmp.XXXXXXXX )
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                    mapfile -t FILES < <(${RG_IGN} --files-without-match "^\[\.status\]:" \
+                    mapfile -t FILES < <(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null \
                                          | sort | tee "${TMPFILE}" \
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
@@ -194,7 +194,7 @@ edit_by_status() {
                     # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
                     # And so it is now:
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                    mapfile -t FILES < <(${RG_IGN} --files-with-matches "^\[\.status\]:${VALUE}$"\
+                    mapfile -t FILES < <(${RG_IGN} --files-with-matches "^\[\.status\]:${VALUE}$" 2>/dev/null \
                                          | sort | tee "${TMPFILE}" \
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
