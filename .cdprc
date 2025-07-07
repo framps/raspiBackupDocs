@@ -28,14 +28,14 @@
 #       So in this version of the script only 'vim' is supported.
 
 MISSING=()
-for TOOL in fzf rg ; do
+for TOOL in vim fzf rg ; do
     if ! command -pv "$TOOL" >/dev/null; then
         echo "$TOOL can't be found!"
         MISSING+=("$TOOL")
     fi
 done
 if [[ "${MISSING[*]}" ]] ; then
-    echo "The programs 'fzf' (fuzzy finder) and 'ripgrep'/'rg' are required!"
+    echo "The programs 'vim', 'fzf' (fuzzy finder) and 'ripgrep'/'rg' are required!"
     echo "Please install: ${MISSING[*]}. Usually using your distros package management."
     return 1
 fi
@@ -56,7 +56,11 @@ export EDIT_IN_TABS="vim -p"
 # a normal variable is used for that:
 unset RG RG_IGN
 export RG="rg --type=markdown --no-ignore-parent"
-export RG_IGN="${RG} --ignore-file=.rgignore_cdprc"
+if [[ -f .rgignore_cdprc ]] ; then
+	export RG_IGN="${RG} --ignore-file=.rgignore_cdprc"
+else
+	export RG_IGN="${RG}"
+fi
 
 unset FZF FZF_MULTI
 export FZF="fzf --reverse --exact --no-sort --bind=left:abort,right:accept"
@@ -157,7 +161,6 @@ edit_by_status() {
                            --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
                            --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
                            --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
-                           --select-1 \
                            --preview='V={}; __list_files_with_status "$V"')
             [ -z "$STATUS" ] && break
 
