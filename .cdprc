@@ -67,7 +67,7 @@ export FZF="fzf --reverse --exact --no-sort --bind=left:abort,right:accept"
 export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
 
 
-unset FZFPOS
+unset FZFPOS1 FZFPOS2
 
 edit_translate_by_status() {
     while true; do
@@ -78,19 +78,19 @@ edit_translate_by_status() {
                | tee "../../${TMPFILE}" \
                | ${FZF} \
                     --header="$FZF_HEADER" \
-                    --bind="load:pos($FZFPOS)" \
+                    --bind="load:pos($FZFPOS1)" \
                     --preview='cat {}')
         [ -z "$FILE" ] && break
-        unset FZFPOS
+        unset FZFPOS1
         # remember position of selected entry to be able to re-position fzf to it
         if [[ -f "${TMPFILE}" ]] ; then
-            FZFPOS=$( grep "${FILE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+            FZFPOS1=$( grep "${FILE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
             rm -f "${TMPFILE}"
         fi
         ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
     done
     [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
-    unset FZFPOS
+    unset FZFPOS1
 }
 
 
@@ -149,15 +149,18 @@ edit_by_status() {
         while true; do
             FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
             shopt -s extglob               # disabled by default
+            TMPFILE1=$( mktemp tmp.XXXXXXXX )
             # shellcheck disable=2086  # to get the RG_OPTION word-splitted
             WITHOUT_STATUS=$(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | wc -l)
             # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
             # Because that string is passed to fzf's preview option!
             STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
                        | sort | uniq -c
-                      (( WITHOUT_STATUS > 0 )) && printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
-                      | ${FZF} \
+                       (( WITHOUT_STATUS > 0 )) && printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
+                       | tee "${TMPFILE1}" \
+                       | ${FZF} \
                            --header="${FZF_HEADER}" \
+                           --bind="load:pos($FZFPOS1)" \
                            --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
                            --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
                            --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
@@ -176,16 +179,24 @@ edit_by_status() {
             [ -z "$STATUS" ] && break
 
             VALUE=$( get_escaped_status "$STATUS" )
+
+            unset FZFPOS1
+            # remember position of (first) selected entry to be able to re-position fzf to it
+            if [[ -f "${TMPFILE1}" ]] ; then
+                FZFPOS1=$( grep -E "${VALUE}" < <(nl "${TMPFILE1}") | awk '{print $1}' )
+                rm -f "${TMPFILE1}"
+            fi
+
             FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
             while true; do
-                TMPFILE=$( mktemp tmp.XXXXXXXX )
+                TMPFILE2=$( mktemp tmp.XXXXXXXX )
                 if [ "${VALUE}" == " --NO-STATUS--" ] ; then
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                     mapfile -t FILES < <(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null \
-                                         | sort | tee "${TMPFILE}" \
+                                         | sort | tee "${TMPFILE2}" \
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
-                                              --bind="load:pos($FZFPOS)" \
+                                              --bind="load:pos($FZFPOS2)" \
                                               --preview='cat {}')
                 else
                     # Solutions for opening multiple file found here:
@@ -195,26 +206,28 @@ edit_by_status() {
                     # And so it is now:
                     # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                     mapfile -t FILES < <(${RG_IGN} --files-with-matches "^\[\.status\]:${VALUE}$" 2>/dev/null \
-                                         | sort | tee "${TMPFILE}" \
+                                         | sort | tee "${TMPFILE2}" \
                                          | ${FZF_MULTI} \
                                               --header="${FZF_HEADER}" \
-                                              --bind="load:pos($FZFPOS)" \
+                                              --bind="load:pos($FZFPOS2)" \
                                               --bind="left:abort" \
                                               --bind="right:accept" \
                                               --preview='cat {}')
                 fi
                 [[ "${FILES[*]}" ]] || break
-                unset FZFPOS
+                unset FZFPOS2
                 # remember position of (first) selected entry to be able to re-position fzf to it
-                if [[ -f "${TMPFILE}" ]] ; then
-                    FZFPOS=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-                    rm -f "${TMPFILE}"
+                if [[ -f "${TMPFILE2}" ]] ; then
+                    FZFPOS2=$( grep "${FILES[0]}" < <(nl "${TMPFILE2}") | awk '{print $1}' )
+                    rm -f "${TMPFILE2}"
                 fi
                 ${EDIT_IN_TABS} "${FILES[@]}"
             done
-            [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
-            unset FZFPOS
+            [[ -f "${TMPFILE2}" ]] && rm -f "${TMPFILE2}"
+            unset FZFPOS2
         done
+        [[ -f "${TMPFILE1}" ]] && rm -f "${TMPFILE1}"
+        unset FZFPOS1
     fi
 }
 
