@@ -162,6 +162,17 @@ edit_by_status() {
                            --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
                            --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
                            --preview='V={}; __list_files_with_status "$V"')
+
+            # Note: If it's not possible to use fzf in version 0.53 or higher,
+            #       the line above calling vimdiff needs to be changed to:
+            #
+            #       --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md < /dev/tty > /dev/tty 2>&1 )" \
+            #
+            # Explanations see here:
+            #   https://github.com/junegunn/fzf/issues/1593
+            #   https://github.com/junegunn/fzf/issues/1360.
+            #   https://github.com/junegunn/fzf/issues/1361
+
             [ -z "$STATUS" ] && break
 
             VALUE=$( get_escaped_status "$STATUS" )
