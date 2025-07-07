@@ -5,11 +5,11 @@ dazu eingesetzt werden. Der folgende Artikel beschreibt, wann Dateien im
 Dateisystem erstellt und gelöscht werden, sowie, wann Hardlinks erstellt und
 entfernt werden.
 
-Hardlinks ist eine Filesystemfähigkeit, die von dem Linux ext3 und ext4
+Hardlinks sind eine Filesystemfähigkeit, die von dem Linux ext3 und ext4
 Filesystem unterstützt werden. Es sind Zeiger, die einen Dateinamen mit seinem
 Inhalt auf dem Filesystem verbinden. D.h. mit Hardlinks können auf Dateien mit
 unterschiedlichen Namen aus unterschiedlichen Positionen im Dateibaum verwiesen
-werden. Der Linux Befehl ln kann z.B. dazu benutzt werden.
+werden. Der Linux Befehl `ln` kann z.B. dazu benutzt werden.
 
 Bei einem ersten rsync Backup werden alle Dateien kopiert und im
 Backupverzeichnis gesichert. Bei dem zweiten und jedem folgenden Backup werden
@@ -39,9 +39,10 @@ erklärt wird wie Hardlinks funktionieren inklusive einer Demo am System.
 
 ![raspiBackup rsync](images/raspiBackup_rsync.png)
 
-In den raspiBackup [FAQ17](faq.md#faq17) ist beschrieben, wie man prüfen kann, wieviel
-Speicherplatz real bei der Nutzung von Hardlinks belegt wird.
-
+In den raspiBackup [FAQ17](faq.md#faq17) ist beschrieben, wie der wirklich belegte
+Speicherplatz bei der Nutzung von Hardlinks aussieht. Viele Dateimanager
+zeigen leider den genutzten Speicherplatz an ohne Berücksichtigung der Platzeinsparung
+durch Hardlinks und somit als viel zu hoch an.
 
 ## Weblinks
 
@@ -49,6 +50,6 @@ Speicherplatz real bei der Nutzung von Hardlinks belegt wird.
 - [du counting harldinks towards filesize](https://stackoverflow.com/questions/19951883/du-counting-hardlinks-towards-filesize) - Ein Artikel, der erklärt warum der Befehl du über mehrere Verzeichnisses ausgeführt werden muss, um die Einsparungen durch Hardlinks zu sehen
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/571-wie-funktioniert-der-rsync-backup-typ-mit-hardlinks
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/572-how-do-hardlinks-work-with-rsync

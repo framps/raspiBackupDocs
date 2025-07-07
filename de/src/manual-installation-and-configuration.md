@@ -40,7 +40,7 @@ Voraussetzungen: Login als Benutzer pi ins Homeverzeichnis und es existiert eine
 
    3. Nun kann der Installer mit `sudo raspiBackupInstallUI` aufgerufen werden und *raspiBackup* konfiguriert werden.
 
-3. Anschließend sollte ein Restore auf eine weitere SD Karte vorgenommen werden,
+3. Anschließend sollte ein Restore eines Backups vorgenommen werden,
    um sich mit der Art, wie das Backup zu restoren ist, vertraut zu machen und das
    Backup zu testen. Es ist nichts ärgerlicher, wenn man zu dem Zeitpunkt, wenn
    man das Backup benötigt, feststellt, das das Backup nicht alles enthält oder
@@ -53,8 +53,7 @@ und dort *2.2* und *2.3* auszuführen. Allerdings muss man berücksichtigen, das
 keine Benachrichtigungen geschickt werden können wie auch keine
 Benachrichtigungen von *raspiBackup* bei neuen Versionen erhalten werden.
 
-
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/538-raspibackup-manuelle-installation
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/539-raspibackup-manual-installation
 

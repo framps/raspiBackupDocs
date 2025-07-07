@@ -4,24 +4,16 @@
 
     raspiBackup Option1 Option2 Option3 ... Backupverzeichnis
 
-``` admonish note title="Hinweis"
-Vor Release 0.6.6 musste die Extension `.sh` mit angegeben werden:
-
-    raspiBackup.sh Option1 Option2 Option3 ... Backupverzeichnis
-```
-
 **Hinweis**: Die Optionen für den **Restore** eines Backups sind [auf dieser Seite](full-restore.md) beschrieben.
 
-Ab Version 0.6.3.2 können alle Optionen, die etwas ein- oder ausschalten, durch
-ein angehängtes `+` oder `-` gezielt ein oder ausgeschaltet werden.
+Alle Optionen, die etwas ein- oder ausschalten, können durch
+ein angehängtes `+` oder `-` beim Aufruf von raspiBackup gezielt ein oder ausgeschaltet werden.
 
 Beispiel: Die Option `-z` sowie die Option `-z+` schaltet die Backupcompression ein.
 Mit der Option `-z-` wird dagegen die Backupcompression ausgeschaltet. Unabhängig davon,
 was in der Konfigurationsdatei in dem Parameter `DEFAULT_ZIP_BACKUP` steht. Damit kann eine
 Option in der Befehlszeile ausgeschaltet werden, obwohl sie in der
 Konfigurationsdatei eingeschaltet ist.
-
-
 
 ## Konfigurationsdatei(en)
 
@@ -117,7 +109,7 @@ Konfigurationsdatei, der [Defaultwert] und "@inst", wenn im Installer setzbar.
 
 
 <a name="parm_a"></a>
-### -a ⇌ DEFAULT_STARTSERVICES
+### -a ⇌ DEFAULT_STARTSERVICES [keine]
 
 [@inst]
 
@@ -141,8 +133,6 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 
 **Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
 
-
-
 <a name="parm_A"></a>
 ### -A ⇌ DEFAULT_APPEND_LOG [aus]
 
@@ -158,7 +148,7 @@ Blocksize, die beim dd Backup benutzt wird
 
 
 <a name="parm_B"></a>
-### -B ⇌ DEFAULT_TAR_BOOT_PARTITION_ENABLED
+### -B ⇌ DEFAULT_TAR_BOOT_PARTITION_ENABLED ]aus]
 
 Die Bootpartition wird nicht per dd sondern per tar gesichert.
 
@@ -168,7 +158,7 @@ in der Konfiguration gesetzt ist.
 
 
 <a name="parm_c"></a>
-### -c ⇌ DEFAULT_SKIPLOCALCHECK
+### -c ⇌ DEFAULT_SKIPLOCALCHECK [aus]
 
 Es kann kein Backup auf der Rootpartition erstellt werden, um vor
 unbeabsichtigtem Vollschreiben der Rootpartition durch das Backup zu schützen.
@@ -195,7 +185,7 @@ Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
 
 
 <a name="parm_dynamicMount"></a>
-### --dynamicMount ⇌ DEFAULT_DYNAMIC_MOUNT
+### --dynamicMount ⇌ DEFAULT_DYNAMIC_MOUNT [aus]
 
 Ab Version 0.6.6 wird damit vor dem Backup die angegebene Partition bzw. der
 Mointpoint gemounted und am Ende wieder umounted. Falls sie schon gemounted ist
@@ -206,7 +196,7 @@ oder die Backuppartition (z.B. /dev/sdb1).
 
 
 <a name="parm_e"></a>
-### -e ⇌ DEFAULT_EMAIL
+### -e ⇌ DEFAULT_EMAIL [keine]
 
 [@inst]
 
@@ -234,7 +224,7 @@ Pushover, Slack oder Telegram unterstützt.
 
 
 <a name="parm_E"></a>
-### -E ⇌ DEFAULT_EMAIL_PARMS
+### -E ⇌ DEFAULT_EMAIL_PARMS [keine]
 
 Optionale weitere Parameter, die im eMailProgrammaufruf mitgegeben werden. Für
 sendEmail muss er z.B. wie folgt aussehen: "-f absender.mail@absenderdomain -s
@@ -264,7 +254,6 @@ Coloring mit einer separaten Option steuert.
 
 Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [oben](#configfiles).
 alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
-
 
 
 <a name="parm_F"></a>
@@ -301,23 +290,20 @@ Ausgabe der Aufrufsyntax mit seinen Parametern
 
 
 <a name="parm_ignoreAdditionalPartitions"></a>
-### --ignoreAdditionalPartitions ⇌ DEFAULT_IGNORE_ADDITIONAL_PARTITIONS
+### --ignoreAdditionalPartitions ⇌ DEFAULT_IGNORE_ADDITIONAL_PARTITIONS [nein]
 
-Ab Version 0.6.5 erlaubt *raspiBackup* mit dieser Option Systeme mit mehr als
-zwei Partitionen auf der SD Karte zu haben wenn tar oder rsync Backup genutzt
+Mit dieser Option sind Systeme mit mehr als
+zwei Partitionen unterstützt im normalen Backupmodus wenn tar oder rsync Backup genutzt
 wird. Allerdings werden nur die ersten beiden Paritionen, /boot und / gesichert
 und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.
 
-
-
 <a name="parm_ignoremissingpartitions"></a>
-### --ignoreMissingPartitions ⇌
+### --ignoreMissingPartitions ⇌ DEFAULT_IGNORE_MISSING_PARTITIONS [nein]
 
-Ab Version 0.7.0 wird geprüft, ob alle Partitionen, die im letzten Backup
+Es wird im partitionsorientierten Backupmodus geprüft, ob alle Partitionen,
+die im letzten Backup
 gesichert wurden, auch wieder gesichert werden. Mit dieser Option wird der Test
 ausgeschaltet.
-
-
 
 <a name="parm_k"></a>
 ### -k ⇌ DEFAULT_KEEPBACKUPS [3]
@@ -336,12 +322,11 @@ Hinweis:Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie b
 <a name="parm_keepType"></a>
 ### --keep_<type> ⇌ DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} [Parameter für Option -k]
 
-Ab Version 0.6.4.3: Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
+Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
 
 <type> kann jeder Backuptyp sein, also dd, ddz, tar, tgz oder rsync
 
 Hinweis:Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
-
 
 
 <a name="parm_l"></a>
@@ -352,14 +337,13 @@ Log level definiert ob ein Debuglog erstellt wird:
   - off  -> Es wird kein Debuglog erstellt
   - debug -> Es wird ein Debuglog erstellt
 
-**Achtung**: Die Logausgabe kann in manchen Fällen sensitive Informationen
-enthalten (Z.B. externe statische IP Adressen, eMailAdressen, Kennwörter für
-mount Befehle oder email Server, ...).
+**Achtung**: Die Logausgabe kann sensitive Informationen
+enthalten. raspiBackup maskiert Z.B. externe statische IP Adressen, eMailAdressen, Kennwörter für
+mount Befehle oder email Server,u.V.M. Es  können aber immer noch sensitive Informationen
+im Debuglog enthalten sein die inoch manuell maskiert werden sollten.
 Das Debuglog wird immer im Backupverzeichnis abgelegt. Falls es Fehler gibt und das Backupverzeichnis
 wieder gelöscht werden wird, wird das Log vorher in das Homeverzeichnis des
-Aufrufers gesichert, damit es analysiert werden kann.
-
-
+Aufrufers gesichert.
 
 <a name="parm_L"></a>
 ### -L ⇌ DEFAULT_LOG_OUTPUT [backup]
@@ -394,7 +378,7 @@ Meldungsdetails
 
 
 <a name="parm_M"></a>
-### -M ⇌
+### -M ⇌ [keiner]
 
 Mit der Option wird ein *raspiBackup* Snapshot erstellt, welcher nicht im
 Backuprecycleprozess berücksichtigt wird und somit nicht gelöscht wird. Der
@@ -409,34 +393,33 @@ idefix/idefix-rsync-backup-20170103-170717_idefix-Initial_boot_from_SD
 ```
 
 **Hinweis**: *raspiBackup* Snapshots sind normale Backups und keine "richtigen"
-Snapshots wie die bei LVM oder btrfs.
+Snapshots wie die bei LVM oder btrfs. Es werden aber beim rsync Backup Hardlinks
+genutzti um die Snapshotzeit zu reduzieren.
 
 **Hinweis**: Da dieses Verzeichnis nicht im Backuprecycleprozess berücksichtigt wird,
 muss es bei Bedarf manuell gelöscht werden.
 
 
 <a name="parm_N"></a>
-### -N ⇌ DEFAULT_EXTENSIONS
+### -N ⇌ DEFAULT_EXTENSIONS ]keine]
 
 Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
 die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
 Speicherbelegung vor und nach dem Backuplauf ausgeben.
 
 
-
 <a name="parm_notify"></a>
-### --notify ⇌ DEFAULT_NOTIFY_START
+### --notify ⇌ DEFAULT_NOTIFY_START [nein]
 
 Start
 
-Ab der Version 0.6.5 kann man mit dieser Option einschalten, dass man eine
-eMail oder eine Telegram Benachrichtigung bekommt, wenn der Backup startet.
+Mit dieser Option wird eingeschalten, dass eine
+eMail oder eine Telegram Benachrichtigung gesendet wird, wenn der Backup startet.
 Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 
 
-
 <a name="parm_o"></a>
-### -o ⇌ DEFAULT_STOPSERVICES
+### -o ⇌ DEFAULT_STOPSERVICES [keine]
 
 [@inst]
 
@@ -476,12 +459,11 @@ sichern sind.
 <a name="parm_rebootsystem"></a>
 ### --rebootSystem ⇌ DEFAULT_REBOOT_SYSTEM [aus]
 
-Ab Release 0.6.7 wird duch diese Option eine Reboot des Systems am Ende des
-Backuplaufes vorgenommen und damit werden alle Services wieder gestartet.
+Duch diese Option eine Reboot des Systems am Ende des
+Backuplaufes vorgenommen und somit werden alle Services wieder gestartet.
 Deshalb werden Argumente der Option -a auch ignoriert.
 
 **Hinweis**: Wird die Option -F benutzt, wird kein reboot durchgeführt.
-
 
 <a name="parm_resizerootfs"></a>
 ### --resizeRootFS ⇌ DEFAULT_RESIZE_ROOTFS [an]
@@ -491,8 +473,6 @@ verkleinert wird, um auf ein kleineres Device zu restoren oder vergrößert, um 
 ganzen verfügbaren Platz des Devices zu nutzen. Ist das Device kleiner, muss es
 aber noch gross genug sein, um die ganzen Daten des Backups aunehmen zu können.
 Ansonsten bricht der Restore irgendwann ab.
-
-
 
 <a name="parm_s"></a>
 ### -s ⇌ DEFAULT_MAIL_PROGRAM [mail]
@@ -505,8 +485,6 @@ obligatorische Parameter (Siehe [Parameter -E Beschreibung](#parm_E) für Detail
 Es kann auch ein eMailPlugin benutzt werden, um eMails zu verschicken. Damit
 können beliebige weitere eMailClients in *raspiBackup* eingebunden werden. Der -s
 Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](hooks-for-own-scripts.md).
-
-
 
 <a name="parm_S"></a>
 ### -S ⇌ [aus]
@@ -524,38 +502,33 @@ aktualisieren.
 
 [@inst]
 
-Ab Version 0.6.5 schaltet diese Option die [intelligente Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
+Diese Option schaltet die [intelligente Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
 Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt werden.
-
-
 
 <a name="parm_smartRecycleDryrun"></a>
 ### --smartRecycleDryrun ⇌ DEFAULT_SMART_RECYCLE_DRYRUN [ja]
 
-Ab Version 0.6.5 schaltet diese Option den Testmodus der intelligenten
+Diese Option schaltet den Testmodus der intelligenten
 Rotationsstrategie ein. Details dazu sind hier beschrieben.
 
-
+[.todo] Check "Here muss gesetzt werden"
 
 <a name="parm_smartRecycleOptions"></a>
 ### --smartRecycleOptions ⇌ DEFAULT_SMART_RECYCLE_OPTIONS ["7 4 12 1"]
 
 [@inst]
 
-Ab Version 0.6.5 definiert diese Option Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
-
-
+Diese Option definiert Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
 
 <a name="parm_systemstatus"></a>
-### --systemstatus ⇌
+### --systemstatus ⇌ [aus]
 
-Ab Version 0.6.3.4 wird eine Liste der aktiven Services und offenen Dateien
+Es wird eine Liste der aktiven Services und offenen Dateien
 in der Debugdatei erstellt
 
 
-
 <a name="parm_t"></a>
-### -t ⇌ DEFAULT_BACKUPTYPE [dd]
+### -t ⇌ DEFAULT_BACKUPTYPE [rsync]
 
 [@inst]
 
@@ -563,15 +536,9 @@ Typ des Backups, der entweder dd, tar oder rsync sein kann. rsync benutzt bei
 einer ext3/ext4 Partition Hardlinks, um den benötigten Speicherplatz zu
 minimieren.
 
-**Achtung**: Bei rsync darf keine Backuppartition mit NTFS Filesystem benutzt
-werden, da NTFS nicht die Rechte eines ext3/4 Filesystems übernehmen kann.
-Dadurch können bei einem Restore nicht mehr die korrekten Rechte gesetzt werden
-und der Restore ist nicht nutzbar. Weiterhin werden nur bei einem ext3/4
-Filesystem Hardlinks genutzt, um die Datenmenge der Backups zu reduzieren.
-
 [Detailinformationen zu den Backuptypen](#TODO#vornach) Ein externes Rootfilesystem wird
 automatisch bei tar oder rsync Backup mitgesichert sofern nicht die Option -P
-benutzt wird. Mit der Option -z werden die Backups zusätzlich noch gezippt bzw
+benutzt wird. Mit der Option -z werden die dd und tar Backups zusätzlich noch gezippt bzw
 verkleinert.
 
 **Hinweis**: Beim dd Backup kann durch den Konfigurationsparameter
@@ -581,14 +548,13 @@ werden. Details zu dem Parameter siehe am Ende der Tabelle.
 Siehe dazu auch [FAQ16](faq.md#faq16).
 
 
-
 <a name="parm_telegram"></a>
 ### --telegramToken ⇌ DEFAULT_TELEGRAM_TOKEN
 ### --telegramChatIDDEFAULT_TELEGRAM_CHATID
 ### --telegramNotifications DEFAULT_TELEGRAM_NOTIFICATIONS [F]
 
-Ab Version 0.6.5 können Benachrichtigungen nicht nur per eMail, sondern auch per
-oder Telegram verschickt werden. Dazu sind folgende Konfigurationen notwendig:
+Benachrichtigungen können per Telegram verschickt werden.
+Dazu sind folgende Konfigurationen notwendig:
 
 Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
 in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
@@ -601,10 +567,9 @@ zusammen angegeben werden.
 
 
 <a name="parm_timestamps"></a>
-### --timestamps ⇌ DEFAULT_TIMESTAMPS
+### --timestamps ⇌ DEFAULT_TIMESTAMPS [aus]
 
 Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
-
 
 
 <a name="parm_T"></a>
@@ -621,10 +586,10 @@ Partition. Mit * werden alle Partitionen gesichert.
   - Bis Release 0.6.5.1: [*]
   - Bis Release 0.7.0: DEFAULT_PARTITIONS_TO_BACKUP
 
-
+[.todo] Check "Checi historisch"
 
 <a name="parm_u"></a>
-### - u ⇌ DEFAULT_EXCLUDE_LIST
+### - u ⇌ DEFAULT_EXCLUDE_LIST [keine]
 
 Erweiterung der Excludeliste beim Backup um bestimmte Verzeichnisse beim Backup
 zu ignorieren.
@@ -680,8 +645,8 @@ Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verz
 <a name="parm_unsupportedEnvironment"></a>
 ### --unsupportedEnvironment ⇌ [aus]
 
-Ab der Release 0.6.7 started *raspiBackup* auch auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md).
-
+Wird *raspiBackup* auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md)
+gestartet muss diese Option angegeben werden.
 
 
 <a name="parm_U"></a>
@@ -703,12 +668,11 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 
 
 <a name="parm_v"></a>
-### -v ⇌ DEFAULT_VERBOSE
+### -v ⇌ DEFAULT_VERBOSE [aus]
 
 Die verwendeten Backuptools tar und rsync zeigen detailierte Informationen an
 (Verbose mode). Die Option ist besonders nützliche bei initialen manuellen
 Backuptests, um den Backupfortschritt verfolgen zu können.
-
 
 
 <a name="parm_V"></a>
@@ -729,7 +693,6 @@ Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
 ```
 
 
-
 <a name="parm_y"></a>
 ### -y ⇌ DEFAULT_DEPLOYMENT_HOSTS
 
@@ -739,9 +702,8 @@ Kennwort möglich sein. Somit lässt sich *raspiBackup* schnell auf einer größ
 Menge von Hosts nach einem Versionsupdate verteilen.
 
 
-
 <a name="parm_z"></a>
-### -z ⇌ DEFAULT_ZIP_BACKUP
+### -z ⇌ DEFAULT_ZIP_BACKUP [aus]
 
 Backup verkleinern mit gzip bei dd oder tar Backup 	Nein 	ja
 
