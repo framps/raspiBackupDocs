@@ -148,7 +148,7 @@ Blocksize, die beim dd Backup benutzt wird
 
 
 <a name="parm_B"></a>
-### -B ⇌ DEFAULT_TAR_BOOT_PARTITION_ENABLED ]aus]
+### -B ⇌ DEFAULT_TAR_BOOT_PARTITION_ENABLED [aus]
 
 Die Bootpartition wird nicht per dd sondern per tar gesichert.
 
@@ -297,7 +297,7 @@ zwei Partitionen unterstützt im normalen Backupmodus wenn tar oder rsync Backup
 wird. Allerdings werden nur die ersten beiden Paritionen, /boot und / gesichert
 und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.
 
-<a name="parm_ignoremissingpartitions"></a>
+<a name="parm_ignoreMissingPartitions"></a>
 ### --ignoreMissingPartitions ⇌ DEFAULT_IGNORE_MISSING_PARTITIONS [nein]
 
 Es wird im partitionsorientierten Backupmodus geprüft, ob alle Partitionen,
@@ -401,17 +401,15 @@ muss es bei Bedarf manuell gelöscht werden.
 
 
 <a name="parm_N"></a>
-### -N ⇌ DEFAULT_EXTENSIONS ]keine]
+### -N ⇌ DEFAULT_EXTENSIONS [keine]
 
 Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
 die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
 Speicherbelegung vor und nach dem Backuplauf ausgeben.
 
 
-<a name="parm_notify"></a>
-### --notify ⇌ DEFAULT_NOTIFY_START [nein]
-
-Start
+<a name="parm_notifyStart"></a>
+### --notifyStart ⇌ DEFAULT_NOTIFY_START [nein]
 
 Mit dieser Option wird eingeschalten, dass eine
 eMail oder eine Telegram Benachrichtigung gesendet wird, wenn der Backup startet.
@@ -456,7 +454,7 @@ Partitionen gesichert. Mit der Option -T wird definiert, welche Partitionen zu
 sichern sind.
 
 
-<a name="parm_rebootsystem"></a>
+<a name="parm_rebootSystem"></a>
 ### --rebootSystem ⇌ DEFAULT_REBOOT_SYSTEM [aus]
 
 Duch diese Option eine Reboot des Systems am Ende des
@@ -465,7 +463,7 @@ Deshalb werden Argumente der Option -a auch ignoriert.
 
 **Hinweis**: Wird die Option -F benutzt, wird kein reboot durchgeführt.
 
-<a name="parm_resizerootfs"></a>
+<a name="parm_resizeRootFS"></a>
 ### --resizeRootFS ⇌ DEFAULT_RESIZE_ROOTFS [an]
 
 Mit dieser Option wird definiert, ob beim Restore die letzte Partition
