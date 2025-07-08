@@ -548,8 +548,8 @@ Siehe dazu auch [FAQ16](faq.md#faq16).
 
 <a name="parm_telegram"></a>
 ### --telegramToken ⇌ DEFAULT_TELEGRAM_TOKEN
-### --telegramChatIDDEFAULT_TELEGRAM_CHATID
-### --telegramNotifications DEFAULT_TELEGRAM_NOTIFICATIONS [F]
+### --telegramChatID ⇌ DEFAULT_TELEGRAM_CHATID
+### --telegramNotifications ⇌ DEFAULT_TELEGRAM_NOTIFICATIONS [F]
 
 Benachrichtigungen können per Telegram verschickt werden.
 Dazu sind folgende Konfigurationen notwendig:
