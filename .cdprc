@@ -145,90 +145,90 @@ export -f __list_files_with_status __get_escaped_status
 
 
 edit_by_status() {
-    if command -pv fzf >/dev/null ; then
+    while true; do
+        FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
+        shopt -s extglob               # disabled by default
+        TMPFILE=$( mktemp tmp.XXXXXXXX )
+        # shellcheck disable=2086  # to get the RG_OPTION word-splitted
+        WITHOUT_STATUS=$(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | wc -l)
+        # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
+        # Because that string is passed to fzf's preview option!
+        STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
+                   | sort | uniq -c
+                   (( WITHOUT_STATUS > 0 )) && printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
+                   | tee "${TMPFILE}" \
+                   | ${FZF} \
+                       --query="$*" \
+                       --header="${FZF_HEADER}" \
+                       --bind="load:pos($FZFPOS_STATUS)" \
+                       --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
+                       --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
+                       --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
+                       --preview='V={}; __list_files_with_status "$V"')
+        set --
+
+        # Note: If it's not possible to use fzf in version 0.53 or higher,
+        #       the line above calling vimdiff needs to be changed to:
+        #
+        #       --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md < /dev/tty > /dev/tty 2>&1 )" \
+        #
+        # Explanations see here:
+        #   https://github.com/junegunn/fzf/issues/1593
+        #   https://github.com/junegunn/fzf/issues/1360.
+        #   https://github.com/junegunn/fzf/issues/1361
+
+        [ -z "$STATUS" ] && break
+
+        VALUE=$( get_escaped_status "$STATUS" )
+
+        unset FZFPOS_STATUS
+        # remember position of (first) selected entry to be able to re-position fzf to it
+        if [[ -f "${TMPFILE}" ]] ; then
+            FZFPOS_STATUS=$( grep -E "${VALUE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+            rm -f "${TMPFILE}"
+        fi
+
+        FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
         while true; do
-            FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
-            shopt -s extglob               # disabled by default
             TMPFILE=$( mktemp tmp.XXXXXXXX )
-            # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-            WITHOUT_STATUS=$(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | wc -l)
-            # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
-            # Because that string is passed to fzf's preview option!
-            STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
-                       | sort | uniq -c
-                       (( WITHOUT_STATUS > 0 )) && printf "%7d %s" "${WITHOUT_STATUS}" "[]: --NO-STATUS--") \
-                       | tee "${TMPFILE}" \
-                       | ${FZF} \
-                           --header="${FZF_HEADER}" \
-                           --bind="load:pos($FZFPOS_STATUS)" \
-                           --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
-                           --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
-                           --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
-                           --preview='V={}; __list_files_with_status "$V"')
-
-            # Note: If it's not possible to use fzf in version 0.53 or higher,
-            #       the line above calling vimdiff needs to be changed to:
-            #
-            #       --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md < /dev/tty > /dev/tty 2>&1 )" \
-            #
-            # Explanations see here:
-            #   https://github.com/junegunn/fzf/issues/1593
-            #   https://github.com/junegunn/fzf/issues/1360.
-            #   https://github.com/junegunn/fzf/issues/1361
-
-            [ -z "$STATUS" ] && break
-
-            VALUE=$( get_escaped_status "$STATUS" )
-
-            unset FZFPOS_STATUS
+            if [ "${VALUE}" == " --NO-STATUS--" ] ; then
+                # shellcheck disable=2086  # to get the RG_OPTION word-splitted
+                mapfile -t FILES < <(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null \
+                                     | sort | tee "${TMPFILE}" \
+                                     | ${FZF_MULTI} \
+                                          --header="${FZF_HEADER}" \
+                                          --bind="load:pos($FZFPOS_FILE)" \
+                                          --preview='cat {}')
+            else
+                # Solutions for opening multiple file found here:
+                # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
+                # Otherwise the LFs aren't interpreted correctly by the editor.
+                # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
+                # And so it is now:
+                # shellcheck disable=2086  # to get the RG_OPTION word-splitted
+                mapfile -t FILES < <(${RG_IGN} --files-with-matches "^\[\.status\]:${VALUE}$" 2>/dev/null \
+                                     | sort | tee "${TMPFILE}" \
+                                     | ${FZF_MULTI} \
+                                          --header="${FZF_HEADER}" \
+                                          --bind="load:pos($FZFPOS_FILE)" \
+                                          --bind="left:abort" \
+                                          --bind="right:accept" \
+                                          --preview='cat {}')
+            fi
+            [[ "${FILES[*]}" ]] || break
+            unset FZFPOS_FILE
             # remember position of (first) selected entry to be able to re-position fzf to it
             if [[ -f "${TMPFILE}" ]] ; then
-                FZFPOS_STATUS=$( grep -E "${VALUE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+                FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
                 rm -f "${TMPFILE}"
             fi
-
-            FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
-            while true; do
-                TMPFILE=$( mktemp tmp.XXXXXXXX )
-                if [ "${VALUE}" == " --NO-STATUS--" ] ; then
-                    # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                    mapfile -t FILES < <(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null \
-                                         | sort | tee "${TMPFILE}" \
-                                         | ${FZF_MULTI} \
-                                              --header="${FZF_HEADER}" \
-                                              --bind="load:pos($FZFPOS_FILE)" \
-                                              --preview='cat {}')
-                else
-                    # Solutions for opening multiple file found here:
-                    # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
-                    # Otherwise the LFs aren't interpreted correctly by the editor.
-                    # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
-                    # And so it is now:
-                    # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-                    mapfile -t FILES < <(${RG_IGN} --files-with-matches "^\[\.status\]:${VALUE}$" 2>/dev/null \
-                                         | sort | tee "${TMPFILE}" \
-                                         | ${FZF_MULTI} \
-                                              --header="${FZF_HEADER}" \
-                                              --bind="load:pos($FZFPOS_FILE)" \
-                                              --bind="left:abort" \
-                                              --bind="right:accept" \
-                                              --preview='cat {}')
-                fi
-                [[ "${FILES[*]}" ]] || break
-                unset FZFPOS_FILE
-                # remember position of (first) selected entry to be able to re-position fzf to it
-                if [[ -f "${TMPFILE}" ]] ; then
-                    FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-                    rm -f "${TMPFILE}"
-                fi
-                ${EDIT_IN_TABS} "${FILES[@]}"
-            done
-            [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
-            unset FZFPOS_FILE
+            ${EDIT_IN_TABS} "${FILES[@]}"
         done
         [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
-        unset FZFPOS_STATUS
-    fi
+        unset FZFPOS_FILE
+    done
+    [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+    unset FZFPOS_STATUS
 }
 
 
