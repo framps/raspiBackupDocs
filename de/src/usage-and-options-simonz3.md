@@ -54,7 +54,7 @@ Falls postfix als emailClient genutzt wird siehe auch Option --eMailColoring.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --coloring | automatisch |  | DEFAULT_COLORING |
+| --coloring | automatisch | nein | DEFAULT_COLORING |
 
 
 <a name="parm_dynamicMount"></a>
@@ -68,7 +68,7 @@ oder die Backuppartition (z.B. /dev/sdb1).
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --dynamicMount | aus |  | DEFAULT_DYNAMIC_MOUNT |
+| --dynamicMount | aus | nein | DEFAULT_DYNAMIC_MOUNT |
 
 
 <a name="parm_eMailColoring"></a>
@@ -81,7 +81,7 @@ Coloring mit einer separaten Option steuert.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --eMailColoring | SUBJECT |  | DEFAULT_EMAIL_COLORING |
+| --eMailColoring | SUBJECT | nein | DEFAULT_EMAIL_COLORING |
 
 
 <a name="parm_ignoreAdditionalPartitions"></a>
@@ -94,20 +94,19 @@ und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --ignoreAdditionalPartitions | nein |  | DEFAULT_IGNORE_ADDITIONAL_PARTITIONS |
+| --ignoreAdditionalPartitions | nein | nein | DEFAULT_IGNORE_ADDITIONAL_PARTITIONS |
 
 
 <a name="parm_ignoreMissingPartitions"></a>
 ### --ignoreMissingPartitions: 
 
 Es wird im partitionsorientierten Backupmodus geprüft, ob alle Partitionen,
-die im letzten Backup
-gesichert wurden, auch wieder gesichert werden. Mit dieser Option wird der Test
-ausgeschaltet.
+die im letzten Backup gesichert wurden, auch wieder gesichert werden.
+Mit dieser Option wird der Test ausgeschaltet.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --ignoreMissingPartitions | nein |  | DEFAULT_IGNORE_MISSING_PARTITIONS |
+| --ignoreMissingPartitions | nein | nein | DEFAULT_IGNORE_MISSING_PARTITIONS |
 
 
 <a name="parm_keepType"></a>
@@ -121,11 +120,12 @@ Hinweis:Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategi
 
 | Option       | Standard| Im Installer setzbar | Konfigurationsname |
 |--------------|---------|----------------------|--------------------|
-| --keep_dd    | Parameter für Option -k |  | DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} |
-| --keep_ddz   | Parameter für Option -k |  | DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} |
-| --keep_rsync | Parameter für Option -k |  | DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} |
-| --keep_tar   | Parameter für Option -k |  | DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} |
-| --keep_tgz   | Parameter für Option -k |  | DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} |
+| --keep_dd    | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_DD |
+| --keep_ddz   | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_DDZ |
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+| --keep_tar   | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_TAR |
+| --keep_tgz   | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_TGZ |
+
 
 
 <a name="parm_notifyStart"></a>
@@ -137,7 +137,7 @@ Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --notifyStart | nein |  | DEFAULT_NOTIFY_START |
+| --notifyStart | nein | nein | DEFAULT_NOTIFY_START |
 
 
 <a name="parm_rebootSystem"></a>
@@ -151,7 +151,7 @@ Deshalb werden Argumente der Option -a auch ignoriert.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --rebootSystem | aus |  | DEFAULT_REBOOT_SYSTEM |
+| --rebootSystem | aus | nein | DEFAULT_REBOOT_SYSTEM |
 
 
 <a name="parm_resizeRootFS"></a>
@@ -165,7 +165,7 @@ Ansonsten bricht der Restore irgendwann ab.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --resizeRootFS | an |  | DEFAULT_RESIZE_ROOTFS |
+| --resizeRootFS | an | nein | DEFAULT_RESIZE_ROOTFS |
 
 
 <a name="parm_smartRecycle"></a>
@@ -189,7 +189,7 @@ Rotationsstrategie ein. Details dazu sind hier beschrieben.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --smartRecycleDryrun | ja |  | DEFAULT_SMART_RECYCLE_DRYRUN |
+| --smartRecycleDryrun | ja | nein | DEFAULT_SMART_RECYCLE_DRYRUN |
 
 
 <a name="parm_smartRecycleOptions"></a>
@@ -210,7 +210,7 @@ in der Debugdatei erstellt
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --systemstatus | aus |  |  |
+| --systemstatus | aus | nein |  |
 
 
 <a name="parm_telegram"></a>
@@ -229,7 +229,7 @@ zusammen angegeben werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --telegramChatID | None |  | DEFAULT_TELEGRAM_CHATID |
+| --telegramChatID | None | nein | DEFAULT_TELEGRAM_CHATID |
 
 
 <a name="parm_telegram"></a>
@@ -248,7 +248,7 @@ zusammen angegeben werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --telegramNotifications | F |  | DEFAULT_TELEGRAM_NOTIFICATIONS |
+| --telegramNotifications | F | nein | DEFAULT_TELEGRAM_NOTIFICATIONS |
 
 
 <a name="parm_telegram"></a>
@@ -267,7 +267,7 @@ zusammen angegeben werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --telegramToken | None |  | DEFAULT_TELEGRAM_TOKEN |
+| --telegramToken | None | nein | DEFAULT_TELEGRAM_TOKEN |
 
 
 <a name="parm_timestamps"></a>
@@ -277,7 +277,7 @@ Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --timestamps | aus |  | DEFAULT_TIMESTAMPS |
+| --timestamps | aus | nein | DEFAULT_TIMESTAMPS |
 
 
 <a name="parm_unsupportedEnvironment"></a>
@@ -288,7 +288,7 @@ gestartet muss diese Option angegeben werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --unsupportedEnvironment | aus |  |  |
+| --unsupportedEnvironment | aus | nein |  |
 
 
 <a name="parm_version"></a>
@@ -302,7 +302,7 @@ Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| --version | aus |  |  |
+| --version | aus | nein |  |
 
 
 <a name="parm_A"></a>
@@ -312,7 +312,7 @@ Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -A | aus |  | DEFAULT_APPEND_LOG |
+| -A | aus | nein | DEFAULT_APPEND_LOG |
 
 
 <a name="parm_B"></a>
@@ -326,7 +326,7 @@ in der Konfiguration gesetzt ist.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -B | aus |  | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
+| -B | aus | nein | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
 
 
 <a name="parm_D"></a>
@@ -336,7 +336,7 @@ Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -D | automatisch |  | DEFAULT_DD_PARMS |
+| -D | automatisch | nein | DEFAULT_DD_PARMS |
 
 
 <a name="parm_E"></a>
@@ -355,7 +355,7 @@ sollte vor Verschicken des Logs manuell maskiert werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -E | keine |  | DEFAULT_EMAIL_PARMS |
+| -E | keine | nein | DEFAULT_EMAIL_PARMS |
 
 
 <a name="parm_F"></a>
@@ -367,7 +367,7 @@ Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -F | None |  | None |
+| -F | None | nein | None |
 
 
 <a name="parm_G"></a>
@@ -402,7 +402,7 @@ Im Backupverzeichnis werden keine Logs abgelegt.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -L | backup |  | DEFAULT_LOG_OUTPUT |
+| -L | backup | nein | DEFAULT_LOG_OUTPUT |
 
 
 <a name="parm_M"></a>
@@ -429,7 +429,7 @@ muss es bei Bedarf manuell gelöscht werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -M | keiner |  |  |
+| -M | keiner | nein |  |
 
 
 <a name="parm_N"></a>
@@ -441,7 +441,7 @@ Speicherbelegung vor und nach dem Backuplauf ausgeben.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -N | keine |  | DEFAULT_EXTENSIONS |
+| -N | keine | nein | DEFAULT_EXTENSIONS |
 
 
 <a name="parm_P"></a>
@@ -468,7 +468,7 @@ aktualisieren.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -S | aus |  |  |
+| -S | aus | nein |  |
 
 
 <a name="parm_T"></a>
@@ -508,7 +508,7 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -U | aus |  |  |
+| -U | aus | nein |  |
 
 
 <a name="parm_V"></a>
@@ -521,7 +521,7 @@ wiederhergestellt werden (Siehe auch -U Parameter)
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -V | None |  | None |
+| -V | None | nein | None |
 
 
 <a name="parm_a"></a>
@@ -559,7 +559,7 @@ Blocksize, die beim dd Backup benutzt wird
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -b | 1 MB |  | DEFAULT_DD_BLOCKSIZE |
+| -b | 1 MB | nein | DEFAULT_DD_BLOCKSIZE |
 
 
 <a name="parm_c"></a>
@@ -574,7 +574,7 @@ noch auf die Rootparition passt.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -c | aus |  | DEFAULT_SKIPLOCALCHECK |
+| -c | aus | nein | DEFAULT_SKIPLOCALCHECK |
 
 
 <a name="parm_e"></a>
@@ -614,7 +614,7 @@ alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -f | None |  | None |
+| -f | None | nein | None |
 
 
 <a name="parm_g"></a>
@@ -625,7 +625,7 @@ angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -g | None |  | None |
+| -g | None | nein | None |
 
 
 <a name="parm_h"></a>
@@ -635,7 +635,7 @@ Ausgabe der Aufrufsyntax mit seinen Parametern
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -h | None |  | None |
+| -h | None | nein | None |
 
 
 <a name="parm_k"></a>
@@ -670,7 +670,7 @@ Aufrufers gesichert.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -l | on |  | DEFAULT_LOG_LEVEL |
+| -l | on | nein | DEFAULT_LOG_LEVEL |
 
 
 <a name="parm_m"></a>
@@ -728,7 +728,7 @@ Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](ho
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -s | mail |  | DEFAULT_MAIL_PROGRAM |
+| -s | mail | nein | DEFAULT_MAIL_PROGRAM |
 
 
 <a name="parm_t"></a>
@@ -808,7 +808,7 @@ Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verz
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -u | keine |  | DEFAULT_EXCLUDE_LIST |
+| -u | keine | nein | DEFAULT_EXCLUDE_LIST |
 
 
 <a name="parm_v"></a>
@@ -820,7 +820,7 @@ Backuptests, um den Backupfortschritt verfolgen zu können.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -v | aus |  | DEFAULT_VERBOSE |
+| -v | aus | nein | DEFAULT_VERBOSE |
 
 
 <a name="parm_y"></a>
@@ -833,7 +833,7 @@ Menge von Hosts nach einem Versionsupdate verteilen.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
-| -y | None |  | DEFAULT_DEPLOYMENT_HOSTS |
+| -y | None | nein | DEFAULT_DEPLOYMENT_HOSTS |
 
 
 <a name="parm_z"></a>
@@ -844,6 +844,7 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------|----------------------|--------------------|
 | -z | aus | ja | DEFAULT_ZIP_BACKUP |
+
 
 
 [.status]: review-needed
