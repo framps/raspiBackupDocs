@@ -103,7 +103,7 @@ benötigen, müssen 0 für nein und 1 für ja sein.
 ## Alphabetische Sortierung der Optionen
 
 Bei den Optionen wird zusätzlich - wenn vorhanden - angegeben: der Name in der
-Konfigurationsdatei, der [Defaultwert] und "@inst", wenn im Installer setzbar.
+Konfigurationsdatei und der [Defaultwert].
 
 <!-- toc -->
 
@@ -111,7 +111,7 @@ Konfigurationsdatei, der [Defaultwert] und "@inst", wenn im Installer setzbar.
 <a name="parm_a"></a>
 ### -a ⇌ DEFAULT_STARTSERVICES [keine]
 
-[@inst]
+[im Installer setzbar]
 
 Befehle, um Services nach dem Backup wieder zu starten. Z.B. bei Samba "service
 smbd start" (Achtung: Anführungszeichen an Anfang und Ende). Diese Option ist
@@ -198,7 +198,7 @@ oder die Backuppartition (z.B. /dev/sdb1).
 <a name="parm_e"></a>
 ### -e ⇌ DEFAULT_EMAIL [keine]
 
-[@inst]
+[im Installer setzbar]
 
 email Addresse, die eine Status-email sowie die Meldungen des Backuplaufs
 zugesendet bekommt
@@ -274,7 +274,7 @@ angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
 <a name="parm_G"></a>
 ### -G ⇌ DEFAULT_LANGUAGE [Systemsprache oder EN]
 
-[@inst]
+[im Installer setzbar]
 
 Festlegung der Sprache der Meldungen. Mögliche Sprachen sind DE (Deutsch) und
 EN (English). Interessenten, die die Meldungen in andere Sprachen übersetzen
@@ -308,7 +308,7 @@ ausgeschaltet.
 <a name="parm_k"></a>
 ### -k ⇌ DEFAULT_KEEPBACKUPS [3]
 
-[@inst]
+[im Installer setzbar]
 
 Anzahl der Backups, die pro Backuptyp vorzuhalten sind, sofern es nicht durch
 folgende Option überschrieben wird. D.h., es werden 3 dd, 3 tar und 3 rsync
@@ -368,7 +368,7 @@ Im Backupverzeichnis werden keine Logs abgelegt.
 <a name="parm_m"></a>
 ### -m ⇌ DEFAULT_MSG_LEVEL [minimal]
 
-[@inst]
+[im Installer setzbar]
 
 Meldungsdetails
 
@@ -419,7 +419,7 @@ Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 <a name="parm_o"></a>
 ### -o ⇌ DEFAULT_STOPSERVICES [keine]
 
-[@inst]
+[im Installer setzbar]
 
 Befehle, um Services vor dem Backup zu stoppen, damit kein inkonsistentes Backup
 erzeugt wird. Z.B. bei Samba "service smbd stop" (Achtung: Anführungszeichen an
@@ -446,7 +446,7 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 <a name="parm_P"></a>
 ### -P ⇌ DEFAULT_PARTITIONBASED_BACKUP [aus]
 
-[@inst]
+[im Installer setzbar]
 
 Partitionsorientierter Modus. Damit wird im Gegensatz zum normalen Modus, wo nur
 die ersten beiden Partitionen gesichert werden, eine beliebige Anzahl von
@@ -498,7 +498,7 @@ aktualisieren.
 <a name="parm_smartRecycle"></a>
 ### --smartRecycle ⇌ DEFAULT_SMART_RECYCLE [aus]
 
-[@inst]
+[im Installer setzbar]
 
 Diese Option schaltet die [intelligente Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
 Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt werden.
@@ -514,7 +514,7 @@ Rotationsstrategie ein. Details dazu sind hier beschrieben.
 <a name="parm_smartRecycleOptions"></a>
 ### --smartRecycleOptions ⇌ DEFAULT_SMART_RECYCLE_OPTIONS ["7 4 12 1"]
 
-[@inst]
+[im Installer setzbar]
 
 Diese Option definiert Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
 
@@ -528,7 +528,7 @@ in der Debugdatei erstellt
 <a name="parm_t"></a>
 ### -t ⇌ DEFAULT_BACKUPTYPE [rsync]
 
-[@inst]
+[im Installer setzbar]
 
 Typ des Backups, der entweder dd, tar oder rsync sein kann. rsync benutzt bei
 einer ext3/ext4 Partition Hardlinks, um den benötigten Speicherplatz zu
@@ -573,7 +573,7 @@ Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 <a name="parm_T"></a>
 ### -T ⇌ DEFAULT_PARTITIONS_TO_RESTORE ["1 2"]
 
-[@inst]
+[im Installer setzbar]
 
 Falls der partitionsorientierte Backupmodus mit der Option -P gewählt wurde,
 kann mit dieser Option definiert werden, welche Partitionen gesichert werden
