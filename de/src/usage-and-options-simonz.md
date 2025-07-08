@@ -107,6 +107,7 @@ benötigen, müssen 0 für nein und 1 für ja sein.
 <br><br>
 
 {{ #include usage-and-options.inc }}
+
 <br><br>
 
 ----------
@@ -124,7 +125,6 @@ Hinweis:Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie b
 
 
 
-
 <a name="parm_keepType"></a>
 ### --keep_dd: Anzahl der Backups für Backuptyp dd
 ### --keep_ddz: Anzahl der Backups für Backuptyp ddz
@@ -136,7 +136,8 @@ Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
 
 Hinweis:Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
 
-⇌ DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} [Parameter für Option -k] []
+⇌ DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC} [Parameter für Option -k] 
+
 
 
 <a name="parm_l"></a>
@@ -170,6 +171,7 @@ vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
 
 
+<a name="parm_XXXX"></a>
 ### DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY
 
 dd Backups sichern nur den von definierten Partitionen belegten Platz. Dadurch
