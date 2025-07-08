@@ -39,9 +39,6 @@ benötigen, müssen 0 für nein und 1 für ja sein.
 
 ## Alphabetische Sortierung der Optionen
 
-Bei den Optionen wird zusätzlich - wenn vorhanden - angegeben: der Name in der
-Konfigurationsdatei und der [Defaultwert].
-
 <!-- toc -->
 
 
