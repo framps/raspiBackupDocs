@@ -33,6 +33,48 @@ Codeblock mit Einrückung um 8 Leerzeichen:
         print("Hello Markdown")
 
 
+## Tabellen
+
+Verschiedene Längen des "Option" Titels mit Leerzeichen ändert nichts:
+
+| Option | Standard| Im Installer setzbar | Konfigurationsname |
+|--------|---------|----------------------|--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+| Option       | Standard| Im Installer setzbar | Konfigurationsname |
+|--------------|---------|----------------------|--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+| Option                  | Standard| Im Installer setzbar | Konfigurationsname |
+|-------------------------|---------|----------------------|--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+Erst das Verlängern des Tites selber hilft:
+
+| Option zum Testen       | Standard| Im Installer setzbar | Konfigurationsname |
+|-------------------------|---------|----------------------|--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+Hier eine Spalte zentriert:
+
+| Optionsname             | Standard| Im Installer setzbar | Konfigurationsname |
+|-------------------------|---------|:--------------------:|--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+... rechtsbündig:
+
+| Optionsname             | Standard| Im Installer setzbar | Konfigurationsname |
+|-------------------------|---------| --------------------:|--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+... linksbündig:
+
+| Optionsname             | Standard| Im Installer setzbar | Konfigurationsname |
+|-------------------------|---------| :------------------- |--------------------|
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+
+
+
 ## Fenced Codeblocks per Triple-Backticks
 
 Besser/empfohlen:
