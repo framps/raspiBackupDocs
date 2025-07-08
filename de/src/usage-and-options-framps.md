@@ -5,6 +5,7 @@ benötigen, müssen 0 für nein und 1 für ja sein.
 
 ------------------------------------------------------------------------
 
+## [Thematische Sortierung der Aufrufoptionen (Auswahl)](#thematisch)
 
 ## Alphabetische Sortierung der Aufrufoptionen
 
@@ -62,6 +63,7 @@ Aufrufers. Während des Backuplaufes befindet sich das Debuglog in `/tmp`.
 | -l               | debug   | nein                 | DEFAULT_LOGLEVEL   |
 
 
+<a name="thematisch"></a>
 ## Thematische Sortierung der Aufrufoptionen (Auswahl)
 
 ### Optionen, die das Backup beschreiben
