@@ -27,6 +27,10 @@ check_files_are_synced() {
     sdiff --suppress-common-lines  <($FD --base-directory de/src) <($FD --base-directory en/src)
     echo -e "\n*** Check file existence in de/theme <-> en/theme ***\n"
     sdiff --suppress-common-lines  <($FD --base-directory de/theme) <($FD --base-directory en/theme)
+    #
+    # echo -e "\n*** Check via rsync ***\n"
+    # rsync -Pauc --dry-run de/theme en/ | grep -v "sending incremental file list"
+    # rsync -Pauc --dry-run en/theme de/ | grep -v "sending incremental file list"
 }
 
 check_files_are_in_summary() {
