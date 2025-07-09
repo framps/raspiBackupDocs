@@ -41,6 +41,7 @@ benötigen, müssen 0 für nein und 1 für ja sein.
 
 <!-- toc -->
 
+<div class="table-wrapper-for-options">
 
 <a name="parm_coloring"></a>
 ### --coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen
@@ -842,7 +843,7 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 |--------|---------| :------------------: |--------------------|
 | -z | aus | ja | DEFAULT_ZIP_BACKUP |
 
-
+</div>
 
 [.status]: review-needed
 [.status]: todo "Check links"
