@@ -19,7 +19,7 @@ import yaml
 DATA_IN_FILENAME = "de/src/usage-and-options.yaml"
 
 with Path(DATA_IN_FILENAME).open("r", encoding="utf-8") as yamlfile:
-    params = yaml.load(yamlfile, Loader=yaml.CLoader)
+    params = yaml.safe_load(yamlfile)
 
 for param in sorted(params):
     p = params[param]
