@@ -9,5 +9,5 @@ Dort wird eine individuelle Fehlerseite definiert:
 
     ErrorDocument 404 /raspiBackupDoc/404.html
 
-Die Datei liegt hier lokal als `htaccess` (ohne führenden Punkt) vor und wird
+Die Datei liegt hier lokal als `data/htaccess` (ohne führenden Punkt) vor und wird
 beim Upload zum Webserver entsprechend umbenannt hochgeladen.
