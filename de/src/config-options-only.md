@@ -2,76 +2,29 @@
 
 <!-- toc -->
 
-### DEFAULT_MAIL_ON_ERROR_ONLY
+### DEFAULT_BEFORE_STOPSERVICES / DEFAULT_AFTER_STARTSERVICES
 
-Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet. Hinweis: Sollte
-*raspiBackup* wegen aussergewöhnlicher Umstände abstürzen, kann es durchaus sein,
-dass keine eMail gesendet wird.
+Ab Version 0.6.4.3: Die hier definierten Befehle werden vor bzw nach dem Backup
+vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_MAIL_ON_ERROR_ONLY |          | nein |
-
-
-
-### DEFAULT_RSYNC_BACKUP_OPTIONS
-
-Backupoptionen, die beim rsync Backup genutzt werden.
-
-**Benutzung auf eigene Gefahr!**
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_RSYNC_BACKUP_OPTIONS | --delete -aHAx | nein |
+| Config-Option               | Standard | Im Installer setzbar |
+|-----------------------------|----------| :------------------: |
+| DEFAULT_BEFORE_STOPSERVICES |          | nein |
+| DEFAULT_AFTER_STARTSERVICES |          | nein |
 
 
 
-### DEFAULT_TAR_BACKUP_OPTIONS
+### DEFAULT_COLOR_CODES
 
-Backupoptionen, die beim tar Backup genutzt werden.
-
-**Benutzung auf eigene Gefahr!**
+Ab Version 0.6.7 können die html und VT100 Colorcodes definiert werden. Default
+ist gelb für Warnungen und Rot für Fehler. Das erste Pärchen der Definition legt
+die Codes für Warnung das zweite Pärchen die Definition für Fehler fest. Dabei
+ist die erste Definition der HTML Colorocde und die zweite Definition der VT100
+Colorcode.
 
 | Config-Option              | Standard | Im Installer setzbar |
 |----------------------------|----------| :------------------: |
-| DEFAULT_TAR_BACKUP_OPTIONS | -cpi     | nein |
-
-
-
-### DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS
-
-Backupoptionen, die beim rsync Backup zusätzlich genutzt werden.
-
-**Benutzung auf eigene Gefahr!**
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS |          | nein |
-
-
-
-
-### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
-
-Backupoptionen, die beim tar Backup zusätzlich genutzt werden.
-
-**Benutzung auf eigene Gefahr!**
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS |          | nein |
-
-
-
-### DEFAULT_LINK_BOOTPARTITIONFILES
-
-Sich selten ändernde Bootparition Backups werden mit Hardlinks verknüpft, um
-Backupspace zu sparen. Voraussetzung: Der Backupspace unterstützt Hardlinks
-(ext3/ext4 Filesystem).
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_LINK_BOOTPARTITIONFILES |          | nein |
+| DEFAULT_COLOR_CODES        | ("#FF8000 33" "#FF0000 31")  | nein |
 
 
 
@@ -91,83 +44,27 @@ Siehe dazu auch [FAQ16](faq.md#faq16).
 
 
 
-### DEFAULT_SENDER_EMAIL
+### DEFAULT_LINK_BOOTPARTITIONFILES
 
-Die eMailAdresse des Versenders kann bei ssmtp und msmtp angegeben werden.
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_SENDER_EMAIL | root@$(hostname) | nein |
-
-
-
-### DEFAULT_RESTORE_REMINDER_INTERVAL
-
-Backup Restore Test Reminder Intervall (Einheit: Monate)
+Sich selten ändernde Bootparition Backups werden mit Hardlinks verknüpft, um
+Backupspace zu sparen. Voraussetzung: Der Backupspace unterstützt Hardlinks
+(ext3/ext4 Filesystem).
 
 | Config-Option              | Standard | Im Installer setzbar |
 |----------------------------|----------| :------------------: |
-| DEFAULT_RESTORE_REMINDER_INTERVAL | 6 | nein |
+| DEFAULT_LINK_BOOTPARTITIONFILES |          | nein |
 
 
 
-### DEFAULT_RESTORE_REMINDER_REPEAT
+### DEFAULT_MAIL_ON_ERROR_ONLY
 
-Anzahl der Erinnerungen, einen Backup Restore Test durchzuführen.
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_RESTORE_REMINDER_REPEAT | 3   | nein |
-
-
-
-### DEFAULT_BEFORE_STOPSERVICES / DEFAULT_AFTER_STARTSERVICES
-
-Ab Version 0.6.4.3: Die hier definierten Befehle werden vor bzw nach dem Backup
-vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
-
-| Config-Option               | Standard | Im Installer setzbar |
-|-----------------------------|----------| :------------------: |
-| DEFAULT_BEFORE_STOPSERVICES |          | nein |
-| DEFAULT_AFTER_STARTSERVICES |          | nein |
-
-
-
-### DEFAULT_SEND_STATS
-
-Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBackup*
-Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
+Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet. Hinweis: Sollte
+*raspiBackup* wegen aussergewöhnlicher Umstände abstürzen, kann es durchaus sein,
+dass keine eMail gesendet wird.
 
 | Config-Option              | Standard | Im Installer setzbar |
 |----------------------------|----------| :------------------: |
-| DEFAULT_SEND_STATS         | ja       | nein |
-
-
-
-### DEFAULT_RESTORE_EXTENSIONS
-
-Ab Version 0.6.7 gibt es auch für den Restore wie beim Backup die Möglichkeit,
-auch pre und post Exits zu konfigurieren, um vor und nach dem Restore noch
-irgendwelche Aktionen vorzunehmen. Die Syntax ist genauso wie für die Backup
-Extensions.
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_RESTORE_EXTENSIONS |          | nein |
-
-
-
-### DEFAULT_COLOR_CODES
-
-Ab Version 0.6.7 können die html und VT100 Colorcodes definiert werden. Default
-ist gelb für Warnungen und Rot für Fehler. Das erste Pärchen der Definition legt
-die Codes für Warnung das zweite Pärchen die Definition für Fehler fest. Dabei
-ist die erste Definition der HTML Colorocde und die zweite Definition der VT100
-Colorcode.
-
-| Config-Option              | Standard | Im Installer setzbar |
-|----------------------------|----------| :------------------: |
-| DEFAULT_COLOR_CODES        | ("#FF8000 33" "#FF0000 31")  | nein |
+| DEFAULT_MAIL_ON_ERROR_ONLY |          | nein |
 
 
 
@@ -207,6 +104,27 @@ Die Klänge entsprechen den verfügbaren Pushoverklängen.
 
 
 
+### DEFAULT_SEND_STATS
+
+Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBackup*
+Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_SEND_STATS         | ja       | nein |
+
+
+
+### DEFAULT_SENDER_EMAIL
+
+Die eMailAdresse des Versenders kann bei ssmtp und msmtp angegeben werden.
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_SENDER_EMAIL | root@$(hostname) | nein |
+
+
+
 ### DEFAULT_SLACK_*
 
 Ab Version 0.6.8 können Benachrichtigungen per Slack geschickt werden.
@@ -221,6 +139,88 @@ werden. Beispiel: "SF" oder "SM".
 |-----------------------------|----------| :------------------: |
 | DEFAULT_SLACK_WEBHOOK_URL   |          | nein |
 | DEFAULT_SLACK_NOTIFICATIONS |          | nein |
+
+
+### DEFAULT_RESTORE_EXTENSIONS
+
+Ab Version 0.6.7 gibt es auch für den Restore wie beim Backup die Möglichkeit,
+auch pre und post Exits zu konfigurieren, um vor und nach dem Restore noch
+irgendwelche Aktionen vorzunehmen. Die Syntax ist genauso wie für die Backup
+Extensions.
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_RESTORE_EXTENSIONS |          | nein |
+
+
+
+### DEFAULT_RESTORE_REMINDER_INTERVAL
+
+Backup Restore Test Reminder Intervall (Einheit: Monate)
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_RESTORE_REMINDER_INTERVAL | 6 | nein |
+
+
+
+### DEFAULT_RESTORE_REMINDER_REPEAT
+
+Anzahl der Erinnerungen, einen Backup Restore Test durchzuführen.
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_RESTORE_REMINDER_REPEAT | 3   | nein |
+
+
+
+### DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS
+
+Backupoptionen, die beim rsync Backup zusätzlich genutzt werden.
+
+**Benutzung auf eigene Gefahr!**
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS |          | nein |
+
+
+
+
+### DEFAULT_RSYNC_BACKUP_OPTIONS
+
+Backupoptionen, die beim rsync Backup genutzt werden.
+
+**Benutzung auf eigene Gefahr!**
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_RSYNC_BACKUP_OPTIONS | --delete -aHAx | nein |
+
+
+
+### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
+
+Backupoptionen, die beim tar Backup zusätzlich genutzt werden.
+
+**Benutzung auf eigene Gefahr!**
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS |          | nein |
+
+
+
+### DEFAULT_TAR_BACKUP_OPTIONS
+
+Backupoptionen, die beim tar Backup genutzt werden.
+
+**Benutzung auf eigene Gefahr!**
+
+| Config-Option              | Standard | Im Installer setzbar |
+|----------------------------|----------| :------------------: |
+| DEFAULT_TAR_BACKUP_OPTIONS | -cpi     | nein |
+
 
 
 [.status]: review-needed
