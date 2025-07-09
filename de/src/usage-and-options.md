@@ -113,7 +113,7 @@ Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
 
 {type} kann jeder Backuptyp sein, also dd, ddz, tar, tgz oder rsync
 
-Hinweis:Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
+Hinweis: Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
 
 | Option       | Standard| Im Installer setzbar | Konfigurationsname |
 |--------------|---------| :------------------: |--------------------|
@@ -642,7 +642,7 @@ Anzahl der Backups, die pro Backuptyp vorzuhalten sind, sofern es nicht durch
 folgende Option überschrieben wird. D.h., es werden 3 dd, 3 tar und 3 rsync
 Backups vorgehalten.
 
-Hinweis:Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
+Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
 |--------|---------| :------------------: |--------------------|
