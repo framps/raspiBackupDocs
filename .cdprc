@@ -257,6 +257,7 @@ if [[ -f .private-conf.sh ]] ; then
     source .private-conf.sh
 fi
 
+[[ $PATH =~ ^./bin: ]] || export PATH=./bin:$PATH
 
 cat <<EOF
 
