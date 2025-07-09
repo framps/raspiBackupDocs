@@ -31,6 +31,9 @@ check_files_are_synced() {
     # echo -e "\n*** Check via rsync ***\n"
     # rsync -Pauc --dry-run de/theme en/ | grep -v "sending incremental file list"
     # rsync -Pauc --dry-run en/theme de/ | grep -v "sending incremental file list"
+    #
+    echo -e "\n*** Check via tree ***\n"
+    pr -m -t <(tree --noreport de/theme) <(tree --noreport en/theme)
 }
 
 check_files_are_in_summary() {
