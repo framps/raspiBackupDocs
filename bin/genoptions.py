@@ -16,22 +16,24 @@ from pathlib import Path
 
 import yaml
 
-DATA_IN_FILENAME = "de/src/usage-and-options.yaml"
+DATA_IN_FILENAME = "data/options-de.yaml"
 
 with Path(DATA_IN_FILENAME).open("r", encoding="utf-8") as yamlfile:
     params = yaml.safe_load(yamlfile)
 
 for param in sorted(params):
     p = params[param]
+    in_inst = "konfigurierbar" if p["in_inst"] == "ja" else ""
+
     try:
         print(f'<a name="{p["anchor"]}"></a>')
         print(f'### {param}: {p.get("description", "")}')
         print()
         print("\n".join(p["text"]))
         print()
-        print("| Optionsname | Standard| Im Installer setzbar | Konfigurationsname |")
-        print("|-------------|---------| :------------------: |--------------------|")
-        print(f"| {param} | {p["default"]} | {p["in_inst"]} | {p["cfg_name"]} |")
+        print("| Optionsname | Standard | Im Installer | Konfigurationsname |")
+        print("|:-----------:|:--------:|:------------:|:------------------:|")
+        print(f"| {param} | {p["default"]} | {in_inst} | {p["cfg_name"]} |")
         print()
         print()
 
