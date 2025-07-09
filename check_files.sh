@@ -25,6 +25,8 @@ check_files_are_synced() {
     echo -e "*** Check file existence in de/src <-> en/src ***"
     echo -e "(Files only in de/src are listed in the left column, files only in en/src in the right one.)\n"
     sdiff --suppress-common-lines  <($FD --base-directory de/src) <($FD --base-directory en/src)
+    echo -e "\n*** Check file existence in de/theme <-> en/theme ***\n"
+    sdiff --suppress-common-lines  <($FD --base-directory de/theme) <($FD --base-directory en/theme)
 }
 
 check_files_are_in_summary() {
