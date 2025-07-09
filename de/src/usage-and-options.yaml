@@ -1,0 +1,711 @@
+--coloring:
+  anchor: parm_coloring
+  cfg_name: DEFAULT_COLORING
+  default: automatisch
+  description: Kolorierungseinstellungen bei eMails und Konsolmeldungen
+  in_inst: nein
+  text:
+  - Ab der Version 0.6.5 können die Meldungen in der eMail sowie auf der Konsole
+  - koloriert werden. Mögliche Werte sind `C` für Konsole und/oder `M` für eMail.
+  - Falls postfix als emailClient genutzt wird siehe auch Option --eMailColoring.
+--dynamicMount:
+  anchor: parm_dynamicMount
+  cfg_name: DEFAULT_DYNAMIC_MOUNT
+  default: aus
+  description: Dynamisches Mounten der Backuppartition
+  in_inst: nein
+  text:
+  - Ab Version 0.6.6 wird damit vor dem Backup die angegebene Partition bzw. der
+  - Mointpoint gemounted und am Ende wieder umounted. Falls sie schon gemounted ist
+  - wird am Ende die Partition nicht umounted. Der Mountpoint muss in /etc/fstab
+  - definiert sein und kann dann entweder der Mountpoint selbst sein (z.B. /backup)
+  - oder die Backuppartition (z.B. /dev/sdb1).
+--eMailColoring:
+  anchor: parm_eMailColoring
+  cfg_name: DEFAULT_EMAIL_COLORING
+  default: SUBJECT
+  description: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert
+  in_inst: nein
+  text:
+  - Standardmaessig wird das eMailColoring über die Subject Zeile gesteuert, da
+  - dieser Weg von den meisten eMail Clients genutzt wird. Wenn man aber postfix
+  - als eMail Client benutzt, muss man OPTION als Parameter mitgeben, da postfix das
+  - Coloring mit einer separaten Option steuert.
+--ignoreAdditionalPartitions:
+  anchor: parm_ignoreAdditionalPartitions
+  cfg_name: DEFAULT_IGNORE_ADDITIONAL_PARTITIONS
+  default: nein
+  description: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten
+    beiden Partitionen gesichert werden.
+  in_inst: nein
+  text:
+  - Mit dieser Option sind Systeme mit mehr als
+  - zwei Partitionen unterstützt im normalen Backupmodus wenn tar oder rsync Backup
+    genutzt
+  - wird. Allerdings werden nur die ersten beiden Paritionen, /boot und / gesichert
+  - 'und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.'
+--ignoreMissingPartitions:
+  anchor: parm_ignoreMissingPartitions
+  cfg_name: DEFAULT_IGNORE_MISSING_PARTITIONS
+  default: nein
+  in_inst: nein
+  text:
+  - Es wird im partitionsorientierten Backupmodus geprüft, ob alle Partitionen,
+  - die im letzten Backup
+  - gesichert wurden, auch wieder gesichert werden. Mit dieser Option wird der Test
+  - ausgeschaltet.
+--keep_{type}:
+  anchor: parm_keepType
+  cfg_name: DEFAULT_KEEPBACKUPS_{DD|DDZ|TAR|TGZ|RSYNC}
+  default: Parameter für Option -k
+  in_inst: nein
+  text:
+  - Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
+  - ''
+  - '{type} kann jeder Backuptyp sein, also dd, ddz, tar, tgz oder rsync'
+  - ''
+  - 'Hinweis: Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie
+    benutzt wird.'
+  - ''
+  - 'Technischer Hinweis: Dieser Parameter wird i.d.R. manuell nacheditiert, um die
+    einzelnen Optionen zeilenweise zu zeigen.'
+--notifyStart:
+  anchor: parm_notifyStart
+  cfg_name: DEFAULT_NOTIFY_START
+  default: nein
+  in_inst: nein
+  text:
+  - Mit dieser Option wird eingeschalten, dass eine
+  - eMail oder eine Telegram Benachrichtigung gesendet wird, wenn der Backup startet.
+  - Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
+--rebootSystem:
+  anchor: parm_rebootSystem
+  cfg_name: DEFAULT_REBOOT_SYSTEM
+  default: aus
+  in_inst: nein
+  text:
+  - Duch diese Option eine Reboot des Systems am Ende des
+  - Backuplaufes vorgenommen und somit werden alle Services wieder gestartet.
+  - Deshalb werden Argumente der Option -a auch ignoriert.
+  - ''
+  - '**Hinweis**: Wird die Option -F benutzt, wird kein reboot durchgeführt.'
+--resizeRootFS:
+  anchor: parm_resizeRootFS
+  cfg_name: DEFAULT_RESIZE_ROOTFS
+  default: an
+  in_inst: nein
+  text:
+  - Mit dieser Option wird definiert, ob beim Restore die letzte Partition
+  - verkleinert wird, um auf ein kleineres Device zu restoren oder vergrößert, um
+    den
+  - ganzen verfügbaren Platz des Devices zu nutzen. Ist das Device kleiner, muss es
+  - aber noch gross genug sein, um die ganzen Daten des Backups aunehmen zu können.
+  - Ansonsten bricht der Restore irgendwann ab.
+--smartRecycle:
+  anchor: parm_smartRecycle
+  cfg_name: DEFAULT_SMART_RECYCLE
+  default: aus
+  in_inst: ja
+  text:
+  - Diese Option schaltet die [intelligente Rotationsstrategie - Smart Recycle](smart-recycle.md)
+    ein.
+  - Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt
+    werden.
+--smartRecycleDryrun:
+  anchor: parm_smartRecycleDryrun
+  cfg_name: DEFAULT_SMART_RECYCLE_DRYRUN
+  default: ja
+  in_inst: nein
+  text:
+  - Diese Option schaltet den Testmodus der intelligenten
+  - Rotationsstrategie ein. Details dazu sind hier beschrieben.
+  - ''
+  - '[.todo] Check "Here muss gesetzt werden"'
+--smartRecycleOptions:
+  anchor: parm_smartRecycleOptions
+  cfg_name: DEFAULT_SMART_RECYCLE_OPTIONS
+  default: '"7 4 12 1"'
+  in_inst: ja
+  text:
+  - Diese Option definiert Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
+--systemstatus:
+  anchor: parm_systemstatus
+  cfg_name: ''
+  default: aus
+  in_inst: nein
+  text:
+  - Es wird eine Liste der aktiven Services und offenen Dateien
+  - in der Debugdatei erstellt
+--telegramChatID:
+  anchor: parm_telegram
+  cfg_name: DEFAULT_TELEGRAM_CHATID
+  default: null
+  description: Benachrichtigungen werden per Telegram verschickt
+  in_inst: nein
+  text:
+  - Benachrichtigungen können per Telegram verschickt werden.
+  - 'Dazu sind folgende Konfigurationen notwendig:'
+  - ''
+  - Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
+  - in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
+  - sind "S" für Erfolg (Success) und/oder "F" für den Fehlerfall (Failure). Mit
+  - '"M" werden die *raspiBackup* Meldungen als Datei geschickt.. Mit "m" werden die'
+  - '*raspiBackup* Meldungen mitgeschickt. Es können die Optionen beliebig kombiniert'
+  - 'werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht'
+  - zusammen angegeben werden.
+--telegramNotifications:
+  anchor: parm_telegram
+  cfg_name: DEFAULT_TELEGRAM_NOTIFICATIONS
+  default: F
+  description: Benachrichtigungen werden per Telegram verschickt
+  in_inst: nein
+  text:
+  - Benachrichtigungen können per Telegram verschickt werden.
+  - 'Dazu sind folgende Konfigurationen notwendig:'
+  - ''
+  - Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
+  - in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
+  - sind "S" für Erfolg (Success) und/oder "F" für den Fehlerfall (Failure). Mit
+  - '"M" werden die *raspiBackup* Meldungen als Datei geschickt.. Mit "m" werden die'
+  - '*raspiBackup* Meldungen mitgeschickt. Es können die Optionen beliebig kombiniert'
+  - 'werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht'
+  - zusammen angegeben werden.
+--telegramToken:
+  anchor: parm_telegram
+  cfg_name: DEFAULT_TELEGRAM_TOKEN
+  default: null
+  description: Benachrichtigungen werden per Telegram verschickt
+  in_inst: nein
+  text:
+  - Benachrichtigungen können per Telegram verschickt werden.
+  - 'Dazu sind folgende Konfigurationen notwendig:'
+  - ''
+  - Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
+  - in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
+  - sind "S" für Erfolg (Success) und/oder "F" für den Fehlerfall (Failure). Mit
+  - '"M" werden die *raspiBackup* Meldungen als Datei geschickt.. Mit "m" werden die'
+  - '*raspiBackup* Meldungen mitgeschickt. Es können die Optionen beliebig kombiniert'
+  - 'werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht'
+  - zusammen angegeben werden.
+--timestamps:
+  anchor: parm_timestamps
+  cfg_name: DEFAULT_TIMESTAMPS
+  default: aus
+  description: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben
+  in_inst: nein
+  text:
+  - Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
+--unsupportedEnvironment:
+  anchor: parm_unsupportedEnvironment
+  cfg_name: ''
+  default: aus
+  in_inst: nein
+  text:
+  - Wird *raspiBackup* auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md)
+  - gestartet muss diese Option angegeben werden.
+--version:
+  anchor: parm_version
+  cfg_name: ''
+  default: aus
+  in_inst: nein
+  text:
+  - 'Die Version von *raspiBackup* wird im folgenden Format ausgegeben:'
+  - ''
+  - '```'
+  - 'Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#'
+  - '```'
+-A:
+  anchor: parm_A
+  cfg_name: DEFAULT_APPEND_LOG
+  default: aus
+  description: Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt
+  in_inst: nein
+  text:
+  - Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt.
+-B:
+  anchor: parm_B
+  cfg_name: DEFAULT_TAR_BOOT_PARTITION_ENABLED
+  default: aus
+  description: Bootpartition wird als tar gesichert statt per dd
+  in_inst: nein
+  text:
+  - Die Bootpartition wird nicht per dd sondern per tar gesichert.
+  - ''
+  - 'Hinweis: Diese Option hat keine Funktion wenn der partitionsorientierte Modus'
+  - benutzt wird, also Option -P benutzt wird oder DEFAULT_PARTITIONBASED_BACKUP=1
+  - in der Konfiguration gesetzt ist.
+-D:
+  anchor: parm_D
+  cfg_name: DEFAULT_DD_PARMS
+  default: automatisch
+  description: Weitere Optionen für den dd Backup
+  in_inst: nein
+  text:
+  - Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
+-E:
+  anchor: parm_E
+  cfg_name: DEFAULT_EMAIL_PARMS
+  default: keine
+  description: Optionale Parameter für die eMailClientProgramme
+  in_inst: nein
+  text:
+  - Optionale weitere Parameter, die im eMailProgrammaufruf mitgegeben werden. Für
+  - 'sendEmail muss er z.B. wie folgt aussehen: "-f absender.mail@absenderdomain -s'
+  - smtp-server:587 -xu Username -xp Password".
+  - ''
+  - '**Achtung**: Die Parameter für -E müssen in Anführungszeichen " eingeschlossen'
+  - sein. Speziell zum Testen der eMail Benachrichtigungsfunktion ist der Parameter
+  - -F hilfreich.
+  - ''
+  - '**Achtung**: Wenn der Parameter -l 1 benutzt wird, steht das Password im Log
+    und'
+  - sollte vor Verschicken des Logs manuell maskiert werden.
+-F:
+  anchor: parm_F
+  cfg_name: null
+  default: null
+  description: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell
+    zu testen
+  in_inst: nein
+  text:
+  - Fake backup. Diese Option ist hilfreich beim initialen Testen von *raspiBackup*.
+  - Der eigentliche lange Backup wird dadurch nicht angestossen - aber sämtliche
+  - Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
+-G:
+  anchor: parm_G
+  cfg_name: DEFAULT_LANGUAGE
+  default: Systemsprache oder EN
+  description: Sprache der Meldungen (Deutsch oder English)
+  in_inst: ja
+  text:
+  - Festlegung der Sprache der Meldungen. Mögliche Sprachen sind DE (Deutsch) und
+  - EN (English). Interessenten, die die Meldungen in andere Sprachen übersetzen
+  - wollen können sich gerne melden
+-L:
+  anchor: parm_L
+  cfg_name: DEFAULT_LOG_OUTPUT
+  default: backup
+  description: Verzeichnis wo das Debuglog sowie die Laufzeitmeldungen gespeichert
+    werden
+  in_inst: nein
+  text:
+  - Definiert das Ziel der Logdatei `raspiBackup.log`.
+  - ''
+  - '- varlog: Die Logdatei wird in /var/log geschrieben'
+  - '- backup: Die Logdatei wird in das erzeugte Backup geschrieben'
+  - '- current: Die Logdatei wird in das aktuelle Verzeichnis geschrieben.'
+  - ''
+  - '<Dateinamenprefix>:  Das Debuglog wird dort mit der Extension `.log` und die'
+  - Messagedatei mit der Extension `.msg` abgelegt.
+  - ''
+  - 'Beispiel: `/home/pi/raspiBackup`'
+  - ''
+  - Am Ende existiert `/home/pi/raspiBackup.log` sowie `/home/pi/raspiBackup.msg`
+  - ''
+  - Im Backupverzeichnis werden keine Logs abgelegt.
+-M:
+  anchor: parm_M
+  cfg_name: ''
+  default: keiner
+  description: Erstellen eines *raspiBackup* Snapshots
+  in_inst: nein
+  text:
+  - Mit der Option wird ein *raspiBackup* Snapshot erstellt, welcher nicht im
+  - Backuprecycleprozess berücksichtigt wird und somit nicht gelöscht wird. Der
+  - Snapshot erhält am Ende des Verzeichnisnamens den angegebenen Text. Siehe auch
+  - '[diese Seite zu Snapshots](snapshots.md).'
+  - ''
+  - 'Beispiel: Der Hostname ist "idefix" und der Parameter für -M ist "Initial boot'
+  - 'from SD". Dann wird folgendes Verzeichnis angelegt:'
+  - ''
+  - '```'
+  - idefix/idefix-rsync-backup-20170103-170717_idefix-Initial_boot_from_SD
+  - '```'
+  - ''
+  - '**Hinweis**: *raspiBackup* Snapshots sind normale Backups und keine "richtigen"'
+  - Snapshots wie die bei LVM oder btrfs. Es werden aber beim rsync Backup Hardlinks
+  - genutzti um die Snapshotzeit zu reduzieren.
+  - ''
+  - '**Hinweis**: Da dieses Verzeichnis nicht im Backuprecycleprozess berücksichtigt
+    wird,'
+  - muss es bei Bedarf manuell gelöscht werden.
+-N:
+  anchor: parm_N
+  cfg_name: DEFAULT_EXTENSIONS
+  default: keine
+  description: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
+  in_inst: nein
+  text:
+  - Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
+  - die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
+  - Speicherbelegung vor und nach dem Backuplauf ausgeben.
+-P:
+  anchor: parm_P
+  cfg_name: DEFAULT_PARTITIONBASED_BACKUP
+  default: aus
+  description: Partitionsorientierter Backupmodus
+  in_inst: ja
+  text:
+  - Partitionsorientierter Modus. Damit wird im Gegensatz zum normalen Modus, wo nur
+  - die ersten beiden Partitionen gesichert werden, eine beliebige Anzahl von
+  - Partitionen gesichert. Mit der Option -T wird definiert, welche Partitionen zu
+  - sichern sind.
+-S:
+  anchor: parm_S
+  cfg_name: ''
+  default: aus
+  in_inst: nein
+  text:
+  - Ein Update mit der Option -U wird auch vorgenommen, wenn die Versionen
+  - übereinstimmen. Sie bewirkt, dass sowohl eine lokale Betaversion wie auch eine
+  - lokale normale Version mit dem aktuellsten Codestand ersetzt wird. Primär ist
+  - sie dafür gedacht, den Codestand einer existierenden lokalen Betaversion zu
+  - aktualisieren.
+-T:
+  anchor: parm_T
+  cfg_name: DEFAULT_PARTITIONS_TO_RESTORE
+  default: '"1 2"'
+  description: Angabe der Partitionen die beim partitionsorientierten Backup gesichert
+    werden sollen
+  in_inst: ja
+  text:
+  - Falls der partitionsorientierte Backupmodus mit der Option -P gewählt wurde,
+  - kann mit dieser Option definiert werden, welche Partitionen gesichert werden
+  - 'sollen. Beispiel: -T "1 2 5" sichert die ersten beiden und die fünfte'
+  - Partition. Mit * werden alle Partitionen gesichert.
+  - ''
+  - '**Historisch**:'
+  - '- Bis Release 0.6.5.1: [*]'
+  - '- Bis Release 0.7.0: DEFAULT_PARTITIONS_TO_BACKUP'
+  - ''
+  - '[.todo] Check "Check historisch"'
+-U:
+  anchor: parm_U
+  cfg_name: ''
+  default: aus
+  description: Update von *raspiBackup* mit der aktuellsten Version und Sicherung
+    der alten Version
+  in_inst: nein
+  text:
+  - Die lokale *raspiBackup* Version wird durch die letzte aktuelle Version ersetzt
+  - sofern eine neue Version existiert. Die vorherige Version wird als
+  - raspiBackup.sh.n.m gesichert wobei n und m die Versionsnumer von *raspiBackup*
+  - ist. Siehe Parameter -V, um eine vorhergehende Version wiederherzustellen.
+  - ''
+  - '**Achtung**: Vorher sollte man [diese Seite](version-history.md) lesen'
+  - und sich über die Änderungen und Neuerungen informieren.
+  - ''
+  - Zusätzlich gibt es noch die option -S, mit der Betaversionen auf den letzten
+  - Stand gebracht werden können.
+  - ''
+  - Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
+-V:
+  anchor: parm_V
+  cfg_name: null
+  default: null
+  description: Reaktivierung einer vorhergehenden *raspiBackup* Version
+  in_inst: nein
+  text:
+  - Es wird eine Liste aller existierenden Vorgängerversionen angezeigt und man
+  - kann die Version auswählen, die wiederhergestellt werden soll. Die aktuelle
+  - Version wird gesichert und kann dann auch mit dieser Option später
+  - wiederhergestellt werden (Siehe auch -U Parameter)
+-a:
+  anchor: parm_a
+  cfg_name: DEFAULT_STARTSERVICES
+  default: keine
+  description: Befehle, die Services nach dem Backup starten
+  in_inst: ja
+  text:
+  - Befehle, um Services nach dem Backup wieder zu starten. Z.B. bei Samba "service
+  - 'smbd start" (Achtung: Anführungszeichen an Anfang und Ende). Diese Option ist'
+  - zusammen mit der Option -o obligatorisch.
+  - ''
+  - Mehrere Befehle müssen durch && getrennt werden. Alternativ kann ein
+  - Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle
+    sollten die
+  - exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -o.
+  - ''
+  - '**Beispiel**:'
+  - ''
+  - '```'
+  - -a "service nfs-kernel-server start && service samba"
+  - '```'
+  - ''
+  - Soll wirklich **kein** Service gestartet werden, muss ein Doppelpunkt ":" als
+    Argument mitgegeben werden.
+  - ''
+  - Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
+  - ''
+  - '**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.'
+-b:
+  anchor: parm_b
+  cfg_name: DEFAULT_DD_BLOCKSIZE
+  default: 1 MB
+  description: Definition der Blocksize die beim dd Backup genutzt wird
+  in_inst: nein
+  text:
+  - Blocksize, die beim dd Backup benutzt wird
+-c:
+  anchor: parm_c
+  cfg_name: DEFAULT_SKIPLOCALCHECK
+  default: aus
+  in_inst: nein
+  text:
+  - Es kann kein Backup auf der Rootpartition erstellt werden, um vor
+  - unbeabsichtigtem Vollschreiben der Rootpartition durch das Backup zu schützen.
+  - ''
+  - Mit dieser Option wird der Test ausgeschaltet und es kann ein Backup auf der
+  - 'Rootpartition erstellt werden. **ACHTUNG**: Es wird nicht geprüft, ob das Backup'
+  - noch auf die Rootparition passt.
+-e:
+  anchor: parm_e
+  cfg_name: DEFAULT_EMAIL
+  default: keine
+  description: eMailAdresse an die die Benachrichtigung geschickt wird
+  in_inst: ja
+  text:
+  - email Addresse, die eine Status-email sowie die Meldungen des Backuplaufs
+  - zugesendet bekommt
+  - ''
+  - '**Achtung**: Die Benachrichtigungsemail wird vom root Nutzer gesendet.'
+  - D.h. der eMailClient auf dem System muss so konfiguriert werden, dass mit
+  - ''
+  - '```'
+  - echo "eMail-Text" | sudo mail -s "Betreff" "Empfänger eMail"
+  - '```'
+  - ''
+  - die eMail erfolgreich gesendet wird.
+  - ''
+  - Mit der Konfigurationsoption DEFAULT_SENDER_EMAIL kann die
+  - Standardsenderadresse  root@$(hostname) falls notwendig geändert werden.
+  - ''
+  - 'Hinweis: Die eMail Benachrichtigung funktioniert nur wenn ein MTA wie z.B.'
+  - nullmailer, msmtp, postfix oder exim4 entsprechend korrekt konfiguriert wurde.
+  - Siehe dazu FAQ47. Die eMailfunktion kann relativ einfach mit der Fakeoption -F
+  - getestet werden. Außerdem sind weitere Benachrichtigungsmöglichkeiten wie
+  - Pushover, Slack oder Telegram unterstützt.
+-f:
+  anchor: parm_f
+  cfg_name: null
+  default: null
+  description: Angabe einer Konfigurationsdatei
+  in_inst: nein
+  text:
+  - Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [oben](#configfiles).
+  - alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
+-g:
+  anchor: parm_g
+  cfg_name: null
+  default: null
+  description: Fortschrittsanzeige beim Restore
+  in_inst: nein
+  text:
+  - Mit dieser Option wird beim Backup und Restore eine Fortschrittsanzeige
+  - angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
+-h:
+  anchor: parm_h
+  cfg_name: null
+  default: null
+  in_inst: nein
+  text:
+  - Ausgabe der Aufrufsyntax mit seinen Parametern
+-k:
+  anchor: parm_k
+  cfg_name: DEFAULT_KEEPBACKUPS
+  default: '3'
+  description: Anzahl der Backups die vorgehalten werden sollen
+  in_inst: ja
+  text:
+  - Anzahl der Backups, die pro Backuptyp vorzuhalten sind, sofern es nicht durch
+  - folgende Option überschrieben wird. D.h., es werden 3 dd, 3 tar und 3 rsync
+  - Backups vorgehalten.
+  - ''
+  - 'Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie
+    benutzt wird.'
+-l:
+  anchor: parm_l
+  cfg_name: DEFAULT_LOG_LEVEL
+  default: 'on'
+  description: Einschalten des detailierten Loglevels
+  in_inst: nein
+  text:
+  - 'Log level definiert ob ein Debuglog erstellt wird:'
+  - ''
+  - '- off  -> Es wird kein Debuglog erstellt'
+  - '- debug -> Es wird ein Debuglog erstellt'
+  - ''
+  - '**Achtung**: Die Logausgabe kann sensitive Informationen'
+  - enthalten. raspiBackup maskiert Z.B. externe statische IP Adressen, eMailAdressen,
+    Kennwörter für
+  - mount Befehle oder email Server,u.V.M. Es  können aber immer noch sensitive Informationen
+  - im Debuglog enthalten sein die inoch manuell maskiert werden sollten.
+  - Das Debuglog wird immer im Backupverzeichnis abgelegt. Falls es Fehler gibt und
+    das Backupverzeichnis
+  - wieder gelöscht werden wird, wird das Log vorher in das Homeverzeichnis des
+  - Aufrufers gesichert.
+-m:
+  anchor: parm_m
+  cfg_name: DEFAULT_MSG_LEVEL
+  default: minimal
+  description: Meldungsdetails
+  in_inst: ja
+  text:
+  - Meldungsdetails
+  - ''
+  - '- minimal -> Nur wichtige Meldungen werden ausgegeben'
+  - '- detailed -> Viele Meldungen über den Fortschrit werden ausgegeben'
+-o:
+  anchor: parm_o
+  cfg_name: DEFAULT_STOPSERVICES
+  default: keine
+  description: Befehle, die Services vor dem Backup stoppen
+  in_inst: ja
+  text:
+  - Befehle, um Services vor dem Backup zu stoppen, damit kein inkonsistentes Backup
+  - 'erzeugt wird. Z.B. bei Samba "service smbd stop" (Achtung: Anführungszeichen
+    an'
+  - Anfang und Ende). Diese Option ist zusammen mit der Option -a obligatorisch.
+  - ''
+  - Mehrere Befehle müssen durch `&&` getrennt werden. Alternativ kann ein
+  - Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle
+    sollten die
+  - exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -a.
+  - ''
+  - 'Beispiel:'
+  - ''
+  - '```'
+  - -o "service samba stop && service nfs-kernel-server stop"
+  - '```'
+  - ''
+  - Soll wirklich **kein** Service gestoppt werden, muss der Doppelpunkt ":" als Argument
+    mitgegeben werden.
+  - ''
+  - Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
+  - ''
+  - '**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.'
+-s:
+  anchor: parm_s
+  cfg_name: DEFAULT_MAIL_PROGRAM
+  default: mail
+  description: eMailClientProgramm welches benutzt wird um die eMail zu verschicken
+  in_inst: nein
+  text:
+  - email Program, welches benutzt wird {mail|sendEmail|ssmtp|msmtp}. Für postfix
+  - und nullmailer muss mail benutzt werden und die mailtools installiert werden.
+  - Für sendEmail muss der Parameter -E zusätzlich genutzt werden für weitere
+  - obligatorische Parameter (Siehe [Parameter -E Beschreibung](#parm_E) für Details).
+  - ''
+  - Es kann auch ein eMailPlugin benutzt werden, um eMails zu verschicken. Damit
+  - können beliebige weitere eMailClients in *raspiBackup* eingebunden werden. Der
+    -s
+  - Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](hooks-for-own-scripts.md).
+-t:
+  anchor: parm_t
+  cfg_name: DEFAULT_BACKUPTYPE
+  default: rsync
+  description: Typ des Backups (dd, tar, rsync)
+  in_inst: ja
+  text:
+  - Typ des Backups, der entweder dd, tar oder rsync sein kann. rsync benutzt bei
+  - einer ext3/ext4 Partition Hardlinks, um den benötigten Speicherplatz zu
+  - minimieren.
+  - ''
+  - '[Detailinformationen zu den Backuptypen](#TODO#vornach) Ein externes Rootfilesystem
+    wird'
+  - automatisch bei tar oder rsync Backup mitgesichert sofern nicht die Option -P
+  - benutzt wird. Mit der Option -z werden die dd und tar Backups zusätzlich noch
+    gezippt bzw
+  - verkleinert.
+  - ''
+  - '**Hinweis**: Beim dd Backup kann durch den Konfigurationsparameter'
+  - DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY Backup-zeit und -platz gespart
+  - werden. Details zu dem Parameter siehe am Ende der Tabelle.
+  - ''
+  - Siehe dazu auch [FAQ16](faq.md#faq16).
+-u:
+  anchor: parm_u
+  cfg_name: DEFAULT_EXCLUDE_LIST
+  default: keine
+  description: Ermöglicht weitere Verzeichnisse aus dem Backuprozess auszuschliessen
+  in_inst: nein
+  text:
+  - Erweiterung der Excludeliste beim Backup um bestimmte Verzeichnisse beim Backup
+  - zu ignorieren.
+  - ''
+  - '**Achtung**: Die Parameter müssen der jeweiligen Syntax des Backuptools'
+  - gehorchen und führen sonst zum Abbruch des Backups. Für rsync oder tar könnte
+  - 'die Liste wie folgt aussehen:'
+  - ''
+  - '```'
+  - '"--exclude=/backup/* --exclude=/rsnapshot/* --exclude=/www-data*/* --exclude=/home/pi/.local/share/Trash"'
+  - '```'
+  - ''
+  - Die Anfuehrungszeichen sind wichtig! Weitere Informationen zu der Syntax finden
+  - sich auf der man Page der jeweiligen Backuptools.
+  - ''
+  - 'Folgende Verzeichnisse werden niemals gesichert:'
+  - ''
+  - '- Der Backupfad, der im Aufruf angegeben wurde'
+  - '- /proc/*'
+  - '- /lost+found/*'
+  - '- /sys/*'
+  - '- /dev/*'
+  - '- /tmp/*'
+  - '- /boot/*'
+  - '- /run/*'
+  - '- /proc/*'
+  - '- /lost+found/*'
+  - '- /sys/*'
+  - '- /dev/*'
+  - '- /tmp/*'
+  - '- /boot/*'
+  - '- /run/*'
+  - ''
+  - Ausserdem werden alle gemounteten Verzeichnisse von externen Geräten, die nicht
+  - auf / gemounted sind, nicht gesichert. Es wird nur die Boot Partition
+  - /dev/mmcblk0p1 und die Root Partition /dev/mmcblk0p2 bzw. das ausgelagerte
+  - Rootverzeichnis auf z.B. /dev/sda1 gesichert.
+  - ''
+  - '**Hinweis für den partitionsorientierten Mode**:'
+  - Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verzeichnisse
+    ausgenommen.
+  - ''
+  - '**rsync**:'
+  - ''
+  - '- */verzeichnis/* - Excluded verzeichnis auf allen Partitionen'
+  - '- mmcblk0p2/verzeichnis/* - Excluded verzeichnis auf Partition mmcblk0p2'
+  - ''
+  - '**tar**:'
+  - ''
+  - '- verzeichnis/* - Excluded Verzeichnis auf allen Partitionen'
+-v:
+  anchor: parm_v
+  cfg_name: DEFAULT_VERBOSE
+  default: aus
+  description: Alle Meldungen des verwendeten Backuptools werden protokolliert
+  in_inst: nein
+  text:
+  - Die verwendeten Backuptools tar und rsync zeigen detailierte Informationen an
+  - (Verbose mode). Die Option ist besonders nützliche bei initialen manuellen
+  - Backuptests, um den Backupfortschritt verfolgen zu können.
+-y:
+  anchor: parm_y
+  cfg_name: DEFAULT_DEPLOYMENT_HOSTS
+  default: null
+  description: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale
+    Hosts per scp
+  in_inst: nein
+  text:
+  - Mit dieser Option wird das aktuelle Script auf alle Hosts kopiert, die in der
+  - Konfigurationsdatei definiert sind. Der Zugriff muss per authorized_keys ohne
+  - Kennwort möglich sein. Somit lässt sich *raspiBackup* schnell auf einer größeren
+  - Menge von Hosts nach einem Versionsupdate verteilen.
+-z:
+  anchor: parm_z
+  cfg_name: DEFAULT_ZIP_BACKUP
+  default: aus
+  description: Kompression des Backups bei dd oder tar
+  in_inst: ja
+  text:
+  - Backup verkleinern mit gzip bei dd oder tar Backup
