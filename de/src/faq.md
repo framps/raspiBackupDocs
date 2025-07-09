@@ -1,7 +1,5 @@
 # Häufige Fragen (FAQ)
 
-Häufige Fragen zu *raspiBackup*. Jeder neue Benutzer von *raspiBackup* sollte sich einmal alle Fragen und Antworten durchlesen.
-
 <!-- toc -->
 
 
@@ -26,54 +24,59 @@ auch anderen Raspberryfreunden hilfreich sein könnte und publizierte
 <a name="faq1"></a>
 ### 1) Ist ein Backup eines laufenden Systems zuverlässig? Sollte nicht das gesamte System vor dem Backup gestoppt werden?
 
-Die sicherste Methode ist natürlich das System vollständig zu stoppen. Das
-kann man aber leider nicht regelmäßig und automatisch von cron gesteuert
-vornehmen. Wenn man alle aktiven Services wie mysql, samba, nfs, seafile,
+Die sicherste Methode ist natürlich das System vollständig zu stoppen.
+Bei einem Backup wird nur gesichert was sich auf dem Speichermedium
+und nicht was sich noch im Hauptspeicher befindet.
+
+Ein Systemstop ist leider nicht regelmäßig und automatisch
+vornehmbar. Wenn man alle aktiven Services wie mysql, samba, nfs,
 Owncloud, Webserver und alle anderen aktiven Services immer vor dem Backup
 stoppt um keine Dateninkonsistenzen zu erzeugen kann das Backup zum
 Wiederherstellen der Raspi genutzt werden. Stoppt man die Servies nicht
 besteht eine hohe Wahrscheinlichkeit dass das Backup inkonsistent werden
 wird. Dazu gibt es die Parameter -a und -o um die entsprechenden Stop- und
 Startbefehle vor bzw nach dem Backup auszuführen. Siehe auch [FAQ18](#faq18) dazu.
-Alternativ kann ein Beispielwrapperscript erweitert werden (Siehe hier TODO: Wo?).
 
+Mit dem Installer können Systemd Services ausgewählt werden, die gestoppt
+und nach dem Backup wieder gestartet werden sollen und die Parameter für
+Option -a und Option -o werden entsprechend gesetzt.
 
 <a name="faq2"></a>
-### 2)   Wie kann ich ein Backup wiederherstellen?
+### 2) Wie kann ich ein Backup wiederherstellen?
 
-Mit *raspiBackup* kann jedes Backup wieder zurückgespielt werden (Siehe hier
-die Details). Es wird aber ein Linux benötigt. Als Windowsbenutzer kann man
-win32diskimager benutzen um dd Backups wiederherzustellen. Für andere
-Backuptypen wie tar oder rsync ist ein Linux notwendig.
+*raspiBackup* kann jedes Backup wieder zurück gespielt werden. (Siehe dazu
+[hier](restore.md) die Details). Als Windowsbenutzer kann man
+entsprechende Windowstools nutzen um dd Backups wiederherzustellen. Für andere
+Backuptypen wie tar oder rsync ist ein Linux notwendig. Generell wird
 
 Allerdings kann man dazu die Raspberry benutzen: Man bespielt eine neue SD
-Karte mit Raspbian und kopiert darauf *raspiBackup*. Dann schließt man einen
-externen SD Kartenleser, in die man eine SD Karte, die den Restore erhalten
-soll, einschiebt - sowie das Medium mit dem Backup an die Raspberry an.
-Danach ruft man *raspiBackup* auf und läßt ein gewünschtes Backup auf die
-externe SD Karte zurückschreiben. Anschliessend fährt man das System runter,
-legt die SD Karte mit dem zurückgespielten Backup ein und startet die
+Karte mit RaspbianOS und kopiert darauf *raspiBackup*. Dann schließt man
+das Gerät auf welches das Backup zurückgespielt werden soll
+sowie das Medium mit dem Backup an die Raspberry an.
+Danach ruft man *raspiBackup* auf und läßt ein gewünschtes Backup auf das
+Gerät zurückschreiben. Anschliessend fährt man das System runter,
+legt idas Gerät mit dem zurückgespielten Backup ein und startet die
 Raspberry wieder.
 
 
 <a name="faq3"></a>
 ### 3)   Was kann *raspiBackup* alles sichern und wiederherstellen?
 
-Im normalen Modus kann *raspiBackup* entweder zwei Partitionen sichern mit tar
-oder rsync: Die Boot und die Rootpartition die auf der SD Karte liegen. Wenn
+Im normalen Modus sichert *raspiBackup* mit tar oder rsync zwei Partitionen:
+Die Boot und die Rootpartition die auf dem System. Wenn
 die Rootpartition auf ein externes Medium verlagert wurde wird auch die
 externe Rootpartition gesichert. Mit dem dd Backup wird die gesamte SD Karte
-gesichert. Dann wird aber keine externe root Partition mitgesichert.
+gesichert. Dann kann aber keine externe root Partition mitgesichert werden.
 
-Im partitionsorientierten Modus werden beliebig viele Partitionen der SD
-Karte gesichert. Weitere externe Partitionen werden aber nicht gesichert.
-
+Im partitionsorientierten Modus werden beliebig viele Partitionen des
+Systems gesichert. Weitere externe Partitionen werden aber nicht gesichert.
 
 <a name="faq4"></a>
 ### 4)   Welche Linux Sicherungsmethoden stehen zur Verfügung?
 
 Es steht der dd Backup sowie der tar und rsync Backup zur Verfügung. dd und
-tar Backups können noch mit zip komprimiert werden. Auf dieser Seite können
+tar Backups können noch mit zip komprimiert werden. Aufi
+[dieser Seite](backuptypes.md) können
 die Vor- und Nachteile der jeweiligen Backupmethoden nachgelesen werden.
 
 
@@ -85,7 +88,7 @@ sein das Backup mit entprechenden Linuxkenntnissen zu Fuss restoren zu
 können.
 
 Die Sicherung legt Dateien an, die die lesbaren Ausgaben von den Linux
-Befehlen sfdisk, blkid und fdisk von der SD Karte enhält. Damit läßt sich
+Befehlen sfdisk, blkid und fdisk von dem System enhält. Damit läßt sich
 zuerst die Partitionsstruktur des Backups mit den entsprechenden Linuxtools
 wiederherstellen. Danach kann man die Partitionsbackups mit den
 entsprechenden Linuxtools wieder auf die Partitionen zurückspielen.
@@ -94,22 +97,24 @@ entsprechenden Linuxtools wieder auf die Partitionen zurückspielen.
 <a name="faq6"></a>
 ### 6)   Kann man die Sicherungen mit *raspiBackup* auch auf kleiner und größere SD Karten wiederherstellen?
 
-Beim dd Backuptyp muss man nach den Restore auf eine größere SD Karte mit
+Beim dd Backuptyp muss man nach den Restore auf ein größeres Gerät mit
 Linux Repartitionierungstools nach der Wiederherstellung die Paritionsgröße
 anpassen wenn man für die zweite Parition sämtlichen Platz nutzen will. Ein
-dd Restore auf eine kleiner SD Kart geht nicht.
+dd Restore auf einkleineries Gerät geht nicht.
 
-Ohne Probleme funktioniert es bei einer kleineren oder größeren SD karte
-sofern tar oder rsync Backup und der normale Backupmodus benutzt wird. Es
-wird automatisch die Größe der root Partition entsprechend angepasst, d.h.
-entsprechend verkleinert oder vergrößert. Bei einer Vergrößerung wird die
-gesamte SD Karte benutzt. Wird von der Backup SD Karte mehr Platz benutzt
-als die Restore SD Karte hat gibt es natürlich Fehler beim Restore.
-Beispiel: Backup SD Karte ist 32GB gross und 24GB werden benutzt. Die
-Restore SD Karte ist nur 16GB gross.
+Ohne Probleme funktioniert es bei einem kleineren oder größeren Gerät
+sofern tar oder rsync Backup. Beim normalen Backupmodus wird
+automatisch die Größe der root Partition entsprechend angepasst, d.h.
+entsprechend verkleinert oder vergrößert. Bei einer Vergrößerung wird
+ider gesamte zur Verfügung stehende Platz benutzt.i
+Wird von deim Backup des Systems mehr Platz benutzt
+als das Restore  Gerät hat gibt es natürlich Fehler beim Restore.
+Beim partitionsorientierten Backupmodus wird die letzte Partition
+entsprechend angepasst.
 
-Mit der Option -0 (Null) wird keine Partitionierung der neuen SD Karte
-vorgenommen sondern die existierende Partitionierung der SD Karte genutzt.
+Mit der Option -0 (Null) wird keine Partitionierung des neuen Gerätes
+vorgenommen sondern die existierende Partitionierung ides gesicherten
+Systems genutzt.
 Man hat damit vollständige Kontrolle über die Größe der Wiederhergestellten
 Partitionen. D.h. man kann dadurch vor dem Restore genau festlegen, wie
 gross die Partitionen auf der neuen SD Karte sein sollen und somit auch auf
@@ -118,8 +123,8 @@ kleiner SD Karten restoren. Das geht auch für partitionsorientierte Backups.
 Ein dd Backup kann nicht auf eine kleiner Karte restored werden. Vorher muss
 es verkleinert werden. Das geht z.B. so. Oder man benutzt [pishrink](https://github.com/Drewsif/PiShrink).
 
-Einen partitionsorientierten Backup kann man auf kleinere SD Karten restoren
-indem man die SD Karte mit ihren Partitionen vorformatiert und dann mit der
+Einen partitionsorientierten Backup kann man auf kleinere Geräte restoren
+indem man es mit ihren gewünschten Partitionen vorformatiert und dann mit der
 Option -0 das Backup wiederherstellt.
 
 
@@ -143,8 +148,7 @@ Generell auf jedem Device, welches unter Linux gemounted werden kann
 
   - Externer USB Stick
   - Externe USB Platte
-  - Synology
-  - cifs/samba Netzwerklaufwerk
+  - smb Netzwerklaufwerk
   - nfs Netzwerklaufwerk
   - sshfs Netzwerklaufwerk
   - webdav Netzwerklaufwerk
@@ -155,7 +159,8 @@ Generell auf jedem Device, welches unter Linux gemounted werden kann
 
 Da gibt es verschiedene Möglichkeiten:
 
-  - Ein Wrapperscript (Siehe hier TODO: Wo?) wird benutzt und nimmt vor und nach dem
+  - Ein [Wrapperscript](https://raw.githubusercontent.com/framps/raspiBackup/refs/heads/master/helper/raspiBackupWrapper.sh)
+    wird benutzt und nimmt vor und nach dem
     Backuplauf weitere Aktionen vor wie z.B. weitere Dinge zu sichern.
 
   - Beliebige Erweiterungspunkte (Extensions) können vor und nach dem Backup
@@ -199,20 +204,9 @@ Es gibt verschiedene Optionen:
   *raspiBackup* gestellt und Probleme berichtet werden können. *framp* wird über
   alle neuen Threads informiert und kann sich dem Thread widmen.
 
-- Am Ende jeder Webseite können Kommentare erstellt werden. Diese sind ideal
-  um Fragen zu stellen aber für Problemberichte ungeeignet. Um Spam zu
-  vermeiden werden die Kommentare manuell kontrolliert und deshalb dauert es
-  i.d.R. einen Tag bis der Kommentar veröffentlicht und beantwortet wird.
-  Leider gibt es wegen der DSGVO keine automatische Benachrichtigung mehr
-  wenn es eine Antwort gegeben hat. Deshalb muss man nach einer gewissen
-  Zeit nachsehen ob und was jemand geantwortet hat.
-
-- Auf [Facebook](https://www.facebook.com/raspiBackup/) können Fragen erstellt werden. Keine Problemberichte. Eine
-  Registrierung ist dafür notwendig.
-
 Siehe auch diese [Hinweise](introduction.md#kontaktm%C3%B6glichkeiten)
 
-Hinweis: Jegliche andere Kontaktwege werden ignoriert.
+**Hinweis:** Jegliche andere Kontaktwege werden ignoriert.
 
 
 <a name="faq13"></a>
@@ -266,7 +260,7 @@ Stick, eine lokale USB Platte oder auch eine per nfs gemountete Partition,
 die mit ext3/ext4 formatiert ist, benutzt wird. Samba sowie sshfs
 unterstützt keine Hardlinks.
 
-Hinweis: Der Windows Explorer ignoriert Hardlinks und zeigt deshalb eine
+**Hinweis:** Der Windows Explorer ignoriert Hardlinks und zeigt deshalb eine
 falsche effektive Belegung an. Es muss deshalb ein Linuxsystem genutzt
 werden um die Belegung zu prüfen. Die Raspberry bietet sich dafür an.
 
@@ -382,7 +376,7 @@ werden kann. Allerdings gibt es ein paar Dinge zu beachten:
 
 - Ein rsync Backup benutzt Hardlinks welche von ext3/4 unterstützt werden.
   Dann werden nur geänderte Dateien gesichert und gleiche Dateien per
-  Hardlinks verknüpft. Ein ext4 Filesystem was über Samba freigegeben wird
+  Hardlinks verknüpft. Ein ext4 Filesystem was über smb freigegeben wird
   unterstützt keine Hardlinks. Eine Alternative ist NFS. Werden keine
   Hardlinks unterstützt kann rsync nicht genutzt werden.
 
@@ -393,15 +387,9 @@ werden kann. Allerdings gibt es ein paar Dinge zu beachten:
   schnell größer als 4GB wird. Eine Alternative dazu ist NTFS.
 
 Allgemeine Empfehlung: Benutze wenn möglich ext3/4. Auf Linux benutze NFS
-für Netzwerklaufwerke. Auf Windows benutze NTFS auf exportierten samba
+für Netzwerklaufwerke. Auf Windows benutze NTFS auf exportierten smb
 Netzwerklaufwerken. Benutze FAT32 nur wenn sichergestellt ist, dass die
 Backups nicht größer werden als 4GB.
-
-WARNUNG: Wenn rsync benutzt werden soll darf kein NTFS genutzt werden! Das
-Backup scheint OK zu sein - ist es aber NICHT ! Die Linux Dateiownership
-kann nicht korrekt im NTFS Filesystem abgelegt werden. Siehe auch hier für
-zu benutzende Dateisysteme. Benutze stattdessen tar oder erstelle ein
-ext2/3/4 Dateisystem auf der Backuppartition.
 
 
 <a name="faq20"></a>
@@ -545,7 +533,7 @@ Lösung:
 <a name="faq27"></a>
 ### 27) Ich habe ein tar oder rsync Backup und möchte das in ein dd Backup umwandeln. Geht das?
 
-Es gibt ein Script [raspiBackupRestore2Image.sh](https://github.com/framps/raspiBackup).
+Es gibt ein Script [raspiBackupRestore2Image.sh](https://raw.githubusercontent.com/framps/raspiBackup/refs/heads/master/helper/raspiBackupRestore2Image.sh).
 Damit kann man im Backupverzeichnis ein dd aus einem tar
 oder rsync Backup erzeugen.
 
@@ -631,14 +619,19 @@ Folgende Optionen existieren, um das Problem zu beseitigen:
 U.U. muss noch die Option -r zugefügt werden, damit auch alle
 Unterverzeichnisse überwacht werden.
 
+  - Nutze die Configurationsoptionen `RSYNC_IGNORE_ERRORS` bzw
+    `TAR_IGNORE_ERRORS` um den Fehler zu irgnorieren. Details dazu stehen
+    [hier](#faq59)
 
 <a name="faq33"></a>
-### 33) Ich habe einen Cubieboard, Banana Pi, Odroid, Hummingboard, oder Beagle Board. Kann nraspiBackup diese auch sichern?
+### 33) Ich habe einen Cubieboard, Banana Pi, Odroid, Hummingboard, oder Beagle Board. Kann raspiBackup diese auch sichern?
 
 Prinzipiell sollte das gehen bzw. geht es schon für bestimmte nicht
 Raspberry Hardware. Einfach ausprobieren. *raspiBackup* wird aber [nur für
 RaspbianOS und Raspberry HW](supported-hardware-and-software.md) unterstützt. D.h. wenn es funktioniert, sei
-glücklich. Wenn es nicht funktioniert, frage aber nicht nach Support. :-)
+glücklich. Wenn es nicht funktioniert, frage aber nicht nach Support. :-) 
+
+Beim Aufruf muss dann noch die Option `--unsupportedEnvironment` mitgegeben werden.
 
 
 <a name="faq34"></a>
@@ -667,7 +660,6 @@ Option -R nutzen.
   - 101 - Ein Programmfehler wurde festgestellt
   - 102 - Ein Linux Befehl liefert einen Fehler
   - 103 - *raspiBackup* wurde mit CTRLC beendet.
-  - 104 - Eine Erweiterung hat einen Fehler gemeldet
   - 105 - Beim Stoppen von Services gab es Fehler
   - 106 - Beim Starten von Services gab es Fehler
   - 107 - Ein Parameter in einer Option ist fehlerhalft
@@ -685,7 +677,26 @@ Option -R nutzen.
   - 119 - Ein Verzeichnis kann nicht angelegt werden
   - 120 - Linux Tools fehlen die von *raspiBackup* benötigt werden
   - 121 - Es konnte keine gültige Bootpartition gefunden werden
+  - 122 - Die Extension BEFOR_START_SERVICES endete fehlerhaft
+  - 123 - Die Extension BEFORE_STOP_SERVICES endete fehlerhaft
+  - 124 - Die Emailextension endete fehlerhaft
+  - 130 - A file operation failed (chmod, mv, ...)
+  - 131 - A mount failed
+  - 132 - The environment (HW/SW) is unsupported
+  - 133 - Die RESTORE_EXTENSION endet fehlerhaft
+  - 134 - Die BACKUP_EXTENSIONa endet Fehlerhaft
+  - 135 - Ein Download einer Datei endet fehlerhaft
+  - 136 - Ein ungültiges inicht von *raspiBackup* erstelltes Backupverzeichnis wurde angegeben
+  - 137 - Ein ungültiges Restoregerät wurde angegeben 
+  - 138 - Ein ungültiges Bootgerät wurde angegeben
+  - 138 - USBMOUNT detected
+  - 140 - An error occured during cleanup
+  - 143 - Overlayfilesystem entdeckt
+  - 144 - Erstellung des Backupordners auf der Backuppartition am Ende des Backup endet fehlerhaft
+  - 145 - Resize einer Partition endet fehlerhaft 
+  - 147 - UUID Update endet fehlerhaft
 
+[.todo] TBD "Review to be continued"
 
 <a name="faq37"></a>
 ### 37) Der eMail Betreff hat manchmal am Anfang einen Smiley. Was bedeutet er?
