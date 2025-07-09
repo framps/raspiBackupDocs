@@ -53,6 +53,8 @@ That allows for some tricks:
 
 - [Details zum Aufruf und zur Konfiguration](details.md)
     - [Usage and options](usage-and-options.md)
+        - [Options grouped by topic (Selection)](options-by-topic.md)
+        - [More Configuration options](config-options-only.md)
     - [Backup types and decision tree](backuptypes.md)
     - [Comparing partition orientated and normal backup](normal-or-partition-backup.md)
     - [Backup directory structure](backup-directory-structure.md)
@@ -107,6 +109,7 @@ That allows for some tricks:
     - [Development environment](development-environment.md)
     - [Users all over the world](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version of this documentation](doc-version-info-automatically-generated.md)
+    - [Markdown Playground](markdown-playground.md)
 
 
 - [English-only pages -- translation/integration required]()
