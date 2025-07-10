@@ -185,7 +185,7 @@ Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt 
 Diese Option schaltet den Testmodus der intelligenten
 Rotationsstrategie ein. Details dazu sind hier beschrieben.
 
-[.status] todo "'hier' Link noch fixen"
+[.status]: todo "'hier' Link noch fixen"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -483,7 +483,7 @@ Partition. Mit * werden alle Partitionen gesichert.
 - Bis Release 0.6.5.1: [*]
 - Bis Release 0.7.0: DEFAULT_PARTITIONS_TO_BACKUP
 
-[.status] todo "Check 'historisch'"
+[.status]: todo "Check 'historisch'"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
