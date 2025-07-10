@@ -147,6 +147,27 @@ Hier **eine** Spalte (Installer) zentriert:
 | DEFAULT_SEND_STATS         | ja       |
 
 
+#### formatiert per CSS und ohne Alignment-":" im Quelltext
+
+100% Breite, linksbündige Header und Daten und Normal-Font im Header
+
+<div class="table-wrapper-for-options">
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| --keep_dd    | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DD |
+| --keep_ddz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DDZ |
+| --keep_rsync | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_RSYNC |
+| --keep_tar   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TAR |
+| --keep_tgz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TGZ |
+
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_SEND_STATS         | ja       |
+
+</div>
+
 
 ## Fenced Codeblocks per Triple-Backticks
 
