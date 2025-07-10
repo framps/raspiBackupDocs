@@ -77,11 +77,6 @@ Hier **eine** Spalte (Installer) zentriert:
 
 ### Tests bzgl. Ausrichtung
 
-Hinweis: Diese Tabellen sind zusätzlich speziell formatiert für die Options-Tabellen
-(Breite 100%, nicht-fetter Header und deaktivierter Wortumbruch).
-
-<div class="table-wrapper-for-options">
-
 
 #### Normal (Header zentriert, Spalten linksbündig):
 
@@ -91,7 +86,6 @@ Hinweis: Diese Tabellen sind zusätzlich speziell formatiert für die Options-Ta
 
 #### Alles zentriert:
 
-<div class="table-wrapper-for-options">
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |:-----------:|:--------:|:------------:|:------------------:|
@@ -99,7 +93,6 @@ Hinweis: Diese Tabellen sind zusätzlich speziell formatiert für die Options-Ta
 
 #### Alles linksbündig, inkl. Header:
 
-<div class="table-wrapper-for-options">
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |:------------|:---------|:-------------|:--------------------
@@ -153,7 +146,6 @@ Hinweis: Diese Tabellen sind zusätzlich speziell formatiert für die Options-Ta
 |:---------------------------|:---------|
 | DEFAULT_SEND_STATS         | ja       |
 
-</div>
 
 
 ## Fenced Codeblocks per Triple-Backticks
