@@ -78,7 +78,7 @@ Hier **eine** Spalte (Installer) zentriert:
 ### Tests bzgl. Ausrichtung
 
 Hinweis: Diese Tabellen sind zusätzlich speziell formatiert für die Options-Tabellen
-(nicht-fetter Header und deaktivierter Wortumbruch).
+(Breite 100%, nicht-fetter Header und deaktivierter Wortumbruch).
 
 <div class="table-wrapper-for-options">
 
