@@ -32,7 +32,7 @@ for param in sorted(params):
         print("\n".join(p["text"]))
         print()
         print("| Optionsname | Standard | Im Installer | Konfigurationsname |")
-        print("|:-----------:|:--------:|:------------:|:------------------:|")
+        print("|-------------|----------|--------------|--------------------|")
         print(f"| {param} | {p["default"]} | {in_inst} | {p["cfg_name"]} |")
         print()
         print()
