@@ -32,8 +32,8 @@ check_files_are_synced() {
     # rsync -Pauc --dry-run de/theme en/ | grep -v "sending incremental file list"
     # rsync -Pauc --dry-run en/theme de/ | grep -v "sending incremental file list"
     #
-    echo -e "\n*** Check via tree ***\n"
-    pr -m -t <(tree --noreport de/theme) <(tree --noreport en/theme)
+    # echo -e "\n*** Check via tree ***\n"
+    # pr -m -t <(tree --noreport de/theme) <(tree --noreport en/theme)
 }
 
 check_files_are_in_summary() {
@@ -48,7 +48,28 @@ check_files_are_in_summary() {
     popd > /dev/null || exit
 }
 
+check_tags() {
+    echo -e "\n*** Check if there are invalid tags (missing colon after ']') ***\n"
+    rg "^\s*\[\..*?\][^:]" de/src/ en/src | cat
+
+    echo -e "\n*** Check if there are yet unknown/unexpected tags ***\n"
+    rg "\[\..*?\]:" de/src/ en/src | grep -v -e "\[\.source" -e "\[\.status" -e "\[\.de" -e "\[\.workaround"
+
+    echo -e "\n*** Check for *Link References* (not to be confused with tags! ;-) ***\n"
+    rg "^\s*\[[^\.].*?\][^(]" de/src/ en/src | cat
+}
+
+
 check_files_are_synced
+
 echo -e "\n*** Check if files from <lang>/src are in <lang>/src/SUMMARY.md ***\n"
 check_files_are_in_summary de
 check_files_are_in_summary en
+
+check_tags
+
+echo ""
+
+# Make make happy, always...
+exit 0
+
