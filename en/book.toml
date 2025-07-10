@@ -21,7 +21,7 @@ max-level = 3
 [output]
 
 [output.html]
-additional-css = ["mdbook-admonish.css", "language-picker.css"]
+additional-css = ["mdbook-admonish.css", "language-picker.css", "raspiBackupDoc.css"]
 site-url = "/raspiBackupDoc/"
 no-section-label = false
 git-repository-url = "https://github.com/framps/raspiBackupDoc"

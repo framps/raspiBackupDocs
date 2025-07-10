@@ -1,0 +1,12 @@
+/* Adaptions for raspiBackupDoc */
+
+/* settings for small tables in options list */
+.table-wrapper-for-options {
+    table {
+      width: 100%;
+      word-break: keep-all;
+    }
+    th {
+      font-weight: normal;
+    }
+}
