@@ -42,6 +42,9 @@ main {
       width: 100%;
       word-break: keep-all;
     }
+    th {
+      font-weight: normal;
+    }
 }
 
 /* Don't change font size in headers. */
