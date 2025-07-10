@@ -35,6 +35,8 @@ Codeblock mit Einrückung um 8 Leerzeichen:
 
 ## Tabellen
 
+### Tests bzgl. Wortumbruch
+
 Verschiedene Längen des "Option" Titels mit Leerzeichen ändert nichts:
 
 | Option | Standard| Im Installer setzbar | Konfigurationsname |
@@ -49,13 +51,13 @@ Verschiedene Längen des "Option" Titels mit Leerzeichen ändert nichts:
 |-------------------------|---------|----------------------|--------------------|
 | --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
 
-Erst das Verlängern des Tites selber hilft:
+Erst das Verlängern des Titels selber hilft:
 
 | Option zum Testen       | Standard| Im Installer setzbar | Konfigurationsname |
 |-------------------------|---------|----------------------|--------------------|
 | --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
 
-Hier eine Spalte zentriert:
+Hier **eine** Spalte (Installer) zentriert:
 
 | Optionsname             | Standard| Im Installer setzbar | Konfigurationsname |
 |-------------------------|---------|:--------------------:|--------------------|
@@ -73,6 +75,85 @@ Hier eine Spalte zentriert:
 |-------------------------|---------| :------------------- |--------------------|
 | --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
 
+### Tests bzgl. Ausrichtung
+
+Hinweis: Diese Tabellen sind zusätzlich speziell formatiert für die Options-Tabellen
+(nicht-fetter Header und deaktivierter Wortumbruch).
+
+<div class="table-wrapper-for-options">
+
+
+#### Normal (Header zentriert, Spalten linksbündig):
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| --ignoreMissingPartitions | nein |  | DEFAULT_... |
+
+#### Alles zentriert:
+
+<div class="table-wrapper-for-options">
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|:-----------:|:--------:|:------------:|:------------------:|
+| --ignoreMissingPartitions | nein |  | DEFAULT_... |
+
+#### Alles linksbündig, inkl. Header:
+
+<div class="table-wrapper-for-options">
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|:------------|:---------|:-------------|:--------------------
+| --ignoreMissingPartitions | nein |  | DEFAULT_... |
+
+#### Normal (Header zentriert, Spalten linksbündig):
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| --keep_dd    | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DD |
+| --keep_ddz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DDZ |
+| --keep_rsync | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_RSYNC |
+| --keep_tar   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TAR |
+| --keep_tgz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TGZ |
+
+#### Alles zentriert:
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|:-----------:|:--------:|:------------:|:------------------:|
+| --keep_dd    | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DD |
+| --keep_ddz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DDZ |
+| --keep_rsync | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_RSYNC |
+| --keep_tar   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TAR |
+| --keep_tgz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TGZ |
+
+#### Alles linksbündig, inkl. Header:
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|:------------|:---------|:-------------|:-------------------|
+| --keep_dd    | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DD |
+| --keep_ddz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DDZ |
+| --keep_rsync | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_RSYNC |
+| --keep_tar   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TAR |
+| --keep_tgz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TGZ |
+
+#### Normal (Header zentriert, Spalten linksbündig):
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_SEND_STATS         | ja       |
+
+#### Alles zentriert:
+
+| Config-Option              | Standard |
+|:--------------------------:|:--------:|
+| DEFAULT_SEND_STATS         | ja       |
+
+#### Alles linksbündig, inkl. Header:
+
+| Config-Option              | Standard |
+|:---------------------------|:---------|
+| DEFAULT_SEND_STATS         | ja       |
+
+</div>
 
 
 ## Fenced Codeblocks per Triple-Backticks
