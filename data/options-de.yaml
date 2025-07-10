@@ -120,7 +120,7 @@
   - Diese Option schaltet den Testmodus der intelligenten
   - Rotationsstrategie ein. Details dazu sind hier beschrieben.
   - ''
-  - '[.todo] Check "Here muss gesetzt werden"'
+  - '[.status] todo "*hier* Link noch fixen"'
 --smartRecycleOptions:
   anchor: parm_smartRecycleOptions
   cfg_name: DEFAULT_SMART_RECYCLE_OPTIONS
@@ -378,7 +378,7 @@
   - '- Bis Release 0.6.5.1: [*]'
   - '- Bis Release 0.7.0: DEFAULT_PARTITIONS_TO_BACKUP'
   - ''
-  - '[.todo] Check "Check historisch"'
+  - '[.status] todo "Check *historisch*"'
 -U:
   anchor: parm_U
   cfg_name: ''

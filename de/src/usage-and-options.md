@@ -185,7 +185,7 @@ Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt 
 Diese Option schaltet den Testmodus der intelligenten
 Rotationsstrategie ein. Details dazu sind hier beschrieben.
 
-[.todo] Check "Here muss gesetzt werden"
+[.status] todo "'hier' Link noch fixen"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -483,7 +483,7 @@ Partition. Mit * werden alle Partitionen gesichert.
 - Bis Release 0.6.5.1: [*]
 - Bis Release 0.7.0: DEFAULT_PARTITIONS_TO_BACKUP
 
-[.todo] Check "Check historisch"
+[.status] todo "Check 'historisch'"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -850,5 +850,6 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 
 [.status]: review-needed
 [.status]: todo "Check links"
+[.status]: todo "Add missing short description in some titles"
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
 [.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options
