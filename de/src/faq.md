@@ -984,10 +984,9 @@ Es gibt folgende Möglichkeiten:
 - Wenn das alles nicht genutzt werden kann gibt es noch die Option
   DEFAULT_RSYNC_IGNORE_ERRORS="24" mit dem *raspiBackup* den RC24 ignoriert.
 
-Achtung:  Es gibt seltene Umstände in denen ein rsync RC 24 ein nicht zu
-ignorierender Fehler ist. Siehe dazu hier. D.h. man sollte möglichst
-versuchen den Fehler mit Möglichkeit 1 oder 2 zu beseitigen.
-
+Achtung:  Es gibt seltene Umstände, in denen ein rsync RC 24 ein nicht zu
+ignorierender Fehler ist. Siehe dazu [hier bei bugzilla.samba.org](https://bugzilla.samba.org/show_bug.cgi?id=3653#c12).
+D.h. man sollte möglichst versuchen, den Fehler mit Möglichkeit 1 oder 2 zu beseitigen.
 
 [.status]: review-needed
 [.status]: todo "Check links"
