@@ -106,43 +106,6 @@ Die Klänge entsprechen den verfügbaren Pushoverklängen.
 
 
 
-### DEFAULT_SEND_STATS
-
-Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBackup*
-Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
-
-| Config-Option              | Standard |
-|:--------------------------:|:--------:|
-| DEFAULT_SEND_STATS         | ja       |
-
-
-
-### DEFAULT_SENDER_EMAIL
-
-Die eMailAdresse des Versenders kann bei ssmtp und msmtp angegeben werden.
-
-| Config-Option              | Standard |
-|:--------------------------:|:--------:|
-| DEFAULT_SENDER_EMAIL | root@$(hostname) |
-
-
-
-### DEFAULT_SLACK_*
-
-Ab Version 0.6.8 können Benachrichtigungen per Slack geschickt werden.
-
-Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
-benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
-und/oder "F" für den Fehlerfall (Failure). Mit "M" werden die raspiBackup
-Meldungen als Datei geschickt. Es können die Optionen beliebig kombiniert
-werden. Beispiel: "SF" oder "SM".
-
-| Config-Option               | Standard |
-|:---------------------------:|:--------:|
-| DEFAULT_SLACK_WEBHOOK_URL   |          |
-| DEFAULT_SLACK_NOTIFICATIONS |          |
-
-
 ### DEFAULT_RESTORE_EXTENSIONS
 
 Ab Version 0.6.7 gibt es auch für den Restore wie beim Backup die Möglichkeit,
@@ -199,6 +162,43 @@ Backupoptionen, die beim rsync Backup genutzt werden.
 |:--------------------------:|:--------:|
 | DEFAULT_RSYNC_BACKUP_OPTIONS | --delete -aHAx |
 
+
+
+### DEFAULT_SEND_STATS
+
+Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBackup*
+Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
+
+| Config-Option              | Standard |
+|:--------------------------:|:--------:|
+| DEFAULT_SEND_STATS         | ja       |
+
+
+
+### DEFAULT_SENDER_EMAIL
+
+Die eMailAdresse des Versenders kann bei ssmtp und msmtp angegeben werden.
+
+| Config-Option              | Standard |
+|:--------------------------:|:--------:|
+| DEFAULT_SENDER_EMAIL | root@$(hostname) |
+
+
+
+### DEFAULT_SLACK_*
+
+Ab Version 0.6.8 können Benachrichtigungen per Slack geschickt werden.
+
+Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
+benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
+und/oder "F" für den Fehlerfall (Failure). Mit "M" werden die raspiBackup
+Meldungen als Datei geschickt. Es können die Optionen beliebig kombiniert
+werden. Beispiel: "SF" oder "SM".
+
+| Config-Option               | Standard |
+|:---------------------------:|:--------:|
+| DEFAULT_SLACK_WEBHOOK_URL   |          |
+| DEFAULT_SLACK_NOTIFICATIONS |          |
 
 
 ### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
