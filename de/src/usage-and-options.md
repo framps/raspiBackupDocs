@@ -51,7 +51,7 @@ koloriert werden. Mögliche Werte sind `C` für Konsole und/oder `M` für eMail.
 Falls postfix als emailClient genutzt wird siehe auch Option --eMailColoring.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --coloring | automatisch |  | DEFAULT_COLORING |
 
 
@@ -65,7 +65,7 @@ definiert sein und kann dann entweder der Mountpoint selbst sein (z.B. /backup)
 oder die Backuppartition (z.B. /dev/sdb1).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --dynamicMount | aus |  | DEFAULT_DYNAMIC_MOUNT |
 
 
@@ -78,7 +78,7 @@ als eMail Client benutzt, muss man OPTION als Parameter mitgeben, da postfix das
 Coloring mit einer separaten Option steuert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --eMailColoring | SUBJECT |  | DEFAULT_EMAIL_COLORING |
 
 
@@ -91,7 +91,7 @@ wird. Allerdings werden nur die ersten beiden Paritionen, /boot und / gesichert
 und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --ignoreAdditionalPartitions | nein |  | DEFAULT_IGNORE_ADDITIONAL_PARTITIONS |
 
 
@@ -104,7 +104,7 @@ gesichert wurden, auch wieder gesichert werden. Mit dieser Option wird der Test
 ausgeschaltet.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --ignoreMissingPartitions | nein |  | DEFAULT_IGNORE_MISSING_PARTITIONS |
 
 
@@ -120,7 +120,7 @@ Hinweis: Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrateg
 Technischer Hinweis: Dieser Parameter wird i.d.R. manuell nacheditiert, um die einzelnen Optionen zeilenweise zu zeigen.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --keep_dd    | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DD |
 | --keep_ddz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DDZ |
 | --keep_rsync | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_RSYNC |
@@ -136,7 +136,7 @@ eMail oder eine Telegram Benachrichtigung gesendet wird, wenn der Backup startet
 Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --notifyStart | nein |  | DEFAULT_NOTIFY_START |
 
 
@@ -150,7 +150,7 @@ Deshalb werden Argumente der Option -a auch ignoriert.
 **Hinweis**: Wird die Option -F benutzt, wird kein reboot durchgeführt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --rebootSystem | aus |  | DEFAULT_REBOOT_SYSTEM |
 
 
@@ -164,7 +164,7 @@ aber noch gross genug sein, um die ganzen Daten des Backups aunehmen zu können.
 Ansonsten bricht der Restore irgendwann ab.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --resizeRootFS | an |  | DEFAULT_RESIZE_ROOTFS |
 
 
@@ -175,7 +175,7 @@ Diese Option schaltet die [intelligente Rotationsstrategie - Smart Recycle](smar
 Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --smartRecycle | aus | konfigurierbar | DEFAULT_SMART_RECYCLE |
 
 
@@ -188,7 +188,7 @@ Rotationsstrategie ein. Details dazu sind hier beschrieben.
 [.todo] Check "Here muss gesetzt werden"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --smartRecycleDryrun | ja |  | DEFAULT_SMART_RECYCLE_DRYRUN |
 
 
@@ -198,7 +198,7 @@ Rotationsstrategie ein. Details dazu sind hier beschrieben.
 Diese Option definiert Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --smartRecycleOptions | "7 4 12 1" | konfigurierbar | DEFAULT_SMART_RECYCLE_OPTIONS |
 
 
@@ -209,7 +209,7 @@ Es wird eine Liste der aktiven Services und offenen Dateien
 in der Debugdatei erstellt
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --systemstatus | aus |  |  |
 
 
@@ -228,7 +228,7 @@ werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht
 zusammen angegeben werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --telegramChatID | None |  | DEFAULT_TELEGRAM_CHATID |
 
 
@@ -247,7 +247,7 @@ werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht
 zusammen angegeben werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --telegramNotifications | F |  | DEFAULT_TELEGRAM_NOTIFICATIONS |
 
 
@@ -266,7 +266,7 @@ werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht
 zusammen angegeben werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --telegramToken | None |  | DEFAULT_TELEGRAM_TOKEN |
 
 
@@ -276,7 +276,7 @@ zusammen angegeben werden.
 Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --timestamps | aus |  | DEFAULT_TIMESTAMPS |
 
 
@@ -287,7 +287,7 @@ Wird *raspiBackup* auf nicht [unterstützten Umgebungen](supported-hardware-and-
 gestartet muss diese Option angegeben werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --unsupportedEnvironment | aus |  |  |
 
 
@@ -301,7 +301,7 @@ Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
 ```
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | --version | aus |  |  |
 
 
@@ -311,7 +311,7 @@ Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
 Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -A | aus |  | DEFAULT_APPEND_LOG |
 
 
@@ -325,7 +325,7 @@ benutzt wird, also Option -P benutzt wird oder DEFAULT_PARTITIONBASED_BACKUP=1
 in der Konfiguration gesetzt ist.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -B | aus |  | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
 
 
@@ -335,7 +335,7 @@ in der Konfiguration gesetzt ist.
 Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -D | automatisch |  | DEFAULT_DD_PARMS |
 
 
@@ -354,7 +354,7 @@ sein. Speziell zum Testen der eMail Benachrichtigungsfunktion ist der Parameter
 sollte vor Verschicken des Logs manuell maskiert werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -E | keine |  | DEFAULT_EMAIL_PARMS |
 
 
@@ -366,7 +366,7 @@ Der eigentliche lange Backup wird dadurch nicht angestossen - aber sämtliche
 Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -F | None |  | None |
 
 
@@ -378,7 +378,7 @@ EN (English). Interessenten, die die Meldungen in andere Sprachen übersetzen
 wollen können sich gerne melden
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -G | Systemsprache oder EN | konfigurierbar | DEFAULT_LANGUAGE |
 
 
@@ -401,7 +401,7 @@ Am Ende existiert `/home/pi/raspiBackup.log` sowie `/home/pi/raspiBackup.msg`
 Im Backupverzeichnis werden keine Logs abgelegt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -L | backup |  | DEFAULT_LOG_OUTPUT |
 
 
@@ -428,7 +428,7 @@ genutzti um die Snapshotzeit zu reduzieren.
 muss es bei Bedarf manuell gelöscht werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -M | keiner |  |  |
 
 
@@ -440,7 +440,7 @@ die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
 Speicherbelegung vor und nach dem Backuplauf ausgeben.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -N | keine |  | DEFAULT_EXTENSIONS |
 
 
@@ -453,7 +453,7 @@ Partitionen gesichert. Mit der Option -T wird definiert, welche Partitionen zu
 sichern sind.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -P | aus | konfigurierbar | DEFAULT_PARTITIONBASED_BACKUP |
 
 
@@ -467,7 +467,7 @@ sie dafür gedacht, den Codestand einer existierenden lokalen Betaversion zu
 aktualisieren.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -S | aus |  |  |
 
 
@@ -486,7 +486,7 @@ Partition. Mit * werden alle Partitionen gesichert.
 [.todo] Check "Check historisch"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -T | "1 2" | konfigurierbar | DEFAULT_PARTITIONS_TO_RESTORE |
 
 
@@ -507,7 +507,7 @@ Stand gebracht werden können.
 Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -U | aus |  |  |
 
 
@@ -520,7 +520,7 @@ Version wird gesichert und kann dann auch mit dieser Option später
 wiederhergestellt werden (Siehe auch -U Parameter)
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -V | None |  | None |
 
 
@@ -548,7 +548,7 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 **Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -a | keine | konfigurierbar | DEFAULT_STARTSERVICES |
 
 
@@ -558,7 +558,7 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 Blocksize, die beim dd Backup benutzt wird
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -b | 1 MB |  | DEFAULT_DD_BLOCKSIZE |
 
 
@@ -573,7 +573,7 @@ Rootpartition erstellt werden. **ACHTUNG**: Es wird nicht geprüft, ob das Backu
 noch auf die Rootparition passt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -c | aus |  | DEFAULT_SKIPLOCALCHECK |
 
 
@@ -602,7 +602,7 @@ getestet werden. Außerdem sind weitere Benachrichtigungsmöglichkeiten wie
 Pushover, Slack oder Telegram unterstützt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -e | keine | konfigurierbar | DEFAULT_EMAIL |
 
 
@@ -613,7 +613,7 @@ Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [oben](
 alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -f | None |  | None |
 
 
@@ -624,7 +624,7 @@ Mit dieser Option wird beim Backup und Restore eine Fortschrittsanzeige
 angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -g | None |  | None |
 
 
@@ -634,7 +634,7 @@ angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
 Ausgabe der Aufrufsyntax mit seinen Parametern
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -h | None |  | None |
 
 
@@ -648,7 +648,7 @@ Backups vorgehalten.
 Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -k | 3 | konfigurierbar | DEFAULT_KEEPBACKUPS |
 
 
@@ -669,7 +669,7 @@ wieder gelöscht werden wird, wird das Log vorher in das Homeverzeichnis des
 Aufrufers gesichert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -l | on |  | DEFAULT_LOG_LEVEL |
 
 
@@ -682,7 +682,7 @@ Meldungsdetails
 - detailed -> Viele Meldungen über den Fortschrit werden ausgegeben
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -m | minimal | konfigurierbar | DEFAULT_MSG_LEVEL |
 
 
@@ -710,7 +710,7 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 **Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -o | keine | konfigurierbar | DEFAULT_STOPSERVICES |
 
 
@@ -727,7 +727,7 @@ können beliebige weitere eMailClients in *raspiBackup* eingebunden werden. Der 
 Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](hooks-for-own-scripts.md).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -s | mail |  | DEFAULT_MAIL_PROGRAM |
 
 
@@ -750,7 +750,7 @@ werden. Details zu dem Parameter siehe am Ende der Tabelle.
 Siehe dazu auch [FAQ16](faq.md#faq16).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -t | rsync | konfigurierbar | DEFAULT_BACKUPTYPE |
 
 
@@ -807,7 +807,7 @@ Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verz
 - verzeichnis/* - Excluded Verzeichnis auf allen Partitionen
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -u | keine |  | DEFAULT_EXCLUDE_LIST |
 
 
@@ -819,7 +819,7 @@ Die verwendeten Backuptools tar und rsync zeigen detailierte Informationen an
 Backuptests, um den Backupfortschritt verfolgen zu können.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -v | aus |  | DEFAULT_VERBOSE |
 
 
@@ -832,7 +832,7 @@ Kennwort möglich sein. Somit lässt sich *raspiBackup* schnell auf einer größ
 Menge von Hosts nach einem Versionsupdate verteilen.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -y | None |  | DEFAULT_DEPLOYMENT_HOSTS |
 
 
@@ -842,7 +842,7 @@ Menge von Hosts nach einem Versionsupdate verteilen.
 Backup verkleinern mit gzip bei dd oder tar Backup
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
-|:-----------:|:--------:|:------------:|:------------------:|
+|-------------|----------|--------------|--------------------|
 | -z | aus | konfigurierbar | DEFAULT_ZIP_BACKUP |
 
 

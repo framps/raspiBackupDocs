@@ -10,7 +10,7 @@ Ab Version 0.6.4.3: Die hier definierten Befehle werden vor bzw nach dem Backup
 vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
 | Config-Option               | Standard |
-|:---------------------------:|:--------:|
+|-----------------------------|----------|
 | DEFAULT_BEFORE_STOPSERVICES |          |
 | DEFAULT_AFTER_STARTSERVICES |          |
 
@@ -25,7 +25,7 @@ ist die erste Definition der HTML Colorocde und die zweite Definition der VT100
 Colorcode.
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_COLOR_CODES        | ("#FF8000 33" "#FF0000 31")  |
 
 
@@ -41,7 +41,7 @@ die root Partition den gesamten Rest der SD Karte aus.
 Siehe dazu auch [FAQ16](faq.md#faq16).
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY |          |
 
 
@@ -53,7 +53,7 @@ Backupspace zu sparen. Voraussetzung: Der Backupspace unterstützt Hardlinks
 (ext3/ext4 Filesystem).
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_LINK_BOOTPARTITIONFILES |          |
 
 
@@ -65,7 +65,7 @@ Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet. Hinweis: Sollte
 dass keine eMail gesendet wird.
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_MAIL_ON_ERROR_ONLY |          |
 
 
@@ -93,7 +93,7 @@ Die Klänge entsprechen den verfügbaren Pushoverklängen.
 
 
 | Config-Option              | Standard | Bemerkung |
-|:--------------------------:|:--------:|:---------:|
+|----------------------------|----------|-----------|
 | DEFAULT_PUSHOVER_TOKEN     |          |  |
 | DEFAULT_PUSHOVER_USER      |          |  |
 | DEFAULT_PUSHOVER_NOTIFICATIONS |      |  |
@@ -114,7 +114,7 @@ irgendwelche Aktionen vorzunehmen. Die Syntax ist genauso wie für die Backup
 Extensions.
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_RESTORE_EXTENSIONS |          |
 
 
@@ -124,7 +124,7 @@ Extensions.
 Backup Restore Test Reminder Intervall (Einheit: Monate)
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_RESTORE_REMINDER_INTERVAL | 6 |
 
 
@@ -134,7 +134,7 @@ Backup Restore Test Reminder Intervall (Einheit: Monate)
 Anzahl der Erinnerungen, einen Backup Restore Test durchzuführen.
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_RESTORE_REMINDER_REPEAT | 3   |
 
 
@@ -146,7 +146,7 @@ Backupoptionen, die beim rsync Backup zusätzlich genutzt werden.
 **Benutzung auf eigene Gefahr!**
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS |          |
 
 
@@ -159,7 +159,7 @@ Backupoptionen, die beim rsync Backup genutzt werden.
 **Benutzung auf eigene Gefahr!**
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_RSYNC_BACKUP_OPTIONS | --delete -aHAx |
 
 
@@ -170,7 +170,7 @@ Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBa
 Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_SEND_STATS         | ja       |
 
 
@@ -180,7 +180,7 @@ Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
 Die eMailAdresse des Versenders kann bei ssmtp und msmtp angegeben werden.
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_SENDER_EMAIL | root@$(hostname) |
 
 
@@ -196,7 +196,7 @@ Meldungen als Datei geschickt. Es können die Optionen beliebig kombiniert
 werden. Beispiel: "SF" oder "SM".
 
 | Config-Option               | Standard |
-|:---------------------------:|:--------:|
+|-----------------------------|----------|
 | DEFAULT_SLACK_WEBHOOK_URL   |          |
 | DEFAULT_SLACK_NOTIFICATIONS |          |
 
@@ -208,7 +208,7 @@ Backupoptionen, die beim tar Backup zusätzlich genutzt werden.
 **Benutzung auf eigene Gefahr!**
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS |          |
 
 
@@ -220,7 +220,7 @@ Backupoptionen, die beim tar Backup genutzt werden.
 **Benutzung auf eigene Gefahr!**
 
 | Config-Option              | Standard |
-|:--------------------------:|:--------:|
+|----------------------------|----------|
 | DEFAULT_TAR_BACKUP_OPTIONS | -cpi     |
 
 </div>
