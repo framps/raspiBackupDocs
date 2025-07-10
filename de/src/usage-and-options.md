@@ -182,10 +182,9 @@ Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt 
 <a name="parm_smartRecycleDryrun"></a>
 ### --smartRecycleDryrun: 
 
-Diese Option schaltet den Testmodus der intelligenten
-Rotationsstrategie ein. Details dazu sind hier beschrieben.
+Diese Option schaltet den Testmodus der [intelligenten
+Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
 
-[.status]: todo "'hier' Link noch fixen"
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -195,7 +194,7 @@ Rotationsstrategie ein. Details dazu sind hier beschrieben.
 <a name="parm_smartRecycleOptions"></a>
 ### --smartRecycleOptions: 
 
-Diese Option definiert Parameter der [intelligenten Rotationsstrategie](smart-recycle.md).
+Diese Option definiert Parameter der [intelligenten Rotationsstrategie - Smart Recycle](smart-recycle.md).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -848,8 +847,9 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 
 </div>
 
+
 [.status]: review-needed
-[.status]: todo "Check links"
 [.status]: todo "Add missing short description in some titles"
+
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
 [.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options
