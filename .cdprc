@@ -27,16 +27,16 @@
 #
 #       So in this version of the script only 'vim' is supported.
 
-MISSING=()
+MISSING_TOOLS=()
 for TOOL in vim fzf rg ; do
     if ! command -pv "$TOOL" >/dev/null; then
         echo "$TOOL can't be found!"
-        MISSING+=("$TOOL")
+        MISSING_TOOLS+=("$TOOL")
     fi
 done
-if [[ "${MISSING[*]}" ]] ; then
+if [[ "${MISSING_TOOLS[*]}" ]] ; then
     echo "The programs 'vim', 'fzf' (fuzzy finder) and 'ripgrep'/'rg' are required!"
-    echo "Please install: ${MISSING[*]}. Usually using your distros package management."
+    echo "Please install: ${MISSING_TOOLS[*]}. Usually using your distros package management."
     return 1
 fi
 
@@ -74,7 +74,7 @@ edit_translate_by_status() {
         TMPFILE=$( mktemp tmp.XXXXXXXX )
         FILE=$(cd de/src || exit
                # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-               ${RG} --files-with-matches "$1" 2>/dev/null | sort \
+               ${RG_IGN} --files-with-matches "$1" 2>/dev/null | sort \
                | tee "../../${TMPFILE}" \
                | ${FZF} \
                     --header="$FZF_HEADER" \
@@ -101,7 +101,7 @@ edit_translate_already_translated() {
 
 edit_translate_all_rft() {
     FZF_HEADER=">> Please select file to translate and press ENTER. (ESC to cancel.) <<"
-    edit_translate_by_status " rft"
+    edit_translate_by_status "^\[\.status\]:\s\s*rft"
 }
 
 export -f edit_translate_by_status edit_translate_all_rft  edit_translate_already_translated
@@ -115,7 +115,7 @@ get_escaped_status () {
     # Example:  [.status]: todo "Check the remaining english-only file(s)"
     #     ==>    todo "Check the remaining english-only file\(s\)"
     # shellcheck disable=2001
-    sed -e 's/\([][\?\|()\{\}.*\+\$^]\)/\\\1/g' <<< "${1#*\]:}"
+    sed -e 's/^\s*//' -e 's/\([][\?\|()\{\}.*\+\$^]\)/\\\1/g' <<< "${1#*\]:}"
 }
 
 # ------------------------------------------------------------------------
@@ -126,22 +126,22 @@ get_escaped_status () {
 
 __get_escaped_status () {
     # shellcheck disable=2001
-    sed -e "s/\([][\?\|()\{\}.*\+\$^]\)/\\\\\1/g" <<< "${1#*\]:}"
+    sed -e "s/^\s*//" -e "s/\([][\?\|()\{\}.*\+\$^]\)/\\\\\1/g" <<< "${1#*\]:}"
 }
 
 __list_files_with_status() {
     V=$(__get_escaped_status "$1" )
     case "${V}" in
-        " --ALL-FILES--")
-            ls -1 {de,en}/src/*.md
+        "--ALL-MD-FILES--")
+            ${RG_IGN} --files-with-matches  "" 2>/dev/null | sort
             ;;
-        " --NO-STATUS--")
+        "--NO-STATUS--")
             # shellcheck disable=2086  # to get the RG_OPTION word-splitted
             ${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | sort
             ;;
         *)
             # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-            ${RG_IGN} --files-with-matches  "^\[\.status\]:${V}$" 2>/dev/null | sort
+            ${RG_IGN} --files-with-matches  "^\[\.status\]:\s\s*${V}$" 2>/dev/null | sort
             ;;
     esac
 }
@@ -155,16 +155,14 @@ edit_by_status() {
         FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
         shopt -s extglob               # disabled by default
         TMPFILE=$( mktemp tmp.XXXXXXXX )
-        # shellcheck disable=2012
-        ALL_FILES=$(ls -1 {de,en}/src/*.md | wc -l)
-        # shellcheck disable=2086  # to get the RG_OPTION word-splitted
-        WITHOUT_STATUS=$(${RG_IGN} --files-without-match "^\[\.status\]:" 2>/dev/null | wc -l)
+        ALL_MD_FILES=$( __list_files_with_status "--ALL-MD-FILES--" | wc -l)
+        WITHOUT_STATUS=$( __list_files_with_status "--NO-STATUS--"| wc -l)
         # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
         # Because that string is passed to fzf's preview option!
         STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
                    | sort | uniq -c
                    (( WITHOUT_STATUS > 0 )) && printf "%7d %s\n" "${WITHOUT_STATUS}" "[]: --NO-STATUS--"
-                   printf "%7d %s\n" "${ALL_FILES}" "[]: --ALL-FILES--"
+                   printf "%7d %s\n" "${ALL_MD_FILES}" "[]: --ALL-MD-FILES--"
                    ) \
                    | tee "${TMPFILE}" \
                    | ${FZF} \
@@ -194,7 +192,7 @@ edit_by_status() {
         unset FZFPOS_STATUS
         # remember position of (first) selected entry to be able to re-position fzf to it
         if [[ -f "${TMPFILE}" ]] ; then
-            FZFPOS_STATUS=$( grep -E "${VALUE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+            FZFPOS_STATUS=$( grep -E -- "${VALUE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
             rm -f "${TMPFILE}"
         fi
 
@@ -206,7 +204,7 @@ edit_by_status() {
             # Otherwise the LFs aren't interpreted correctly by the editor.
             # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
             # And so it is now:
-            mapfile -t FILES < <(__list_files_with_status "$VALUE" \
+            mapfile -t FILES < <(__list_files_with_status "${STATUS}" \
                                  | sort | tee "${TMPFILE}" \
                                  | ${FZF_MULTI} \
                                       --header="${FZF_HEADER}" \
