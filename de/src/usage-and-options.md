@@ -212,64 +212,6 @@ in der Debugdatei erstellt
 |-------------|----------|--------------|--------------------|
 | --systemstatus | aus |  |  |
 
-
-<a name="parm_telegram"></a>
-### --telegramChatID: Benachrichtigungen werden per Telegram verschickt
-
-Benachrichtigungen können per Telegram verschickt werden.
-Dazu sind folgende Konfigurationen notwendig:
-
-Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
-in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
-sind "S" für Erfolg (Success) und/oder "F" für den Fehlerfall (Failure). Mit
-"M" werden die *raspiBackup* Meldungen als Datei geschickt.. Mit "m" werden die
-*raspiBackup* Meldungen mitgeschickt. Es können die Optionen beliebig kombiniert
-werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht
-zusammen angegeben werden.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --telegramChatID | None |  | DEFAULT_TELEGRAM_CHATID |
-
-
-<a name="parm_telegram"></a>
-### --telegramNotifications: Benachrichtigungen werden per Telegram verschickt
-
-Benachrichtigungen können per Telegram verschickt werden.
-Dazu sind folgende Konfigurationen notwendig:
-
-Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
-in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
-sind "S" für Erfolg (Success) und/oder "F" für den Fehlerfall (Failure). Mit
-"M" werden die *raspiBackup* Meldungen als Datei geschickt.. Mit "m" werden die
-*raspiBackup* Meldungen mitgeschickt. Es können die Optionen beliebig kombiniert
-werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht
-zusammen angegeben werden.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --telegramNotifications | F |  | DEFAULT_TELEGRAM_NOTIFICATIONS |
-
-
-<a name="parm_telegram"></a>
-### --telegramToken: Benachrichtigungen werden per Telegram verschickt
-
-Benachrichtigungen können per Telegram verschickt werden.
-Dazu sind folgende Konfigurationen notwendig:
-
-Das Telegramtoken sowie die ChatID. Mit den Notifications definiert man ob man
-in Erfolgs- und/oder Fehlerfalle benachrichtigt werden will. Mögliche Optionen
-sind "S" für Erfolg (Success) und/oder "F" für den Fehlerfall (Failure). Mit
-"M" werden die *raspiBackup* Meldungen als Datei geschickt.. Mit "m" werden die
-*raspiBackup* Meldungen mitgeschickt. Es können die Optionen beliebig kombiniert
-werden. Beispiel: "SFm" oder "Sm". Die Optionen "m" und "M" können nicht
-zusammen angegeben werden.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --telegramToken | None |  | DEFAULT_TELEGRAM_TOKEN |
-
-
 <a name="parm_timestamps"></a>
 ### --timestamps: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben
 

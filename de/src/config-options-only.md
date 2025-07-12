@@ -80,11 +80,6 @@ Ab Version 0.6.8 können Benachrichtigungen per Pushover geschickt werden. Dazu
 ist es notwendig, sich auf <https://pushover.net/> registriert zu haben und eine
 application eingerichtet haben muss.
 
-Der PUSHOVER_USER ist der Pushover User Key.
-
-Der PUSHOVER_TOKEN ist der API Token Key den man für eine Application definiert
-hat.
-
 Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
 benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
 und/oder "F" für den Fehlerfall (Failure). Mit "M" werden die raspiBackup
@@ -94,7 +89,6 @@ werden. Beispiel: "SF" oder "SM".
 Die Prioritäten entsprechen den verfügbaren Pushover Prioritäten.
 
 Die Klänge entsprechen den verfügbaren Pushoverklängen.
-
 
 | Config-Option              | Standard | Bemerkung |
 |----------------------------|----------|-----------|
@@ -107,8 +101,6 @@ Die Klänge entsprechen den verfügbaren Pushoverklängen.
 | DEFAULT_PUSHOVER_PRIORITY_FAILURE |   |  |
 | DEFAULT_PUSHOVER_ADDITIONAL_OPTIONS | |  ab Release 0.7.0 |
 | DEFAULT_PUSHOVER_DEVICE             | |  ab Release 0.7.0 |
-
-
 
 ### DEFAULT_RESTORE_EXTENSIONS
 
@@ -232,7 +224,8 @@ werden. Beispiel: "SF" oder "SM".
 | DEFAULT_TELEGRAM_TOKEN      |          |
 | DEFAULT_TELEGRAM_CHATID     !          |
 | DEFAULT_TELEGRAM_NOTIFICATIONS |        | 
-| DEFAUL_TELEGRAM_THREADID    |         |
+| DEFAULT_TELEGRAM_THREADID      |          | ab Release 7.1.1 |
+
 
 ### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
 

@@ -37,7 +37,6 @@
   - [-s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken](usage-and-options.md#parm_s)
   - [-E: Optionale Parameter für die eMailClientProgramme](usage-and-options.md#parm_E)
   - [-F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen](usage-and-options.md#parm_F)
-  - [--telegramToken, --telegramChatID, --telegramNotifications : Benachrichtigungen werden per Telegram verschickt](usage-and-options.md#parm_telegram)
   - [--eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert](usage-and-options.md#parm_eMailColoring)
 
 ### Optionen, die den Update, Restore und lokale Verteilung von *raspiBackup* steuern
