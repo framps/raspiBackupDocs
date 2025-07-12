@@ -482,8 +482,10 @@ Mögliche Lösungen:
 
 1. Benutze `raspiBackupWrapper.sh`, in dem sich Code befindet, der ein Loop
    Device welches ein mit *ext4* formatiertes Image als Backuppartition
-   benutzt und somit ACLs speichern kann. Details finden sich dazu [hier](http://cintrabatista.net/nfs_with_posix_acl.html).
+   benutzt und somit ACLs speichern kann. Details finden sich dazu (leider in 2025 nicht mehr) [hier](http://cintrabatista.net/nfs_with_posix_acl.html).
    (Nur für erfahrene Benutzer).
+
+[.status]: todo "Broken external link"
 
 In Bullseye hat Debian persistentes Journaling eingeführt und somit
 existiert /var/log/journal mit ACLs auf dem System. Wer *raspiBackup* Release

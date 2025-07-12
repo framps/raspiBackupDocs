@@ -47,7 +47,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
 
 7. **raspiBackupDialog.sh**: Dieses von [Franjo](https://github.com/franjo-G) erstellte Script ist ein raspiBackup vorgeschaltetes
    Script mit welchem einfacher Backups erstellt wie auch restored werden können.
-   Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](https://framps.github.io/raspiBackupDoc/de/raspibackupdialog-a-convenient-helper-script-for-raspibackup.md).
+   Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](https://framps.github.io/raspiBackupDoc/de/raspibackupdialog-a-convenient-helper-script-for-raspibackup.html).
 
 ``` admonish info title="Hinweis"
    Es ist empfehlenwert raspiBackupDialog nach erfolgreicher Installation und Konfiguration von raspiBackup einfach mal downizuloaden und auszuprobieren.

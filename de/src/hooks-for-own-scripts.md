@@ -17,7 +17,7 @@ Erweiterung wird nur am Ende des Backups aufgerufen und kann bei Erfolg
 bzw Misserfolg des Backups unterschiedliche Aktionen auslösen.
 
 Wer nützliche Plugins für die Community erstellt hat kann sie gerne im
-deutsche [Raspberryforum Forum](https://https://forum-raspberrypi.de/forum/board/164-raspibackup/) 
+deutsche [Raspberryforum Forum](https://forum-raspberrypi.de/forum/board/164-raspibackup/) 
 vorstellen und die Downloadlocation nennen. Sollten
 Fähigkeiten der Plugins fehlen, bitte einen [Issue bei GitHub](https://github.com/framps/raspiBackup/issues) anlegen.
 
@@ -88,6 +88,8 @@ aufgerufen:
 
         wget http://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz -O raspiBackupSampleExtensions.tgz
         tar -xzf raspiBackupSampleExtensions.tgz -C /usr/local/bin
+
+[.status]: todo "Broken external link"
 
 Dadurch werden die folgenden Scripte in `/usr/local/bin` kopiert:
 
