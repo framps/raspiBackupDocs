@@ -27,7 +27,7 @@ Backups können auf alle Geräte, die an Linux gemounted werden können, gesiche
 werden (USB Stick, USB Platte, SSD, NVMe, nfs, smb, sshfs, webdav usw).
 
 Wer eine Synology oder andere Backupziele für den Backup benutzen möchte,
-findet [hier](more-backupspaces.md) nützliche Tipps.
+findet [hier](backup-targets.md) nützliche Tipps.
 
 Es exitsieren zwei Backupmodi: Der **normale Backupmodus** sichert nur die Boot- und Rootpartition. Sollen weitere Partitionen gesichert werden, z.B. eine reine dritte Datenpartition, muss der **partitionsorientierte Modus** gewählt werden.
 

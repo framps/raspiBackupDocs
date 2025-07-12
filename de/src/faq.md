@@ -203,7 +203,7 @@ Es gibt verschiedene Optionen:
   *raspiBackup* gestellt und Probleme berichtet werden können. *framp* wird über
   alle neuen Threads informiert und kann sich dem Thread widmen.
 
-Siehe auch diese [Hinweise](introduction.md#kontaktm%C3%B6glichkeiten)
+Siehe auch diese [Hinweise](introduction.md#kontakt)
 
 **Hinweis:** Jegliche andere Kontaktwege werden ignoriert.
 
@@ -780,7 +780,7 @@ eingeschaltet kann man das temporär mit der Option `-z-` ausschalten.
 <a name="faq46"></a>
 ### 46) Warum ist es nicht zu empfehlen den Backuptyp dd zu benutzen?
 
-Siehe dazu [diesen Artikel](why-shouldn-t-you-use-dd-as-backup-method.md).
+Siehe dazu [diesen Artikel](why-shouldn-t-you-use-dd-as-backup-type.md).
 
 
 <a name="faq47"></a>
@@ -804,7 +804,7 @@ auf eine andere, möglichst neue, SD Karte restored tritt das Problem
 üblicherweise nicht mehr auf. Es gibt auch die Option -C die man beim
 Restore nutzen kann um die SD Karte auf Bad Blocks beim Formatieren zu
 prüfen. Dadurch dauert aber der Restoreprozess wesentlich laenger. Siehe
-auch [diese Seite](why-shouldn-t-you-use-dd-as-backup-method.md) zu Problemen eines dd Backups.
+auch [diese Seite](why-shouldn-t-you-use-dd-as-backup-type.md) zu Problemen eines dd Backups.
 
 
 <a name="faq50"></a>

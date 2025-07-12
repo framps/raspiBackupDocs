@@ -597,7 +597,7 @@ Ursache:
 der Option --unsupportedEnvironment trotzdem versuchen, *raspiBackup* zu nutzen,
 denn es läuft auch unter vielen anderen Linux Distributionen und
 raspberrykompatibler Hardware. Bei Fehlern wird aber wegen fehlender Testhard-
-und Software und -zeit kein Support geliefert. [Unterstützte Hardware und Software](supported-hardware-and-software.mda.)
+und Software und -zeit kein Support geliefert. [Unterstützte Hardware und Software](supported-hardware-and-software.md)
 
 Weitere Aktionen:
 

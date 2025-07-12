@@ -31,7 +31,7 @@ nicht hat, braucht natürlich länger trotz dass der Installer hilft, eine
 
 Vor der Nutzung von *raspiBackup* bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
-Die Supportkanäle [sind hier beschrieben](contact.md)
+Die Supportkanäle [sind hier beschrieben](introduction.md#kontakt)
 
 ## Anwendungs- und Konfigurationsbeispiele
 
@@ -151,7 +151,7 @@ USB Platte bzw. ein externer USB Stick gemountet.
 Dabei ist zu beachten, dass die Partition je nach gewünschtem Backuptyp ein
 gewisses Filesystem voraussetzt. Die Anhängigkeiten sind in "[Welches Dateisystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)" erklärt.
 Außerdem sollte man, wenn es denn nicht unbedingt erforderlich ist, den Backuptyp *dd* vermeiden.
-Details dazu finden sich in "[Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-method.md)".
+Details dazu finden sich in "[Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)".
 
 Beim ersten Backup sollte man noch prüfen, ob man auf das richtige Backupgerät
 bzw. die richtige Backuppartition sichert. Hilfreich sind dabei folgende Befehle:
@@ -291,7 +291,7 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 
 ## Manuelle Installation und Konfiguration von *raspiBackup*
 
-Siehe im gleichnamigen Kapitel: [Manuelle Installation und Konfiguration](manuelle-installation-und-konfiguration.md)
+Siehe im gleichnamigen Kapitel: [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
 
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/installation

@@ -8,12 +8,12 @@ Dazu gehören lokal angeschlossene SD Karten,
 per USB angeschlossene Platten, SSDs,
 USB Sticks und SD USB Adapter sowie NVM SSDs.
 Des weiteren kann [SMB](smb-as-backupspace.md) und
-[NFS](/nfs-as-backupspace.md) genutzt werden
+[NFS](nfs-as-backupspace.md) genutzt werden
 um nicht lokal angeschlossene Backuppartitionen zu nutzen.
 sshfs, curlftpfs und [webdav](webdav-as-backupspace.md)
 funktionieren ebenso mit raspiBackup
 um die Backups auf remoten Servern abzulegen.
-Die [AVM Fritzbox](avm-fritzbox-as-backupspacei.md)
+Die [AVM Fritzbox](avm-fritzbox-as-backupspace.md)
 unterstützt auch SMB und kann somit
 auch als Backupziel genutzt werden.
 

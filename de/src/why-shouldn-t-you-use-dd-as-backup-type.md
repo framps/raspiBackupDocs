@@ -64,7 +64,7 @@ dem ersten Backupvorgang relativ schnell beendet. Ausserdem liegen die
 Backupdateien entpackt vor und auf sie kann sofort zugegriffen werden, wenn nur
 mal ein paar Dateien aus dem Backup benötigt werden. Bei tar und dd muss man
 die Backups erst umständlich entpacken. Wer eine Synology als Backupsystem
-benutzen will, sei hier auf Benutzung von [Synology als Backupspace](synology-as-backupspace.md) verwiesen.
+benutzen will, sei hier auf Benutzung von [Synology als Backupspace](nfs-as-backupspace.md) verwiesen.
 
 
 ## Weiterführende Informationen
