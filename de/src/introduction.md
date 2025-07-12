@@ -90,6 +90,7 @@ Behandelte Themen sind
   * Liveinstallation von *raspiBackup* mit dem menuegesteuerten Installer
 
 Die dort verwendeten Slides können zum Lesen [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download) runtergeladen werden.
+[.status]: todo "Broken external link"
 
 Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im [raspiBackup-Channel](https://www.youtube.com/@raspiBackup).
 

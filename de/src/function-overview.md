@@ -14,7 +14,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
   - Open source
 
     *raspiBackup* ist unter der GNU Lizenz als OpenSource und kostenlos verfügbar.
-    Ein [Trinkgeld](trinkgeld.md) ist aber trotzdem gern gesehen 😉
+    Ein [Trinkgeld](introduction.md#trinkgeld) ist aber trotzdem gern gesehen 😉
 
   - Einfache [Installation](installation.md) mit menügeführtem Installer (vergleichbar mit `raspi-config`)
 

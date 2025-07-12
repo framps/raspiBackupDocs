@@ -579,7 +579,7 @@ BastiFanta hat einen anderen Grund dafür gefunden:
 <a name="faq30"></a>
 ### 30) Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?
 
-Zum Beispiel ein [Trinkgeld](trinkgeld.md) geben.
+Zum Beispiel ein [Trinkgeld](introduction.md#trinkgeld) geben.
 
 
 <a name="faq31"></a>

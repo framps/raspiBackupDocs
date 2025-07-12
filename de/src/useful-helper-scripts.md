@@ -11,7 +11,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
 
    **Hinweis**
    Dieses Script entstand als raspiBackup noch keine Erweiterungspunkte hatte. Normalerweise
-   reicht es die vorhandenen [Erweiterungspunkte](https://framps.github.io/raspiBackupDoc/de/hooks-for-own-scripts.md)
+   reicht es die vorhandenen [Erweiterungspunkte](https://framps.github.io/raspiBackupDoc/de/hooks-for-own-scripts.html)
    zu nutzen um die Funktionalität von raspiBackup für die eigenen Bedürfnisse zu erweitern.
 
 2. **raspiBackupNfsWrapper.sh**: Es wird von dem Script geprüft, ob ein NFS Server
