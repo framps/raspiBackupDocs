@@ -323,7 +323,9 @@ Within the main screen of the TUI there are additional hotkeys active:
     They list files "(R)eady for translation" / "(T)ranslated" and open
     the selected file in both language versions in a split editor window.
 
-  * Alt-S for calling 'vimdiff' with the SUMMARY.md files of both languages.
+  * Alt-S for calling 'vimdiff' with the (S)UMMARY.md files of both languages.
+
+  * Alt-G for calling an interactive (G)rep-Tool using ripgrep, fzf and vim
 
 *******************************************************************************
 
