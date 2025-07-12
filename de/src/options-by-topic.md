@@ -56,6 +56,6 @@
   - [-f: Angabe einer Konfigurationsdatei](usage-and-options.md#parm_f)
 
 
-[.status]: review-needed
+[.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
 [.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options
