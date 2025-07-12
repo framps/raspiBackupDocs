@@ -2,6 +2,10 @@
 
 <!-- toc -->
 
+**Hinweis:** Optionen in der Konfigdatei, die ja/an oder nein/aus als Parameter
+benötigen, müssen 0 für nein und 1 für ja sein. Kein Eintrag in
+der Standardspalte bedeutet der Standard ist `""`
+
 <div class="table-wrapper-for-options">
 
 ### DEFAULT_BEFORE_STOPSERVICES / DEFAULT_AFTER_STARTSERVICES
@@ -118,6 +122,19 @@ Extensions.
 | DEFAULT_RESTORE_EXTENSIONS |          |
 
 
+### DEFAULT_REBOOT_SYSTEM
+
+Mit dieser Option kann ein Reboot des gesicherten Systems am Ende des Backups
+konfiguriert werden. 
+
+**Hinweis**: Die Services, die vor dem Backup gestoppt wurdeni, werden nicht wieder
+gestartet. Das ist unnötig da sie sowieso beim Neustart gestartet werden.
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_REBOOT_SYSTEM      |    0     |
+
+ 
 
 ### DEFAULT_RESTORE_REMINDER_INTERVAL
 
@@ -200,6 +217,22 @@ werden. Beispiel: "SF" oder "SM".
 | DEFAULT_SLACK_WEBHOOK_URL   |          |
 | DEFAULT_SLACK_NOTIFICATIONS |          |
 
+### DEFAULT_TELEGRAM_*
+
+Ab Version 0.6.8 können Benachrichtigungen per TelegraTelegramm geschickt werden.
+
+Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
+benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
+und/oder "F" für den Fehlerfall (Failure). Mit "M" werden die raspiBackup
+Meldungen als Datei geschickt. Es können die Optionen beliebig kombiniert
+werden. Beispiel: "SF" oder "SM".
+
+| Config-Option               | Standard |
+|-----------------------------|----------|
+| DEFAULT_TELEGRAM_TOKEN      |          |
+| DEFAULT_TELEGRAM_CHATID     !          |
+| DEFAULT_TELEGRAM_NOTIFICATIONS |        | 
+| DEFAUL_TELEGRAM_THREADID    |         |
 
 ### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
 
