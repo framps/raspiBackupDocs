@@ -1,6 +1,6 @@
 ## Thematische Sortierung der Optionen (Auswahl)
 
-### Optionen, die das Backup beschreiben
+### Backupoptionen
 
   - [-k : Anzahl der Backups die vorgehalten werden sollen](usage-and-options.md#parm_k)
   - [--keep_{type}: Anzahl der jeweiligen Backuptypen, die vorgehalten werden sollen](usage-and-options.md#parm_keepType)
@@ -16,7 +16,7 @@
   - [--dynamicMount: Dynamisches Mounten der Backuppartition](usage-and-options.md#parm_dynamicMount)
   - [--ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.](usage-and-options.md#parm_ignoreAdditionalPartitions)
 
-### Optionen, die den Restore beschreiben
+### Restoreoptionen
 
   - [-g: Fortschrittsanzeige beim Restore](usage-and-options.md#parm_g)
 

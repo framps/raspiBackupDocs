@@ -1,8 +1,4 @@
-# Aufrufsyntax und -optionen für ein Backup
-
-## Alphabetische Sortierung der Optionen
-
-<!-- toc -->
+# Backupoptionen
 
 <div class="table-wrapper-for-options">
 
@@ -752,9 +748,3 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 
 </div>
 
-
-[.status]: review-needed
-[.status]: todo "Add missing short description in some titles"
-
-[.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
-[.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options

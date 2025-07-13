@@ -51,26 +51,27 @@ Dies ermöglicht einige kleine Kniffe:
     - [Statistiken](statistics.md)
     - [Updates](updates.md)
 
-- [Details zum Aufruf und zur Konfiguration](details.md)
-    - [Aufruf und Optionen](usage-and-options.md)
-        - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
-        - [Weitere Konfigurations-Optionen](config-options-only.md)
+- [Aufruf und Konfiguration](details.md)
+    - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
+    - [Backupoptionen](backup-options.md)
+    - [Restoreoptionen](restore-options.md)
+    - [Allgemeine Optionen](general-options.md)   
+    - [Restore mittels raspiBackup](full-restore.md)        
+
+- [Backupinformationen](backup-infos.md)
     - [Backuptype und Entscheidungsbaum](backuptypes.md)
     - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
     - [Backupverzeichnisstruktur](backup-directory-structure.md)
     - [Intelligente Rotationsstrategie](smart-recycle.md)
     - [Snapshots](snapshots.md)
-
     - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
     - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
-
     - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
         - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)
 
-- [Wiederherstellen/Restore](restore.md)
-    - [Restore mittels raspiBackup](full-restore.md)
+- [Restoreinformationen](restore-infos.md)
     - [Manueller Restore](manual-restore.md)
     - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
 
