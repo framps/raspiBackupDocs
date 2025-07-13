@@ -25,7 +25,7 @@ help:
 	@echo "Note: Better do not run a 'mdbook serve ...' in parallel!"
 
 
-all: build push upload check
+all: build push upload check checklinks
 
 build:
 	@echo -e "# Version of this documentation\n\n" > en/src/doc-version-info-automatically-generated.md
@@ -52,5 +52,9 @@ upload:
 	@[ -n "$(WEBSERVER)" -a -n "$(WEBSERVER_ROOTDIR)" ] || { echo "Environment variables WEBSERVER and WEBSERVER_ROOTDIR need to be set!"; exit 2; }
 	lftp sftp://$(WEBSERVER) -e "cd $(WEBSERVER_ROOTDIR) ; rm -r raspiBackupDoc; mirror -R en/book raspiBackupDoc; cd raspiBackupDoc ; mirror -R de/book de ; put data/htaccess -o .htaccess ; dir ; quit"
 
-check:
+check: checklinks
 	@bin/check_files.sh
+
+checklinks:
+	@if ! command -v mdlinkcheck.py >/dev/null; then echo "!!! For additional checking of Markdown links install 'mdlinkcheck.py' from https://github.com/rpi-simonz/mdlinkcheck" ; fi
+	@if command -v mdlinkcheck.py >/dev/null; then mdlinkcheck.py --raspiBackupDoc de/src en/src ; fi
