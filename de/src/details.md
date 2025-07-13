@@ -1,4 +1,4 @@
-# Aufruf und Konfiguration
+# Aufruf und Optionen
 
 *raspiBackup* muss als Benutzer *root* oder per `sudo` aufgerufen werden.
 
@@ -39,4 +39,4 @@ Die Priorität der Optionsquellen ist aus folgender Tabelle ersichtlich:
 benötigen, müssen 0 für nein und 1 für ja sein.
 Kein Eintrag in der Standardspalte bedeutet der Standard ist `""`
 
-[.status]: todo "More infos/text on this prefix page?"
+[.status]: restructured

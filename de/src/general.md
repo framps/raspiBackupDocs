@@ -1,0 +1,3 @@
+# Allgemein
+
+[.status]: restructured

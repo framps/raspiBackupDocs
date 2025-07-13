@@ -1,4 +1,4 @@
-# Wiederherstellen - Restore mittels raspiBackup
+# Restoreeinführung
 
 *raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung, d.h. alle Partitionen werden i.d.R. wiederhergestellt.
 Beim paritionsorientierten Modus kann man die zu restorenden Paritionen auswählen.
@@ -208,3 +208,4 @@ restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script und e
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#restore
 [.source]: https://linux-tips-and-tricks.de/de/wiederherstellen
 
+[.status]: restructured

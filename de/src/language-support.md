@@ -1,7 +1,7 @@
 # Sprachunterstützung
 
-*raspiBackup* nutzt die Systemsprache, um die entsprechende Sprache auszuwählen und zur Anzeige zu nutzen.
-Wird die Sprache nicht von *raspiBackup* unterstützt, wird Englisch gewählt.
+*raspiBackup* nutzt standardmäßig die Systemsprache, um die entsprechende Sprache auszuwählen und zur Anzeige zu nutzen.
+Die Sprache kann aber auch per Option definiert werden. Wird die Sprache nicht von *raspiBackup* unterstützt, wird Englisch gewählt.
 
 Unterstützte Sprachen sind
    1. Chinesisch

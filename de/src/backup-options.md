@@ -1,18 +1,9 @@
-# Backupoptionen
+# Backup Optionen
+
+Diese Liste enthält alle Aufrufoptionen von *raspiBackup* sowie 
+die entsprechenden Konfigurationsoptionen.
 
 <div class="table-wrapper-for-options">
-
-<a name="parm_coloring"></a>
-### --coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen
-
-Ab der Version 0.6.5 können die Meldungen in der eMail sowie auf der Konsole
-koloriert werden. Mögliche Werte sind `C` für Konsole und/oder `M` für eMail.
-Falls postfix als emailClient genutzt wird siehe auch Option --eMailColoring.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --coloring | automatisch |  | DEFAULT_COLORING |
-
 
 <a name="parm_dynamicMount"></a>
 ### --dynamicMount: Dynamisches Mounten der Backuppartition
@@ -170,16 +161,6 @@ in der Debugdatei erstellt
 |-------------|----------|--------------|--------------------|
 | --systemstatus | aus |  |  |
 
-<a name="parm_timestamps"></a>
-### --timestamps: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben
-
-Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --timestamps | aus |  | DEFAULT_TIMESTAMPS |
-
-
 <a name="parm_unsupportedEnvironment"></a>
 ### --unsupportedEnvironment: 
 
@@ -189,31 +170,6 @@ gestartet muss diese Option angegeben werden.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | --unsupportedEnvironment | aus |  |  |
-
-
-<a name="parm_version"></a>
-### --version: 
-
-Die Version von *raspiBackup* wird im folgenden Format ausgegeben:
-
-```
-Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
-```
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --version | aus |  |  |
-
-
-<a name="parm_A"></a>
-### -A: Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt
-
-Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -A | aus |  | DEFAULT_APPEND_LOG |
-
 
 <a name="parm_B"></a>
 ### -B: Bootpartition wird als tar gesichert statt per dd
@@ -238,26 +194,6 @@ Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
 |-------------|----------|--------------|--------------------|
 | -D | automatisch |  | DEFAULT_DD_PARMS |
 
-
-<a name="parm_E"></a>
-### -E: Optionale Parameter für die eMailClientProgramme
-
-Optionale weitere Parameter, die im eMailProgrammaufruf mitgegeben werden. Für
-sendEmail muss er z.B. wie folgt aussehen: "-f absender.mail@absenderdomain -s
-smtp-server:587 -xu Username -xp Password".
-
-**Achtung**: Die Parameter für -E müssen in Anführungszeichen " eingeschlossen
-sein. Speziell zum Testen der eMail Benachrichtigungsfunktion ist der Parameter
--F hilfreich.
-
-**Achtung**: Wenn der Parameter -l 1 benutzt wird, steht das Password im Log und
-sollte vor Verschicken des Logs manuell maskiert werden.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -E | keine |  | DEFAULT_EMAIL_PARMS |
-
-
 <a name="parm_F"></a>
 ### -F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen
 
@@ -268,19 +204,6 @@ Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -F | None |  | None |
-
-
-<a name="parm_G"></a>
-### -G: Sprache der Meldungen (Deutsch oder English)
-
-Festlegung der Sprache der Meldungen. Mögliche Sprachen sind DE (Deutsch) und
-EN (English). Interessenten, die die Meldungen in andere Sprachen übersetzen
-wollen können sich gerne melden
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -G | Systemsprache oder EN | konfigurierbar | DEFAULT_LANGUAGE |
-
 
 <a name="parm_L"></a>
 ### -L: Verzeichnis wo das Debuglog sowie die Laufzeitmeldungen gespeichert werden
@@ -332,18 +255,6 @@ muss es bei Bedarf manuell gelöscht werden.
 | -M | keiner |  |  |
 
 
-<a name="parm_N"></a>
-### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
-
-Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
-die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
-Speicherbelegung vor und nach dem Backuplauf ausgeben.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -N | keine |  | DEFAULT_EXTENSIONS |
-
-
 <a name="parm_P"></a>
 ### -P: Partitionsorientierter Backupmodus
 
@@ -355,20 +266,6 @@ sichern sind.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -P | aus | konfigurierbar | DEFAULT_PARTITIONBASED_BACKUP |
-
-
-<a name="parm_S"></a>
-### -S: 
-
-Ein Update mit der Option -U wird auch vorgenommen, wenn die Versionen
-übereinstimmen. Sie bewirkt, dass sowohl eine lokale Betaversion wie auch eine
-lokale normale Version mit dem aktuellsten Codestand ersetzt wird. Primär ist
-sie dafür gedacht, den Codestand einer existierenden lokalen Betaversion zu
-aktualisieren.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -S | aus |  |  |
 
 
 <a name="parm_T"></a>
@@ -388,41 +285,6 @@ Partition. Mit * werden alle Partitionen gesichert.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -T | "1 2" | konfigurierbar | DEFAULT_PARTITIONS_TO_RESTORE |
-
-
-<a name="parm_U"></a>
-### -U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version
-
-Die lokale *raspiBackup* Version wird durch die letzte aktuelle Version ersetzt
-sofern eine neue Version existiert. Die vorherige Version wird als
-raspiBackup.sh.n.m gesichert wobei n und m die Versionsnumer von *raspiBackup*
-ist. Siehe Parameter -V, um eine vorhergehende Version wiederherzustellen.
-
-**Achtung**: Vorher sollte man [diese Seite](version-history.md) lesen
-und sich über die Änderungen und Neuerungen informieren.
-
-Zusätzlich gibt es noch die option -S, mit der Betaversionen auf den letzten
-Stand gebracht werden können.
-
-Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -U | aus |  |  |
-
-
-<a name="parm_V"></a>
-### -V: Reaktivierung einer vorhergehenden *raspiBackup* Version
-
-Es wird eine Liste aller existierenden Vorgängerversionen angezeigt und man
-kann die Version auswählen, die wiederhergestellt werden soll. Die aktuelle
-Version wird gesichert und kann dann auch mit dieser Option später
-wiederhergestellt werden (Siehe auch -U Parameter)
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -V | None |  | None |
-
 
 <a name="parm_a"></a>
 ### -a: Befehle, die Services nach dem Backup starten
@@ -463,7 +325,7 @@ Blocksize, die beim dd Backup benutzt wird
 
 
 <a name="parm_c"></a>
-### -c: 
+### -c: Erlaube lokale Backupspeicherung
 
 Es kann kein Backup auf der Rootpartition erstellt werden, um vor
 unbeabsichtigtem Vollschreiben der Rootpartition durch das Backup zu schützen.
@@ -475,68 +337,6 @@ noch auf die Rootparition passt.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -c | aus |  | DEFAULT_SKIPLOCALCHECK |
-
-
-<a name="parm_e"></a>
-### -e: eMailAdresse an die die Benachrichtigung geschickt wird
-
-email Addresse, die eine Status-email sowie die Meldungen des Backuplaufs
-zugesendet bekommt
-
-**Achtung**: Die Benachrichtigungsemail wird vom root Nutzer gesendet.
-D.h. der eMailClient auf dem System muss so konfiguriert werden, dass mit
-
-```
-echo "eMail-Text" | sudo mail -s "Betreff" "Empfänger eMail"
-```
-
-die eMail erfolgreich gesendet wird.
-
-Mit der Konfigurationsoption DEFAULT_SENDER_EMAIL kann die
-Standardsenderadresse  root@$(hostname) falls notwendig geändert werden.
-
-Hinweis: Die eMail Benachrichtigung funktioniert nur wenn ein MTA wie z.B.
-nullmailer, msmtp, postfix oder exim4 entsprechend korrekt konfiguriert wurde.
-Siehe dazu FAQ47. Die eMailfunktion kann relativ einfach mit der Fakeoption -F
-getestet werden. Außerdem sind weitere Benachrichtigungsmöglichkeiten wie
-Pushover, Slack oder Telegram unterstützt.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -e | keine | konfigurierbar | DEFAULT_EMAIL |
-
-
-<a name="parm_f"></a>
-### -f: Angabe einer Konfigurationsdatei
-
-Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [oben](#configfiles).
-alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -f | None |  | None |
-
-
-<a name="parm_g"></a>
-### -g: Fortschrittsanzeige beim Restore
-
-Mit dieser Option wird beim Backup und Restore eine Fortschrittsanzeige
-angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -g | None |  | None |
-
-
-<a name="parm_h"></a>
-### -h: 
-
-Ausgabe der Aufrufsyntax mit seinen Parametern
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -h | None |  | None |
-
 
 <a name="parm_k"></a>
 ### -k: Anzahl der Backups die vorgehalten werden sollen
@@ -550,40 +350,6 @@ Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -k | 3 | konfigurierbar | DEFAULT_KEEPBACKUPS |
-
-
-<a name="parm_l"></a>
-### -l: Einschalten des detailierten Loglevels
-
-Log level definiert ob ein Debuglog erstellt wird:
-
-- off  -> Es wird kein Debuglog erstellt
-- debug -> Es wird ein Debuglog erstellt
-
-**Achtung**: Die Logausgabe kann sensitive Informationen
-enthalten. raspiBackup maskiert Z.B. externe statische IP Adressen, eMailAdressen, Kennwörter für
-mount Befehle oder email Server,u.V.M. Es  können aber immer noch sensitive Informationen
-im Debuglog enthalten sein die inoch manuell maskiert werden sollten.
-Das Debuglog wird immer im Backupverzeichnis abgelegt. Falls es Fehler gibt und das Backupverzeichnis
-wieder gelöscht werden wird, wird das Log vorher in das Homeverzeichnis des
-Aufrufers gesichert.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -l | on |  | DEFAULT_LOG_LEVEL |
-
-
-<a name="parm_m"></a>
-### -m: Meldungsdetails
-
-Meldungsdetails
-
-- minimal -> Nur wichtige Meldungen werden ausgegeben
-- detailed -> Viele Meldungen über den Fortschrit werden ausgegeben
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -m | minimal | konfigurierbar | DEFAULT_MSG_LEVEL |
 
 
 <a name="parm_o"></a>
@@ -614,23 +380,6 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 | -o | keine | konfigurierbar | DEFAULT_STOPSERVICES |
 
 
-<a name="parm_s"></a>
-### -s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken
-
-email Program, welches benutzt wird {mail|sendEmail|ssmtp|msmtp}. Für postfix
-und nullmailer muss mail benutzt werden und die mailtools installiert werden.
-Für sendEmail muss der Parameter -E zusätzlich genutzt werden für weitere
-obligatorische Parameter (Siehe [Parameter -E Beschreibung](#parm_E) für Details).
-
-Es kann auch ein eMailPlugin benutzt werden, um eMails zu verschicken. Damit
-können beliebige weitere eMailClients in *raspiBackup* eingebunden werden. Der -s
-Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](hooks-for-own-scripts.md).
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -s | mail |  | DEFAULT_MAIL_PROGRAM |
-
-
 <a name="parm_t"></a>
 ### -t: Typ des Backups (dd, tar, rsync)
 
@@ -655,7 +404,7 @@ Siehe dazu auch [FAQ16](faq.md#faq16).
 
 
 <a name="parm_u"></a>
-### -u: Ermöglicht weitere Verzeichnisse aus dem Backuprozess auszuschliessen
+### -u: Weitere Verzeichnisse aus dem Backuprozess auszuschliessen
 
 Erweiterung der Excludeliste beim Backup um bestimmte Verzeichnisse beim Backup
 zu ignorieren.
@@ -723,18 +472,6 @@ Backuptests, um den Backupfortschritt verfolgen zu können.
 | -v | aus |  | DEFAULT_VERBOSE |
 
 
-<a name="parm_y"></a>
-### -y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp
-
-Mit dieser Option wird das aktuelle Script auf alle Hosts kopiert, die in der
-Konfigurationsdatei definiert sind. Der Zugriff muss per authorized_keys ohne
-Kennwort möglich sein. Somit lässt sich *raspiBackup* schnell auf einer größeren
-Menge von Hosts nach einem Versionsupdate verteilen.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -y | None |  | DEFAULT_DEPLOYMENT_HOSTS |
-
 
 <a name="parm_z"></a>
 ### -z: Kompression des Backups bei dd oder tar
@@ -748,3 +485,4 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 
 </div>
 
+[.status]: restructured

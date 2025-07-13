@@ -1,4 +1,18 @@
-# Restoreoptionen
+# Restore Optionen
+
+*raspiBackup* restored standardmäßig das [**gesamte System**](full-restore.md) bei dem normalen Backupmodus.
+Bei einem partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden welche Paritionen restored 
+werden sollen. Wird beim partitionsorientierten Modus
+der rsync Backuptyp genutzt kann bei einem Restore auch ein Deltarestore gewählt werden. (Option -00) 
+D.h. es werden mit rsync nur die geänderten Dateien und gelöschte Dateien aus dem Backup
+kopiert sowie nicht im Backup vorhandene Dateien - also neu erstellte Dateien - gelöscht. 
+Damit ist ein sehr schneller Restore möglich. 
+
+Unabhängig von *raspiBackup* ist auch ein [manueller Restore](manual-restore.md)
+der Daten mit den zuvor benutzten Backuptools `dd`, `tar` oder `rsync` möglich. 
+Dazu sind dann entsprechende Kenntnisse der Linux Backuptools notwendig.
+
+Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md) möglich.
 
 <div class="table-wrapper-for-options">
 
@@ -29,14 +43,6 @@ Achtung: Dieses Device wird i.d.R. vollständig gelöscht und neu angelegt! Beim
 verkleinert oder vergrößert, wenn das Zielgerät eine andere Größe
 hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch genügend Platz für die
 Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz wird der Restore abbrechen.
-
-### -g: Fortschritt anzeigen
-
-Anzeige des Restorefortschritts
-
-| Option | Standard | Im Installer | Konfigurationsname |
-|--------|----------|--------------|--------------------|
-| -g     |          |              |                    |
 
 ### -R: Externe Rootpartition
 
@@ -153,3 +159,5 @@ Hinweis: Diese Option kann unerwartete Ergebnisse haben.
 Benutze die Option nur, wenn Du weisst, was Du tust.
 
 </div>
+
+[.status]: restructured

@@ -51,14 +51,21 @@ Dies ermöglicht einige kleine Kniffe:
     - [Statistiken](statistics.md)
     - [Updates](updates.md)
 
-- [Aufruf und Konfiguration](details.md)
-    - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
-    - [Backupoptionen](backup-options.md)
-    - [Restoreoptionen](restore-options.md)
-    - [Allgemeine Optionen](general-options.md)   
-    - [Restore mittels raspiBackup](full-restore.md)        
+- [Restore Einführung](restore-intro.md)        
 
-- [Backupinformationen](backup-infos.md)
+- [Aufruf und Optionen](details.md)
+    - [Backup](backup.md)
+        - [Optionen](backup-options.md)
+        - [Konfiguration](backup-config-options.md)
+    - [Restore](restore.md)
+        - [Optionen](restore-options.md)
+        - [Konfiguration](restore-config-options.md)
+    - [Allgemein](general.md)  
+        - [Optionen](general-options.md)   
+        - [Konfiguration](general-config-options.md)
+    - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
+
+- [Backup Detailinfo](backup-infos.md)
     - [Backuptype und Entscheidungsbaum](backuptypes.md)
     - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
     - [Backupverzeichnisstruktur](backup-directory-structure.md)
@@ -71,7 +78,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [exim4 konfigurieren](exim4-configuration.md)
         - [nullmailer konfigurieren](nullmailer-configuration.md)
 
-- [Restoreinformationen](restore-infos.md)
+- [Restore Detailinfo](restore-infos.md)
     - [Manueller Restore](manual-restore.md)
     - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
 
