@@ -17,6 +17,7 @@ help:
 	@echo "  - upload : upload the locally built docs to webserver"
 	@echo ""
 	@echo "  - check  : check if files are synced and in SUMMARY.md"
+	@echo "             optionally check Markdown links (requires an additional tool)"
 	@echo ""
 	@echo "  - serveDe: build locally; and serve 'de' version via browser"
 	@echo "  - serveEn: build locally; and serve 'en' version via browser"
@@ -25,7 +26,7 @@ help:
 	@echo "Note: Better do not run a 'mdbook serve ...' in parallel!"
 
 
-all: build push upload check checklinks
+all: build push upload check checkfiles checklinks
 
 build:
 	@echo -e "# Version of this documentation\n\n" > en/src/doc-version-info-automatically-generated.md
@@ -52,9 +53,11 @@ upload:
 	@[ -n "$(WEBSERVER)" -a -n "$(WEBSERVER_ROOTDIR)" ] || { echo "Environment variables WEBSERVER and WEBSERVER_ROOTDIR need to be set!"; exit 2; }
 	lftp sftp://$(WEBSERVER) -e "cd $(WEBSERVER_ROOTDIR) ; rm -r raspiBackupDoc; mirror -R en/book raspiBackupDoc; cd raspiBackupDoc ; mirror -R de/book de ; put data/htaccess -o .htaccess ; dir ; quit"
 
-check: checklinks
+check: checkfiles checklinks
+
+checkfiles:
 	@bin/check_files.sh
 
 checklinks:
-	@if ! command -v mdlinkcheck.py >/dev/null; then echo -e "!!! For additional checking of Markdown links install 'mdlinkcheck.py' from https://github.com/rpi-simonz/mdlinkcheck\n" ; fi
+	@if ! command -v mdlinkcheck.py >/dev/null; then echo -e "\n##############################################\n#  For additional checks of Markdown links\n#  install 'mdlinkcheck.py' from here:\n#  https://github.com/rpi-simonz/mdlinkcheck\n##############################################\n" ; fi
 	@if command -v mdlinkcheck.py >/dev/null; then mdlinkcheck.py --raspiBackupDoc de/src en/src ; fi
