@@ -56,5 +56,5 @@ check: checklinks
 	@bin/check_files.sh
 
 checklinks:
-	@if ! command -v mdlinkcheck.py >/dev/null; then echo "!!! For additional checking of Markdown links install 'mdlinkcheck.py' from https://github.com/rpi-simonz/mdlinkcheck" ; fi
+	@if ! command -v mdlinkcheck.py >/dev/null; then echo -e "!!! For additional checking of Markdown links install 'mdlinkcheck.py' from https://github.com/rpi-simonz/mdlinkcheck\n" ; fi
 	@if command -v mdlinkcheck.py >/dev/null; then mdlinkcheck.py --raspiBackupDoc de/src en/src ; fi
