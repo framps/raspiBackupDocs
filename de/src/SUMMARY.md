@@ -60,15 +60,23 @@ Dies ermöglicht einige kleine Kniffe:
             - [nullmailer konfigurieren](nullmailer-configuration.md)
 
     - [Restore](restore-intro.md)        
-        - [Manueller Restore](manual-restore.md)
-        - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+        - [Restore einzelner Dateien](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+        - [Manueller rsync Restore](manual-restore.md)
+        - [Manueller tgz Restore](manual-restore-of-e-tgz-backup.md)
+
+    - [Fragen und Antworten](more-questions-and-answers.md)
+        - [Welches Fileystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
+        - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
+        - [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
+        - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
+        - [Umziehen des Raspberry Betriebssystems von SD Karte auf SSD, USB Platte oder USB Stick](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
+        - [Wie kann ich die Betaversion installieren und ausprobieren?](how-can-i-install-and-test-the-beta-version.md)
 
 - [Installation und erstes Backup](installation.md)
     - [Schnellstart - Installation in 5 Minuten](installation-in-5-minutes.md)
     - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
     - [Statistiken](statistics.md)
     - [Updates](updates.md)
-
 
 - [Aufruf und Optionen](details.md)
     - [Backup](backup.md)
@@ -83,14 +91,6 @@ Dies ermöglicht einige kleine Kniffe:
     - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
 
 - [Häufige Fragen / FAQ](faq.md)
-
-- [Weitere Fragen und Antworten](more-questions-and-answers.md)
-    - [Welches Fileystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
-    - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
-    - [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
-    - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
-    - [Umziehen des Raspberry Betriebssystems von SD Karte auf SSD, USB Platte oder USB Stick](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
-    - [Wie kann ich die Betaversion installieren und ausprobieren?](how-can-i-install-and-test-the-beta-version.md)
 
 - [Fehlermeldungen und -suche](error-messages.md)
 
