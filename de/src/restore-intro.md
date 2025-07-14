@@ -1,4 +1,4 @@
-# Restoreeinführung
+# Restore Einführung
 
 *raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung, d.h. alle Partitionen werden i.d.R. wiederhergestellt.
 Beim paritionsorientierten Modus kann man die zu restorenden Paritionen auswählen.

@@ -45,13 +45,30 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Sprachunterstützung](language-support.md)
 
+- [Einführung](intro.md)
+    - [Backup](backup-intro.md)
+        - [Backuptype und Entscheidungsbaum](backuptypes.md)
+        - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
+        - [Backupverzeichnisstruktur](backup-directory-structure.md)
+        - [Intelligente Rotationsstrategie](smart-recycle.md)
+        - [Snapshots](snapshots.md)
+        - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
+        - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
+        - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
+            - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
+            - [exim4 konfigurieren](exim4-configuration.md)
+            - [nullmailer konfigurieren](nullmailer-configuration.md)
+
+    - [Restore](restore-intro.md)        
+        - [Manueller Restore](manual-restore.md)
+        - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+
 - [Installation und erstes Backup](installation.md)
     - [Schnellstart - Installation in 5 Minuten](installation-in-5-minutes.md)
     - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
     - [Statistiken](statistics.md)
     - [Updates](updates.md)
 
-- [Restore Einführung](restore-intro.md)        
 
 - [Aufruf und Optionen](details.md)
     - [Backup](backup.md)
@@ -64,23 +81,6 @@ Dies ermöglicht einige kleine Kniffe:
         - [Optionen](general-options.md)   
         - [Konfiguration](general-config-options.md)
     - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
-
-- [Backup Detailinfo](backup-infos.md)
-    - [Backuptype und Entscheidungsbaum](backuptypes.md)
-    - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
-    - [Backupverzeichnisstruktur](backup-directory-structure.md)
-    - [Intelligente Rotationsstrategie](smart-recycle.md)
-    - [Snapshots](snapshots.md)
-    - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
-    - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
-    - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
-        - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
-        - [exim4 konfigurieren](exim4-configuration.md)
-        - [nullmailer konfigurieren](nullmailer-configuration.md)
-
-- [Restore Detailinfo](restore-infos.md)
-    - [Manueller Restore](manual-restore.md)
-    - [Restore einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md)
 
 - [Häufige Fragen / FAQ](faq.md)
 
@@ -107,7 +107,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Tipps zur Homeautomation](tips-homeautomation.md)
 
 - [Hilfreiche Links zum Thema Backup](helpful-links.md)
-- [Weitere Backuptools für die Raspberry Pis](other-raspberry-backup-tools.md)
+- [Andere Backuptools](other-raspberry-backup-tools.md)
 
 - [Verschiedenes](any-other-business.md)
     - [Versionshistorie](version-history.md)
