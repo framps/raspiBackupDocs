@@ -59,5 +59,24 @@ checkfiles:
 	@bin/check_files.sh
 
 checklinks:
-	@if ! command -v mdlinkcheck.py >/dev/null; then echo -e "\n##############################################\n#  For additional checks of Markdown links\n#  install 'mdlinkcheck.py' from here:\n#  https://github.com/rpi-simonz/mdlinkcheck\n##############################################\n" ; fi
+	@if ! command -v dlinkcheck.py >/dev/null; then \
+		echo -e "\n##############################################\n#  For additional checks of Markdown links\n#  install 'mdlinkcheck.py' from here:\n#  https://github.com/rpi-simonz/mdlinkcheck\n##############################################\n"; \
+		read -p "Install 'mdlinkcheck.py' automatically now [Y/n]? " inp; \
+		if [[ -z "$${inp}" ]] || [[ "$${inp}" == "Y" ]] ; then \
+			echo ""; \
+			P=$$((echo -e "Please select user-writable directory to install 'mdlinkcheck.py' in\nand press ENTER. (ESC to abort.)" ; echo "$$PATH" | tr ":" "\n") \
+			| fzf --disabled --no-input --reverse --header-lines=2 --header-border=sharp --header-label="Installation"); \
+			if [[ -n "$${P}" ]] ; then \
+				WGETTMP=$$(mktemp -d /tmp/WGETTMP.XXXX); \
+				wget -P "$${WGETTMP}" "https://raw.githubusercontent.com/rpi-simonz/mdlinkcheck/refs/heads/main/mdlinkcheck.py"; \
+				install "$${WGETTMP}/mdlinkcheck.py" "$${P}";\
+				unset WGETTMP; unset P; \
+				echo -e "\nInstallation done, hopefully! Check the messages above please.\n"; \
+			else \
+				echo -e "No automatic installation done due to your choice!\n"; \
+			fi;\
+		else \
+			echo -e "\nNo automatic installation done due to your choice!\n"; \
+		fi;\
+	fi
 	@if command -v mdlinkcheck.py >/dev/null; then mdlinkcheck.py --raspiBackupDoc de/src en/src ; fi
