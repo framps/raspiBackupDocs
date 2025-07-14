@@ -15,11 +15,18 @@
   - [-D: Weitere Optionen für den dd Backup](backup-options.md#parm_D)
   - [--dynamicMount: Dynamisches Mounten der Backuppartition](backup-options.md#parm_dynamicMount)
   - [--ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.](backup-options.md#parm_ignoreAdditionalPartitions)
+  - [-T: Zu sichernde Partitionen](backup-options.md#parm_T)
 
 ### Restoreoptionen
 
-  - [-g: Fortschrittsanzeige beim Restore](restore-options.md#parm_g)
-
+  - [-C: Auf Badblock prüfen](restore-options.md#parm_c)
+  - [-d: Restoredevice](restore-options.md#parm_d)
+  - [-R: Externe Rootpartition](restore-options.md#parm_R)
+  - [-T: Zu restorende Partitionen](restore-options.md#parm_T)
+  - [-Y: Automatisierter Restore](restore-options.md#parm_Y)
+  - [--resizeRootFS: Rootfilesystem Anpassung](restore-options.md#parm_resizeRootFS)
+  - [--updateUUIDs: UUID Generierung](restore-options.md#parm_resizeRootFS)
+ 
 ### Optionen, die die Meldungen und das Log betreffen
 
   - [-m: Meldungsdetails](general-options.md#parm_m)
@@ -33,29 +40,29 @@
 
 ### Optionen, die Benachrichtigungen steuern
 
-  - [-e: eMailAdresse an die die Benachrichtigung geschickt wird](usage-and-options.md#parm_e)
-  - [-s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken](usage-and-options.md#parm_s)
-  - [-E: Optionale Parameter für die eMailClientProgramme](usage-and-options.md#parm_E)
-  - [-F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen](usage-and-options.md#parm_F)
-  - [--eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert](usage-and-options.md#parm_eMailColoring)
+  - [-e: eMailAdresse an die die Benachrichtigung geschickt wird](general-options.md#parm_e)
+  - [-s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken](general-options.md#parm_s)
+  - [-E: Optionale Parameter für die eMailClientProgramme](general-options.md#parm_E)
+  - [-F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen](backup-options.md#parm_F)
+  - [--eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert](general-options.md#parm_eMailColoring)
 
 ### Optionen, die den Update, Restore und lokale Verteilung von *raspiBackup* steuern
 
-  - [-U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version](usage-and-options.md#parm_U)
-  - [-V: Reaktivierung einer vorhergehenden *raspiBackup* Version](usage-and-options.md#parm_V)
-  - [-y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp](usage-and-options.md#parm_y)
+  - [-U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version](general-options.md#parm_U)
+  - [-V: Reaktivierung einer vorhergehenden *raspiBackup* Version](general-options.md#parm_V)
+  - [-y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp](general-options.md#parm_y)
 
 ### Optionen, die Services vor dem Backup starten und stoppen sowie Erweiterungen
 
-  - [-o: Befehle, die Services vor dem Backup stoppen](usage-and-options.md#parm_o)
-  - [-a: Befehle, die Services nach dem Backup starten](usage-and-options.md#parm_a)
-  - [-N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen](usage-and-options.md#parm_N)
+  - [-o: Befehle, die Services vor dem Backup stoppen](backup-options.md#parm_o)
+  - [-a: Befehle, die Services nach dem Backup starten](backup-options.md#parm_a)
+  - [-N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen](backup-options.md#parm_N)
 
 ### Weitere Optionen
 
   - [-f: Angabe einer Konfigurationsdatei](usage-and-options.md#parm_f)
   - [-g: Fortschrittsanzeige](general-options.md#parm_g)
 
-[.status]: rft
+[.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
 [.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options

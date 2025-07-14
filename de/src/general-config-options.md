@@ -1,4 +1,4 @@
-## Allgemeine Konfigurationsoptionen
+# Allgemeine Konfigurationsoptionen
 
 <!-- toc -->
 

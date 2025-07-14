@@ -16,6 +16,7 @@ Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](
 
 <div class="table-wrapper-for-options">
 
+<a name="parm_C"></a>
 ### -C: Auf Badblocks prüfen
 
 Beim Formatieren wird mittels `mkfs.ext4 -c` auf Bad Blocks geprüft.  
@@ -25,6 +26,7 @@ Hinweis: Die Restorezeit wird dadurch erhöht.
 |--------|----------|--------------|--------------------|
 | -c     |   aus    |              | DEFAULT_CHECK_FOR_BAD_BLOCKS |
 
+<a name="parm_d"></a>
 ### -d: Restoredevice
 
 Device, auf dem der Backup restored wird.
@@ -44,6 +46,7 @@ verkleinert oder vergrößert, wenn das Zielgerät eine andere Größe
 hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch genügend Platz für die
 Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz wird der Restore abbrechen.
 
+<a name="parm_R"></a>
 ### -R: Externe Rootpartition
 
 Durch diese Option kann man Backups von Systemen restoren, die eine externe
@@ -68,6 +71,7 @@ Hinweis: Diese Option steht nur zur Verfuegung, wenn der normale Backupmodus
 benuzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
 Rootpartition mitgesichert werden.
 
+<a name="parm_T"></a>
 ### -T: Zu restorende Partitionen
 
 Beim partitionsorientierten `rsync` Backup können damit
@@ -78,7 +82,8 @@ alle Partitionen restored.
 |--------|----------|--------------|--------------------|
 | -T     |   "1,2"  |              | DEFAULT_PARTITIONS_TO_BACKUP |                   |
 
-### -Y
+<a name="parm_Y"></a>
+### -Y: Automatisierter Restore
 
 Standardmäßig wird vor dem Restore angezeigt, wie das Restoredevice gerade
 aussieht und abgefragt, ob man das Device wirklich überschreiben will. Soll der
@@ -99,7 +104,8 @@ Der Eintrag kann ein regulärer Ausdruck sein.
 
 DEFAULT_YES_NO_RESTORE_DEVICE="loop"
 
-### --resizeRootFS: Rottfilesystem anpassen
+<a name="parm_resizeRootFS"></a>
+### --resizeRootFS: Rootfilesystem anpassen
 
 Während der Wiederherstellung kann die Rootpartition auf die maximal verfügbare
 Größe des Zielgerätes der externen Partition ausgedehnt werden. Wird die
@@ -111,6 +117,7 @@ Partition auf dem Gerät erweitert. Liegen megr als 2 Paritionen vor ist es dann
 |--------|----------|--------------|--------------------|
 | --resizeRootFS     |  ja    |              |                    |
 
+<a name="parm_updateUUIDs"></a>
 ### --updateUUIDs: Anpassen der UUIDs
 
 Beim Restore werden immer die PARTUUIDs, UUIDs und LABELs
@@ -122,6 +129,7 @@ Restore generiert.
 |--------|----------|--------------|--------------------|
 | --updateUUIDs     |  ja    |              |                    |
 
+<a name="parm_0"></a>
 ### -0: Keine Partitionierung
 
 Es wird kein neues Paritionslayout auf dem Zielgerät erstellt, sondern das
@@ -132,7 +140,7 @@ und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 |--------|----------|--------------|--------------------|
 | --0     |  aus    |              |                    |
 
-
+<a name="parm_00"></a>
 ### -00: Keine Formatierung
 
 Hiermit wird keine Formatierung der mit der Option `-T`
@@ -144,6 +152,7 @@ geänderte oder gelöschte Dateien gesyncted werden.
 |--------|----------|--------------|--------------------|
 | -00     |  aus    |              |                    |
 
+<a name="parm_1"></a>
 ### -1: Partitionierungsfehler ignorieren
 
 Das Partitionslayout wird auf der SD Karte erstellt so wie es auf dem Quellgerät
@@ -157,6 +166,18 @@ weitere Details.
 
 Hinweis: Diese Option kann unerwartete Ergebnisse haben.
 Benutze die Option nur, wenn Du weisst, was Du tust.
+
+<a name="parm_N"></a>
+### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
+
+Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
+die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
+Speicherbelegung vor und nach dem Backuplauf ausgeben.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -N | keine |  | DEFAULT_EXTENSIONS |
+
 
 </div>
 
