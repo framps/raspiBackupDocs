@@ -69,7 +69,7 @@ checklinks:
 			if [[ -n "$${P}" ]] ; then \
 				WGETTMP=$$(mktemp -d /tmp/WGETTMP.XXXX); \
 				wget -P "$${WGETTMP}" "https://raw.githubusercontent.com/rpi-simonz/mdlinkcheck/refs/heads/main/mdlinkcheck.py"; \
-				install "$${WGETTMP}/mdlinkcheck.py" "$${P}";\
+				install -v "$${WGETTMP}/mdlinkcheck.py" "$${P}";\
 				unset WGETTMP; unset P; \
 				echo -e "\nInstallation done, hopefully! Check the messages above please.\n"; \
 			else \
