@@ -65,7 +65,7 @@ checklinks:
 		if [[ -z "$${inp}" ]] || [[ "$${inp}" == "Y" ]] ; then \
 			echo ""; \
 			P=$$((echo -e "Please select user-writable directory to install 'mdlinkcheck.py' in\nand press ENTER. (ESC to abort.)" ; echo "$$PATH" | tr ":" "\n") \
-			| fzf --disabled --no-input --reverse --header-lines=2 --header-border=sharp --header-label="Installation"); \
+			| fzf --disabled --reverse --header-lines=2); \
 			if [[ -n "$${P}" ]] ; then \
 				WGETTMP=$$(mktemp -d /tmp/WGETTMP.XXXX); \
 				wget -P "$${WGETTMP}" "https://raw.githubusercontent.com/rpi-simonz/mdlinkcheck/refs/heads/main/mdlinkcheck.py"; \
