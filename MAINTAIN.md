@@ -68,12 +68,19 @@ Bei GitHub muss dazu noch in den Einstellungen des Repositories unter
 > [!TIP]
 > Zur Vereinfachung ist ein einfaches `Makefile` im Repository enthalten.
 >
-> Es bietet die Kommandos
+> This Makefile has the following targets:
 >
->   - make build
->   - make upload
->   - make all   # (führt beide obigen Kommandos hintereinander aus)
-
+>  - push   : build locally to check and if successful push to GitHub for deployment
+>  - all    : build locally and then upload to webserver
+>
+>  - build  : build the docs locally
+>  - upload : upload the locally built docs to webserver
+>
+>  - check  : check if files are synced and in SUMMARY.md
+>             optionally check Markdown links (requires an additional tool)
+>
+>  - serveDe: build locally; and serve 'de' version via browser
+>  - serveEn: build locally; and serve 'en' version via browser
 
 > [!TIP]
 > Wenn unbedingt nötig, geht es auch ohne lokales Generieren:  
