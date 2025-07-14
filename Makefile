@@ -59,7 +59,7 @@ checkfiles:
 	@bin/check_files.sh
 
 checklinks:
-	@if ! command -v dlinkcheck.py >/dev/null; then \
+	@if ! command -v mdlinkcheck.py >/dev/null; then \
 		echo -e "\n##############################################\n#  For additional checks of Markdown links\n#  install 'mdlinkcheck.py' from here:\n#  https://github.com/rpi-simonz/mdlinkcheck\n##############################################\n"; \
 		read -p "Install 'mdlinkcheck.py' automatically now [Y/n]? " inp; \
 		if [[ -z "$${inp}" ]] || [[ "$${inp}" == "Y" ]] ; then \
