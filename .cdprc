@@ -126,7 +126,7 @@ edit_translate_all_rft() {
 export -f edit_translate_by_status edit_translate_all_rft  edit_translate_already_translated
 
 
-edit_grepped() {
+edit_grepped_files() {
 
     # Originally from
     # https://github.com/junegunn/fzf/blob/master/ADVANCED.md#switching-between-ripgrep-mode-and-fzf-mode-using-a-single-key-binding
@@ -153,7 +153,34 @@ edit_grepped() {
         --bind 'enter:become(vim {1} +{2})'
 }
 
-export -f edit_grepped
+export -f edit_grepped_files
+
+
+edit_meta_files() {
+    TMPFILE=$( mktemp tmp.XXXXXXXX )
+        FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
+        while true; do
+            # shellcheck disable=2012
+            mapfile -t FILES < <(ls -1 -- *.md Makefile {de,en}/book.toml \
+                                 | LANG=C sort | tee "${TMPFILE}" \
+                                 | ${FZF_MULTI} \
+                                      --header="${FZF_HEADER}" \
+                                      --bind="load:pos($FZFPOS_FILE)" \
+                                      --preview='cat {}')
+            [[ "${FILES[*]}" ]] || break
+            unset FZFPOS_FILE
+            # remember position of (first) selected entry to be able to re-position fzf to it
+            if [[ -f "${TMPFILE}" ]] ; then
+                FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
+                rm -f "${TMPFILE}"
+            fi
+            ${EDIT_IN_TABS} "${FILES[@]}"
+        done
+        [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+        unset FZFPOS_FILE
+}
+
+export -f edit_meta_files
 
 
 get_escaped_status () {
@@ -207,7 +234,7 @@ edit_by_status() {
         TMPFILE=$( mktemp tmp.XXXXXXXX )
         ALL_MD_FILES=$( __list_files_with_status "--ALL-MD-FILES--" | wc -l)
         WITHOUT_STATUS=$( __list_files_with_status "--NO-STATUS--"| wc -l)
-        # shellcheck disable=2016,2086  # Expressions don't expand in single quotes, use double quotes for that.
+        # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
         # Because that string is passed to fzf's preview option!
         STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
                    | sort | uniq -c
@@ -221,7 +248,8 @@ edit_by_status() {
                        --bind="load:pos($FZFPOS_STATUS)" \
                        --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
                        --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
-                       --bind="alt-g:execute(edit_grepped)" \
+                       --bind="alt-g:execute(edit_grepped_files)" \
+                       --bind="alt-m:execute(edit_meta_files)" \
                        --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
                        --preview='V={}; __list_files_with_status "$V"')
         set --
@@ -279,7 +307,8 @@ edit_by_status() {
 
 
 alias vibs='EDIT_IN_TABS="vim -p" edit_by_status'
-alias virf='edit_grepped'
+alias vigf='edit_grepped_files'
+alias vimf='edit_meta_files'
 
 
 check_ssh_id() {
@@ -315,7 +344,7 @@ This project directory is for maintaining the 'raspiBackup' documentation.
 
 A new command (alias) 'vibs' is defined now. ("vi by status")
 
-It starts a TUI for selecting files by their status for normal editing.
+It starts a TUI for selecting Markdown files by their status for editing.
 
 Within the main screen of the TUI there are additional hotkeys active:
 
@@ -326,6 +355,11 @@ Within the main screen of the TUI there are additional hotkeys active:
   * Alt-S for calling 'vimdiff' with the (S)UMMARY.md files of both languages.
 
   * Alt-G for calling an interactive (G)rep-Tool using ripgrep, fzf and vim
+
+The above functions handle Markdown source files for the documentation itself.
+Administration files like README, Makefile and book.toml can be selected too:
+
+  * Alt-M for editing the (M)eta files
 
 *******************************************************************************
 
