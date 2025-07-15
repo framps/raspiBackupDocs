@@ -5,6 +5,12 @@ definiert werden. Siehe dazu [Backupoptionen](backup-options.md).
 
 <div class="table-wrapper-for-options">
 
+------------------
+
+<!-- toc -->
+
+------------------
+
 ### DEFAULT_BEFORE_STOPSERVICES / DEFAULT_AFTER_STARTSERVICES
 
 Ab Version 0.6.4.3: Die hier definierten Befehle werden vor bzw nach dem Backup
@@ -30,8 +36,6 @@ Siehe dazu auch [FAQ16](faq.md#faq16).
 |----------------------------|----------|
 | DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY |          |
 
-
-
 ### DEFAULT_LINK_BOOTPARTITIONFILES
 
 Sich selten ändernde Bootparition Backups werden mit Hardlinks verknüpft, um
@@ -41,6 +45,16 @@ Backupspace zu sparen. Voraussetzung: Der Backupspace unterstützt Hardlinks
 | Config-Option              | Standard |
 |----------------------------|----------|
 | DEFAULT_LINK_BOOTPARTITIONFILES |          |
+
+### DEFAULT_MAIL_ON_ERROR_ONLY
+
+Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet. Hinweis: Sollte
+*raspiBackup* wegen aussergewöhnlicher Umstände abstürzen, kann es durchaus sein,
+dass keine eMail gesendet wird.
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_MAIL_ON_ERROR_ONLY |          |
 
 ### DEFAULT_REBOOT_SYSTEM
 
@@ -64,17 +78,6 @@ Backupoptionen, die beim rsync Backup zusätzlich genutzt werden.
 |----------------------------|----------|
 | DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS |          |
 
-### DEFAULT_MAIL_ON_ERROR_ONLY
-
-Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet. Hinweis: Sollte
-*raspiBackup* wegen aussergewöhnlicher Umstände abstürzen, kann es durchaus sein,
-dass keine eMail gesendet wird.
-
-| Config-Option              | Standard |
-|----------------------------|----------|
-| DEFAULT_MAIL_ON_ERROR_ONLY |          |
-
-
 ### DEFAULT_RSYNC_BACKUP_OPTIONS
 
 Backupoptionen, die beim rsync Backup genutzt werden.
@@ -84,6 +87,16 @@ Backupoptionen, die beim rsync Backup genutzt werden.
 | Config-Option              | Standard |
 |----------------------------|----------|
 | DEFAULT_RSYNC_BACKUP_OPTIONS | --delete -aHAx |
+
+### DEFAULT_TAR_BACKUP_OPTIONS
+
+Backupoptionen, die beim tar Backup genutzt werden.
+
+**Benutzung auf eigene Gefahr!**
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_TAR_BACKUP_OPTIONS | -cpi     |
 
 
 ### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
@@ -95,18 +108,6 @@ Backupoptionen, die beim tar Backup zusätzlich genutzt werden.
 | Config-Option              | Standard |
 |----------------------------|----------|
 | DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS |          |
-
-
-
-### DEFAULT_TAR_BACKUP_OPTIONS
-
-Backupoptionen, die beim tar Backup genutzt werden.
-
-**Benutzung auf eigene Gefahr!**
-
-| Config-Option              | Standard |
-|----------------------------|----------|
-| DEFAULT_TAR_BACKUP_OPTIONS | -cpi     |
 
 </div>
 

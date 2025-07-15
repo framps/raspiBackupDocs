@@ -5,6 +5,87 @@ die entsprechenden Konfigurationsoptionen.
 
 <div class="table-wrapper-for-options">
 
+------------------
+
+<!-- toc -->
+
+------------------
+
+<a name="parm_a"></a>
+### -a: Befehle, die Services nach dem Backup starten
+
+Befehle, um Services nach dem Backup wieder zu starten. Z.B. bei Samba "service
+smbd start" (Achtung: Anführungszeichen an Anfang und Ende). Diese Option ist
+zusammen mit der Option -o obligatorisch.
+
+Mehrere Befehle müssen durch && getrennt werden. Alternativ kann ein
+Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle sollten die
+exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -o.
+
+**Beispiel**:
+
+```
+-a "service nfs-kernel-server start && service samba"
+```
+
+Soll wirklich **kein** Service gestartet werden, muss ein Doppelpunkt ":" als Argument mitgegeben werden.
+
+Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
+
+**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -a | keine | konfigurierbar | DEFAULT_STARTSERVICES |
+
+
+<a name="parm_b"></a>
+### -b: Definition der Blocksize die beim dd Backup genutzt wird
+
+Blocksize, die beim dd Backup benutzt wird
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -b | 1 MB |  | DEFAULT_DD_BLOCKSIZE |
+
+
+<a name="parm_B"></a>
+### -B: Bootpartition wird als tar gesichert statt per dd
+
+Die Bootpartition wird nicht per dd sondern per tar gesichert.
+
+Hinweis: Diese Option hat keine Funktion wenn der partitionsorientierte Modus
+benutzt wird, also Option -P benutzt wird oder DEFAULT_PARTITIONBASED_BACKUP=1
+in der Konfiguration gesetzt ist.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -B | aus |  | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
+
+<a name="parm_c"></a>
+### -c: Erlaube lokale Backupspeicherung
+
+Es kann kein Backup auf der Rootpartition erstellt werden, um vor
+unbeabsichtigtem Vollschreiben der Rootpartition durch das Backup zu schützen.
+
+Mit dieser Option wird der Test ausgeschaltet und es kann ein Backup auf der
+Rootpartition erstellt werden. **ACHTUNG**: Es wird nicht geprüft, ob das Backup
+noch auf die Rootparition passt.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -c | aus |  | DEFAULT_SKIPLOCALCHECK |
+
+<a name="parm_D"></a>
+### -D: Weitere Optionen für den dd Backup
+
+Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -D | automatisch |  | DEFAULT_DD_PARMS |
+
+
 <a name="parm_dynamicMount"></a>
 ### --dynamicMount: Dynamisches Mounten der Backuppartition
 
@@ -18,18 +99,16 @@ oder die Backuppartition (z.B. /dev/sdb1).
 |-------------|----------|--------------|--------------------|
 | --dynamicMount | aus |  | DEFAULT_DYNAMIC_MOUNT |
 
+<a name="parm_F"></a>
+### -F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen
 
-<a name="parm_eMailColoring"></a>
-### --eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert
-
-Standardmaessig wird das eMailColoring über die Subject Zeile gesteuert, da
-dieser Weg von den meisten eMail Clients genutzt wird. Wenn man aber postfix
-als eMail Client benutzt, muss man OPTION als Parameter mitgeben, da postfix das
-Coloring mit einer separaten Option steuert.
+Fake backup. Diese Option ist hilfreich beim initialen Testen von *raspiBackup*.
+Der eigentliche lange Backup wird dadurch nicht angestossen - aber sämtliche
+Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --eMailColoring | SUBJECT |  | DEFAULT_EMAIL_COLORING |
+| -F | None |  | None |
 
 
 <a name="parm_ignoreAdditionalPartitions"></a>
@@ -57,9 +136,22 @@ ausgeschaltet.
 |-------------|----------|--------------|--------------------|
 | --ignoreMissingPartitions | nein |  | DEFAULT_IGNORE_MISSING_PARTITIONS |
 
+<a name="parm_k"></a>
+### -k: Anzahl der Backups die vorgehalten werden sollen
+
+Anzahl der Backups, die pro Backuptyp vorzuhalten sind, sofern es nicht durch
+folgende Option überschrieben wird. D.h., es werden 3 dd, 3 tar und 3 rsync
+Backups vorgehalten.
+
+Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -k | 3 | konfigurierbar | DEFAULT_KEEPBACKUPS |
+
 
 <a name="parm_keepType"></a>
-### --keep_{type}: 
+### --keep_{type}: Anazhl der Backups pro Typ die vorgehalten werden sollen
 
 Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
 
@@ -77,6 +169,32 @@ Technischer Hinweis: Dieser Parameter wird i.d.R. manuell nacheditiert, um die e
 | --keep_tar   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TAR |
 | --keep_tgz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TGZ |
 
+<a name="parm_M"></a>
+### -M: Erstellen eines *raspiBackup* Snapshots
+
+Mit der Option wird ein *raspiBackup* Snapshot erstellt, welcher nicht im
+Backuprecycleprozess berücksichtigt wird und somit nicht gelöscht wird. Der
+Snapshot erhält am Ende des Verzeichnisnamens den angegebenen Text. Siehe auch
+[diese Seite zu Snapshots](snapshots.md).
+
+Beispiel: Der Hostname ist "idefix" und der Parameter für -M ist "Initial boot
+from SD". Dann wird folgendes Verzeichnis angelegt:
+
+```
+idefix/idefix-rsync-backup-20170103-170717_idefix-Initial_boot_from_SD
+```
+
+**Hinweis**: *raspiBackup* Snapshots sind normale Backups und keine "richtigen"
+Snapshots wie die bei LVM oder btrfs. Es werden aber beim rsync Backup Hardlinks
+genutzti um die Snapshotzeit zu reduzieren.
+
+**Hinweis**: Da dieses Verzeichnis nicht im Backuprecycleprozess berücksichtigt wird,
+muss es bei Bedarf manuell gelöscht werden.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -M | keiner |  |  |
+
 
 <a name="parm_notifyStart"></a>
 ### --notifyStart: 
@@ -89,6 +207,32 @@ Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 |-------------|----------|--------------|--------------------|
 | --notifyStart | nein |  | DEFAULT_NOTIFY_START |
 
+<a name="parm_o"></a>
+### -o: Befehle, die Services vor dem Backup stoppen
+
+Befehle, um Services vor dem Backup zu stoppen, damit kein inkonsistentes Backup
+erzeugt wird. Z.B. bei Samba "service smbd stop" (Achtung: Anführungszeichen an
+Anfang und Ende). Diese Option ist zusammen mit der Option -a obligatorisch.
+
+Mehrere Befehle müssen durch `&&` getrennt werden. Alternativ kann ein
+Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle sollten die
+exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -a.
+
+Beispiel:
+
+```
+-o "service samba stop && service nfs-kernel-server stop"
+```
+
+Soll wirklich **kein** Service gestoppt werden, muss der Doppelpunkt ":" als Argument mitgegeben werden.
+
+Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
+
+**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -o | keine | konfigurierbar | DEFAULT_STOPSERVICES |
 
 <a name="parm_rebootSystem"></a>
 ### --rebootSystem: 
@@ -171,90 +315,6 @@ gestartet muss diese Option angegeben werden.
 |-------------|----------|--------------|--------------------|
 | --unsupportedEnvironment | aus |  |  |
 
-<a name="parm_B"></a>
-### -B: Bootpartition wird als tar gesichert statt per dd
-
-Die Bootpartition wird nicht per dd sondern per tar gesichert.
-
-Hinweis: Diese Option hat keine Funktion wenn der partitionsorientierte Modus
-benutzt wird, also Option -P benutzt wird oder DEFAULT_PARTITIONBASED_BACKUP=1
-in der Konfiguration gesetzt ist.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -B | aus |  | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
-
-
-<a name="parm_D"></a>
-### -D: Weitere Optionen für den dd Backup
-
-Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -D | automatisch |  | DEFAULT_DD_PARMS |
-
-<a name="parm_F"></a>
-### -F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen
-
-Fake backup. Diese Option ist hilfreich beim initialen Testen von *raspiBackup*.
-Der eigentliche lange Backup wird dadurch nicht angestossen - aber sämtliche
-Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -F | None |  | None |
-
-<a name="parm_L"></a>
-### -L: Verzeichnis wo das Debuglog sowie die Laufzeitmeldungen gespeichert werden
-
-Definiert das Ziel der Logdatei `raspiBackup.log`.
-
-- varlog: Die Logdatei wird in /var/log geschrieben
-- backup: Die Logdatei wird in das erzeugte Backup geschrieben
-- current: Die Logdatei wird in das aktuelle Verzeichnis geschrieben.
-
-<Dateinamenprefix>:  Das Debuglog wird dort mit der Extension `.log` und die
-Messagedatei mit der Extension `.msg` abgelegt.
-
-Beispiel: `/home/pi/raspiBackup`
-
-Am Ende existiert `/home/pi/raspiBackup.log` sowie `/home/pi/raspiBackup.msg`
-
-Im Backupverzeichnis werden keine Logs abgelegt.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -L | backup |  | DEFAULT_LOG_OUTPUT |
-
-
-<a name="parm_M"></a>
-### -M: Erstellen eines *raspiBackup* Snapshots
-
-Mit der Option wird ein *raspiBackup* Snapshot erstellt, welcher nicht im
-Backuprecycleprozess berücksichtigt wird und somit nicht gelöscht wird. Der
-Snapshot erhält am Ende des Verzeichnisnamens den angegebenen Text. Siehe auch
-[diese Seite zu Snapshots](snapshots.md).
-
-Beispiel: Der Hostname ist "idefix" und der Parameter für -M ist "Initial boot
-from SD". Dann wird folgendes Verzeichnis angelegt:
-
-```
-idefix/idefix-rsync-backup-20170103-170717_idefix-Initial_boot_from_SD
-```
-
-**Hinweis**: *raspiBackup* Snapshots sind normale Backups und keine "richtigen"
-Snapshots wie die bei LVM oder btrfs. Es werden aber beim rsync Backup Hardlinks
-genutzti um die Snapshotzeit zu reduzieren.
-
-**Hinweis**: Da dieses Verzeichnis nicht im Backuprecycleprozess berücksichtigt wird,
-muss es bei Bedarf manuell gelöscht werden.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -M | keiner |  |  |
-
-
 <a name="parm_P"></a>
 ### -P: Partitionsorientierter Backupmodus
 
@@ -285,100 +345,6 @@ Partition. Mit * werden alle Partitionen gesichert.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -T | "1 2" | konfigurierbar | DEFAULT_PARTITIONS_TO_RESTORE |
-
-<a name="parm_a"></a>
-### -a: Befehle, die Services nach dem Backup starten
-
-Befehle, um Services nach dem Backup wieder zu starten. Z.B. bei Samba "service
-smbd start" (Achtung: Anführungszeichen an Anfang und Ende). Diese Option ist
-zusammen mit der Option -o obligatorisch.
-
-Mehrere Befehle müssen durch && getrennt werden. Alternativ kann ein
-Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle sollten die
-exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -o.
-
-**Beispiel**:
-
-```
--a "service nfs-kernel-server start && service samba"
-```
-
-Soll wirklich **kein** Service gestartet werden, muss ein Doppelpunkt ":" als Argument mitgegeben werden.
-
-Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
-
-**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -a | keine | konfigurierbar | DEFAULT_STARTSERVICES |
-
-
-<a name="parm_b"></a>
-### -b: Definition der Blocksize die beim dd Backup genutzt wird
-
-Blocksize, die beim dd Backup benutzt wird
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -b | 1 MB |  | DEFAULT_DD_BLOCKSIZE |
-
-
-<a name="parm_c"></a>
-### -c: Erlaube lokale Backupspeicherung
-
-Es kann kein Backup auf der Rootpartition erstellt werden, um vor
-unbeabsichtigtem Vollschreiben der Rootpartition durch das Backup zu schützen.
-
-Mit dieser Option wird der Test ausgeschaltet und es kann ein Backup auf der
-Rootpartition erstellt werden. **ACHTUNG**: Es wird nicht geprüft, ob das Backup
-noch auf die Rootparition passt.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -c | aus |  | DEFAULT_SKIPLOCALCHECK |
-
-<a name="parm_k"></a>
-### -k: Anzahl der Backups die vorgehalten werden sollen
-
-Anzahl der Backups, die pro Backuptyp vorzuhalten sind, sofern es nicht durch
-folgende Option überschrieben wird. D.h., es werden 3 dd, 3 tar und 3 rsync
-Backups vorgehalten.
-
-Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -k | 3 | konfigurierbar | DEFAULT_KEEPBACKUPS |
-
-
-<a name="parm_o"></a>
-### -o: Befehle, die Services vor dem Backup stoppen
-
-Befehle, um Services vor dem Backup zu stoppen, damit kein inkonsistentes Backup
-erzeugt wird. Z.B. bei Samba "service smbd stop" (Achtung: Anführungszeichen an
-Anfang und Ende). Diese Option ist zusammen mit der Option -a obligatorisch.
-
-Mehrere Befehle müssen durch `&&` getrennt werden. Alternativ kann ein
-Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle sollten die
-exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -a.
-
-Beispiel:
-
-```
--o "service samba stop && service nfs-kernel-server stop"
-```
-
-Soll wirklich **kein** Service gestoppt werden, muss der Doppelpunkt ":" als Argument mitgegeben werden.
-
-Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
-
-**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -o | keine | konfigurierbar | DEFAULT_STOPSERVICES |
-
 
 <a name="parm_t"></a>
 ### -t: Typ des Backups (dd, tar, rsync)

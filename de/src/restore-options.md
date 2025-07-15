@@ -14,6 +14,12 @@ Dazu sind dann entsprechende Kenntnisse der Linux Backuptools notwendig.
 
 Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md) möglich.
 
+------------------
+
+<!-- toc -->
+
+------------------
+
 <div class="table-wrapper-for-options">
 
 <a name="parm_C"></a>
@@ -46,6 +52,17 @@ verkleinert oder vergrößert, wenn das Zielgerät eine andere Größe
 hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch genügend Platz für die
 Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz wird der Restore abbrechen.
 
+<a name="parm_N"></a>
+### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
+
+Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
+die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
+Speicherbelegung vor und nach dem Backuplauf ausgeben.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -N | keine |  | DEFAULT_EXTENSIONS |
+
 <a name="parm_R"></a>
 ### -R: Externe Rootpartition
 
@@ -71,6 +88,19 @@ Hinweis: Diese Option steht nur zur Verfuegung, wenn der normale Backupmodus
 benuzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
 Rootpartition mitgesichert werden.
 
+<a name="parm_resizeRootFS"></a>
+### --resizeRootFS: Rootfilesystem anpassen
+
+Während der Wiederherstellung kann die Rootpartition auf die maximal verfügbare
+Größe des Zielgerätes der externen Partition ausgedehnt werden. Wird die
+Option ausgeschaltet mit --resizeRootFS- wird die Rootpartition so gross
+angelegt wie sie auf dem Originalsystem war. Nutze man die Option -P so wird die letzte
+Partition auf dem Gerät erweitert. Liegen megr als 2 Paritionen vor ist es dann nicht die Rootpartition.
+
+| Option | Standard | Im Installer | Konfigurationsname |
+|--------|----------|--------------|--------------------|
+| --resizeRootFS     |  ja    |              |                    |
+
 <a name="parm_T"></a>
 ### -T: Zu restorende Partitionen
 
@@ -81,6 +111,18 @@ alle Partitionen restored.
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
 | -T     |   "1,2"  |              | DEFAULT_PARTITIONS_TO_BACKUP |                   |
+
+<a name="parm_updateUUIDs"></a>
+### --updateUUIDs: Anpassen der UUIDs
+
+Beim Restore werden immer die PARTUUIDs, UUIDs und LABELs
+des Originals restored. Dieses erzeugt i.d.R. Probleme, wenn man das restorte
+System am Originalsystem mounted. Mit dieser Option werden neue PARTUUIDs, UUIDs und LABEL beim
+Restore generiert.
+
+| Option | Standard | Im Installer | Konfigurationsname |
+|--------|----------|--------------|--------------------|
+| --updateUUIDs     |  ja    |              |                    |
 
 <a name="parm_Y"></a>
 ### -Y: Automatisierter Restore
@@ -103,31 +145,6 @@ Der Eintrag kann ein regulärer Ausdruck sein.
 **Use with care!**
 
 DEFAULT_YES_NO_RESTORE_DEVICE="loop"
-
-<a name="parm_resizeRootFS"></a>
-### --resizeRootFS: Rootfilesystem anpassen
-
-Während der Wiederherstellung kann die Rootpartition auf die maximal verfügbare
-Größe des Zielgerätes der externen Partition ausgedehnt werden. Wird die
-Option ausgeschaltet mit --resizeRootFS- wird die Rootpartition so gross
-angelegt wie sie auf dem Originalsystem war. Nutze man die Option -P so wird die letzte
-Partition auf dem Gerät erweitert. Liegen megr als 2 Paritionen vor ist es dann nicht die Rootpartition.
-
-| Option | Standard | Im Installer | Konfigurationsname |
-|--------|----------|--------------|--------------------|
-| --resizeRootFS     |  ja    |              |                    |
-
-<a name="parm_updateUUIDs"></a>
-### --updateUUIDs: Anpassen der UUIDs
-
-Beim Restore werden immer die PARTUUIDs, UUIDs und LABELs
-des Originals restored. Dieses erzeugt i.d.R. Probleme, wenn man das restorte
-System am Originalsystem mounted. Mit dieser Option werden neue PARTUUIDs, UUIDs und LABEL beim
-Restore generiert.
-
-| Option | Standard | Im Installer | Konfigurationsname |
-|--------|----------|--------------|--------------------|
-| --updateUUIDs     |  ja    |              |                    |
 
 <a name="parm_0"></a>
 ### -0: Keine Partitionierung
@@ -166,18 +183,6 @@ weitere Details.
 
 Hinweis: Diese Option kann unerwartete Ergebnisse haben.
 Benutze die Option nur, wenn Du weisst, was Du tust.
-
-<a name="parm_N"></a>
-### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
-
-Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
-die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
-Speicherbelegung vor und nach dem Backuplauf ausgeben.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -N | keine |  | DEFAULT_EXTENSIONS |
-
 
 </div>
 
