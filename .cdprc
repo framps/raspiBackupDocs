@@ -90,11 +90,11 @@ unset FZFPOS_STATUS FZFPOS_FILE
 
 edit_translate_by_status() {
     while true; do
-        TMPFILE=$( mktemp tmp.XXXXXXXX )
+        TMPFILE_TRANS=$( mktemp tmp.XXXXXXXX )
         FILE=$(cd de/src || exit
                # shellcheck disable=2086  # to get the RG_OPTION word-splitted
                ${RG_IGN} --files-with-matches "$1" 2>/dev/null | sort \
-               | tee "../../${TMPFILE}" \
+               | tee "../../${TMPFILE_TRANS}" \
                | ${FZF} \
                     --header="$FZF_HEADER" \
                     --bind="load:pos($FZFPOS_STATUS)" \
@@ -102,13 +102,13 @@ edit_translate_by_status() {
         [ -z "$FILE" ] && break
         unset FZFPOS_STATUS
         # remember position of selected entry to be able to re-position fzf to it
-        if [[ -f "${TMPFILE}" ]] ; then
-            FZFPOS_STATUS=$( grep "${FILE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-            rm -f "${TMPFILE}"
+        if [[ -f "${TMPFILE_TRANS}" ]] ; then
+            FZFPOS_STATUS=$( grep "${FILE}" < <(nl "${TMPFILE_TRANS}") | awk '{print $1}' )
+            rm -f "${TMPFILE_TRANS}"
         fi
-        ${EDIT_IN_SPLIT_WINDOWS} {de,en}/src/"$FILE"
+        ${EDIT_IN_SPLIT_WINDOWS} {en,de}/src/"$FILE" # {en,de}/src/SUMMARY.md
     done
-    [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+    [[ -f "${TMPFILE_TRANS}" ]] && rm -f "${TMPFILE_TRANS}"
     unset FZFPOS_STATUS
 }
 
@@ -157,12 +157,12 @@ export -f edit_grepped_files
 
 
 edit_meta_files() {
-    TMPFILE=$( mktemp tmp.XXXXXXXX )
+    TMPFILE_META=$( mktemp tmp.XXXXXXXX )
         FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
         while true; do
             # shellcheck disable=2012
             mapfile -t FILES < <(ls -1 -- *.md Makefile {de,en}/book.toml \
-                                 | LANG=C sort | tee "${TMPFILE}" \
+                                 | LANG=C sort | tee "${TMPFILE_META}" \
                                  | ${FZF_MULTI} \
                                       --header="${FZF_HEADER}" \
                                       --bind="load:pos($FZFPOS_FILE)" \
@@ -170,13 +170,13 @@ edit_meta_files() {
             [[ "${FILES[*]}" ]] || break
             unset FZFPOS_FILE
             # remember position of (first) selected entry to be able to re-position fzf to it
-            if [[ -f "${TMPFILE}" ]] ; then
-                FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-                rm -f "${TMPFILE}"
+            if [[ -f "${TMPFILE_META}" ]] ; then
+                FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE_META}") | awk '{print $1}' )
+                rm -f "${TMPFILE_META}"
             fi
             ${EDIT_IN_TABS} "${FILES[@]}"
         done
-        [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+        [[ -f "${TMPFILE_META}" ]] && rm -f "${TMPFILE_META}"
         unset FZFPOS_FILE
 }
 
@@ -231,7 +231,7 @@ edit_by_status() {
     while true; do
         FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
         shopt -s extglob               # disabled by default
-        TMPFILE=$( mktemp tmp.XXXXXXXX )
+        TMPFILE_STATUS=$( mktemp tmp.XXXXXXXX )
         ALL_MD_FILES=$( __list_files_with_status "--ALL-MD-FILES--" | wc -l)
         WITHOUT_STATUS=$( __list_files_with_status "--NO-STATUS--"| wc -l)
         # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
@@ -241,13 +241,13 @@ edit_by_status() {
                    (( WITHOUT_STATUS > 0 )) && printf "%7d %s\n" "${WITHOUT_STATUS}" "[]: --NO-STATUS--"
                    printf "%7d %s\n" "${ALL_MD_FILES}" "[]: --ALL-MD-FILES--"
                    ) \
-                   | tee "${TMPFILE}" \
+                   | tee "${TMPFILE_STATUS}" \
                    | ${FZF} \
                        --query="$*" \
                        --header="${FZF_HEADER}" \
                        --bind="load:pos($FZFPOS_STATUS)" \
-                       --bind="alt-r:execute(bash -c edit_translate_all_rft)" \
-                       --bind="alt-t:execute(bash -c edit_translate_already_translated)" \
+                       --bind="alt-r:execute(edit_translate_all_rft)" \
+                       --bind="alt-t:execute(edit_translate_already_translated)" \
                        --bind="alt-g:execute(edit_grepped_files)" \
                        --bind="alt-m:execute(edit_meta_files)" \
                        --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
@@ -270,21 +270,21 @@ edit_by_status() {
 
         unset FZFPOS_STATUS
         # remember position of (first) selected entry to be able to re-position fzf to it
-        if [[ -f "${TMPFILE}" ]] ; then
-            FZFPOS_STATUS=$( grep -E -- "${VALUE}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-            rm -f "${TMPFILE}"
+        if [[ -f "${TMPFILE_STATUS}" ]] ; then
+            FZFPOS_STATUS=$( grep -E -- "${VALUE}" < <(nl "${TMPFILE_STATUS}") | awk '{print $1}' )
+            rm -f "${TMPFILE_STATUS}"
         fi
 
         FZF_HEADER=">> Please select file(s) to edit and press ENTER. (ESC to cancel.) <<"
         while true; do
-            TMPFILE=$( mktemp tmp.XXXXXXXX )
+            TMPFILE_STATUS=$( mktemp tmp.XXXXXXXX )
             # Solutions for opening multiple file found here:
             # https://github-wiki-see.page/m/junegunn/fzf/wiki/examples (Section "Opening files")
             # Otherwise the LFs aren't interpreted correctly by the editor.
             # But shellcheck complained with SC2207...  https://www.shellcheck.net/wiki/SC2207
             # And so it is now:
             mapfile -t FILES < <(__list_files_with_status "${STATUS}" \
-                                 | sort | tee "${TMPFILE}" \
+                                 | sort | tee "${TMPFILE_STATUS}" \
                                  | ${FZF_MULTI} \
                                       --header="${FZF_HEADER}" \
                                       --bind="load:pos($FZFPOS_FILE)" \
@@ -292,16 +292,16 @@ edit_by_status() {
             [[ "${FILES[*]}" ]] || break
             unset FZFPOS_FILE
             # remember position of (first) selected entry to be able to re-position fzf to it
-            if [[ -f "${TMPFILE}" ]] ; then
-                FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE}") | awk '{print $1}' )
-                rm -f "${TMPFILE}"
+            if [[ -f "${TMPFILE_STATUS}" ]] ; then
+                FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE_STATUS}") | awk '{print $1}' )
+                rm -f "${TMPFILE_STATUS}"
             fi
             ${EDIT_IN_TABS} "${FILES[@]}"
         done
-        [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+        [[ -f "${TMPFILE_STATUS}" ]] && rm -f "${TMPFILE_STATUS}"
         unset FZFPOS_FILE
     done
-    [[ -f "${TMPFILE}" ]] && rm -f "${TMPFILE}"
+    [[ -f "${TMPFILE_STATUS}" ]] && rm -f "${TMPFILE_STATUS}"
     unset FZFPOS_STATUS
 }
 
