@@ -106,7 +106,8 @@ edit_translate_by_status() {
             FZFPOS_STATUS=$( grep "${FILE}" < <(nl "${TMPFILE_TRANS}") | awk '{print $1}' )
             rm -f "${TMPFILE_TRANS}"
         fi
-        ${EDIT_IN_SPLIT_WINDOWS} {en,de}/src/"$FILE" # {en,de}/src/SUMMARY.md
+        # ${EDIT_IN_SPLIT_WINDOWS} {en,de}/src/"$FILE"
+        vim -c "tabnew en/src/${FILE}|vsplit de/src/${FILE}|tabnew en/src/SUMMARY.md|vsplit de/src/SUMMARY.md|tabfirst" en/src/"${FILE}"
     done
     [[ -f "${TMPFILE_TRANS}" ]] && rm -f "${TMPFILE_TRANS}"
     unset FZFPOS_STATUS
