@@ -1,4 +1,4 @@
-# Restore
+# Restore Optionen nund konfigurationen
 
 Die Aufrufoptionen und die dazugehörigen Konfigurationsoptionen
 für *raspiBackup* sind [hier]((restore-options.md) erklärt.

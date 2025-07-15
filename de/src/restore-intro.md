@@ -1,7 +1,9 @@
 # Restore Einführung
 
-*raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung, d.h. alle Partitionen werden i.d.R. wiederhergestellt.
-Beim paritionsorientierten Modus kann man die zu restorenden Paritionen auswählen.
+*raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung, d.h. alle Partitionen
+werden i.d.R. wiederhergestellt.
+Im Gegensatz dazu kann beim paritionsorientierten Modus die zu restorenden Paritionen ausgewählt
+und somit nur Teile restored werden.
 
 Bei einem Restore werden auf dem Ziel-Datenträger (SD-Karte, USB-Platte, ...)
 neue Partitionen angelegt und dann mit dem entsprechenden Tool (`dd`, `tar` oder `rsync`)
@@ -97,13 +99,6 @@ die Backuppartition gemounted und eine Partition für ein eventuelles externes
 Rootfilesystem bereitgestellt.
 
 Dann *raspiBackup* zum Restore starten, Aufruf siehe [unten](#devicenames).
-
-## Aufrufsyntax und -optionen
-
-*raspiBackup* muss als Benutzer *root* oder per `sudo` aufgerufen werden.
-
-    raspiBackup Option1 Option2 Option3 ... Backupverzeichnis
-
 
 ## Beispielaufrufe
 
