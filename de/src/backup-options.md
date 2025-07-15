@@ -302,7 +302,7 @@ Diese Option definiert Parameter der [intelligenten Rotationsstrategie - Smart R
 
 
 <a name="parm_systemstatus"></a>
-### --systemstatus: Aktive Services beim Backupstart anzeigen
+### --systemstatus: Aktive Services beim Backupstart anzeigenAktive Services beim Backupstart anzeigen
 
 Es wird eine Liste der aktiven Services und offenen Dateien
 in der Debugdatei erstellt

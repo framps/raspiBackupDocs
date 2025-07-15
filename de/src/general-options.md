@@ -74,23 +74,6 @@ sollte vor Verschicken des Logs manuell maskiert werden.
 |-------------|----------|--------------|--------------------|
 | -E | keine |  | DEFAULT_EMAIL_PARMS |
 
-
-<a name="parm_s"></a>
-### -s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken
-
-email Program, welches benutzt wird {mail|sendEmail|ssmtp|msmtp}. Für postfix
-und nullmailer muss mail benutzt werden und die mailtools installiert werden.
-Für sendEmail muss der Parameter -E zusätzlich genutzt werden für weitere
-obligatorische Parameter (Siehe [Parameter -E Beschreibung](#parm_E) für Details).
-
-Es kann auch ein eMailPlugin benutzt werden, um eMails zu verschicken. Damit
-können beliebige weitere eMailClients in *raspiBackup* eingebunden werden. Der -s
-Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](hooks-for-own-scripts.md).
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| -s | mail |  | DEFAULT_MAIL_PROGRAM |
-
 <a name="parm_eMailColoring"></a>
 ### --eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert
 
@@ -206,6 +189,22 @@ Meldungsdetails
 |-------------|----------|--------------|--------------------|
 | -m | minimal | konfigurierbar | DEFAULT_MSG_LEVEL |
 
+<a name="parm_s"></a>
+### -s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken
+
+email Program, welches benutzt wird {mail|sendEmail|ssmtp|msmtp}. Für postfix
+und nullmailer muss mail benutzt werden und die mailtools installiert werden.
+Für sendEmail muss der Parameter -E zusätzlich genutzt werden für weitere
+obligatorische Parameter (Siehe [Parameter -E Beschreibung](#parm_E) für Details).
+
+Es kann auch ein eMailPlugin benutzt werden, um eMails zu verschicken. Damit
+können beliebige weitere eMailClients in *raspiBackup* eingebunden werden. Der -s
+Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](hooks-for-own-scripts.md).
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -s | mail |  | DEFAULT_MAIL_PROGRAM |
+
 <a name="parm_S"></a>
 ### -S: Unbedingter Update
 
@@ -229,7 +228,7 @@ Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 | --timestamps | aus |  | DEFAULT_TIMESTAMPS |
 
 <a name="parm_U"></a>
-### -U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version
+### -U: Update von *raspiBackup* 
 
 Die lokale *raspiBackup* Version wird durch die letzte aktuelle Version ersetzt
 sofern eine neue Version existiert. Die vorherige Version wird als
@@ -248,8 +247,19 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 |-------------|----------|--------------|--------------------|
 | -U | aus |  |  |
 
+<a name="parm_updateConfig"></a>
+### --updateConfig: Update der *raspiBackup* Konfiguration
+
+Mit dieser Option kann man einen Update der Konfiguration
+erzwingen falls sie nicht bei einem normalen Update
+vorgenommen wurde.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| --updateConfig | aus |  |  |
+
 <a name="parm_unsupportedEnvironment"></a>
-### --unsupportedEnvironment: 
+### --unsupportedEnvironment: Nicht unterstützte HW und SW wird akzeptiert
 
 Wird *raspiBackup* auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md)
 gestartet muss diese Option angegeben werden.
@@ -257,7 +267,6 @@ gestartet muss diese Option angegeben werden.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | --unsupportedEnvironment | aus |  |  |
-
 
 <a name="parm_version"></a>
 ### --version: Anzeige der Versionsinformation 

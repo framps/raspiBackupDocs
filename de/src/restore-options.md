@@ -63,6 +63,7 @@ Speicherbelegung vor und nach dem Backuplauf ausgeben.
 |-------------|----------|--------------|--------------------|
 | -N | keine |  | DEFAULT_EXTENSIONS |
 
+
 <a name="parm_R"></a>
 ### -R: Externe Rootpartition
 
@@ -74,7 +75,7 @@ werden soll.  Beispiel: `/dev/sdb1`.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -g     |          |              |                    |
+| -R     |          |              |                    |
 
 **Hinweis:** Diese Option nur benutzen, wenn sowohl eine SD Karte als auch ein
 externes Rootfilesystem auf einem Gerät benutzt wird. Sonst reicht die Option `-d`.
@@ -155,7 +156,7 @@ und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| --0     |  aus    |              |                    |
+| -0     |  aus    |              |                    |
 
 <a name="parm_00"></a>
 ### -00: Keine Partitionierung und Formatierung

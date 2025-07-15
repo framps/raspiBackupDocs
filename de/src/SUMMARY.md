@@ -88,7 +88,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Allgemein](general.md)  
         - [Optionen](general-options.md)   
         - [Konfiguration](general-config-options.md)
-    - [Thematisch sortierte Optionen (Auswahl)](options-by-topic.md)
+    - [Thematisch sortierte Optionen](options-by-topic.md)
 
 - [Häufige Fragen / FAQ](faq.md)
 
