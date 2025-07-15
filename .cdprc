@@ -227,27 +227,35 @@ export -f __list_files_with_status __get_escaped_status
 # ------------------------------------------------------------------------
 
 
+__list_stati() {
+    ALL_MD_FILES=$( __list_files_with_status "--ALL-MD-FILES--" | wc -l)
+    WITHOUT_STATUS=$( __list_files_with_status "--NO-STATUS--"| wc -l)
+    (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
+                   | sort | uniq -c
+                   (( WITHOUT_STATUS > 0 )) && printf "%7d %s\n" "${WITHOUT_STATUS}" "[]: --NO-STATUS--"
+                   printf "%7d %s\n" "${ALL_MD_FILES}" "[]: --ALL-MD-FILES--"
+                   ) \
+                   | tee "${TMPFILE_STATUS}"
+}
+
+export -f __list_stati
+
+
 edit_by_status() {
     while true; do
         FZF_HEADER=">> Please select status and press ENTER to list and edit corresponding files. (ESC to cancel.) <<"
         shopt -s extglob               # disabled by default
         TMPFILE_STATUS=$( mktemp tmp.XXXXXXXX )
-        ALL_MD_FILES=$( __list_files_with_status "--ALL-MD-FILES--" | wc -l)
-        WITHOUT_STATUS=$( __list_files_with_status "--NO-STATUS--"| wc -l)
         # shellcheck disable=2016  # Expressions don't expand in single quotes, use double quotes for that.
         # Because that string is passed to fzf's preview option!
-        STATUS=$( (${RG_IGN} --no-filename "^\[\.status\]:" 2>/dev/null \
-                   | sort | uniq -c
-                   (( WITHOUT_STATUS > 0 )) && printf "%7d %s\n" "${WITHOUT_STATUS}" "[]: --NO-STATUS--"
-                   printf "%7d %s\n" "${ALL_MD_FILES}" "[]: --ALL-MD-FILES--"
-                   ) \
-                   | tee "${TMPFILE_STATUS}" \
+        STATUS=$( __list_stati \
                    | ${FZF} \
                        --query="$*" \
                        --header="${FZF_HEADER}" \
                        --bind="load:pos($FZFPOS_STATUS)" \
-                       --bind="alt-r:execute(edit_translate_all_rft)" \
-                       --bind="alt-t:execute(edit_translate_already_translated)" \
+                       --bind="ctrl-r:reload(__list_stati)" \
+                       --bind="alt-r:execute(edit_translate_all_rft)+reload(__list_stati)" \
+                       --bind="alt-t:execute(edit_translate_already_translated)+reload(__list_stati)" \
                        --bind="alt-g:execute(edit_grepped_files)" \
                        --bind="alt-m:execute(edit_meta_files)" \
                        --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
