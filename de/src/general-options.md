@@ -125,18 +125,24 @@ angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
 | -g | None |  | None |
 
 <a name="parm_G"></a>
-### -G: Sprache der Meldungen (Deutsch oder English)
+### -G: Sprache der Meldungen
 
-Festlegung der Sprache der Meldungen. Mögliche Sprachen sind DE (Deutsch) und
-EN (English). Interessenten, die die Meldungen in andere Sprachen übersetzen
-wollen können sich gerne melden
+Festlegung der Sprache der Meldungen. Standard ist die
+Systemsprache sofern sie unterstützt wird.
+Ansonsten sind alle Meldungen in Englisch.
+
+Eine Liste der unterstützten Sprachen findet sich
+[hier](language-support.md#supported-languages).
+
+Wer helfen möchte, *raspiBackup* eine weitere Sprache zu geben, ist herzlich eingeladen,
+dieses zu tun. Details dazu finden sich [in dieser englischsprachigen Beschreibung](../local-language-support-for-languages-other-than-de-and-en-l10n.md).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -G | Systemsprache oder EN | konfigurierbar | DEFAULT_LANGUAGE |
 
 <a name="parm_h"></a>
-### -h: 
+### -h: Hilfe
 
 Ausgabe der Aufrufsyntax mit seinen Parametern
 
@@ -254,7 +260,7 @@ gestartet muss diese Option angegeben werden.
 
 
 <a name="parm_version"></a>
-### --version: 
+### --version: Anzeige der Versionsinformation 
 
 Die Version von *raspiBackup* wird im folgenden Format ausgegeben:
 

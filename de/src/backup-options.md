@@ -125,7 +125,7 @@ und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.
 
 
 <a name="parm_ignoreMissingPartitions"></a>
-### --ignoreMissingPartitions: 
+### --ignoreMissingPartitions: Test ob alle Partitionen gesichert werden 
 
 Es wird im partitionsorientierten Backupmodus geprüft, ob alle Partitionen,
 die im letzten Backup
@@ -196,8 +196,19 @@ muss es bei Bedarf manuell gelöscht werden.
 | -M | keiner |  |  |
 
 
+<a name="parm_N"></a>
+### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
+
+Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
+die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
+Speicherbelegung vor und nach dem Backuplauf ausgeben.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| -N | keine |  | DEFAULT_EXTENSIONS |
+
 <a name="parm_notifyStart"></a>
-### --notifyStart: 
+### --notifyStart: Benachrichtigung beim Backupstart 
 
 Mit dieser Option wird eingeschalten, dass eine
 eMail oder eine Telegram Benachrichtigung gesendet wird, wenn der Backup startet.
@@ -234,8 +245,18 @@ Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 |-------------|----------|--------------|--------------------|
 | -o | keine | konfigurierbar | DEFAULT_STOPSERVICES |
 
+<a name="parm_p"></a>
+### -p: Backupverzeichnis
+
+Angabe des Backupverzeichnisses in welchem das erstellte
+Backup gespeichert werden soll.
+
+| Optionsname | Standard | Im Installer | Konfigurationsname |
+|-------------|----------|--------------|--------------------|
+| --p | aus | konfigurierbar | DEFAULT_BACKUPPATH |
+
 <a name="parm_rebootSystem"></a>
-### --rebootSystem: 
+### --rebootSystem: Reboot des Systems nach dem Backup
 
 Duch diese Option eine Reboot des Systems am Ende des
 Backuplaufes vorgenommen und somit werden alle Services wieder gestartet.
@@ -247,23 +268,8 @@ Deshalb werden Argumente der Option -a auch ignoriert.
 |-------------|----------|--------------|--------------------|
 | --rebootSystem | aus |  | DEFAULT_REBOOT_SYSTEM |
 
-
-<a name="parm_resizeRootFS"></a>
-### --resizeRootFS: 
-
-Mit dieser Option wird definiert, ob beim Restore die letzte Partition
-verkleinert wird, um auf ein kleineres Device zu restoren oder vergrößert, um den
-ganzen verfügbaren Platz des Devices zu nutzen. Ist das Device kleiner, muss es
-aber noch gross genug sein, um die ganzen Daten des Backups aunehmen zu können.
-Ansonsten bricht der Restore irgendwann ab.
-
-| Optionsname | Standard | Im Installer | Konfigurationsname |
-|-------------|----------|--------------|--------------------|
-| --resizeRootFS | an |  | DEFAULT_RESIZE_ROOTFS |
-
-
 <a name="parm_smartRecycle"></a>
-### --smartRecycle: 
+### --smartRecycle: Nutzung von SmartReccyle 
 
 Diese Option schaltet die [intelligente Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
 Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt werden.
@@ -274,7 +280,7 @@ Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt 
 
 
 <a name="parm_smartRecycleDryrun"></a>
-### --smartRecycleDryrun: 
+### --smartRecycleDryrun: Testmodus von SmartRecycle
 
 Diese Option schaltet den Testmodus der [intelligenten
 Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
@@ -286,7 +292,7 @@ Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
 
 
 <a name="parm_smartRecycleOptions"></a>
-### --smartRecycleOptions: 
+### --smartRecycleOptions: Smarterecycleoptionen 
 
 Diese Option definiert Parameter der [intelligenten Rotationsstrategie - Smart Recycle](smart-recycle.md).
 
@@ -296,7 +302,7 @@ Diese Option definiert Parameter der [intelligenten Rotationsstrategie - Smart R
 
 
 <a name="parm_systemstatus"></a>
-### --systemstatus: 
+### --systemstatus: Aktive Services beim Backupstart anzeigen
 
 Es wird eine Liste der aktiven Services und offenen Dateien
 in der Debugdatei erstellt
@@ -306,7 +312,7 @@ in der Debugdatei erstellt
 | --systemstatus | aus |  |  |
 
 <a name="parm_unsupportedEnvironment"></a>
-### --unsupportedEnvironment: 
+### --unsupportedEnvironment: Nutzung auf nicht unterstützter HW und SW
 
 Wird *raspiBackup* auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md)
 gestartet muss diese Option angegeben werden.

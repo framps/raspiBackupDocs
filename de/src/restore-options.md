@@ -53,7 +53,7 @@ hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch gen
 Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz wird der Restore abbrechen.
 
 <a name="parm_N"></a>
-### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
+### -N: Erweiterungen, die vor und nach dem Restore aufgerufen werden sollen
 
 Aktivierung von eigenen Scripterweiterungen (Plugins). Siehe dazu [diese Seite](hooks-for-own-scripts.md),
 die auch zwei Beispielerweiterungen anbietet, die die CPU Temperatur und die
@@ -158,7 +158,7 @@ und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 | --0     |  aus    |              |                    |
 
 <a name="parm_00"></a>
-### -00: Keine Formatierung
+### -00: Keine Partitionierung und Formatierung
 
 Hiermit wird keine Formatierung der mit der Option `-T`
 ausgewählen Partitionen bei einem `rsync` partitionsorientierten Backup
