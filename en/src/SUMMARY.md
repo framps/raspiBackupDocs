@@ -46,7 +46,7 @@ That allows for some tricks:
 - [Language support](language-support.md)
 
 - [Installation and first backup](installation.md)
-    - [Installation in 5 minutes](installation-in-5-minutes.md)
+    - [Quickstart - Installation in 5 minutes](installation-in-5-minutes.md)
     - [Manual installation and configuration](manual-installation-and-configuration.md)
     - [Statistics](statistics.md)
     - [Updates](updates.md)
