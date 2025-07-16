@@ -1,6 +1,9 @@
 # Unterstützte Hardware und Software
 
+<center>
+
 ![raspiBackup icon](images/icons/Icon_rot_blau_final_128.png)
+</center>
 
 *raspiBackup* wird nur mit dem *Raspberry Pi OS* und *Ubuntu* und Raspberry Hardware
 unterstützt. Es läuft aber auch auf anderer Raspberry kompatiblen Hardware und
@@ -12,8 +15,12 @@ es erfolgreich läuft kannst kann man sich freuen und es nutzen. Wenn es aber ni
 läuft bzw. Fehlermeldungen bringt, wird **kein** Support gegeben. Man kann einen
 Issue in github erstellen und das Debuglog beifügen. So kann *framp* prüfen, ob mit ein
 paar kleinen Änderungen das Problem beseitigt werden kann. Sind größere Änderungen notwendig
-werden die nicht vorgenommen und somit kann raspiBackup in dem Environmen nicht genutzt werden.
-Aber auch wenn ein Fix das problem beseitigt bleibt das Environment nicht unterstützt.
+werden die nicht vorgenommen und somit kann raspiBackup in dem Environment nicht genutzt werden.
+Aber auch wenn ein Fix das Problem beseitigt bleibt das Environment nicht unterstützt.
+
+Insbesondere kann meist ein beliebiges Linux OS auf einer beliebigen Hardware genutzt werden
+um ein Backup zu restoren. Auch hier ist die Option `--unsupportedenvironment` dann
+notwendig. Sollte es doch Probleme geben muss eine Raspberry zum Restore genutzt werden.
 
 Unter der Tatsache, dass **raspiBackup ~~umsonst~~ gratis** ist, ist es zu teuer/zu aufwändig für *framp*,
 
@@ -23,7 +30,8 @@ Unter der Tatsache, dass **raspiBackup ~~umsonst~~ gratis** ist, ist es zu teuer
 
 Also kann *framp* *raspiBackup* nur unter den genannten Voraussetzungen unterstützen.
 
-Es besteht die Möglichkeit der Donation und je nach Aufwand besteht die Möglichkeit,
+Es besteht die Möglichkeit der [Donation](main.md#donation)
+und je nach Aufwand besteht die Möglichkeit,
 dass auch ein nicht unterstütztes Environment von *raspiBackup* unterstützt wird.
 
 *raspiBackup* prüft beim Aufruf, ob eine unterstützte Hard- und Software vorliegt

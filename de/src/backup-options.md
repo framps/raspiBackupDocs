@@ -18,8 +18,7 @@ Befehle, um Services nach dem Backup wieder zu starten. Z.B. bei Samba "service
 smbd start" (Achtung: Anführungszeichen an Anfang und Ende). Diese Option ist
 zusammen mit der Option -o obligatorisch.
 
-Mehrere Befehle müssen durch && getrennt werden. Alternativ kann ein
-Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle sollten die
+Mehrere Befehle müssen durch && getrennt werden. Diese Befehle sollten die
 exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -o.
 
 **Beispiel**:
@@ -225,8 +224,7 @@ Befehle, um Services vor dem Backup zu stoppen, damit kein inkonsistentes Backup
 erzeugt wird. Z.B. bei Samba "service smbd stop" (Achtung: Anführungszeichen an
 Anfang und Ende). Diese Option ist zusammen mit der Option -a obligatorisch.
 
-Mehrere Befehle müssen durch `&&` getrennt werden. Alternativ kann ein
-Wrapperscript benutzt werden (Beispiel siehe [unten](#wrapper)). Diese Befehle sollten die
+Mehrere Befehle müssen durch `&&` getrennt werden. Diese Befehle sollten die
 exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -a.
 
 Beispiel:
@@ -359,7 +357,7 @@ Typ des Backups, der entweder dd, tar oder rsync sein kann. rsync benutzt bei
 einer ext3/ext4 Partition Hardlinks, um den benötigten Speicherplatz zu
 minimieren.
 
-[Detailinformationen zu den Backuptypen](#TODO#vornach) Ein externes Rootfilesystem wird
+[Detailinformationen zu den Backuptypen](backuptypes.md#backuptypen) Ein externes Rootfilesystem wird
 automatisch bei tar oder rsync Backup mitgesichert sofern nicht die Option -P
 benutzt wird. Mit der Option -z werden die dd und tar Backups zusätzlich noch gezippt bzw
 verkleinert.

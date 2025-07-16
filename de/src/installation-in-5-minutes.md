@@ -31,7 +31,7 @@ nicht hat, braucht natürlich länger trotz dass der Installer hilft, eine
 
 Vor der Nutzung von *raspiBackup* bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
-Die Supportkanäle [sind hier beschrieben](introduction.md#kontakt)
+Die Supportkanäle [sind hier beschrieben](main.md#kontakt)
 
 ## Anwendungs- und Konfigurationsbeispiele
 
@@ -166,7 +166,7 @@ oder wenn man die Backuppartition lokal angeschlossen wurde und man ihr ein Labe
 Danach ist alles fertig konfiguriert, um ein Backup zu erstellen. Dabei ist aber
 zu berücksichtigen, dass, wenn man später *raspiBackup* regelmäßig einsetzt,
 bestimmte Dienste gestoppt werden sollten, da sonst ein inkonsistentes Backup
-entstehen könnte. Siehe dazu [FAQ18](faq.md#FAQ18). Braucht man keine Dienste zu stoppen oder
+entstehen könnte. Siehe dazu [FAQ18](faq.md#faq18). Braucht man keine Dienste zu stoppen oder
 will man den Backup einmal schnell testen kann, man wie folgt den Backup mit
 *raspiBackup* erstellen. Das kann je nach Größe der Installation und der externen
 Rootpartition beim normalen Backup etwas länger dauern.
@@ -206,7 +206,7 @@ Der Installer erstellt folgende Dateien:
    | Backuptag            | Sonntag              |
    | Backupzeit           | 05:00 Uhr            |
 
-   [Aufruf und Optionen](usage-and-options.md) sind ausführlich beschrieben.
+   [Aufruf und Optionen](backup-options.md) sind ausführlich beschrieben.
 
 2. *Systemd timer* Konfiguration wird in `/etc/systemd/system/raspiBackup.timer` vorgenommen.
 
@@ -232,7 +232,7 @@ verkleinern und damit beschleunigen und Diverses mehr.
 Jede Option kann man in der Konfigurationsdatei `/usr/local/etc/raspiBackup.conf` definieren,
 so dass beim Aufruf keine weitere Optionen angegeben werden müssen.
 Es existieren auch Optionen, die sich nur über die Konfigurationsdatei einstellen lassen.
-Details dazu finden sich auf der [Optionsbeschreibungsseite](usage-and-options.md).
+Details dazu finden sich auf der [Optionsbeschreibungsseite](backup-options.md).
 
 Ebenfalls nützlich: [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md),
 welches die Nutzung und den Aufruf von *raspiBackup* vereinfacht.

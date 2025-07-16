@@ -1,6 +1,6 @@
 # Restore Optionen
 
-*raspiBackup* restored standardmäßig das [**gesamte System**](full-restore.md) bei dem normalen Backupmodus.
+*raspiBackup* restored standardmäßig das [**gesamte System**](restore-intro.md) bei dem normalen Backupmodus.
 Bei einem partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden welche Paritionen restored 
 werden sollen. Wird beim partitionsorientierten Modus
 der rsync Backuptyp genutzt kann bei einem Restore auch ein Deltarestore gewählt werden. (Option -00) 

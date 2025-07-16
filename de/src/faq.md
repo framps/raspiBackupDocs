@@ -203,7 +203,7 @@ Es gibt verschiedene Optionen:
   *raspiBackup* gestellt und Probleme berichtet werden können. *framp* wird über
   alle neuen Threads informiert und kann sich dem Thread widmen.
 
-Siehe auch diese [Hinweise](introduction.md#kontakt)
+Siehe auch diese [Hinweise](main.md#kontakt)
 
 **Hinweis:** Jegliche andere Kontaktwege werden ignoriert.
 
@@ -575,7 +575,7 @@ BastiFanta hat einen anderen Grund dafür gefunden:
 <a name="faq30"></a>
 ### 30) Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?
 
-Zum Beispiel ein [Trinkgeld](introduction.md#trinkgeld) geben.
+Zum Beispiel ein [Trinkgeld](main.md#trinkgeld) geben.
 
 
 <a name="faq31"></a>
@@ -720,7 +720,7 @@ Ein anderes ist das [englische Raspberryforum](https://forums.raspberrypi.com/).
 <a name="faq39"></a>
 ### 39) Wo finde ich das Debuglog von raspiBackup?
 
-Siehe [FAQ41](faq41)
+Siehe [FAQ41](#faq41)
 
 <a name="faq40"></a>
 ### 40) Wie kann ich meine Konfiguration nach einem Versionsupdate auf den neuesten Stand bringen?

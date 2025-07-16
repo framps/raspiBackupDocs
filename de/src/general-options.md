@@ -90,8 +90,8 @@ Coloring mit einer separaten Option steuert.
 <a name="parm_f"></a>
 ### -f: Angabe einer Konfigurationsdatei
 
-Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe [oben](#configfiles).
-alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge.
+Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe 
+[alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge](details.md#configFiles).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -251,8 +251,8 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 ### --updateConfig: Update der *raspiBackup* Konfiguration
 
 Mit dieser Option kann man einen Update der Konfiguration
-erzwingen falls sie nicht bei einem normalen Update
-vorgenommen wurde.
+erzwingen falls sie nicht bei einem normalen Update mit der
+Option `-U` vorgenommen wurde. 
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|

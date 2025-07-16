@@ -9,12 +9,10 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
 **Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig einen vollständigen Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie**
 
-![Icon](images/icons/Icon_rot_blau_final_128.png)
-
   - Open source
 
     *raspiBackup* ist unter der GNU Lizenz als OpenSource und kostenlos verfügbar.
-    Ein [Trinkgeld](introduction.md#trinkgeld) ist aber trotzdem gern gesehen 😉
+    Ein [Trinkgeld](main.md#donation) ist aber trotzdem gern gesehen 😉
 
   - Einfache [Installation](installation.md) mit menügeführtem Installer (vergleichbar mit `raspi-config`)
 
@@ -22,7 +20,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
     Chinesisch und Französisch konfiguriert werden, so dass die erste [Sicherung
     in 5 Minuten](installation-in-5-minutes.md) werden kann.
 
-  - Alle weiteren z.T. sehr mächtigen Optionen sind [ausführlich dokumentiert](usage-and-options.md)
+  - Alle weiteren z.T. sehr mächtigen Optionen sind [ausführlich dokumentiert](details.md)
     und können in einer Konfigurationsdatei definiert werden.
 
   - Vollständige und inkrementelle Sicherungen
@@ -120,7 +118,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
   - Anpassung von `/etc/fstab` und `/boot/cmdline.txt` an neue UUIDs, PARTUUIDs
     oder LABELs, damit das System sofort wieder startet.
 
-  - [Aktive Social Media Kanäle](introduction.md#kontakt)
+  - [Aktive Social Media Kanäle](main.md#kontakt)
 
   - Benachrichtigungen bei neuen Releases
 

@@ -62,7 +62,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Restore](restore-intro.md)        
         - [Restore einzelner Dateien](how-to-retrieve-single-files-or-directories-from-the-backup.md)
         - [Manueller rsync Restore](manual-restore.md)
-        - [Manueller tgz Restore](manual-restore-of-e-tgz-backup.md)
+        - [Manueller tgz Restore](manual-restore-of-a-tgz-backup.md)
 
     - [Fragen und Antworten](more-questions-and-answers.md)
         - [Welches Fileystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)

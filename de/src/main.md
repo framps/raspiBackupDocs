@@ -1,5 +1,5 @@
 ``` admonish info title="Work in progress - In Arbeit"
-Dies ist die Dokumentation zu *raspiBackup* in neuer Form.
+Dieses ist die Dokumentation zu *raspiBackup* in neuer Form.
 
 Zum Wechseln der Sprache (deutsch/englisch) ist oben rechts ein kleines Globus-Icon vorhanden.
 
@@ -11,6 +11,16 @@ stehen auf der [Projektseite bei GitHub](https://github.com/framps/raspiBackupDo
   
 ![Icon](images/icons/Icon_rot_blau_final_128.png)
 </center>
+
+``` admonish info title="Nutzungshinweise"
+Oben auf den Seiten finden sich verschiedene Icons, die helfen
+in der Dokumentation nach Stichworten zu suchen und verschiedene andere
+nützliche Funktionen anstossen. Einfach mal kurz über die Icons hoovern um
+ihre Funktion zu erfahren. 
+
+Mit dem ganz rechten Icon kann man sehr einfach direkt Änderungen an der
+aktuellen Seite im github vorschlagen.
+```
 
 # Einführung
 
@@ -124,6 +134,7 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
 ```
 
+<a name="donation"></a>
 ## Trinkgeld
 
 Eine Anerkennung des Entwicklungs- und Wartungsaufwands sowie Supports für
@@ -135,7 +146,14 @@ Eine Anerkennung des Entwicklungs- und Wartungsaufwands sowie Supports für
 3. Keines von beidem: Einfach bei der o.g. eMail nachfragen. Es findet sich
    gewiss eine Alternative. Z.B. wurde Trinkgeld schon mehrmals auf die
    gute alte Art per Brief zugeschickt :-)
-
+   
+Das Trinkgeld wird primär dazu genutzt neue Raspberries (RaspberryPI 6 ... ) 
+bzw benötigte Hardware
+(NVMe Speicher incl HAT bei RaspberryPI 5 ...)
+zu kaufen wenn eine neue Raspberry HW verfügbar wird um sie mit *raspiBackup*
+zu unterstützen. Weiterhin werden davon 
+Verbrauchsmaterialien wie SD Karten, Adapter, Kabel etc, die für das Entwickeln
+und Testen benötigt werden, gekauft. 
 
 ## Danksagungen
 

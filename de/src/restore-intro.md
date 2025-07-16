@@ -19,9 +19,6 @@ Sollte ein externes Rootfilesystem gesichert worden sein, wird es auch wieder
 auf ein externes Gerät zurückgespielt
 (Nur bei normalem Backupmodus mit `tar` oder `rsync` Backup).
 
-Bei USB Boot Systemen kann eine beliebige Anzahl von externen Partitionen restored
-werden.
-
 Ein [manueller Restore](manual-restore.md)  der Daten mit den zuvor benutzten Backuptools `dd`, `tar` oder `rsync`
 ist natürlich auch möglich. Ebenso ist (manuell) auch die Wiederherstellung einzelner Dateien
 möglich, insbesondere beim `rsync` Backup sehr einfach.
@@ -37,7 +34,7 @@ Weitere Themen auf dieser Seite:
 
 ------------------
 
-## Wiederherstellungsszenario für Alle
+## Wiederherstellungsszenario mit einer Raspberry mit RaspbianOS
 
 Jedes Backup kann mit der/einer Raspberry Pi wiederhergestellt werden.
 
@@ -45,16 +42,17 @@ Jedes Backup kann mit der/einer Raspberry Pi wiederhergestellt werden.
 
 1. *raspiBackup* installieren
 
-1. Das System, das wiederhergestellt werden soll, per USB anschließen.
+1. Das System, das wiederhergestellt werden soll, anschließen.
 
 1. Das Medium, welches das Backup enthält (z.B. eine Platte), anschließen
-   und mounten bzw. ein Netzwerklaufwerk mit den Backupdaten mounten
+   und mounten bzw. ein Netzwerklaufwerk mit den Backupdaten mounten.
 
-1. Falls die Rootpartition ausgelagert wurde, eine weitere Platte anschließen,
-   die die Rootpartition enthält, welche wiederhergestellt werden soll
+1. Falls die Rootpartition ausgelagert wurde, eine weiteres Gerät mit 
+   einer vorformatierten Partition anschließen,
+   die die ausgelagerte Rootpartition enthalten soll, 
+   welche wiederhergestellt werden wird
 
 1. *raspiBackup* zum Restore starten, Aufruf siehe [unten](#devicenames).
-
 
 Dabei wird üblicherweise
 
@@ -73,13 +71,12 @@ Die aktuelle Gerätebelegung kann anders sein und sollte **immer** mit z.B.
 überprüft werden, um zu vermeiden, dass andere Partitionen irrtümlicherweise überschrieben werden.
 
 
-## Wiederherstellungsszenario für Windowsbenutzer
+## Wiederherstellungsszenario für Windowsbenutzer auf einem Windowssystem
 
 Nur ein `dd` Backup lässt sich (auch) direkt unter Windows,
 mit dem [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/), restoren.
 
-
-## Wiederherstellungsszenario für Linuxbenutzer
+## Wiederherstellungsszenario für Linuxnutzer
 
 ``` admonish note title="Hinweis"
 Im Prinzip kann zwar jedes Linux OS genutzt werden, um ein Backup zu restoren.
@@ -94,11 +91,15 @@ Deshalb:
 das Backup erstellt wurde**.
 ```
 
-Es wird die SD Karte mit dem SD Kartenleser an das Linuxsystem angeschlossen,
+Es wird das Gerät welches auf welches das Backup restored werden soll
+an das Linuxsystem angeschlossen,
 die Backuppartition gemounted und eine Partition für ein eventuelles externes
 Rootfilesystem bereitgestellt.
 
 Dann *raspiBackup* zum Restore starten, Aufruf siehe [unten](#devicenames).
+Dabei muss noch die Option [--unsupportedEnvironment](general-options.md#--unsupportedenvironment)
+angegeben werden da kein RaspbianOS und keine Raspberry genutzt werden.
+Siehe auch [Unterstützte Hard- und Software](supported-hardware-and-software.md) dazu
 
 ## Beispielaufrufe
 
@@ -191,13 +192,17 @@ funktioniert und auch immer noch alle Daten beinhaltet.
 
 Nichts ist so frustrierend, wenn man in dem Moment, wo man das Backup benötigt,
 feststellt, dass das Backup korrupt ist oder nicht alle Daten enthält.
-Ein Test ist bei der Raspberry recht einfach: Eine neue SD- Karte einlegen, das Backup restoren und
-von der neuen SD-Karte booten.
+Ein Test ist bei der Raspberry recht einfach: Eine neue SD- Karte einlegen, 
+das Backup restoren und
+von der neuen SD-Karte booten. Wird keine SD Karte genutzt, also z.B. 
+eine SSD, kann der Restoretest auch mit einer Platte vorgenommen werden
+sofern sie groß genug ist alle Daten der SSD aufzunehmen.
 
 Falls aus irgendwelchen Gründen der Restore mit dem Script fehlschlägt, kann man
 natürlich jederzeit die vom Script gesicherten Daten mit den Standard
 Linuxtools, die zum Backup genutzt wurden - `dd`, `tar` oder `rsync` - wieder
 restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script und es sind entsprechende Linux Kenntnisse erforderlich ;-)
+Siehe dazu auch [Manueller Restore eines Backups](manual-restore.md).
 
 [.status]: rft
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#restore

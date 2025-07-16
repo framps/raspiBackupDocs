@@ -1,11 +1,11 @@
-# Manueller Restore eines Backups
+# Manueller Restore eines rsync Backups
 
 Ein von *raspiBackup* erstelltes Backup enthält alle für einen Restore
-notwendigen Informationen.
+notwendigen Informationen und kann manuell restored werden.
 
-Der Benutzer "Micha" wollte aus verschiedenen Gründen den Backup manuell
-restoren und hat das freundlicherweise detailiert in einem Kommentar
-beschrieben. Anbei die Zusammenfassung seiner Beschreibung:
+Der Benutzer "Micha" wollte aus verschiedenen Gründen einen rsync Backup manuell
+restoren und hat das freundlicherweise detailiert
+beschrieben. 
 
 
     # Manuelles Anlegen der Partitionen:
@@ -61,11 +61,6 @@ beschrieben. Anbei die Zusammenfassung seiner Beschreibung:
 
     # SD-Karte in Pi stecken und testen!!!
     # Boing! geht :-)
-
-Micha beendete seine Beschreibung mit:
-
-> So kann ich mir selber helfen und das reicht mir alle mal. Vielen Dank für das Skript!
-> Solange das Backup da ist, ist nun der Restore auch nicht mehr schlimm. :-)
 
 [.status]: rft
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/497-raspibackup-manueller-restore-eines-backups

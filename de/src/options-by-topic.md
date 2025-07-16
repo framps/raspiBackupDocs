@@ -3,15 +3,15 @@
 <a name="backup"></a>
 ## Backupoptionen
 
-  - [-a: Befehle die Services nach dem Backup starten](backup-options.html#-a-befehle-die-services-nach-dem-backup-starten.md)
-  - [-A: Das Laufzeitlog wird in der eMail mitgeschickt](general-options.html#-a-das-laufzeitlog-wird-bei-der-email-benachrichtigung-mitgeschickt.md)
+  - [-a: Befehle die Services nach dem Backup starten](backup-options.md#-a)
+  - [-A: Das Laufzeitlog wird in der eMail mitgeschickt](general-options.md#-A)
   - [-b: Definition der Blocksize die beim dd Backup genutzt wird](backup-options.md#parm_b)
   - [-B: Bootpartition wird als tar gesichert statt per dd](backup-options.md#parm_B)
-  - [-c: Erlaube lokale Backupseicherung](backup-options.html#-c-erlaube-lokale-backupspeicherung)
+  - [-c: Erlaube lokale Backupseicherung](backup-options.md#-c)
   - [-D: Weitere Optionen für den dd Backup](backup-options.md#parm_D)
   - [--dynamicMount: Dynamisches Mounten der Backuppartition](backup-options.md#parm_dynamicMount)
   - [--ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.](backup-options.md#parm_ignoreAdditionalPartitions)
-  - [--ignoreMissingPartitions: Test ob alle Partitionen gesichert werden](backup-options.html#--ignoremissingpartitions.md)
+  - [--ignoreMissingPartitions: Test ob alle Partitionen gesichert werden](backup-options.md#--ignoremissingPartitions)
   - [-k : Anzahl der Backups die vorgehalten werden sollen](backup-options.md#parm_k)
   - [--keep_{type}: Anzahl der jeweiligen Backuptypen, die vorgehalten werden sollen](backup-options.md#parm_keepType)
   - [-M: Erstellen eines *raspiBackup* Snapshots](backup-options.md#parm_M)
@@ -22,7 +22,7 @@
   - [--smartRecycle: Nutzung von SmartReccyle](backup-options.md#parm_smartRecycle)
   - [--smartRecycleDryrun: Testmodus von SmartRecycle](backup-options.md#parm_smartRecycleDryrun)
   - [--smartRecycleOptions: SmartRecycle Optionen](backup-options.md#parm_smartRecycleOptions)
-  - [--systemStatus: Aktive Services beim Backupstart anzeigen](backup-options.md#parm_systemStatus)
+  - [--systemStatus: Aktive Services beim Backupstart anzeigen](backup-options.md#parm_systemstatus)
   - [-t : Typ des Backups (dd, tar, rsync)](backup-options.md#parm_t)
   - [-T: Zu sichernde Partitionen](backup-options.md#parm_T)
   - [-u: Ermöglicht weitere Verzeichnisse aus dem Backuprozess auszuschliessen](backup-options.md#parm_u)
@@ -31,7 +31,7 @@
 <a name="restore"></a>
 ## Restoreoptionen
 
-  - [-C: Auf Badblock prüfen](restore-options.md#parm_c)
+  - [-C: Auf Badblock prüfen](restore-options.md#parm_C)
   - [-d: Restoredevice](restore-options.md#parm_d)
   - [-R: Externe Rootpartition](restore-options.md#parm_R)
   - [--resizeRootFS: Rootfilesystem Anpassung](restore-options.md#parm_resizeRootFS)
@@ -47,7 +47,7 @@
 
   - [-A: Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt](general-options.md#parm_A)
   - [--coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen](general-options.md#parm_coloring)
-  - [-G: Sprache der Meldungen (Deutsch oder English)](ganeraloptions.md#parm_G)
+  - [-G: Sprache der Meldungen (Deutsch oder English)](general-options.md#parm_G)
   - [-l: Einschalten des detailierten Loglevels](general-options.md#parm_l)
   - [-L: Verzeichnis wo das Debuglog sowie die Laufzeitmeldungen gespeichert werden](general-options.md#parm_L)
   - [-m: Meldungsdetails](general-options.md#parm_m)
@@ -81,10 +81,10 @@
 <a name="miscellaneous"></a> 
 ## Weitere Optionen
 
-  - [-f: Angabe einer Konfigurationsdatei](usage-and-options.md#parm_f)
+  - [-f: Angabe einer Konfigurationsdatei](general-options.md#parm_f)
   - [-g: Fortschrittsanzeige](general-options.md#parm_g)
   - [--unsupportedEnvironment: Nicht unterstützte HW und SW wird akzeptiert](general-options.md#parm_unsupportedEnvironment)
-  - [--updateConfig: Update von *raspiBackup*](general-options.md#parm_updateConfig)
+  - [--updateConfig: Update von *raspiBackup* Konfigurationsdatei](general-options.md#parm_updateConfig)
 
 [.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
