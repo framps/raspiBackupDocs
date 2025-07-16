@@ -214,7 +214,7 @@ ist die Benutzung von [DeepL](https://www.deepl.com) per Plugin für `vim` mögl
 
 Hier vorab eine kurze Zusammenfassung:
 
-DeepL bietet eine [API](https://www.deepl.com/de/pro-api) an, die mit einer Begrenzung auf 500.00 Zeichen pro Monat gratis verwendet werden kann.
+*DeepL* bietet eine [API](https://www.deepl.com/de/pro-api) an, die mit einer Begrenzung auf 500.00 Zeichen pro Monat gratis verwendet werden kann.
 
 Es ist allerdings eine Registrierung, inkl. Name, Adresse und Kreditkartendaten erforderlich,
 um Missbrauch zu unterbinden...
@@ -249,19 +249,20 @@ vmap <C-t><C-e> <Cmd>call deepl#v("EN")<CR>
 Der Arbeitsablauf könnte dann sein:
 
  1. `vibs`
- 2. Alt-R - Aufruf der noch zu übersetzenden Dateien
- 3. Datei auswählen ==> vim mit Split-Window englisch/deutsch
- 4. Kopieren des deutschen Textes in die englische Datei unter Berücksichtigung der [.status] etc.
+ 2. `Alt-R` - Aufruf der noch zu übersetzenden Dateien
+ 3. Datei auswählen ==> *vim* mit Split-Window englisch/deutsch
+ 4. Kopieren des deutschen Textes in die englische Datei unter Berücksichtigung der `[.status]:` etc.
  5. In der englischen (aber noch deutschsprachigen) Datei:
      1. schrittweise (z.B. per Absatz) den Text markieren
      2. die passende PlugIn-Hotkey-Folge (Default: t, ctrl-e) zum Übersetzen
-        Bzw. ctrl-t, ctrl-e. Ist leichter schnell hintereinander zu tippen.
+        Bzw. jetzt ctrl-t, ctrl-e. Ist leichter schnell hintereinander zu tippen. (s.o.)
      3. nacharbeiten
- 6. In der deutschen Datei [.status]: rft auf "translated" ändern
-    Speichern und Schließen mit `:xa`   ;)
+ 6. In der deutschen Datei `[.status]: rft` auf "translated" ändern
+    Speichern und Schließen mit `:xa`   ;-)
     Weiter bei 3.
 
-Wenn `vim` über die oben beschriebenn Übersetzungs-Funktionen Alt-R und Alt-T innerhalb von `vibs` aufgerufen wird,
+Wenn `vim` innerhalb von `vibs` über die oben beschriebenen Übersetzungs-Funktionen `Alt-R` und `Alt-T` aufgerufen wird,
+wird aktuell folgendes Layout verwendet:
 
  1. In Tab 1 ist die zu englische Datei für sich alleine
  2. In Tab 2 links englisch und rechts zum Vergleich die deutsche Version
@@ -270,21 +271,21 @@ Wenn `vim` über die oben beschriebenn Übersetzungs-Funktionen Alt-R und Alt-T 
 Das Umschalten zwischen den TABs ist in `vim` ja auf vielfältige Weise möglich.
 z.B. gt, gT, ctrl-pgup, ctrl-pgdown, ctrl-tab, ctrl-shift-tab, ...
 
-Natürlich lässt sich das alles in `vim` umgestalten, das ist nur aktuell die initiale Voreinstellung.
+Natürlich lässt sich das alles in `vim` umgestalten, das ist nur die initiale Voreinstellung.
 
-Da beim DeepL Free-Account die Anzahl der monatlichen Zeichen begrenzt ist,
+Da beim *DeepL* Free-Account die Anzahl der monatlichen Zeichen begrenzt ist,
 macht es Sinn, ab und zu den Stand zu überprüfen.
 
-Dazu kann man sich natürlich auf seiner DeepL-Kundenseite einloggen und nachsehen.
+Das geht natürlich auf der *DeepL* -Kundenseite im Browser.
 
-Einfacher geht es mit Nutzung der API.
+Einfacher geht es mittels Nutzung der API.
 
-Das Tool `bin/deepl-usage.sh` gibt die Werte aus:
+Das simple Tool `bin/deepl-usage.sh` lädt die Werte herunter und gibt sie aus:
 ```
 {"character_count":75300,"character_limit":500000}
 ```
 
-Wenn `jq` installiert ist, wird ausgegeben:
+Wenn `jq` installiert ist, wird stattdessen ausgegeben:
 ```
 You already consumed 75300 characters from your monthly limit of 500000 characters (15%).
 ```
