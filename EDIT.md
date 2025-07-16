@@ -89,9 +89,12 @@ Der **Inhalt** der Dateien ist mit der Auszeichnungssprache *Markdown* formatier
 
 Wie der Name "Erweitertes Commonmark" ahnen lässt, bietet es zusätzliche Features.
 
-Eines davon sind [Link-Referenzen](https://spec.commonmark.org/0.31.2/#link-reference-definitions).
+Ein relativ spezielles Feature sind [Link-Referenzen](https://spec.commonmark.org/0.31.2/#link-reference-definitions).
 
-Diese werden zur leichteren Verlinkung (z.B. bei Mehrfachnennung) eingesetzt:
+Dieses Feature wird hier explizit erwähnt, weil es im Projekt für weiterreichende Aufgaben eingesetzt wird,
+wie es im nächsten Kapitel beschrieben wird.
+
+Link-Referenzen werden zur leichteren Verlinkung (z.B. bei Mehrfachnennung) eingesetzt:
 
 ```
 Siehe in [hier](ein_langer_pfad_und_dateiname_zum_hinweis23.md "Wichtigster Hinweis! Bitte beachten")
@@ -117,13 +120,13 @@ Die Definitionen bestehen aus `[name]: Linkadresse` bzw.
 mit optionalem Link-Titel: `[name]: Linkadresse "Link Title"`.
 
 
-### Spezielle hier in diesem Projekt genutzte Dinge
+### Spezielle hier in diesem Projekt genutzte Markdown-Features
 
 Um die Arbeit an den Inhalten der Dateien und auch an den Übersetzungen besser organisieren zu können,
 gibt es in diesem Projekt in vielen Markdown-Dateien ergänzende "Tags", Markierungen, Kommentare.
 
-Da *Markdown* aber nativ keine Kommentare unterstützt, werden oben beschiebene *Commonmarks Link References* zweckentfremdet.
-Allerdings muss die Syntax auch dann eingehalten werden: `[name]: Linkadresse "Link Title"`.
+Da *Markdown* aber nativ keine Kommentare unterstützt, werden oben beschiebene *Commonmarks Link References* "zweckentfremdet".
+Allerdings muss die Syntax auch in diesem Fall eingehalten werden: `[name]: Linkadresse "Link Title"`.
 
 Um diese Spezial-Nutzung, also die gewünschte Unsichtbarkeit für den normalen Nutzer,
 deutlich zu machen, beginnen die Namen mit einem Punkt `.`.
@@ -132,22 +135,6 @@ Bei einheitlicher Benennung lassen sich damit auch `grep` oder andere Tools
 (vimgrep,...) einsetzen, um die Dokumentenmenge im Griff zu haben.
 
 Der optionale Linktitel (in `""`!) lässt sich für etwas längeren (also mehrwortigen) Text nutzen.
-
-> [!NOTE]
-> Zur weiteren Unterstützung der Autoren sind kleine Tools entstanden.
->
-> Einige davon befinden sich als Aliase in der Datei `.cdprc`,
-> die nur gesource'd werden muss:
->
->   - Tool zur Auswahl von Datei(en) mit einem gewünschten Status
->     ![Beispiel für vibs](readme-images/vibs.png "Auswahl nach Status")
->   - Tools zur Auswahl noch zu übersetzender/schon übersetzter Dateien
->     ![Beispiel für vitar](readme-images/vitar.png "Auswahl von Übersetzungen")
->   - Abgleich der SUMMARY.md in den (beiden) Sprachen
->     ![Beispiel für vids](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
->
-> `.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
-> kann aber auch wie beschrieben eigenständig verwendet werden.
 
 
 Hier einige Beispiele für diese Tags/"Kommentare":
@@ -179,4 +166,128 @@ Hier einige Beispiele für diese Tags/"Kommentare":
 ```
 [.workaround]: _ "Probleme beim Syntax-Highlighting in vim-markdown bei non-balanced-underlines"
 ```
+
+## Tools zur weiteren Unterstützung der Autoren
+
+Einige davon befinden sich in der Datei `.cdprc`,
+die zur Nutzung nur ge-source-d werden muss:
+
+```
+source .cdprc`
+```
+
+Der zentrale Einstig ist dann der Alias `vibs` ("vi by status")
+zur Auswahl von Datei(en) mit einem gewünschten Status
+
+  ![Beispiel für vibs](readme-images/vibs.png "Auswahl nach Status")
+
+Darin sind weitere Tools eingebaut, die per Tastenkombination aufgerufen werden können,
+zum Beispiel
+
+  - Auswahl noch zu übersetzender/schon übersetzter Dateien
+    ![Beispiel für Alt-R/Alt-T](readme-images/vitar.png "Auswahl von Übersetzungen")
+  - Abgleich der SUMMARY.md in den (beiden) Sprachen
+    ![Beispiel für Alt-S](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
+  - Interaktives Grep-Tool
+    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool")
+
+Die aktuelle Liste der eingebauten Tools wird beim `source .cdprc` angezeigt.
+
+`.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
+kann aber auch wie beschrieben eigenständig verwendet werden.
+
+Des weiteren im `bin/` Verzeichnis
+
+  - `check_files.sh`   # prüft auf Konsistenz zwischen deutschen und englischen Dateien und den SUMMARY.md's.
+  - `deepl-usage.sh`   # siehe unten
+
+Und das Makefile, siehe [MAINTAIN.md](MAINTAIN.md).
+
+Außerdem gibt es noch das extra zu installierende [mdlinkcheck.py](https://github.com/rpi-simonz/mdlinkcheck)
+zum Überprüfen der projekt-internen Links in den Markdown-Dateien.
+
+
+## Tools zur Übersetzung
+
+Neben den in `vibs` enthaltenen Tools für den Zugriff auf zu übersetzende/schon übersetzte Dateien (s.o.)
+ist die Benutzung von [DeepL](https://www.deepl.com) per Plugin für `vim` möglich.
+
+Hier vorab eine kurze Zusammenfassung:
+
+DeepL bietet eine [API](https://www.deepl.com/de/pro-api) an, die mit einer Begrenzung auf 500.00 Zeichen pro Monat gratis verwendet werden kann.
+
+Es ist allerdings eine Registrierung, inkl. Name, Adresse und Kreditkartendaten erforderlich,
+um Missbrauch zu unterbinden...
+
+Nach Registrierung erhält man einen API-Key, der bei den jeweiligen Aufrufen angegeben werden muss.
+
+Zum Beispiel lässt sich die API mit `curl` und diversen Programmierprachen, z.B. per [Python](https://github.com/DeepLcom/deepl-python) nutzen.
+
+Für die Integration per Plugin in `vim` habe ich [deepl.vim von ryicoh](https://github.com/ryicoh/deepl.vim) gewählt.
+
+Dieses Plugin lässt sich z.B. mittels [junegunn's vim-plug](https://github.com/junegunn/vim-plug) per Eintrag in die `.vimrc`
+
+```
+Plug "ryicoh/deepl.vim"
+```
+
+und dann folgendem Neustart von `vim` und einmaligem Aufruf in `vim` installieren: `:PlugInstall`
+
+Weiterhin wird in `.vimrc` die passende DeepL-URL, der DeepL-API-Key und die Tastenzuordnung eingetragen:
+
+```
+" Configuration for deepl.vim (https://github.com/ryicoh/deepl.vim)
+let g:deepl#endpoint = "https://api-free.deepl.com/v2/translate"
+"let g:deepl#auth_key = "00000000-0000-0000-0000-000000000000:fx"
+" or much better via: readfile(expand('~/.config/deepl.auth_key'))[0]
+let g:deepl#auth_key = readfile(expand('~/.config/deepl.auth_key'))[0]
+"
+" replace a visual selection
+vmap <C-t><C-e> <Cmd>call deepl#v("EN")<CR>
+```
+
+Der Arbeitsablauf könnte dann sein:
+
+ 1. `vibs`
+ 2. Alt-R - Aufruf der noch zu übersetzenden Dateien
+ 3. Datei auswählen ==> vim mit Split-Window englisch/deutsch
+ 4. Kopieren des deutschen Textes in die englische Datei unter Berücksichtigung der [.status] etc.
+ 5. In der englischen (aber noch deutschsprachigen) Datei:
+     1. schrittweise (z.B. per Absatz) den Text markieren
+     2. die passende PlugIn-Hotkey-Folge (Default: t, ctrl-e) zum Übersetzen
+        Bzw. ctrl-t, ctrl-e. Ist leichter schnell hintereinander zu tippen.
+     3. nacharbeiten
+ 6. In der deutschen Datei [.status]: rft auf "translated" ändern
+    Speichern und Schließen mit `:xa`   ;)
+    Weiter bei 3.
+
+Wenn `vim` über die oben beschriebenn Übersetzungs-Funktionen Alt-R und Alt-T innerhalb von `vibs` aufgerufen wird,
+
+ 1. In Tab 1 ist die zu englische Datei für sich alleine
+ 2. In Tab 2 links englisch und rechts zum Vergleich die deutsche Version
+ 3. In Tab 3 links die englische SUMMARY.md und rechts die deutsche SUMMARY.md
+
+Das Umschalten zwischen den TABs ist in `vim` ja auf vielfältige Weise möglich.
+z.B. gt, gT, ctrl-pgup, ctrl-pgdown, ctrl-tab, ctrl-shift-tab, ...
+
+Natürlich lässt sich das alles in `vim` umgestalten, das ist nur aktuell die initiale Voreinstellung.
+
+Da beim DeepL Free-Account die Anzahl der monatlichen Zeichen begrenzt ist,
+macht es Sinn, ab und zu den Stand zu überprüfen.
+
+Dazu kann man sich natürlich auf seiner DeepL-Kundenseite einloggen und nachsehen.
+
+Einfacher geht es mit Nutzung der API.
+
+Das Tool `bin/deepl-usage.sh` gibt die Werte aus:
+```
+{"character_count":75300,"character_limit":500000}
+```
+
+Wenn `jq` installiert ist, wird ausgegeben:
+```
+You already consumed 75300 characters from your monthly limit of 500000 characters (15%).
+```
+
+[.status]: todo "weiter überarbeiten und mit MAINTAIN.md abgleichen"
 
