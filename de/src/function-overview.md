@@ -5,10 +5,9 @@ Auf dieser Seite findet sich eine High Level Übersicht zu *raspiBackup*.
 Detailliertere Informationen zu *raspiBackup* finden sich hier in der weiteren Dokumentation
 und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
-**Sichere Deine Raspberries**
-
-**Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig einen vollständigen Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie**
-
+**Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig einen vollständigen Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie
+und kannst somit Deine Raspverry vollständig wiederherstelleni, so dass sie wieder mit einem alten Backupstand bootet**
+  
   - Open source
 
     *raspiBackup* ist unter der GNU Lizenz als OpenSource und kostenlos verfügbar.
@@ -67,10 +66,10 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
          (jedes Modell)
       2. Gemischter Modus: Boot von der SD Karte und Nutzung der Rootpartition
          von einem USB Gerät. Das ist notwendig bei älteren Raspberries, die
-         noch keinen USB Boot unterstützen (2A und 2B)
+         noch keinen USB Boot unterstützen
       3. Boot von einem USB Gerät oder SSD (USB boot Modus): Beide Partitionen
          liegen auf einem USB Gerät. Wird von den neueren Raspberries
-         unterstützt, (3B, 4, 400 und 5)
+         unterstützt
 
   - Beliebige Backupziele möglich, z.B.
 

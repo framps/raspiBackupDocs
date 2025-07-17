@@ -45,10 +45,10 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Sprachunterstützung](language-support.md)
 
-- [Einführung](function-intro.md)
+- [Funktionsdetails](function-intro.md)
     - [Backup](backup-intro.md)
-        - [Backuptype und Entscheidungsbaum](backuptypes.md)
-        - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
+        - [Entscheidungsbaum für Backuptypen](backuptypes.md)
+        - [Vergleich partitionsorienof tierter Backup und normaler Backup](normal-or-partition-backup.md)
         - [Backupverzeichnisstruktur](backup-directory-structure.md)
         - [Intelligente Rotationsstrategie](smart-recycle.md)
         - [Snapshots](snapshots.md)
