@@ -82,7 +82,7 @@ dann aber irgendwann zu viel, da es letztendlich zu einem unbezahlten 7/24
 Hotlinesupport für *raspiBackup* wurde.
 
 Schliesslich habe ich mal ein Paypalkonto eingerichtet, auf welches jeder dem
-*raspiBackup* gefällt, [spenden kann](main.md#donation). Ausserdem kann
+*raspiBackup* gefällt, [spenden kann](introduction.md#donation). Ausserdem kann
 jeder als [Sponsor](https://github.com/sponsors/framps) über github spenden.
 Reich werde ich dadurch natürlich nicht, aber es wird damit dir Arbeit erkennbar gewürdigt die ich
 in raspiBackup Entwicklung und Support reinstecke. 

@@ -31,7 +31,7 @@ nicht hat, braucht natürlich länger trotz dass der Installer hilft, eine
 
 Vor der Nutzung von *raspiBackup* bitte erst lesen: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
 
-Die Supportkanäle [sind hier beschrieben](main.md#kontakt)
+Die Supportkanäle [sind hier beschrieben](introduction.md#kontakt)
 
 ## Anwendungs- und Konfigurationsbeispiele
 

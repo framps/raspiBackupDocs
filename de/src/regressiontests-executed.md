@@ -26,7 +26,7 @@ Images per Qemu gestartet und die folgenden Tests durchgeführt:
 Jedem Benutzer von *raspiBackup*, der darüberhinausgehende Optionen benutzt, wird
 dringend nahegelegt, nach einem Versionsupgrade von *raspiBackup* den Backup und
 Restore wieder sorgfältig zu testen. Es wird in diesem Kontext auf den
-[Haftungsausschluss](main.md#haftungsausschluss) hingewiesen.
+[Haftungsausschluss](introduction.md#haftungsausschluss) hingewiesen.
 
 
 [.status]: rft

@@ -34,7 +34,7 @@ Dies ermöglicht einige kleine Kniffe:
 ```
 
 
-[raspiBackup Dokumentation](main.md)
+[Einführung](introduction.md)
 
 - [Funktionsübersicht](function-overview.md)
 
@@ -45,7 +45,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Sprachunterstützung](language-support.md)
 
-- [Einführung](introduction.md)
+- [Einführung](function-intro.md)
     - [Backup](backup-intro.md)
         - [Backuptype und Entscheidungsbaum](backuptypes.md)
         - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)

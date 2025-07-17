@@ -12,7 +12,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
   - Open source
 
     *raspiBackup* ist unter der GNU Lizenz als OpenSource und kostenlos verfügbar.
-    Ein [Trinkgeld](main.md#donation) ist aber trotzdem gern gesehen 😉
+    Ein [Trinkgeld](introduction.md#donation) ist aber trotzdem gern gesehen 😉
 
   - Einfache [Installation](installation.md) mit menügeführtem Installer (vergleichbar mit `raspi-config`)
 
@@ -118,7 +118,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
   - Anpassung von `/etc/fstab` und `/boot/cmdline.txt` an neue UUIDs, PARTUUIDs
     oder LABELs, damit das System sofort wieder startet.
 
-  - [Aktive Social Media Kanäle](main.md#kontakt)
+  - [Aktive Social Media Kanäle](introduction.md#kontakt)
 
   - Benachrichtigungen bei neuen Releases
 

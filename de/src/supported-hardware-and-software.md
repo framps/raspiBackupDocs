@@ -30,7 +30,7 @@ Unter der Tatsache, dass **raspiBackup ~~umsonst~~ gratis** ist, ist es zu teuer
 
 Also kann *framp* *raspiBackup* nur unter den genannten Voraussetzungen unterstützen.
 
-Es besteht die Möglichkeit der [Donation](main.md#donation)
+Es besteht die Möglichkeit der [Donation](introduction.md#donation)
 und je nach Aufwand besteht die Möglichkeit,
 dass auch ein nicht unterstütztes Environment von *raspiBackup* unterstützt wird.
 

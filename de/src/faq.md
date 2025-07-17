@@ -203,7 +203,7 @@ Es gibt verschiedene Optionen:
   *raspiBackup* gestellt und Probleme berichtet werden können. *framp* wird über
   alle neuen Threads informiert und kann sich dem Thread widmen.
 
-Siehe auch diese [Hinweise](main.md#kontakt)
+Siehe auch diese [Hinweise](introduction.md#kontakt)
 
 **Hinweis:** Jegliche andere Kontaktwege werden ignoriert.
 
@@ -575,7 +575,7 @@ BastiFanta hat einen anderen Grund dafür gefunden:
 <a name="faq30"></a>
 ### 30) Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?
 
-Zum Beispiel ein [Trinkgeld](main.md#trinkgeld) geben.
+Zum Beispiel ein [Trinkgeld](introduction.md#donation) geben.
 
 
 <a name="faq31"></a>
