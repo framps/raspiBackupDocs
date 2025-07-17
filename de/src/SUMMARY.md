@@ -59,7 +59,7 @@ Dies ermöglicht einige kleine Kniffe:
             - [exim4 konfigurieren](exim4-configuration.md)
             - [nullmailer konfigurieren](nullmailer-configuration.md)
 
-    - [Restore](restore-intro.md)        
+    - [Restore](restore-intro.md)
         - [Restore einzelner Dateien](how-to-retrieve-single-files-or-directories-from-the-backup.md)
         - [Manueller rsync Restore](manual-restore.md)
         - [Manueller tgz Restore](manual-restore-of-a-tgz-backup.md)
@@ -85,8 +85,8 @@ Dies ermöglicht einige kleine Kniffe:
     - [Restore](restore.md)
         - [Optionen](restore-options.md)
         - [Konfiguration](restore-config-options.md)
-    - [Allgemein](general.md)  
-        - [Optionen](general-options.md)   
+    - [Allgemein](general.md)
+        - [Optionen](general-options.md)
         - [Konfiguration](general-config-options.md)
     - [Thematisch sortierte Optionen](options-by-topic.md)
 
@@ -129,5 +129,5 @@ TO CHECK/TRANSLATE!
 
 [.status]: todo "Check the remaining english-only file(s)"
 
-[.status]: translated
+[.status]: restructured
 [.status]: z_SUMMARY

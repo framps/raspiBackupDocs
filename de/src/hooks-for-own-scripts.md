@@ -9,7 +9,8 @@ eingepflegt werden müssen. Die Extensions (Plugins) sind unabhängig vom
 jeweiligen Codestand von *raspiBackup* und deshalb in diesem Falle zu
 empfehlen.
 
-Beispielplugins stehen zur Verfügung und dienen als Beispiele für
+[Beispielplugins](https://github.com/framps/raspiBackup/tree/master/extensions)
+stehen zur Verfügung und dienen als Beispiele für
 eigene Erweiterungen. Durch die ersten wird die CPU Temperatur sowie
 die Hauptspeicher- und Backuppartitionsbelegung sowie die
 Partitionsbelegung vor und nach dem Backup ausgegeben. Die letzte
@@ -17,9 +18,13 @@ Erweiterung wird nur am Ende des Backups aufgerufen und kann bei Erfolg
 bzw Misserfolg des Backups unterschiedliche Aktionen auslösen.
 
 Wer nützliche Plugins für die Community erstellt hat kann sie gerne im
-deutsche [Raspberryforum Forum](https://forum-raspberrypi.de/forum/board/164-raspibackup/) 
+deutsche [Raspberryforum Forum](https://forum-raspberrypi.de/forum/board/164-raspibackup/)
 vorstellen und die Downloadlocation nennen. Sollten
 Fähigkeiten der Plugins fehlen, bitte einen [Issue bei GitHub](https://github.com/framps/raspiBackup/issues) anlegen.
+
+Ausserdem existieren interessante von
+[*raspiBackup* Nutzern geschriebene Plugins](https://github.com/framps/raspiBackup/tree/master/extensions_userprovided)
+die es lohnt sich mal anzusehen. 
 
 ### Pluginaufrufstellen beim Backup
 

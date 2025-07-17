@@ -45,29 +45,33 @@ That allows for some tricks:
 
 - [Language support](language-support.md)
 
-- [Installation and first backup](installation.md)
-    - [Quickstart - Installation in 5 minutes](installation-in-5-minutes.md)
+ [Introduction](function-intro.md)
+    - [Backup](backup-intro.md)
+        - [Backup types and decision tree](backuptypes.md)
+        - [Comparing partition orientated and normal backup](normal-or-partition-backup.md)
+        - [Backup directory structure](backup-directory-structure.md)
+        - [Rotation strategy](smart-recycle.md)
+        - [Snapshots](snapshots.md)
+        - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
+        - [Hooks for own scripts](hooks-for-own-scripts.md)
+        - [eMail configuration examples](email-configuration-examples.md)
+            - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
+            - [exim4 configuration](exim4-configuration.md)
+            - [nullmailer configuration](nullmailer-configuration.md)
+
+
+-    - [Quickstart - Installation in 5 minutes](installation-in-5-minutes.md)
     - [Manual installation and configuration](manual-installation-and-configuration.md)
     - [Statistics](statistics.md)
     - [Updates](updates.md)
-
+    
 - [Details zum Aufruf und zur Konfiguration](details.md)
     - [Usage and options](usage-and-options.md)
         - [Options grouped by topic (Selection)](options-by-topic.md)
         - [More Configuration options](config-options-only.md)
-    - [Backup types and decision tree](backuptypes.md)
-    - [Comparing partition orientated and normal backup](normal-or-partition-backup.md)
-    - [Backup directory structure](backup-directory-structure.md)
-    - [Rotation strategy](smart-recycle.md)
-    - [Snapshots](snapshots.md)
-
+ 
     - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
     - [Hooks for own scripts](hooks-for-own-scripts.md)
-
-    - [eMail configuration examples](email-configuration-examples.md)
-        - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
-        - [exim4 configuration](exim4-configuration.md)
-        - [nullmailer configuration](nullmailer-configuration.md)
 
 - [Restore](restore.md)
     - [Restore with raspiBackup](full-restore.md)
