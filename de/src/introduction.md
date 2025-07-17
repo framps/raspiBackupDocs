@@ -1,17 +1,3 @@
-Fdonat
-``` admonish info title="Work in progress - In Arbeit"
-Dieses ist die Dokumentation zu *raspiBackup* in neuer Form.
-
-Zum Wechseln der Sprache (deutsch/englisch) ist oben rechts ein kleines Globus-Icon vorhanden.
-
-Infos zum aktuellen Stand und zur Möglichkeit der Mitarbeit an dieser Dokumentation
-stehen auf der [Projektseite bei GitHub](https://github.com/framps/raspiBackupDoc).
-```
-
-<center>     <!-- The blank line before the image definition is required! -->
-  
-![Icon](images/icons/Icon_rot_blau_final_128.png)
-</center>
 
 ``` admonish info title="Nutzungshinweise"
 Oben auf den Seiten finden sich verschiedene Icons, die helfen
@@ -23,9 +9,12 @@ Mit dem ganz rechten Icon kann man sehr einfach direkt Änderungen an der
 aktuellen Seite im github vorschlagen.
 ```
 
-# Einführung
+<center>     <!-- The blank line before the image definition is required! -->
+  
+![Icon](images/icons/Icon_rot_blau_final_128.png)
+</center>
 
-> *raspiBackup* - Erstelle regelmäßig automatisch Sicherungsversionen Deiner Raspberries
+# Einführung
 
 Eine regelmäßige Sicherung von Raspberry Pis ist wichtig, um im Falle eines
 Ausfalls des Systemspeichergerätes (SD Karte, USB Disk, SSD, NVMe ...) oder auch von
@@ -44,10 +33,11 @@ Es exitsieren zwei Backupmodi: Der **normale Backupmodus** sichert nur die Boot-
 
 Folgende Linux Backuptools können genutzt werden: `dd` Backup, `tar` Backup, (beides auch gezipped) und ein `rsync` Backup mit Hardlinkbenutzung um Deltabackups zu erzeugen.
 Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) nachzulesen.
-Dort befindet sich auch ein Entscheidungsbaum, um schneller die richtige Backupmethode zu finden.
+Dort befindet sich auch ein [Entscheidungsbaum](backuptypes.md), um schneller die richtige Backupmethode zu finden.
 
 Zur **Installation und Konfiguration** von raspiBackup gibt es einen Installer mit dem,
-wie bei raspi-config, menugesteuert, einfach und schnell die wichtigsten Optionen von raspiBackup konfiguriert werden können. Sollen spezielle Dinge bei raspiBackup konfiguriert werden muss eine Konfigurationsdatei manuell geändert werden.
+wie bei raspi-config, menugesteuert, einfach und schnell die wichtigsten Optionen von raspiBackup konfiguriert werden können.
+Sollen spezielle Dinge bei raspiBackup konfiguriert werden muss eine Konfigurationsdatei manuell geändert werden.
 
 raspiBackup kann natürlich nicht nur eine Sicherung erstellen sondern auch eine Sicherung **wiederherstellen**. Siehe dazu [Wiederherstellung](restore.md).
 
@@ -100,12 +90,9 @@ Behandelte Themen sind
   * Vorstellung von github als Fragen- und Probleminteraktionstool
   * Liveinstallation von *raspiBackup* mit dem menuegesteuerten Installer
 
-Die dort verwendeten Slides können zum Lesen [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download) runtergeladen werden.
-[.status]: todo "Broken external link"
+Die dort verwendeten Slides können zum Lesen [hier](https://raspibackup.linux-tips-and-tricks.de/wp-content/uploads/simple-file-list/raspiBackup_de.pdf) runtergeladen werden.
 
 Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im [raspiBackup-Channel](https://www.youtube.com/@raspiBackup).
-
-
 
 <a name="kontakt"></a>
 ## Kontaktmöglichkeiten

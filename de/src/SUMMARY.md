@@ -127,7 +127,5 @@ TO CHECK/TRANSLATE!
   manual-restore-of-a-tgz-backup.md
 ```
 
-[.status]: todo "Check the remaining english-only file(s)"
-
 [.status]: restructured
 [.status]: z_SUMMARY

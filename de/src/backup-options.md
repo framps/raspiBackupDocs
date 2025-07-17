@@ -340,15 +340,9 @@ kann mit dieser Option definiert werden, welche Partitionen gesichert werden
 sollen. Beispiel: -T "1 2 5" sichert die ersten beiden und die fünfte
 Partition. Mit * werden alle Partitionen gesichert.
 
-**Historisch**:
-- Bis Release 0.6.5.1: [*]
-- Bis Release 0.7.0: DEFAULT_PARTITIONS_TO_BACKUP
-
-[.status]: todo "Check 'historisch'"
-
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -T | "1 2" | konfigurierbar | DEFAULT_PARTITIONS_TO_RESTORE |
+| -T | "1 2" |          | DEFAULT_PARTITIONS_TO_BACKUP |
 
 <a name="parm_t"></a>
 ### -t: Typ des Backups (dd, tar, rsync)

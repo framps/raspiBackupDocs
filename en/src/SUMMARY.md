@@ -125,6 +125,5 @@
  - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
 
-[.status]: todo "Check the remaining english-only file(s)"
 [.status]: z_SUMMARY
 

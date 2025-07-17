@@ -111,7 +111,7 @@ alle Partitionen restored.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -T     |   "1,2"  |              | DEFAULT_PARTITIONS_TO_BACKUP |                   |
+| -T     |   "1,2"  |              | DEFAULT_PARTITIONS_TO_RESTORE |                   |
 
 <a name="parm_updateUUIDs"></a>
 ### --updateUUIDs: Anpassen der UUIDs

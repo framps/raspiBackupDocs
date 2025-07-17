@@ -46,10 +46,8 @@ durch Hardlinks und somit als viel zu hoch an.
 
 ## Weblinks
 
-- [Everything you ever wanted to know about inodes on Linux](https://www.howtogeek.com/465350/) - How-To Geek - Sehr schöner Artikel, wo Inodes, Hardlinks usw sehr genau erklärt werden. (2025: Leider nicht mehr verfügbar.)
 - [du counting harldinks towards filesize](https://stackoverflow.com/questions/19951883/du-counting-hardlinks-towards-filesize) - Ein Artikel, der erklärt, warum der Befehl du über mehrere Verzeichnisses ausgeführt werden muss, um die Einsparungen durch Hardlinks zu sehen
 
-
-[.status]: todo "Broken external link"
+[.status]: review-needed
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/571-wie-funktioniert-der-rsync-backup-typ-mit-hardlinks
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/572-how-do-hardlinks-work-with-rsync

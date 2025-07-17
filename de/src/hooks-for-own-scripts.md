@@ -87,14 +87,12 @@ aufgerufen:
         raspiBackupInstallUI.sh -e
 
 2.  Wer die Beispielplugins manuell installieren will, kann das `tar` mit
-    [diesem Link mit einem Browser downloaden](https://www.linux-tips-and-tricks.de/de/downloads/raspibackupsampleextensions-tgz/download)
+    [diesem Link mit einem Browser downloaden](https://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz)
     oder auch direkt wie folgt auf die Raspberry downloaden und nach
     `/usr/local/bin` auspacken.
 
         wget http://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz -O raspiBackupSampleExtensions.tgz
         tar -xzf raspiBackupSampleExtensions.tgz -C /usr/local/bin
-
-[.status]: todo "Broken external link"
 
 Dadurch werden die folgenden Scripte in `/usr/local/bin` kopiert:
 
