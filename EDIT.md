@@ -184,14 +184,41 @@ zur Auswahl von Datei(en) mit einem gewünschten Status
 Darin sind weitere Tools eingebaut, die per Tastenkombination aufgerufen werden können,
 zum Beispiel
 
-  - Auswahl noch zu übersetzender/schon übersetzter Dateien
+  - Auswahl noch zu übersetzender/schon übersetzter Dateien (Alt-R/Alt-T)
     ![Beispiel für Alt-R/Alt-T](readme-images/vitar.png "Auswahl von Übersetzungen")
-  - Abgleich der SUMMARY.md in den (beiden) Sprachen
+  - Abgleich der SUMMARY.md in den (beiden) Sprachen (Alt-S)
     ![Beispiel für Alt-S](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
   - Interaktives Grep-Tool
-    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool")
+    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool") (Alt-G)
 
-Die aktuelle Liste der eingebauten Tools wird beim `source .cdprc` angezeigt.
+Die aktuelle Liste der eingebauten Tools wird beim `source .cdprc` angezeigt:
+
+```
+*******************************************************************************
+
+This project directory is for maintaining the 'raspiBackup' documentation.
+
+A new command (alias) 'vibs' is defined now. ("vi by status")
+
+It starts a TUI for selecting Markdown files by their status for editing.
+
+Within the main screen of the TUI there are additional hotkeys active:
+
+  * Alt-R / Alt-T for more selection screens, meant for supporting translation.
+    They list files "(R)eady for translation" / "(T)ranslated" and open
+    the selected file in both language versions in a split editor window.
+
+  * Alt-S for calling 'vimdiff' with the (S)UMMARY.md files of both languages.
+
+  * Alt-G for calling an interactive (G)rep-Tool using ripgrep, fzf and vim
+
+The above functions handle Markdown source files for the documentation itself.
+Administration files like README, Makefile and book.toml can be selected too:
+
+  * Alt-M for editing the (M)eta files
+
+*******************************************************************************
+```
 
 `.cdprc` ist Teil des Tools [cdp - "cd project"](https://github.com/rpi-simonz/cdp) von *rpi-simonz*,
 kann aber auch wie beschrieben eigenständig verwendet werden.
