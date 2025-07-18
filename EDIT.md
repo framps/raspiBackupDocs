@@ -188,7 +188,7 @@ aktuell:
     ![Beispiel für Alt-R/Alt-T](readme-images/vitar.png "Auswahl von Übersetzungen")
   - Abgleich der SUMMARY.md in den (beiden) Sprachen (Alt-S)
     ![Beispiel für Alt-S](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
-  - Auswahl der Meta-Dateien (Doku und Verewaltung) (Alt-M)
+  - Auswahl der Meta-Dateien (Doku und Verwaltung) (Alt-M)
     ![Beispiel für Alt-M](readme-images/vimf.png "Auswahl der Meta Dateien")
   - Interaktives Grep-Tool (Alt-G)
     ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool")
