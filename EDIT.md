@@ -182,16 +182,18 @@ zur Auswahl von Datei(en) mit einem gewünschten Status
   ![Beispiel für vibs](readme-images/vibs.png "Auswahl nach Status")
 
 Darin sind weitere Tools eingebaut, die per Tastenkombination aufgerufen werden können,
-zum Beispiel
+aktuell:
 
   - Auswahl noch zu übersetzender/schon übersetzter Dateien (Alt-R/Alt-T)
     ![Beispiel für Alt-R/Alt-T](readme-images/vitar.png "Auswahl von Übersetzungen")
   - Abgleich der SUMMARY.md in den (beiden) Sprachen (Alt-S)
     ![Beispiel für Alt-S](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
-  - Interaktives Grep-Tool
-    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool") (Alt-G)
+  - Auswahl der Meta-Dateien (Doku und Verwaltung) (Alt-M)
+    ![Beispiel für Alt-M](readme-images/vimf.png "Auswahl der Meta Dateien")
+  - Interaktives Grep-Tool (Alt-G)
+    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool")
 
-Die aktuelle Liste der eingebauten Tools wird beim `source .cdprc` angezeigt:
+Die aktuelle Liste der eingebauten Tools wird auch beim `source .cdprc` angezeigt:
 
 ```
 *******************************************************************************
