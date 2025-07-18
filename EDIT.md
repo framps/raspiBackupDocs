@@ -188,8 +188,8 @@ zum Beispiel
     ![Beispiel für Alt-R/Alt-T](readme-images/vitar.png "Auswahl von Übersetzungen")
   - Abgleich der SUMMARY.md in den (beiden) Sprachen (Alt-S)
     ![Beispiel für Alt-S](readme-images/vids.png "Abgleich der verschiedenen SUMMARY.md")
-  - Interaktives Grep-Tool
-    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool") (Alt-G)
+  - Interaktives Grep-Tool (Alt-G)
+    ![Beispiel für Alt-G](readme-images/vigf.png "Interaktives Grep-Tool")
 
 Die aktuelle Liste der eingebauten Tools wird beim `source .cdprc` angezeigt:
 
