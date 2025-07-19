@@ -14,7 +14,7 @@ Dieses cvs existiert leider nicht mehr, denn es wäre schon interessant zu sehen
 wie sich das Script in den 10 Jahren verändert hat. Initial waren es um die 50
 Codezeilen. Jetzt sind es 8000 Codezeilen.
 
-In der wayback machine habe ich auf dieser Webseite 6/2013 eine
+In der [wayback machine](https://web.archive.org/) habe ich auf dieser Webseite 6/2013 eine
 initiale Version von *raspiBackup* gefunden. Ich habe sie auf meiner Webseite als [raspiBackup_201306.sh](https://www.linux-tips-and-tricks.de/raspiBackup/raspiBackup_201306.sh) abgelegt.
 Es waren nicht 50 sondern 314 lines of code.
 
@@ -25,26 +25,26 @@ Haltbarkeit haben, entstand *raspiBackup*. Erst nur privat genutzt - aber
 nachdem es doch sehr gut seinen Dienst verrichtete, wurde es der Community zur
 Verfügung gestellt.
 
-Was dadurch an Aufwand dazu kam hatte ich unterschätzt: Es ist
+Was dadurch an Aufwand dazu kam, hatte ich unterschätzt: Es ist
 ein Unterschied, ob man ein kleines Script selbst schreibt und nutzt, oder es von
 anderen Usern genutzt wird. Es mussten sehr viele Tests auf falsche Eingaben
 und Systemumgebungen zugefügt werden. Dazu mussten dann auch entsprechende
 Fehlermeldungen geschrieben werden. Da die Fehlermeldungen nur kurz sind,
-entstanden parallel diverse Webseiten, auf denen die Funktionsweiete von
-*raspiBackup* beschrieben werden, sowie detailiertere Beschreibungen der
-Fehlermeldungen wie auch die Fehlermeldungen beseitigt werden können.
+entstanden parallel diverse Webseiten, auf denen die Funktionsweise von
+*raspiBackup* beschrieben wird, sowie detailliertere Beschreibungen der
+Fehlermeldungen und wie die Fehler beseitigt werden können.
 
 Um die initiale Installation zu vereinfachen, entstand dann der Installer. Bald
-fanden sich auch Freunde von *raspiBackup*, die halfen die Sprachunterstützung
+fanden sich auch Freunde von *raspiBackup*, die halfen, die Sprachunterstützung
 für Finnisch, Chinesisch und Französisch zusätzlich zu Deutsch und Englisch
 zuzufügen.
 
 Es gab viel Feedback und Vorschläge von *raspiBackup* Nutzern, was noch
 nützliche Features in *raspiBackup* wären. Ohne diese Anregungen der
-*raspiBackup* Nutzer würde *raspiBackup* immer noch die initiale Funktion, die
-ich bei mir @home benötige, haben. Es gab und gibt viele Helfer. Initial hatte
+*raspiBackup* Nutzer würde *raspiBackup* immer noch die initiale Funktion haben,
+die ich bei mir @home benötige. Es gab und gibt viele Helfer. Initial hatte
 ich mal eine Webseite gepflegt, auf der alle Helfer aufgeführt wurden.
-irgendwann wurde es einfach zu viel und ich habe die Webseite vom Netz
+Irgendwann wurde es einfach zu viel und ich habe die Webseite vom Netz
 genommen.
 
 Durch diese Hilfe entwickelte sich *raspiBackup* über die 10 Jahre fortwährend
@@ -57,14 +57,14 @@ wesentlich einfacher.
 
 Relativ schnell hatte ich mich dann in dem [deutschen Raspberry Forum](https://forum-raspberrypi.de/forum/)
 angemeldet. Die Mitglieder dort halfen mir sehr, meine Raspberry kennenzulernen
-und zu nutzen. Irgendwann fragte ich dann an, ob es nich Sinn macht, ein Backup
+und zu nutzen. Irgendwann fragte ich dann an, ob es nicht Sinn macht, ein Backup
 Subforum zu erstellen, was dann auch getan wurde. Seitdem helfe ich in dem Unterforum
 bei Fragen zu *raspiBackup*.
 
 Ich halte eigentlich nicht viel von Videos sondern präferiere textuelle
 Beschreibungen, denn da kann man suchen, aber im langweiligen Coronazeitraum
 erstellte ich dann doch verschiedene Videos zu *raspiBackup* und publizierte
-sie auf [Youtube](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg). 
+sie auf [Youtube](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg).
 Viel Aufwand habe ich dazu nicht getrieben im Gegensatz zu
 anderen Leuten die sehr fancy Videos auf Youtube publizieren: Ein paar Slides
 erstellt und die wurden dann im Präsentationsmodus erklärt. Später habe ich
@@ -72,7 +72,7 @@ dann noch ein paar Videos mit praktischer Nutzung von *raspiBackup* auf der
 Befehlszeile erstellt. Aber die Zahl der Leute, die sich die Videos ansieht
 wächst. Der Aufwand war also nicht unnütz.
 
-Franjo vom Raspberryforum schrieb ein kleines Tool names [raspiBackupDialog](https://github.com/framps/raspiBackup/blob/master/helper/raspiBackupDialog.sh), mit
+Franjo vom Raspberryforum schrieb ein kleines Tool namens [raspiBackupDialog](https://github.com/framps/raspiBackup/blob/master/helper/raspiBackupDialog.sh), mit
 welchem der Backup und Restore mit *raspiBackup* dialoggeführt vorgenommen
 werden kann.
 
@@ -81,28 +81,33 @@ konnten mich darüber *raspiBackup* Nutzer direkt kontaktieren. Das wurde mir
 dann aber irgendwann zu viel, da es letztendlich zu einem unbezahlten 7/24
 Hotlinesupport für *raspiBackup* wurde.
 
-Schliesslich habe ich mal ein Paypalkonto eingerichtet, auf welches jeder dem
-*raspiBackup* gefällt, [spenden kann](introduction.md#donation). Ausserdem kann
+Schließlich habe ich mal ein Paypalkonto eingerichtet, auf welches jeder dem
+*raspiBackup* gefällt, [spenden kann](introduction.md#donation). Außerdem kann
 jeder als [Sponsor](https://github.com/sponsors/framps) über github spenden.
-Reich werde ich dadurch natürlich nicht, aber es wird damit dir Arbeit erkennbar gewürdigt die ich
-in raspiBackup Entwicklung und Support reinstecke. 
+Reich werde ich dadurch natürlich nicht, aber es wird damit die Arbeit erkennbar gewürdigt, die ich
+in *raspiBackup* Entwicklung und Support reinstecke.
 Auch kann ich damit Test-Hardware kaufen, denn
 ich kann und will nicht meine Produktivsysteme stilllegen, um *raspiBackup* zu
-testen und zu maintainen. Außerdem bin ich nicht mehr bereit einen Cent
-in benötigte HW für raspiBackup zu stecken. raspiBackup ist kostenlos
+testen und zu maintainen. Außerdem bin ich nicht mehr bereit, einen Cent
+in benötigte HW für *raspiBackup* zu stecken. *raspiBackup* ist kostenlos
 verfügbar und Nutzer sollen sich erkenntlich zeigen und die benötigte HW durch Spenden finanzieren.
-Ein Nutzer spendete ein CM4 damit ich NVMe Support in raspiBackup einbauen und testen konnte. 
-Aus den allgemeinen kleinen Spenden konnte ich einen RPi4 mit 8GB Memory erwerben und den Ubuntu Support in raspiBackup
-einbauen. Schliesslich hat jemand gespendet damit ich mir einen RPi5 kaufen konnte. Die Spende gab es da es ein
-auf einem RPi4 nicht reproduzierbares Problem mit [rpi-clone](https://github.com/geerlingguy/rpi-clone) gab. 
-Das ist ein nützliches Clonetool - kein Backuptool wie raspiBackup - aber oft nachgefragt - auf welches ich auch ein Auge habe, und konnte dann final das intermittierende Problem auf der RPi5 nachvollziehen und fixen.
+Ein Nutzer spendete ein CM4 damit ich NVMe Support in raspiBackup einbauen und testen konnte.
+Aus den allgemeinen kleinen Spenden konnte ich einen RPi4 mit 8GB Memory erwerben und den Ubuntu Support in *raspiBackup*
+einbauen. Schließlich hat jemand gespendet, damit ich mir einen RPi5 kaufen konnte. Die Spende gab es, da es ein
+auf einem RPi4 nicht reproduzierbares Problem mit [rpi-clone](https://github.com/geerlingguy/rpi-clone) gab.
+rpi-clone ist ein nützliches Clonetool - kein Backuptool wie raspiBackup, aber oft nachgefragt,
+auf welches ich auch ein Auge habe, und konnte dann final das intermittierende Problem auf der RPi5 nachvollziehen und fixen.
 
-Im Mai 2025 hat [simonz](https://github.com/rpi-simonz/) viel Einsatz und Energie in ein neues git Repository gesteckt [raspiBackupDoc](https://github.com/framps/raspiBackupDoc) um die bisherige Dokumentation von raspiBackup auf meiner Webseite in dieses Repository zu bringen und die Dokumentation dadurch wesentlich zu verbessern.i Sämtliches Tooling wie auch der Transfer und Anpassung von meinen Webseiten ins Repository ist sein Verdienst. Dieses Repository wird zukünftig die [raspiBackup Dokumentation](https://framps.github.io/raspiBackupDoc) auf meiner Webseite ablösen. 
+Im Mai 2025 hat [simonz](https://github.com/rpi-simonz/) viel Einsatz und Energie in ein neues git Repository [raspiBackupDoc](https://github.com/framps/raspiBackupDoc) gesteckt,
+um die bisherige Dokumentation von *raspiBackup* auf meiner Webseite in dieses Repository zu bringen
+und die Dokumentation dadurch wesentlich zu verbessern. Sämtliches Tooling wie auch der Transfer und
+Anpassung von meinen Webseiten ins Repository ist sein Verdienst. Dieses Repository und die daraus generierte
+[raspiBackup Dokumentation](https://framps.github.io/raspiBackupDoc) wird zukünftig die Dokumentation auf meiner Webseite ablösen.
 
 Zusätzlich entstanden viele [kleine Scripte](https://github.com/framps/raspiBackup/tree/master/scripts), die *raspiBackup* in seiner Nutzung
 unterstützen.
 
-Hiemit gebe ich eine virtuelle Runde Freibier zur Feier des Tages aus.
+Hiermit gebe ich eine virtuelle Runde Freibier zur Feier des Tages aus.
 
 
 [.status]: rft
