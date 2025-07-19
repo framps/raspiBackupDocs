@@ -171,7 +171,7 @@ geänderte oder gelöschte Dateien gesynced werden.
 | -00     |  aus    |              |                    |
 
 <a name="parm_1"></a>
-### -1: Quantifizierungsfehler ignorieren
+### -1: Partitionierungsfehler ignorieren
 
 Das Partitionslayout wird auf der SD Karte erstellt so wie es auf dem Quellgerät
 existiert und dabei werden sämtliche Fehler, die entdeckt werden - inklusive des
