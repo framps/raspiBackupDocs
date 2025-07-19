@@ -1,7 +1,5 @@
 # Restore Optionen
 
-[.status]: todo "Backupmodus oder Backuptyp???"
-
 *raspiBackup* restored standardmäßig das [**gesamte System**](restore-intro.md) bei dem normalen Backupmodus.
 Bei einem partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden, welche Partitionen restored
 werden sollen. Wird beim partitionsorientierten Modus
