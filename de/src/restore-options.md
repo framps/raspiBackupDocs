@@ -1,15 +1,17 @@
 # Restore Optionen
 
+[.status] todo "Backupmodus oder Backuptyp???"
+
 *raspiBackup* restored standardmäßig das [**gesamte System**](restore-intro.md) bei dem normalen Backupmodus.
-Bei einem partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden welche Paritionen restored 
+Bei einem partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden, welche Partitionen restored
 werden sollen. Wird beim partitionsorientierten Modus
-der rsync Backuptyp genutzt kann bei einem Restore auch ein Deltarestore gewählt werden. (Option -00) 
+der rsync Backuptyp genutzt kann bei einem Restore auch ein Deltarestore gewählt werden. (Option -00)
 D.h. es werden mit rsync nur die geänderten Dateien und gelöschte Dateien aus dem Backup
-kopiert sowie nicht im Backup vorhandene Dateien - also neu erstellte Dateien - gelöscht. 
-Damit ist ein sehr schneller Restore möglich. 
+kopiert sowie nicht im Backup vorhandene Dateien - also neu erstellte Dateien - gelöscht.
+Damit ist ein sehr schneller Restore möglich.
 
 Unabhängig von *raspiBackup* ist auch ein [manueller Restore](manual-restore.md)
-der Daten mit den zuvor benutzten Backuptools `dd`, `tar` oder `rsync` möglich. 
+der Daten mit den zuvor benutzten Backuptools `dd`, `tar` oder `rsync` möglich.
 Dazu sind dann entsprechende Kenntnisse der Linux Backuptools notwendig.
 
 Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](how-to-retrieve-single-files-or-directories-from-the-backup.md) möglich.
@@ -26,7 +28,7 @@ Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](
 ### -C: Auf Badblocks prüfen
 
 Beim Formatieren wird mittels `mkfs.ext4 -c` auf Bad Blocks geprüft.  
-Hinweis: Die Restorezeit wird dadurch erhöht. 
+Hinweis: Die Restorezeit wird dadurch erhöht.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
@@ -82,21 +84,21 @@ externes Rootfilesystem auf einem Gerät benutzt wird. Sonst reicht die Option `
 Die Option ist nur sinnvoll bei älteren Raspberries die noch keinen USB Boot unterstützen.
 
 Achtung: Die Partition wird **neu formatiert**. Deshalb aufpassen, dass es die
-richtige Partition ist und dass die Partition gross genug ist, um die Partition
+richtige Partition ist und dass die Partition groß genug ist, um die Partition
 des Backups aufzunehmen!
 
-Hinweis: Diese Option steht nur zur Verfuegung, wenn der normale Backupmodus
-benuzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
-Rootpartition mitgesichert werden.
+Hinweis: Diese Option steht nur zur Verfügung, wenn der normale Backupmodus
+benutzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
+Rootpartition mit gesichert werden.
 
 <a name="parm_resizeRootFS"></a>
 ### --resizeRootFS: Rootfilesystem anpassen
 
 Während der Wiederherstellung kann die Rootpartition auf die maximal verfügbare
 Größe des Zielgerätes der externen Partition ausgedehnt werden. Wird die
-Option ausgeschaltet mit --resizeRootFS- wird die Rootpartition so gross
+Option ausgeschaltet mit --resizeRootFS- wird die Rootpartition so groß
 angelegt wie sie auf dem Originalsystem war. Nutze man die Option -P so wird die letzte
-Partition auf dem Gerät erweitert. Liegen megr als 2 Paritionen vor ist es dann nicht die Rootpartition.
+Partition auf dem Gerät erweitert. Liegen mehr als 2 Partitionen vor ist es dann nicht die Rootpartition.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
@@ -150,7 +152,7 @@ DEFAULT_YES_NO_RESTORE_DEVICE="loop"
 <a name="parm_0"></a>
 ### -0: Keine Partitionierung
 
-Es wird kein neues Paritionslayout auf dem Zielgerät erstellt, sondern das
+Es wird kein neues Partitionslayout auf dem Zielgerät erstellt, sondern das
 existierende benutzt. Somit kann man eine gewünschte Partitionierung vor dem Restore vornehmen
 und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 
@@ -162,16 +164,16 @@ und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 ### -00: Keine Partitionierung und Formatierung
 
 Hiermit wird keine Formatierung der mit der Option `-T`
-ausgewählen Partitionen bei einem `rsync` partitionsorientierten Backup
+ausgewählten Partitionen bei einem `rsync` partitionsorientierten Backup
 vorgenommen. Dadurch wird der Restoreprozess extrem beschleunigt, da nur neue,
-geänderte oder gelöschte Dateien gesyncted werden.
+geänderte oder gelöschte Partitionen gesynced werden.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
 | -00     |  aus    |              |                    |
 
 <a name="parm_1"></a>
-### -1: Partitionierungsfehler ignorieren
+### -1: Quantifizierungsfehler ignorieren
 
 Das Partitionslayout wird auf der SD Karte erstellt so wie es auf dem Quellgerät
 existiert und dabei werden sämtliche Fehler, die entdeckt werden - inklusive des

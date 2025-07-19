@@ -2,7 +2,7 @@
 
 *raspiBackup* stellt **komplette** Wiederherstellungen zur Verfügung, d.h. alle Partitionen
 werden i.d.R. wiederhergestellt.
-Im Gegensatz dazu kann beim paritionsorientierten Modus die zu restorenden Paritionen ausgewählt
+Im Gegensatz dazu kann beim paritionsorientierten Modus die zu restorenden Partitionen ausgewählt
 und somit nur Teile restored werden.
 
 Bei einem Restore werden auf dem Ziel-Datenträger (SD-Karte, USB-Platte, ...)
@@ -47,9 +47,9 @@ Jedes Backup kann mit der/einer Raspberry Pi wiederhergestellt werden.
 1. Das Medium, welches das Backup enthält (z.B. eine Platte), anschließen
    und mounten bzw. ein Netzwerklaufwerk mit den Backupdaten mounten.
 
-1. Falls die Rootpartition ausgelagert wurde, eine weiteres Gerät mit 
+1. Falls die Rootpartition ausgelagert wurde, ein weiteres Gerät mit
    einer vorformatierten Partition anschließen,
-   die die ausgelagerte Rootpartition enthalten soll, 
+   die die ausgelagerte Rootpartition enthalten soll,
    welche wiederhergestellt werden wird
 
 1. *raspiBackup* zum Restore starten, Aufruf siehe [unten](#devicenames).
@@ -60,13 +60,15 @@ Dabei wird üblicherweise
   - die Backuppartition `/dev/sdbx`
   - und eine eventuelle Rootpartition `/dev/sdcx`
 
-genutzt.  
+genutzt.
 
 Wird ein Netzlaufwerk benutzt, ist die Rootpartition dann üblicherweise `/dev/sdbx`
 
 Die aktuelle Gerätebelegung kann anders sein und sollte **immer** mit z.B.
 
-    sudo parted -l
+```
+sudo parted -l
+```
 
 überprüft werden, um zu vermeiden, dass andere Partitionen irrtümlicherweise überschrieben werden.
 
@@ -116,7 +118,7 @@ Notwendige Hardware für den Restore:
    Mode benutzt wird, wo keine SD Karte mehr benutzt wird, muss noch per USB eine
    weitere Platte angeschlossen sein.
 
-Gemeinsamkeiten der Beispieleaufrufe:
+Gemeinsamkeiten der Beispielaufrufe:
 
 1. Das gesicherte System heisst im Beispielaufruf "raspberrypi".
 1. Der **Ziel**-Datenträger, der den Restore der Boot-/bzw.
@@ -173,7 +175,7 @@ Disk /dev/sdb: 300.1 GB, 300069052416 bytes
 Hier sieht man, dass
 
   - die interne SD Karte `/dev/mmcblk0` 8GB gross ist
-  - die neue externe SD Karte `/dev/sda` 16Gb gross ist
+  - die neue externe SD Karte `/dev/sda` 16GB gross ist
   - die externe Platte `/dev/sdb`, auf die die Rootpartition gebracht werden soll,
     300GB gross ist und eine Partition `/dev/sdb1` hat.
 
@@ -192,16 +194,17 @@ funktioniert und auch immer noch alle Daten beinhaltet.
 
 Nichts ist so frustrierend, wenn man in dem Moment, wo man das Backup benötigt,
 feststellt, dass das Backup korrupt ist oder nicht alle Daten enthält.
-Ein Test ist bei der Raspberry recht einfach: Eine neue SD- Karte einlegen, 
+Ein Test ist bei der Raspberry recht einfach: Eine neue SD-Karte einlegen,
 das Backup restoren und
-von der neuen SD-Karte booten. Wird keine SD Karte genutzt, also z.B. 
+von der neuen SD-Karte booten. Wird keine SD Karte genutzt, also z.B.
 eine SSD, kann der Restoretest auch mit einer Platte vorgenommen werden
 sofern sie groß genug ist alle Daten der SSD aufzunehmen.
 
 Falls aus irgendwelchen Gründen der Restore mit dem Script fehlschlägt, kann man
 natürlich jederzeit die vom Script gesicherten Daten mit den Standard
 Linuxtools, die zum Backup genutzt wurden - `dd`, `tar` oder `rsync` - wieder
-restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script und es sind entsprechende Linux Kenntnisse erforderlich ;-)
+restoren. Allerdings geht das dann nicht ganz so bequem wie mit dem Script
+und es sind entsprechende Linux Kenntnisse erforderlich ;-)
 Siehe dazu auch [Manueller Restore eines Backups](manual-restore.md).
 
 [.status]: rft

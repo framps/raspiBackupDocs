@@ -7,7 +7,7 @@
   - [-A: Das Laufzeitlog wird in der eMail mitgeschickt](general-options.md#-A)
   - [-b: Definition der Blocksize die beim dd Backup genutzt wird](backup-options.md#parm_b)
   - [-B: Bootpartition wird als tar gesichert statt per dd](backup-options.md#parm_B)
-  - [-c: Erlaube lokale Backupseicherung](backup-options.md#-c)
+  - [-c: Erlaube lokale Backupsicherung](backup-options.md#-c)
   - [-D: Weitere Optionen für den dd Backup](backup-options.md#parm_D)
   - [--dynamicMount: Dynamisches Mounten der Backuppartition](backup-options.md#parm_dynamicMount)
   - [--ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.](backup-options.md#parm_ignoreAdditionalPartitions)

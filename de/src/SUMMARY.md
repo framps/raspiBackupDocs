@@ -48,7 +48,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Funktionsdetails](function-intro.md)
     - [Backup](backup-intro.md)
         - [Entscheidungsbaum für Backuptypen](backuptypes.md)
-        - [Vergleich partitionsorienof tierter Backup und normaler Backup](normal-or-partition-backup.md)
+        - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
         - [Backupverzeichnisstruktur](backup-directory-structure.md)
         - [Intelligente Rotationsstrategie](smart-recycle.md)
         - [Snapshots](snapshots.md)
@@ -65,7 +65,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Manueller tgz Restore](manual-restore-of-a-tgz-backup.md)
 
     - [Fragen und Antworten](more-questions-and-answers.md)
-        - [Welches Fileystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
+        - [Welches Filesystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
         - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
         - [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
         - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
