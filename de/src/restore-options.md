@@ -87,7 +87,7 @@ des Backups aufzunehmen!
 
 Hinweis: Diese Option steht nur zur Verfügung, wenn der normale Backupmodus
 benutzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
-Rootpartition mit gesichert werden.
+Rootpartition mitgesichert werden.
 
 <a name="parm_resizeRootFS"></a>
 ### --resizeRootFS: Rootfilesystem anpassen
@@ -164,7 +164,7 @@ und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 Hiermit wird keine Formatierung der mit der Option `-T`
 ausgewählten Partitionen bei einem `rsync` partitionsorientierten Backup
 vorgenommen. Dadurch wird der Restoreprozess extrem beschleunigt, da nur neue,
-geänderte oder gelöschte Partitionen gesynced werden.
+geänderte oder gelöschte Dateien gesynced werden.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
