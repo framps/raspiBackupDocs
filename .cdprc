@@ -65,9 +65,11 @@ if [[ "$FZF_VERSION" < "0.53.0" ]] ; then
 fi
 
 export BAT
-
-export EDIT_IN_SPLIT_WINDOWS="vim -O"
-export EDIT_IN_TABS="vim -p"
+if [[ -f ./vimrc_project ]] ; then
+    export VIM_PROJECT="vim -u ./vimrc_project"
+else
+    export VIM_PROJECT="vim"
+fi
 
 # Since arrays are not exportable(!?) as required for e.g. __list_files_with_status
 # a normal variable is used for that:
@@ -106,8 +108,8 @@ edit_translate_by_status() {
             FZFPOS_STATUS=$( grep "${FILE}" < <(nl "${TMPFILE_TRANS}") | awk '{print $1}' )
             rm -f "${TMPFILE_TRANS}"
         fi
-        # ${EDIT_IN_SPLIT_WINDOWS} {en,de}/src/"$FILE"
-        vim -c "tabnew en/src/${FILE}|vsplit de/src/${FILE}|tabnew en/src/SUMMARY.md|vsplit de/src/SUMMARY.md|tabfirst" en/src/"${FILE}"
+        # ${VIM_PROJECT} -O {en,de}/src/"$FILE"
+        ${VIM_PROJECT} -c "tabnew en/src/${FILE}|vsplit de/src/${FILE}|tabnew en/src/SUMMARY.md|vsplit de/src/SUMMARY.md|tabfirst" en/src/"${FILE}"
     done
     [[ -f "${TMPFILE_TRANS}" ]] && rm -f "${TMPFILE_TRANS}"
     unset FZFPOS_STATUS
@@ -151,7 +153,7 @@ edit_grepped_files() {
         --header 'ALT-G: Switch between ripgrep/fzf' \
         --preview "${BAT} --color=always --theme=ansi {1} --highlight-line {2}" \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-        --bind 'enter:become(vim {1} +{2})'
+        --bind 'enter:become(${VIM_PROJECT} {1} +{2})'
 }
 
 export -f edit_grepped_files
@@ -175,7 +177,7 @@ edit_meta_files() {
                 FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE_META}") | awk '{print $1}' )
                 rm -f "${TMPFILE_META}"
             fi
-            ${EDIT_IN_TABS} "${FILES[@]}"
+            ${VIM_PROJECT} -p "${FILES[@]}"
         done
         [[ -f "${TMPFILE_META}" ]] && rm -f "${TMPFILE_META}"
         unset FZFPOS_FILE
@@ -305,7 +307,7 @@ edit_by_status() {
                 FZFPOS_FILE=$( grep "${FILES[0]}" < <(nl "${TMPFILE_STATUS}") | awk '{print $1}' )
                 rm -f "${TMPFILE_STATUS}"
             fi
-            ${EDIT_IN_TABS} "${FILES[@]}"
+            ${VIM_PROJECT} -p "${FILES[@]}"
         done
         [[ -f "${TMPFILE_STATUS}" ]] && rm -f "${TMPFILE_STATUS}"
         unset FZFPOS_FILE
@@ -315,7 +317,7 @@ edit_by_status() {
 }
 
 
-alias vibs='EDIT_IN_TABS="vim -p" edit_by_status'
+alias vibs='edit_by_status'
 alias vigf='edit_grepped_files'
 alias vimf='edit_meta_files'
 
