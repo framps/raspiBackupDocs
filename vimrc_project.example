@@ -1,0 +1,213 @@
+"===============================================================================
+" https://github.com/junegunn/vim-plug
+"===============================================================================
+" Manual first installation:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Or automatically:
+"https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+"
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+"
+"" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+" https://github.com/kshenoy/vim-signature
+" to place, toggle and display marks
+Plug 'kshenoy/vim-signature'
+
+" https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
+
+Plug 'preservim/vim-markdown'
+" old repo name:  'plasticboy/vim-markdown'
+
+Plug 'https://github.com/bronson/vim-trailing-whitespace'
+
+" Pressing ga on a character reveals its representation in decimal, octal, and hex.
+" Characterize.vim modernizes this with the following additions:
+"
+"    Unicode character names: U+00A9 COPYRIGHT SYMBOL
+"    Vim digraphs (type after <C-K> to insert the character): Co, cO
+"    Emoji codes: :copyright:
+"    HTML entities: &copy;
+
+Plug 'https://github.com/tpope/vim-characterize'
+
+" Linters for a lot of programming languages
+Plug 'dense-analysis/ale'
+
+" DeepL integration
+Plug 'ryicoh/deepl.vim'
+
+" After changing here: Reload .vimrc and :PlugInstall to install plugins.
+"
+" Initialize plugin system
+call plug#end()
+
+" Note: vim-plug above automatically executes filetype plugin indent on and syntax enable.
+"       You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
+
+" Just to be sure:
+:filetype plugin on
+
+
+"===============================================================================
+" From vimrc_example.vim
+"===============================================================================
+
+" When started as "evim", evim.vim will already have done these settings, bail out.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+" das steht auch in o.g., wird aber irgendwie/irgendwo mit default "50" überschrieben?!??!?
+set history=200		" keep 200 lines of command line history
+
+set nobackup
+
+if &t_Co > 2 || has("gui_running")
+  " Switch on highlighting the last used search pattern.
+  set hlsearch
+endif
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+" from https://unix.stackexchange.com/questions/50733/cant-use-mouse-properly-when-running-vim-in-tmux
+"set ttymouse=xterm2
+" or more modern, following vim help:
+set ttymouse=sgr
+" or automatically, but doesn't work in tmux, see
+" https://groups.google.com/g/vim_dev/c/eGE-kHULeZ0
+" https://stackoverflow.com/questions/15445481/mapping-arrow-keys-when-running-tmux
+" https://vimhelp.org/term.txt.html
+"set t_RV=[>c
+
+"===============================================================================
+" More personal settings
+"=============================================================================
+
+set tabstop=8  softtabstop=4  shiftwidth=4  noexpandtab  smarttab
+set listchars=tab:▸·,nbsp:⎵
+set list
+
+" for easier help navigation
+map \\ <C-]>
+
+" no automatic visual linebreaks!?
+set nolbr
+set tw=0
+set nowrap "Don't wrap lines
+
+" https://vim.fandom.com/wiki/Restoring_indent_after_typing_hash
+set nosmartindent
+
+"set termguicolors    " Konsole is TrueColor capable, see https://gist.github.com/XVilka/8346728
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" make gx working as workaround due to a bug in netrw
+nnoremap gx :!xdg-open <cWORD> &<CR><CR>
+
+" https://vim.fandom.com/wiki/Search_for_visually_selected_text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" https://stackoverflow.com/questions/17305675/open-more-than-10-files-matching-a-pattern-with-vims-cli
+set tabpagemax=20
+" https://stackoverflow.com/questions/15583346/how-can-i-temporarily-make-the-window-im-working-on-to-be-fullscreen-in-vim
+:noremap tt :tab split<CR>
+
+"=============================================================================
+" Settings for plugins
+"=============================================================================
+
+" ============= vim-markdown
+"
+:autocmd FileType markdown set conceallevel=2 concealcursor=c
+
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_conceal_code_blocks = 0
+" https://github.com/preservim/vim-markdown/issues/162  Foldexpr_markdown very slow for some documents
+"?" let g:vim_markdown_folding_disabled = 1
+
+" ============= Linters
+"
+" ALE
+" https://github.com/dense-analysis/ale/blob/master/doc/ale.txt
+"
+" The linters that really should be used need to be installed! The others are ignored silently.
+"
+" Use :ALEInfo to see the config for the current buffer!
+let g:ale_enabled = 1
+let g:ale_linters = {'sh': ['shellcheck'], 'python': ['ruff', 'flake8', 'pylint']}
+let g:ale_virtualtext_cursor = 'current'
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 1
+" let g:ale_keep_list_window_open = 1
+"" let g:ale_list_vertical = 1
+
+" ============= Translation by DeepL
+"
+"deepl.vim https://github.com/ryicoh/deepl.vim
+let g:deepl#endpoint = "https://api-free.deepl.com/v2/translate"
+"let g:deepl#auth_key = "00000000-0000-0000-0000-000000000000:fx" " or readfile(expand('~/.config/deepl.auth_key'))[0]
+let g:deepl#auth_key = readfile(expand('~/.config/deepl.auth_key'))[0]
+
+" replace a visual selection
+vmap <C-t><C-e> <Cmd>call deepl#v("EN")<CR>
+" vmap t<C-e> <Cmd>call deepl#v("EN")<CR>
+" vmap t<C-j> <Cmd>call deepl#v("JA")<CR>
+
+" translate a current line and display on a new line
+" nmap t<C-e> yypV<Cmd>call deepl#v("EN")<CR>
+" nmap t<C-j> yypV<Cmd>call deepl#v("JA")<CR>
+
+" specify the source language
+" translate from FR to EN
+" nmap t<C-e> yypV<Cmd>call deepl#v("EN", "FR")<CR>
+
+" ============= Spell checking
+"
+" vim internal spell check
+" but don't activate here, do it manually on demand
+" set spell
+" New German spelling
+set spelllang=de_20
+"set spelllang=en
