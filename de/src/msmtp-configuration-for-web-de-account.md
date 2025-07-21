@@ -1,4 +1,4 @@
-# Konfiguration von msmtp für einen web.de Account
+# msmtp Konfiguration für einen web.de Account
 
 Der Nutzer *gNeadr* von *raspiBackup* hatte gewisse Probleme, die eMailNotifizierung
 für seinen web.de Account für *raspiBackup* einzurichten. Nachdem es ihm

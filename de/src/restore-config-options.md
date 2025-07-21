@@ -1,4 +1,4 @@
-# Restore Konfigurationen
+# Restore Konfigurationsoptionen
 
 Die meisten Aufrufoptionen können ebenso in der Konfigurationsdatei
 definiert werden. Siehe dazu [Restoreoptionen](restore-options.md).

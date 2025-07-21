@@ -1,4 +1,4 @@
-# Weitere Backuptools als raspiBackup für die Raspberry Pis
+# Weitere Backuptools
 
 - [rpi-clone](https://github.com/billw2/rpi-clone): Sicherung einer Raspberry per rsync. Cmdlinetool
 - [piclone](https://github.com/raspberrypi-ui/piclone): Klonen einer SD Karte per cp. Das UI ist im RaspbianOS Desktop enthalten. Keine Cmdlineversion.

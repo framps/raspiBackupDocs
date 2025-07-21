@@ -1,4 +1,4 @@
-# raspiBackup Schnellstart - Installation in 5 Minuten
+# Schnellstart - Installation in 5 Minuten
 
 Hinweis: Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
 wie man *raspiBackup* installiert, konfiguriert und ein Backup restored.

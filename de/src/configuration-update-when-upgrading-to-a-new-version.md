@@ -10,9 +10,10 @@ Folgenden wird im Detail beschrieben wie diese Zusammenführung
 vorgenommen wird.
 
 **Hinweis**
-Beim Upgrade einer Version, die kleiner ist als 0.6.5, muss die
-Zusammenführung der Konfiguration nach dem Upgrade auf 0.6.5 leider
-manuell angestossen werden. Der Aufruf dazu ist
+Sollte aus irgendwelchen Gründen kein Konfigurationsdateiupdate
+bei einem Upgrade stattgefunden haben kann mit folgendem Befehl
+der Upgrade manuell angestossen werden:
+
 
     sudo raspiBackup.sh --updateConfig
 
@@ -85,10 +86,10 @@ Zyklus durchführen, um zu testen ob noch alles wie vorher funktioniert.
 Konfigurationsdateien. Der automatische Konfigurationsupgrade wird nur
 für die Standardkonfiguration `/usr/local/etc/raspiBackup.conf`
 vorgenommen. Alle anderen Konfigurationsdateien müssen manuell erweitert
-werden. Dazu muss man die als neu gekennzeichneten Konfigurationszeilen
-nehmen und in die anderen Konfigurationsdateien kopieren.
+werden. Dazu müssen die als neu gekennzeichneten Konfigurationszeilen
+genommen werden und in die anderen Konfigurationsdateien kopiert werden.
 
-[.status]: rft
+[.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/567-raspibackup-konfigurationsupdate-nach-einem-upgrade-auf-eine-neue-version
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/570-raspibackup-configuration-update-when-upgrading-to-a-new-version
 

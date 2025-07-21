@@ -1,4 +1,4 @@
-# exim4 konfigurieren
+# exim4 Konfiguration
 
 Um z.B. Statusmails von *raspiBackup* als root zu versenden, kann *nullmailer* eingesetzt werden.
 

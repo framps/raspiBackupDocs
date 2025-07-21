@@ -1,4 +1,4 @@
-# nullmailer konfigurieren
+# nullmailer Konfiguration
 
 Um z.B. Statusmails von *raspiBackup* als root zu versenden, kann *nullmailer* eingesetzt werden.
 

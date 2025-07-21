@@ -31,7 +31,7 @@ Backups can be saved ony an partition which can be mounted on a Linux system
 
 There exist two backup modes: The **normal backup mode** just saves the boot and root parition. If additional partitions should be saved, for example a 3rd data only partition, the **partition oriented mode** has to be used.
 
-If you own an Synology or another NAS device see [here](more-backupspaces.md) for configuration hints.
+If you own an Synology or another NAS device see [here](backup-targets.md) for configuration hints.
 
 Linux backuptools `dd` backup, `tar` backup, (both backups can also be zipped) and a `rsync` backup
 with hardlink usage to create a delta backup can be used.

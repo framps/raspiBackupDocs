@@ -42,6 +42,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
     - [Ubuntu](ubuntu-support.md)
     - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
+    - [Unterstützte Geräte](supported-devices.md)
 
 - [Sprachunterstützung](language-support.md)
 
@@ -55,9 +56,9 @@ Dies ermöglicht einige kleine Kniffe:
         - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
         - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
         - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
-            - [msmtp konfigurieren für einen web.de Account](msmtp-configuration-for-web-de-account.md)
-            - [exim4 konfigurieren](exim4-configuration.md)
-            - [nullmailer konfigurieren](nullmailer-configuration.md)
+            - [msmtp Konfiguration für einen web.de Account](msmtp-configuration-for-web-de-account.md)
+            - [exim4 Konfiguration](exim4-configuration.md)
+            - [nullmailer Konfiguration](nullmailer-configuration.md)
 
     - [Restore](restore-intro.md)
         - [Restore einzelner Dateien](how-to-retrieve-single-files-or-directories-from-the-backup.md)
@@ -96,7 +97,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Hilfsprogramme](helper-scripts.md)
     - [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
-    - [Nützliche Hilfsprogramme](useful-helper-scripts.md)
+    - [Weitere nützliche Hilfsprogramme](useful-helper-scripts.md)
 
 - [Backupziele](backup-targets.md)
     - [NFS als Backupziel](nfs-as-backupspace.md)
@@ -109,11 +110,11 @@ Dies ermöglicht einige kleine Kniffe:
 - [Hilfreiche Links zum Thema Backup](helpful-links.md)
 - [Andere Backuptools](other-raspberry-backup-tools.md)
 
-- [Verschiedenes](any-other-business.md)
+- [Verschiedenes](miscellaneous.md)
     - [Versionshistorie](version-history.md)
     - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
     - [10 Jahre raspiBackup](10-years-raspibackup.md)
-    - [Ausgeführte Regressiontests vor der Veröffentlichung einer neuen Release](regressiontests-executed.md)
+    - [Regressiontests](regressiontests-executed.md)
     - [Entwicklungsumgebung](development-environment.md)
     - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)

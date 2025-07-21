@@ -351,7 +351,7 @@ Typ des Backups, der entweder dd, tar oder rsync sein kann. rsync benutzt bei
 einer ext3/ext4 Partition Hardlinks, um den benötigten Speicherplatz zu
 minimieren.
 
-[Detailinformationen zu den Backuptypen](backuptypes.md#backuptypen) Ein externes Rootfilesystem wird
+[Detailinformationen zu den Backuptypen](backuptypes.md) Ein externes Rootfilesystem wird
 automatisch bei tar oder rsync Backup mitgesichert sofern nicht die Option -P
 benutzt wird. Mit der Option -z werden die dd und tar Backups zusätzlich noch gezippt bzw
 verkleinert.

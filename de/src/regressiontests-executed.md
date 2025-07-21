@@ -1,9 +1,13 @@
-# Ausgeführte Regressiontests vor der Veröffentlichung einer neuen Release
+# Regressiontests vor einem neuen Release
 
 Jede neue Version von *raspiBackup* wird vor der Veröffentlichung einem
 Regressionstest unterzogen. Bedingt durch die vielen Optionen und möglichen
 Hardware- und Softwareumgebungen ist leider kein vollständiger Regressiontest
-möglich.
+möglich. Es wird aber dadurch sichergestellt, dass die Primärfunktionalität
+von *raspiBackup*, für die verschiedenen Backuptypen und -modi ein
+Backup zu erstellen, definitiv erfolgreich durchläuft. Auch werden alle
+neuen Features trotz dass sie schon beim Entwickeln getestet wurden, noch
+einmal getestet.
 
 Der Regressiontest wird in einer virtualisierten Umgebung auf einem Linux
 Desktop, in der eine [Raspi per Qemu](https://linux-tips-and-tricks.de/de/raspberryd/22-wie-kann-man-raspberry-pi-unter-kvm-emulieren) simuliert, wird durchgeführt.
@@ -29,6 +33,6 @@ Restore wieder sorgfältig zu testen. Es wird in diesem Kontext auf den
 [Haftungsausschluss](introduction.md#haftungsausschluss) hingewiesen.
 
 
-[.status]: rft
+[.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/509-raspibackup-ausgefuehrte-regressiontests
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/510-raspibackup-regressiontests-executed

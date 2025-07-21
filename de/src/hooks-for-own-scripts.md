@@ -1,4 +1,4 @@
-# Erweiterungsmöglichkeiten von *raspiBackup*
+# Erweiterungsmöglichkeiten
 
 
 Es besteht die Möglichkeit, eigene Codeerweiterungen vor und nach dem

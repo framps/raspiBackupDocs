@@ -42,6 +42,7 @@
     - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
     - [Ubuntu](ubuntu-support.md)
     - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
+    - [Supported devices](supported-devices.md)
 
 - [Language support](language-support.md)
 
@@ -107,9 +108,9 @@
 - [Tips for homeautomation](tips-homeautomation.md)
 
 - [Helpful links regarding backup](helpful-links.md)
-- [Other backup tools for Raspberry Pi](other-raspberry-backup-tools.md)
+- [Other backup tools](other-raspberry-backup-tools.md)
 
-- [Any other business](any-other-business.md)
+- [Miscellaneous](miscellaneous.md)
     - [Version history](version-history.md)
     - [raspiBackup has a new logo](raspibackup-has-a-new-logo.md)
     - [10 years raspiBackup](10-years-raspibackup.md)

@@ -1,4 +1,4 @@
-# Backup Konfigurationen
+# Backup Konfigurationsoptionen
 
 Die meisten Aufrufoptionen können ebenso in der Konfigurationsdatei
 definiert werden. Siehe dazu [Backupoptionen](backup-options.md).

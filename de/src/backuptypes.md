@@ -1,4 +1,4 @@
-# Backuptypen
+# Entscheidungsbaum für Backuptypen
 
 Es gibt verschiedene Backuptypen und eine jede hat ihre Vor- und Nachteile.
 Es können auch unterschiedliche Backuptypen kombiniert werden. Z.B. kann alle
@@ -31,7 +31,7 @@ mit eingeschaltetem Zippen mit `-z`). Ein Restore mit Windowstools it nicht mög
 Ein `tar` Backup sichert alle auf dem Systemgerät gespeicherten Daten, wobei allerdings das Backup nicht
 so gross ist, wie bei einem `dd` Backup, da nur die Daten gesichert werden, die
 tatsächlich existieren. Deshalb kann auch ein `tar` Backup auf Geräten
-restored werden, die kleiner ist als das Originalgerät. Natürlich nur sofern alle 
+restored werden, die kleiner ist als das Originalgerät. Natürlich nur sofern alle
 gesicherten Daten auf das neue Device passen.
 
 Ein `tgz` Backup sichert das gesamte System, wie ein `tar` Backup. Diese Methode
@@ -61,5 +61,5 @@ einmal ein initiales Backup erstellt wurde.
 ``` admonish info title="Filesysteme"
 Die [Vor- und Nachteile der möglichen Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md) muss man auch beachten.
 
-[.status]: rft
+[.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach

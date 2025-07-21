@@ -17,6 +17,7 @@ Folgende Anwendungsbeispiele werden beschrieben:
 
 <!-- toc -->
 
+Auf folgenden Seiten finden sich Konfigurationsbeispiele für eMail.
 
 ## Ein Windowsbenutzer möchte seine Raspberry sichern und auf Windows restoren können.
 
@@ -38,7 +39,7 @@ DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY=1
 ```
 
 Allerdings ist dazu auch notwendig die Rootpartition der Raspberry zu
-verkleinern, da standardmäßig der gesamte freien Platz der SD Karte gesichert 
+verkleinern, da standardmäßig der gesamte freien Platz der SD Karte gesichert
 wird. Dieses geht aber nicht unter Windows sondern es muss ein Linux benutzt
 werden und mit den Tools gparted oder resize2fs dann die Rootpartition
 verkleinert werden.
@@ -53,7 +54,7 @@ das dd Image per pishrink verkleinern kann. Die Option
 DEFAULT_ZIP_BACKUP=1
 ```
 
-verkleinert zwar auch noch mal das Image aber das kann nicht direkt 
+verkleinert zwar auch noch mal das Image aber das kann nicht direkt
 iunter Windows restored werden. Es muss uvorher unzipped werden.
 
 ## Eine Raspberry soll möglichst schnell gesichert werden. Die Backuppartition ist ein per nfs gemountetes EXT4 Dateisystem welches von einer NAS zur Verfügung gestellt wird.

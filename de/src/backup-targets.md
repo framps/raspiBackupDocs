@@ -1,4 +1,4 @@
-# Weitere Backup-Ziele
+# Backupziele
 
 raspiBackup mounted die Backuppartition um auf sie zu schreiben. D.h.
 eine jede Partition, die unter Linux gemountet
@@ -19,7 +19,7 @@ auch als Backupziel genutzt werden.
 
 ```admonish info title="Filesysteme"
 Die jeweiligen Backuppartitionen müssen partitioniert sein. Siehe [Vor-und Nachteile der jeweiligen
-Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md) 
+Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md)
 ```
 
 Neben den folgenden Kapiteln siehe dazu auch [Wie kann man von der Raspberry Pi auf externe Daten zugreifen](https://linux-tips-and-tricks.de/de/13-raspberry/423-wie-kann-man-von-der-pi-unter-linux-auf-externe-daten-zugreifen).

@@ -1,4 +1,4 @@
-# Nützliche Hilfsprogramme
+# Weitere nützliche Hilfsprogramme
 
 Mittlerweile sind verschiedene Hilfsprogramme zu *raspiBackup* entstanden.
 Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper) zum Download zur Verfügung:
