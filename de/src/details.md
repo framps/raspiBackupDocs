@@ -2,7 +2,9 @@
 
 *raspiBackup* muss als Benutzer *root* oder per `sudo` aufgerufen werden.
 
-    raspiBackup Option1 Option2 Option3 ... Backupverzeichnis
+```
+raspiBackup Option1 Option2 Option3 ... Backupverzeichnis
+```
 
 Alle Optionen, die etwas ein- oder ausschalten, können durch
 ein angehängtes `+` oder `-` beim Aufruf von raspiBackup gezielt ein oder ausgeschaltet werden.
@@ -36,9 +38,16 @@ Die Priorität der Optionsquellen ist aus folgender Tabelle ersichtlich:
 | 5         | /usr/local/etc/raspiBackup.conf |
 
 
-**Hinweis:** Optionen in der Konfigdatei, die ja/an oder nein/aus als Parameter
+**Hinweis:**
+Optionen in der Konfigdatei, die ja/an oder nein/aus als Parameter
 benötigen, müssen 0 für nein und 1 für ja sein.
 Kein Eintrag in der Standardspalte bedeutet der Standard ist `""`
+
+**Hinweis:**
+Bei einem Versionsupgrade wird nur die Standardkonfigurationsdatei
+i`/usr/local/etc/raspiBackup.conf` mit
+neuen Konfigurationsoptionen updated. Alle anderen Konfigurationsdateien
+müssen ggf manuell Updated werden.
 
 Es existieren für den Backup- und Restoreaufruf verschiedene Optionen:
 
@@ -52,12 +61,12 @@ als auch den Restore ([Aufrufoptionen](general.md)).
 
 ## Hilfetext auf der Konsole
 
-Sofern man sich auf der Konsole bewegt kann man sich
+Sofern man sich auf der Konsole bewegt kann
 eine Liste der verfügbaren Aufrufoptionen sowie deren aktuellen Status mit den
-Optionen `-h` oder `--help` ausgeben lassen.
+Optionen `-h` oder `--help` ausgegeben werden.
 
 ## Thematische Liste aller Aufrufoptionen
 
 Alle verfügbaren Aufrufoptionen thematisch sortiert sind auf [dieser Seite](options-by-topic.md) aufgeführt.
 
-[.status]: restructured
+[.status]: rst

@@ -9,5 +9,5 @@ beschrieben.
 
 Siehe auch [Allgemeine Aufrufoptionen](general-options.md) und [Allgemeine Konfigurationsoptionen](general-config-options.md).
 
-[.status]: restructured
+[.status]: rst
 

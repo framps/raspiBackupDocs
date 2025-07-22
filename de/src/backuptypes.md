@@ -13,15 +13,16 @@ werden.
 Ein `dd` Backup erstellt ein in sich konsistentes binäres Abbild des Systems.
 Dabei wird immer das ganze Gerät mit dem System gelesen und gesichert. Das bedeutet, dass
 auch Daten gesichert werden, die sich nicht geändert haben. Auch bedeutet es,
-dass zum Restore das restorgerät wieder wenigstens so gross sein muss wie das Originalsystem.
-Es wird keine Parition irgendwie in der Größe angepasst. Das bereite besonders
+dass zum Restore das Restorgerät wieder wenigstens so gross sein muss wie das Originalsystem.
+Es wird keine Parition irgendwie in der Größe angepasst. Das bereitet besonders
 bei SD Karten immer wieder Probleme da die SD Karten - obwohl z.B. 32 GB gross - doch immer
 leichte Untesrschiede haben und somit ein Restore eines 32GB Systems auf eine andere 32GB SD Karte
 nicht erfolgreich sein kann da die SD Karte geringfügig kleiner ist.
 
 Ein `dd` Backup kann unter Windows mit entsprechenden Tools wiederhergestellt werden.
 
-Aber es wird **nicht** empfohlen, den Backuptyp `dd` zu nutzen. Erklärungen dazu sind in [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
+Aber es wird **nicht** empfohlen, den Backuptyp `dd` zu nutzen.
+Erklärungen dazu sind in [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
 im Detail beschrieben.
 
 Ein `ddz` Backup sichert das gesammte System, wie ein `dd` Backup. Diese Methode
@@ -61,5 +62,5 @@ einmal ein initiales Backup erstellt wurde.
 ``` admonish info title="Filesysteme"
 Die [Vor- und Nachteile der möglichen Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md) muss man auch beachten.
 
-[.status]: restructured
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach

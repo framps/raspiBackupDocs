@@ -1,6 +1,6 @@
 # Backup Optionen
 
-Diese Liste enthält alle Aufrufoptionen von *raspiBackup* sowie 
+Diese Liste enthält alle Aufrufoptionen von *raspiBackup* sowie
 die entsprechenden Konfigurationsoptionen.
 
 <div class="table-wrapper-for-options">
@@ -24,19 +24,19 @@ exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -o.
 **Beispiel**:
 
 ```
--a "service nfs-kernel-server start && service samba"
+-a "service nfs-kernel-server start && service smbd start"
 ```
 
 Soll wirklich **kein** Service gestartet werden, muss ein Doppelpunkt ":" als Argument mitgegeben werden.
 
 Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 
-**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
+**Achtung**: 
+Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -a | keine | konfigurierbar | DEFAULT_STARTSERVICES |
-
 
 <a name="parm_b"></a>
 ### -b: Definition der Blocksize die beim dd Backup genutzt wird
@@ -47,15 +47,14 @@ Blocksize, die beim dd Backup benutzt wird
 |-------------|----------|--------------|--------------------|
 | -b | 1 MB |  | DEFAULT_DD_BLOCKSIZE |
 
-
 <a name="parm_B"></a>
 ### -B: Bootpartition wird als tar gesichert statt per dd
 
 Die Bootpartition wird nicht per dd sondern per tar gesichert.
 
-Hinweis: Diese Option hat keine Funktion wenn der partitionsorientierte Modus
-benutzt wird, also Option -P benutzt wird oder DEFAULT_PARTITIONBASED_BACKUP=1
-in der Konfiguration gesetzt ist.
+**Hinweis:**
+Diese Option hat keine Funktion wenn der partitionsorientierte Modus
+benutzt wird.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -66,9 +65,13 @@ in der Konfiguration gesetzt ist.
 
 Es kann kein Backup auf der Rootpartition erstellt werden, um vor
 unbeabsichtigtem Vollschreiben der Rootpartition durch das Backup zu schützen.
+Auch macht es keinen Sinn ein Backup auf der Systempartition abzulegen.
 
 Mit dieser Option wird der Test ausgeschaltet und es kann ein Backup auf der
-Rootpartition erstellt werden. **ACHTUNG**: Es wird nicht geprüft, ob das Backup
+Rootpartition erstellt werden.
+
+**ACHTUNG**:
+Es wird nicht geprüft, ob das Backup
 noch auf die Rootparition passt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
@@ -84,13 +87,12 @@ Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
 |-------------|----------|--------------|--------------------|
 | -D | automatisch |  | DEFAULT_DD_PARMS |
 
-
 <a name="parm_dynamicMount"></a>
 ### --dynamicMount: Dynamisches Mounten der Backuppartition
 
-Ab Version 0.6.6 wird damit vor dem Backup die angegebene Partition bzw. der
+Damit wird vor dem Backup die angegebene Partition bzw. der
 Mointpoint gemounted und am Ende wieder umounted. Falls sie schon gemounted ist
-wird am Ende die Partition nicht umounted. Der Mountpoint muss in /etc/fstab
+wird sie am Ende die Partition nicht umounted. Der Mountpoint muss in /etc/fstab
 definiert sein und kann dann entweder der Mountpoint selbst sein (z.B. /backup)
 oder die Backuppartition (z.B. /dev/sdb1).
 
@@ -103,12 +105,11 @@ oder die Backuppartition (z.B. /dev/sdb1).
 
 Fake backup. Diese Option ist hilfreich beim initialen Testen von *raspiBackup*.
 Der eigentliche lange Backup wird dadurch nicht angestossen - aber sämtliche
-Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
+Optionsprüfungen wie auch das Senden der BenachrichtigungseMail und Pushnachrichten.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -F | None |  | None |
-
 
 <a name="parm_ignoreAdditionalPartitions"></a>
 ### --ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.
@@ -116,15 +117,14 @@ Optionsprüfungen wie auch das Senden der BenachrichtigungseMail.
 Mit dieser Option sind Systeme mit mehr als
 zwei Partitionen unterstützt im normalen Backupmodus wenn tar oder rsync Backup genutzt
 wird. Allerdings werden nur die ersten beiden Paritionen, /boot und / gesichert
-und wiederhergestellt. **Achtung**: Alle anderen Partitionen werden ignoriert.
+und wiederhergestellt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | --ignoreAdditionalPartitions | nein |  | DEFAULT_IGNORE_ADDITIONAL_PARTITIONS |
 
-
 <a name="parm_ignoreMissingPartitions"></a>
-### --ignoreMissingPartitions: Test ob alle Partitionen gesichert werden 
+### --ignoreMissingPartitions: Test ob alle Partitionen gesichert werden
 
 Es wird im partitionsorientierten Backupmodus geprüft, ob alle Partitionen,
 die im letzten Backup
@@ -139,15 +139,16 @@ ausgeschaltet.
 ### -k: Anzahl der Backups die vorgehalten werden sollen
 
 Anzahl der Backups, die pro Backuptyp vorzuhalten sind, sofern es nicht durch
-folgende Option überschrieben wird. D.h., es werden 3 dd, 3 tar und 3 rsync
+keep Option der jeweiligen Backuptypen überschrieben wird.
+D.h., es werden standarmäßig 3 dd, 3 tar und 3 rsync
 Backups vorgehalten.
 
-Hinweis: Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
+**Hinweis:**
+ Diese Option ist wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -k | 3 | konfigurierbar | DEFAULT_KEEPBACKUPS |
-
 
 <a name="parm_keepType"></a>
 ### --keep_{type}: Anazhl der Backups pro Typ die vorgehalten werden sollen
@@ -156,9 +157,8 @@ Anzahl der Backups, die für den jeweiligen Backuptypen vorgehalten werden.
 
 {type} kann jeder Backuptyp sein, also dd, ddz, tar, tgz oder rsync
 
-Hinweis: Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
-
-Technischer Hinweis: Dieser Parameter wird i.d.R. manuell nacheditiert, um die einzelnen Optionen zeilenweise zu zeigen.
+**Hinweis:**
+Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutzt wird.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -172,7 +172,7 @@ Technischer Hinweis: Dieser Parameter wird i.d.R. manuell nacheditiert, um die e
 ### -M: Erstellen eines *raspiBackup* Snapshots
 
 Mit der Option wird ein *raspiBackup* Snapshot erstellt, welcher nicht im
-Backuprecycleprozess berücksichtigt wird und somit nicht gelöscht wird. Der
+Backuprecycleprozess berücksichtigt wird und somit nicht automatisch gelöscht wird. Der
 Snapshot erhält am Ende des Verzeichnisnamens den angegebenen Text. Siehe auch
 [diese Seite zu Snapshots](snapshots.md).
 
@@ -183,17 +183,18 @@ from SD". Dann wird folgendes Verzeichnis angelegt:
 idefix/idefix-rsync-backup-20170103-170717_idefix-Initial_boot_from_SD
 ```
 
-**Hinweis**: *raspiBackup* Snapshots sind normale Backups und keine "richtigen"
+**Hinweis**:
+*raspiBackup* Snapshots sind normale Backups und keine "richtigen"
 Snapshots wie die bei LVM oder btrfs. Es werden aber beim rsync Backup Hardlinks
-genutzti um die Snapshotzeit zu reduzieren.
+genutzt um die Snapshotzeit zu reduzieren.
 
-**Hinweis**: Da dieses Verzeichnis nicht im Backuprecycleprozess berücksichtigt wird,
-muss es bei Bedarf manuell gelöscht werden.
+**Hinweis**:
+Da die Snapshotverzeichnisse nicht im Backuprecycleprozess berücksichtigt werden,
+müssen sie manuell gelöscht werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -M | keiner |  |  |
-
 
 <a name="parm_N"></a>
 ### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
@@ -207,10 +208,10 @@ Speicherbelegung vor und nach dem Backuplauf ausgeben.
 | -N | keine |  | DEFAULT_EXTENSIONS |
 
 <a name="parm_notifyStart"></a>
-### --notifyStart: Benachrichtigung beim Backupstart 
+### --notifyStart: Benachrichtigung beim Backupstart
 
 Mit dieser Option wird eingeschalten, dass eine
-eMail oder eine Telegram Benachrichtigung gesendet wird, wenn der Backup startet.
+eMail oder eine Pushbenachrichtigung gesendet wird, wenn der Backup startet.
 Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
@@ -230,14 +231,15 @@ exakte umgekehrte Reihenfolge haben wie die Befehle beim Parameter -a.
 Beispiel:
 
 ```
--o "service samba stop && service nfs-kernel-server stop"
+-o "service smbd stop && service nfs-kernel-server stop"
 ```
 
 Soll wirklich **kein** Service gestoppt werden, muss der Doppelpunkt ":" als Argument mitgegeben werden.
 
 Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 
-**Achtung**: Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
+**Achtung**:
+Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -276,7 +278,6 @@ Damit werden auch die --keep Optionen ignoriert und müssen nicht auf 0 gesetzt 
 |-------------|----------|--------------|--------------------|
 | --smartRecycle | aus | konfigurierbar | DEFAULT_SMART_RECYCLE |
 
-
 <a name="parm_smartRecycleDryrun"></a>
 ### --smartRecycleDryrun: Testmodus von SmartRecycle
 
@@ -298,19 +299,18 @@ Diese Option definiert Parameter der [intelligenten Rotationsstrategie - Smart R
 |-------------|----------|--------------|--------------------|
 | --smartRecycleOptions | "7 4 12 1" | konfigurierbar | DEFAULT_SMART_RECYCLE_OPTIONS |
 
-
 <a name="parm_systemstatus"></a>
 ### --systemstatus: Aktive Services beim Backupstart anzeigenAktive Services beim Backupstart anzeigen
 
 Es wird eine Liste der aktiven Services und offenen Dateien
-in der Debugdatei erstellt
+in der Debugdatei erstellt. 
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | --systemstatus | aus |  |  |
 
 <a name="parm_unsupportedEnvironment"></a>
-### --unsupportedEnvironment: Nutzung auf nicht unterstützter HW und SW
+### --unsupportedEnvironment: Nutzung auf nicht unterstützter HW und OS 
 
 Wird *raspiBackup* auf nicht [unterstützten Umgebungen](supported-hardware-and-software.md)
 gestartet muss diese Option angegeben werden.
@@ -356,9 +356,10 @@ automatisch bei tar oder rsync Backup mitgesichert sofern nicht die Option -P
 benutzt wird. Mit der Option -z werden die dd und tar Backups zusätzlich noch gezippt bzw
 verkleinert.
 
-**Hinweis**: Beim dd Backup kann durch den Konfigurationsparameter
+**Hinweis**:
+Beim dd Backup kann durch den Konfigurationsparameter
 DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY Backup-zeit und -platz gespart
-werden. Details zu dem Parameter siehe am Ende der Tabelle.
+werden.
 
 Siehe dazu auch [FAQ16](faq.md#faq16).
 
@@ -373,7 +374,8 @@ Siehe dazu auch [FAQ16](faq.md#faq16).
 Erweiterung der Excludeliste beim Backup um bestimmte Verzeichnisse beim Backup
 zu ignorieren.
 
-**Achtung**: Die Parameter müssen der jeweiligen Syntax des Backuptools
+**Achtung**:
+Die Parameter müssen der jeweiligen Syntax des Backuptools
 gehorchen und führen sonst zum Abbruch des Backups. Für rsync oder tar könnte
 die Liste wie folgt aussehen:
 
@@ -423,7 +425,6 @@ Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verz
 |-------------|----------|--------------|--------------------|
 | -u | keine |  | DEFAULT_EXCLUDE_LIST |
 
-
 <a name="parm_v"></a>
 ### -v: Alle Meldungen des verwendeten Backuptools werden protokolliert
 
@@ -434,8 +435,6 @@ Backuptests, um den Backupfortschritt verfolgen zu können.
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
 | -v | aus |  | DEFAULT_VERBOSE |
-
-
 
 <a name="parm_z"></a>
 ### -z: Kompression des Backups bei dd oder tar
@@ -449,4 +448,4 @@ Backup verkleinern mit gzip bei dd oder tar Backup
 
 </div>
 
-[.status]: restructured
+[.status]: rst

@@ -1,6 +1,6 @@
 # Backup Konfigurationsoptionen
 
-Die meisten Aufrufoptionen können ebenso in der Konfigurationsdatei
+Die meisten Aufrufoptionen können auch in der Konfigurationsdatei
 definiert werden. Siehe dazu [Backupoptionen](backup-options.md).
 
 <div class="table-wrapper-for-options">
@@ -13,7 +13,7 @@ definiert werden. Siehe dazu [Backupoptionen](backup-options.md).
 
 ### DEFAULT_BEFORE_STOPSERVICES / DEFAULT_AFTER_STARTSERVICES
 
-Ab Version 0.6.4.3: Die hier definierten Befehle werden vor bzw nach dem Backup
+Die hier definierten Befehle werden vor bzw nach dem Backup
 vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
 | Config-Option               | Standard |
@@ -24,8 +24,8 @@ vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
 ### DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY
 
-dd Backups sichern nur den von definierten Partitionen belegten Platz. Dadurch
-benötigt eine 32GB SD Karte, die nur eine 8GB Partition definiert hat, für den
+dd Backups sichern idurch diese Option nur den von definierten Partitionen belegten Platz.
+Dadurch benötigt z.B. eine 32GB SD Karte, die nur eine 8GB Partition definiert hat, für den
 Backup nur 8GB und nicht 32GB. Dazu muss aber vermittels gparted oder resize2fs
 die root Partition entsprechend verkleinert werden, denn üblicherweise füllt
 die root Partition den gesamten Rest der SD Karte aus.
@@ -48,8 +48,9 @@ Backupspace zu sparen. Voraussetzung: Der Backupspace unterstützt Hardlinks
 
 ### DEFAULT_MAIL_ON_ERROR_ONLY
 
-Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet. Hinweis: Sollte
-*raspiBackup* wegen aussergewöhnlicher Umstände abstürzen, kann es durchaus sein,
+Nur im Fehlerfalle wird eine eMailbenachrichtigung gesendet.
+**Hinweis:**
+Sollte *raspiBackup* wegen außergewöhnlicher Umstände abstürzen, kann es passieren,
 dass keine eMail gesendet wird.
 
 | Config-Option              | Standard |
@@ -59,9 +60,9 @@ dass keine eMail gesendet wird.
 ### DEFAULT_REBOOT_SYSTEM
 
 Mit dieser Option kann ein Reboot des gesicherten Systems am Ende des Backups
-konfiguriert werden. 
+konfiguriert werden.
 
-**Hinweis**: Die Services, die vor dem Backup gestoppt wurdeni, werden nicht wieder
+**Hinweis**: Die Services, die vor dem Backup gestoppt wurden, werden nicht wieder
 gestartet. Das ist unnötig da sie sowieso beim Neustart gestartet werden.
 
 | Config-Option              | Standard |
@@ -70,7 +71,8 @@ gestartet. Das ist unnötig da sie sowieso beim Neustart gestartet werden.
 
 ### DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS
 
-Backupoptionen, die beim rsync Backup zusätzlich genutzt werden.
+Backupoptionen, die beim rsync Backup zusätzlich
+zu den Standardoptionen von *raspiBackup* genutzt werden.
 
 **Benutzung auf eigene Gefahr!**
 
@@ -80,7 +82,8 @@ Backupoptionen, die beim rsync Backup zusätzlich genutzt werden.
 
 ### DEFAULT_RSYNC_BACKUP_OPTIONS
 
-Backupoptionen, die beim rsync Backup genutzt werden.
+Damit können die rsync Standardbackupoptionen
+überschrieben werden.
 
 **Benutzung auf eigene Gefahr!**
 
@@ -90,7 +93,8 @@ Backupoptionen, die beim rsync Backup genutzt werden.
 
 ### DEFAULT_TAR_BACKUP_OPTIONS
 
-Backupoptionen, die beim tar Backup genutzt werden.
+Damit können die tar Standardbackupoptionen
+überschrieben werden.
 
 **Benutzung auf eigene Gefahr!**
 
@@ -101,7 +105,8 @@ Backupoptionen, die beim tar Backup genutzt werden.
 
 ### DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS
 
-Backupoptionen, die beim tar Backup zusätzlich genutzt werden.
+Backupoptionen, die beim tar Backup zusätzlich
+zu den Standardoptionen genutzt werden.
 
 **Benutzung auf eigene Gefahr!**
 
@@ -111,4 +116,4 @@ Backupoptionen, die beim tar Backup zusätzlich genutzt werden.
 
 </div>
 
-[.status]: restructured
+[.status]: rst
