@@ -84,7 +84,7 @@
   - [-f: Angabe einer Konfigurationsdatei](general-options.md#parm_f)
   - [-g: Fortschrittsanzeige](general-options.md#parm_g)
   - [--unsupportedEnvironment: Nicht unterstützte HW und SW wird akzeptiert](general-options.md#parm_unsupportedEnvironment)
-  - [--updateConfig: Update von *raspiBackup* Konfigurationsdatei](general-options.md#parm_updateConfig)
+  - [--updateConfig: Update der *raspiBackup* Konfigurationsdatei](general-options.md#parm_updateConfig)
 
 [.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen

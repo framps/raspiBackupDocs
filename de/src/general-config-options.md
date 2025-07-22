@@ -112,6 +112,4 @@ werden. Beispiel: "SF" oder "SM".
 
 </div>
 
-[.status]: review-needed
-
 [.status]: restructured

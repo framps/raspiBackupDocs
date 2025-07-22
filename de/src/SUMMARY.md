@@ -112,7 +112,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Verschiedenes](miscellaneous.md)
     - [Versionshistorie](version-history.md)
-    - [raspiBackup hat ein neues Logo](raspibackup-has-a-new-logo.md)
+    - [raspiBackup Logo](raspibackup-has-a-new-logo.md)
     - [10 Jahre raspiBackup](10-years-raspibackup.md)
     - [Regressiontests](regressiontests-executed.md)
     - [Entwicklungsumgebung](development-environment.md)

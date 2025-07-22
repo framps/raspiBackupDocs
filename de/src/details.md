@@ -30,7 +30,7 @@ Die Priorität der Optionsquellen ist aus folgender Tabelle ersichtlich:
 | Priorität | Quelle |
 |-----------|--------|
 | 1         | Aufrufoptionen |
-| 2         | -f <configFile> |
+| 2         | -f \<configFile\> |
 | 3         | $(pwd)/.raspiBackup.conf |
 | 4         | ~/.raspiBackup.conf |
 | 5         | /usr/local/etc/raspiBackup.conf |
@@ -39,5 +39,25 @@ Die Priorität der Optionsquellen ist aus folgender Tabelle ersichtlich:
 **Hinweis:** Optionen in der Konfigdatei, die ja/an oder nein/aus als Parameter
 benötigen, müssen 0 für nein und 1 für ja sein.
 Kein Eintrag in der Standardspalte bedeutet der Standard ist `""`
+
+Es existieren für den Backup- und Restoreaufruf verschiedene Optionen:
+
+1. Aufrufoptionen sowie deren Konfigurationsoption ([Backup](backup.md) / [Restore](restore.md)).
+Die Konfigurationsoptionen können durch die entsprechenden Aufrufoptionen temporär
+überschrieben werden.
+1. Reine Konfigurationsoptionen die nicht per Aufrufoption überschrieben werden können
+([Backup](backup-config-options.md) / [Restore](restore-config-options.md))
+1. Allgemeine Aufruf- und Konfigurationsoptionen sowohl für den Backup
+als auch den Restore ([Aufrufoptionen](general.md)).
+
+## Hilfetext auf der Konsole
+
+Sofern man sich auf der Konsole bewegt kann man sich
+eine Liste der verfügbaren Aufrufoptionen sowie deren aktuellen Status mit den
+Optionen `-h` oder `--help` ausgeben lassen.
+
+## Thematische Liste aller Aufrufoptionen
+
+Alle verfügbaren Aufrufoptionen thematisch sortiert sind auf [dieser Seite](options-by-topic.md) aufgeführt.
 
 [.status]: restructured

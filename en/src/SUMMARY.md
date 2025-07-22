@@ -112,7 +112,7 @@
 
 - [Miscellaneous](miscellaneous.md)
     - [Version history](version-history.md)
-    - [raspiBackup has a new logo](raspibackup-has-a-new-logo.md)
+    - [raspiBackup logo](raspibackup-has-a-new-logo.md)
     - [10 years raspiBackup](10-years-raspibackup.md)
     - [Executed regression tests](regressiontests-executed.md)
     - [Development environment](development-environment.md)

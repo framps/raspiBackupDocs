@@ -16,7 +16,10 @@ dass die Backups nicht aus dem auf dem Kopf stehenden Backupordner herausfallen
 
 Anbei eine Auswahl von schönen Logos die in der Diskussion und beim Brainstorming entstanden sind:
 
+<center>
+
 ![Auswahl an Icons](images/icons/icon-collection.png)
+</center>
 
 [.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/653-raqspibackup-has-a-new-logo
