@@ -45,21 +45,21 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    älteres noch funktionierendes Backup manuell restoren.
 
 6. **raspiBackupAndJSON.sh**: Wer die von raspiBackup erzeugten Meldungen nach dem Backup untersuchen will
-   kann mit diesem Script die Mledungen im JSON Format erzeugen lassen und kann sie dadurch wesentlich einfacher parsen
+   kann mit diesem Script die Meldungen im JSON Format erzeugen lassen und kann sie dadurch wesentlich einfacher parsen
    wie z.B. mit jq.
 
 7. **raspiBackupDialog.sh**: Dieses von [Franjo](https://github.com/franjo-G) erstellte Script ist ein raspiBackup vorgeschaltetes
    Script mit welchem einfacher Backups erstellt wie auch restored werden können.
    Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md).
 
-## Nutzergeschriebene Extensions 
+## Nutzergeschriebene Extensions
 
 Des weiteren gibt es [Extensions](https://github.com/framps/raspiBackup/tree/master/extensions_userprovided),
 die von *raspiBackup* Nutzern geschrieben wurden und zur allgemeinen
-Verfügung in das *raspiBackup* Repository per PR eingestellt wurden. Weiter eigene Extensions werden 
+Verfügung in das *raspiBackup* Repository per PR eingestellt wurden. Weiter eigene Extensions werden
 gerne per PR aufgenommen.
 
-[.status]: restructured
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/507-raspibackup-nuetzliche-hilfsprogramme
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/508-raspibackup-nuetzliche-hilfsprogramme-2
 

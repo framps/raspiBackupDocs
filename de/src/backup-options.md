@@ -15,7 +15,7 @@ die entsprechenden Konfigurationsoptionen.
 ### -a: Befehle, die Services nach dem Backup starten
 
 Befehle, um Services nach dem Backup wieder zu starten. Z.B. bei Samba "service
-smbd start" (Achtung: Anführungszeichen an Anfang und Ende). Diese Option ist
+smbd start" (**Achtung:** Anführungszeichen an Anfang und Ende). Diese Option ist
 zusammen mit der Option -o obligatorisch.
 
 Mehrere Befehle müssen durch && getrennt werden. Diese Befehle sollten die
@@ -31,7 +31,7 @@ Soll wirklich **kein** Service gestartet werden, muss ein Doppelpunkt ":" als Ar
 
 Siehe dazu auch [FAQ1](faq.md#faq1) und [FAQ18](faq.md#faq18)
 
-**Achtung**: 
+**Achtung**:
 Die Befehle werden als root ausgeführt. Es ist kein sudo notwendig.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |

@@ -20,9 +20,9 @@ Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt.
 <a name="parm_coloring"></a>
 ### --coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen
 
-Ab der Version 0.6.5 können die Meldungen in der eMail sowie auf der Konsole
+Die Meldungen in der eMail sowie auf der Konsole können
 koloriert werden. Mögliche Werte sind `C` für Konsole und/oder `M` für eMail.
-Falls postfix als emailClient genutzt wird siehe auch Option --eMailColoring.
+Falls postfix als eMmailClient genutzt wird siehe auch Option --eMailColoring.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -46,9 +46,11 @@ die eMail erfolgreich gesendet wird.
 Mit der Konfigurationsoption DEFAULT_SENDER_EMAIL kann die
 Standardsenderadresse  root@$(hostname) falls notwendig geändert werden.
 
-Hinweis: Die eMail Benachrichtigung funktioniert nur wenn ein MTA wie z.B.
+**Hinweis:** Die eMail Benachrichtigung funktioniert nur wenn ein MTA wie z.B.
 nullmailer, msmtp, postfix oder exim4 entsprechend korrekt konfiguriert wurde.
-Siehe dazu FAQ47. Die eMailfunktion kann relativ einfach mit der Fakeoption -F
+Für ein paar eMailClients gibt es [Konfigurationsanleitungen](email-configuration-examples.md).
+Ansonsten ist [FAQ38](faq.html#38-wo-kann-ich-fragen-stellen-und-hilfe-bekommen-zu-linuxfragen-und--problemen-die-im-eigentlichen-sinne-nichts-mit-raspibackup-zu-tun-haben) zu berücksichtigen.
+Die eMailfunktion kann relativ einfach mit der Fakeoption -F
 getestet werden. Außerdem sind weitere Benachrichtigungsmöglichkeiten wie
 Pushover, Slack oder Telegram unterstützt.
 
@@ -90,7 +92,7 @@ Coloring mit einer separaten Option steuert.
 <a name="parm_f"></a>
 ### -f: Angabe einer Konfigurationsdatei
 
-Angabe einer Konfigurationsdatei, die als letztes eingelesen wird. Siehe 
+Angabe einer Konfigurationsdatei, die eingelesen wird. Siehe
 [alle möglichen Konfigurationsdateien und ihre Einlesereihenfolge](details.md#configFiles).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
@@ -163,8 +165,7 @@ Definiert das Ziel der Logdatei `raspiBackup.log`.
 - varlog: Die Logdatei wird in /var/log geschrieben
 - backup: Die Logdatei wird in das erzeugte Backup geschrieben
 - current: Die Logdatei wird in das aktuelle Verzeichnis geschrieben.
-
-<Dateinamenprefix>:  Das Debuglog wird dort mit der Extension `.log` und die
+- <Dateiprefix>:  Das Debuglog wird dort mit der Extension `.log` und die
 Messagedatei mit der Extension `.msg` abgelegt.
 
 Beispiel: `/home/pi/raspiBackup`
@@ -182,8 +183,8 @@ Im Backupverzeichnis werden keine Logs abgelegt.
 
 Meldungsdetails
 
-- minimal -> Nur wichtige Meldungen werden ausgegeben
-- detailed -> Viele Meldungen über den Fortschrit werden ausgegeben
+- minimal: Nur wichtige Meldungen werden ausgegeben
+- detailedi: Viele Meldungen über den Fortschrit werden ausgegeben
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -228,7 +229,7 @@ Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 | --timestamps | aus |  | DEFAULT_TIMESTAMPS |
 
 <a name="parm_U"></a>
-### -U: Update von *raspiBackup* 
+### -U: Update von *raspiBackup*
 
 Die lokale *raspiBackup* Version wird durch die letzte aktuelle Version ersetzt
 sofern eine neue Version existiert. Die vorherige Version wird als
@@ -252,7 +253,7 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 
 Mit dieser Option kann man einen Update der Konfiguration
 erzwingen falls sie nicht bei einem normalen Update mit der
-Option `-U` vorgenommen wurde. 
+Option `-U` vorgenommen wurde.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
@@ -319,6 +320,4 @@ Menge von Hosts nach einem Versionsupdate verteilen.
 
 </div>
 
-
-[.status]: review-needed
-[.status]: restructured
+[.status]: rst

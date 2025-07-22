@@ -5,5 +5,5 @@ von *raspiBackup* unterstützt. Es sollte aber wenigstens eine RaspberryPi 4 mit
 mit 8GB Speicher, genutzt werden. Selbiges trifft für einen RaspberryPi 5 zu. Vermutlich
 sind die Anforderungen an ein Ubuntu Server System geringer.
 
-[.status]: restructured
+[.status]: rst
 

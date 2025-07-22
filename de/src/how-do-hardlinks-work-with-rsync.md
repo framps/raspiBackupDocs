@@ -41,13 +41,14 @@ erklärt wird wie Hardlinks funktionieren inklusive einer Demo am System.
 
 In den raspiBackup [FAQ17](faq.md#faq17) ist beschrieben, wie der wirklich belegte
 Speicherplatz bei der Nutzung von Hardlinks aussieht. Viele Dateimanager
-zeigen leider den genutzten Speicherplatz an ohne Berücksichtigung der Platzeinsparung
-durch Hardlinks und somit als viel zu hoch an.
+zeigen den genutzten Speicherplatz ohne Berücksichtigung der Platzeinsparung
+durch Hardlinks an und somit als viel zu hoch. Das gilt besonders für Windows
+Dateimanager.
 
 ## Weblinks
 
 - [du counting harldinks towards filesize](https://stackoverflow.com/questions/19951883/du-counting-hardlinks-towards-filesize) - Ein Artikel, der erklärt, warum der Befehl du über mehrere Verzeichnisses ausgeführt werden muss, um die Einsparungen durch Hardlinks zu sehen
 
-[.status]: review-needed
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/571-wie-funktioniert-der-rsync-backup-typ-mit-hardlinks
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/572-how-do-hardlinks-work-with-rsync

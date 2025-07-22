@@ -25,7 +25,7 @@ Ebenso ist manuell auch die [Wiederherstellung einzelner Dateien/Verzeichnisse](
 <a name="parm_C"></a>
 ### -C: Auf Badblocks prüfen
 
-Beim Formatieren wird mittels `mkfs.ext4 -c` auf Bad Blocks geprüft.  
+Beim Formatieren wird mittels `mkfs.ext4 -c` auf Bad Blocks geprüft.
 Hinweis: Die Restorezeit wird dadurch erhöht.
 
 | Option | Standard | Im Installer | Konfigurationsname |
@@ -43,10 +43,10 @@ Device, auf dem der Backup restored wird.
 
 Beispiel: `-/dev/sda`
 
-Hinweis:  Der Parameter muss ein Device sein und keine Partition. Es darf keine
+**Hinweis:** Der Parameter muss ein Device sein und keine Partition. Es darf keine
 Partitionsnummer wie z.B. bei `/dev/sda1` vorhanden sein.
 
-Achtung: Dieses Device wird i.d.R. vollständig gelöscht und neu angelegt! Beim `tar` und
+**Achtung:** Dieses Device wird i.d.R. vollständig gelöscht und neu angelegt! Beim `tar` und
 `rsync` Backup wird automatisch die Größe der root Partition entsprechend
 verkleinert oder vergrößert, wenn das Zielgerät eine andere Größe
 hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch genügend Platz für die
@@ -81,11 +81,11 @@ werden soll.  Beispiel: `/dev/sdb1`.
 externes Rootfilesystem auf einem Gerät benutzt wird. Sonst reicht die Option `-d`.
 Die Option ist nur sinnvoll bei älteren Raspberries die noch keinen USB Boot unterstützen.
 
-Achtung: Die Partition wird **neu formatiert**. Deshalb aufpassen, dass es die
+**Achtung:** Die Partition wird **neu formatiert**. Deshalb aufpassen, dass es die
 richtige Partition ist und dass die Partition groß genug ist, um die Partition
 des Backups aufzunehmen!
 
-Hinweis: Diese Option steht nur zur Verfügung, wenn der normale Backupmodus
+**Hinweis:** Diese Option steht nur zur Verfügung, wenn der normale Backupmodus
 benutzt wurde. Im partitionsorientierten Modus (Option `-P`) kann keine externe
 Rootpartition mitgesichert werden.
 
@@ -132,7 +132,7 @@ Standardmäßig wird vor dem Restore angezeigt, wie das Restoredevice gerade
 aussieht und abgefragt, ob man das Device wirklich überschreiben will. Soll der
 Restore automatisiert erfolgen, wird mit dieser Option die Abfrage unterdrückt.
 
-Achtung: Dadurch kann man u.U. unbeabsichtigt das falsche Device überschreiben
+**Achtung:** Dadurch kann man u.U. unbeabsichtigt das falsche Device überschreiben
 und wichtige Daten löschen.
 
 | Option | Standard | Im Installer | Konfigurationsname |
@@ -187,4 +187,4 @@ Benutze die Option nur, wenn Du weisst, was Du tust.
 
 </div>
 
-[.status]: restructured
+[.status]: rst

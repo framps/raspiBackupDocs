@@ -13,7 +13,7 @@ definiert werden. Siehe dazu [Restoreoptionen](restore-options.md).
 
 ### DEFAULT_RESTORE_EXTENSIONS
 
-Ab Version 0.6.7 gibt es auch für den Restore wie beim Backup die Möglichkeit,
+*raspiBackup* bietet für den Restore wie beim Backup die Möglichkeit,
 auch pre und post Exits zu konfigurieren, um vor und nach dem Restore noch
 irgendwelche Aktionen vorzunehmen. Die Syntax ist genauso wie für die Backup
 Extensions.
@@ -41,5 +41,5 @@ Anzahl der Erinnerungen, einen Backup Restore Test durchzuführen.
 
 </div>
 
-[.status]: restructured
+[.status]: rst
 

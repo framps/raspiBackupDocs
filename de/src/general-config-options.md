@@ -15,7 +15,7 @@ der Standardspalte bedeutet der Standard ist `""`
 
 ### DEFAULT_COLOR_CODES
 
-Ab Version 0.6.7 können die html und VT100 Colorcodes definiert werden. Default
+Hiermit können die html und VT100 Colorcodes definiert werden. Default
 ist gelb für Warnungen und Rot für Fehler. Das erste Pärchen der Definition legt
 die Codes für Warnung das zweite Pärchen die Definition für Fehler fest. Dabei
 ist die erste Definition der HTML Colorocde und die zweite Definition der VT100
@@ -25,13 +25,13 @@ Colorcode.
 |----------------------------|----------|
 | DEFAULT_COLOR_CODES        | ("#FF8000 33" "#FF0000 31")  |
 
-
+Siehe [ANSI Colorcodes](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 ### DEFAULT_PUSHOVER_*
 
-Ab Version 0.6.8 können Benachrichtigungen per Pushover geschickt werden. Dazu
+*raspiBackup* kann Benachrichtigungen per Pushover schicken. Dazu
 ist es notwendig, sich auf <https://pushover.net/> registriert zu haben und eine
-application eingerichtet haben muss.
+Application eingerichtet zu haben.
 
 Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
 benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
@@ -52,20 +52,18 @@ Die Klänge entsprechen den verfügbaren Pushoverklängen.
 | DEFAULT_PUSHOVER_SOUND_FAILURE |      |  |
 | DEFAULT_PUSHOVER_PRIORITY_SUCCESS |   |  |
 | DEFAULT_PUSHOVER_PRIORITY_FAILURE |   |  |
-| DEFAULT_PUSHOVER_ADDITIONAL_OPTIONS | |  ab Release 0.7.0 |
-| DEFAULT_PUSHOVER_DEVICE             | |  ab Release 0.7.0 |
+| DEFAULT_PUSHOVER_ADDITIONAL_OPTIONS | |  |
+| DEFAULT_PUSHOVER_DEVICE             | |  |
 
 
 ### DEFAULT_SEND_STATS
 
-Ab Version 0.6.6.1 vom 13.2.2022: Es werden beim Versionscheck ein paar *raspiBackup*
+Es werden beim Versionscheck ein paar *raspiBackup*
 Optionen übermittelt, die für [Statistikzwecke](statistics.md) genutzt werden.
 
 | Config-Option              | Standard |
 |----------------------------|----------|
 | DEFAULT_SEND_STATS         | ja       |
-
-
 
 ### DEFAULT_SENDER_EMAIL
 
@@ -76,10 +74,9 @@ Die eMailAdresse des Versenders kann bei ssmtp und msmtp angegeben werden.
 | DEFAULT_SENDER_EMAIL | root@$(hostname) |
 
 
-
 ### DEFAULT_SLACK_*
 
-Ab Version 0.6.8 können Benachrichtigungen per Slack geschickt werden.
+*raspiBackup* kann Benachrichtigungen per Slack schicken.
 
 Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
 benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
@@ -94,7 +91,7 @@ werden. Beispiel: "SF" oder "SM".
 
 ### DEFAULT_TELEGRAM_*
 
-Ab Version 0.6.8 können Benachrichtigungen per TelegraTelegramm geschickt werden.
+*raspiBackup* kann Benachrichtigungen per TelegraTelegramm schicken.
 
 Mit den Notifications definiert man ob man in Erfolgs- und/oder Fehlerfalle
 benachrichtigt werden will. Mögliche Optionen sind "S" für Erfolg (Success)
@@ -112,4 +109,4 @@ werden. Beispiel: "SF" oder "SM".
 
 </div>
 
-[.status]: restructured
+[.status]: rst

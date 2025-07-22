@@ -129,5 +129,5 @@ Dies ermöglicht einige kleine Kniffe:
 
 
 [.status]: todo "Refer to en md file from de"
-[.status]: restructured
+[.status]: rst
 [.status]: z_SUMMARY
