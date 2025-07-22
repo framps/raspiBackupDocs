@@ -77,14 +77,14 @@ aufgerufen:
     **Installiere Komponenten-\>Installiere Beispielerweiterungen** oder
     direkt über die Befehlszeile mit der Option `-e`.
 
-        ```
-        raspiBackupInstallUI.sh
-        ```
+    ```
+    raspiBackupInstallUI.sh
+    ```
 
     oder
-        ```
-        raspiBackupInstallUI.sh -e
-        ```
+    ```
+    raspiBackupInstallUI.sh -e
+    ```
 
 2.  Wer die Beispielplugins manuell installieren will, kann das `tar` mit
     [diesem Link mit einem Browser downloaden](https://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz)
@@ -146,7 +146,7 @@ raspiBackup\_\<extension\>\_post.sh heissen. 
 Alle anderen Extensions müssen kein \_pre and \_post am Ende haben.
 
 Die Plugins erzeugen folgende Meldungen:
- 
+
     ```
     --- RBK1001I: Memory usage - Pre backup - Used: 97 MB Free: 130 MB - Post backup - Used: 98 MB Free: 121 MB
     --- RBK1000I: CPU temperature pre and post backup: 53.2'C - 55.8'C
@@ -179,13 +179,13 @@ Ausserdem kann das Aussehen der eMail beliebig geändert werden. Ein Beispielplu
 
 Die folgenden Parameter werden dem Mailplugin Script übergeben:
 
-    ```
-    email="$1"        # target email address
-    subject="$2"      # email subject
-    content="$3"      # email contents
-    parms="$4"        # addtl email parms passed with -E
-    append="$5"       # file to append
-    ```
+```
+email="$1"        # target email address
+subject="$2"      # email subject
+content="$3"      # email contents
+parms="$4"        # addtl email parms passed with -E
+append="$5"       # file to append
+```
 
 ### Hinweise
 
