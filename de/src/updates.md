@@ -26,12 +26,12 @@ Jede neue Version wird [vor der Veröffentlichung regression getestet](regressio
 
 ## Konfigurationsupdate
 
-Sofern in einem neuen Release neue Optionen eingeführt wurden, wird die 
+Sofern in einem neuen Release neue Optionen eingeführt wurden, wird die
 Konfigurationsdatei `/usr/local/etc/raspiBackup.conf` automatisch mit den neuen Optionen
 versehen. Die Details dazu sind [hier](configuration-update-when-upgrading-to-a-new-version.md)
 beschrieben.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#updatestrategie
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie
 

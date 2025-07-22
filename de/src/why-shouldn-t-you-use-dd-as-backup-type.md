@@ -52,9 +52,9 @@ Bei einem dd Backup wird immer die gesamte Partition gesichert - selbst wenn
 nur ein Bruchteil der Partition (z.B. 33%) genutzt wird. Dass heisst bei einer
 64GB Partition werden immer 42GB umsonst gesichert, der Sicherungsprozess
 dauert unnötigerweise 66% länger und die Sicherung belegt unnütz 66% mehr
-Speicherplatz. Es gibt die Option **DD_BACKUP_SAVE_USED_PARTITIONS_ONLY* mit der
+Speicherplatz. Es gibt die Option **DD_BACKUP_SAVE_USED_PARTITIONS_ONLY** mit der
 man nur die existierende Rootpartition sichert und nicht das gesamte Gerät. Z.b.
-hat man eine 512GB Platte und dir Rootpartition ist nur 32GB gross. 
+hat man eine 512GB Platte und dir Rootpartition ist nur 32GB gross.
 
 ## Welchen Backuptyp ist der Beste?
 
@@ -72,7 +72,6 @@ benutzen will, sei hier auf Benutzung von [Synology als Backupspace](nfs-as-back
   - [Wie funktionieren Hardlinks?](how-do-hardlinks-work-with-rsync.md)
   - [Welches Dateisystem kann auf dem Backupgerät benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
 
-
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/579-warum-sollte-man-dd-als-backupmethode-besser-nicht-benutzen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/581-why-shouldn-t-you-use-dd-as-backup-method

@@ -41,10 +41,10 @@ möglich, auf diesem Codestand einen Hotfix zu bauen. Das wird in der Regel
 gemacht und der Hotfix verifiziert, bevor er  in das nächste Release
 einfliesst.
 
-Die meissten Probleme werden in [github](https://github.com/framps/raspiBackup/issues) verwaltet. Für jedes neue Release gibt
+Die meisten Probleme werden in [github](https://github.com/framps/raspiBackup/issues) verwaltet. Für jedes neue Release gibt
 es [hier auf GitHub](https://github.com/framps/raspiBackup/releases) eine Zusammenfassung der Bugfixes und neuer Funktionalität.
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/516-raspibackup-entwicklungsumgebung
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/517-raspibackup-developmentenvironment

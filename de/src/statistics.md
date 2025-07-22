@@ -19,10 +19,12 @@ Die Informationen, die übertragen werden, sind
 
 Das Senden dieser o.g. Informationen kann mit der Option
 
-    DEFAULT_SEND_STATS=0
+```
+DEFAULT_SEND_STATS=0
+```
 
 in der Konfigurationsdatei `/usr/local/etc/raspiBackup.conf` ausgeschaltet werden.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#stats
 

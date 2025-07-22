@@ -1,9 +1,5 @@
 # AVM Fritzbox als Backupziel
 
-``` admonish note title="Quelle"
-- <https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/643-nutzung-einer-avm-fritzbox-als-backupziel-fuer-raspibackup>
-```
-
 Wer keine NAS besitzt aber seine Raspberries mit *raspiBackup* sichern möchte,
 kann natürlich auch den NAS Speicher einer Fritzbox nutzen. Allerdings muss
 dazu der Backuptyp tar genommen werden, da das genutzte Sambaprotokoll keine
@@ -31,10 +27,10 @@ nur für den jeweiligen Nutzer les- und änderbar zu machen.
 
 Dann kann ein Backup mit
 ```
-sudo raspiBackup -t tar 
+sudo raspiBackup -t tar
 ```
 erstellt werden.
 
 Nachdem der Restoretest erfolgreich war ist dann noch im Installer der Backptyp auf tar zu konfigurieren sowie der Zeitpunkt des regelmäßigen Backups festzulegen.
 
-[.status]: rft
+[.status]: rst

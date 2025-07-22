@@ -176,7 +176,7 @@ und kannst somit Deine Raspverry vollständig wiederherstelleni, so dass sie wie
 ![Übersichtsbild](images/raspiBackupOverview.jpg)
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/funktionsuebersicht
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/features

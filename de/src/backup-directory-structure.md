@@ -3,10 +3,10 @@
 ## Normaler Backup
 
 Jeder Backuplauf erstellt im Backupverzeichnis ein Unterverzeichnis, welches
-folgendes Format hat: <hostname>. Darunter wird ein weiteres Verzeichnis
-<hostname>@<osversion>-<backuptyp>-<backupdatum> erstellt. Wenn man die Option `-M` benutzt,
-sieht der Unterordner wie folgt aus: <hostname>-<-M parameter> und darunter
-wird dann das weitere Verzeichnis <hostname>-<backuptyp>-<backupdatum>
+folgendes Format hat: \<hostname\>. Darunter wird ein weiteres Verzeichnis
+\<hostname\>@\<osversion\>-\<backuptyp\>-\<backupdatum\> erstellt. Wenn man die Option `-M` benutzt,
+sieht der Unterordner wie folgt aus: \<hostname\>-\<-M parameter\> und darunter
+wird dann das weitere Verzeichnis \<hostname\>-\<backuptyp\>-\<backupdatum\>
 erstellt.
 
 Beispiele: Die Raspberry hat den Hostnamen `raspberrypi` und es wird ein `rsync`
@@ -154,6 +154,6 @@ Dies ist im Kapitel [Manueller Restore](manual-restore.md) beschrieben.
     └── raspiBackup.msg
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#Vergleichtodo
 [.source]: https://www.linux-tips-and-tricks.de/en/backup

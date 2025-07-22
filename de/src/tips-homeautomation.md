@@ -42,14 +42,15 @@ gestoppt und am Ende wieder gestartet wird.
 
 Wer es manuell in der Config konfigurieren will muss folgende Befehle aufnehmen:
 
+```
 systemctl stop fhem
-
+```
 bei DEFAULT_STOPSERVICES
 
 bzw.
-
+```
 systemctl start fhem
-
+```
 bei DEFAULT_STARTSERVICES
 
 
@@ -60,17 +61,18 @@ auf und kann dort einfach mit M3->C6 ausgewählt werden, so dass SmartHomeNG vor
 dem Backup gestoppt und am Ende wieder gestartet wird.
 
 Wer es manuell in der Config konfigurieren will, muss folgende Befehle aufnehmen:
-
+```
 systemctl stop smarthome
-
+```
 bei DEFAULT_STOPSERVICES
 
 bzw.
-
+```
 systemctl start smarthome
+```
 
 bei DEFAULT_STARTSERVICES
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/anwendungstipps

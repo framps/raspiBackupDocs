@@ -1,8 +1,8 @@
 # NFS als Backupziel
 
-Es macht sehr viel Sinn die Backups von [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup) 
-auf einer NAS abzulegen und das NFS Protokoll dazu zu nutzen. Im Folgenden wird beschrieben wie 
-das bei einer Synology zu konfigurieren ist. Natürlich kann man auch jede andere NAS nutzen sofern sie NFS unterstützt. Auch eine Raspberry kann als NFS Server konfiguriert und genutzt werden. 
+Es macht sehr viel Sinn die Backups von [raspiBackup](https://linux-tips-and-tricks.de/de/raspibackup)
+auf einer NAS abzulegen und das NFS Protokoll dazu zu nutzen. Im Folgenden wird beschrieben wie
+das bei einer Synology zu konfigurieren ist. Natürlich kann man auch jede andere NAS nutzen sofern sie NFS unterstützt. Auch eine Raspberry kann als NFS Server konfiguriert und genutzt werden.
 
 ## *raspiBackup* - Nutzung von NFS am Beispiel einer Synology
 
@@ -212,7 +212,7 @@ Anonymer UID: guest
 ```
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/synology
 [.source]: https://www.linux-tips-and-tricks.de/en/synology
 

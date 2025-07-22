@@ -61,6 +61,6 @@ einmal ein initiales Backup erstellt wurde.
 ``` admonish info title="Filesysteme"
 Die [Vor- und Nachteile der möglichen Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md) muss man auch beachten.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach
 [.de]: ../../de/src/backuptypes.md

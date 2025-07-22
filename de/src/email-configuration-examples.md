@@ -147,13 +147,13 @@ benötigt viel mehr Platz.
 Dann ist aber kein Backuptyp rsync möglich. NTFS kann nur mit dem Backuptype `dd` und `tar` genutzt werden und
 der DEFAULT_BACKUPTYPE muss dann entsprechend gesetzt werden.
 
-Ein Beispieleintrag in der /etc/fstab könnte wie folgt aussehen:
+Ein Beispieleintrag in der `/etc/fstab` könnte wie folgt aussehen:
 
 ```
 LABEL=usb    /USBStick    ext4     defaults,noatime,nofail        0    2
 ```
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/konfigurationsbeispiele
 [.source]: https://www.linux-tips-and-tricks.de/en/configuration-samples
 

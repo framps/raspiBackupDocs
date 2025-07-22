@@ -3,11 +3,11 @@
 Ein von *raspiBackup* erstelltes Backup enthält alle für einen Restore
 notwendigen Informationen und kann manuell restored werden.
 
-Der Benutzer "Micha" wollte aus verschiedenen Gründen einen rsync Backup manuell
+Ein *raspiBackup* Nutzer wollte aus verschiedenen Gründen einen rsync Backup manuell
 restoren und hat das freundlicherweise detailiert
-beschrieben. 
+beschrieben.
 
-
+```
     # Manuelles Anlegen der Partitionen:
     sfdisk /dev/sdb < /backup/pi/pi-rsync-backup-20170812-134552/pi-backup.sfdisk
 
@@ -61,8 +61,9 @@ beschrieben.
 
     # SD-Karte in Pi stecken und testen!!!
     # Boing! geht :-)
+```
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/497-raspibackup-manueller-restore-eines-backups
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/498-raspibackup-manual-restore
 

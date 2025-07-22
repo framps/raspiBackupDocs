@@ -293,5 +293,5 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 
 Siehe im gleichnamigen Kapitel: [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/installation
