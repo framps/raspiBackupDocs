@@ -124,7 +124,7 @@ That allows for some tricks:
 # Developer guide
 
 - [Hooks for own scripts](hooks-for-own-scripts.md)
-- [Extension scripts](extension-scripts.md)
+- [Plugpoints](extension-scripts.md)
 - [Support new languages](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
 
