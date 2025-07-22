@@ -36,6 +36,8 @@ Dies ermöglicht einige kleine Kniffe:
 
 [Einführung](introduction.md)
 
+# Nutzerhandbuch 
+
 - [Funktionsübersicht](function-overview.md)
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
@@ -54,7 +56,6 @@ Dies ermöglicht einige kleine Kniffe:
         - [Intelligente Rotationsstrategie](smart-recycle.md)
         - [Snapshots](snapshots.md)
         - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
-        - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
         - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
             - [msmtp Konfiguration für einen web.de Account](msmtp-configuration-for-web-de-account.md)
             - [exim4 Konfiguration](exim4-configuration.md)
@@ -120,13 +121,12 @@ Dies ermöglicht einige kleine Kniffe:
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
     - [Markdown Spielwiese](markdown-playground.md)
 
+# Entwickler Handbuch
 
-```
-TO CHECK/TRANSLATE!
+- [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
+- [Erweiterungsscripte](extension-scripts.md)
+- [Support new languages](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
-  local-language-support-for-languages-other-than-de-and-en-l10n.md
-  manual-restore-of-a-tgz-backup.md
-```
 
 [.status]: restructured
 [.status]: z_SUMMARY

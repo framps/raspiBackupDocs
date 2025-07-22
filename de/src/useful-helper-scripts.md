@@ -1,6 +1,9 @@
 # Weitere nützliche Hilfsprogramme
 
-Mittlerweile sind verschiedene Hilfsprogramme zu *raspiBackup* entstanden.
+Mittlerweile sind verschiedene Hilfsprogramme zu *raspiBackup* entstanden. Diese
+sind nicht offiziell unterstützt und als Beispiele für eigene Hilfsprogramme
+gedacht und für eigene Anforderungen angepasst werden können.
+
 Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper) zum Download zur Verfügung:
 
 1. **raspiBackupWrapper.sh**: Damit kann man vor und nach dem Aufruf von
@@ -11,7 +14,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
 
    **Hinweis**
    Dieses Script entstand als raspiBackup noch keine Erweiterungspunkte hatte. Normalerweise
-   reicht es die vorhandenen [Erweiterungspunkte](https://framps.github.io/raspiBackupDoc/de/hooks-for-own-scripts.html)
+   reicht es die vorhandenen [Erweiterungspunkte](hooks-for-own-scripts.md)
    zu nutzen um die Funktionalität von raspiBackup für die eigenen Bedürfnisse zu erweitern.
 
 2. **raspiBackupNfsWrapper.sh**: Es wird von dem Script geprüft, ob ein NFS Server
@@ -47,13 +50,16 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
 
 7. **raspiBackupDialog.sh**: Dieses von [Franjo](https://github.com/franjo-G) erstellte Script ist ein raspiBackup vorgeschaltetes
    Script mit welchem einfacher Backups erstellt wie auch restored werden können.
-   Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](https://framps.github.io/raspiBackupDoc/de/raspibackupdialog-a-convenient-helper-script-for-raspibackup.html).
+   Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md).
 
-``` admonish info title="Hinweis"
-   Es ist empfehlenwert raspiBackupDialog nach erfolgreicher Installation und Konfiguration von raspiBackup einfach mal downizuloaden und auszuprobieren.
-```
+## Nutzergeschriebene Extensions 
 
-[.status]: rft
+Des weiteren gibt es [Extensions](https://github.com/framps/raspiBackup/tree/master/extensions_userprovided),
+die von *raspiBackup* Nutzern geschrieben wurden und zur allgemeinen
+Verfügung in das *raspiBackup* Repository per PR eingestellt wurden. Weiter eigene Extensions werden 
+gerne per PR aufgenommen.
+
+[.status]: restructured
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/507-raspibackup-nuetzliche-hilfsprogramme
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/508-raspibackup-nuetzliche-hilfsprogramme-2
 

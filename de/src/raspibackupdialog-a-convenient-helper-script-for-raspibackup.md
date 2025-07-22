@@ -8,6 +8,10 @@ einfach ist besonders der Restore durchzuführen: Vor dem Restore wird die Liste
 der vorhandenen Backups angezeigt und man kann auswählen welches Backup man
 restoren will.
 
+``` admonish info title="Hinweis"
+Es ist empfehlenwert raspiBackupDialog nach erfolgreicher Installation und Konfiguration von raspiBackup einfach mal downzuloaden und auszuprobieren.
+```
+
 ## Installation und Aufruf
 
 `raspiBackupDialog` steht als Hilfsscript im github Repository zur Verfügung.

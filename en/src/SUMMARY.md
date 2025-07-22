@@ -1,40 +1,42 @@
-    <!-- vim: set conceallevel=0: -->
-    # raspiBackup
+<!-- vim: set conceallevel=0: -->
+# raspiBackup
 
-    ```
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    Note: This file here (SUMMARY.md) is used by *mdbook* to determine the
-    contents and structure of the book to be generated.
+Note: This file here (SUMMARY.md) is used by *mdbook* to determine the
+contents and structure of the book to be generated.
 
-    Following data is read for this:
+Following data is read for this:
 
-      - the headings level 1 (#)
-      - links for prefix- and suffix-chapters
-      - all lists (even nested)
-      - horizontal rules ---
+  - the headings level 1 (#)
+  - links for prefix- and suffix-chapters
+  - all lists (even nested)
+  - horizontal rules ---
 
-    Lists are only allowed to have links in it.
-    All links are title of the chapter and the name of the correspondig file.
+Lists are only allowed to have links in it.
+All links are title of the chapter and the name of the correspondig file.
 
-    That allows for some tricks:
+That allows for some tricks:
 
-    1.) Comments are possible in this file. E.g.:
-        a.) This leading note. Additionally the comment is marked up as codeblock.
-            So the list above won't be parsed as such.
-        b.) "TODO marker" or similar.
+1.) Comments are possible in this file. E.g.:
+    a.) This leading note. Additionally the comment is marked up as codeblock.
+        So the list above won't be parsed as such.
+    b.) "TODO marker" or similar.
 
-    2.) Chapters can be "deactivated" by making the link invalid.
+2.) Chapters can be "deactivated" by making the link invalid.
 
-        For example:
+    For example:
 
-        private](very-private.md)
+    private](very-private.md)
 
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    ```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+```
 
 
 [Introduction](introduction.md)
+
+# User guide
 
 - [Function overview](function-overview.md)
 
@@ -54,8 +56,7 @@
         - [Rotation strategy](smart-recycle.md)
         - [Snapshots](snapshots.md)
         - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
-        - [Hooks for own scripts](hooks-for-own-scripts.md)
-        - [eMail configuration examples](email-configuration-examples.md)
+       - [eMail configuration examples](email-configuration-examples.md)
             - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
             - [exim4 configuration](exim4-configuration.md)
             - [nullmailer configuration](nullmailer-configuration.md)
@@ -120,10 +121,11 @@
     - [Version of this documentation](doc-version-info-automatically-generated.md)
     - [Markdown Playground](markdown-playground.md)
 
+# Developer guide
 
-- [English-only pages -- translation/integration required]()
-
- - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)
+- [Hooks for own scripts](hooks-for-own-scripts.md)
+- [Extension scripts](extension-scripts.md)
+- [Support new languages](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
 
 [.status]: z_SUMMARY
