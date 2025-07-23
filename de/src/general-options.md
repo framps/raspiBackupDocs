@@ -49,7 +49,7 @@ Standardsenderadresse  root@$(hostname) falls notwendig geändert werden.
 **Hinweis:** Die eMail Benachrichtigung funktioniert nur wenn ein MTA wie z.B.
 nullmailer, msmtp, postfix oder exim4 entsprechend korrekt konfiguriert wurde.
 Für ein paar eMailClients gibt es [Konfigurationsanleitungen](email-configuration-examples.md).
-Ansonsten ist [FAQ38](faq.html#38-wo-kann-ich-fragen-stellen-und-hilfe-bekommen-zu-linuxfragen-und--problemen-die-im-eigentlichen-sinne-nichts-mit-raspibackup-zu-tun-haben) zu berücksichtigen.
+Ansonsten ist [FAQ38](faq.md#faq38) zu berücksichtigen.
 Die eMailfunktion kann relativ einfach mit der Fakeoption -F
 getestet werden. Außerdem sind weitere Benachrichtigungsmöglichkeiten wie
 Pushover, Slack oder Telegram unterstützt.

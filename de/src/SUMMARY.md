@@ -36,7 +36,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 [Einführung](introduction.md)
 
-# Nutzerhandbuch 
+# Nutzer Handbuch 
 
 - [Funktionsübersicht](function-overview.md)
 
@@ -64,9 +64,9 @@ Dies ermöglicht einige kleine Kniffe:
     - [Restore](restore-intro.md)
         - [Restore einzelner Dateien](how-to-retrieve-single-files-or-directories-from-the-backup.md)
         - [Manueller rsync Restore](manual-restore.md)
-        - [Manueller tgz Restore](manual-restore-of-a-tgz-backup.md)
+        - [Manual tgz restore](manual-restore-of-a-tgz-backup.md)
 
-    - [Fragen und Antworten](more-questions-and-answers.md)
+    - [Allgemein](more-questions-and-answers.md)
         - [Welches Filesystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
         - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
         - [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
@@ -121,7 +121,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
     - [Markdown Spielwiese](markdown-playground.md)
 
-# Entwickler Handbuch
+# Entwickler Handbuch 
 
 - [Erweiterungsmöglichkeiten](hooks-for-own-scripts.md)
 - [Erweiterungsscripte](extension-scripts.md)

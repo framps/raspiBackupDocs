@@ -66,7 +66,7 @@ That allows for some tricks:
         - [Manual rsync restore](manual-restore.md)
         - [Manual tgz restore](manual-restore-of-a-tgz-backup.md)
 
-    - [Questions and answers](more-questions-and-answers.md)
+    - [General](more-questions-and-answers.md)
         - [Which filesystem can be used on the backup partition](which-filesystem-can-be-used-on-the-backup-partition.md)
         - [How do hardlinks work with rsync](how-do-hardlinks-work-with-rsync.md)
         - [Why shouldn't you use dd as backup type](why-shouldn-t-you-use-dd-as-backup-type.md)
@@ -100,7 +100,7 @@ That allows for some tricks:
     - [raspiBackupDialog - a convenient helper script](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [More helpful scripts](useful-helper-scripts.md)
 
-- [Bckup targets](backup-targets.md)
+- [Backup targets](backup-targets.md)
     - [NFS as backupspace](nfs-as-backupspace.md)
     - [SMB as backupspace](smb-as-backupspace.md)
     - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
