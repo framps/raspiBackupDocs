@@ -36,14 +36,15 @@ Die Anzahl der vorzuhaltenen Backups ist konfigurierbar oder es wird das
 
 Es existieren zwei [Backupmodi](normal-or-partition-backup.md):
 Der **normale Backupmodus** sichert nur die Boot- und Rootpartition.
-Der **partitionsorientierte Modusi** sichert beliebig viele Partitionen.
+Der **partitionsorientierte Modus** sichert beliebig viele Partitionen.
 
 Folgende Linux Backuptools können genutzt werden: `dd` Backup, `tar` Backup, (beides auch gezipped)
+die immer ein Vollbackup erstellen
 und ein `rsync` Backup mit [Hardlinknutzung](how-do-hardlinks-work-with-rsync.md),
-um relativ schnell Deltabackups zu erzeugen.
+um relativ schnell ein Deltabackup zu erstellen.
 Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) beschrieben.
 Dort befindet sich auch ein [Entscheidungsbaum](backuptypes.md#decisiontree),
-um schneller die richtige Backupmethode zu finden.
+um schnell den richtigen Backuptyp zu finden.
 
 Zur **Installation und Konfiguration** von raspiBackup gibt es einen
 [Installer](installation-in-5-minutes.md) mit dem,
@@ -55,13 +56,13 @@ muss eine Konfigurationsdatei manuell geändert werden.
 Für Entwickler bietet *raspiBackup* verschiedene [Plugpoints](hooks-for-own-scripts.md)
 um eigenen Code ausführen zu lassen.
 
-Weiterhin exsistieren verschiedene [Scripte](https://github.com/framps/raspiBackup/tree/master/helper),i
-die die Funktionalität von *raspiBackup* zu erweitern.
+Weiterhin exsistieren verschiedene [Scripte](https://github.com/framps/raspiBackup/tree/master/helper),
+die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt werden können
+wie auch an eigene Anforderungen angepasst werden können.
 
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
-F
 ## Unterstützte Hard- und Software
 
 Dazu gibt es extra Kapitel: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
