@@ -56,6 +56,7 @@ einmal ein initiales Backup erstellt wurde.
 | rsync  | ja         | kurz mit Hardlinks | klein mit Hardlinks | nein | nein     | kaum           | ja                         | ext3/ext4 |
 
 
+<a name="decisiontree"></a>
 
 ![Entscheidungsbaum](images/decisiontree_de.dia.jpg)
 

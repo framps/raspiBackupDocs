@@ -148,4 +148,4 @@ Everybody uses this script on his own risk. The creator of this script is not li
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld
-[.status]: wip "Review by framp ongoing"
+[.status]: rst

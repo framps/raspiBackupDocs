@@ -3,10 +3,12 @@
 Oben auf den Seiten finden sich verschiedene Icons, die helfen
 in der Dokumentation nach Stichworten zu suchen und verschiedene andere
 nützliche Funktionen anstossen. Einfach mal kurz über die Icons hoovern um
-ihre Funktion zu erfahren. 
+ihre Funktion zu erfahren.
 
 Mit dem ganz rechten Icon kann man sehr einfach direkt Änderungen an der
 aktuellen Seite im github vorschlagen.
+
+Mit dem ganz linken Icon wird ein Inhaltsverzeichnis ein-/ausgeblendet.
 ```
 
 <center>     <!-- The blank line before the image definition is required! -->
@@ -21,40 +23,45 @@ Ausfalls des Systemspeichergerätes (SD Karte, USB Disk, SSD, NVMe ...) oder auc
 unbeabsichtigten Änderungen, durch die das System nicht mehr oder fehlerhaft bootet,
 das System wieder auf einen vorherigen Zustand zurücksetzen zu können.
 
-*raspiBackup* erstellt eine Sicherung eines Raspberry Pis **bei laufendem System**.
-Das kann manuell oder automatisch in regelmäßigen Abständen per systemd oder crontab erfolgen.
-Optional kann man sich per eMail, Pushover, Slack oder Telegram über das Ergebnis des Backups informieren lassen.
+*raspiBackup* erstellt eine Systemsicherung einer Raspberry Pis **bei laufendem System**.
+Das kann manuell oder automatisch in regelmäßigen Abständen erzeugt werden.
+Dabei enthält ein Backup immer das gesamten System.
+Wird dieses zurückgespielt bootet das System sofort wieder.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
-werden (USB Stick, USB Platte, SSD, NVMe, nfs, smb, sshfs, webdav usw.).
+werden (USB Stick, USB Platte, SSD, NVMe, NFS, SMB, sshfs, webdav usw.).
 
-Wer eine *Synology* oder andere Backupziele für den Backup benutzen möchte,
-findet [hier](backup-targets.md) nützliche Tipps.
+Die Anzahl der vorzuhaltenen Backups ist konfigurierbar oder es wird das
+[Grossvater-Vater-Sohn Generationenprinzip](https://www.framp.de/raspiBackupDoc/de/smart-recycle.md) genutzt.
 
-Es existieren zwei Backupmodi: Der **normale Backupmodus** sichert nur die Boot- und Rootpartition.
-Sollen weitere Partitionen gesichert werden, z.B. eine reine dritte Datenpartition, muss der **partitionsorientierte Modus** gewählt werden.
+Es existieren zwei [Backupmodi](normal-or-partition-backup.md):
+Der **normale Backupmodus** sichert nur die Boot- und Rootpartition.
+Der **partitionsorientierte Modusi** sichert beliebig viele Partitionen.
 
-Folgende Linux Backuptools können genutzt werden: `dd` Backup, `tar` Backup, (beides auch gezipped) und ein `rsync` Backup mit Hardlinkbenutzung, um Deltabackups zu erzeugen.
-Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) nachzulesen.
-Dort befindet sich auch ein [Entscheidungsbaum](backuptypes.md), um schneller die richtige Backupmethode zu finden.
+Folgende Linux Backuptools können genutzt werden: `dd` Backup, `tar` Backup, (beides auch gezipped)
+und ein `rsync` Backup mit [Hardlinknutzung](how-do-hardlinks-work-with-rsync.md),
+um relativ schnell Deltabackups zu erzeugen.
+Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) beschrieben.
+Dort befindet sich auch ein [Entscheidungsbaum](backuptypes.md#decisiontree),
+um schneller die richtige Backupmethode zu finden.
 
-Zur **Installation und Konfiguration** von raspiBackup gibt es einen Installer mit dem,
-wie bei `raspi-config`, menugesteuert, einfach und schnell die wichtigsten Optionen von *raspiBackup* konfiguriert werden können.
-Sollen spezielle Dinge bei raspiBackup konfiguriert werden, muss eine Konfigurationsdatei manuell geändert werden.
+Zur **Installation und Konfiguration** von raspiBackup gibt es einen
+[Installer](installation-in-5-minutes.md) mit dem,
+wie bei `raspi-config`, menugesteuert, einfach und schnell die wichtigsten
+Optionen von *raspiBackup* konfiguriert werden können.
+Sollen spezielle Dinge bei *raspiBackup* konfiguriert werden,
+muss eine Konfigurationsdatei manuell geändert werden.
 
-*raspiBackup* kann natürlich nicht nur eine Sicherung erstellen, sondern auch eine Sicherung [wiederherstellen](restore.md).
+Für Entwickler bietet *raspiBackup* verschiedene [Plugpoints](hooks-for-own-scripts.md)
+um eigenen Code ausführen zu lassen.
+
+Weiterhin exsistieren verschiedene [Scripte](https://github.com/framps/raspiBackup/tree/master/helper),i
+die die Funktionalität von *raspiBackup* zu erweitern.
 
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
----
-
-Weitere Abschnitte auf dieser Seite:
-
-<!-- toc -->
-
----
-
+F
 ## Unterstützte Hard- und Software
 
 Dazu gibt es extra Kapitel: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
@@ -183,4 +190,4 @@ irgendwelche Fehlfunktionen des Scripts.
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld
-[.status]: wip "Review by framp ongoing"
+[.status]: rst
