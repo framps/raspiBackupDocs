@@ -33,6 +33,9 @@ werden (USB Stick, USB Platte, SSD, NVMe, NFS, SMB, sshfs, webdav usw.).
 
 Die Anzahl der vorzuhaltenen Backups ist konfigurierbar oder es wird das
 [Grossvater-Vater-Sohn Generationenprinzip](https://www.framp.de/raspiBackupDoc/de/smart-recycle.md) genutzt.
+Außerdem können manuell sogenannte *raspiBackup* [Snapshots](snapshots.md)erstellt werden. Dieses sind Backups, die
+nicht automatisch gelöscht werden und dazu dienen bei Systemupgrades Zwischenschritte zu sichern
+um jederzeit bei Fehlern beim Upgrade wieder auf vorherige Stände zurückgehen zu können.
 
 Es existieren zwei [Backupmodi](normal-or-partition-backup.md):
 Der **normale Backupmodus** sichert nur die Boot- und Rootpartition.

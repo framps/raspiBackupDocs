@@ -15,7 +15,7 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    **Hinweis**
    Dieses Script entstand als raspiBackup noch keine Erweiterungspunkte hatte. Normalerweise
    reicht es die vorhandenen [Erweiterungspunkte](hooks-for-own-scripts.md)
-   zu nutzen um die Funktionalität von raspiBackup für die eigenen Bedürfnisse zu erweitern.
+   zu nutzen um die Funktionalität von *raspiBackupi* für die eigenen Bedürfnisse zu erweitern.
 
 2. **raspiBackupNfsWrapper.sh**: Es wird von dem Script geprüft, ob ein NFS Server
    verfügbar ist und nur dann *raspiBackup* gestartet. Ausser ein paar
@@ -23,8 +23,8 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
 
 3. **raspiBackupRestore2Image.sh**: Mit diesem Script kann ein tar oder rsync
    Backup, welches in normalen Backupmodus erstellt wurde, in ein dd Backup
-   umgewandelt werden. Dazu wird pishrink benutzt, um die Größe des dd Images
-   minimal zu halten. kmbach hat die Erstellung des Scripts angeregt.
+   umgewandelt werden. Außerdem wird pishrink benutzt, um die Größe des dd Images
+   soweit wie möglich zu minimeren. kmbach hat die Erstellung des Scripts angeregt.
    Das Script erfordert keine Änderungen.
 
 4. **raspiImageMail.sh**: Dieses Script wurde von dem *raspiBackup* Benutzer kmbach

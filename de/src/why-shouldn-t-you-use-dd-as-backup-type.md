@@ -5,8 +5,8 @@ Insbesondere Nutzer, die mehr mit Windows als mit Linux arbeiten, da
 sie einen dd Backup unter Windows mit *win32imager* oder ähnlichen Tools restoren
 können. dd kann schon als Backuptool benutzt werden, aber es gibt ein gewisses
 Risiko dabei, welches es bei den Backupmethoden tar und rsync nicht gibt.
-Deshalb empfehle ich jedem Benutzer von *raspiBackup*, doch lieber tar oder rsync
-zu benutzen.
+Deshalb wird jedem Nutzer von *raspiBackup* empfohlen, doch lieber tar oder rsync
+zu nutzen.
 
 ## Warum?
 

@@ -104,9 +104,9 @@ Ohne Probleme funktioniert es bei einem kleineren oder größeren Gerät
 sofern tar oder rsync Backup. Beim normalen Backupmodus wird
 automatisch die Größe der root Partition entsprechend angepasst, d.h.
 entsprechend verkleinert oder vergrößert. Bei einer Vergrößerung wird
-ider gesamte zur Verfügung stehende Platz benutzt.i
-Wird von deim Backup des Systems mehr Platz benutzt
-als das Restore  Gerät hat gibt es natürlich Fehler beim Restore.
+der gesamte zur Verfügung stehende Platz benutzt.
+Wird von dem Backup des Systems mehr Platz benutzt
+als das Restore Gerät hat gibt es natürlich Fehler beim Restore.
 Beim partitionsorientierten Backupmodus wird die letzte Partition
 entsprechend angepasst.
 
@@ -254,8 +254,8 @@ Minimum verkleinern.
 ### 17) Wie kann ich feststellen, dass der rsync Backup tatsächlich Hardlinks benutzt, um Speicherplatz zu sparen?
 
 Hardlinks werden erfolgreich von *raspiBackup* benutzt wenn ein lokaler USB
-Stick, eine lokale USB Platte oder auch eine per nfs gemountete Partition,
-die mit ext3/ext4 formatiert ist, benutzt wird. Samba sowie sshfs
+Stick, eine lokale USB Platte oder auch eine per NFS gemountete Partition,
+die mit ext3/ext4 formatiert ist, benutzt wird. SMB sowie sshfs
 unterstützt keine Hardlinks.
 
 **Hinweis:** Der Windows Explorer ignoriert Hardlinks und zeigt deshalb eine
@@ -823,7 +823,7 @@ Backuptools dd, tar oder rsync gemeldet werden.
 
 Bei rsync kann es auch daran liegen dass ACLs gesichert werden sollen aber
 dazu die Berechtigung nicht existiert oder ACLs nicht von der
-Backuppartition unterstützt werden. Letzteres trifft zu für nfs und Samba
+Backuppartition unterstützt werden. Letzteres trifft zu für NFS und SMB 
 gemountete Backuppartitionen. Siehe dazu [FAQ24](#faq24).
 
 Falls mount Option sync genutzt wird sollte diese durch die Option async

@@ -114,7 +114,7 @@ Hardlinks geben kann, die von rsync benutzt werden, wenn nfs4 benutzt wird. Mit
 ```
 
 wird das nfs3 Protokoll benutzt so dass das Backupskript dann erfolgreich durchläuft.
-Weiterhin werden Softlinks mit CIFS nicht unterstützt wenn nicht wenigstens CIFS Version 3 benutzt wird.
+Weiterhin werden Softlinks mit SMB nicht unterstützt wenn nicht wenigstens SMB Version 3 benutzt wird.
 
 ### Hinweis von Markus
 
