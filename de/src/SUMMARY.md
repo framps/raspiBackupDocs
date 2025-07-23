@@ -73,6 +73,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
         - [Umziehen des Raspberry Betriebssystems von SD Karte auf SSD, USB Platte oder USB Stick](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
         - [Wie kann ich die Betaversion installieren und ausprobieren?](how-can-i-install-and-test-the-beta-version.md)
+        - [Wird eine externe Rootpartition unterstützt](external-root-partition.md)
 
 - [Installation und erstes Backup](installation.md)
     - [Schnellstart - Installation in 5 Minuten](installation-in-5-minutes.md)

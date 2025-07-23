@@ -7,7 +7,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
 **Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig einen vollständigen Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie
 und kannst somit Deine Raspverry vollständig wiederherstelleni, so dass sie wieder mit einem alten Backupstand bootet**
-  
+ 
   - Open source
 
     *raspiBackup* ist unter der GNU Lizenz als OpenSource und kostenlos verfügbar.
@@ -160,15 +160,15 @@ und kannst somit Deine Raspverry vollständig wiederherstelleni, so dass sie wie
 
   - Unterstütze Betriebssysteme
 
-      – RaspbianOS
-      – Ubuntu
+      - RaspbianOS
+      - Ubuntu
 
   - Einfacher Systemumzug auf andere Speichermedien
 
     Jede Sicherung kann auf eine SD Karte, USB Platte oder SSD sowie NVMe SSD
     zurückgespielt werden. Schon ist das System auf ein anderes Gerät umgezogen.
 
-  - Unterstuetzung von Volumio
+  - Unterstützung von Volumio
 
   - Unterstützung von gpt Partitionen
 

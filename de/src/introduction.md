@@ -63,39 +63,16 @@ Weiterhin exsistieren verschiedene [Scripte](https://github.com/framps/raspiBack
 die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt werden können
 wie auch an eigene Anforderungen angepasst werden können.
 
+Am Ende eines Backuplaufes kann *raspiBackup*, wenn gewünscht, eine Benachrichtigung per eMail,
+Telegram, Slack oder Pushover senden.
+
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
-## Unterstützte Hard- und Software
-
-Dazu gibt es extra Kapitel: [Unterstützte Hard- und Software](supported-hardware-and-software.md)
-
-## Stoppen und Starten von Diensten/Services
-
-Um eine konsistente Sicherung bei laufendem System zu ermöglichen, müssen
-nur alle wichtigen Services die Daten im Speicher halten, vor dem Backup gestoppt und nach erfolgtem Backup wieder gestartet werden.
-
-Die notwendigen Befehle dazu können manuell über Parameter in der Konfigurationsdatei definiert werden.
-Mit dem *raspiBackup* Installer können alle per Systemd gestarteten Services ausgewählt werden,
-die vor dem Backup gestoppt und nach dem Backup wieder in umgekehrter Reihenfolge gestartet werden sollen.
-
-## Erweiterungspunkte
-
-Weiterhin gibt es [Erweiterungspunkte](hooks-for-own-scripts.md) für Plugins in *raspiBackup*, um eigene Scripts an bestimmten Stellen im Backupscript einzubinden.
-Somit lässt sich die Funktionalität von *raspiBackup* den eigenen Bedürfnissen anpassen.
-
-## Optional ausgelagerte Root-Partition
-
-Eine eventuell ausgelagerte Rootpartition kann mitgesichert werden. Dieses ist nur notwendig,
-wenn eine ältere Raspberry gesichert werden soll, die noch kein USB Boot unterstützt.
-
-Im normalen Backupmodus werden die beiden RaspbianOS-Partitionen
-`/boot` und `/root` gesichert. Sofern die Rootpartition auf eine externe
-Partition (USB Stick, USB Platte, ...) ausgelagert wurde, wird diese externe
-Partition gesichert.
-
-Ein USB Boot System kann mit einer beliebigen Anzahl von Partitionen
-gesichert werden. Dazu muss der partitionsorientierte Modus genutzt werden.
+Sollten Fragen zu *raspiBackup* aufkommen können diese auf [github Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
+Sollten Fehler oder Probleme mit *raspiBackup* auftreten sollten diese auf
+[github Issues](https://github.com/framps/raspiBackup/issues) berichtet werden.
+Besser in Englisch, aber Deutsch wird auch akzeptiert.
 
 ## Einführungsvideo und Youtube-Channel
 
@@ -134,7 +111,7 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
   um im deutschen RaspberryForum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder existierende Threads zu *raspiBackup* zu lesen.
 
 * Klicke [![Reddit](images/icons/reddit-icon.png)](https://www.reddit.com/r/raspiBackup/),
-  um auf Reddit *raspiBackup* zu folgen.
+  um *raspiBackup* auf Reddit zu folgen.
 
 ``` admonish info title="Hinweis"
 Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
