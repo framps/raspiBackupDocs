@@ -24,20 +24,26 @@ Themen auf dieser Seite:
 
 ---
 
-# Übersicht
+# Einführung 
 
 Eine regelmäßige Sicherung von Raspberry Pis ist wichtig, um im Falle eines
 Ausfalls des Systemspeichergerätes (SD Karte, USB Disk, SSD, NVMe ...) oder auch von
 unbeabsichtigten Änderungen, durch die das System nicht mehr oder fehlerhaft bootet,
 das System wieder auf einen vorherigen Zustand zurücksetzen zu können.
 
-*raspiBackup* erstellt eine Systemsicherung einer Raspberry Pis **bei laufendem System**.
-Das kann manuell oder automatisch in regelmäßigen Abständen erzeugt werden.
-Dabei enthält ein Backup immer das gesamten System.
-Wird dieses zurückgespielt bootet das System sofort wieder.
+*raspiBackup* erstellt eine Systemsicherung einer Raspberry Pi **bei laufendem System**.
+Das kann manuell oder automatisch in regelmäßigen Abständen geschehen.
+Ein Backup enthält immer das gesamten System, d.h. Systemdaten sowie Nutzerdaten.
+Deshalb bootet das System sofort wieder wenn es zurückgespielt wurde.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
-werden (USB Stick, USB Platte, SSD, NVMe, NFS, SMB, sshfs, webdav usw.).
+werden. Dazu gehören SD Karten, USB Sticks, USB Platten, SSDs und NVMe SSDs.
+Auch Netzlaufwerke, die per NFS, SMB, sshfs, ftpfs und webdav gemounted werden,
+können als Ziel für Backups genutzt werden.
+
+Ein Backup kann auf anderen Geräten zurückgespielt werden als das Gerät von
+dem ein Backup erstellt wurde. D.h. z.B. kann ein Backup einer SD Karte auf
+einer SSD zurückgespielt werden.
 
 Die Anzahl der vorzuhaltenen Backups ist konfigurierbar oder es wird das
 [Grossvater-Vater-Sohn Generationenprinzip](https://www.framp.de/raspiBackupDoc/de/smart-recycle.md) genutzt.
@@ -78,9 +84,10 @@ Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
 Sollten Fragen zu *raspiBackup* aufkommen können diese auf [github Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
-Sollten Fehler oder Probleme mit *raspiBackup* auftreten sollten diese auf
+Fehler oder Probleme mit *raspiBackup* sollten auf
 [github Issues](https://github.com/framps/raspiBackup/issues) berichtet werden.
-Besser in Englisch, aber Deutsch wird auch akzeptiert.
+Wenn möglich sollte ein Beitrag in Englisch geschrieben werden. Deutsch
+wird aber auch akzeptiert.
 
 ## Einführungsvideo und Youtube-Channel
 
