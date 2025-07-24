@@ -1,6 +1,82 @@
-# Nutzer von raspiBackup in aller Welt
+# Nutzer von raspiBackup auf der Welt
 
-Eine vollständige Liste der Länder ist auf [framps Webseite](https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/547-raspibackup-list-of-countries-raspibackup-is-used-in-the-world) verfügbar.
+Im Januar 2024 hat *raspiBackup* Nutzer in 70 Ländern der Erde:
+
+- AD Andorra
+- AE United Arab Emirates
+- AL Albania
+- AM Armenia
+- AR Argentina
+- AT Austria
+- AU Australia
+- BE Belgium
+- BG Bulgaria
+- BN Brunei
+- BR Brasila
+- CA Canada
+- CH Suisse
+- CL Chile
+- CM Camerun
+- CN China
+- CO Colombia
+- CY Cyprus
+- CZ Czech Republic
+- DE Germany
+- DK Denmark
+- EE Estonia
+- ES Spain
+- EU Europe
+- FI Finland
+- FR France
+- GB United Kingdom
+- GE Georgia
+- GH Ghana
+- GR Greece
+- HK Honkong
+- HR Croatia
+- HU Hungury
+- ID Indonesia
+- IE Irland
+- IL Israel
+- IN India
+- IP
+- IR Iran
+- IT Italy
+- JE Jersey
+- JP Japan
+- KE Kenya
+- KR South Corea
+- KZ Kazakhstan
+- LI Liechtenstein
+- LT Lithuania
+- LU Luxemburg
+- LV Latvia
+- MD Moldova
+- MK North Maczedonia
+- MT Malta
+- MX Mexico
+- MY Malaysia
+- NG Nigeria
+- NL Netherlands
+- NO Norway
+- NZ New Zealand
+- PA Panama
+- PH Philippines
+- PL Poland
+- PT Portugal
+- RO Romania
+- SC Sychelles
+- SE Sweden
+- SG Singapore
+- SI Slovenia
+- SK Slovakia
+- TH Thailand
+- TR Turkey
+- TW Taiwan
+- UA Ukraine
+- US United States of Amerika
+- VN Vietnam
+- ZA Zaire
 
 [.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/546-raspibackup-benutzer-aus-aller-welt

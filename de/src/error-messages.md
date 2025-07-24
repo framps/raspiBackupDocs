@@ -31,7 +31,7 @@ Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
    selbst zu finden, besteht die Möglichkeit, den Fehler zu berichten.
    Siehe dazu die Hinweise in [FAQ12](faq.md#faq12), wie Probleme berichtet werden können.
 
-----------------------
+---
 
 In machen Fällen sind zu den Fehlermeldungen weitergehende Erklärungen notwendig.
 Diese sind im Folgenden zu finden.
@@ -51,7 +51,6 @@ anderen Nummernbereiche werden von eigene Plugin Meldungen genutzt.
 
 Ausserdem beendet sich *raspiBackup* mit einem Fehlercode, der auf die Ursache
 hinweist. Eine Liste der Fehlercodes findet sich am [Ende dieser Seite](#exitcodes).
-
 
 ## *raspiBackup* - Fehlermeldungen, Ursachen und Aktionen
 

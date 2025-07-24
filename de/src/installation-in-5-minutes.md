@@ -1,6 +1,6 @@
 # Schnellstart - Installation in 5 Minuten
 
-Hinweis: Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
+**Hinweis:** Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
 wie man *raspiBackup* installiert, konfiguriert und ein Backup restored.
 Bevor hier alles dupliziert wird: [Seine Anleitung](https://forum-raspberrypi.de/article/7-raspibackup-installation-grundeinstellungen-erstes-backup-und-restore/) im deutschen Raspberryforum.
 
@@ -35,7 +35,7 @@ Die Supportkanäle [sind hier beschrieben](introduction.md#kontakt)
 
 ## Anwendungs- und Konfigurationsbeispiele
 
-Auf dieser Seite werden verschiedene Beispiele gegeben wie man *raspiBackup* bei
+Auf [dieser Seite](email-configuration-examples.md) werden verschiedene Beispiele gegeben wie man *raspiBackup* bei
 sich einsetzen kann. Diese Beispiele sollten sich vor der eigentlichen
 Installation angesehen werden, um bei der Konfiguration während der Installation
 die richtigen Parameter zu benutzen.

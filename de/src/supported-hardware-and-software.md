@@ -38,6 +38,49 @@ dass auch ein nicht unterstütztes Environment von *raspiBackup* unterstützt wi
 und beendet sich sonst. Mit der Option `--unsupportedEnvironment` wird diese
 Prüfung nicht vorgenommen und führt u.U. zu Fehlern und Programmabbrüchen.
 
+## Raspberry Pi OS (RaspbianOS) Lite und Desktop
+
+Sowohl *Raspberry Pi OS* (früher *RaspbianOS*) *Lite* als auch *Desktop* werden
+von *raspiBackup* unterstützt.
+Die Desktop Version sollte wenigstens auf einem RPi4/RPi5 mit 4GB Speicher genutzt werden.
+
+## Ubuntu
+
+Sofern die offizielle Ubuntuversion für Raspberries genutzt wird ist diese
+von *raspiBackup* unterstützt. Es sollte aber wenigstens eine RaspberryPi 4 mit 4GB, besser noch
+mit 8GB Speicher, genutzt werden. Selbiges trifft für einen RaspberryPi 5 zu. Vermutlich
+sind die Anforderungen an ein Ubuntu Server System geringer.
+
+## Raspberry Compute Module (CM)
+
+*raspiBackup* unterstützt Raspberry Computemodule
+mit einer SD Karte, eMMC Speicher und NVMe.
+
+Wie man CM4 NVMe device auf Linux verfügbar macht, um ein NVMe Backup von *raspiBackup* zu restoren
+ist der [englischsprachigen Seite](https://www.linux-tips-and-tricks.de/en/raspberrye/614-raspberry-compute-module-4-setup-guide) beschrieben.
+
+## Unterstützte Geräte
+
+*raspiBackup* unterstützt folgende Geräte und Speicher
+
+  - SD Karten
+  - Platten/HDDs
+  - SSDs
+  - USB Sticks
+  - USB SD Adapter
+  - eMMC Speicher
+  - NVMe Speicher
+
+Als Backupziel für die Backups kann prinzipiell alle was unter
+Linux mountbar ist genutzt werden. Dazu gehören u.A.
+
+  - SMB Netzwerklaufwerke
+  - NFS Netzwerklaufwerke
+  - sshfs Netzwerklaufwerke
+  - webdav Netzwerklaufwerke
+  - ftpfs Netzwerklaufwerke
+
+Auf [Backupziele](backup-targets.md) finden sich Beispiele für SMB, NFS und WEBDAV Konfiguration.
 
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/608-unterstuetzte-hard-und-software/
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/609-supported-hard-and-software/

@@ -5,6 +5,13 @@ But both are able to write messages in any language from a coding point of view 
 Anybody who is willing to help to add support for a new language not already supported is welcome
 to translate *raspiBackup* messages.
 
+``` admonish info title="Note"
+Don't hesiate if you're willing to add a new language to *raspiBackup* even you don't have any programming experience.
+You don't have to fiddle with the programmins stuff. You have only
+to translate all messages into your native language. You even don't have
+to create a PR to get the new language into *raspiBackup*. All this programming stuff will be handled by *raspiBackup* developers for you.
+```
+
 Just add your interest in an [issue on github](https://github.com/framps/raspiBackup/issues) and
 you will immediate get individual support to add new messages in your native language
 to raspiBackupInstallUI and raspiBackup.
@@ -52,14 +59,6 @@ Following steps have to be done to support a new language to raspiBackupInstallU
    ```
    SUPPORTED_LANGUAGES=("EN" "DE" "FI")
    ```
-
-
-``` admonish info title="Note"
-Don't hesiate if you're willing to add a new language to *raspiBackup* even you don't have any programming experience. 
-You don't have to fiddle with the programmins stuff. That's handled by *raspiBackup* developers. You have only
-execute above step 1 for all existing messages and translate them into your native language. You even don't have
-to create a PR to get the new language into *raspiBackup*. All this will be handled by *raspiBackup* developers for you.
-```
 
 [.de]: ../../de/src/local-language-support-for-languages-other-than-de-and-en-l10n.md
 

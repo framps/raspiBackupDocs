@@ -41,10 +41,6 @@ Dies ermöglicht einige kleine Kniffe:
 - [Funktionsübersicht](function-overview.md)
 
 - [Unterstützte Hardware und Software](supported-hardware-and-software.md)
-    - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
-    - [Ubuntu](ubuntu-support.md)
-    - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
-    - [Unterstützte Geräte](supported-devices.md)
 
 - [Sprachunterstützung](language-support.md)
 
@@ -56,7 +52,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Intelligente Rotationsstrategie](smart-recycle.md)
         - [Snapshots](snapshots.md)
         - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
-        - [eMail Konfigurationsbeispiele](email-configuration-examples.md)
+        - [Konfigurationsbeispiele](email-configuration-examples.md)
             - [msmtp Konfiguration für einen web.de Account](msmtp-configuration-for-web-de-account.md)
             - [exim4 Konfiguration](exim4-configuration.md)
             - [nullmailer Konfiguration](nullmailer-configuration.md)
@@ -73,7 +69,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
         - [Umziehen des Raspberry Betriebssystems von SD Karte auf SSD, USB Platte oder USB Stick](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
         - [Wie kann ich die Betaversion installieren und ausprobieren?](how-can-i-install-and-test-the-beta-version.md)
-        - [Wird eine externe Rootpartition unterstützt](external-root-partition.md)
+        - [Wird eine externe Rootpartition unterstützt?](external-root-partition.md)
 
 - [Installation und erstes Backup](installation.md)
     - [Schnellstart - Installation in 5 Minuten](installation-in-5-minutes.md)
@@ -89,7 +85,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Optionen](restore-options.md)
         - [Konfiguration](restore-config-options.md)
     - [Allgemein](general.md)
-        - [Optionen](general-options.md)
+         [Optionen](general-options.md)
         - [Konfiguration](general-config-options.md)
     - [Thematisch sortierte Optionen](options-by-topic.md)
 
@@ -118,7 +114,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [10 Jahre raspiBackup](10-years-raspibackup.md)
     - [Regressiontests](regressiontests-executed.md)
     - [Entwicklungsumgebung](development-environment.md)
-    - [Nutzer in aller Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
+    - [Nutzer auf der Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
     - [Markdown Spielwiese](markdown-playground.md)
 

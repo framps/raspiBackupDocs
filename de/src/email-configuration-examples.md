@@ -12,14 +12,16 @@ Rootfilesystem zusammen mit einer SD Bootpartition. Wenn der USB Bootmode benutz
 wird und keine SD Karte mehr benutzt wird, wird auch die ganze Rootpartition
 gesichert.
 
+Weiterhin gibt es auf folgenden Seiten Konfigurationsbeispiele für verschiedene eMail Clients:
+   - msmtp
+   - exim4
+   - nullmailer
 
-Folgende Anwendungsbeispiele werden beschrieben:
+## Anwendungsbeispiele
 
 <!-- toc -->
 
-Auf folgenden Seiten finden sich Konfigurationsbeispiele für eMail.
-
-## Ein Windowsbenutzer möchte seine Raspberry sichern und auf Windows restoren können.
+### Ein Windowsbenutzer möchte seine Raspberry sichern und auf Windows restoren können.
 
 Um ein Image unter Windows restoren zu können muss ein dd
 Image von *raspiBackup* erstellt werden. Folgende Konfigurationsoptionen sind
@@ -30,7 +32,7 @@ DEFAULT_BACKUPTYPE=dd
 DEFAULT_KEEPBACKUPS=n
 ```
 
-## ... Er hat eine 32GB SD Karte und benutzt nur 12GB davon die er aber auch nur sichern möchte
+## Ein Windowsbenutzer hat eine 32GB SD Karte und benutzt nur 12GB davon die er aber auch nur sichern möchte
 
 Zusätzlich zu den genannten Optionen ist die folgende Option notwendig:
 
