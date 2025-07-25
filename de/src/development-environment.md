@@ -14,8 +14,6 @@ nicht mehr so häufig eine SD kaputt.
 
 Auf dem nachfolgenden Photo sieht man eine Raspberry 3B die zum Testen benutzt wird sowie diverse SD Karten und -größen und USB Sticks.
 
-![Arbeitsplatz](images/workspace.jpg)
-
 Sämtlicher Sourcecode wird in einem lokalen git Repository gewartet. Neue
 Releases entstehen in einem Developmentzweig. Wenn eine neue Release fertig
 ist, um allgemein verfügbar zu machen und alle Regressiontests erfolgreich
