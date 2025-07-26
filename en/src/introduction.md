@@ -27,11 +27,11 @@ You can either start the backup manually or have the backups be started automati
 Optionally you can let you notified about the backup result with eMail, Pushover, Slack or Telegram.
 
 Backups can be saved ony an partition which can be mounted on a Linux system
-(USB flash drive, USB disk, SSD, NVMe, nfs, samba/cifs, sshfs, webdav etc).
+(USB flash drive, USB disk, SSD, NVMe, NFS, SMB, sshfs, WEBDAV etc).
 
 There exist two backup modes: The **normal backup mode** just saves the boot and root parition. If additional partitions should be saved, for example a 3rd data only partition, the **partition oriented mode** has to be used.
 
-If you own an Synology or another NAS device see [here](more-backupspaces.md) for configuration hints.
+If you own an Synology or another NAS device see [here](backup-targets.md) for configuration hints.
 
 Linux backuptools `dd` backup, `tar` backup, (both backups can also be zipped) and a `rsync` backup
 with hardlink usage to create a delta backup can be used.
@@ -148,4 +148,4 @@ Everybody uses this script on his own risk. The creator of this script is not li
 [.source]: https://www.linux-tips-and-tricks.de/en/backup
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://linux-tips-and-tricks.de/de/trinkgeld
-[.status]: wip "Review by framp ongoing"
+[.status]: rst

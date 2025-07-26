@@ -1,5 +1,4 @@
-# Erweiterungsmöglichkeiten von *raspiBackup*
-
+# Erweiterungsmöglichkeiten
 
 Es besteht die Möglichkeit, eigene Codeerweiterungen vor und nach dem
 Backupprozess des Scripts einzubinden. Dieses ist sinnvoll, wenn
@@ -9,7 +8,8 @@ eingepflegt werden müssen. Die Extensions (Plugins) sind unabhängig vom
 jeweiligen Codestand von *raspiBackup* und deshalb in diesem Falle zu
 empfehlen.
 
-Beispielplugins stehen zur Verfügung und dienen als Beispiele für
+[Beispielplugins](https://github.com/framps/raspiBackup/tree/master/extensions)
+stehen zur Verfügung und dienen als Beispiele für
 eigene Erweiterungen. Durch die ersten wird die CPU Temperatur sowie
 die Hauptspeicher- und Backuppartitionsbelegung sowie die
 Partitionsbelegung vor und nach dem Backup ausgegeben. Die letzte
@@ -17,9 +17,13 @@ Erweiterung wird nur am Ende des Backups aufgerufen und kann bei Erfolg
 bzw Misserfolg des Backups unterschiedliche Aktionen auslösen.
 
 Wer nützliche Plugins für die Community erstellt hat kann sie gerne im
-deutsche [Raspberryforum Forum](https://forum-raspberrypi.de/forum/board/164-raspibackup/) 
+deutsche [Raspberryforum Forum](https://forum-raspberrypi.de/forum/board/164-raspibackup/)
 vorstellen und die Downloadlocation nennen. Sollten
 Fähigkeiten der Plugins fehlen, bitte einen [Issue bei GitHub](https://github.com/framps/raspiBackup/issues) anlegen.
+
+Ausserdem existieren interessante von
+[*raspiBackup* Nutzern geschriebene Plugins](https://github.com/framps/raspiBackup/tree/master/extensions_userprovided)
+die es lohnt sich mal anzusehen. 
 
 ### Pluginaufrufstellen beim Backup
 
@@ -68,28 +72,29 @@ aufgerufen:
 
 ### Beispielplugins
 
- 
-
 1.  Der einfachste Weg ist die Beispielplugins mit dem [Installer](https://www.linux-tips-and-tricks.de/de/installation) zu
     installieren und zu aktivieren. Entweder über die Menufolge
     **Installiere Komponenten-\>Installiere Beispielerweiterungen** oder
-    direkt über die Befehlszeile imit der Option `-e`.
+    direkt über die Befehlszeile mit der Option `-e`.
 
-        raspiBackupInstallUI.sh
+    ```
+    raspiBackupInstallUI.sh
+    ```
 
     oder
-
-        raspiBackupInstallUI.sh -e
+    ```
+    raspiBackupInstallUI.sh -e
+    ```
 
 2.  Wer die Beispielplugins manuell installieren will, kann das `tar` mit
-    [diesem Link mit einem Browser downloaden](https://www.linux-tips-and-tricks.de/de/downloads/raspibackupsampleextensions-tgz/download)
+    [diesem Link mit einem Browser downloaden](https://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz)
     oder auch direkt wie folgt auf die Raspberry downloaden und nach
     `/usr/local/bin` auspacken.
 
-        wget http://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz -O raspiBackupSampleExtensions.tgz
-        tar -xzf raspiBackupSampleExtensions.tgz -C /usr/local/bin
-
-[.status]: todo "Broken external link"
+    ```
+    wget http://www.linux-tips-and-tricks.de/raspiBackupSampleExtensions.tgz -O raspiBackupSampleExtensions.tgz
+    tar -xzf raspiBackupSampleExtensions.tgz -C /usr/local/bin
+    ```
 
 Dadurch werden die folgenden Scripte in `/usr/local/bin` kopiert:
 
@@ -110,11 +115,15 @@ Dadurch werden die folgenden Scripte in `/usr/local/bin` kopiert:
 Um die Plugins zu aktivieren ist noch folgender zusätzlicher
 Aufrufparameter bei *raspiBackup* notwendig:
 
+    ```
     -N "temp mem disk execute"
+    ```
 
  bzw in die Konfigurationsdatei ist folgende Zeile aufzunehmen
 
+    ```
     DEFAULT_EXTENSIONS="temp mem disk execute"
+    ```
 
 ### Notification Plugins
 
@@ -138,11 +147,13 @@ Alle anderen Extensions müssen kein \_pre and \_post am Ende haben.
 
 Die Plugins erzeugen folgende Meldungen:
 
+    ```
     --- RBK1001I: Memory usage - Pre backup - Used: 97 MB Free: 130 MB - Post backup - Used: 98 MB Free: 121 MB
     --- RBK1000I: CPU temperature pre and post backup: 53.2'C - 55.8'C
     --- RBK1002I: Disk usage pre backup: Used: 1.30 TiB Free: 2.18 TiB
     --- RBK1003I: Disk usage post backup: Used: 1.30 TiB Free: 2.18 TiB
     --- RBK1004I: Free change: -256.00 KiB (0.00 %)
+    ```
 
 ### Meldungen
 
@@ -168,11 +179,13 @@ Ausserdem kann das Aussehen der eMail beliebig geändert werden. Ein Beispielplu
 
 Die folgenden Parameter werden dem Mailplugin Script übergeben:
 
-    email="$1"        # target email address
-    subject="$2"      # email subject
-    content="$3"      # email contents
-    parms="$4"        # addtl email parms passed with -E
-    append="$5"       # file to append
+```
+email="$1"        # target email address
+subject="$2"      # email subject
+content="$3"      # email contents
+parms="$4"        # addtl email parms passed with -E
+append="$5"       # file to append
+```
 
 ### Hinweise
 
@@ -201,7 +214,7 @@ einen Pullrequest auf [github](https://github.com/framps/raspiBackup).
 Dort ist aller Plugins im Quellcode verfügbar um ihn zu erweitern und
 neue zuzufügen.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/442-raspibackup-erweiterungen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/443-raspibackup-extensions
 

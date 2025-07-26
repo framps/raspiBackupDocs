@@ -4,7 +4,7 @@ Hier werden verschiedene Anwendungsbeispiele von
 *raspiBackup* sowie ihrer Konfiguration vorgestellt und erklärt. Sie sollen
 helfen, aus der Vielzahl der Anwendungsmöglichkeiten die Richtige zu finden oder
 das Beispiel dann nach den eigenen Ansprüchen entsprechend anzupassen. Eine
-Übersicht aller Optionen findet sich in [Aufruf und Optionen](usage-and-options.md).
+Übersicht aller Optionen findet sich in [Aufruf und Optionen](backup-options.md).
 Verschiedene Methoden, ein Backup zu restoren, sind im Kapitel [Wiederherstellen/Restore](restore.md) beschrieben.
 
 Alle Konfigurationen, die kein dd Backup benutzen, sichern auch ein externes
@@ -12,13 +12,16 @@ Rootfilesystem zusammen mit einer SD Bootpartition. Wenn der USB Bootmode benutz
 wird und keine SD Karte mehr benutzt wird, wird auch die ganze Rootpartition
 gesichert.
 
+Weiterhin gibt es auf folgenden Seiten Konfigurationsbeispiele für verschiedene eMail Clients:
+   - msmtp
+   - exim4
+   - nullmailer
 
-Folgende Anwendungsbeispiele werden beschrieben:
+## Anwendungsbeispiele
 
 <!-- toc -->
 
-
-## Ein Windowsbenutzer möchte seine Raspberry sichern und auf Windows restoren können.
+### Ein Windowsbenutzer möchte seine Raspberry sichern und auf Windows restoren können.
 
 Um ein Image unter Windows restoren zu können muss ein dd
 Image von *raspiBackup* erstellt werden. Folgende Konfigurationsoptionen sind
@@ -29,7 +32,7 @@ DEFAULT_BACKUPTYPE=dd
 DEFAULT_KEEPBACKUPS=n
 ```
 
-## ... Er hat eine 32GB SD Karte und benutzt nur 12GB davon die er aber auch nur sichern möchte
+## Ein Windowsbenutzer hat eine 32GB SD Karte und benutzt nur 12GB davon die er aber auch nur sichern möchte
 
 Zusätzlich zu den genannten Optionen ist die folgende Option notwendig:
 
@@ -38,7 +41,7 @@ DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY=1
 ```
 
 Allerdings ist dazu auch notwendig die Rootpartition der Raspberry zu
-verkleinern, da standardmäßig der gesamte freien Platz der SD Karte gesichert 
+verkleinern, da standardmäßig der gesamte freien Platz der SD Karte gesichert
 wird. Dieses geht aber nicht unter Windows sondern es muss ein Linux benutzt
 werden und mit den Tools gparted oder resize2fs dann die Rootpartition
 verkleinert werden.
@@ -53,7 +56,7 @@ das dd Image per pishrink verkleinern kann. Die Option
 DEFAULT_ZIP_BACKUP=1
 ```
 
-verkleinert zwar auch noch mal das Image aber das kann nicht direkt 
+verkleinert zwar auch noch mal das Image aber das kann nicht direkt
 iunter Windows restored werden. Es muss uvorher unzipped werden.
 
 ## Eine Raspberry soll möglichst schnell gesichert werden. Die Backuppartition ist ein per nfs gemountetes EXT4 Dateisystem welches von einer NAS zur Verfügung gestellt wird.
@@ -146,13 +149,13 @@ benötigt viel mehr Platz.
 Dann ist aber kein Backuptyp rsync möglich. NTFS kann nur mit dem Backuptype `dd` und `tar` genutzt werden und
 der DEFAULT_BACKUPTYPE muss dann entsprechend gesetzt werden.
 
-Ein Beispieleintrag in der /etc/fstab könnte wie folgt aussehen:
+Ein Beispieleintrag in der `/etc/fstab` könnte wie folgt aussehen:
 
 ```
 LABEL=usb    /USBStick    ext4     defaults,noatime,nofail        0    2
 ```
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/konfigurationsbeispiele
 [.source]: https://www.linux-tips-and-tricks.de/en/configuration-samples
 

@@ -2,6 +2,7 @@
 
 <!-- toc -->
 
+---
 
 <a name="faq0"></a>
 ### 0) Wie entstand *raspiBackup*?
@@ -105,9 +106,9 @@ Ohne Probleme funktioniert es bei einem kleineren oder größeren Gerät
 sofern tar oder rsync Backup. Beim normalen Backupmodus wird
 automatisch die Größe der root Partition entsprechend angepasst, d.h.
 entsprechend verkleinert oder vergrößert. Bei einer Vergrößerung wird
-ider gesamte zur Verfügung stehende Platz benutzt.i
-Wird von deim Backup des Systems mehr Platz benutzt
-als das Restore  Gerät hat gibt es natürlich Fehler beim Restore.
+der gesamte zur Verfügung stehende Platz benutzt.
+Wird von dem Backup des Systems mehr Platz benutzt
+als das Restore Gerät hat gibt es natürlich Fehler beim Restore.
 Beim partitionsorientierten Backupmodus wird die letzte Partition
 entsprechend angepasst.
 
@@ -255,8 +256,8 @@ Minimum verkleinern.
 ### 17) Wie kann ich feststellen, dass der rsync Backup tatsächlich Hardlinks benutzt, um Speicherplatz zu sparen?
 
 Hardlinks werden erfolgreich von *raspiBackup* benutzt wenn ein lokaler USB
-Stick, eine lokale USB Platte oder auch eine per nfs gemountete Partition,
-die mit ext3/ext4 formatiert ist, benutzt wird. Samba sowie sshfs
+Stick, eine lokale USB Platte oder auch eine per NFS gemountete Partition,
+die mit ext3/ext4 formatiert ist, benutzt wird. SMB sowie sshfs
 unterstützt keine Hardlinks.
 
 **Hinweis:** Der Windows Explorer ignoriert Hardlinks und zeigt deshalb eine
@@ -575,7 +576,7 @@ BastiFanta hat einen anderen Grund dafür gefunden:
 <a name="faq30"></a>
 ### 30) Mir gefällt *raspiBackup* und ich möchte die Entwicklung und den Support honorieren. Wie kann ich das tun?
 
-Zum Beispiel ein [Trinkgeld](introduction.md#trinkgeld) geben.
+Zum Beispiel ein [Trinkgeld](introduction.md#donation) geben.
 
 
 <a name="faq31"></a>
@@ -720,7 +721,7 @@ Ein anderes ist das [englische Raspberryforum](https://forums.raspberrypi.com/).
 <a name="faq39"></a>
 ### 39) Wo finde ich das Debuglog von raspiBackup?
 
-Siehe [FAQ41](faq41)
+Siehe [FAQ41](#faq41)
 
 <a name="faq40"></a>
 ### 40) Wie kann ich meine Konfiguration nach einem Versionsupdate auf den neuesten Stand bringen?
@@ -824,7 +825,7 @@ Backuptools dd, tar oder rsync gemeldet werden.
 
 Bei rsync kann es auch daran liegen dass ACLs gesichert werden sollen aber
 dazu die Berechtigung nicht existiert oder ACLs nicht von der
-Backuppartition unterstützt werden. Letzteres trifft zu für nfs und Samba
+Backuppartition unterstützt werden. Letzteres trifft zu für NFS und SMB 
 gemountete Backuppartitionen. Siehe dazu [FAQ24](#faq24).
 
 Falls mount Option sync genutzt wird sollte diese durch die Option async
@@ -950,6 +951,6 @@ Achtung:  Es gibt seltene Umstände, in denen ein rsync RC 24 ein nicht zu
 ignorierender Fehler ist. Siehe dazu [hier bei bugzilla.samba.org](https://bugzilla.samba.org/show_bug.cgi?id=3653#c12).
 D.h. man sollte möglichst versuchen, den Fehler mit Möglichkeit 1 oder 2 zu beseitigen.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/faq
 

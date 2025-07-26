@@ -1,4 +1,4 @@
-# Backuptypen
+# Entscheidungsbaum für Backuptypen
 
 Es gibt verschiedene Backuptypen und eine jede hat ihre Vor- und Nachteile.
 Es können auch unterschiedliche Backuptypen kombiniert werden. Z.B. kann alle
@@ -13,15 +13,16 @@ werden.
 Ein `dd` Backup erstellt ein in sich konsistentes binäres Abbild des Systems.
 Dabei wird immer das ganze Gerät mit dem System gelesen und gesichert. Das bedeutet, dass
 auch Daten gesichert werden, die sich nicht geändert haben. Auch bedeutet es,
-dass zum Restore das restorgerät wieder wenigstens so gross sein muss wie das Originalsystem.
-Es wird keine Parition irgendwie in der Größe angepasst. Das bereite besonders
+dass zum Restore das Restorgerät wieder wenigstens so gross sein muss wie das Originalsystem.
+Es wird keine Parition irgendwie in der Größe angepasst. Das bereitet besonders
 bei SD Karten immer wieder Probleme da die SD Karten - obwohl z.B. 32 GB gross - doch immer
 leichte Untesrschiede haben und somit ein Restore eines 32GB Systems auf eine andere 32GB SD Karte
 nicht erfolgreich sein kann da die SD Karte geringfügig kleiner ist.
 
 Ein `dd` Backup kann unter Windows mit entsprechenden Tools wiederhergestellt werden.
 
-Aber es wird **nicht** empfohlen, den Backuptyp `dd` zu nutzen. Erklärungen dazu sind in [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
+Aber es wird **nicht** empfohlen, den Backuptyp `dd` zu nutzen.
+Erklärungen dazu sind in [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
 im Detail beschrieben.
 
 Ein `ddz` Backup sichert das gesammte System, wie ein `dd` Backup. Diese Methode
@@ -31,7 +32,7 @@ mit eingeschaltetem Zippen mit `-z`). Ein Restore mit Windowstools it nicht mög
 Ein `tar` Backup sichert alle auf dem Systemgerät gespeicherten Daten, wobei allerdings das Backup nicht
 so gross ist, wie bei einem `dd` Backup, da nur die Daten gesichert werden, die
 tatsächlich existieren. Deshalb kann auch ein `tar` Backup auf Geräten
-restored werden, die kleiner ist als das Originalgerät. Natürlich nur sofern alle 
+restored werden, die kleiner ist als das Originalgerät. Natürlich nur sofern alle
 gesicherten Daten auf das neue Device passen.
 
 Ein `tgz` Backup sichert das gesamte System, wie ein `tar` Backup. Diese Methode
@@ -55,11 +56,12 @@ einmal ein initiales Backup erstellt wurde.
 | rsync  | ja         | kurz mit Hardlinks | klein mit Hardlinks | nein | nein     | kaum           | ja                         | ext3/ext4 |
 
 
+<a name="decisiontree"></a>
 
 ![Entscheidungsbaum](images/decisiontree_de.dia.jpg)
 
 ``` admonish info title="Filesysteme"
 Die [Vor- und Nachteile der möglichen Filesysteme](which-filesystem-can-be-used-on-the-backup-partition.md) muss man auch beachten.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach

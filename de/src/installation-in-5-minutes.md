@@ -1,6 +1,6 @@
-# raspiBackup Schnellstart - Installation in 5 Minuten
+# Schnellstart - Installation in 5 Minuten
 
-Hinweis: Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
+**Hinweis:** Es gibt vom *raspiBackup*-User [Franjo_G](https://forum-raspberrypi.de/user/57610-franjo-g/) eine schöne Anleitung,
 wie man *raspiBackup* installiert, konfiguriert und ein Backup restored.
 Bevor hier alles dupliziert wird: [Seine Anleitung](https://forum-raspberrypi.de/article/7-raspibackup-installation-grundeinstellungen-erstes-backup-und-restore/) im deutschen Raspberryforum.
 
@@ -35,7 +35,7 @@ Die Supportkanäle [sind hier beschrieben](introduction.md#kontakt)
 
 ## Anwendungs- und Konfigurationsbeispiele
 
-Auf dieser Seite werden verschiedene Beispiele gegeben wie man *raspiBackup* bei
+Auf [dieser Seite](email-configuration-examples.md) werden verschiedene Beispiele gegeben wie man *raspiBackup* bei
 sich einsetzen kann. Diese Beispiele sollten sich vor der eigentlichen
 Installation angesehen werden, um bei der Konfiguration während der Installation
 die richtigen Parameter zu benutzen.
@@ -166,7 +166,7 @@ oder wenn man die Backuppartition lokal angeschlossen wurde und man ihr ein Labe
 Danach ist alles fertig konfiguriert, um ein Backup zu erstellen. Dabei ist aber
 zu berücksichtigen, dass, wenn man später *raspiBackup* regelmäßig einsetzt,
 bestimmte Dienste gestoppt werden sollten, da sonst ein inkonsistentes Backup
-entstehen könnte. Siehe dazu [FAQ18](faq.md#FAQ18). Braucht man keine Dienste zu stoppen oder
+entstehen könnte. Siehe dazu [FAQ18](faq.md#faq18). Braucht man keine Dienste zu stoppen oder
 will man den Backup einmal schnell testen kann, man wie folgt den Backup mit
 *raspiBackup* erstellen. Das kann je nach Größe der Installation und der externen
 Rootpartition beim normalen Backup etwas länger dauern.
@@ -206,7 +206,7 @@ Der Installer erstellt folgende Dateien:
    | Backuptag            | Sonntag              |
    | Backupzeit           | 05:00 Uhr            |
 
-   [Aufruf und Optionen](usage-and-options.md) sind ausführlich beschrieben.
+   [Aufruf und Optionen](backup-options.md) sind ausführlich beschrieben.
 
 2. *Systemd timer* Konfiguration wird in `/etc/systemd/system/raspiBackup.timer` vorgenommen.
 
@@ -232,7 +232,7 @@ verkleinern und damit beschleunigen und Diverses mehr.
 Jede Option kann man in der Konfigurationsdatei `/usr/local/etc/raspiBackup.conf` definieren,
 so dass beim Aufruf keine weitere Optionen angegeben werden müssen.
 Es existieren auch Optionen, die sich nur über die Konfigurationsdatei einstellen lassen.
-Details dazu finden sich auf der [Optionsbeschreibungsseite](usage-and-options.md).
+Details dazu finden sich auf der [Optionsbeschreibungsseite](backup-options.md).
 
 Ebenfalls nützlich: [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md),
 welches die Nutzung und den Aufruf von *raspiBackup* vereinfacht.
@@ -293,5 +293,5 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
 
 Siehe im gleichnamigen Kapitel: [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
 
-[.status]: rft
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/installation

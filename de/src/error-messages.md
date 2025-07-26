@@ -7,8 +7,8 @@ Konfigurationen oder Parametrisierung.
 Es gibt drei Typen von *raspiBackup*-Meldungen:
 
 1. Informationen. Die Meldungsnummer endet mit dem Buchstaben "I"
-2. Warnungen. Die Meldungsnummer endet mit dem Buchstaben "W"
-3. Fehler. Die Meldungsnummer endet mit dem Buchstaben "E"
+1. Warnungen. Die Meldungsnummer endet mit dem Buchstaben "W"
+1. Fehler. Die Meldungsnummer endet mit dem Buchstaben "E"
 
 Die Fehlermeldungen sind selbsterklärend und sollten auf die konkrete Ursache hinweisen.
 Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
@@ -22,7 +22,7 @@ Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
    den Fehler zu lokalisieren.
 
    Falls das Backup fehlerhaft abbricht, wird die Logdatei vor dem Aufräumen
-   in das Homeverzeichnis des Aufrufers gesichert. 
+   in das Homeverzeichnis des Aufrufers gesichert.
 
    Weiterhin kann auch der Parameter `-v` weiterhelfen, wenn Fehler in den
    Linux Backuptools auftreten.
@@ -31,7 +31,7 @@ Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
    selbst zu finden, besteht die Möglichkeit, den Fehler zu berichten.
    Siehe dazu die Hinweise in [FAQ12](faq.md#faq12), wie Probleme berichtet werden können.
 
-----------------------
+---
 
 In machen Fällen sind zu den Fehlermeldungen weitergehende Erklärungen notwendig.
 Diese sind im Folgenden zu finden.
@@ -41,7 +41,7 @@ und im Detail zu erklären, ist sehr viel Aufwand.
 
 Wer also eine Erklärung für eine Fehlermeldung sucht und hier nicht findet,
 sollte erst einmal eine Suchmaschine benutzen und nach der
-Fehlermeldungsnummer suchen. Falls das nicht zum Erfolg führt, sollte ein Issue in github
+Fehlermeldungsnummer suchen. Falls das nicht zum Erfolg führt, sollte ein Issue im [github](https://github.com/framps/raspiBackup/issues).
 erstellt werden und dann wird sie hier aufgenommen. So werden dann nach und nach alle häufigen und wichtigen
 Fehlermeldungen von *raspiBackup* hier gesammelt und erläutert.
 
@@ -51,7 +51,6 @@ anderen Nummernbereiche werden von eigene Plugin Meldungen genutzt.
 
 Ausserdem beendet sich *raspiBackup* mit einem Fehlercode, der auf die Ursache
 hinweist. Eine Liste der Fehlercodes findet sich am [Ende dieser Seite](#exitcodes).
-
 
 ## *raspiBackup* - Fehlermeldungen, Ursachen und Aktionen
 
@@ -703,7 +702,7 @@ Fehlermeldung gibt noch genauere Informationen zur Fehlerursache aus.
   - RC_RESIZE_ERROR=145
   - RC_UUID_UPDATE_IMPOSSIBLE=147
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#fehler
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupmessagese

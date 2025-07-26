@@ -5,16 +5,13 @@ Auf dieser Seite findet sich eine High Level Übersicht zu *raspiBackup*.
 Detailliertere Informationen zu *raspiBackup* finden sich hier in der weiteren Dokumentation
 und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
-**Sichere Deine Raspberries**
-
-**Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig einen vollständigen Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie**
-
-![Icon](images/icons/Icon_rot_blau_final_128.png)
-
+**Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig einen vollständigen Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie
+und kannst somit Deine Raspverry vollständig wiederherstelleni, so dass sie wieder mit einem alten Backupstand bootet**
+ 
   - Open source
 
     *raspiBackup* ist unter der GNU Lizenz als OpenSource und kostenlos verfügbar.
-    Ein [Trinkgeld](introduction.md#trinkgeld) ist aber trotzdem gern gesehen 😉
+    Ein [Trinkgeld](introduction.md#donation) ist aber trotzdem gern gesehen 😉
 
   - Einfache [Installation](installation.md) mit menügeführtem Installer (vergleichbar mit `raspi-config`)
 
@@ -22,7 +19,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
     Chinesisch und Französisch konfiguriert werden, so dass die erste [Sicherung
     in 5 Minuten](installation-in-5-minutes.md) werden kann.
 
-  - Alle weiteren z.T. sehr mächtigen Optionen sind [ausführlich dokumentiert](usage-and-options.md)
+  - Alle weiteren z.T. sehr mächtigen Optionen sind [ausführlich dokumentiert](details.md)
     und können in einer Konfigurationsdatei definiert werden.
 
   - Vollständige und inkrementelle Sicherungen
@@ -69,10 +66,10 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
          (jedes Modell)
       2. Gemischter Modus: Boot von der SD Karte und Nutzung der Rootpartition
          von einem USB Gerät. Das ist notwendig bei älteren Raspberries, die
-         noch keinen USB Boot unterstützen (2A und 2B)
+         noch keinen USB Boot unterstützen
       3. Boot von einem USB Gerät oder SSD (USB boot Modus): Beide Partitionen
          liegen auf einem USB Gerät. Wird von den neueren Raspberries
-         unterstützt, (3B, 4, 400 und 5)
+         unterstützt
 
   - Beliebige Backupziele möglich, z.B.
 
@@ -163,15 +160,15 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 
   - Unterstütze Betriebssysteme
 
-      – RaspbianOS
-      – Ubuntu
+      - RaspbianOS
+      - Ubuntu
 
   - Einfacher Systemumzug auf andere Speichermedien
 
     Jede Sicherung kann auf eine SD Karte, USB Platte oder SSD sowie NVMe SSD
     zurückgespielt werden. Schon ist das System auf ein anderes Gerät umgezogen.
 
-  - Unterstuetzung von Volumio
+  - Unterstützung von Volumio
 
   - Unterstützung von gpt Partitionen
 
@@ -179,7 +176,7 @@ und auf der [Github-Seite](https://github.com/framps/raspiBackup).
 ![Übersichtsbild](images/raspiBackupOverview.jpg)
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/funktionsuebersicht
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/features

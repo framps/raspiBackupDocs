@@ -1,7 +1,7 @@
 Normalerweise wird empfohlen nfs statt smb zu nutzen um die Backups von raspiBackup abzulegen. Dann kann man den Backuptyp rsync nutzen und immer nur ein Detlabackup erstellen statt eines Vollbackups was bei cifs/samba notwendig ist. Aber trotzdem mag es Gründe geben warum man ein raspiBackup auf einem cifs/samba Laufwerk ablegen will. Im Folgenden wird beschrieben wie das bei einer Synology zu konfigurieren ist. Dabei wird AutoFS genutzt.
 
 
-Um automatisch die CIFS BackupPartition zu mounten wenn raspiBackup sie nutzt muss natürlich auf der Synology ein shared folder definiert und konfiguriert sein. Im Folgenden wird der shared folder Name raspiBackup angenommen. Danach muss AutoFS installiert werden:
+Um automatisch die SMB BackupPartition zu mounten wenn raspiBackup sie nutzt muss auf der Synology ein shared folder definiert und konfiguriert sein. Im Folgenden wird der shared folder Name raspiBackup angenommen. Danach muss AutoFS installiert werden:
 
 sudo apt install autofs
 

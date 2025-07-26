@@ -36,53 +36,61 @@ That allows for some tricks:
 
 [Introduction](introduction.md)
 
+# User guide
+
 - [Function overview](function-overview.md)
 
 - [Supported hardware and software](supported-hardware-and-software.md)
-    - [Raspberry Pi OS / RaspbianOS](support-for-raspbianos.md)
-    - [Ubuntu](ubuntu-support.md)
-    - [Compute Module](support-for-raspberry-compute-module-4-and-nvme.md)
 
 - [Language support](language-support.md)
 
-- [Installation and first backup](installation.md)
+- [Function detail](function-intro.md)
+    - [Backup](backup-intro.md)
+        - [Decision tree for backup types](backuptypes.md)
+        - [Comparison of partition orientated and normal backup](normal-or-partition-backup.md)
+        - [Backup directory structure](backup-directory-structure.md)
+        - [Rotation strategy](smart-recycle.md)
+        - [Snapshots](snapshots.md)
+        - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
+       - [Configuration examples](email-configuration-examples.md)
+            - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
+            - [exim4 configuration](exim4-configuration.md)
+            - [nullmailer configuration](nullmailer-configuration.md)
+
+    - [Restore](restore-intro.md)
+        - [Restore single files/directories](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+        - [Manual rsync restore](manual-restore.md)
+        - [Manual tgz restore](manual-restore-of-a-tgz-backup.md)
+
+    - [General](more-questions-and-answers.md)
+        - [Which filesystem can be used on the backup partitioni?](which-filesystem-can-be-used-on-the-backup-partition.md)
+        - [How do hardlinks work with rsync?](how-do-hardlinks-work-with-rsync.md)
+        - [Why shouldn't you use dd as backup type?](why-shouldn-t-you-use-dd-as-backup-type.md)
+        - [How to create a cold standby clone with raspiBackupi?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
+        - [Migrate the Raspberry OS from sd-card to ssd, usb-disk or usb-pen-drive](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
+        - [How can I install and test the beta version?](how-can-i-install-and-test-the-beta-version.md)
+        - [Is an external root partition supported?](external-root-partition.md)
+
+
+- [Installation and first backup](installation.md) 
     - [Quickstart - Installation in 5 minutes](installation-in-5-minutes.md)
     - [Manual installation and configuration](manual-installation-and-configuration.md)
     - [Statistics](statistics.md)
     - [Updates](updates.md)
 
-- [Details zum Aufruf und zur Konfiguration](details.md)
-    - [Usage and options](usage-and-options.md)
-        - [Options grouped by topic (Selection)](options-by-topic.md)
-        - [More Configuration options](config-options-only.md)
-    - [Backup types and decision tree](backuptypes.md)
-    - [Comparing partition orientated and normal backup](normal-or-partition-backup.md)
-    - [Backup directory structure](backup-directory-structure.md)
-    - [Rotation strategy](smart-recycle.md)
-    - [Snapshots](snapshots.md)
-
-    - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
-    - [Hooks for own scripts](hooks-for-own-scripts.md)
-
-    - [eMail configuration examples](email-configuration-examples.md)
-        - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
-        - [exim4 configuration](exim4-configuration.md)
-        - [nullmailer configuration](nullmailer-configuration.md)
-
-- [Restore](restore.md)
-    - [Restore with raspiBackup](full-restore.md)
-    - [Manual restore](manual-restore.md)
-    - [Restore single files/directories](how-to-retrieve-single-files-or-directories-from-the-backup.md)
+- [Usage and options](details.md)
+    - [Backup](backup.md)
+        - [Options](backup-options.md)
+        - [Configuration](backup-config-options.md)
+    - [Restore](restore.md)
+        - [Options](restore-options.md)
+        - [Configuration](restore-config-options.md)
+    - [general](general.md)
+        - [Options](general-options.md)
+        - [Configuration](general-config-options.md)
+    - [Options grouped by topic](options-by-topic.md)
 
 - [Frequently asked questions / FAQ](faq.md)
-
-- [More questions and answers](more-questions-and-answers.md)
-    - [Which filesystem can be used on the backup partition](which-filesystem-can-be-used-on-the-backup-partition.md)
-    - [How do hardlinks work with rsync](how-do-hardlinks-work-with-rsync.md)
-    - [Why shouldn't you use dd as backup type](why-shouldn-t-you-use-dd-as-backup-type.md)
-    - [How to create a cold standby clone with raspiBackup](how-to-create-a-cold-standby-clone-with-raspibackup.md)
-    - [Migrate the Raspberry OS from sd-card to ssd, usb-disk or usb-pen-drive](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
-    - [How can I install and test the beta version](how-can-i-install-and-test-the-beta-version.md)
 
 - [Error messages](error-messages.md)
 
@@ -99,11 +107,11 @@ That allows for some tricks:
 - [Tips for homeautomation](tips-homeautomation.md)
 
 - [Helpful links regarding backup](helpful-links.md)
-- [Other backup tools for Raspberry Pi](other-raspberry-backup-tools.md)
+- [Other backup tools](other-raspberry-backup-tools.md)
 
-- [Any other business](any-other-business.md)
+- [Miscellaneous](miscellaneous.md)
     - [Version history](version-history.md)
-    - [raspiBackup has a new logo](raspibackup-has-a-new-logo.md)
+    - [raspiBackup logo](raspibackup-has-a-new-logo.md)
     - [10 years raspiBackup](10-years-raspibackup.md)
     - [Executed regression tests](regressiontests-executed.md)
     - [Development environment](development-environment.md)
@@ -111,13 +119,12 @@ That allows for some tricks:
     - [Version of this documentation](doc-version-info-automatically-generated.md)
     - [Markdown Playground](markdown-playground.md)
 
+# Developer guide
 
-- [English-only pages -- translation/integration required]()
+- [Hooks for own scripts](hooks-for-own-scripts.md)
+- [Plugpoints](extension-scripts.md)
+- [Support new languages](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
-  - [Local language support for languages other than DE and EN (L10N)](local-language-support-for-languages-other-than-de-and-en-l10n.md)
-  - [Manual restore of a tgz backup](manual-restore-of-a-tgz-backup.md)
 
-
-[.status]: todo "Check the remaining english-only file(s)"
 [.status]: z_SUMMARY
 

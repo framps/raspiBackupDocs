@@ -47,6 +47,7 @@ jährliche Backups immer vom 1.1. des Jahres.
 
 ## Beispiel - Backupverzeichnis (täglicher Backuplauf, Standardoptionen: 7/4/12/3)
 
+```
     (Backuplauf am 17.11.2019)
 
     20191117 1. tägliches Backup
@@ -75,7 +76,7 @@ jährliche Backups immer vom 1.1. des Jahres.
     20181201 12. monatliches Backup
     20180101 2. jährliches Backup
     20170101 3. jährliches Backup
-
+```
 
 ## Optionen
 
@@ -104,15 +105,17 @@ Rotationstrategie angewendet und
 **nicht mehr benötigte Backups werden unwideruflich gelöscht**.
 
 Alternativ bewirkt die Konfigurationsoption
-`DEFAULT_SMART_RECYCLE_DRYRUN=0` dasselbe Ergebnis.
 ```
+DEFAULT_SMART_RECYCLE_DRYRUN=0`
+```
+dasselbe Ergebnis.
 
 Auf Wikipedia - [Generationenprinzip](https://de.wikipedia.org/wiki/Generationenprinzip) wird auch schön erklärt,
 wie das Rotationsprinzip funktioniert.
 Speziell die Grafik ist eine andere Möglichkeit, das Prinzip zu erklären.
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/rotationsstrategie
 [.source]: https://www.linux-tips-and-tricks.de/en/smart-recycle
 

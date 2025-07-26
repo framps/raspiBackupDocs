@@ -73,6 +73,6 @@ Wenn man den Speicherplatz automatisch beim Booten des Systems mounten
 möchte muss man noch das noauto in der /etc/fstab entfernen. Das ist für
 **raspiBackup** nicht notwendig wenn die dynamicmount Option genutzt wird.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/12-networking/190-wie-kann-man-medienspeicher-oder-smartdrive-unter-linux-einbinden>
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/644-nutzung-von-webdav-als-backupziel-fuer-raspibackup>
