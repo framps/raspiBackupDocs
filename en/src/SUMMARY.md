@@ -34,7 +34,7 @@ That allows for some tricks:
 ```
 
 
-[Overview](introduction.md)
+[Introduction](introduction.md)
 
 # User guide
 
