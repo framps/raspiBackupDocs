@@ -153,7 +153,7 @@ edit_grepped_files() {
         --header 'ALT-G: Switch between ripgrep/fzf' \
         --preview "${BAT} --color=always --theme=ansi {1} --highlight-line {2}" \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-        --bind 'enter:become(${VIM_PROJECT} {1} +{2})'
+        --bind 'enter:execute(${VIM_PROJECT} {1} +{2})'
 }
 
 export -f edit_grepped_files
