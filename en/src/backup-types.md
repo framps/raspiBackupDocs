@@ -63,4 +63,4 @@ Die [Vor- und Nachteile der möglichen Filesysteme](which-filesystem-can-be-used
 
 [.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#vornach
-[.de]: ../../de/src/backuptypes.md
+[.de]: ../../de/src/backup-types.md

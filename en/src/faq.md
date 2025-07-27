@@ -74,7 +74,7 @@ Systems gesichert. Weitere externe Partitionen werden aber nicht gesichert.
 
 Es steht der dd Backup sowie der tar und rsync Backup zur Verfügung. dd und
 tar Backups können noch mit zip komprimiert werden. Auf
-[dieser Seite](backuptypes.md) können
+[dieser Seite](backup-types.md) können
 die Vor- und Nachteile der jeweiligen Backupmethoden nachgelesen werden.
 
 
@@ -82,7 +82,7 @@ die Vor- und Nachteile der jeweiligen Backupmethoden nachgelesen werden.
 ### 5)  Kann man die Sicherung auch ohne *raspiBackup* wiederherstellen?
 
 Das ist eine Grundvoraussetzung für *raspiBackup* gewesen: Es muss möglich
-sein das Backup mit entprechenden Linuxkenntnissen zu Fuss restoren zu
+sein das Backup mit entsprechenden Linuxkenntnissen zu Fuß restoren zu
 können.
 
 Die Sicherung legt Dateien an, die die lesbaren Ausgaben von den Linux

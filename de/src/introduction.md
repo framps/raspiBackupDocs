@@ -1,15 +1,26 @@
 
 ``` admonish info title="Nutzungshinweise"
-Oben auf den Seiten finden sich verschiedene Icons, die helfen
-in der Dokumentation nach Stichworten zu suchen und verschiedene andere
-nützliche Funktionen anstossen. Einfach mal kurz über die Icons hoovern um
-ihre Funktion zu erfahren.
+Oben auf den Seiten befindet sich eine Iconleiste zur Bedienung
+der Dokumentation:
 
-Mit dem ganz rechten Icon kann man sehr einfach direkt Änderungen an der
-aktuellen Seite im github vorschlagen.
+  - Das Hamburger-Menu links blendet ein Inhaltsverzeichnis ein-/aus
+  - Der Pinsel wechselt das Theme
+  - Mit der Lupe startet eine Suchfunktion
+  - Der Globus öffnet eine Sprachauswahl (de/en)
+  - Der Drucker macht das Erwartete...
+  - GitHub-Seite des Dokumentationsprojektes
+  - Mit dem Stift-Icon kann man sehr einfach direkt Änderungen
+    an der aktuellen Seite im github vorschlagen.
 
-Mit dem ganz linken Icon wird ein Inhaltsverzeichnis ein-/ausgeblendet.
+Eintippen eines `?` blendet eine kleine Tastatur-Navigationshilfe ein.
 ```
+
+[.status]: todo "Nutzungshinweise: Icons einbinden und umformulieren"
+[.status]: todo "Generell im gesamten Dokument: GitHub oder github?"
+[.status]: todo "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.?"
+
+
+
 
 <center>     <!-- The blank line before the image definition is required! -->
 
@@ -33,49 +44,49 @@ das System wieder auf einen vorherigen Zustand zurücksetzen zu können.
 
 *raspiBackup* erstellt eine Systemsicherung einer Raspberry Pi **bei laufendem System**.
 Das kann manuell oder automatisch in regelmäßigen Abständen geschehen.
-Ein Backup enthält immer das gesamten System, d.h. Systemdaten sowie Nutzerdaten.
-Deshalb bootet das System sofort wieder wenn es zurückgespielt wurde.
+Ein Backup enthält immer das gesamte System, d.h. Systemdaten sowie Nutzerdaten.
+Deshalb bootet das System sofort wieder, wenn es zurückgespielt wurde.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
 werden. Dazu gehören SD Karten, USB Sticks, USB Platten, SSDs und NVMe SSDs.
 Auch Netzlaufwerke, die per NFS, SMB, sshfs, ftpfs und webdav gemounted werden,
 können als Ziel für Backups genutzt werden.
 
-Ein Backup kann auf anderen Geräten zurückgespielt werden als das Gerät von
-dem ein Backup erstellt wurde. D.h. z.B. kann ein Backup einer SD Karte auf
+Ein Backup kann auf anderen Geräten zurückgespielt werden als das Gerät, von
+dem ein Backup erstellt wurde. Zum Beispiel kann ein Backup einer SD Karte auf
 einer SSD zurückgespielt werden.
 
-Die Anzahl der vorzuhaltenen Backups ist konfigurierbar oder es wird das
-[Grossvater-Vater-Sohn Generationenprinzip](https://www.framp.de/raspiBackupDoc/de/smart-recycle.md) genutzt.
-Außerdem können manuell sogenannte *raspiBackup* [Snapshots](snapshots.md)erstellt werden. Dieses sind Backups, die
-nicht automatisch gelöscht werden und dazu dienen bei Systemupgrades Zwischenschritte zu sichern
+Die Anzahl der vorzuhaltenden Backups ist konfigurierbar oder es wird das
+[Großvater-Vater-Sohn Generationenprinzip](https://www.framp.de/raspiBackupDoc/de/smart-recycle.md) genutzt.
+Außerdem können manuell sogenannte *raspiBackup* [Snapshots](snapshots.md) erstellt werden. Dieses sind Backups, die
+nicht automatisch gelöscht werden und dazu dienen, bei Systemupgrades Zwischenschritte zu sichern
 um jederzeit bei Fehlern beim Upgrade wieder auf vorherige Stände zurückgehen zu können.
 
-Es existieren zwei [Backupmodi](normal-or-partition-backup.md):
+Es gibt zwei [Backupmodi](normal-or-partition-backup.md):
 Der **normale Backupmodus** sichert nur die Boot- und Rootpartition.
 Der **partitionsorientierte Modus** sichert beliebig viele Partitionen.
 
-Folgende Linux Backuptools können genutzt werden: `dd` Backup, `tar` Backup, (beides auch gezipped)
-die immer ein Vollbackup erstellen
+Folgende Linux Backuptools können genutzt werden:
+`dd` Backup, `tar` Backup, (beides auch gezipped), die immer ein Vollbackup erstellen
 und ein `rsync` Backup mit [Hardlinknutzung](how-do-hardlinks-work-with-rsync.md),
 um relativ schnell ein Deltabackup zu erstellen.
-Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) beschrieben.
-Dort befindet sich auch ein [Entscheidungsbaum](backuptypes.md#decisiontree),
+Die einzelnen Backuptypen sind im Detail [hier](backup-types.md) beschrieben.
+Dort befindet sich auch ein [Entscheidungsbaum](backup-types.md#decisiontree),
 um schnell den richtigen Backuptyp zu finden.
 
 Zur **Installation und Konfiguration** von raspiBackup gibt es einen
-[Installer](installation-in-5-minutes.md) mit dem,
-wie bei `raspi-config`, menugesteuert, einfach und schnell die wichtigsten
-Optionen von *raspiBackup* konfiguriert werden können.
-Sollen spezielle Dinge bei *raspiBackup* konfiguriert werden,
-muss eine Konfigurationsdatei manuell geändert werden.
+[Installer](installation-in-5-minutes.md) mit dem menügesteuert, einfach und schnell die wichtigsten
+Optionen von *raspiBackup* konfiguriert werden können, vergleichbar mit `raspi-config`.
+Speziellere Einstellungen lassen sich in einer Konfigurationsdatei vornehmen.
 
-Für Entwickler bietet *raspiBackup* verschiedene [Plugpoints](hooks-for-own-scripts.md)
+Für Entwickler bietet *raspiBackup* verschiedene [Plugpoints](hooks-for-own-scripts.md),
 um eigenen Code ausführen zu lassen.
 
-Weiterhin exsistieren verschiedene [Scripte](https://github.com/framps/raspiBackup/tree/master/helper),
-die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt werden können
-wie auch an eigene Anforderungen angepasst werden können.
+[.status]: todo "Das Word 'Plugpoints' sollte vielleicht durch etwas Geläufigeres ersetzt werden."
+
+Weiterhin existieren verschiedene [Scripte](https://github.com/framps/raspiBackup/tree/master/helper),
+die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt
+oder an eigene Anforderungen angepasst werden können.
 
 Am Ende eines Backuplaufes kann *raspiBackup*, wenn gewünscht, eine Benachrichtigung per eMail,
 Telegram, Slack oder Pushover senden.
@@ -83,11 +94,13 @@ Telegram, Slack oder Pushover senden.
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
-Sollten Fragen zu *raspiBackup* aufkommen können diese auf [github Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
+[.status]: todo "Folgender Absatz steht eigentlich schon bei 'Kontaktmöglichkeiten' unten!? Könnte dann hier weg"
+
+Sollten Fragen zu *raspiBackup* aufkommen, können diese auf [github Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
 Fehler oder Probleme mit *raspiBackup* sollten auf
 [github Issues](https://github.com/framps/raspiBackup/issues) berichtet werden.
-Wenn möglich sollte ein Beitrag in Englisch geschrieben werden. Deutsch
-wird aber auch akzeptiert.
+Wenn möglich sollte ein Beitrag in Englisch geschrieben werden.
+Deutsch wird aber auch akzeptiert.
 
 ## Einführungsvideo und Youtube-Channel
 
@@ -132,6 +145,8 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
 ```
 
+[.status]: todo "Der Youtube-Link oben ist keine **Kontakt**-Möglichkeit und außerdem schon weiter oben beschrieben"
+
 <a name="donation"></a>
 ## Trinkgeld
 
@@ -155,11 +170,11 @@ auf der neuen Hardware zu verifizieren.
 
 Es haben im Laufe der Zeit sehr viele Leute aus der Community durch Kommentare,
 Erweiterungsvorschläge und Beta- und Fixtests zu *raspiBackup* beigetragen.
-In Anbetracht der grossen Anzahl ist es leider nicht möglich, jeden einzelnen aufzuführen.
+In Anbetracht der großen Anzahl ist es leider nicht möglich, jeden einzelnen aufzuführen.
 
 Daher einfach: Vielen Dank an alle Unterstützer!
 
-**Besonderen Dank** geht an [simonz](https://github.com/rpi-simonz) für den Aufbau
+**Besonderer Dank** geht an [simonz](https://github.com/rpi-simonz) für den Aufbau
 dieses *raspiBackup* Dokumentationsrepositories in GitHub, den Transfer aller
 *raspiBackup* Seiten von [framps Homepage](https://www.linux-tips-and-tricks.de)
 in dieses Repository und die intensive Unterstützung bei der Überarbeitung
@@ -167,7 +182,9 @@ der Seiten mit Rat und Tat sowie mit sehr hilfreichen Tools.
 
 ## Lizenz und GitHub-Link
 
-Der Code von *raspiBackup* ist reiner bash Code und steht unter der GPL auf [GitHub](https://github.com/framps/raspiBackup) zur Verfügung.
+Der Code von *raspiBackup* ist reiner *Bash* Code und steht unter der GPL auf [GitHub](https://github.com/framps/raspiBackup) zur Verfügung.
+
+[.status]: todo "Schreibweise von Bash im Fließtext??!"
 
 
 ## Haftungsausschluss

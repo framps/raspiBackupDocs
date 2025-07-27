@@ -46,7 +46,7 @@ That allows for some tricks:
 
 - [Function detail](function-intro.md)
     - [Backup](backup-intro.md)
-        - [Decision tree for backup types](backuptypes.md)
+        - [Decision tree for backup types](backup-types.md)
         - [Comparison of partition orientated and normal backup](normal-or-partition-backup.md)
         - [Backup directory structure](backup-directory-structure.md)
         - [Rotation strategy](smart-recycle.md)

@@ -35,7 +35,7 @@ If you own an Synology or another NAS device see [here](backup-targets.md) for c
 
 Linux backuptools `dd` backup, `tar` backup, (both backups can also be zipped) and a `rsync` backup
 with hardlink usage to create a delta backup can be used.
-For details about the different backup methods see [here](backuptypes.md).
+For details about the different backup methods see [here](backup-types.md).
 There you will find a decision tree to decide which backup methods is the right one to use.
 
 To **install and configure** raspiBackup there exists an installer similar to raspi-config, which allows menuedriven, simple and fast to configure raspiBackup with it's most important options to use raspiBackup.
