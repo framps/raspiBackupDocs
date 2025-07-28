@@ -85,7 +85,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Optionen](restore-options.md)
         - [Konfiguration](restore-config-options.md)
     - [Allgemein](general.md)
-         [Optionen](general-options.md)
+        - [Optionen](general-options.md)
         - [Konfiguration](general-config-options.md)
     - [Thematisch sortierte Optionen](options-by-topic.md)
 
@@ -112,7 +112,7 @@ Dies ermöglicht einige kleine Kniffe:
     - [Versionshistorie](version-history.md)
     - [raspiBackup Logo](raspibackup-has-a-new-logo.md)
     - [10 Jahre raspiBackup](10-years-raspibackup.md)
-    - [Regressiontests](regressiontests-executed.md)
+    - [Regressionstests](regressiontests-executed.md)
     - [Entwicklungsumgebung](development-environment.md)
     - [Nutzer auf der Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
