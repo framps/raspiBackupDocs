@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# vim: set expandtab:
+# vim: set expandtab nospell:
 
 # Script for defining helpful functions etc. while working on raspiBackupDoc.
 #
@@ -89,6 +89,15 @@ export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
 
 
 unset FZFPOS_STATUS FZFPOS_FILE
+
+
+edit_translate_file() {
+    FILE=$(basename "$1")
+    ${VIM_PROJECT} -c "tabnew en/src/${FILE}|vsplit de/src/${FILE}|wincmd h|tabfirst" en/src/"${FILE}"
+}
+
+export -f edit_translate_file
+
 
 edit_translate_by_status() {
     while true; do
@@ -299,6 +308,7 @@ edit_by_status() {
                                  | ${FZF_MULTI} \
                                       --header="${FZF_HEADER}" \
                                       --bind="load:pos($FZFPOS_FILE)" \
+                                      --bind="alt-t:execute(edit_translate_file {})" \
                                       --preview='cat {}')
             [[ "${FILES[*]}" ]] || break
             unset FZFPOS_FILE
