@@ -79,7 +79,7 @@ sollte vor Verschicken des Logs manuell maskiert werden.
 <a name="parm_eMailColoring"></a>
 ### --eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert
 
-Standardmaessig wird das eMailColoring über die Subject Zeile gesteuert, da
+Standardmäßig wird das eMailColoring über die Subject Zeile gesteuert, da
 dieser Weg von den meisten eMail Clients genutzt wird. Wenn man aber postfix
 als eMail Client benutzt, muss man OPTION als Parameter mitgeben, da postfix das
 Coloring mit einer separaten Option steuert.

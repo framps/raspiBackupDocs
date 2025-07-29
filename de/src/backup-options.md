@@ -382,7 +382,7 @@ die Liste wie folgt aussehen:
 "--exclude=/backup/* --exclude=/rsnapshot/* --exclude=/www-data*/* --exclude=/home/pi/.local/share/Trash"
 ```
 
-Die Anfuehrungszeichen sind wichtig! Weitere Informationen zu der Syntax finden
+Die Anführungszeichen sind wichtig! Weitere Informationen zu der Syntax finden
 sich auf der man Page der jeweiligen Backuptools.
 
 Folgende Verzeichnisse werden niemals gesichert:

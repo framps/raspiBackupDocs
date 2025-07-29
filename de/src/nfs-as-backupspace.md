@@ -25,9 +25,9 @@ Im Wesentlichen sind folgende Schritte durchzuführen:
 2) mount des gemeinsamen nfs Ordners auf der Raspi in der fstab
 3) Installation und Konfiguration von *raspiBackup* per [Installer](installation.md) (keinen automatischen Backup konfigurieren)
 4) Test des Backups und Restores von der Commandline
-5) Einrichten des regelmaessigen Backups in der Crontab per [Installer](installation.md)
+5) Einrichten des regelmäßigen Backups in der Crontab per [Installer](installation.md)
 
-Es empfielt sich, vor dem Beginn die [FAQ](faq.md) zu lesen, wo die wichtigsten
+Es empfiehlt sich, vor dem Beginn die [FAQ](faq.md) zu lesen, wo die wichtigsten
 Fragen und Antworten zu *raspiBackup* zusammengestellt sind.
 
 ### Gemeinsamen nfs Ordner auf der Syno erstellen

@@ -54,7 +54,7 @@ kann Deutsch, Englisch. Finnisch, Chinesisch oder Französisch sein.
 
 Wer *raspiBackup* einfach nur mit einer Standardkonfiguration ohne individuelle
 Konfiguration schnell installieren will, kann das mit den Aufrufoptionen `-i` und
-`-e` starten (`-h` fuer Hilfe benutzen). Danach kann der Installer genutzt werden um
+`-e` starten (`-h` für Hilfe benutzen). Danach kann der Installer genutzt werden um
 die Basiskonfiguration von *raspiBackup* vorzunehmen bzw zu ändern.
 Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md) ist ebenfalls möglich.
 Auf Youtube existiert auch ein Video, auf dem *raspiBackup* vorgestellt wird

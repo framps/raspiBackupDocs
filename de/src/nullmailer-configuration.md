@@ -19,7 +19,7 @@ Folgende Variablen werden in der folgenden Beschreibung genutzt (Provider ist He
 3. `sudo chown 700 /usr/sbin/sendmail`
 4. Installation von mail: `sudo apt install mailutils -y`
 
-2 und 3 sind nur notwendig, wenn der Hostname kein gueltiger Hostname beim eMailProvider ist.
+2 und 3 sind nur notwendig, wenn der Hostname kein gültiger Hostname beim eMailProvider ist.
 
 
 [.status]: rst

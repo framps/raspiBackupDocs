@@ -143,7 +143,7 @@ bei tar sowie RC 23 oder RC 24 bei rsync bedeutet, dass sich eine Datei während
 der Sicherung verändert hat.
 
 RC 2 bei tar bedeutet, irgendein schlimmer Fehler trat auf. Es kann auch sein,
-dass Berechtigungen auf dam Backupgeraet fehlen oder kein freier Speicherplatz
+dass Berechtigungen auf dem Backupgerät fehlen oder kein freier Speicherplatz
 auf der Backuppartition vorhanden ist.
 
 RC23 bei rsync kann auch ein Zugriffsproblem oder ein ACL Problem mit nfs sein.
