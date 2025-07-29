@@ -270,7 +270,7 @@ edit_by_status() {
                        --bind="alt-t:execute(edit_translate_already_translated)+reload(__list_stati)" \
                        --bind="alt-g:execute(edit_grepped_files)" \
                        --bind="alt-m:execute(edit_meta_files)" \
-                       --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
+                       --bind="alt-s:execute(vimdiff -c 'syntax off| windo set nospell' {de,en}/src/SUMMARY.md)" \
                        --preview='V={}; __list_files_with_status "$V"')
         set --
 
