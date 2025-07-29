@@ -4,7 +4,7 @@ Mittlerweile sind verschiedene Hilfsprogramme zu *raspiBackup* entstanden. Diese
 sind nicht offiziell unterstützt und als Beispiele für eigene Hilfsprogramme
 gedacht und für eigene Anforderungen angepasst werden können.
 
-Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper) zum Download zur Verfügung:
+Sie stehen auf [*GitHub*](https://github.com/framps/raspiBackup/tree/master/helper) zum Download zur Verfügung:
 
 1. **raspiBackupWrapper.sh**: Damit kann man vor und nach dem Aufruf von
    *raspiBackup* verschiedene Dinge erledigen lassen. Der Code mounted schon die
@@ -13,12 +13,12 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    anzupassen.
 
    **Hinweis**
-   Dieses Script entstand als raspiBackup noch keine Erweiterungspunkte hatte. Normalerweise
+   Dieses Script entstand, als *raspiBackup* noch keine Erweiterungspunkte hatte. Normalerweise
    reicht es die vorhandenen [Erweiterungspunkte](hooks-for-own-scripts.md)
-   zu nutzen um die Funktionalität von *raspiBackupi* für die eigenen Bedürfnisse zu erweitern.
+   zu nutzen um die Funktionalität von *raspiBackup* für die eigenen Bedürfnisse zu erweitern.
 
 2. **raspiBackupNfsWrapper.sh**: Es wird von dem Script geprüft, ob ein NFS Server
-   verfügbar ist und nur dann *raspiBackup* gestartet. Ausser ein paar
+   verfügbar ist und nur dann *raspiBackup* gestartet. Außer ein paar
    Definitionen des NFS Servers ist nichts anzupassen.
 
 3. **raspiBackupRestore2Image.sh**: Mit diesem Script kann ein tar oder rsync
@@ -33,8 +33,8 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    *raspiBackup* eMail Konfigurationsparameter benutzt.
    Das Script erfordert keine Änderungen.
 
-5. **raspiBackupAndClone.sh**: Dieses Script erstellt eine Backupversion mit raspiBackup
-   und restored anschliessend das aktuelle Backup auf ein angeschlossenens Device. Somit hat
+5. **raspiBackupAndClone.sh**: Dieses Script erstellt eine Backupversion mit *raspiBackup*
+   und restored anschließend das aktuelle Backup auf ein angeschlossenens Device. Somit hat
    man nach dem Backup immer sofort ein aktuelles Backupsystem von welchem man booten kann
    wenn das Systemdevice korrupt wurde. Nimmt man den partitionsorientierten Backup mit rsync
    ist der Restore nur eine Synchronisation der Änderungen zum vorherigen Stand und das geht
@@ -44,11 +44,11 @@ Sie stehen auf [github](https://github.com/framps/raspiBackup/tree/master/helper
    natürlich nicht denn darin befindet sich dieselbe Fehlkonfiguration. In diesem Falle muss man ein
    älteres noch funktionierendes Backup manuell restoren.
 
-6. **raspiBackupAndJSON.sh**: Wer die von raspiBackup erzeugten Meldungen nach dem Backup untersuchen will
+6. **raspiBackupAndJSON.sh**: Wer die von *raspiBackup* erzeugten Meldungen nach dem Backup untersuchen will
    kann mit diesem Script die Meldungen im JSON Format erzeugen lassen und kann sie dadurch wesentlich einfacher parsen
    wie z.B. mit jq.
 
-7. **raspiBackupDialog.sh**: Dieses von [Franjo](https://github.com/franjo-G) erstellte Script ist ein raspiBackup vorgeschaltetes
+7. **raspiBackupDialog.sh**: Dieses von [Franjo](https://github.com/franjo-G) erstellte Script ist ein *raspiBackup* vorgeschaltetes
    Script mit welchem einfacher Backups erstellt wie auch restored werden können.
    Details dazu finden sich im Kapitel [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md).
 

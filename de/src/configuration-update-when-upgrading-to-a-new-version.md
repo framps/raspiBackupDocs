@@ -11,8 +11,8 @@ vorgenommen wird.
 
 **Hinweis**
 Sollte aus irgendwelchen Gründen kein Konfigurationsdateiupdate
-bei einem Upgrade stattgefunden haben kann mit folgendem Befehl
-der Upgrade manuell angestossen werden:
+bei einem Upgrade stattgefunden haben, kann mit folgendem Befehl
+der Upgrade manuell angestoßen werden:
 
 ```
 sudo raspiBackup.sh --updateConfig

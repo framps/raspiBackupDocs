@@ -5,7 +5,7 @@
 ![raspiBackup icon](images/icons/Icon_rot_blau_final_128.png)
 </center>
 
-*raspiBackup* wird nur mit dem *Raspberry Pi OS* und *Ubuntu* und Raspberry Pi Hardware
+*raspiBackup* wird nur auf Raspberry Pi Hardware mit dem *Raspberry Pi OS* und *Ubuntu*
 unterstützt. Es läuft aber auch auf anderer Raspberry Pi kompatibler Hardware und
 anderen Linux Distributions erfolgreich. Dabei ist zu beachten, dass *raspiBackup* die
 beiden Partitionen `/boot` und `/root` benötigt, wie sie bei *Raspberry Pi OS* existieren.
@@ -13,9 +13,9 @@ beiden Partitionen `/boot` und `/root` benötigt, wie sie bei *Raspberry Pi OS* 
 D.h. man kann *raspiBackup* auf dem jeweiligen Environment ausprobieren und wenn
 es erfolgreich läuft, kann man sich freuen und es nutzen. Wenn es aber nicht
 läuft bzw. Fehlermeldungen bringt, wird **kein** Support gegeben. Man kann einen
-Issue in github erstellen und das Debuglog beifügen. So kann *framp* prüfen, ob vielleicht mit ein
+Issue in *GitHub* erstellen und das Debuglog beifügen. So kann *framp* prüfen, ob vielleicht mit ein
 paar kleinen Änderungen das Problem beseitigt werden kann. Sind größere Änderungen notwendig,
-werden diese nicht vorgenommen und somit kann raspiBackup in dem Environment nicht genutzt werden.
+werden diese nicht vorgenommen und somit kann *raspiBackup* in dem Environment nicht genutzt werden.
 Aber auch wenn ein Fix das Problem beseitigt, bleibt das Environment nicht unterstützt.
 
 Insbesondere kann meist ein beliebiges Linux OS auf einer beliebigen Hardware genutzt werden,
@@ -31,8 +31,8 @@ Unter der Tatsache, dass **raspiBackup ~~umsonst~~ gratis** ist, ist es zu teuer
 Also kann *framp* *raspiBackup* nur unter den genannten Voraussetzungen unterstützen.
 
 Es besteht die Möglichkeit der [Donation](introduction.md#donation)
-und je nach Aufwand besteht die Möglichkeit,
-dass auch ein nicht unterstütztes Environment von *raspiBackup* unterstützt wird.
+und je nach Aufwand besteht die Chance, dass zukünftig weitere
+Environments von *raspiBackup* unterstützt werden.
 
 *raspiBackup* prüft beim Aufruf, ob eine unterstützte Hard- und Software vorliegt
 und beendet sich ansonsten. Mit der Option `--unsupportedEnvironment` wird diese
@@ -71,8 +71,8 @@ ist der [englischsprachigen Seite](https://www.linux-tips-and-tricks.de/en/raspb
   - eMMC Speicher
   - NVMe Speicher
 
-Als Backupziel für die Backups kann prinzipiell alles, was unter
-Linux mountbar ist genutzt werden. Dazu gehören u.A.
+Als Backupziel für die Backups kann prinzipiell alles genutzt werden,
+was unter Linux mountbar ist. Dazu gehören u.A.
 
   - SMB Netzwerklaufwerke
   - NFS Netzwerklaufwerke

@@ -66,7 +66,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Welches Filesystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
         - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
         - [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
-        - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
+        - [Wie kann man mit *raspiBackup* einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
         - [Umziehen des Raspberry Betriebssystems von SD Karte auf SSD, USB Platte oder USB Stick](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
         - [Wie kann ich die Betaversion installieren und ausprobieren?](how-can-i-install-and-test-the-beta-version.md)
         - [Wird eine externe Rootpartition unterstützt?](external-root-partition.md)
@@ -94,7 +94,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Fehlermeldungen und -suche](error-messages.md)
 
 - [Hilfsprogramme](helper-scripts.md)
-    - [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
+    - [raspiBackupDialog - ein komfortables Hilfsscript für *raspiBackup*](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [Weitere nützliche Hilfsprogramme](useful-helper-scripts.md)
 
 - [Backupziele](backup-targets.md)
@@ -110,8 +110,8 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Verschiedenes](miscellaneous.md)
     - [Versionshistorie](version-history.md)
-    - [raspiBackup Logo](raspibackup-has-a-new-logo.md)
-    - [10 Jahre raspiBackup](10-years-raspibackup.md)
+    - [*raspiBackup* Logo](raspibackup-has-a-new-logo.md)
+    - [10 Jahre *raspiBackup*](10-years-raspibackup.md)
     - [Regressionstests](regressiontests-executed.md)
     - [Entwicklungsumgebung](development-environment.md)
     - [Nutzer auf der Welt](list-of-countries-raspibackup-is-used-in-the-world.md)

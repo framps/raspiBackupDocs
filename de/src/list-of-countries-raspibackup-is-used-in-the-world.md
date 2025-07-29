@@ -1,4 +1,4 @@
-# Nutzer von raspiBackup auf der Welt
+# Nutzer von *raspiBackup* auf der Welt
 
 Im Januar 2024 hat *raspiBackup* Nutzer in 70 Ländern der Erde:
 

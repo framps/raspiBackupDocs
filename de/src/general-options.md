@@ -139,15 +139,15 @@ Ausgabe der Aufrufsyntax mit seinen Parametern
 <a name="parm_l"></a>
 ### -l: Loglevel
 
-Log level definiert ob ein Debuglog erstellt wird:
+Definiert, ob ein Debuglog erstellt wird:
 
 - off  -> Es wird kein Debuglog erstellt
 - debug -> Es wird ein Debuglog erstellt
 
 **Achtung**: Die Logausgabe kann sensitive Informationen
-enthalten. raspiBackup maskiert Z.B. externe statische IP Adressen, eMailAdressen, Kennwörter für
-mount Befehle oder email Server,u.V.M. Es  können aber immer noch sensitive Informationen
-im Debuglog enthalten sein die inoch manuell maskiert werden sollten.
+enthalten. *raspiBackup* maskiert z.B. externe statische IP Adressen, eMailAdressen, Kennwörter für
+mount Befehle oder email Server, u.V.M. Es  können aber immer noch sensitive Informationen
+im Debuglog enthalten sein, die noch manuell maskiert werden sollten.
 Das Debuglog wird immer im Backupverzeichnis abgelegt. Falls es Fehler gibt und das Backupverzeichnis
 wieder gelöscht werden wird, wird das Log vorher in das Homeverzeichnis des
 Aufrufers gesichert.
@@ -193,7 +193,7 @@ Meldungsdetails
 <a name="parm_s"></a>
 ### -s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken
 
-email Program, welches benutzt wird {mail|sendEmail|ssmtp|msmtp}. Für postfix
+email Programm, welches benutzt wird {mail|sendEmail|ssmtp|msmtp}. Für postfix
 und nullmailer muss mail benutzt werden und die mailtools installiert werden.
 Für sendEmail muss der Parameter -E zusätzlich genutzt werden für weitere
 obligatorische Parameter (Siehe [Parameter -E Beschreibung](#parm_E) für Details).
@@ -207,7 +207,7 @@ Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](ho
 | -s | mail |  | DEFAULT_MAIL_PROGRAM |
 
 <a name="parm_S"></a>
-### -S: Unbedingter Update
+### -S: Unbedingtes Update
 
 Ein Update mit der Option -U wird auch vorgenommen, wenn die Versionen
 übereinstimmen. Sie bewirkt, dass sowohl eine lokale Betaversion wie auch eine
@@ -231,15 +231,15 @@ Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 <a name="parm_U"></a>
 ### -U: Update von *raspiBackup*
 
-Die lokale *raspiBackup* Version wird durch die letzte aktuelle Version ersetzt
+Die lokale *raspiBackup* Version wird durch die letzte aktuelle Version ersetzt,
 sofern eine neue Version existiert. Die vorherige Version wird als
-raspiBackup.sh.n.m gesichert wobei n und m die Versionsnumer von *raspiBackup*
-ist. Siehe Parameter -V, um eine vorhergehende Version wiederherzustellen.
+`raspiBackup.sh.n.m` gesichert, wobei `n` und `m` die Versionsnummer von *raspiBackup*
+ist. Siehe Parameter `-V`, um eine vorhergehende Version wiederherzustellen.
 
 **Achtung**: Vorher sollte man [diese Seite](version-history.md) lesen
 und sich über die Änderungen und Neuerungen informieren.
 
-Zusätzlich gibt es noch die option -S, mit der Betaversionen auf den letzten
+Zusätzlich gibt es noch die Option `-S`, mit der Betaversionen auf den letzten
 Stand gebracht werden können.
 
 Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
@@ -251,8 +251,8 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 <a name="parm_updateConfig"></a>
 ### --updateConfig: Update der *raspiBackup* Konfiguration
 
-Mit dieser Option kann man einen Update der Konfiguration
-erzwingen falls sie nicht bei einem normalen Update mit der
+Mit dieser Option kann man ein Update der Konfiguration
+erzwingen, falls sie nicht bei einem normalen Update mit der
 Option `-U` vorgenommen wurde.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
@@ -270,7 +270,7 @@ gestartet muss diese Option angegeben werden.
 | --unsupportedEnvironment | aus |  |  |
 
 <a name="parm_version"></a>
-### --version: Anzeige der Versionsinformation 
+### --version: Anzeige der Versionsinformation
 
 Die Version von *raspiBackup* wird im folgenden Format ausgegeben:
 
@@ -285,7 +285,7 @@ Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
 <a name="parm_v"></a>
 ### -v: Alle Meldungen des verwendeten Backuptools werden protokolliert
 
-Die verwendeten Backuptools tar und rsync zeigen detailierte Informationen an
+Die verwendeten Backuptools `tar` und `rsync` zeigen detaillierte Informationen an
 (Verbose mode). Die Option ist besonders nützliche bei initialen manuellen
 Backuptests, um den Backupfortschritt verfolgen zu können.
 

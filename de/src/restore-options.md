@@ -1,10 +1,10 @@
 # Restore Optionen
 
-*raspiBackup* restored standardmäßig das [**gesamte System**](restore-intro.md) bei dem normalen Backupmodus.
-Bei einem partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden, welche Partitionen restored
-werden sollen. Wird beim partitionsorientierten Modus
-der rsync Backuptyp genutzt kann bei einem Restore auch ein Deltarestore gewählt werden. (Option -00)
-D.h. es werden mit rsync nur die geänderten Dateien und gelöschte Dateien aus dem Backup
+*raspiBackup* restored standardmäßig beim normalen Backupmodus das [**gesamte System**](restore-intro.md).
+Beim partitionsorientierten Modus kann dagegen beim Restore ausgewählt werden,
+welche Partitionen restored werden sollen. Wird beim partitionsorientierten Modus
+der `rsync` Backuptyp genutzt, kann bei einem Restore auch ein Deltarestore gewählt werden (Option -00).
+Das heißt, es werden mit `rsync` nur die geänderten Dateien und gelöschte Dateien aus dem Backup
 kopiert sowie nicht im Backup vorhandene Dateien - also neu erstellte Dateien - gelöscht.
 Damit ist ein sehr schneller Restore möglich.
 
@@ -47,10 +47,10 @@ Beispiel: `-/dev/sda`
 Partitionsnummer wie z.B. bei `/dev/sda1` vorhanden sein.
 
 **Achtung:** Dieses Device wird i.d.R. vollständig gelöscht und neu angelegt! Beim `tar` und
-`rsync` Backup wird automatisch die Größe der root Partition entsprechend
+`rsync` Backup wird automatisch die Größe der *root* Partition entsprechend
 verkleinert oder vergrößert, wenn das Zielgerät eine andere Größe
 hat als das gesicherte System. Dabei muss natürlich auf dem Zielgerät noch genügend Platz für die
-Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz wird der Restore abbrechen.
+Daten des Quellsystems vorhanden sein. Ist nicht genügend Platz, wird der Restore abbrechen.
 
 <a name="parm_N"></a>
 ### -N: Erweiterungen, die vor und nach dem Restore aufgerufen werden sollen
@@ -79,7 +79,7 @@ werden soll.  Beispiel: `/dev/sdb1`.
 
 **Hinweis:** Diese Option nur benutzen, wenn sowohl eine SD Karte als auch ein
 externes Rootfilesystem auf einem Gerät benutzt wird. Sonst reicht die Option `-d`.
-Die Option ist nur sinnvoll bei älteren Raspberries die noch keinen USB Boot unterstützen.
+Die Option ist nur sinnvoll bei älteren Raspberries, die noch keinen USB Boot unterstützen.
 
 **Achtung:** Die Partition wird **neu formatiert**. Deshalb aufpassen, dass es die
 richtige Partition ist und dass die Partition groß genug ist, um die Partition

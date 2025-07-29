@@ -8,15 +8,14 @@ der Dokumentation:
   - Mit der Lupe startet eine Suchfunktion
   - Der Globus öffnet eine Sprachauswahl (de/en)
   - Der Drucker macht das Erwartete...
-  - GitHub-Seite des Dokumentationsprojektes
+  - *GitHub*-Seite des Dokumentationsprojektes
   - Mit dem Stift-Icon kann man sehr einfach direkt Änderungen
-    an der aktuellen Seite im github vorschlagen.
+    an der aktuellen Seite im *GitHub* vorschlagen.
 
 Eintippen eines `?` blendet eine kleine Tastatur-Navigationshilfe ein.
 ```
 
 [.status]: todo "Nutzungshinweise: Icons einbinden und umformulieren"
-[.status]: todo "Generell im gesamten Dokument: GitHub oder github?"
 [.status]: todo "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.?"
 
 
@@ -52,7 +51,7 @@ werden. Dazu gehören SD Karten, USB Sticks, USB Platten, SSDs und NVMe SSDs.
 Auch Netzlaufwerke, die per NFS, SMB, sshfs, ftpfs und webdav gemounted werden,
 können als Ziel für Backups genutzt werden.
 
-Ein Backup kann auf anderen Geräten zurückgespielt werden als das Gerät, von
+Ein Backup kann auf anderen Geräten zurückgespielt werden, als auf das Gerät, von
 dem ein Backup erstellt wurde. Zum Beispiel kann ein Backup einer SD Karte auf
 einer SSD zurückgespielt werden.
 
@@ -67,15 +66,15 @@ Der **normale Backupmodus** sichert nur die Boot- und Rootpartition.
 Der **partitionsorientierte Modus** sichert beliebig viele Partitionen.
 
 Folgende Linux Backuptools können genutzt werden:
-`dd` Backup, `tar` Backup, (beides auch gezipped), die immer ein Vollbackup erstellen
-und ein `rsync` Backup mit [Hardlinknutzung](how-do-hardlinks-work-with-rsync.md),
+`dd`und `tar`, beides auch gezipped, die immer ein Vollbackup erstellen
+und `rsync`mit [Hardlinknutzung](how-do-hardlinks-work-with-rsync.md),
 um relativ schnell ein Deltabackup zu erstellen.
 Die einzelnen Backuptypen sind im Detail [hier](backup-types.md) beschrieben.
 Dort befindet sich auch ein [Entscheidungsbaum](backup-types.md#decisiontree),
 um schnell den richtigen Backuptyp zu finden.
 
-Zur **Installation und Konfiguration** von raspiBackup gibt es einen
-[Installer](installation-in-5-minutes.md) mit dem menügesteuert, einfach und schnell die wichtigsten
+Zur **Installation und Konfiguration** von *raspiBackup* gibt es einen
+[Installer](installation-in-5-minutes.md), mit dem menügesteuert einfach und schnell die wichtigsten
 Optionen von *raspiBackup* konfiguriert werden können, vergleichbar mit `raspi-config`.
 Speziellere Einstellungen lassen sich in einer Konfigurationsdatei vornehmen.
 
@@ -84,21 +83,21 @@ um eigenen Code ausführen zu lassen.
 
 [.status]: todo "Das Word 'Plugpoints' sollte vielleicht durch etwas Geläufigeres ersetzt werden."
 
-Weiterhin existieren verschiedene [Scripte](https://github.com/framps/raspiBackup/tree/master/helper),
+Weiterhin existieren verschiedene [Scripts](https://github.com/framps/raspiBackup/tree/master/helper),
 die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt
 oder an eigene Anforderungen angepasst werden können.
 
 Am Ende eines Backuplaufes kann *raspiBackup*, wenn gewünscht, eine Benachrichtigung per eMail,
-Telegram, Slack oder Pushover senden.
+*Telegram*, *Slack* oder *Pushover* senden.
 
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
 [.status]: todo "Folgender Absatz steht eigentlich schon bei 'Kontaktmöglichkeiten' unten!? Könnte dann hier weg"
 
-Sollten Fragen zu *raspiBackup* aufkommen, können diese auf [github Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
+Sollten Fragen zu *raspiBackup* aufkommen, können diese auf [*GitHub* Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
 Fehler oder Probleme mit *raspiBackup* sollten auf
-[github Issues](https://github.com/framps/raspiBackup/issues) berichtet werden.
+[*GitHub* Issues](https://github.com/framps/raspiBackup/issues) berichtet werden.
 Wenn möglich sollte ein Beitrag in Englisch geschrieben werden.
 Deutsch wird aber auch akzeptiert.
 
@@ -110,7 +109,7 @@ Behandelte Themen sind
 
   * Vorstellung von *raspiBackup* mit seinen wichtigsten Fähigkeiten
   * Besuch der wichtigsten Webseiten zu *raspiBackup*
-  * Vorstellung von github als Fragen- und Probleminteraktionstool
+  * Vorstellung von *GitHub* als Fragen- und Probleminteraktionstool
   * Liveinstallation von *raspiBackup* mit dem menügesteuerten Installer
 
 Die dort verwendeten Slides können zum Lesen [hier](https://raspibackup.linux-tips-and-tricks.de/wp-content/uploads/simple-file-list/raspiBackup_de.pdf) heruntergeladen werden.
@@ -121,13 +120,13 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 ## Kontaktmöglichkeiten
 
 * Klicke [![GitHub](images/icons/GitHub-Mark-32px.png)](https://github.com/framps/raspiBackup/issues),
-  um auf GitHub Fragen oder Probleme zu *raspiBackup* als Issues zu erstellen.
+  um auf *GitHub* Fragen oder Probleme zu *raspiBackup* als "Issues" zu erstellen.
   Die Issues können gerne auch in Deutsch erstellt werden.
   So lassen sich Fragen und Problemberichte tracken und man bekommt eine Benachrichtigung über Antworten.
 
 * Klicke [![Facebook](images/icons/FB-f-Logo__blue_29.png)](https://www.facebook.com/raspiBackup/),
   um auf Facebook aktuelle Aktivitäten und Randinformationen zu *raspiBackup* zu erfahren.
-  Fragen zu *raspiBackup* sind auch möglich. Probleme bitte nur im [GitHub](https://github.com/framps/raspiBackup/issues) melden.
+  Fragen zu *raspiBackup* sind auch möglich. Probleme bitte nur im [*GitHub*](https://github.com/framps/raspiBackup/issues) melden.
 
 * Klicke [![Twitter](images/icons/Twitter-f-Logo__blue_29.png)](https://www.twitter.com/linuxframp),
   um *raspiBackup* auf Twitter zu folgen.
@@ -153,7 +152,7 @@ Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt we
 Eine Anerkennung des Entwicklungs- und Wartungsaufwands sowie Supports für
 *raspiBackup* ist gerne gesehen und wie folgt möglich:
 
-1. Werde ein [GitHub Sponsor](https://github.com/sponsors/framps) für *raspiBackup*
+1. Werde ein [*GitHub* Sponsor](https://github.com/sponsors/framps) für *raspiBackup*
 2. Paypal: Die eMail `framp att linux-tips-and-tricks dott de` ist PayPal bekannt
    und ein jeder kann mit einem PayPal Konto an diese eMail ein Trinkgeld geben.
 3. Keines von beidem: Einfach bei der o.g. eMail nachfragen. Es findet sich
@@ -175,14 +174,14 @@ In Anbetracht der großen Anzahl ist es leider nicht möglich, jeden einzelnen a
 Daher einfach: Vielen Dank an alle Unterstützer!
 
 **Besonderer Dank** geht an [simonz](https://github.com/rpi-simonz) für den Aufbau
-dieses *raspiBackup* Dokumentationsrepositories in GitHub, den Transfer aller
+dieses *raspiBackup* Dokumentationsrepositories in *GitHub*, den Transfer aller
 *raspiBackup* Seiten von [framps Homepage](https://www.linux-tips-and-tricks.de)
 in dieses Repository und die intensive Unterstützung bei der Überarbeitung
 der Seiten mit Rat und Tat sowie mit sehr hilfreichen Tools.
 
-## Lizenz und GitHub-Link
+## Lizenz und *GitHub*-Link
 
-Der Code von *raspiBackup* ist reiner *Bash* Code und steht unter der GPL auf [GitHub](https://github.com/framps/raspiBackup) zur Verfügung.
+Der Code von *raspiBackup* ist reiner *Bash* Code und steht unter der GPL auf [*GitHub*](https://github.com/framps/raspiBackup) zur Verfügung.
 
 [.status]: todo "Schreibweise von Bash im Fließtext??!"
 

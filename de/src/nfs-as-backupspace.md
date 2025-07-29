@@ -33,7 +33,7 @@ Fragen und Antworten zu *raspiBackup* zusammengestellt sind.
 ### Gemeinsamen nfs Ordner auf der Syno erstellen
 
 Im DSM, Systemsteuerung -> Gemeinsamer Ordner -> Erstellen erstellt man einen
-gemeinsamen Ordner z.B. mit dem Namen raspiBackups. Eine Papierkorb braucht man
+gemeinsamen Ordner z.B. mit dem Namen `raspiBackups`. Eine Papierkorb braucht man
 nicht. Die nfs Berechtigungen müssen wie folgt eingestellt werden (Hinweis:
 *raspiBackup* läuft als root). Hostname oder IP: Hostname oder IP des nfs
 Clients, z.B. 192.168.0.10. Privileg: lesen/schreiben, Squash: keine Zuordnung,
@@ -139,11 +139,12 @@ Raspberry Pi fstab Einträge für NFS3 und NFS4
 ```
 
 Anmerkung zum Mounten mit NFS4:
-Der Benutzer Jean hat auf der englischen Seite von raspiBackup beschrieben wie
+Der Benutzer Jean hat auf der englischen Seite von *raspiBackup* beschrieben, wie
 man das Backup auf ein Share welches mit NFS4 eingebunden ist durchführen kann.
-Konnte es bisher noch nicht testen. Hier der [Permalink](https://linux-tips-and-tricks.de/en/raspberry/303-pi-creates-automatic-backups-of-itself#comment-530) TODO: Link belassen?
+Konnte es bisher noch nicht testen. Hier der [Permalink](https://linux-tips-and-tricks.de/en/raspberry/303-pi-creates-automatic-backups-of-itself#comment-530).
+[.status]: todo "Permalink belassen?"
 
-Auszug aus der raspiBackup.conf abgelegt unter `/usr/local/etc/`
+Auszug aus der `raspiBackup.conf` abgelegt unter `/usr/local/etc/`
 
 ```
 cat /usr/local/etc/raspiBackup.conf

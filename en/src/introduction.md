@@ -84,7 +84,7 @@ Topics are
 
   * Present *raspiBackup* with its features
   * Present the most important webpages about *raspiBackup*
-  * Introduction of github as a question and problemreporting tools
+  * Introduction of *GitHub* as a question and problemreporting tools
   * Liveinstallation of *raspiBackup* with the menuedriven installer
 
 All slides used in the videos can be downloaded from [hier](https://www.linux-tips-and-tricks.de/de/downloads/raspibackup-de-pdf/download).
@@ -122,7 +122,7 @@ Any other communication channels like eMail which is quite prominent will be dis
 
 Any recognition of raspiBackup development- and maintenance effort and any support is greatly appreciated. There exist following donation alternatives:
 
-1) Become a [github sponsor](https://github.com/sponsors/framps)
+1) Become a [*GitHub* sponsor](https://github.com/sponsors/framps)
 2) Paypal: The eMail `framp att linux-tips-and-tricks dott de` is known by PayPal and everybody who owns a Paypal account can donate to this eMail.
 3) Neither one: Just contact me via eMail mentioned above and we will find a solution. For example I already received multiple times donations in a good old postal letter :-)
 
@@ -133,9 +133,9 @@ and created PRs to add new featutures. Ths list will be very long and I was very
 
 Thank you very much to everybody who helped to improve raspiBackup !
 
-## License and github link
+## License and *GitHub* link
 
-The code of *raspiBackup* is pure bash code and is available under the GPL license on [github](https://github.com/framps/raspiBackup).
+The code of *raspiBackup* is pure bash code and is available under the GPL license on [*GitHub*](https://github.com/framps/raspiBackup).
 
 ## Disclaimer
 

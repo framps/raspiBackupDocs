@@ -3,7 +3,7 @@
 Auf dieser Seite findet sich eine High Level Übersicht zu *raspiBackup*.
 
 Detailliertere Informationen finden sich hier in der weiteren Dokumentation
-und auf der [Github-Seite](https://github.com/framps/raspiBackup).
+und auf der [*GitHub*-Seite](https://github.com/framps/raspiBackup).
 
 **Mit *raspiBackup* erhältst Du schnell und sicher regelmäßig ein vollständiges Systembackup Deiner Raspberries und eine konfigurierbare Backuphistorie
 und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wieder mit einem alten Backupstand bootet**.
@@ -55,10 +55,10 @@ und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wied
     oder die Erinnerung daran, mal wieder einen Restoretest durchzuführen, um die
     Sicherungsintegrität zu testen.
 
-  - Unterstützte eMail-Clients: *mailx*/*mail*, *sendEmail*, *ssmtp* und *msmtp*
+  - Unterstützte eMail-Clients: *mailx*/*mail*, *sendEmail*, *ssmtp* und *msmtp*.
     Nicht unterstützte eMail-Clients können durch ein eMail-Plugin eingebunden werden.
 
-  - Einfacher Update von *raspiBackup* auf die aktuelle Version
+  - Einfaches Update von *raspiBackup* auf die aktuelle Version
   - Einfache Verteilung von neuen Scriptversionen auf eine größere Menge von Hosts
 
   - Alle Bootmodi werden unterstützt
@@ -85,26 +85,26 @@ und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wied
       - Generell jedes Device, welches unter Linux gemounted werden kann
 
   - Ein externes Rootfilesystem auf einer Platte oder einem USB Stick wird
-    automatisch beim normalen Backupmodus mitgesichert und restored bei tar
-    oder rsync Backup.
+    automatisch beim normalen Backupmodus mitgesichert und restored bei `tar`
+    oder `rsync` Backup.
 
   - Snapshots
 
     Zum Beispiel zu wichtigen Update- oder Installationszeitpunkten können
     Snapshots mit einer Beschreibung erstellt werden. Im Falle eines größeren
     Fehlers oder eines nicht mehr startenden Systems erlauben sie, dort wieder
-    aufzusetzen, ohne mit dem Update- oder der Neuinstallation wieder ganz von
+    aufzusetzen, ohne mit der Update- oder der Neuinstallation wieder ganz von
     vorne anfangen zu müssen.
 
   - Eine beliebige Anzahl von Backups aus der Vergangenheit können vorgehalten werden
 
-    Es wird nicht nur ein einzelnes Backup erstellt, sondern eine Backupversionshistorie.
+    Es wird nicht nur ein einzelnes Backup erstellt, sondern eine Backuphistorie.
     Entweder definiert man eine Anzahl von Backups, die vorgehalten werden sollen,
     oder man nutzt das *GVS*-Prinzip (in *raspiBackup* "Intelligente Rotationsstrategie"
     genannt)
 
   - Eine intelligente Backupstrategie steht zur Verfügung
-    (Backups der letzen 7 Tage, der letzten 4 Wochen, der letzten 12 Monate und der letzten n Jahre werden aufgehoben)
+    (Backups der letzten 7 Tage, der letzten 4 Wochen, der letzten 12 Monate und der letzten n Jahre werden aufgehoben)
 
   - Einfache Wiederherstellung einer Sicherung
 
@@ -140,15 +140,15 @@ und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wied
 
 [.status]: todo "Der Hinweis auf Youtube passt hier irgendwie nicht"
 
-  - Hilfs- und Beispielscripte
+  - Hilfs- und Beispielscripts
 
     Verschiedene Hilfs- und Beispielscripts stehen zur Verfügung.
 
-    Z.B. wie *pishrink* genutzt werden kann, um eine `dd` Sicherung noch zu verkleinern
+    Zum Beispiel, wie *pishrink* genutzt werden kann, um eine `dd` Sicherung noch zu verkleinern
     oder wie parallel ein Clone erstellt werden kann, um ein aktuelles, jederzeit
-    einsetzbares geclontes Bootmedium zu haben. Und vieles, vieles mehr.
+    einsetzbares Bootmedium zu haben. Und vieles, vieles mehr.
 
-    Ein Beispielscript hilft, um vor und nach der Backup weitere Aktionen vorzunehmen,
+    Ein Beispielscript hilft, um vor und nach dem Backup weitere Aktionen vorzunehmen,
     wie z.B. das Mounten und Unmounten des Backupspaces.
 
   - Erweiterungspunkte

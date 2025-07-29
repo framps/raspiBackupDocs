@@ -2,6 +2,8 @@
 
 <!-- toc -->
 
+---
+
 <a name="faq0"></a>
 ### 0) Wie entstand *raspiBackup*?
 
@@ -15,7 +17,7 @@ ein dd Backup ja immer die gesamte SD Karte sichert obwohl nur Bruchteile
 davon benutzt werden, ein tar Backup automatisch erstellte. Zum Schluss
 wurde dann ein rsync Backup implementiert um durch die Hardlinks Backupzeit
 und -space zu sparen. Nachdem imer mal wieder eine Wiederherstellung
-inotwendig war und alles gut klappte dachte *framp* dass das Script
+notwendig war und alles gut klappte dachte *framp* dass das Script
 auch anderen Raspberryfreunden hilfreich sein könnte und publizierte
 *raspiBackup*. Siehe auch [10 Jahre *raspiBackup*](10-years-raspibackup.md)
 
@@ -29,11 +31,11 @@ und nicht was sich noch im Hauptspeicher befindet.
 Ein Systemstop ist leider nicht regelmäßig und automatisch
 vornehmbar. Wenn man alle aktiven Services wie mysql, samba, nfs,
 Owncloud, Webserver und alle anderen aktiven Services immer vor dem Backup
-stoppt um keine Dateninkonsistenzen zu erzeugen kann das Backup zum
-Wiederherstellen der Raspi genutzt werden. Stoppt man die Servies nicht
-besteht eine hohe Wahrscheinlichkeit dass das Backup inkonsistent werden
-wird. Dazu gibt es die Parameter `-a` und `-o` um die entsprechenden Stop- und
-Startbefehle vor bzw nach dem Backup auszuführen. Siehe auch [FAQ18](#faq18) dazu.
+stoppt, um keine Dateninkonsistenzen zu erzeugen, kann das Backup zum
+Wiederherstellen der Raspi genutzt werden. Stoppt man die Services nicht,
+besteht eine hohe Wahrscheinlichkeit, dass das Backup inkonsistent wird.
+Dazu gibt es die Parameter `-a` und `-o`, um die entsprechenden Stop- und
+Startbefehle vor bzw. nach dem Backup auszuführen. Siehe auch [FAQ18](#faq18) dazu.
 
 Mit dem Installer können Systemd Services ausgewählt werden, die gestoppt
 und nach dem Backup wieder gestartet werden sollen und die Parameter für
@@ -44,16 +46,18 @@ Option `-a` und Option `-o` werden entsprechend gesetzt.
 
 *raspiBackup* kann jedes Backup wieder zurück gespielt werden. (Siehe dazu
 [hier](restore.md) die Details). Als Windowsbenutzer kann man
-entsprechende Windowstools nutzen um dd Backups wiederherzustellen. Für andere
+entsprechende Windowstools nutzen, um dd Backups wiederherzustellen. Für andere
 Backuptypen wie tar oder rsync ist ein Linux notwendig. Generell wird
+
+[.status]: todo "Hier fehlt wohl ein Teilsatz!?"
 
 Allerdings kann man dazu die Raspberry benutzen: Man bespielt eine neue SD
 Karte mit RaspbianOS und kopiert darauf *raspiBackup*. Dann schließt man
-das Gerät auf welches das Backup zurückgespielt werden soll
+das Gerät, auf welches das Backup zurückgespielt werden soll,
 sowie das Medium mit dem Backup an die Raspberry an.
-Danach ruft man *raspiBackup* auf und läßt ein gewünschtes Backup auf das
-Gerät zurückschreiben. Anschliessend fährt man das System runter,
-legt idas Gerät mit dem zurückgespielten Backup ein und startet die
+Danach ruft man *raspiBackup* auf und lässt ein gewünschtes Backup auf das
+Gerät zurückschreiben. Anschließend fährt man das System runter,
+legt das Gerät mit dem zurückgespielten Backup ein und startet die
 Raspberry wieder.
 
 
@@ -82,11 +86,11 @@ die Vor- und Nachteile der jeweiligen Backupmethoden nachgelesen werden.
 ### 5)  Kann man die Sicherung auch ohne *raspiBackup* wiederherstellen?
 
 Das ist eine Grundvoraussetzung für *raspiBackup* gewesen: Es muss möglich
-sein das Backup mit entsprechenden Linuxkenntnissen zu Fuß restoren zu
+sein, das Backup mit entprechenden Linuxkenntnissen zu Fuß restoren zu
 können.
 
 Die Sicherung legt Dateien an, die die lesbaren Ausgaben von den Linux
-Befehlen sfdisk, blkid und fdisk von dem System enhält. Damit läßt sich
+Befehlen sfdisk, blkid und fdisk von dem System enhält. Damit lässt sich
 zuerst die Partitionsstruktur des Backups mit den entsprechenden Linuxtools
 wiederherstellen. Danach kann man die Partitionsbackups mit den
 entsprechenden Linuxtools wieder auf die Partitionen zurückspielen.
@@ -111,7 +115,7 @@ Beim partitionsorientierten Backupmodus wird die letzte Partition
 entsprechend angepasst.
 
 Mit der Option `-0` (Null) wird keine Partitionierung des neuen Gerätes
-vorgenommen sondern die existierende Partitionierung ides gesicherten
+vorgenommen sondern die existierende Partitionierung des gesicherten
 Systems genutzt.
 Man hat damit vollständige Kontrolle über die Größe der Wiederhergestellten
 Partitionen. D.h. man kann dadurch vor dem Restore genau festlegen, wie
@@ -194,9 +198,9 @@ oder -probleme siehe [FAQ38](#faq38) und [FAQ47](#faq47).
 
 Es gibt verschiedene Optionen:
 
-- In [GitHub](https://github.com/framps/raspiBackup) können Problemberichte (Issues) erstellt werden bei Fragen oder
+- In [*GitHub*](https://github.com/framps/raspiBackup) können Problemberichte (Issues) erstellt werden bei Fragen oder
   Problemen. Das ist meine präferierte Option. Dazu ist eine einmalige
-  Registrierung notwendig. Diese sowie die Benutzung von github ist kostenlos.
+  Registrierung notwendig. Diese sowie die Benutzung von *GitHub* ist kostenlos.
 
 - Im Raspberry Forum gibt es ein [Unterforum zu Backups](https://forum-raspberrypi.de/forum/board/153-backup/), wo Fragen zu
   *raspiBackup* gestellt und Probleme berichtet werden können. *framp* wird über
@@ -378,8 +382,8 @@ werden kann. Allerdings gibt es ein paar Dinge zu beachten:
   unterstützt keine Hardlinks. Eine Alternative ist NFS. Werden keine
   Hardlinks unterstützt kann rsync nicht genutzt werden.
 
-- FAT32 kann nur Dateien bis zu 4GB speichern. Ein dd Backup wird so gross
-  wie die SD Karte (Ausser es wird die Konfigurationsoption
+- FAT32 kann nur Dateien bis zu 4GB speichern. Ein dd Backup wird so groß
+  wie die SD Karte (Außer es wird die Konfigurationsoption
   DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY benutzt) und somit i.d.R.
   größer als 4GB. Selbiges trifft auf das tar Backup zu was auch sehr
   schnell größer als 4GB wird. Eine Alternative dazu ist NTFS.
@@ -416,25 +420,25 @@ Option ist nur sinnvoll, wenn man einen sehr kleinen Backupspace hat.
 ### 22) Wie kann man verschiedene Backupkonfigurationen in verschiedenen Backupläufen benutzen?
 
 Die Konfigurationsparameter von *raspiBackup* werden in folgender Reihenfolge
-eingelesen und wirksam. Dabei können spätere Dateien bzw Optionen vorherige
+eingelesen und wirksam. Dabei können spätere Dateien bzw. Optionen vorherige
 Optionen überschreiben.
 
-1. /usr/local/etc/raspiBackup.conf
-1. ./.raspiBackup.conf (aktuelles Verzeichnis)
-1. ~/.raspiBackup.conf (Home Verzeichnis)
-1. Die optionale Konfigurationdatei, die mit der Option -f angegeben wurde
+1. `/usr/local/etc/raspiBackup.conf`
+1. `./.raspiBackup.conf` (aktuelles Verzeichnis)
+1. `~/.raspiBackup.conf` (Home Verzeichnis)
+1. Die optionale Konfigurationsdatei, die mit der Option `-f` angegeben wurde
 1. Aufrufparameter
 
 
 <a name="faq23"></a>
 ### 23) Ich möchte den Backupfortschritt verfolgen. Gibt es eine Option um einen Fortschrittsbalken zu erhalten?
 
-Es gibt dazu die Option -g fuer dd, tar und rsync. Die Option sollte nur
+Es gibt dazu die Option -g für dd, tar und rsync. Die Option sollte nur
 genutzt werden wenn man *raspiBackup* manuell startet.
 
 
 <a name="faq24"></a>
-### 24) raspiBackup meldet einen Fehler `ACL_TYPE_ACCESS, Operation not supported` bei der Benutzung des Backuptypen rsync
+### 24) *raspiBackup* meldet einen Fehler `ACL_TYPE_ACCESS, Operation not supported` bei der Benutzung des Backuptypen rsync
 
 Die Fehlermeldung sieht in etwas wie folgt aus:
 
@@ -443,18 +447,18 @@ Die Fehlermeldung sieht in etwas wie folgt aus:
 rsync: set_acl: sys_acl_set_file(media/pi, ACL_TYPE_ACCESS): Operation not supported (95)
 ```
 
-Die Ursache liegt darin, dass nfs version 4 mit rsync keine Posix ACLs
+Die Ursache liegt darin, dass nfs Version 4 mit rsync keine Posix ACLs
 unterstützt. Diese sind aber auch in 99% der Fälle nicht notwendig. Die
-folgende Zeile in der /etc/mke2fs.conf
+folgende Zeile in der `/etc/mke2fs.conf`
 
 ```
 default_mntopts = acl,user_xattr
 ```
 
-bewirkt dass jeder mount immer die acl für eine Partition einschaltet. Das
+bewirkt, dass jeder mount immer die acl für eine Partition einschaltet. Das
 trifft dann auch für die Backuppartition von *raspiBackup* zu, die
-standardmäßig auf /backup gemounted wird. Somit wird immer versucht acl
-Daten zu schreiben was von rsync nicht unterstützt wird.
+standardmäßig auf /backup gemounted wird. Somit wird immer versucht, acl
+Daten zu schreiben, was von rsync nicht unterstützt wird.
 
 Hinweis: Synology unterstützt keine ACLs mit NFSv3 as of 13.5.2022.
 
@@ -468,7 +472,7 @@ Mögliche Lösungen:
    ```
    DEFAULT_RSYNC_BACKUP_OPTIONS="-aHx --delete --force --sparse"
    ```
-   (kein grosses A) in `/usr/local/etc/raspiBackup.conf`
+   (kein großes A) in `/usr/local/etc/raspiBackup.conf`
    ein und damit sichert *rsync* keine ACLs mehr.
 
 1. Nutze *tar* und nicht *rsync*
@@ -485,7 +489,7 @@ Mögliche Lösungen:
 In Bullseye hat Debian persistentes Journaling eingeführt und somit
 existiert /var/log/journal mit ACLs auf dem System. Wer *raspiBackup* Release
 0.6.6 oder früher nutzt muss mindestens auf Release 0.6.6.1 upgraden oder
-den Workaround, der auf Github in [Issue 393](https://github.com/framps/raspiBackup/issues/393) beschrieben ist, anwenden.
+den Workaround, der auf *GitHub* in [Issue 393](https://github.com/framps/raspiBackup/issues/393) beschrieben ist, anwenden.
 
 
 <a name="faq25"></a>
@@ -501,8 +505,8 @@ das metadata_csum entfernen. Dann den Restore mit *raspiBackup* durchführen.
 <a name="faq26"></a>
 ### 26) Wieso bekommen ich die die Meldung `??? RBK0160E: Ziel /dev/sda mit xx GiB ist kleiner als die Backupquelle mit yy GiB` obwohl beide SD Karten gleich gross sind?
 
-SD Karten die mit einer bestimmten Grösse angegeben sind (z.B. 16GB) sind
-trotzdem unterschiedlich gross. Mit dem Befehl `sudo fdisk -l /dev/mmcblk0`
+SD Karten die mit einer bestimmten Größe angegeben sind (z.B. 16GB) sind
+trotzdem unterschiedlich groß. Mit dem Befehl `sudo fdisk -l /dev/mmcblk0`
 erhält man z.B. folgende Ausgabe die einem genau die Größe mitteilt:
 
 ```
@@ -513,11 +517,11 @@ Bei einer anderen ebenfalls 16GB grossen SD Karte erhält man z.B.
 Disk /dev/mmcblk0: 15.9 GB, 15931539456 bytes
 ```
 
-D.h. man kann zwar das erste Image auf die zweite SD Karte bringen aber nicht umgekehrt.
+Man kann also das erste Image auf die zweite SD Karte bringen aber nicht umgekehrt.
 
 Lösung:
 
-- Eine grössere SD Karte nehmen
+- Eine größere SD Karte nehmen
 - Das Quellimage verkleinern. Das Tool pishrink eignet sich dazu.
 - Das Backup mit dem Parameter
   DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY erstellen (Siehe dazu
@@ -621,12 +625,12 @@ Unterverzeichnisse überwacht werden.
     [hier](#faq59)
 
 <a name="faq33"></a>
-### 33) Ich habe einen Cubieboard, Banana Pi, Odroid, Hummingboard, oder Beagle Board. Kann raspiBackup diese auch sichern?
+### 33) Ich habe einen Cubieboard, Banana Pi, Odroid, Hummingboard, oder Beagle Board. Kann *raspiBackup* diese auch sichern?
 
 Prinzipiell sollte das gehen bzw. geht es schon für bestimmte nicht
 Raspberry Hardware. Einfach ausprobieren. *raspiBackup* wird aber [nur für
 RaspbianOS und Raspberry HW](supported-hardware-and-software.md) unterstützt. D.h. wenn es funktioniert, sei
-glücklich. Wenn es nicht funktioniert, frage aber nicht nach Support. :-) 
+glücklich. Wenn es nicht funktioniert, frage aber nicht nach Support. :-)
 
 Beim Aufruf muss dann noch die Option `--unsupportedEnvironment` mitgegeben werden.
 
@@ -636,8 +640,8 @@ Beim Aufruf muss dann noch die Option `--unsupportedEnvironment` mitgegeben werd
 
 SD Karten haben zwar eine bestimmte Größe wie z.B. 16GB aber sie SD Karten
 haben nie genau diese Größe sondern es gibt kleine Abweichungen nach unten
-und oben. Da das dd Backup genauso gross ist wie die SD Karte kann das dd
-Backup nciht zurueckgeschrieben werden wenn man eine geringfuegig kleinere
+und oben. Da das dd Backup genauso groß ist wie die SD Karte kann das dd
+Backup nicht zurückgeschrieben werden wenn man eine geringfügig kleinere
 SD Karte erwischt. Deshalb sollte man bei einem DD Backup die letzte
 Partition immer etwas kleiner als maximal möglich erstellen. Siehe dazu
 auch [FAQ16](#faq16). Man kann aber mit [pishrink](https://github.com/Drewsif/PiShrink) das dd Image verkleinern und danach
@@ -659,7 +663,7 @@ Option -R nutzen.
   - 103 - *raspiBackup* wurde mit CTRLC beendet.
   - 105 - Beim Stoppen von Services gab es Fehler
   - 106 - Beim Starten von Services gab es Fehler
-  - 107 - Ein Parameter in einer Option ist fehlerhalft
+  - 107 - Ein Parameter in einer Option ist fehlerhaft
   - 108 - Es werden Dateien nicht gefunden
   - 109 - Das verwendete Linux Backupprogramm dd, tar oder rsync hat einen Fehler beim Backup bekommen
   - 110 - Ein Link zu einer Datei kann nicht erstellt werden
@@ -668,13 +672,13 @@ Option -R nutzen.
   - 114 - Ein dd Image kann nicht erstellt werden
   - 115 - Benötigte Partitionen wurden nicht gefunden
   - 116 - Der Restore wurde vom Benutzer abgebrochen
-  - 117 - Das verwendete Linkx Backupprogramm dd, tar oder rsync hat einen Fehler beim Wiederherstellen bekommen
+  - 117 - Das verwendete Backupprogramm dd, tar oder rsync hat einen Fehler beim Wiederherstellen bekommen
 
   - 118 - Angegebene Geräte wurden nicht gefunden
   - 119 - Ein Verzeichnis kann nicht angelegt werden
   - 120 - Linux Tools fehlen die von *raspiBackup* benötigt werden
   - 121 - Es konnte keine gültige Bootpartition gefunden werden
-  - 122 - Die Extension BEFOR_START_SERVICES endete fehlerhaft
+  - 122 - Die Extension BEFORE_START_SERVICES endete fehlerhaft
   - 123 - Die Extension BEFORE_STOP_SERVICES endete fehlerhaft
   - 124 - Die Emailextension endete fehlerhaft
   - 130 - A file operation failed (chmod, mv, ...)
@@ -683,14 +687,14 @@ Option -R nutzen.
   - 133 - Die RESTORE_EXTENSION endet fehlerhaft
   - 134 - Die BACKUP_EXTENSIONa endet Fehlerhaft
   - 135 - Ein Download einer Datei endet fehlerhaft
-  - 136 - Ein ungültiges inicht von *raspiBackup* erstelltes Backupverzeichnis wurde angegeben
-  - 137 - Ein ungültiges Restoregerät wurde angegeben 
+  - 136 - Ein ungültiges nicht von *raspiBackup* erstelltes Backupverzeichnis wurde angegeben
+  - 137 - Ein ungültiges Restoregerät wurde angegeben
   - 138 - Ein ungültiges Bootgerät wurde angegeben
   - 138 - USBMOUNT detected
   - 140 - An error occured during cleanup
   - 143 - Overlayfilesystem entdeckt
   - 144 - Erstellung des Backupordners auf der Backuppartition am Ende des Backup endet fehlerhaft
-  - 145 - Resize einer Partition endet fehlerhaft 
+  - 145 - Resize einer Partition endet fehlerhaft
   - 147 - UUID Update endet fehlerhaft
 
 <a name="faq37"></a>
@@ -707,12 +711,12 @@ Option -R nutzen.
 <a name="faq38"></a>
 ### 38) Wo kann ich Fragen stellen und Hilfe bekommen zu Linuxfragen und -problemen die im eigentlichen Sinne nichts mit *raspiBackup* zu tun haben?
 
-*raspiBackup* wurde entwickelt um auch Linux Einsteigern das Sichern ihrer
-Raspberry schnell möglichst einfach zu iermöglichen. Allerdings sind dazu trotzdem gewisse
+*raspiBackup* wurde entwickelt, um auch Linux Einsteigern das Sichern ihrer
+Raspberry schnell möglichst einfach zu ermöglichen. Allerdings sind dazu trotzdem gewisse
 Linuxkenntnisse notwendig. Häufige Probleme mit *raspiBackup* sind bei Linux
 Einsteigern einfache Linuxprobleme. Solche Fragen werden nicht in den
 Kontaktkanälen beantwortet. Dazu gibt es Foren mit
-kompetenten Mitgliedern die gerne helfen. Eine empfehlenswertes ist das
+kompetenten Mitgliedern, die gerne helfen. Eine empfehlenswertes ist das
 [deutsche Raspberry Pi Forum](https://forum-raspberrypi.de/forum/).
 Ein anderes ist das [englische Raspberryforum](https://forums.raspberrypi.com/).
 
@@ -724,39 +728,39 @@ Siehe [FAQ41](#faq41)
 <a name="faq40"></a>
 ### 40) Wie kann ich meine Konfiguration nach einem Versionsupdate auf den neuesten Stand bringen?
 
-Dieses wird von raspiBackup beim Upgrade automatisch erledigt. Siehe dazu
+Dieses wird von *raspiBackup* beim Upgrade automatisch erledigt. Siehe dazu
 [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md).
 
 <a name="faq41"></a>
 ### 41) Wo finde ich das Debuglog von raspiBackup?
 
-Das Debuglog heisst *raspiBackup*.log beim Backup und *raspiBackup*.logr beim
+Das Debuglog heißt `raspiBackup.log` beim Backup und `raspiBackup.logr` beim
 Restore.
 
-- Wenn *raspiBackup* erfolgreich endet steht das Logfile im Backupverzeichnis
-- Wenn *raspiBackup* nicht erfolgreich endet steht das Logfile im Heimverzeichnis des Aufrufers
-    - Wenn *raspiBackup* über die Konsole gestartet wurde steht das Logfile entweder in /home/<user> oder /root
-    - Wenn *raspiBackup* über Cron oder systemd im Hintergrund gestartet wurde steht das Logfile in /root
-- Wenn *raspiBackup* unerwartet endet oder mit kill gestoppt wurde findet sich das Logfile in /tmp
-- Das Logfile beim Restore steht entweder in /home/<user> oder /root
+- Wenn *raspiBackup* erfolgreich endet, steht das Logfile im Backupverzeichnis
+- Wenn *raspiBackup* nicht erfolgreich endet, steht das Logfile im Heimverzeichnis des Aufrufers
+    - Wenn *raspiBackup* über die Konsole gestartet wurde, steht das Logfile entweder in `/home/<user>` oder `/root`
+    - Wenn *raspiBackup* über Cron oder systemd im Hintergrund gestartet wurde, steht das Logfile in `/root`
+- Wenn *raspiBackup* unerwartet endet oder mit kill gestoppt wurde, findet sich das Logfile in `/tmp`
+- Das Logfile beim Restore steht entweder in `/home/<user>` oder `/root`
 
 <a name="faq42"></a>
 ### 42) Wo können die /boot und /root Partition liegen ?
 
-*raspiBackup* unterstützt folgende Konfigurationen m normalen
-Backupmodus wobei immer nur die /boot
-und /root gesichert werden. Weitere Partitionen werden ignoriert.
+*raspiBackup* unterstützt folgende Konfigurationen im normalen
+Backupmodus, wobei immer nur die `/boot`
+und `/root` gesichert werden. Weitere Partitionen werden ignoriert.
 
-- /boot und /root auf SD Karte oder einem anderen Gerät (Platte, SSD, ...)
-- /boot auf SD Karte und /root auf eine anderen Gerät (Platte, SSD, ...)
-  Dieses ist notwendig wenn eine ältere Raspberry vorliegt die noch
+- `/boot` und `/root` auf SD Karte oder einem anderen Gerät (Platte, SSD, ...)
+- `/boot` auf SD Karte und `/root` auf eine anderen Gerät (Platte, SSD, ...)
+  Dieses ist notwendig, wenn eine ältere Raspberry vorliegt, die noch
   keine USB Boot unterstützt, man aber trotzdem die Rootpartition nicht mehr
   auf der SD Karte haben möchte.
 
 <a name="faq43"></a>
 ### 43) Wie finde ich alle Dokumentationsseiten zu *raspiBackup* bzw Seiten zu einem speziellen Thema?
 
-Initial befand sich alle Doku zu raspiBackup auf
+Initial befand sich alle Doku zu *raspiBackup* auf
 [dieser Seite](https://www.linux-tips-and-tricks.de).
 
 Jetzt befindet sich alles auf dieser Webseite.
@@ -767,13 +771,13 @@ Jetzt befindet sich alles auf dieser Webseite.
 Siehe [FAQ49](#faq49)
 
 <a name="faq45"></a>
-### 45) Wie kann ich Optione temporär im Aufruf an- und ausschalten?
+### 45) Wie kann ich Optionen temporär im Aufruf an- und ausschalten?
 
 Viele Optionen dienen dazu etwas ein- oder auszuschalten. Normalerweise
-iwird die die Optionen einmal in der Konfigurationsdatei definiert und gut ist.
+wird die die Optionen einmal in der Konfigurationsdatei definiert und gut ist.
 Möchte man aber kurzzeitig Optionen der Konfigurationsdatei überschreiben
 kann man die Option mit einem `+` für einschalten und `-` für ausschalten
-benutzen. Beispiel: Hat man standardmässig das Zippen von dd Backups
+benutzen. Beispiel: Hat man standardmäßig das Zippen von dd Backups
 eingeschaltet kann man das temporär mit der Option `-z-` ausschalten.
 
 <a name="faq46"></a>
@@ -783,7 +787,7 @@ Siehe dazu [diesen Artikel](why-shouldn-t-you-use-dd-as-backup-type.md).
 
 
 <a name="faq47"></a>
-### 47) Wo bekomme ich Hilfe bei reinen Linuxfragen oder -problemen die nichts mit *raspiBackup* im eigentlichen Sinne zu tun haben?
+### 47) Wo bekomme ich Hilfe bei reinen Linuxfragen oder -problemen, die nichts mit *raspiBackup* im eigentlichen Sinne zu tun haben?
 
 Siehe [FAQ38](#faq38)
 
@@ -793,7 +797,7 @@ Siehe [FAQ38](#faq38)
 Technisch geht das aber das Ergebnis ist alles andere als ein laufendes
 System. Deshalb bricht *raspiBackup* sofort ab wenn man das versucht.
 Ein Restore muss immer auf eine weitere SD Karte oder ein weiteres Gerät,
-weches an die Raspberry angeschlossen isti, vorgenommen werden.
+welches an die Raspberry angeschlossen ist, vorgenommen werden.
 
 <a name="faq49"></a>
 ### 49) Mein Backup welches ich auf eine SD Karte restored habe startet nicht. Warum nicht?
@@ -802,7 +806,7 @@ In 99.9% der Fälle ist die SD Karte auf die restored wird defekt. Wenn man
 auf eine andere, möglichst neue, SD Karte restored tritt das Problem
 üblicherweise nicht mehr auf. Es gibt auch die Option -C die man beim
 Restore nutzen kann um die SD Karte auf Bad Blocks beim Formatieren zu
-prüfen. Dadurch dauert aber der Restoreprozess wesentlich laenger. Siehe
+prüfen. Dadurch dauert aber der Restoreprozess wesentlich länger. Siehe
 auch [diese Seite](why-shouldn-t-you-use-dd-as-backup-type.md) zu Problemen eines dd Backups.
 
 
@@ -816,20 +820,20 @@ rsync dauert der erste Backup länger da das erste Backup ein Vollbackup
 ist. Erst die folgenden Backups sind nur noch inkrementelle Backups und
 deshalb i.d.R. schneller.
 
-Es kann vorkommen dass der Backup- oder Restorelauf nicht endet bzw extrem
-lange dauert. Das liegt i.d.R. daran dass Fehler bei der Sicherung
-auftreten - Schreib- oder Lesefehler die von den  genutzen Linux
-Backuptools dd, tar oder rsync gemeldet werden.
+Es kann vorkommen, dass der Backup- oder Restorelauf nicht endet bzw. extrem
+lange dauert. Das liegt i.d.R. daran, dass Fehler bei der Sicherung
+auftreten - Schreib- oder Lesefehler, die von den  genutzten Linux
+Backuptools `dd`, `tar` oder `rsync` gemeldet werden.
 
-Bei rsync kann es auch daran liegen dass ACLs gesichert werden sollen aber
+Bei `rsync` kann es auch daran liegen, dass ACLs gesichert werden sollen, aber
 dazu die Berechtigung nicht existiert oder ACLs nicht von der
-Backuppartition unterstützt werden. Letzteres trifft zu für NFS und SMB 
+Backuppartition unterstützt werden. Letzteres trifft zu für NFS und SMB
 gemountete Backuppartitionen. Siehe dazu [FAQ24](#faq24).
 
-Falls mount Option sync genutzt wird sollte diese durch die Option async
+Falls die mount Option `sync` genutzt wird, sollte diese durch die Option `async`
 ersetzt werden.
 
-Option --timestamps hilft den Schritt zu finden wo *raspiBackup* so lange
+Option --timestamps hilft den Schritt zu finden, wo *raspiBackup* so lange
 braucht. Danach hilft das Debuglog weiter.
 
 
@@ -846,16 +850,16 @@ pv erklärt.
 
 
 <a name="faq52"></a>
-### 52) Wie kann ich eine Testversion oder einen temporären Fix von aus dem github downloaden und ausführen?
+### 52) Wie kann ich eine Testversion oder einen temporären Fix von aus dem *GitHub* downloaden und ausführen?
 
-Dazu gibt es ein [Script bei GitHub](https://github.com/framps/raspiBackup/blob/master/scripts/raspiBackupDownloadFromGit.sh). Dieses muss man wie folgt aufrufen:
+Dazu gibt es ein [Script bei *GitHub*](https://github.com/framps/raspiBackup/blob/master/scripts/raspiBackupDownloadFromGit.sh). Dieses muss man wie folgt aufrufen:
 
 ```
 curl -s https://raw.githubusercontent.com/framps/raspiBackup/master/scripts/raspiBackupDownloadFromGit.sh | sudo bash -s -- <Branchname>
 ```
 
-Dabei muss <Branchname> der github Branch sein von dem man sich
-raspiBackup.sh downloaden möchte. Danach ruft man diese *raspiBackup* Version
+Dabei muss <Branchname> der *GitHub* Branch sein, von dem man sich
+`raspiBackup.sh` downloaden möchte. Danach ruft man diese *raspiBackup* Version
 wie folgt auf (**Achtung:** Auf den führenden Punkt achten !)
 
 ```
@@ -925,14 +929,14 @@ ExecStart=/usr/local/bin/raspiBackup.sh --unsupportedEnvironment.
 *raspiBackup* meldet wenn eine neue Release oder eine Beta verfügbar ist. Ein
 Update wird mit der Option `-U` gestartet. Mit der Option `-V` kann man wieder
 auf eine vorhergehende Release zurückgehen. Betas werden oft mehrere Male
-ergneuert. Um dann den neuesten Stand zu installieren müssen die Optionen
+erneuert. Um dann den neuesten Stand zu installieren müssen die Optionen
 `-U` und `-S` genutzt werden.
 
 
 <a name="faq58"></a>
 ### 58) Was muß ich beachten wenn ich mit rsync auf eine nfs gemountete Backuppartition sichern will?
 
-Die Partition muss vom NFS Server mit no_root_squash exportiert werden.
+Die Partition muss vom NFS Server mit `no_root_squash` exportiert werden.
 
 
 <a name="faq59"></a>

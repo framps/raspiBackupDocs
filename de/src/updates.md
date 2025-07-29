@@ -10,7 +10,7 @@ dem Parameter `-V` kann jederzeit wieder die vorherige Version aktiviert werden.
 
 Bei kleinen Änderungen wird kein neues Release zur Verfügung gestellt und man wird auch
 nicht auf die Änderung hingewiesen. Mit den Optionen `-U -S` wird immer der aktuelle Code
-heruntergeladen und aktiviert. So ein Update ist i.d.R. nicht notwendig und sollte nur vorgenommen werden
+heruntergeladen und aktiviert. So ein Update ist i.d.R. nicht notwendig und sollte nur vorgenommen werden,
 wenn dazu explizit aufgefordert wird.
 
 **Hinweis**:
