@@ -15,12 +15,12 @@ Following data is read for this:
   - horizontal rules ---
 
 Lists are only allowed to have links in it.
-All links are title of the chapter and the name of the correspondig file.
+Any link provides the title of a chapter and the name of the corresponding file.
 
 That allows for some tricks:
 
 1.) Comments are possible in this file. E.g.:
-    a.) This leading note. Additionally the comment is marked up as codeblock.
+    a.) This leading note. Additionally the comment is marked up as code block.
         So the list above won't be parsed as such.
     b.) "TODO marker" or similar.
 
@@ -51,8 +51,8 @@ That allows for some tricks:
         - [Backup directory structure](backup-directory-structure.md)
         - [Rotation strategy](smart-recycle.md)
         - [Snapshots](snapshots.md)
-        - [Configuration update when upgradung to e new version](configuration-update-when-upgrading-to-a-new-version.md)
-       - [Configuration examples](email-configuration-examples.md)
+        - [Configuration update when upgrading to a new version](configuration-update-when-upgrading-to-a-new-version.md)
+        - [Configuration examples](email-configuration-examples.md)
             - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
             - [exim4 configuration](exim4-configuration.md)
             - [nullmailer configuration](nullmailer-configuration.md)
@@ -63,17 +63,16 @@ That allows for some tricks:
         - [Manual tgz restore](manual-restore-of-a-tgz-backup.md)
 
     - [General](more-questions-and-answers.md)
-        - [Which filesystem can be used on the backup partitioni?](which-filesystem-can-be-used-on-the-backup-partition.md)
+        - [Which filesystem can be used on the backup partition?](which-filesystem-can-be-used-on-the-backup-partition.md)
         - [How do hardlinks work with rsync?](how-do-hardlinks-work-with-rsync.md)
         - [Why shouldn't you use dd as backup type?](why-shouldn-t-you-use-dd-as-backup-type.md)
-        - [How to create a cold standby clone with raspiBackupi?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
-        - [Migrate the Raspberry OS from sd-card to ssd, usb-disk or usb-pen-drive](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
+        - [How to create a cold standby clone with raspiBackup?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
+        - [Migrate the Raspberry OS from SD-card to SSD, USB-disk or USB-pen-drive](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
         - [How can I install and test the beta version?](how-can-i-install-and-test-the-beta-version.md)
         - [Is an external root partition supported?](external-root-partition.md)
 
-
-- [Installation and first backup](installation.md) 
-    - [Quickstart - Installation in 5 minutes](installation-in-5-minutes.md)
+- [Installation and first backup](installation.md)
+    - [Quickstart-Installation in 5 minutes](installation-in-5-minutes.md)
     - [Manual installation and configuration](manual-installation-and-configuration.md)
     - [Statistics](statistics.md)
     - [Updates](updates.md)
@@ -101,18 +100,18 @@ That allows for some tricks:
 - [Backup targets](backup-targets.md)
     - [NFS as backupspace](nfs-as-backupspace.md)
     - [SMB as backupspace](smb-as-backupspace.md)
-    - [AVM Fritzbox as backupspace](avm-fritzbox-as-backupspace.md)
+    - [AVM FRITZ!Box as backupspace](avm-fritzbox-as-backupspace.md)
     - [WEBDAV as backupspace](webdav-as-backupspace.md)
 
-- [Tips for homeautomation](tips-homeautomation.md)
+- [Tips for home automation](tips-homeautomation.md)
 
 - [Helpful links regarding backup](helpful-links.md)
 - [Other backup tools](other-raspberry-backup-tools.md)
 
 - [Miscellaneous](miscellaneous.md)
     - [Version history](version-history.md)
-    - [raspiBackup logo](raspibackup-has-a-new-logo.md)
-    - [10 years raspiBackup](10-years-raspibackup.md)
+    - [*raspiBackup* logo](raspibackup-has-a-new-logo.md)
+    - [10 years *raspiBackup*](10-years-raspibackup.md)
     - [Executed regression tests](regressiontests-executed.md)
     - [Development environment](development-environment.md)
     - [Users all over the world](list-of-countries-raspibackup-is-used-in-the-world.md)
@@ -127,4 +126,3 @@ That allows for some tricks:
 
 
 [.status]: z_SUMMARY
-

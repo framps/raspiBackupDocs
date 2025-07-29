@@ -15,7 +15,7 @@ Dazu werden ausgewertet:
   - Trennlinien (horizontal rules ---
 
 Die Listen dürfen ausschließlich Links enthalten.
-Alle Links bestehen aus Titel des Kapitels und Name der entsprechenden Datei.
+Jeder Link bestimmt den Titel eines Kapitels und den Namen der entsprechenden Datei.
 
 Dies ermöglicht einige kleine Kniffe:
 
@@ -100,7 +100,7 @@ Dies ermöglicht einige kleine Kniffe:
 - [Backupziele](backup-targets.md)
     - [NFS als Backupziel](nfs-as-backupspace.md)
     - [SMB als Backupziel](smb-as-backupspace.md)
-    - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
+    - [AVM FRITZ!Box als Backupziel](avm-fritzbox-as-backupspace.md)
     - [WEBDAV als Backupziel](webdav-as-backupspace.md)
 
 - [Tipps zur Homeautomation](tips-homeautomation.md)
@@ -125,6 +125,6 @@ Dies ermöglicht einige kleine Kniffe:
 - [Support new languages](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
 
+[.status]: z_SUMMARY
 [.status]: todo "Refer to en md file from de"
 [.status]: rst
-[.status]: z_SUMMARY
