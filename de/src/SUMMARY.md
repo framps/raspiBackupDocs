@@ -52,7 +52,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Intelligente Rotationsstrategie](smart-recycle.md)
         - [Snapshots](snapshots.md)
         - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
-        - [Konfigurationsbeispiele](email-configuration-examples.md)
+        - [Konfigurationsbeispiele](configuration-examples.md)
             - [msmtp Konfiguration für einen web.de Account](msmtp-configuration-for-web-de-account.md)
             - [exim4 Konfiguration](exim4-configuration.md)
             - [nullmailer Konfiguration](nullmailer-configuration.md)

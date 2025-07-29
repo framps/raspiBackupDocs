@@ -2,19 +2,33 @@
 
 ## Normaler Backup
 
-Jeder Backuplauf erstellt im Backupverzeichnis ein Unterverzeichnis, welches
-folgendes Format hat: \<hostname\>. Darunter wird ein weiteres Verzeichnis
-\<hostname\>@\<osversion\>-\<backuptyp\>-\<backupdatum\> erstellt. Wenn man die Option `-M` benutzt,
-sieht der Unterordner wie folgt aus: \<hostname\>-\<-M parameter\> und darunter
-wird dann das weitere Verzeichnis \<hostname\>-\<backuptyp\>-\<backupdatum\>
-erstellt.
+Jeder Backuplauf erstellt im Backupverzeichnis ein Unterverzeichnis,
+welches folgendes Format hat:
+\<hostname\>.
 
-Beispiele: Die Raspberry hat den Hostnamen `raspberrypi` und es wird ein `rsync`
-Backup von einem *Bookworm* OS am 15.04.2016 um 22:29:00 erstellt. Dann wird ein Verzeichnis
-`raspberrypi` erstellt sowie ein Unterverzeichnis
-`raspberrypi@debian12-rsync-backup-20160415-222900`. Gibt man als Parameter für die Option `-M
-"Hello world"` mit, wird das Verzeichnis `raspberrypi-Hello_world` sowie das
-Unterverzeichnis `raspberrypi@debian12-rsync-backup-20160415-222900` erstellt.
+Bei Verwendung der Option `-M` wird der Optionswert noch angehängt:
+\<hostname\>-\<-M parameter\>.
+
+Jeweils darunter wird ein weiteres Verzeichnis erstellt:
+\<hostname\>@\<osversion\>-\<backuptyp\>-\<backupdatum\>.
+
+**Beispiele:**
+
+Die Raspberry hat den Hostnamen "raspberrypi" und es wird ein
+`rsync` Backup von einem *Bookworm* OS am 15.04.2016 um 22:29:00 erstellt.
+Dann entstehen folgende Verzeichnisse:
+
+```
+ ├── raspberrypi
+ │   └── raspberrypi@debian12-rsync-backup-20160415-222900
+```
+
+Gibt man als Parameter für die Option `-M "Hello world"` mit,
+
+```
+ ├── raspberrypi-Hello world
+ │   └── raspberrypi@debian12-rsync-backup-20160415-222900
+```
 
 Anbei die Verzeichnisstruktur meines Backupservers, der in diesem Falle auch
 eine Raspberry Pi ist. Verschiedene Backuptypen können pro Pi kombiniert
@@ -26,7 +40,7 @@ Backup ist. Damit ist es Linuxkundigen möglich, ein Backup auch manuell zu rest
 Dies ist im Kapitel [Manueller Restore](manual-restore.md) beschrieben.
 
   - `.img` - Bootpartition
-  - `.mbr` - Master Boot Record des Systems
+  - `.mbr` - *Master Boot Record* des Systems
   - `.sfdisk` - Partitionslayout des Systems - Ausgabe des `sfdisk` Befehls
   - `.blkid` - (Partitionsorientierter Modus) - Ausgabe des `blkid` Befehls
   - `.parted` - (Partitionsorientierter Modus) - Ausgabe des `parted` Befehls

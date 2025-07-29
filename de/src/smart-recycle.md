@@ -2,7 +2,7 @@
 
 *raspiBackup* kann entweder eine konfigurierbare Anzahl von Backups vorhalten oder eine intelligente
 Rotationsstrategie des Backups nutzen. Es wird auch ["Generationenprinzip in
-der Datensicherung"](https://de.wikipedia.org/wiki/Generationenprinzip)  genannt. Die Implementierung wurde von Manuel Dewalds
+der Datensicherung"](https://de.wikipedia.org/wiki/Generationenprinzip) genannt. Die Implementierung wurde von Manuel Dewalds
 Artikel ["Automating backups on a Raspberry Pi NAS"](https://opensource.com/article/18/8/automate-backups-raspberry-pi) inspiriert.
 Standardmäßig werden dann folgende Backups vorgehalten,
 wenn täglich Backups erstellt werden:
@@ -93,7 +93,7 @@ wöchentlichen und die letzten 12 monatlichen Backups vorgehalten.
 
 ``` admonish caution title="Wichtiger Hinweis"
 Solange man nicht die Option `--smarteRecycleDryrun` ausgeschaltet hat, schreibt
-*raspiBackup* in Meldungen, welche Backups gelöscht und aufgehoben würden.
+*raspiBackup* nur Meldungen, welche Backups gelöscht und welche aufgehoben **würden**.
 
 Man kann somit erst einmal kontrollieren, ob das Ergebnis dem Gewünschten entspricht.
 Dadurch lässt sich verhindern, dass unbeabsichtigt existierende Backups gelöscht werden.

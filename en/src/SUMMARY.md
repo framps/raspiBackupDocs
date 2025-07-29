@@ -52,7 +52,7 @@ That allows for some tricks:
         - [Rotation strategy](smart-recycle.md)
         - [Snapshots](snapshots.md)
         - [Configuration update when upgrading to a new version](configuration-update-when-upgrading-to-a-new-version.md)
-        - [Configuration examples](email-configuration-examples.md)
+        - [Configuration examples](configuration-examples.md)
             - [msmtp configuration for a web.de account](msmtp-configuration-for-web-de-account.md)
             - [exim4 configuration](exim4-configuration.md)
             - [nullmailer configuration](nullmailer-configuration.md)

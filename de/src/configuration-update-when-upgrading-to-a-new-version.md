@@ -1,18 +1,17 @@
 # Konfigurationsupdate bei einem Upgrade auf eine neue Version
 
 Wann immer ein Upgrade einer *raspiBackup* Version vorgenommen wird,
-erfolgt sofort eine Prüfung, ob die neue Version ein
-neues Konfigurationsversion benötigt. Sofern eine neue
-Konfigurationsversion benutzt wird, erfolgt eine automatische
+erfolgt sofort eine Prüfung, ob die neue Version eine
+neue Konfigurationsversion benötigt. Falls ja, erfolgt eine automatische
 Zusammenführung der lokalen Konfiguration mit der neuen Konfiguration in
-einer neuen Konfigurationsdatei von *raspiBackup* beim Upgrade. Im
-Folgenden wird im Detail beschrieben wie diese Zusammenführung
+einer neuen Konfigurationsdatei von *raspiBackup*.
+Im Folgenden wird im Detail beschrieben, wie diese Zusammenführung
 vorgenommen wird.
 
-**Hinweis**
+**Hinweis**:
 Sollte aus irgendwelchen Gründen kein Konfigurationsdateiupdate
 bei einem Upgrade stattgefunden haben, kann mit folgendem Befehl
-der Upgrade manuell angestoßen werden:
+der Update manuell angestoßen werden:
 
 ```
 sudo raspiBackup.sh --updateConfig
@@ -41,7 +40,9 @@ Man sieht, dass eine neue Konfigurationsdatei
 `/usr/local/etc/raspiBackup.conf.merged` erstellt wird und in dieser die
 Zusammenfügung der aktuellen Konfigurationsdatei
 `/usr/local/etc/raspiBackup.conf `mit der neuen Konfigurationsdatei
-vorgenommen wird. Welche Änderungen vorgenommen werden, kann in den
+vorgenommen wird.
+
+Welche Änderungen vorgenommen werden, kann in den
 Meldungen `RBK0248I` abgelesen werden. Zum Schluss wird man gefragt, ob die
 zusammengefügte Konfigurationsdatei aktiviert werden soll. Natürlich
 wird vorher ein Backup der existierenden Konfigurationsdatei in
@@ -65,7 +66,7 @@ Meldung:
 ```
 
 Innerhalb der zusammengefügten Konfigurationsdatei sind die neuen
-Optionen wie folgt gekennzeichnet und somit schnell zu erkennen:
+Optionen wie folgt gekennzeichnet und somit gut zu erkennen:
 
 ```
 # Smart recycle
@@ -79,21 +80,20 @@ DEFAULT_SMART_RECYCLE_DRYRUN=1
 DEFAULT_SMART_RECYCLE_OPTIONS="7 4 12 1"`
 ```
 
-D.h. nun kann man sich manuell mit einem Editor die zusammengeführte
+Nun kann man sich manuell mit einem Editor die zusammengeführte
 Konfigurationsdatei `/usr/local/etc/raspiBackup.conf.merged` ansehen,
-kontrollieren und wenn nötig ändern. Zum Schluss muss die Datei dann
-noch nach `/usr/local/etc/raspiBackup.conf` kopiert werden, um die neue
-Konfiguration zu aktivieren.
+kontrollieren und wenn nötig ändern. Zum Schluss wird die Datei zur
+Aktivierung nach `/usr/local/etc/raspiBackup.conf` kopiert.
 
-Zum Schluss sollte man wie immer nach einem Upgrade einen Backup/Restore
-Zyklus durchführen, um zu testen ob noch alles wie vorher funktioniert.
+Abschließend ist es sinnvoll, wie immer nach einem Upgrade, einen Backup/Restore
+Zyklus durchführen, um zu testen, ob noch alles wie vorher funktioniert.
 
 *raspiBackup* unterstützt auch die Benutzung von [unterschiedlichen
-Konfigurationsdateien](details.md#configFiles). Der automatische Konfigurationsupgrade wird nur
+Konfigurationsdateien](details.md#configFiles). Der automatische Konfigurationsupgrade wird aber nur
 für die Standardkonfiguration `/usr/local/etc/raspiBackup.conf`
 vorgenommen. Alle anderen Konfigurationsdateien müssen manuell erweitert
-werden. Dazu müssen die als neu gekennzeichneten Konfigurationszeilen
-genommen werden und in die anderen Konfigurationsdateien kopiert werden.
+werden, indem die als neu gekennzeichneten Konfigurationszeilen
+genommen und in die anderen Konfigurationsdateien kopiert werden.
 
 [.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/567-raspibackup-konfigurationsupdate-nach-einem-upgrade-auf-eine-neue-version
