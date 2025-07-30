@@ -1,21 +1,24 @@
 
 ``` admonish info title="Nutzungshinweise"
-Oben auf den Seiten befindet sich eine Iconleiste zur Bedienung
+Oben auf den Seiten befinden sich zwei Icon-Gruppen zur Bedienung
 der Dokumentation:
 
-  - Das Hamburger-Menu links blendet ein Inhaltsverzeichnis ein-/aus
-  - Der Pinsel wechselt das Theme
-  - Mit der Lupe startet eine Suchfunktion
-  - Der Globus öffnet eine Sprachauswahl (de/en)
-  - Der Drucker macht das Erwartete...
+![Menü-links](images/mdbook-icons-left.png)
+
+  - Ein-/Ausblenden eines Inhaltsverzeichnisses
+  - Auswahl eines Themes
+  - Suchfunktion
+
+![Menü-rechts](images/mdbook-icons-right.png)
+
+  - Sprachauswahl (Deutsch/Englisch)
+  - Drucken
   - *GitHub*-Seite des Dokumentationsprojektes
-  - Mit dem Stift-Icon kann man sehr einfach direkt Änderungen
-    an der aktuellen Seite im *GitHub* vorschlagen.
+  - Änderungen an der aktuellen Seite im *GitHub* vorschlagen
 
 Eintippen eines `?` blendet eine kleine Tastatur-Navigationshilfe ein.
 ```
 
-[.status]: todo "Nutzungshinweise: Icons einbinden und umformulieren"
 [.status]: todo "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.?"
 
 
