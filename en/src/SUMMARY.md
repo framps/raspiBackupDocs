@@ -85,7 +85,7 @@ That allows for some tricks:
     - [Restore](restore.md)
         - [Options](restore-options.md)
         - [Configuration](restore-config-options.md)
-    - [general](general.md)
+    - [General](general.md)
         - [Options](general-options.md)
         - [Configuration](general-config-options.md)
     - [Options grouped by topic](options-by-topic.md)

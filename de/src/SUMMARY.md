@@ -85,7 +85,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Optionen](restore-options.md)
         - [Konfiguration](restore-config-options.md)
     - [Allgemein](general.md)
-         [Optionen](general-options.md)
+        - [Optionen](general-options.md)
         - [Konfiguration](general-config-options.md)
     - [Thematisch sortierte Optionen](options-by-topic.md)
 

@@ -12,6 +12,19 @@ der Standardspalte bedeutet der Standard ist `""`
 
 <div class="table-wrapper-for-options">
 
+<a name="backuppath"></a>
+### DEFAULT_BACKUPPATH
+
+Diese Konfigurationsvariable definiert das Verzeichnis, in dem die Backups
+abgelegt werden.
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_BACKUPATH          | /backup  |
+
+Diese Option kann beim Aufruf von *raspiBackup* überschrieben werden
+mit der Option [-p](backup-options.md#parm_p) oder indem am Ende
+ein Verzeichnis angegeben wird. (Siehe [Aufruf und Optionen](details.md)).
 
 ### DEFAULT_COLOR_CODES
 

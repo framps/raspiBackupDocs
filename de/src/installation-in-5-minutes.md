@@ -47,16 +47,48 @@ die richtigen Parameter zu benutzen.
 lassen. Alle weiteren Optionen müssen in der Konfigurationsdatei
 `/usr/local/etc/raspiBackup.conf` mit einem Editor konfiguriert werden. Ausserdem
 lassen sich recht einfach jederzeit die primären Optionen durch erneuten Aufruf
-von `raspiBackupInstallUI` nachträglich ändern. Dazu gehört auch eine
+von **raspiBackupInstallUI** nachträglich ändern. Dazu gehört auch eine
 Updatefunktion für den Installer sowie für *raspiBackup*. Die
 Installationsführung erfolgt über Menus sowie Auswahllisten. Die Menüsprache
 kann Deutsch, Englisch. Finnisch, Chinesisch oder Französisch sein.
 
 Wer *raspiBackup* einfach nur mit einer Standardkonfiguration ohne individuelle
 Konfiguration schnell installieren will, kann das mit den Aufrufoptionen `-i` und
-`-e` starten (`-h` fuer Hilfe benutzen). Danach kann der Installer genutzt werden um
+`-e` starten (`-h` fuer Hilfe benutzen). Danach kann der Installer **raspiBackupInstallUI** genutzt werden um
 die Basiskonfiguration von *raspiBackup* vorzunehmen bzw zu ändern.
-Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md) ist ebenfalls möglich.
+
+**Aufruf:**
+```
+sudo raspiBackupInstallUI
+```
+
+## Menupunkte des raspiBackup Installers
+
+Mit dem Installer wird *raspiBackup* installiert, deinstalliert und updated. Außerdem können die wichtigsten
+Optionen menugesteuert konfiguriert werden. Im Hintergrund wird dabei die *raspiBackup* Konfigurationsdatei
+entsprechend geändert ohne dass Editor genutzt werden muss.
+
+Außerdem können die wichtigsten
+Optionen menugesteuert konfiguriert werden. Im Hintergrund wird dabei die *raspiBackup* Konfigurationsdatei
+entsprechend geändert ohne dass Editor genutzt werden muss.
+
+Folgende Konfigurationen können angepasst werden:
+
+| Installer | Option | Detailinformation |
+| --------- | ------ | ----------------- |
+| M1 | [Sprache](general-options.md#parm_G) | |
+| M2 | [Backupverzeichnispfad](general-config-options.md#backuppath) | |
+| M3 | [Backupversionen](backup-options.md#parm_k) sowie [Intelligente Rotationsstrategie](smart-recycle.md) | TBD |
+| M4 | [Backuptyp](backup-options.md#parm_t) | |
+| M5 | [Backupmodus](backup-options.md#parm_P) | |
+| M6 | [Zu stoppende und startende Services](backup-options.md#parm_o) | TBD |
+| M7 | [Meldungsgenauigkeit](general-options.md#parm_l) | |
+| M8 | [eMail Benachrichtigung](general-options.md#parm_e) | |
+| M9 | [Regelmäßiger Backup](general-options.md#parm_G) | TBD |
+
+[.status]: TBD "Complete table, add desc for services and regular backup"
+
+Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration) ist ebenfalls möglich.
 Auf Youtube existiert auch ein Video, auf dem *raspiBackup* vorgestellt wird
 sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 
