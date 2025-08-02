@@ -10,6 +10,8 @@ knapp Schritt für Schritt erklärt, wie man *raspiBackup* direkt benutzt, um so
 ein Backup zu erstellen oder in 5 Minuten *raspiBackup* installiert und
 konfiguriert und dann ein Backup der Raspberry erstellen kann.
 
+Der Installer ist im Detail mit seinen Optionen [hier](installer.md) beschrieben.
+
 Das [Wiederherstellen](restore.md) ist detailliert für die unterschiedlichen Benutzer mit
 ihren jeweiligen primären Platformen (Linux, Mac oder Windows) beschrieben.
 
@@ -78,15 +80,13 @@ Folgende Konfigurationen können angepasst werden:
 | --------- | ------ | ----------------- |
 | M1 | [Sprache](general-options.md#parm_G) | |
 | M2 | [Backupverzeichnispfad](general-config-options.md#backuppath) | |
-| M3 | [Backupversionen](backup-options.md#parm_k) sowie [Intelligente Rotationsstrategie](smart-recycle.md) | TBD |
+| M3 | [Backupversionen](backup-options.md#parm_k) sowie [Intelligente Rotationsstrategie](smart-recycle.md) | [Backups](installer.md#backupversionen) |
 | M4 | [Backuptyp](backup-options.md#parm_t) | |
 | M5 | [Backupmodus](backup-options.md#parm_P) | |
-| M6 | [Zu stoppende und startende Services](backup-options.md#parm_o) | TBD |
+| M6 | [Zu stoppende und startende Services](backup-options.md#parm_o) | [Zu stoppende Services](installer.md#services) |
 | M7 | [Meldungsgenauigkeit](general-options.md#parm_l) | |
 | M8 | [eMail Benachrichtigung](general-options.md#parm_e) | |
-| M9 | [Regelmäßiger Backup](general-options.md#parm_G) | TBD |
-
-[.status]: TBD "Complete table, add desc for services and regular backup"
+| M9 | [Regelmäßiger Backup](general-options.md#parm_G) | [Regelmäßiger Backup](installer.md#regularbackup) |
 
 Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration) ist ebenfalls möglich.
 Auf Youtube existiert auch ein Video, auf dem *raspiBackup* vorgestellt wird
@@ -97,8 +97,9 @@ sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 Zum Download, der Installation und Start des *raspiBackup* Installers folgendes
 auf der Raspberry in der Befehlszeile eingeben:
 
-    curl -o install -L https://raspibackup.linux-tips-and-tricks.de/install; sudo bash ./install
-
+```
+curl -o install -L https://raspibackup.linux-tips-and-tricks.de/install; sudo bash ./install
+```
 
 **Hinweis**: Es existiert auch eine [Anleitung](manual-installation-and-configuration.md),
 um *raspiBackup* manuell ohne `sudo` Nutzung zu installieren.
@@ -203,15 +204,13 @@ will man den Backup einmal schnell testen kann, man wie folgt den Backup mit
 *raspiBackup* erstellen. Das kann je nach Größe der Installation und der externen
 Rootpartition beim normalen Backup etwas länger dauern.
 
-    sudo raspiBackup -m detailed
-
-
+```
+sudo raspiBackup -m detailed
+```
 
 **Danach sollte unbedingt ein Restoretest durchgeführt werden** ([Link zur
 Restoredokumentation](restore.md)), um zu verifizieren, dass ein konsistentes
 Backup erstellti wird, und um sich mit der Restoreprozedur vertraut zu machen.
-
-
 
 ## Standardkonfiguration und Ort der Konfigurationsdatei
 
@@ -250,6 +249,14 @@ Der Installer erstellt folgende Dateien:
 
 4. *raspiBackupInstallUI.sh* wird in `/usr/local/bin` installiert
 
+## Deinstallation
+
+*raspiBackup* kann auch wieder deinstalliert werden.
+Entweder benutzt man den Installer zum Deinstallieren oder folgenden Befehl:
+
+```
+sudo raspiBackupInstallUI.sh -u
+```
 
 ## Weitere Schritte
 
@@ -269,43 +276,6 @@ Details dazu finden sich auf der [Optionsbeschreibungsseite](backup-options.md).
 Ebenfalls nützlich: [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md),
 welches die Nutzung und den Aufruf von *raspiBackup* vereinfacht.
 
-
-## Deinstallation
-
-*raspiBackup* kann auch wieder deinstalliert werden.
-Entweder benutzt man den Installer zum Deinstallieren oder folgenden Befehl:
-
-    sudo raspiBackupInstallUI.sh -u
-
-
-## Aufruf des Installers ohne Menus direkt von der Befehlszeile
-
-Wer keine menugesteuerte Installation haben möchte kann die Installation von *raspiBackup*,
-den Beispielextensions oder die Deinstallation von *raspiBackup*
-von der Befehlszeile direkt aufrufen. Dabei wird die Standardkonfiguration installiert.
-Der Aufruf dazu ist
-
-    curl https://raspibackup.linux-tips-and-tricks.de/install | sudo bash -s -- -i
-
-Jedwede Änderungen an der Konfiguration können nun manuell mit einem Editor
-vorgenommen werden.
-Ebenso das Einschalten des wöchentlichen Backup per systemd Timer. 
-Man kann aber auch den Installer mit seinen Menus benutzen, um die
-Konfiguration der primären Optionen anzupassen sowie den regulären Backup ein-
-oder auszuschalten. Der Aufruf dazu ist
-
-    sudo raspiBackupInstallUI
-
-Weitere Details zu den verschiedenen Funktionen des Installationsskriptes
-erfährt man durch den Aufruf der Hilfefunktion
-
-    sudo raspiBackupInstallUI -h
-
-Will man nicht systemd sondern cron nutzen existiert dafür die Option `-t`, mit der man den Daemon
-auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond` oder
-`systemd`. `systemd` ist der Default.
-
-
 ## *raspiBackup* soll ohne Installation direkt aufgerufen werden, um sofort ein Backup zu erstellen
 
 1. Download von *raspiBackup* `curl -sSLO  https://www.linux-tips-and-tricks.de/raspiBackup.sh`
@@ -319,7 +289,6 @@ auswählen kann, der die regelmäßigen Backups steuert. Es ist entweder `crond`
    mitgegeben werden, also `sudo bash ./raspiBackup.sh -t tar` oder `sudo bash ./raspiBackup.sh -t dd`
 
 5. Kurzinfo zu allen Aufrufoptionen von *raspiBackup* erhält man mit `bash ./raspiBackup.sh -`
-
 
 ## Manuelle Installation und Konfiguration von *raspiBackup*
 

@@ -73,6 +73,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Installation und erstes Backup](installation.md)
     - [Schnellstart - Installation in 5 Minuten](installation-in-5-minutes.md)
+    - [Installer Aufruf und Optionen](installer.md)
     - [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
     - [Statistiken](statistics.md)
     - [Updates](updates.md)
