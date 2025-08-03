@@ -11,32 +11,36 @@ Voraussetzungen: Login als Benutzer pi ins Homeverzeichnis und es existiert eine
    Standardoptionen installiert. Anschliessen kann man *raspiBackup* mit
    `sudo raspiBackupInstallUI` aufrufen und die Standardkonfiguration ändern.
 
-       curl -sSLO https://www.linux-tips-and-tricks.de/raspiBackupInstallUI.sh; sudo bash ./raspiBackupInstallUI.sh -i
+   ```
+    curl -sSLO https://www.linux-tips-and-tricks.de/raspiBackupInstallUI.sh; sudo bash ./raspiBackupInstallUI.sh -i
+    ```
 
 2. *raspiBackup* kann man auch manuell downloaden und installieren.
 
    1. Download der notwendigen Dateien:
-
-          curl -sSLO https://www.linux-tips-and-tricks.de/raspiBackup.sh
-          curl -sSLO https://www.linux-tips-and-tricks.de/raspiBackupInstallUI.sh
-          curl -sSL https://www.linux-tips-and-tricks.de/raspiBackup_de.conf > raspiBackup.conf
+      ```
+      curl -sSLO https://www.linux-tips-and-tricks.de/raspiBackup.sh
+      curl -sSLO https://www.linux-tips-and-tricks.de/raspiBackupInstallUI.sh
+      curl -sSL https://www.linux-tips-and-tricks.de/raspiBackup_de.conf > raspiBackup.conf
+      ```
 
    2. Jetzt müssen die Dateien in die entsprechenden Verzeichnisse kopiert werden und die Ownership und Zugriffsrechte angepasst werden:
+      ```
+      # Verschieben der Dateien in die richtigen Verzeichnisse
+      sudo mv raspiBackup.sh /usr/local/bin
+      sudo mv raspiBackupInstallUI.sh /usr/local/bin
+      sudo mv raspiBackup.conf /usr/local/etc
 
-          # Verschieben der Dateien in die richtigen Verzeichnisse
-          sudo mv raspiBackup.sh /usr/local/bin
-          sudo mv raspiBackupInstallUI.sh /usr/local/bin
-          sudo mv raspiBackup.conf /usr/local/etc
+      # Anpassen der Ownership und Zugriffsrechte
+      sudo chown root:root /usr/local/bin/raspiBackup.sh
+      sudo chmod 755 /usr/local/bin/raspiBackup.sh
+      sudo chown root:root /usr/local/etc/raspiBackup.conf
+      sudo chmod 600 /usr/local/etc/raspiBackup.conf
 
-          # Anpassen der Ownership und Zugriffsrechte
-          sudo chown root:root /usr/local/bin/raspiBackup.sh
-          sudo chmod 755 /usr/local/bin/raspiBackup.sh
-          sudo chown root:root /usr/local/etc/raspiBackup.conf
-          sudo chmod 600 /usr/local/etc/raspiBackup.conf
-
-          # Erstellen der Shortcuts ohne .sh am Ende
-          sudo ln -s /usr/local/bin/raspiBackup.sh /usr/local/bin/raspiBackup
-          sudo ln -s /usr/local/bin/raspiBackupInstallUI.sh /usr/local/bin/raspiBackupInstallUI
+      # Erstellen der Shortcuts ohne .sh am Ende
+      sudo ln -s /usr/local/bin/raspiBackup.sh /usr/local/bin/raspiBackup
+      sudo ln -s /usr/local/bin/raspiBackupInstallUI.sh /usr/local/bin/raspiBackupInstallUI
+      ```
 
    3. Nun kann der Installer mit `sudo raspiBackupInstallUI` aufgerufen werden und *raspiBackup* konfiguriert werden.
 
@@ -53,7 +57,7 @@ und dort *2.2* und *2.3* auszuführen. Allerdings muss man berücksichtigen, das
 keine Benachrichtigungen geschickt werden können wie auch keine
 Benachrichtigungen von *raspiBackup* bei neuen Versionen erhalten werden.
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/538-raspibackup-manuelle-installation
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/539-raspibackup-manual-installation
 

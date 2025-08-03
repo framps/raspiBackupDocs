@@ -7,8 +7,8 @@ Konfigurationen oder Parametrisierung.
 Es gibt drei Typen von *raspiBackup*-Meldungen:
 
 1. Informationen. Die Meldungsnummer endet mit dem Buchstaben "I"
-2. Warnungen. Die Meldungsnummer endet mit dem Buchstaben "W"
-3. Fehler. Die Meldungsnummer endet mit dem Buchstaben "E"
+1. Warnungen. Die Meldungsnummer endet mit dem Buchstaben "W"
+1. Fehler. Die Meldungsnummer endet mit dem Buchstaben "E"
 
 Die Fehlermeldungen sind selbsterklärend und sollten auf die konkrete Ursache hinweisen.
 Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
@@ -22,7 +22,7 @@ Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
    den Fehler zu lokalisieren.
 
    Falls das Backup fehlerhaft abbricht, wird die Logdatei vor dem Aufräumen
-   in das Homeverzeichnis des Aufrufers gesichert. 
+   in das Homeverzeichnis des Aufrufers gesichert.
 
    Weiterhin kann auch der Parameter `-v` weiterhelfen, wenn Fehler in den
    Linux Backuptools auftreten.
@@ -31,7 +31,7 @@ Falls nicht, helfen folgende Massnahmen, den Fehler genauer zu lokalisieren:
    selbst zu finden, besteht die Möglichkeit, den Fehler zu berichten.
    Siehe dazu die Hinweise in [FAQ12](faq.md#faq12), wie Probleme berichtet werden können.
 
-----------------------
+---
 
 In machen Fällen sind zu den Fehlermeldungen weitergehende Erklärungen notwendig.
 Diese sind im Folgenden zu finden.
@@ -41,7 +41,7 @@ und im Detail zu erklären, ist sehr viel Aufwand.
 
 Wer also eine Erklärung für eine Fehlermeldung sucht und hier nicht findet,
 sollte erst einmal eine Suchmaschine benutzen und nach der
-Fehlermeldungsnummer suchen. Falls das nicht zum Erfolg führt, sollte ein Issue in github
+Fehlermeldungsnummer suchen. Falls das nicht zum Erfolg führt, sollte ein Issue im [*GitHub*](https://github.com/framps/raspiBackup/issues).
 erstellt werden und dann wird sie hier aufgenommen. So werden dann nach und nach alle häufigen und wichtigen
 Fehlermeldungen von *raspiBackup* hier gesammelt und erläutert.
 
@@ -51,7 +51,6 @@ anderen Nummernbereiche werden von eigene Plugin Meldungen genutzt.
 
 Ausserdem beendet sich *raspiBackup* mit einem Fehlercode, der auf die Ursache
 hinweist. Eine Liste der Fehlercodes findet sich am [Ende dieser Seite](#exitcodes).
-
 
 ## *raspiBackup* - Fehlermeldungen, Ursachen und Aktionen
 
@@ -105,7 +104,7 @@ um kein inkonsistentes Backup zu erstellen. Wenn man keine zu stoppenden und zu
 startenden Services per Installer definiert hat, müssen die Services mit den
 beiden Optionen im Aufruf angegeben werden.
 
-Diese Optionen können mit dem raspiBackup Installer für Systemd Services konfiguriert werden.
+Diese Optionen können mit dem *raspiBackup* Installer für Systemd Services konfiguriert werden.
 
 Weitere Aktionen:
 
@@ -144,7 +143,7 @@ bei tar sowie RC 23 oder RC 24 bei rsync bedeutet, dass sich eine Datei während
 der Sicherung verändert hat.
 
 RC 2 bei tar bedeutet, irgendein schlimmer Fehler trat auf. Es kann auch sein,
-dass Berechtigungen auf dam Backupgeraet fehlen oder kein freier Speicherplatz
+dass Berechtigungen auf dem Backupgerät fehlen oder kein freier Speicherplatz
 auf der Backuppartition vorhanden ist.
 
 RC23 bei rsync kann auch ein Zugriffsproblem oder ein ACL Problem mit nfs sein.
@@ -384,7 +383,7 @@ Ursache:
 
 Weitere Aktionen:
 
-Erstelle einen Issue in github und es kann sein,
+Erstelle einen Issue in *GitHub* und es kann sein,
 dass dann der Filesystem Support in *raspiBackup* eingebaut wird.
 
 
@@ -398,7 +397,7 @@ Operatingsystem als *Raspberry Pi OS* oder *Ubuntu* benutzt wird.
 
 Weitere Aktionen:
 
-Das Problem auf github berichten.
+Das Problem auf *GitHub* berichten.
 
 
 ### RBK0147E: Sicherung der Partition %1 schlug fehl mit RC %2.
@@ -445,7 +444,7 @@ freigeben.
 
 Ursache:
 
-Das Backup ist größer als das gerät, auf die es zurückgespielt werden soll
+Das Backup ist größer als das Gerät, auf das es zurückgespielt werden soll
 und kann deshalb nicht zurückgespielt werden. Die Meldung kommt nur beim dd
 Backup. Bei tar oder rsync Backup ist je nach Belegung nicht die volle Größe des
 Gerätes notwendig.
@@ -478,8 +477,8 @@ Es fehlt die Berechtigung für den Nutzer root, das neue Backupverzeichnis zu er
 
 Weitere Aktionen:
 
-Ist das Backupverzeichnis per nfs gemounted fehlt meist die Option
-NO_ROOT_SQUASH in der Datei /etc/exports des nfs Servers. Ansonsten ist das
+Ist das Backupverzeichnis per nfs gemounted, fehlt meist die Option
+NO_ROOT_SQUASH in der Datei `/etc/exports` des nfs Servers. Ansonsten ist das
 Backupverzeichnis mit nicht ausreichenden Rechten gemounted.
 
 
@@ -540,7 +539,7 @@ irgendwelchen Gründen nicht.
 
 Weitere Aktionen:
 
-Es sollte in github Issue erstellt werden, in dem das Debuglog angehängt ist,
+Es sollte ein *GitHub* Issue erstellt werden, in dem das Debuglog angehängt ist,
 um die Ursache zu finden.
 
 
@@ -703,7 +702,7 @@ Fehlermeldung gibt noch genauere Informationen zur Fehlerursache aus.
   - RC_RESIZE_ERROR=145
   - RC_UUID_UPDATE_IMPOSSIBLE=147
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackup#fehler
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupmeldungen
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupmessagese

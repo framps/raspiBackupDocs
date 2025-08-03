@@ -1,4 +1,4 @@
-# Konfiguration von msmtp für einen web.de Account
+# msmtp Konfiguration für einen web.de Account
 
 Der Nutzer *gNeadr* von *raspiBackup* hatte gewisse Probleme, die eMailNotifizierung
 für seinen web.de Account für *raspiBackup* einzurichten. Nachdem es ihm
@@ -59,8 +59,8 @@ static domain_name_servers=192.123.123.1
 
 Erfordert Zugriff mit:
 ```
- sudo nano /media/xxxxx/rootfs/etc/dhcpcd.conf
- ```
+sudo nano /media/xxxxx/rootfs/etc/dhcpcd.conf
+```
 
 Danach im LX Dateimanager SDCard auswerfen.
 
@@ -301,6 +301,6 @@ An: yyyyyy@web.de
 --- RBK0167I: Eine eMail wird versendet.
 ```
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/650-konfiguration-von-raspibackup-mit-msmtp-fuer-einen-web-de-account
 

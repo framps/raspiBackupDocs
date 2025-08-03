@@ -1,61 +1,91 @@
-## Thematische Sortierung der Optionen (Auswahl)
+# Thematische Sortierung aller Optionen
 
-### Optionen, die das Backup beschreiben
+<a name="backup"></a>
+## Backupoptionen
 
-  - [-k : Anzahl der Backups die vorgehalten werden sollen](usage-and-options.md#parm_k)
-  - [--keep_{type}: Anzahl der jeweiligen Backuptypen, die vorgehalten werden sollen](usage-and-options.md#parm_keepType)
-  - [-t : Typ des Backups (dd, tar, rsync)](usage-and-options.md#parm_t)
-  - [-P : Partitionsorientierter Backupmodus](usage-and-options.md#parm_P)
-  - [-z: Kompression des Backups bei dd oder tar](usage-and-options.md#parm_z)
-  - [-u: Ermöglicht weitere Verzeichnisse aus dem Backuprozess auszuschliessen](usage-and-options.md#parm_u)
-  - [-T: Angabe der Partitionen die beim partitionsorientierten Backup gesichert werden sollen](usage-and-options.md#parm_T)
-  - [-M: Erstellen eines *raspiBackup* Snapshots](usage-and-options.md#parm_M)
-  - [-B: Bootpartition wird als tar gesichert statt per dd](usage-and-options.md#parm_B)
-  - [-b: Definition der Blocksize die beim dd Backup genutzt wird](usage-and-options.md#parm_b)
-  - [-D: Weitere Optionen für den dd Backup](usage-and-options.md#parm_D)
-  - [--dynamicMount: Dynamisches Mounten der Backuppartition](usage-and-options.md#parm_dynamicMount)
-  - [--ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.](usage-and-options.md#parm_ignoreAdditionalPartitions)
+  - [-a: Befehle die Services nach dem Backup starten](backup-options.md#-a)
+  - [-A: Das Laufzeitlog wird in der eMail mitgeschickt](general-options.md#-A)
+  - [-b: Definition der Blocksize die beim dd Backup genutzt wird](backup-options.md#parm_b)
+  - [-B: Bootpartition wird als tar gesichert statt per dd](backup-options.md#parm_B)
+  - [-c: Erlaube lokale Backupsicherung](backup-options.md#-c)
+  - [-D: Weitere Optionen für den dd Backup](backup-options.md#parm_D)
+  - [--dynamicMount: Dynamisches Mounten der Backuppartition](backup-options.md#parm_dynamicMount)
+  - [--ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.](backup-options.md#parm_ignoreAdditionalPartitions)
+  - [--ignoreMissingPartitions: Test ob alle Partitionen gesichert werden](backup-options.md#--ignoremissingPartitions)
+  - [-k : Anzahl der Backups die vorgehalten werden sollen](backup-options.md#parm_k)
+  - [--keep_{type}: Anzahl der jeweiligen Backuptypen, die vorgehalten werden sollen](backup-options.md#parm_keepType)
+  - [-M: Erstellen eines *raspiBackup* Snapshots](backup-options.md#parm_M)
+  - [-o: Befehle, die Services vor dem Backup stoppen](backup-options.md#parm_o)
+  - [-p: Backupverzeichnis](backup-options.md#parm_p)
+  - [-P : Partitionsorientierter Backupmodus](backup-options.md#parm_P)
+  - [--rebootSystem: Reboot des Systems nach dem Backup](backup-options.md#parm_rebootSystem)
+  - [--smartRecycle: Nutzung von SmartReccyle](backup-options.md#parm_smartRecycle)
+  - [--smartRecycleDryrun: Testmodus von SmartRecycle](backup-options.md#parm_smartRecycleDryrun)
+  - [--smartRecycleOptions: SmartRecycle Optionen](backup-options.md#parm_smartRecycleOptions)
+  - [--systemStatus: Aktive Services beim Backupstart anzeigen](backup-options.md#parm_systemstatus)
+  - [-t : Typ des Backups (dd, tar, rsync)](backup-options.md#parm_t)
+  - [-T: Zu sichernde Partitionen](backup-options.md#parm_T)
+  - [-u: Ermöglicht weitere Verzeichnisse aus dem Backuprozess auszuschliessen](backup-options.md#parm_u)
+  - [-z: Kompression des Backups bei dd oder tar](backup-options.md#parm_z)
 
-### Optionen, die den Restore beschreiben
+<a name="restore"></a>
+## Restoreoptionen
 
-  - [-g: Fortschrittsanzeige beim Restore](usage-and-options.md#parm_g)
+  - [-C: Auf Badblock prüfen](restore-options.md#parm_C)
+  - [-d: Restoredevice](restore-options.md#parm_d)
+  - [-R: Externe Rootpartition](restore-options.md#parm_R)
+  - [--resizeRootFS: Rootfilesystem Anpassung](restore-options.md#parm_resizeRootFS)
+  - [-T: Zu restorende Partitionen](restore-options.md#parm_T)
+  - [--updateUUIDs: UUID Generierung](restore-options.md#parm_resizeRootFS)
+  - [-Y: Automatisierter Restore](restore-options.md#parm_Y)
+  - [-0: Keine Partitionierung](restore-options.md#parm_0)
+  - [-00: Keine Partitionierung und Formatierung](restore-options.md#parm_00)
+  - [-1: Partitionierungsfehler ignorieren](restore-options.md#parm_1)
+ 
+<a name="messages-and-log"></a>
+## Optionen, die die Meldungen und das Log betreffen
 
-### Optionen, die die Meldungen und das Log betreffen
+  - [-A: Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt](general-options.md#parm_A)
+  - [--coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen](general-options.md#parm_coloring)
+  - [-G: Sprache der Meldungen (Deutsch oder English)](general-options.md#parm_G)
+  - [-l: Einschalten des detailierten Loglevels](general-options.md#parm_l)
+  - [-L: Verzeichnis wo das Debuglog sowie die Laufzeitmeldungen gespeichert werden](general-options.md#parm_L)
+  - [-m: Meldungsdetails](general-options.md#parm_m)
+  - [--timestamps: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben](general-options.md#parm_timestamps)
+  - [-v: Alle Meldungen des verwendeten Backuptools werden protokolliert](backup-options.md#parm_v)
 
-  - [-m: Meldungsdetails](usage-and-options.md#parm_m)
-  - [-L: Verzeichnis wo das Debuglog sowie die Laufzeitmeldungen gespeichert werden](usage-and-options.md#parm_L)
-  - [-l: Einschalten des detailierten Loglevels](usage-and-options.md#parm_l)
-  - [-G: Sprache der Meldungen (Deutsch oder English)](usage-and-options.md#parm_G)
-  - [-A: Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt](usage-and-options.md#parm_A)
-  - [-v: Alle Meldungen des verwendeten Backuptools werden protokolliert](usage-and-options.md#parm_v)
-  - [--coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen](usage-and-options.md#parm_coloring)
-  - [--timestamps: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben](usage-and-options.md#parm_timestamps)
+<a name="notifications"></a>
+## Optionen, die Benachrichtigungen steuern
 
-### Optionen, die Benachrichtigungen steuern
+  - [-e: eMailAdresse an die die Benachrichtigung geschickt wird](general-options.md#parm_e)
+  - [-E: Optionale Parameter für die eMailClientProgramme](general-options.md#parm_E)
+  - [--eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert](general-options.md#parm_eMailColoring)
+  - [-F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen](backup-options.md#parm_F)
+  - [-s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken](general-options.md#parm_s)
 
-  - [-e: eMailAdresse an die die Benachrichtigung geschickt wird](usage-and-options.md#parm_e)
-  - [-s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken](usage-and-options.md#parm_s)
-  - [-E: Optionale Parameter für die eMailClientProgramme](usage-and-options.md#parm_E)
-  - [-F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen](usage-and-options.md#parm_F)
-  - [--eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert](usage-and-options.md#parm_eMailColoring)
+<a name="maintenance"></a>
+## Optionen, die Update, Restore und lokale Verteilung von *raspiBackup* steuern
 
-### Optionen, die den Update, Restore und lokale Verteilung von *raspiBackup* steuern
+  - [-S: Unbedingtes Update](general-options.md#parm_S)
+  - [-U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version](general-options.md#parm_U)
+  - [-V: Reaktivierung einer vorhergehenden *raspiBackup* Version](general-options.md#parm_V)
+  - [-y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp](general-options.md#parm_y)
 
-  - [-U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version](usage-and-options.md#parm_U)
-  - [-V: Reaktivierung einer vorhergehenden *raspiBackup* Version](usage-and-options.md#parm_V)
-  - [-y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp](usage-and-options.md#parm_y)
+<a name="start-stop-extensions"></a>
+## Optionen, die Services vor dem Backup starten und stoppen sowie Erweiterungen
 
-### Optionen, die Services vor dem Backup starten und stoppen sowie Erweiterungen
+  - [-o: Befehle, die Services vor dem Backup stoppen](backup-options.md#parm_o)
+  - [-a: Befehle, die Services nach dem Backup starten](backup-options.md#parm_a)
+  - [-N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen](backup-options.md#parm_N)
 
-  - [-o: Befehle, die Services vor dem Backup stoppen](usage-and-options.md#parm_o)
-  - [-a: Befehle, die Services nach dem Backup starten](usage-and-options.md#parm_a)
-  - [-N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen](usage-and-options.md#parm_N)
+<a name="miscellaneous"></a>
+## Weitere Optionen
 
-### Weitere Optionen
+  - [-f: Angabe einer Konfigurationsdatei](general-options.md#parm_f)
+  - [-g: Fortschrittsanzeige](general-options.md#parm_g)
+  - [--unsupportedEnvironment: Nicht unterstützte HW und SW wird akzeptiert](general-options.md#parm_unsupportedEnvironment)
+  - [--updateConfig: Update der *raspiBackup* Konfigurationsdatei](general-options.md#parm_updateConfig)
 
-  - [-f: Angabe einer Konfigurationsdatei](usage-and-options.md#parm_f)
-
-
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/aufruf-und-optionen
 [.source]: https://www.linux-tips-and-tricks.de/en/invocation-and-options

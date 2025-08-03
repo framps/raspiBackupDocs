@@ -10,7 +10,7 @@ dem Parameter `-V` kann jederzeit wieder die vorherige Version aktiviert werden.
 
 Bei kleinen Änderungen wird kein neues Release zur Verfügung gestellt und man wird auch
 nicht auf die Änderung hingewiesen. Mit den Optionen `-U -S` wird immer der aktuelle Code
-heruntergeladen und aktiviert. So ein Update ist i.d.R. nicht notwendig und sollte nur vorgenommen werden
+heruntergeladen und aktiviert. So ein Update ist i.d.R. nicht notwendig und sollte nur vorgenommen werden,
 wenn dazu explizit aufgefordert wird.
 
 **Hinweis**:
@@ -24,7 +24,14 @@ eine neue Version sofort bereitgestellt.
 
 Jede neue Version wird [vor der Veröffentlichung regression getestet](regressiontests-executed.md).
 
-[.status]: rft
+## Konfigurationsupdate
+
+Sofern in einem neuen Release neue Optionen eingeführt wurden, wird die
+Konfigurationsdatei `/usr/local/etc/raspiBackup.conf` automatisch mit den neuen Optionen
+versehen. Die Details dazu sind [hier](configuration-update-when-upgrading-to-a-new-version.md)
+beschrieben.
+
+[.status]: rst
 [.source]: https://linux-tips-and-tricks.de/de/raspibackup#updatestrategie
 [.source]: https://linux-tips-and-tricks.de/de/raspibackupcategoried/432-raspibackup-versionshistorie
 

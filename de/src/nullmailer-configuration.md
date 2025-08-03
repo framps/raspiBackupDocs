@@ -1,4 +1,4 @@
-# nullmailer konfigurieren
+# nullmailer Konfiguration
 
 Um z.B. Statusmails von *raspiBackup* als root zu versenden, kann *nullmailer* eingesetzt werden.
 
@@ -19,8 +19,8 @@ Folgende Variablen werden in der folgenden Beschreibung genutzt (Provider ist He
 3. `sudo chown 700 /usr/sbin/sendmail`
 4. Installation von mail: `sudo apt install mailutils -y`
 
-2 und 3 sind nur notwendig, wenn der Hostname kein gueltiger Hostname beim eMailProvider ist.
+2 und 3 sind nur notwendig, wenn der Hostname kein gültiger Hostname beim eMailProvider ist.
 
 
-[.status]: rft
+[.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/675-nullmailer-konfigurieren
