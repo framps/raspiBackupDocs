@@ -89,7 +89,7 @@ Folgende Konfigurationen können angepasst werden:
 | M8 | [eMail Benachrichtigung](general-options.md#parm_e) | |
 | M9 | [Regelmäßiger Backup](general-options.md#parm_G) | [Detailinfo](installer.md#regularbackup) |
 
-Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration) ist ebenfalls möglich.
+Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md) ist ebenfalls möglich.
 Auf Youtube existiert auch ein Video, auf dem *raspiBackup* vorgestellt wird
 sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 
