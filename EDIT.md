@@ -257,7 +257,7 @@ Für die Integration per Plugin in `vim` habe ich [deepl.vim von ryicoh](https:/
 Dieses Plugin lässt sich z.B. mittels [junegunn's vim-plug](https://github.com/junegunn/vim-plug) per Eintrag in die `.vimrc`
 
 ```
-Plug "ryicoh/deepl.vim"
+Plug 'ryicoh/deepl.vim'
 ```
 
 und dann folgendem Neustart von `vim` und einmaligem Aufruf in `vim` installieren: `:PlugInstall`

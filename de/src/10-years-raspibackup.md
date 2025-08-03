@@ -50,7 +50,7 @@ genommen.
 Durch diese Hilfe entwickelte sich *raspiBackup* über die 10 Jahre fortwährend
 in seinem Funktionsumfang weiter. Zuerst kamen alle Feedbacks über die
 Kommentarfunktion auf [meiner Webseite](https://www.linux-tips-and-tricks.de). Das erwies sich aber als sehr
-umständlich und schließlich wurde der cvs Code in github abgelegt. Dadurch
+umständlich und schließlich wurde der cvs Code in *GitHub* abgelegt. Dadurch
 wurde das Erstellen von Featurerequests wesentlich vereinfacht. Zusätzlich ist
 seitdem das Berichten von Fehlern und Fragen zur *raspiBackup* Nutzung
 wesentlich einfacher.
@@ -83,7 +83,7 @@ Hotlinesupport für *raspiBackup* wurde.
 
 Schließlich habe ich mal ein Paypalkonto eingerichtet, auf welches jeder dem
 *raspiBackup* gefällt, [spenden kann](introduction.md#donation). Außerdem kann
-jeder als [Sponsor](https://github.com/sponsors/framps) über github spenden.
+jeder als [Sponsor](https://github.com/sponsors/framps) über *GitHub* spenden.
 Reich werde ich dadurch natürlich nicht, aber es wird damit die Arbeit erkennbar gewürdigt, die ich
 in *raspiBackup* Entwicklung und Support reinstecke.
 Auch kann ich damit Test-Hardware kaufen, denn
@@ -91,11 +91,11 @@ ich kann und will nicht meine Produktivsysteme stilllegen, um *raspiBackup* zu
 testen und zu maintainen. Außerdem bin ich nicht mehr bereit, einen Cent
 in benötigte HW für *raspiBackup* zu stecken. *raspiBackup* ist kostenlos
 verfügbar und Nutzer sollen sich erkenntlich zeigen und die benötigte HW durch Spenden finanzieren.
-Ein Nutzer spendete ein CM4 damit ich NVMe Support in raspiBackup einbauen und testen konnte.
+Ein Nutzer spendete ein CM4 damit ich NVMe Support in *raspiBackup* einbauen und testen konnte.
 Aus den allgemeinen kleinen Spenden konnte ich einen RPi4 mit 8GB Memory erwerben und den Ubuntu Support in *raspiBackup*
 einbauen. Schließlich hat jemand gespendet, damit ich mir einen RPi5 kaufen konnte. Die Spende gab es, da es ein
 auf einem RPi4 nicht reproduzierbares Problem mit [rpi-clone](https://github.com/geerlingguy/rpi-clone) gab.
-rpi-clone ist ein nützliches Clonetool - kein Backuptool wie raspiBackup, aber oft nachgefragt,
+*rpi-clone* ist ein nützliches Clonetool - kein Backuptool wie *raspiBackup*, aber oft nachgefragt,
 auf welches ich auch ein Auge habe, und konnte dann final das intermittierende Problem auf der RPi5 nachvollziehen und fixen.
 
 Im Mai 2025 hat [simonz](https://github.com/rpi-simonz/) viel Einsatz und Energie in ein neues git Repository [raspiBackupDoc](https://github.com/framps/raspiBackupDoc) gesteckt,

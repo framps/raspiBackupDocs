@@ -1,11 +1,19 @@
 # Files to be ignored by the 'rg' calls in .cdprc
+# additionally to .gitignore and .rgignore
 CONTRIBUTE.md
 EDIT.md
 INSTALL.md
+LICENSE
+Makefile
 MAINTAIN.md
 MDBOOK_INTRO.md
 README-apache.md
 README.md
+vimrc_project.example
+bin/
+**/theme/
+**/data/
+**/*.css
 #
 # If files should NOT be ignored even they are in .gitignore
 # they could be set here with an "!" in front of it:

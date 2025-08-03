@@ -15,7 +15,7 @@ Dazu werden ausgewertet:
   - Trennlinien (horizontal rules ---
 
 Die Listen dürfen ausschließlich Links enthalten.
-Alle Links bestehen aus Titel des Kapitels und Name der entsprechenden Datei.
+Jeder Link bestimmt den Titel eines Kapitels und den Namen der entsprechenden Datei.
 
 Dies ermöglicht einige kleine Kniffe:
 
@@ -46,13 +46,13 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Funktionsdetails](function-intro.md)
     - [Backup](backup-intro.md)
-        - [Entscheidungsbaum für Backuptypen](backuptypes.md)
+        - [Entscheidungsbaum für Backuptypen](backup-types.md)
         - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
         - [Backupverzeichnisstruktur](backup-directory-structure.md)
         - [Intelligente Rotationsstrategie](smart-recycle.md)
         - [Snapshots](snapshots.md)
         - [Konfigurationsupdate bei einem Upgrade auf eine neue Version](configuration-update-when-upgrading-to-a-new-version.md)
-        - [Konfigurationsbeispiele](email-configuration-examples.md)
+        - [Konfigurationsbeispiele](configuration-examples.md)
             - [msmtp Konfiguration für einen web.de Account](msmtp-configuration-for-web-de-account.md)
             - [exim4 Konfiguration](exim4-configuration.md)
             - [nullmailer Konfiguration](nullmailer-configuration.md)
@@ -66,7 +66,7 @@ Dies ermöglicht einige kleine Kniffe:
         - [Welches Filesystem kann auf der Backuppartition benutzt werden?](which-filesystem-can-be-used-on-the-backup-partition.md)
         - [Wie funktionieren Hardlinks zusammen mit rsync?](how-do-hardlinks-work-with-rsync.md)
         - [Warum sollte man dd als Backuptyp besser nicht benutzen?](why-shouldn-t-you-use-dd-as-backup-type.md)
-        - [Wie kann man mit raspiBackup einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
+        - [Wie kann man mit *raspiBackup* einen Clone erstellen?](how-to-create-a-cold-standby-clone-with-raspibackup.md)
         - [Umziehen des Raspberry Betriebssystems von SD Karte auf SSD, USB Platte oder USB Stick](migrate-the-raspberry-os-from-sd-card-to-ssd-usb-disk-or-usb-pen-drive.md)
         - [Wie kann ich die Betaversion installieren und ausprobieren?](how-can-i-install-and-test-the-beta-version.md)
         - [Wird eine externe Rootpartition unterstützt?](external-root-partition.md)
@@ -95,13 +95,13 @@ Dies ermöglicht einige kleine Kniffe:
 - [Fehlermeldungen und -suche](error-messages.md)
 
 - [Hilfsprogramme](helper-scripts.md)
-    - [raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
+    - [raspiBackupDialog - ein komfortables Hilfsscript für *raspiBackup*](raspibackupdialog-a-convenient-helper-script-for-raspibackup.md)
     - [Weitere nützliche Hilfsprogramme](useful-helper-scripts.md)
 
 - [Backupziele](backup-targets.md)
     - [NFS als Backupziel](nfs-as-backupspace.md)
     - [SMB als Backupziel](smb-as-backupspace.md)
-    - [AVM Fritzbox als Backupziel](avm-fritzbox-as-backupspace.md)
+    - [AVM FRITZ!Box als Backupziel](avm-fritzbox-as-backupspace.md)
     - [WEBDAV als Backupziel](webdav-as-backupspace.md)
 
 - [Tipps zur Homeautomation](tips-homeautomation.md)
@@ -111,9 +111,9 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Verschiedenes](miscellaneous.md)
     - [Versionshistorie](version-history.md)
-    - [raspiBackup Logo](raspibackup-has-a-new-logo.md)
-    - [10 Jahre raspiBackup](10-years-raspibackup.md)
-    - [Regressiontests](regressiontests-executed.md)
+    - [*raspiBackup* Logo](raspibackup-has-a-new-logo.md)
+    - [10 Jahre *raspiBackup*](10-years-raspibackup.md)
+    - [Regressionstests](regressiontests-executed.md)
     - [Entwicklungsumgebung](development-environment.md)
     - [Nutzer auf der Welt](list-of-countries-raspibackup-is-used-in-the-world.md)
     - [Version dieser Dokumentation](doc-version-info-automatically-generated.md)
@@ -126,6 +126,6 @@ Dies ermöglicht einige kleine Kniffe:
 - [Support new languages](local-language-support-for-languages-other-than-de-and-en-l10n.md)
 
 
+[.status]: z_SUMMARY
 [.status]: todo "Refer to en md file from de"
 [.status]: rst
-[.status]: z_SUMMARY

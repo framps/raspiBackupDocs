@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# vim: set expandtab:
+# vim: set expandtab nospell:
 
 # Script for defining helpful functions etc. while working on raspiBackupDoc.
 #
@@ -90,6 +90,15 @@ export FZF_MULTI="${FZF} --multi --bind alt-a:select-all,alt-d:deselect-all"
 
 unset FZFPOS_STATUS FZFPOS_FILE
 
+
+edit_translate_file() {
+    FILE=$(basename "$1")
+    ${VIM_PROJECT} -c "tabnew en/src/${FILE}|vsplit de/src/${FILE}|wincmd h|tabfirst" en/src/"${FILE}"
+}
+
+export -f edit_translate_file
+
+
 edit_translate_by_status() {
     while true; do
         TMPFILE_TRANS=$( mktemp tmp.XXXXXXXX )
@@ -136,7 +145,7 @@ edit_grepped_files() {
 
     # Switch between Ripgrep mode and fzf filtering mode (ALT-G)
     rm -f /tmp/rg-fzf-{r,f}
-    RG_PREFIX="${RG_IGN} --column --line-number --no-heading --color=always --smart-case "
+    RG_PREFIX="${RG_IGN} --column --line-number --no-heading --color=always "
     INITIAL_QUERY="${*:-}"
     # shellcheck disable=2016
     fzf --ansi --disabled --query "$INITIAL_QUERY" \
@@ -153,7 +162,7 @@ edit_grepped_files() {
         --header 'ALT-G: Switch between ripgrep/fzf' \
         --preview "${BAT} --color=always --theme=ansi {1} --highlight-line {2}" \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-        --bind 'enter:become(${VIM_PROJECT} {1} +{2})'
+        --bind 'enter:execute(${VIM_PROJECT} {1} +{2})'
 }
 
 export -f edit_grepped_files
@@ -261,7 +270,7 @@ edit_by_status() {
                        --bind="alt-t:execute(edit_translate_already_translated)+reload(__list_stati)" \
                        --bind="alt-g:execute(edit_grepped_files)" \
                        --bind="alt-m:execute(edit_meta_files)" \
-                       --bind="alt-s:execute(vimdiff -c 'syntax off' {de,en}/src/SUMMARY.md)" \
+                       --bind="alt-s:execute(vimdiff -c 'syntax off| windo set nospell' {de,en}/src/SUMMARY.md)" \
                        --preview='V={}; __list_files_with_status "$V"')
         set --
 
@@ -299,6 +308,7 @@ edit_by_status() {
                                  | ${FZF_MULTI} \
                                       --header="${FZF_HEADER}" \
                                       --bind="load:pos($FZFPOS_FILE)" \
+                                      --bind="alt-t:execute(edit_translate_file {})" \
                                       --preview='cat {}')
             [[ "${FILES[*]}" ]] || break
             unset FZFPOS_FILE

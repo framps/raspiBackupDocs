@@ -351,15 +351,14 @@ Typ des Backups, der entweder dd, tar oder rsync sein kann. rsync benutzt bei
 einer ext3/ext4 Partition Hardlinks, um den benötigten Speicherplatz zu
 minimieren.
 
-[Detailinformationen zu den Backuptypen](backuptypes.md) Ein externes Rootfilesystem wird
-automatisch bei tar oder rsync Backup mitgesichert sofern nicht die Option -P
-benutzt wird. Mit der Option -z werden die dd und tar Backups zusätzlich noch gezippt bzw
+[Detailinformationen zu den Backuptypen](backup-types.md) Ein externes Rootfilesystem wird
+automatisch bei `tar` oder `rsync` Backup mitgesichert, sofern nicht die Option `-P`
+benutzt wird. Mit der Option `-z` werden die `dd` und `tar` Backups zusätzlich noch gezippt bzw.
 verkleinert.
 
 **Hinweis**:
 Beim dd Backup kann durch den Konfigurationsparameter
-DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY Backup-zeit und -platz gespart
-werden.
+DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY Backupzeit und -platz gespart werden.
 
 Siehe dazu auch [FAQ16](faq.md#faq16).
 
@@ -383,7 +382,7 @@ die Liste wie folgt aussehen:
 "--exclude=/backup/* --exclude=/rsnapshot/* --exclude=/www-data*/* --exclude=/home/pi/.local/share/Trash"
 ```
 
-Die Anfuehrungszeichen sind wichtig! Weitere Informationen zu der Syntax finden
+Die Anführungszeichen sind wichtig! Weitere Informationen zu der Syntax finden
 sich auf der man Page der jeweiligen Backuptools.
 
 Folgende Verzeichnisse werden niemals gesichert:

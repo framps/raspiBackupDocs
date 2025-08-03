@@ -22,7 +22,7 @@ durchgelaufen, wird die neue Version als Beta verfügbar gemacht, damit
 Ausserdem wird die Beta auf meinen lokalen Raspberries eingesetzt. Nach ca 4
 Wochen wird der neue Code in den Master Zweig übernommen und die neue Version
 veröffentlicht. *raspiBackup* ist Open Source und desshalb werden alle Releases
-im [github](https://github.com/framps/raspiBackup) synchronisiert. Dazu gehört auch der Developmentzweig der von Zeit
+im [*GitHub*](https://github.com/framps/raspiBackup) synchronisiert. Dazu gehört auch der Developmentzweig der von Zeit
 zu Zeit synchronisiert wird.
 
 *raspiBackup* schreibt seine git Codeversion (commit sha) in die folgenden Meldung RBK0009I
@@ -39,8 +39,8 @@ möglich, auf diesem Codestand einen Hotfix zu bauen. Das wird in der Regel
 gemacht und der Hotfix verifiziert, bevor er  in das nächste Release
 einfliesst.
 
-Die meisten Probleme werden in [github](https://github.com/framps/raspiBackup/issues) verwaltet. Für jedes neue Release gibt
-es [hier auf GitHub](https://github.com/framps/raspiBackup/releases) eine Zusammenfassung der Bugfixes und neuer Funktionalität.
+Die meisten Probleme werden in [*GitHub*](https://github.com/framps/raspiBackup/issues) verwaltet. Für jedes neue Release gibt
+es [hier auf *GitHub*](https://github.com/framps/raspiBackup/releases) eine Zusammenfassung der Bugfixes und neuer Funktionalität.
 
 
 [.status]: rst
