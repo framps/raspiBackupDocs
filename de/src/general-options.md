@@ -15,7 +15,7 @@ Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -A | aus |  | DEFAULT_APPEND_LOG |
+| -A | aus | nein | DEFAULT_APPEND_LOG |
 
 <a name="parm_coloring"></a>
 ### --coloring: Kolorierungseinstellungen bei eMails und Konsolmeldungen
@@ -26,7 +26,7 @@ Falls postfix als eMmailClient genutzt wird siehe auch Option --eMailColoring.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --coloring | automatisch |  | DEFAULT_COLORING |
+| --coloring  | automatisch | nein | DEFAULT_COLORING |
 
 <a name="parm_e"></a>
 ### -e: eMailAdresse an die die Benachrichtigung geschickt wird
@@ -74,7 +74,7 @@ sollte vor Verschicken des Logs manuell maskiert werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -E | keine |  | DEFAULT_EMAIL_PARMS |
+| -E | keine | nein | DEFAULT_EMAIL_PARMS |
 
 <a name="parm_eMailColoring"></a>
 ### --eMailColoring: Steuerung wo der genutzte eMailClient Colorierungnsinformationen akzeptiert
@@ -86,7 +86,7 @@ Coloring mit einer separaten Option steuert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --eMailColoring | SUBJECT |  | DEFAULT_EMAIL_COLORING |
+| --eMailColoring | SUBJECT | nein | DEFAULT_EMAIL_COLORING |
 
 
 <a name="parm_f"></a>
@@ -97,7 +97,7 @@ Angabe einer Konfigurationsdatei, die eingelesen wird. Siehe
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -f | None |  | None |
+| -f | keiner | nein | |
 
 <a name="parm_g"></a>
 ### -g: Fortschrittsanzeige
@@ -107,7 +107,7 @@ angezeigt. Beim tar Backup steht keine  Fortschrittssanzeige zur Verfügung.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -g | None |  | None |
+| -g | keiner | nein |  |
 
 <a name="parm_G"></a>
 ### -G: Sprache der Meldungen
@@ -133,7 +133,7 @@ Ausgabe der Aufrufsyntax mit seinen Parametern
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -h | None |  | None |
+| -h | keiner | nein |  |
 
 
 <a name="parm_l"></a>
@@ -154,7 +154,7 @@ Aufrufers gesichert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -l | on |  | DEFAULT_LOG_LEVEL |
+| -l | an | nein | DEFAULT_LOG_LEVEL |
 
 
 <a name="parm_L"></a>
@@ -176,7 +176,7 @@ Im Backupverzeichnis werden keine Logs abgelegt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -L | backup |  | DEFAULT_LOG_OUTPUT |
+| -L | /backup | nein | DEFAULT_LOG_OUTPUT |
 
 <a name="parm_m"></a>
 ### -m: Meldungsdetails
@@ -204,7 +204,7 @@ Parameter muss dann mailext sein. Details zum eMailPlugin siehe [diese Seite](ho
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -s | mail |  | DEFAULT_MAIL_PROGRAM |
+| -s | mail | nein | DEFAULT_MAIL_PROGRAM |
 
 <a name="parm_S"></a>
 ### -S: Unbedingter Update
@@ -217,7 +217,7 @@ aktualisieren.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -S | aus |  |  |
+| -S | aus |  nein |  |
 
 <a name="parm_timestamps"></a>
 ### --timestamps: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben
@@ -226,7 +226,7 @@ Durch diese Option wird vor jeder Meldung ein Zeitstempel ausgegeben.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --timestamps | aus |  | DEFAULT_TIMESTAMPS |
+| --timestamps | aus | nein | DEFAULT_TIMESTAMPS |
 
 <a name="parm_U"></a>
 ### -U: Update von *raspiBackup*
@@ -246,7 +246,7 @@ Mit der Option -V kann auf eine ältere Version zurückgegangen werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -U | aus |  |  |
+| -U | aus | nein |  |
 
 <a name="parm_updateConfig"></a>
 ### --updateConfig: Update der *raspiBackup* Konfiguration
@@ -257,7 +257,7 @@ Option `-U` vorgenommen wurde.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --updateConfig | aus |  |  |
+| --updateConfig | aus | nein |  |
 
 <a name="parm_unsupportedEnvironment"></a>
 ### --unsupportedEnvironment: Nicht unterstützte HW und SW wird akzeptiert
@@ -267,10 +267,10 @@ gestartet muss diese Option angegeben werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --unsupportedEnvironment | aus |  |  |
+| --unsupportedEnvironment | aus | nein |  |
 
 <a name="parm_version"></a>
-### --version: Anzeige der Versionsinformation 
+### --version: Anzeige der Versionsinformation
 
 Die Version von *raspiBackup* wird im folgenden Format ausgegeben:
 
@@ -280,7 +280,7 @@ Version: 0.6.3.2 CommitSHA: 8fbcd1a CommitDate: 2018-02-19 CommitTime: 19:18:31#
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --version | aus |  |  |
+| --version | aus | nein |  |
 
 <a name="parm_v"></a>
 ### -v: Alle Meldungen des verwendeten Backuptools werden protokolliert
@@ -291,7 +291,7 @@ Backuptests, um den Backupfortschritt verfolgen zu können.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -v | aus |  | DEFAULT_VERBOSE |
+| -v | aus | nein | DEFAULT_VERBOSE |
 
 
 <a name="parm_V"></a>
@@ -304,7 +304,7 @@ wiederhergestellt werden (Siehe auch -U Parameter)
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -V | None |  | None |
+| -V | keiner| nein | |
 
 <a name="parm_y"></a>
 ### -y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp
@@ -316,7 +316,7 @@ Menge von Hosts nach einem Versionsupdate verteilen.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -y | None |  | DEFAULT_DEPLOYMENT_HOSTS |
+| -y | keiner | nein | DEFAULT_DEPLOYMENT_HOSTS |
 
 </div>
 

@@ -30,7 +30,7 @@ Hinweis: Die Restorezeit wird dadurch erhöht.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -c     |   aus    |              | DEFAULT_CHECK_FOR_BAD_BLOCKS |
+| -c     |   aus    |   nein       | DEFAULT_CHECK_FOR_BAD_BLOCKS |
 
 <a name="parm_d"></a>
 ### -d: Restoredevice
@@ -39,7 +39,7 @@ Device, auf dem der Backup restored wird.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -d     |          |              | DEFAULT_RESTORE_DEVICE |
+| -d     |  keiner  |  nein        | DEFAULT_RESTORE_DEVICE |
 
 Beispiel: `-/dev/sda`
 
@@ -61,7 +61,7 @@ Speicherbelegung vor und nach dem Backuplauf ausgeben.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -N | keine |  | DEFAULT_EXTENSIONS |
+| -N | keine | nein | DEFAULT_EXTENSIONS |
 
 
 <a name="parm_R"></a>
@@ -75,7 +75,7 @@ werden soll.  Beispiel: `/dev/sdb1`.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -R     |          |              |                    |
+| -R     |  nein    |   nein       |                    |
 
 **Hinweis:** Diese Option nur benutzen, wenn sowohl eine SD Karte als auch ein
 externes Rootfilesystem auf einem Gerät benutzt wird. Sonst reicht die Option `-d`.
@@ -100,7 +100,7 @@ Partition auf dem Gerät erweitert. Liegen mehr als 2 Partitionen vor ist es dan
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| --resizeRootFS     |  ja    |              |                    |
+| --resizeRootFS    |  ja          |   nein       |                    |
 
 <a name="parm_T"></a>
 ### -T: Zu restorende Partitionen
@@ -111,7 +111,7 @@ alle Partitionen restored.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -T     |   "1,2"  |              | DEFAULT_PARTITIONS_TO_RESTORE |                   |
+| -T     |   "1,2"  |   nein       | DEFAULT_PARTITIONS_TO_RESTORE |                   |
 
 <a name="parm_updateUUIDs"></a>
 ### --updateUUIDs: Anpassen der UUIDs
@@ -123,7 +123,7 @@ Restore generiert.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| --updateUUIDs     |  ja    |              |                    |
+| --updateUUIDs     |  ja    |  nein        |                    |
 
 <a name="parm_Y"></a>
 ### -Y: Automatisierter Restore
@@ -137,15 +137,10 @@ und wichtige Daten löschen.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -Y     |  loop    |              |                    |
+| -Y     |  aus     |   nein       |                    |
 
-Zusätzlich muss noch die folgende Option in die Konfigurationsdatei aufgenommen
-werden und die Devices, auf welches restored werden darf, eingetragen werden.
-Der Eintrag kann ein regulärer Ausdruck sein.
-
-**Use with care!**
-
-DEFAULT_YES_NO_RESTORE_DEVICE="loop"
+Zusätzlich muss noch die Option `DEFAULT_YES_NO_RESTORE`in der Konfigurationsdatei
+entsprechend gesetzt sein für diei Restoredevices.
 
 <a name="parm_0"></a>
 ### -0: Keine Partitionierung
@@ -156,7 +151,7 @@ und dann ein Backup restoren. Details dazu siehe [FAQ #6](faq.md#faq6)
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -0     |  aus    |              |                    |
+| -0     |  aus     |       nein   |                    |
 
 <a name="parm_00"></a>
 ### -00: Keine Partitionierung und Formatierung
@@ -168,7 +163,7 @@ geänderte oder gelöschte Dateien gesynced werden.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -00     |  aus    |              |                    |
+| -00     |  aus    |   nein       |                    |
 
 <a name="parm_1"></a>
 ### -1: Partitionierungsfehler ignorieren
@@ -180,7 +175,7 @@ weitere Details.
 
 | Option | Standard | Im Installer | Konfigurationsname |
 |--------|----------|--------------|--------------------|
-| -1     |  aus    |              |                    |
+| -1     |  aus     |    nein      |                    |
 
 Hinweis: Diese Option kann unerwartete Ergebnisse haben.
 Benutze die Option nur, wenn Du weisst, was Du tust.

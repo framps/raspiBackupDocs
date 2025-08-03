@@ -20,7 +20,7 @@ Extensions.
 
 | Config-Option              | Standard |
 |----------------------------|----------|
-| DEFAULT_RESTORE_EXTENSIONS |          |
+| DEFAULT_RESTORE_EXTENSIONS | keiner   |
 
 
 ### DEFAULT_RESTORE_REMINDER_INTERVAL
@@ -38,6 +38,21 @@ Anzahl der Erinnerungen, einen Backup Restore Test durchzuführen.
 | Config-Option              | Standard |
 |----------------------------|----------|
 | DEFAULT_RESTORE_REMINDER_REPEAT | 3   |
+
+### DEFAULT_YES_NO_DEVICES
+
+Mit der Aufrufoption `-Y` können die Ja/Nein
+Abfragen beim Restore unterdrückt werden.
+
+Da dieses aber unbeabsichtigtes Löschen von
+Devices bewirken kann muss mit dieser Option
+vermitteles eines regulären Ausdruckes
+definiert werden, welche Restoredevices
+ohne Abfrage überschrieben werden dürfen.
+
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_YES_NO_DEVICES     | loop   |
 
 </div>
 

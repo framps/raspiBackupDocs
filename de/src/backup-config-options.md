@@ -18,8 +18,8 @@ vor bzw nach dem Stoppen von Systemservices (Option -a und -o) ausgeführt.
 
 | Config-Option               | Standard |
 |-----------------------------|----------|
-| DEFAULT_BEFORE_STOPSERVICES |          |
-| DEFAULT_AFTER_STARTSERVICES |          |
+| DEFAULT_BEFORE_STOPSERVICES |  keiner  |
+| DEFAULT_AFTER_STARTSERVICES |  keiner  |
 
 
 ### DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY
@@ -34,7 +34,7 @@ Siehe dazu auch [FAQ16](faq.md#faq16).
 
 | Config-Option              | Standard |
 |----------------------------|----------|
-| DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY |          |
+| DEFAULT_DD_BACKUP_SAVE_USED_PARTITIONS_ONLY |  keiner  |
 
 ### DEFAULT_LINK_BOOTPARTITIONFILES
 
@@ -44,7 +44,7 @@ Backupspace zu sparen. Voraussetzung: Der Backupspace unterstützt Hardlinks
 
 | Config-Option              | Standard |
 |----------------------------|----------|
-| DEFAULT_LINK_BOOTPARTITIONFILES |          |
+| DEFAULT_LINK_BOOTPARTITIONFILES |  keiner  |
 
 ### DEFAULT_MAIL_ON_ERROR_ONLY
 
@@ -55,7 +55,7 @@ dass keine eMail gesendet wird.
 
 | Config-Option              | Standard |
 |----------------------------|----------|
-| DEFAULT_MAIL_ON_ERROR_ONLY |          |
+| DEFAULT_MAIL_ON_ERROR_ONLY |  keiner  |
 
 ### DEFAULT_REBOOT_SYSTEM
 
@@ -78,7 +78,7 @@ zu den Standardoptionen von *raspiBackup* genutzt werden.
 
 | Config-Option              | Standard |
 |----------------------------|----------|
-| DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS |          |
+| DEFAULT_RSYNC_BACKUP_ADDITIONAL_OPTIONS | keiner   |
 
 ### DEFAULT_RSYNC_BACKUP_OPTIONS
 
@@ -112,7 +112,7 @@ zu den Standardoptionen genutzt werden.
 
 | Config-Option              | Standard |
 |----------------------------|----------|
-| DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS |          |
+| DEFAULT_TAR_BACKUP_ADDITIONAL_OPTIONS |  keiner  |
 
 </div>
 

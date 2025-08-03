@@ -1,4 +1,4 @@
-# Installer Aufruf und Optionen 
+# Installer Aufruf und Optionen
 
 ## Aufruf
 
@@ -13,7 +13,7 @@ sudo raspiBackupInstallUI
 
 Mit folgenden Optionen kann der Installer bestimmte Funktionen direkt ohne Menuführung vornehmen:
 
-* -i: Re/Installation von *raspiBackup*    
+* -i: Re/Installation von *raspiBackup*
 * -e: Re/Installation von den *raspiBackup* Beispielerweiterungen
 * -h: Anzeige eines Hilfetextes
 * -U: Update vom Installer `raspiBackupInstallUI`
@@ -45,15 +45,15 @@ curl https://raspibackup.linux-tips-and-tricks.de/install | sudo bash -s -- -i
 
 Jedwede Änderungen an der Konfiguration können nun manuell mit einem Editor
 vorgenommen werden.
-Ebenso das Einschalten des wöchentlichen Backup per systemd Timer. 
+Ebenso das Einschalten des wöchentlichen Backup per systemd Timer.
 Man kann aber auch den Installer mit seinen Menus benutzen, um die
 Konfiguration der primären Optionen anzupassen sowie den regulären Backup ein-
 oder auszuschalten.
 
-## Optionsdetails
+## Menudetails
 
 <a name="backupversionen"></a>
-### Backupversionen - Option C3
+### Backupversionen - Menu C3
 
 *raspiBackup* bietet zwei verschiedene Möglichkeiten an, Backupversionen
 vorzuhalten:
@@ -62,13 +62,13 @@ vorzuhalten:
    In der Konfigurationsdatei kann für jeden Backuptyp noch einmal die Anzahl
    definiert werden (Option --keep\<Type\>).
    Wird die Anzahl überschritten wird das älteste Backup gelöscht.
-   
-1. Nutzung der *intelligenten Backupstrategie*. Dabei werden nach einer bestimmten Regel Backups 
+
+1. Nutzung der *intelligenten Backupstrategie*. Dabei werden nach einer bestimmten Regel Backups
    der letzten Tage, Wochen, Monate und Jahre vorgehalten. Ältere Backups
    werden jeweils gelöscht. Im Installer wird die Zahl der
    jeweils vorzuhaltenden Backups mit 4 Zahlen definiert. Der Standard ist
    `7 4 12 3`.
-   
+
    1. tägliche Backups (7)
    1. wöchentliche Backups (4)
    1. monatliche Backups (12)
@@ -77,7 +77,7 @@ vorzuhalten:
    Die intelligente Backupstrategie ist im Detail [hier](smart-recycle.md) beschrieben.
 
 <a name="services"></a>
-### Zu stoppende und startenden Services - Option C6
+### Zu stoppende und startenden Services - Menu C6
 
 Da *raspiBackup* keine Speicherinhalte sichert sollten alle Services, die wichtige Informationen
 im Speicher halten, vor dem Backup gestoppt werden.
@@ -93,16 +93,16 @@ Nach der Selektion der Services, die gestoppt werden sollen, muss noch die Reihe
 definiert werde in der sie gestoppt werden sollen. I.A. spielt die Reihenfolge
 keine Rolle, aber wenn ein Service Abhängigkeiten zu einem anderen Servide hat sollte
 der Service erst nach dem abhängigen Service gestoppt werden. Beispielsweise
-sollten alle Services, die mit einer Datenbank arbeiten, vor dem Stoppen der Datenbank 
+sollten alle Services, die mit einer Datenbank arbeiten, vor dem Stoppen der Datenbank
 gestoppt werden, damit sie noch offene Transaktionen beenden können.
 
 <a name="regularbackup"></a>
-### Regelmäßiger Backup - Option C9
+### Regelmäßiger Backup - Menu C9
 
 *raspiBackup* bietet die Möglichkeit regelmäßig automatisch Backups zu erstellen.
-Dieses erfolgt standardmäßig per systemd, kann aber auch mit der Option `-t` 
+Dieses erfolgt standardmäßig per systemd, kann aber auch mit der Option `-t`
 beim Installieren des Installers auf cron umgestellt werden.
- 
+
 Im Installer kann der Wochentag definiert werden an dem ein Backup erstellt
 werden soll oder auch täglich. Außerdem muss die Zeit des Backups in Stunde
 und Minute definiert werden. Der Standard ist Sonntag um 05:00 Uhr.

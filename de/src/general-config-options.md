@@ -56,17 +56,17 @@ Die Prioritäten entsprechen den verfügbaren Pushover Prioritäten.
 
 Die Klänge entsprechen den verfügbaren Pushoverklängen.
 
-| Config-Option              | Standard | Bemerkung |
-|----------------------------|----------|-----------|
-| DEFAULT_PUSHOVER_TOKEN     |          |  |
-| DEFAULT_PUSHOVER_USER      |          |  |
-| DEFAULT_PUSHOVER_NOTIFICATIONS |      |  |
-| DEFAULT_PUSHOVER_SOUND_SUCCESS |      |  |
-| DEFAULT_PUSHOVER_SOUND_FAILURE |      |  |
-| DEFAULT_PUSHOVER_PRIORITY_SUCCESS |   |  |
-| DEFAULT_PUSHOVER_PRIORITY_FAILURE |   |  |
-| DEFAULT_PUSHOVER_ADDITIONAL_OPTIONS | |  |
-| DEFAULT_PUSHOVER_DEVICE             | |  |
+| Config-Option              | Standard |
+|----------------------------|----------|
+| DEFAULT_PUSHOVER_TOKEN     | keiner   |
+| DEFAULT_PUSHOVER_USER      | keiner   |
+| DEFAULT_PUSHOVER_NOTIFICATIONS | keiner |
+| DEFAULT_PUSHOVER_SOUND_SUCCESS | keiner     |
+| DEFAULT_PUSHOVER_SOUND_FAILURE | keiner     |
+| DEFAULT_PUSHOVER_PRIORITY_SUCCESS | keiner  |
+| DEFAULT_PUSHOVER_PRIORITY_FAILURE | keiner  |
+| DEFAULT_PUSHOVER_ADDITIONAL_OPTIONS | keiner|
+| DEFAULT_PUSHOVER_DEVICE             | keiner |
 
 
 ### DEFAULT_SEND_STATS
@@ -99,8 +99,8 @@ werden. Beispiel: "SF" oder "SM".
 
 | Config-Option               | Standard |
 |-----------------------------|----------|
-| DEFAULT_SLACK_WEBHOOK_URL   |          |
-| DEFAULT_SLACK_NOTIFICATIONS |          |
+| DEFAULT_SLACK_WEBHOOK_URL   |  keiner  |
+| DEFAULT_SLACK_NOTIFICATIONS |  keiner  |
 
 ### DEFAULT_TELEGRAM_*
 
@@ -114,10 +114,10 @@ werden. Beispiel: "SF" oder "SM".
 
 | Config-Option               | Standard |
 |-----------------------------|----------|
-| DEFAULT_TELEGRAM_TOKEN      |          |
-| DEFAULT_TELEGRAM_CHATID     !          |
-| DEFAULT_TELEGRAM_NOTIFICATIONS |        | 
-| DEFAULT_TELEGRAM_THREADID      |          | ab Release 7.1.1 |
+| DEFAULT_TELEGRAM_TOKEN      | keiner   |
+| DEFAULT_TELEGRAM_CHATID     | keiner  |
+| DEFAULT_TELEGRAM_NOTIFICATIONS | keiner |
+| DEFAULT_TELEGRAM_THREADID      | keiner   | ab Release 7.1.1 |
 
 
 </div>

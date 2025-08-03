@@ -70,23 +70,19 @@ Mit dem Installer wird *raspiBackup* installiert, deinstalliert und updated. Au�
 Optionen menugesteuert konfiguriert werden. Im Hintergrund wird dabei die *raspiBackup* Konfigurationsdatei
 entsprechend geändert ohne dass Editor genutzt werden muss.
 
-Außerdem können die wichtigsten
-Optionen menugesteuert konfiguriert werden. Im Hintergrund wird dabei die *raspiBackup* Konfigurationsdatei
-entsprechend geändert ohne dass Editor genutzt werden muss.
-
 Folgende Konfigurationen können angepasst werden:
 
-| Installer | Option | Detailinformation |
+| Menupunkt | Option |    Detailinfo     |
 | --------- | ------ | ----------------- |
 | M1 | [Sprache](general-options.md#parm_G) | |
 | M2 | [Backupverzeichnispfad](general-config-options.md#backuppath) | |
-| M3 | [Backupversionen](backup-options.md#parm_k) sowie [Intelligente Rotationsstrategie](smart-recycle.md) | [Backups](installer.md#backupversionen) |
+| M3 | [Backupversionen](backup-options.md#parm_k) sowie [Intelligente Rotationsstrategie](smart-recycle.md) | [Detailinfo](installer.md#backupversionen) |
 | M4 | [Backuptyp](backup-options.md#parm_t) | |
 | M5 | [Backupmodus](backup-options.md#parm_P) | |
-| M6 | [Zu stoppende und startende Services](backup-options.md#parm_o) | [Zu stoppende Services](installer.md#services) |
+| M6 | [Zu stoppende und startende Services](backup-options.md#parm_o) | [Detailinfo](installer.md#services) |
 | M7 | [Meldungsgenauigkeit](general-options.md#parm_l) | |
 | M8 | [eMail Benachrichtigung](general-options.md#parm_e) | |
-| M9 | [Regelmäßiger Backup](general-options.md#parm_G) | [Regelmäßiger Backup](installer.md#regularbackup) |
+| M9 | [Regelmäßiger Backup](general-options.md#parm_G) | [Detailinfo](installer.md#regularbackup) |
 
 Eine [Manuelle Installation und Konfiguration](manual-installation-and-configuration) ist ebenfalls möglich.
 Auf Youtube existiert auch ein Video, auf dem *raspiBackup* vorgestellt wird

@@ -45,7 +45,7 @@ Blocksize, die beim dd Backup benutzt wird
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -b | 1 MB |  | DEFAULT_DD_BLOCKSIZE |
+| -b | 1 MB | nein | DEFAULT_DD_BLOCKSIZE |
 
 <a name="parm_B"></a>
 ### -B: Bootpartition wird als tar gesichert statt per dd
@@ -58,7 +58,7 @@ benutzt wird.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -B | aus |  | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
+| -B | aus | nein | DEFAULT_TAR_BOOT_PARTITION_ENABLED |
 
 <a name="parm_c"></a>
 ### -c: Erlaube lokale Backupspeicherung
@@ -76,7 +76,7 @@ noch auf die Rootparition passt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -c | aus |  | DEFAULT_SKIPLOCALCHECK |
+| -c | aus | nein | DEFAULT_SKIPLOCALCHECK |
 
 <a name="parm_D"></a>
 ### -D: Weitere Optionen für den dd Backup
@@ -85,7 +85,7 @@ Weitere Aufrufoptionen für das dd Backup (z.B. "conv=notrunc,noerror,sync")
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -D | automatisch |  | DEFAULT_DD_PARMS |
+| -D | automatisch | nein | DEFAULT_DD_PARMS |
 
 <a name="parm_dynamicMount"></a>
 ### --dynamicMount: Dynamisches Mounten der Backuppartition
@@ -98,7 +98,7 @@ oder die Backuppartition (z.B. /dev/sdb1).
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --dynamicMount | aus |  | DEFAULT_DYNAMIC_MOUNT |
+| --dynamicMount | aus | nein | DEFAULT_DYNAMIC_MOUNT |
 
 <a name="parm_F"></a>
 ### -F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen
@@ -109,7 +109,7 @@ Optionsprüfungen wie auch das Senden der BenachrichtigungseMail und Pushnachric
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -F | None |  | None |
+| -F | keiner | nein |  |
 
 <a name="parm_ignoreAdditionalPartitions"></a>
 ### --ignoreAdditionalPartitions: Es werden mehr als zwei Partitionen toleriert wobei aber nur die ersten beiden Partitionen gesichert werden.
@@ -121,7 +121,7 @@ und wiederhergestellt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --ignoreAdditionalPartitions | nein |  | DEFAULT_IGNORE_ADDITIONAL_PARTITIONS |
+| --ignoreAdditionalPartitions | nein | nein | DEFAULT_IGNORE_ADDITIONAL_PARTITIONS |
 
 <a name="parm_ignoreMissingPartitions"></a>
 ### --ignoreMissingPartitions: Test ob alle Partitionen gesichert werden
@@ -133,7 +133,7 @@ ausgeschaltet.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --ignoreMissingPartitions | nein |  | DEFAULT_IGNORE_MISSING_PARTITIONS |
+| --ignoreMissingPartitions | nein | nein | DEFAULT_IGNORE_MISSING_PARTITIONS |
 
 <a name="parm_k"></a>
 ### -k: Anzahl der Backups die vorgehalten werden sollen
@@ -162,11 +162,11 @@ Diese Optionen sind wirkungslos, wenn die intelligente Rotationsstrategie benutz
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --keep_dd    | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DD |
-| --keep_ddz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_DDZ |
-| --keep_rsync | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_RSYNC |
-| --keep_tar   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TAR |
-| --keep_tgz   | Parameter für Option -k | konfigurierbar | DEFAULT_KEEPBACKUPS_TGZ |
+| --keep_dd    | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_DD |
+| --keep_ddz   | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_DDZ |
+| --keep_rsync | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_RSYNC |
+| --keep_tar   | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_TAR |
+| --keep_tgz   | Parameter für Option -k | nein | DEFAULT_KEEPBACKUPS_TGZ |
 
 <a name="parm_M"></a>
 ### -M: Erstellen eines *raspiBackup* Snapshots
@@ -194,7 +194,7 @@ müssen sie manuell gelöscht werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -M | keiner |  |  |
+| -M | keiner | nein |  |
 
 <a name="parm_N"></a>
 ### -N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen
@@ -205,7 +205,7 @@ Speicherbelegung vor und nach dem Backuplauf ausgeben.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -N | keine |  | DEFAULT_EXTENSIONS |
+| -N | keine | nein | DEFAULT_EXTENSIONS |
 
 <a name="parm_notifyStart"></a>
 ### --notifyStart: Benachrichtigung beim Backupstart
@@ -216,7 +216,7 @@ Normalerweise wird nur am Ende des Backups eine Benachrichtigung geschickt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --notifyStart | nein |  | DEFAULT_NOTIFY_START |
+| --notifyStart | nein | nein | DEFAULT_NOTIFY_START |
 
 <a name="parm_o"></a>
 ### -o: Befehle, die Services vor dem Backup stoppen
@@ -266,7 +266,7 @@ Deshalb werden Argumente der Option -a auch ignoriert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --rebootSystem | aus |  | DEFAULT_REBOOT_SYSTEM |
+| --rebootSystem | aus | nein | DEFAULT_REBOOT_SYSTEM |
 
 <a name="parm_smartRecycle"></a>
 ### --smartRecycle: Nutzung von SmartReccyle 
@@ -287,7 +287,7 @@ Rotationsstrategie - Smart Recycle](smart-recycle.md) ein.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --smartRecycleDryrun | ja |  | DEFAULT_SMART_RECYCLE_DRYRUN |
+| --smartRecycleDryrun | ja | nein | DEFAULT_SMART_RECYCLE_DRYRUN |
 
 
 <a name="parm_smartRecycleOptions"></a>
@@ -307,7 +307,7 @@ in der Debugdatei erstellt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --systemstatus | aus |  |  |
+| --systemstatus | aus | nein |  |
 
 <a name="parm_unsupportedEnvironment"></a>
 ### --unsupportedEnvironment: Nutzung auf nicht unterstützter HW und OS 
@@ -317,7 +317,7 @@ gestartet muss diese Option angegeben werden.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| --unsupportedEnvironment | aus |  |  |
+| --unsupportedEnvironment | aus | nein |  |
 
 <a name="parm_P"></a>
 ### -P: Partitionsorientierter Backupmodus
@@ -342,7 +342,7 @@ Partition. Mit * werden alle Partitionen gesichert.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -T | "1 2" |          | DEFAULT_PARTITIONS_TO_BACKUP |
+| -T | "1 2" |  nein     | DEFAULT_PARTITIONS_TO_BACKUP |
 
 <a name="parm_t"></a>
 ### -t: Typ des Backups (dd, tar, rsync)
@@ -423,7 +423,7 @@ Wenn die Option -P benutzt wird, werden in allen Partitionsbackups die o.g. Verz
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -u | keine |  | DEFAULT_EXCLUDE_LIST |
+| -u | keine | nein | DEFAULT_EXCLUDE_LIST |
 
 <a name="parm_v"></a>
 ### -v: Alle Meldungen des verwendeten Backuptools werden protokolliert
@@ -434,7 +434,7 @@ Backuptests, um den Backupfortschritt verfolgen zu können.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -v | aus |  | DEFAULT_VERBOSE |
+| -v | aus | nein | DEFAULT_VERBOSE |
 
 <a name="parm_z"></a>
 ### -z: Kompression des Backups bei dd oder tar
