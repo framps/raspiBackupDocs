@@ -135,10 +135,7 @@ und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wied
 
     Benutzerhandbuch, FAQs, Konfigurationsbeispiele, NFS Konfiguration auf einer
     Synology, Liste von Fehlermeldungen und wie man die Fehlermeldungen beseitigen
-    kann und vieles mehr. Es gibt schon *raspiBackup* Nutzer, die sich beschweren, dass
-    es zu viel Doku gibt. Es existiert auch ein *raspiBackup* Channel auf Youtube.
-
-[.status]: todo "Der Hinweis auf Youtube passt hier irgendwie nicht"
+    kann und vieles mehr.
 
   - Hilfs- und Beispielscripts
 

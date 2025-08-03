@@ -35,7 +35,7 @@ Zum Beispiel wird bei zwei existierenden täglichen Backups von 10:00 und
 Gibt es in der Woche Montag und Freitag Backups, wird der wöchentliche Backup
 von Montag gewählt.
 
-Gibt es einen Backup am 1., 10. und 20. eines Monats, wird der Backup vom
+Gibt es einen Backup am 1., 10. und 20. eines Monats, wird das Backup vom
 1. für den monatlichen Backup gewählt.
 
 Bei täglichen Backups sind somit wöchentliche Backups immer vom Montag,
@@ -43,7 +43,7 @@ monatliche Backups immer vom Ersten des Monats und
 jährliche Backups immer vom 1.1. des Jahres.
 ```
 
-[.status]: todo "Generell: Heißt es 'der Backup' oder 'das Backup'???"
+[.status]: todo "Generell: Heißt es 'der Backup' oder 'das Backup'??? -> das Backup"
 
 ## Grafische Darstellung
 

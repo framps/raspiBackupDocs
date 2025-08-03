@@ -19,7 +19,7 @@ der Dokumentation:
 Eintippen eines `?` blendet eine kleine Tastatur-Navigationshilfe ein.
 ```
 
-[.status]: todo "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.?"
+[.status]: todo "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.? -> SD-Karte"
 
 
 
@@ -81,10 +81,8 @@ Zur **Installation und Konfiguration** von *raspiBackup* gibt es einen
 Optionen von *raspiBackup* konfiguriert werden können, vergleichbar mit `raspi-config`.
 Speziellere Einstellungen lassen sich in einer Konfigurationsdatei vornehmen.
 
-Für Entwickler bietet *raspiBackup* verschiedene [Plugpoints](hooks-for-own-scripts.md),
+Für Entwickler bietet *raspiBackup* verschiedene [Erweiterungspunkte](hooks-for-own-scripts.md),
 um eigenen Code ausführen zu lassen.
-
-[.status]: todo "Das Word 'Plugpoints' sollte vielleicht durch etwas Geläufigeres ersetzt werden."
 
 Weiterhin existieren verschiedene [Scripts](https://github.com/framps/raspiBackup/tree/master/helper),
 die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt
@@ -95,8 +93,6 @@ Am Ende eines Backuplaufes kann *raspiBackup*, wenn gewünscht, eine Benachricht
 
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
-
-[.status]: todo "Folgender Absatz steht eigentlich schon bei 'Kontaktmöglichkeiten' unten!? Könnte dann hier weg"
 
 Sollten Fragen zu *raspiBackup* aufkommen, können diese auf [*GitHub* Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
 Fehler oder Probleme mit *raspiBackup* sollten auf
@@ -134,9 +130,6 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 * Klicke [![Twitter](images/icons/Twitter-f-Logo__blue_29.png)](https://www.twitter.com/linuxframp),
   um *raspiBackup* auf Twitter zu folgen.
 
-* Klicke [![Youtube](images/icons/Youtube.png)](https://www.youtube.com/channel/UCnFHtfMXVpWy6mzMazqyINg),
-  um auf Youtube Videos zu *raspiBackup* zu sehen.
-
 * Klicke [![RaspberryForum](images/icons/RaspberryForumSmall.png)](https://forum-raspberrypi.de/forum/board/153-backup/),
   um im deutschen RaspberryForum Fragen zu Raspberry Backups im Allgemeinen und *raspiBackup* im Speziellen zu stellen oder existierende Threads zu *raspiBackup* zu lesen.
 
@@ -146,8 +139,6 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 ``` admonish info title="Hinweis"
 Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
 ```
-
-[.status]: todo "Der Youtube-Link oben ist keine **Kontakt**-Möglichkeit und außerdem schon weiter oben beschrieben"
 
 <a name="donation"></a>
 ## Trinkgeld
@@ -184,10 +175,7 @@ der Seiten mit Rat und Tat sowie mit sehr hilfreichen Tools.
 
 ## Lizenz und *GitHub*-Link
 
-Der Code von *raspiBackup* ist reiner *Bash* Code und steht unter der GPL auf [*GitHub*](https://github.com/framps/raspiBackup) zur Verfügung.
-
-[.status]: todo "Schreibweise von Bash im Fließtext??!"
-
+Der Code von *raspiBackup* steht unter der GPL auf [*GitHub*](https://github.com/framps/raspiBackup) zur Verfügung.
 
 ## Haftungsausschluss
 

@@ -59,7 +59,8 @@ Eine [Manuelle Installation und Konfiguration](manual-installation-and-configura
 Auf Youtube existiert ein Video, auf dem *raspiBackup* vorgestellt wird
 sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 
-[.status]: todo "Youtube Link hier einfügen"
+[.status]: todo "Youtube Link hier einfügen -> generell YT videos an entsprechenden Stellen verlinken"
+[.status]: todo "YT videos auf neue Doc umstellen"
 
 ![Screenshot Konfiguration (2019)](images/Screenshot_at_2019-04-10_07-52-15.png)
 
