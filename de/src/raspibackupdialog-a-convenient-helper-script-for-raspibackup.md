@@ -1,22 +1,23 @@
-# raspiBackupDialog - ein komfortables Hilfsscript für raspiBackup
+# *raspiBackupDialog* - ein komfortables Hilfsscript für *raspiBackup*
 
-Ein agiler Nutzer von raspiBackup - [Franjo-G](https://github.com/franjo-G) - hat ein sehr nützliches kleines
+Ein agiler Nutzer von *raspiBackup* - [Franjo-G](https://github.com/franjo-G) - hat ein sehr nützliches kleines
 Hilfsscript mit dem Namen [raspiBackupDialog](https://github.com/framps/raspiBackup/blob/master/helper/raspiBackupDialog.sh) geschrieben, welches in einem Dialog
 die wichtigsten Aufrufoptionen für den Backup und den Restore abfragt und mit
-denen dann raspiBackup anstößt. raspiBackup Snapshots werden unterstützt. Sehr
+denen dann *raspiBackup* anstößt. *raspiBackup* Snapshots werden unterstützt. Sehr
 einfach ist besonders der Restore durchzuführen: Vor dem Restore wird die Liste
-der vorhandenen Backups angezeigt und man kann auswählen welches Backup man
+der vorhandenen Backups angezeigt und man kann auswählen, welches Backup man
 restoren will.
 
 ``` admonish info title="Hinweis"
-Es ist empfehlenwert raspiBackupDialog nach erfolgreicher Installation und Konfiguration von raspiBackup einfach mal downzuloaden und auszuprobieren.
+Es ist empfehlenwert, *raspiBackupDialog* nach erfolgreicher Installation und Konfiguration
+von *raspiBackup* einfach mal downzuloaden und auszuprobieren.
 ```
 
 ## Installation und Aufruf
 
-`raspiBackupDialog` steht als Hilfsscript im github Repository zur Verfügung.
+*raspiBackupDialog* steht als Hilfsscript im *GitHub* Repository zur Verfügung.
 
-Es kann wie folgt in das aktuelle Verzeichnis runtergeladen werden:
+Es kann wie folgt in das aktuelle Verzeichnis heruntergeladen werden:
 
 ```
 curl -s https://raw.githubusercontent.com/framps/raspiBackup/master/scripts/raspiBackupDownloadFromGit.sh | bash -s -- master helper/raspiBackupDialog.sh
@@ -30,7 +31,7 @@ sudo ./raspiBackupDialog.sh
 
 aufrufen.
 
-Möchte man es nicht jedes Mal runterladen kann man es auf seiner Raspberry wie folgt für immer verfügbar machen:
+Möchte man es nicht jedes Mal herunterladen, kann man es auf seiner Raspberry wie folgt dauerhaft verfügbar machen:
 
 ```
 sudo mv ./raspiBackupDialog.sh /usr/local/bin
@@ -89,6 +90,3 @@ raspiBackup wird jetzt gestartet
 [.status]: rst
 [.source]: https://www.linux-tips-and-tricks.de/de/raspibackupcategoried/637-raspibackupdialog-ein-komfortables-hilfsscript-fuer-raspibackup
 [.source]: https://www.linux-tips-and-tricks.de/en/raspibackupcategorye/642-raspibackupdialog-a-convenient-helper-script-for-raspibackup
-
-
-

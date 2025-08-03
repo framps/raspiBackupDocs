@@ -46,7 +46,7 @@ Dies ermöglicht einige kleine Kniffe:
 
 - [Funktionsdetails](function-intro.md)
     - [Backup](backup-intro.md)
-        - [Entscheidungsbaum für Backuptypen](backup-types.md)
+        - [Entscheidungsbaum für Backuptypen](backuptypes.md)
         - [Vergleich partitionsorientierter Backup und normaler Backup](normal-or-partition-backup.md)
         - [Backupverzeichnisstruktur](backup-directory-structure.md)
         - [Intelligente Rotationsstrategie](smart-recycle.md)

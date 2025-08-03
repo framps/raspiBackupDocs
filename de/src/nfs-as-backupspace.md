@@ -25,15 +25,15 @@ Im Wesentlichen sind folgende Schritte durchzuführen:
 2) mount des gemeinsamen nfs Ordners auf der Raspi in der fstab
 3) Installation und Konfiguration von *raspiBackup* per [Installer](installation.md) (keinen automatischen Backup konfigurieren)
 4) Test des Backups und Restores von der Commandline
-5) Einrichten des regelmaessigen Backups in der Crontab per [Installer](installation.md)
+5) Einrichten des regelmäßigen Backups in der Crontab per [Installer](installation.md)
 
-Es empfielt sich, vor dem Beginn die [FAQ](faq.md) zu lesen, wo die wichtigsten
+Es empfiehlt sich, vor dem Beginn die [FAQ](faq.md) zu lesen, wo die wichtigsten
 Fragen und Antworten zu *raspiBackup* zusammengestellt sind.
 
 ### Gemeinsamen nfs Ordner auf der Syno erstellen
 
 Im DSM, Systemsteuerung -> Gemeinsamer Ordner -> Erstellen erstellt man einen
-gemeinsamen Ordner z.B. mit dem Namen raspiBackups. Eine Papierkorb braucht man
+gemeinsamen Ordner z.B. mit dem Namen `raspiBackups`. Eine Papierkorb braucht man
 nicht. Die nfs Berechtigungen müssen wie folgt eingestellt werden (Hinweis:
 *raspiBackup* läuft als root). Hostname oder IP: Hostname oder IP des nfs
 Clients, z.B. 192.168.0.10. Privileg: lesen/schreiben, Squash: keine Zuordnung,
@@ -138,12 +138,7 @@ Raspberry Pi fstab Einträge für NFS3 und NFS4
 #192.168.X.XXX:/volume1/backup /media/nas-backup nfs rw 0 0
 ```
 
-Anmerkung zum Mounten mit NFS4:
-Der Benutzer Jean hat auf der englischen Seite von raspiBackup beschrieben wie
-man das Backup auf ein Share welches mit NFS4 eingebunden ist durchführen kann.
-Konnte es bisher noch nicht testen. Hier der [Permalink](https://linux-tips-and-tricks.de/en/raspberry/303-pi-creates-automatic-backups-of-itself#comment-530) TODO: Link belassen?
-
-Auszug aus der raspiBackup.conf abgelegt unter `/usr/local/etc/`
+Auszug aus der `raspiBackup.conf` abgelegt unter `/usr/local/etc/`
 
 ```
 cat /usr/local/etc/raspiBackup.conf

@@ -1,6 +1,6 @@
 # Manual tgz restore
 
-The backup directory created by raspiBackup contains all information required to restore
+The backup directory created by *raspiBackup* contains all information required to restore
 this backup also manually with standard Linux tools. The following page describes how to restore a normal tgz backup.
 
 ## Create the partitions on the SD card

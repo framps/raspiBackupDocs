@@ -42,7 +42,7 @@
   - [-00: Keine Partitionierung und Formatierung](restore-options.md#parm_00)
   - [-1: Partitionierungsfehler ignorieren](restore-options.md#parm_1)
  
-<a name="messages-and-log"></a> 
+<a name="messages-and-log"></a>
 ## Optionen, die die Meldungen und das Log betreffen
 
   - [-A: Das Laufzeitlog wird bei der eMail Benachrichtigung mitgeschickt](general-options.md#parm_A)
@@ -54,7 +54,7 @@
   - [--timestamps: Alle Meldungen werden mit einem führenden Zeitstempel ausgegeben](general-options.md#parm_timestamps)
   - [-v: Alle Meldungen des verwendeten Backuptools werden protokolliert](backup-options.md#parm_v)
 
-<a name="notifications"></a> 
+<a name="notifications"></a>
 ## Optionen, die Benachrichtigungen steuern
 
   - [-e: eMailAdresse an die die Benachrichtigung geschickt wird](general-options.md#parm_e)
@@ -63,22 +63,22 @@
   - [-F: Simuliert den Backuplauf und hilft die eMailBenachrichtgung schnell zu testen](backup-options.md#parm_F)
   - [-s: eMailClientProgramm welches benutzt wird um die eMail zu verschicken](general-options.md#parm_s)
 
-<a name="maintenance"></a> 
-## Optionen, die den Update, Restore und lokale Verteilung von *raspiBackup* steuern
+<a name="maintenance"></a>
+## Optionen, die Update, Restore und lokale Verteilung von *raspiBackup* steuern
 
-  - [-S: Unbedingter Update](general-options.md#parm_S)
+  - [-S: Unbedingtes Update](general-options.md#parm_S)
   - [-U: Update von *raspiBackup* mit der aktuellsten Version und Sicherung der alten Version](general-options.md#parm_U)
   - [-V: Reaktivierung einer vorhergehenden *raspiBackup* Version](general-options.md#parm_V)
   - [-y: Kopie der aktuellen *raspiBackup* Version auf vordefinierte lokale Hosts per scp](general-options.md#parm_y)
 
-<a name="start-stop-extensions"></a> 
+<a name="start-stop-extensions"></a>
 ## Optionen, die Services vor dem Backup starten und stoppen sowie Erweiterungen
 
   - [-o: Befehle, die Services vor dem Backup stoppen](backup-options.md#parm_o)
   - [-a: Befehle, die Services nach dem Backup starten](backup-options.md#parm_a)
   - [-N: Erweiterungen, die vor und nach dem Backup aufgerufen werden sollen](backup-options.md#parm_N)
 
-<a name="miscellaneous"></a> 
+<a name="miscellaneous"></a>
 ## Weitere Optionen
 
   - [-f: Angabe einer Konfigurationsdatei](general-options.md#parm_f)

@@ -39,7 +39,7 @@ sudo raspiBackup.sh -V
 ein und wählt aus der Liste der vorherigen Versionen die letze aus die dann
 wieder aktiviert wird.
 
-Sollte wieder Erwarten ein Problem entdeckt werden, sollte auf [github](https://github.com/framps/raspiBackup/issues) ein
+Sollte wieder Erwarten ein Problem entdeckt werden, sollte auf [*GitHub*](https://github.com/framps/raspiBackup/issues) ein
 Problemrecord bzw. Issue erstellt werden. Extrem wichtig ist dann immer die
 Ausgabe von `sudo *raspiBackup*.sh --version`, damit genau klar ist, welcher
 Codestand benutzt wird.
@@ -48,7 +48,7 @@ Da auch von internationalen *raspiBackup* Nutzern
 die Records gelesen werden, wäre es gut, sie in Englisch zu erstellen. Es ist
 aber auch kein Problem, nur Deutsch zu schreiben. Die Records werden dann
 bearbeitet und gefixed. Wenn eine neue Version bereitsteht, wird der Ersteller
-über github informiert werden und sie kann mit `sudo *raspiBackup*.sh -U -S`
+über *GitHub* informiert werden und sie kann mit `sudo *raspiBackup*.sh -U -S`
 erneut runtergeladen und der Fix verifiziert werden.
 
 [.status]: rst

@@ -1,13 +1,14 @@
 # Language support for languages other than DE and EN (L10N)
 
-raspiBackupInstallUI and raspiBackup initially wrote messages in German and English only.
+raspiBackupInstallUI and *raspiBackup* initially wrote messages in German and English only.
 But both are able to write messages in any language from a coding point of view (I18N).
 Anybody who is willing to help to add support for a new language not already supported is welcome
 to translate *raspiBackup* messages.
 
-Just add your interest in an [issue on github](https://github.com/framps/raspiBackup/issues) and
+
+Just add your interest in an [issue on *GitHub*](https://github.com/framps/raspiBackup/issues) and
 you will immediate get individual support to add new messages in your native language
-to raspiBackupInstallUI and raspiBackup.
+to raspiBackupInstallUI and *raspiBackup*.
 
 Right now following languages are supported:
 
@@ -17,9 +18,9 @@ Right now following languages are supported:
   - FR - French
   - DE - German
 
-## Basic activities to add a new language to *raspibackup*
+## Basic activities to add a new language to *raspiBackup*
 
-There exist two files which write messages: raspiBackup and raspiBackupInstallUI.
+There exist two files which write messages: `raspiBackup` and `raspiBackupInstallUI`.
 
 Following steps have to be done to support a new language to raspiBackupInstallUI and *raspiBackup*:
 
@@ -42,7 +43,7 @@ Following steps have to be done to support a new language to raspiBackupInstallU
    ```
    and that's why `MSG_DE` is used.
 
-1. The help text in raspiBackup may optionally also be translated. For every language a bash function usageLL() may be created which has to follow bash syntax. Just use the existing function usageEN as a template.
+1. The help text in *raspiBackup* may optionally also be translated. For every language a bash function usageLL() may be created which has to follow bash syntax. Just use the existing function usageEN as a template.
 
 1. Finally to enable the new language the following line in the code has to be updated:
    ```

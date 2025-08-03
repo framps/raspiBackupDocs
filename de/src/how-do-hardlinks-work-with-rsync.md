@@ -39,7 +39,7 @@ erklärt wird wie Hardlinks funktionieren inklusive einer Demo am System.
 
 ![raspiBackup rsync](images/raspiBackup_rsync.png)
 
-In den raspiBackup [FAQ17](faq.md#faq17) ist beschrieben, wie der wirklich belegte
+In der *raspiBackup* [FAQ17](faq.md#faq17) ist beschrieben, wie der wirklich belegte
 Speicherplatz bei der Nutzung von Hardlinks aussieht. Viele Dateimanager
 zeigen den genutzten Speicherplatz ohne Berücksichtigung der Platzeinsparung
 durch Hardlinks an und somit als viel zu hoch. Das gilt besonders für Windows

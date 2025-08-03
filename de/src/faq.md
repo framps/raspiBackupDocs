@@ -47,7 +47,7 @@ Option `-a` und Option `-o` werden entsprechend gesetzt.
 *raspiBackup* kann jedes Backup wieder zurück gespielt werden. (Siehe dazu
 [hier](restore.md) die Details). Als Windowsbenutzer kann man
 entsprechende Windowstools nutzen, um dd Backups wiederherzustellen. Für andere
-Backuptypen wie tar oder rsync ist ein Linux notwendig. 
+Backuptypen wie tar oder rsync ist ein Linux notwendig.
 
 Allerdings kann man dazu die Raspberry benutzen: Man bespielt eine neue SD
 Karte mit RaspbianOS und kopiert darauf *raspiBackup*. Dann schließt man
@@ -76,7 +76,7 @@ Systems gesichert. Weitere externe Partitionen werden aber nicht gesichert.
 
 Es steht der dd Backup sowie der tar und rsync Backup zur Verfügung. dd und
 tar Backups können noch mit zip komprimiert werden. Auf
-[dieser Seite](backup-types.md) können
+[dieser Seite](backuptypes.md) können
 die Vor- und Nachteile der jeweiligen Backupmethoden nachgelesen werden.
 
 

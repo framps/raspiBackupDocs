@@ -7,7 +7,7 @@ vor und nach dem Restore vorzunehmen sind.
 
 Diese Seite lebt vom Feedback der *raspiBackup* Nutzer, die sich mit den
 jeweiligen Anwendungen auskennen und genau beschreiben können, worauf bei den
-jeweiligen Anwendungen zu achten ist. Deshalb ist Feedback auf der [github Diskussionsseite](https://github.com/framps/raspiBackupDoc/discussions)
+jeweiligen Anwendungen zu achten ist. Deshalb ist Feedback auf der [*GitHub* Diskussionsseite](https://github.com/framps/raspiBackupDoc/discussions)
 sehr erwünscht. Gerne auch in Deutsch.
 
 ## *raspiBackup* Tipps für bestimmte Anwendungen
