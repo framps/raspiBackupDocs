@@ -175,7 +175,7 @@ Im Backupverzeichnis werden keine Logs abgelegt.
 
 | Optionsname | Standard | Im Installer | Konfigurationsname |
 |-------------|----------|--------------|--------------------|
-| -L | backup |  | DEFAULT_LOG_OUTPUT |
+| -L | backup | nein | DEFAULT_LOG_OUTPUT |
 
 <a name="parm_m"></a>
 ### -m: Meldungsdetails
