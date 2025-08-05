@@ -11,7 +11,9 @@ In *raspiBackup* ist nicht viel zu konfigurieren.
 Die Schwierigkeit ist, den eMailClient richtig zu konfigurieren.
 
 Anbei die Installations- und Konfigurationsschritte von *gNeandr* -
-noch einmal sehr herzlichien Dank für die Bereitstellung.
+noch einmal sehr herzlichen Dank für die Bereitstellung.
+
+[.status]: todo "Das würde ich deutlich kürzen und auf den Mailteil beschränken."
 
 
 ```
