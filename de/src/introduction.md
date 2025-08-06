@@ -72,8 +72,8 @@ Folgende Linux Backuptools können genutzt werden:
 `dd`und `tar`, beides auch gezipped, die immer ein Vollbackup erstellen
 und `rsync`mit [Hardlinknutzung](how-do-hardlinks-work-with-rsync.md),
 um relativ schnell ein Deltabackup zu erstellen.
-Die einzelnen Backuptypen sind im Detail [hier](backuptypes.md) beschrieben.
-Dort befindet sich auch ein [Entscheidungsbaum](backuptypes.md#decisiontree),
+Die einzelnen Backuptypen sind im Detail [hier](backup-types.md) beschrieben.
+Dort befindet sich auch ein [Entscheidungsbaum](backup-types.md#decisiontree),
 um schnell den richtigen Backuptyp zu finden.
 
 Zur **Installation und Konfiguration** von *raspiBackup* gibt es einen
