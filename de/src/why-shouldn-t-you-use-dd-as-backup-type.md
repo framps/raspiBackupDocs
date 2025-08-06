@@ -61,7 +61,7 @@ Speicherplatz. Es gibt die Option **DD_BACKUP_SAVE_USED_PARTITIONS_ONLY** mit de
 man nur die existierende Rootpartition sichert und nicht das gesamte Gerät. Z.b.
 hat man eine 512GB Platte und die Rootpartition ist nur 32GB gross.
 
-[.status]: todo "Unklar, und evtl. nach oben verschieben"
+[.status]: review-comment "Unklar, und evtl. nach oben verschieben"
 
 ## Welchen Backuptyp ist der Beste?
 
@@ -75,7 +75,7 @@ die Backups erst umständlich entpacken.
 Wer eine Synology als Backupsystem
 benutzen will, sei hier auf Benutzung von [Synology als Backupspace](nfs-as-backupspace.md) verwiesen.
 
-[.status]: todo "Warum wird hier die Synology erwähnt. Passt nicht"
+[.status]: review-comment "Warum wird hier die Synology erwähnt? Passt nicht"
 
 
 ## Weiterführende Informationen

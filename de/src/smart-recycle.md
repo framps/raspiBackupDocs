@@ -43,7 +43,7 @@ monatliche Backups immer vom Ersten des Monats und
 jährliche Backups immer vom 1.1. des Jahres.
 ```
 
-[.status]: todo "Generell: Heißt es 'der Backup' oder 'das Backup'???"
+[.status]: review-comment "Generell: Heißt es 'der Backup' oder 'das Backup'???"
 
 ## Grafische Darstellung
 

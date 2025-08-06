@@ -36,7 +36,7 @@ Weitere Themen auf dieser Seite:
 
 ------------------
 
-[.status]: todo "Für Einsteiger teilweise noch unklar beschrieben."
+[.status]: review-comment "Für Einsteiger teilweise noch unklar beschrieben."
 
 
 ## Wiederherstellungsszenario mit einer Raspberry mit RaspbianOS

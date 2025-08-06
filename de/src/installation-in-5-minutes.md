@@ -65,8 +65,8 @@ Eine [Manuelle Installation und Konfiguration](manual-installation-and-configura
 Auf Youtube existiert ein Video, auf dem *raspiBackup* vorgestellt wird
 sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 
-[.status]: todo "Youtube Link hier einfügen"
-[.status]: todo "Doppelt gemoppelt?! Siehe installation.md"
+[.status]: review-comment "Youtube Link hier einfügen"
+[.status]: review-comment "Doppelt gemoppelt?! Siehe installation.md"
 
 
 ![Screenshot Konfiguration (2019)](images/Screenshot_at_2019-04-10_07-52-15.png)
@@ -74,7 +74,7 @@ sowie am Ende eine Demo der Installation von *raspiBackup* gegeben wird.
 Zum Download, der Installation und Start des *raspiBackup* Installers bitte
 folgendes in der Befehlszeile auf der Raspberry eingeben:
 
-[.status]: todo "cd ~  oder cd ~/Downloads oder so einfügen!"
+[.status]: review-comment "cd ~  oder cd ~/Downloads oder so einfügen!"
 
 ```
 curl -o install -L https://raspibackup.linux-tips-and-tricks.de/install
@@ -112,22 +112,18 @@ Sollte es Probleme geben: Es wird vom Installer immer ein Debuglog in der Datei
 
 **Hinweis**: Finnische, französische, englische und chinesische Sprachuntertützung steht ebenfalls zur Verfügung
 
-[.status]: todo "Wo steht sie das?"
+[.status]: review-comment "Wo steht sie das?"
 
 
 ![Installationsdemovideo](images/raspiBackupInstall_de.gif)
 
 **Hinweis:**
 Benachrichtigungen per eMail benötigen einen korrekt konfigurierten lokalen MTA
-wie *Postfix*, *nullmailer*, *msmtp* oder *exim4*. Wird *Pushover*, *Slack* oder *Telegram*
+wie *Postfix*, *nullmailer*, *msmtp* oder *Exim4*. Wird *Pushover*, *Slack* oder *Telegram*
 genutzt, muss die Konfigurationsdatei von *raspiBackup* vorher manuell
 entsprechend mit den benötigten Konfigurationsdaten versehen werden. Ein
 Benachrichtigungstest kann am schnellsten mit der Option `-F` durchgeführt
 werden.
-
-[.status]: todo "Schreibweise von Postfix etc."
-[.status]: todo "Was ist nullmailer?"
-
 
 **Achtung:**
 Ein Backup nützt nichts, wenn man in dem Moment, wo man es einspielen möchte,
@@ -144,7 +140,7 @@ Betriebssystem wieder mit *raspiBackup* gesichert wird. Es gibt immer wieder
 Änderungen bei neuen Betriebssystemversionen, die dazu beitragen können, dass der
 Restore nicht mehr funktioniert.
 
-[.status]: todo "Doppelt gemoppelt?"
+[.status]: review-comment "Doppelt gemoppelt?"
 
 
 ## Downloadlinks auf *raspiBackup* und den raspiBackupInstaller
@@ -169,7 +165,7 @@ Der Standardmountpunkt von *raspiBackup*, wo die Backups abgelegt werden
 sudo mkdir /backup
 ```
 
-Anschließend muss ein externes Gerät (USB Platte, USB Stick, nfs Laufwerk, ...)
+Anschließend muss ein externes Gerät (USB Platte, USB Stick, NFS Laufwerk, ...)
 auf diesen Mountpoint gemounted werden. Im folgenden Beispiel wird eine externe
 USB Platte bzw. ein externer USB Stick gemountet.
 
@@ -198,7 +194,7 @@ sudo blkid -o list | grep <label>
 Danach ist alles fertig konfiguriert, um ein Backup zu erstellen.
 
 
-[.status]: todo "Umformulieren"
+[.status]: review-comment "Umformulieren"
 
 Dabei ist aber zu berücksichtigen, dass, wenn man später *raspiBackup* regelmäßig einsetzt,
 bestimmte Dienste gestoppt werden sollten, da sonst ein inkonsistentes Backup
@@ -217,7 +213,7 @@ sudo raspiBackup -m detailed
 Restoredokumentation](restore.md)), um zu verifizieren, dass ein konsistentes
 Backup erstellt wird, und um sich mit der Restoreprozedur vertraut zu machen.
 
-[.status]: todo "Doppelt gemoppelt! s.o."
+[.status]: review-comment "Doppelt gemoppelt! s.o."
 
 
 
@@ -265,7 +261,7 @@ Nachdem das erste Backup erfolgreich erstellt und wiederhergestellt wurde,
 sollte man sich in einer ruhigen Stunde über alle weiteren Optionen von
 *raspiBackup* hier informieren und je nach Bedarf einsetzen.
 
-[.status]: todo "Gehören die folgenden Details wirklich hier hin?"
+[.status]: review-comment "Gehören die folgenden Details wirklich hier hin?"
 
 Eine hilfreiche Option ist z.B. `-e <eMailAdresse>`.
 Damit schickt *raspiBackup* nach jedem Backuplauf seine Meldungen per eMail
@@ -284,7 +280,7 @@ welches die Nutzung und den Aufruf von *raspiBackup* vereinfacht.
 
 ## Deinstallation
 
-[.status]: todo "Doppelt gemoppelt!"
+[.status]: review-comment "Doppelt gemoppelt!"
 
 *raspiBackup* kann auch wieder deinstalliert werden.
 Entweder benutzt man den Installer zum Deinstallieren oder folgenden Befehl:
@@ -296,7 +292,7 @@ sudo raspiBackupInstallUI.sh -u
 
 ## Aufruf des Installers ohne Menüs direkt von der Befehlszeile
 
-[.status]: todo "Doppelt gemoppelt!"
+[.status]: review-comment "Doppelt gemoppelt!"
 
 Wer nicht die menügesteuerte Installation nutzen möchte, kann die Installation von *raspiBackup*,
 den Beispielextensions oder die Deinstallation direkt von der Befehlszeile aufrufen.
@@ -348,7 +344,7 @@ Kurzinfos zu allen Aufrufoptionen von *raspiBackup* erhält man mit `bash ./rasp
 
 Siehe im gleichnamigen Kapitel: [Manuelle Installation und Konfiguration](manual-installation-and-configuration.md)
 
-[.status]: todo "Doppelt gemoppelt?! Siehe oben und auch in installation.md"
+[.status]: review-comment "Doppelt gemoppelt?! Siehe oben und auch in installation.md"
 
 
 [.status]: rst

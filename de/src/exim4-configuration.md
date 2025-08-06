@@ -1,6 +1,6 @@
-# exim4 Konfiguration
+# Exim4 Konfiguration
 
-Folgende Variablen werden in der folgenden Beschreibung genutzt:
+Folgende Variablen werden in der Beschreibung genutzt:
 
   - eMail Domain: MYDOMAIN (z.B. dummy.de)
   - Hostname des Servers: HOSTNAME (z.B. myserver)

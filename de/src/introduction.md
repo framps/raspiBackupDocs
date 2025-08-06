@@ -19,7 +19,7 @@ der Dokumentation:
 Eintippen eines `?` blendet eine kleine Tastatur-Navigationshilfe ein.
 ```
 
-[.status]: todo "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.?"
+[.status]: review-comment "Generell im gesamten Dokument: 'SD Karte' oder 'SD-Karte' usw.?"
 
 
 
@@ -51,7 +51,7 @@ Deshalb bootet das System sofort wieder, wenn es zurückgespielt wurde.
 
 Backups können auf alle Geräte, die an Linux gemounted werden können, gesichert
 werden. Dazu gehören SD Karten, USB Sticks, USB Platten, SSDs und NVMe SSDs.
-Auch Netzlaufwerke, die per NFS, SMB, sshfs, ftpfs und webdav gemounted werden,
+Auch Netzlaufwerke, die per NFS, SMB, SSHFS, FtpFS und WebDAV gemounted werden,
 können als Ziel für Backups genutzt werden.
 
 Ein Backup kann auf anderen Geräten zurückgespielt werden, als auf das Gerät, von
@@ -84,7 +84,7 @@ Speziellere Einstellungen lassen sich in einer Konfigurationsdatei vornehmen.
 Für Entwickler bietet *raspiBackup* verschiedene [Plugpoints](hooks-for-own-scripts.md),
 um eigenen Code ausführen zu lassen.
 
-[.status]: todo "Das Word 'Plugpoints' sollte vielleicht durch etwas Geläufigeres ersetzt werden."
+[.status]: review-comment "Das Word 'Plugpoints' sollte vielleicht durch etwas Geläufigeres ersetzt werden."
 
 Weiterhin existieren verschiedene [Scripts](https://github.com/framps/raspiBackup/tree/master/helper),
 die die Funktionalität von *raspiBackup* erweitern und entweder unverändert genutzt
@@ -96,7 +96,7 @@ Am Ende eines Backuplaufes kann *raspiBackup*, wenn gewünscht, eine Benachricht
 Alle Funktionen und Einsatzgebiete von *raspiBackup* sind tabellarisch in der
 [Funktionsübersicht](function-overview.md) zusammengetragen.
 
-[.status]: todo "Folgender Absatz steht eigentlich schon bei 'Kontaktmöglichkeiten' unten!? Könnte dann hier weg"
+[.status]: review-comment "Folgender Absatz steht eigentlich schon bei 'Kontaktmöglichkeiten' unten!? Könnte dann hier weg"
 
 Sollten Fragen zu *raspiBackup* aufkommen, können diese auf [*GitHub* Discussion](https://github.com/framps/raspiBackup/discussions) gestellt werden.
 Fehler oder Probleme mit *raspiBackup* sollten auf
@@ -147,7 +147,7 @@ Viele weitere Videos zu allen möglichen Themen zu *raspiBackup* finden sich im 
 Jegliche anderen Kommunikationswege wie z.B. eMails, die leider gerne genutzt werden, werden ignoriert!
 ```
 
-[.status]: todo "Der Youtube-Link oben ist keine **Kontakt**-Möglichkeit und außerdem schon weiter oben beschrieben"
+[.status]: review-comment "Der Youtube-Link oben ist keine **Kontakt**-Möglichkeit und außerdem schon weiter oben beschrieben"
 
 <a name="donation"></a>
 ## Trinkgeld
@@ -186,7 +186,7 @@ der Seiten mit Rat und Tat sowie mit sehr hilfreichen Tools.
 
 Der Code von *raspiBackup* ist reiner *Bash* Code und steht unter der GPL auf [*GitHub*](https://github.com/framps/raspiBackup) zur Verfügung.
 
-[.status]: todo "Schreibweise von Bash im Fließtext??!"
+[.status]: review-comment "Schreibweise von Bash im Fließtext!"
 
 
 ## Haftungsausschluss

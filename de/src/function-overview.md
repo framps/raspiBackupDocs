@@ -77,11 +77,11 @@ und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wied
       - Externer USB Stick
       - Externe USB Platte
       - Synology NAS
-      - *smb* Netzwerklaufwerk
-      - *nfs* Netzwerklaufwerk
-      - *sshfs* Netzwerklaufwerk
-      - *webdav* Netzwerklaufwerk
-      - *ftpfs* Netzwerklaufwerk
+      - *SMB* Netzwerklaufwerk
+      - *NFS* Netzwerklaufwerk
+      - *SSHFS* Netzwerklaufwerk
+      - *WebDAV* Netzwerklaufwerk
+      - *FtpFS* Netzwerklaufwerk
       - Generell jedes Device, welches unter Linux gemounted werden kann
 
   - Ein externes Rootfilesystem auf einer Platte oder einem USB Stick wird
@@ -138,7 +138,7 @@ und kannst somit Deine Raspberry vollständig wiederherstellen, so dass sie wied
     kann und vieles mehr. Es gibt schon *raspiBackup* Nutzer, die sich beschweren, dass
     es zu viel Doku gibt. Es existiert auch ein *raspiBackup* Channel auf Youtube.
 
-[.status]: todo "Der Hinweis auf Youtube passt hier irgendwie nicht"
+[.status]: review-comment "Der Hinweis auf Youtube passt hier irgendwie nicht"
 
   - Hilfs- und Beispielscripts
 

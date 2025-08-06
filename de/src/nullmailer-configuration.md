@@ -2,7 +2,7 @@
 
 Um z.B. Statusmails von *raspiBackup* als root zu versenden, kann *nullmailer* eingesetzt werden.
 
-Folgende Variablen werden in der folgenden Beschreibung genutzt (Provider ist Hetzner):
+Folgende Variablen werden in der Beschreibung genutzt (Provider ist Hetzner):
 
   - eMail Domain: MYDOMAIN (z.B. dummy.de)
   - Hostname des Servers: HOSTNAME (z.B. myserver)

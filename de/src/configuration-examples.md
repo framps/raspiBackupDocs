@@ -7,7 +7,7 @@ das Beispiel dann nach den eigenen Ansprüchen entsprechend anzupassen. Eine
 Übersicht aller Optionen findet sich in [Aufruf und Optionen](backup-options.md).
 Verschiedene Methoden, ein Backup zu restoren, sind im Kapitel [Wiederherstellen/Restore](restore.md) beschrieben.
 
-[.status]: todo "Gehört der folgende Absatz hier wirklich hin? Eher nicht..."
+[.status]: review-comment "Gehört der folgende Absatz hier wirklich hin? Eher nicht..."
 
 Alle Konfigurationen, die kein dd Backup benutzen, sichern auch ein externes
 Rootfilesystem zusammen mit einer SD Bootpartition. Wenn der USB Bootmode benutzt
@@ -16,7 +16,7 @@ gesichert.
 
 Weiterhin gibt es auf folgenden Seiten Konfigurationsbeispiele für verschiedene eMail Clients:
    - msmtp
-   - exim4
+   - Exim4
    - nullmailer
 
 ## Anwendungsbeispiele
@@ -61,10 +61,10 @@ DEFAULT_ZIP_BACKUP=1
 verkleinert zwar auch noch einmal das Image, aber das kann nicht direkt
 unter Windows restored werden. Es muss vorher unzipped werden.
 
-## Eine Raspberry soll möglichst schnell gesichert werden. Die Backuppartition ist ein per nfs gemountetes EXT4 Dateisystem, welches von einer NAS zur Verfügung gestellt wird
+## Eine Raspberry soll möglichst schnell gesichert werden. Die Backuppartition ist ein per NFS gemountetes EXT4 Dateisystem, welches von einer NAS zur Verfügung gestellt wird
 
 Zuerst muss die Backuppartition der NAS gemounted werden. Dazu sollte in
-`/etc/fstab` die nfs Partition definiert und automatisch unter `/backup` gemounted sein.
+`/etc/fstab` die NFS Partition definiert und automatisch unter `/backup` gemounted sein.
 
 ```
 DEFAULT_BACKUPTYPE=rsync
@@ -81,7 +81,7 @@ Ein Beispieleintrag in der `/etc/fstab` könnte wie folgt aussehen:
 asterix:/backup    /backup    nfs    users,rw,sync,hard,intr,noauto,user    0    0
 ```
 
-Dabei ist "asterix" der Hostname der NAS und "/backup" der exportierte nfs
+Dabei ist "asterix" der Hostname der NAS und "/backup" der exportierte NFS
 Mount. Weitere Hinweise zu Synology-spezifischen Einstellungen und
 Problemlösungen finden sich [hier](nfs-as-backupspace.md)
 

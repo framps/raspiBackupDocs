@@ -1,11 +1,11 @@
 # msmtp Konfiguration für einen web.de Account
 
-Der Nutzer *gNeadr* von *raspiBackup* hatte gewisse Probleme, die eMailNotifizierung
-für seinen web.de Account für *raspiBackup* einzurichten. Nachdem es ihm
-erfolgreich gelungen ist, alles richtig zu konfigurieren, bot er
+Der Nutzer *gNeadr* von *raspiBackup* hatte Probleme, die eMail-Benachrichtigung
+für seinen web.de Account einzurichten. Nachdem es ihm
+erfolgreich gelungen war, alles richtig zu konfigurieren, bot er
 erfreulicherweise an, seine Installations- und Konfigurationsschritte hier zu
-sharen, damit andere *raspiBackup* Nutzer es leichter haben, die eMailKonfiguration
-für *raspiBackup* vorzunehmen.
+veröffentlichen, damit andere *raspiBackup* Nutzer es leichter haben,
+die eMailKonfiguration für *raspiBackup* vorzunehmen.
 
 In *raspiBackup* ist nicht viel zu konfigurieren.
 Die Schwierigkeit ist, den eMailClient richtig zu konfigurieren.
@@ -13,7 +13,7 @@ Die Schwierigkeit ist, den eMailClient richtig zu konfigurieren.
 Anbei die Installations- und Konfigurationsschritte von *gNeandr* -
 noch einmal sehr herzlichen Dank für die Bereitstellung.
 
-[.status]: todo "Das würde ich deutlich kürzen und auf den Mailteil beschränken."
+[.status]: review-comment "Das Folgende würde ich deutlich kürzen und auf den Mailteil beschränken."
 
 
 ```

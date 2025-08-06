@@ -19,7 +19,7 @@ gelöschte Dateien gelöscht.
 Dadurch sind i.d.R. alle rsync Backups bis auf den
 ersten relativ schnell, sofern sich die geänderte Datenmenge in Grenzen hält.
 
-Für alle Dateien, die sich nicht geändert haben, werden im
+Für alle **Dateien**, die sich **nicht geändert** haben, werden im
 Backupverzeichnis **Hardlinks** auf die Dateien erstellt, die in **vorherigen** Backups
 gesichert wurden.
 
@@ -36,11 +36,10 @@ Das bedeutet, solange es noch mindestens ein Backup gibt, welche auf die Datei
 per Hardlink verweist, wird die Datei nicht gelöscht und steht für ein
 Restore zur Verfügung.
 
-Das folgende Bild zeigt einmal graphisch, wann Hardlinks und Dateien erstellt bzw gelöscht werden.
-Es gibt auch ein zugehöriges [Youtube Video](https://www.youtube.com/watch?v=pIhSca_q2lo), in dem
-erklärt, wird wie Hardlinks funktionieren, inklusive einer Demo am System.
+Das folgende Bild zeigt einmal graphisch, wann Hardlinks und Dateien erstellt bzw. gelöscht werden.
+Es gibt auch ein zugehöriges [Youtube Video](https://www.youtube.com/watch?v=pIhSca_q2lo), inklusive einer Demo am System.
 
-[.status]: todo "Doppelt gemoppelter Satz?!"
+[.status]: review-comment "Doppelt gemoppelte Absätze bzgl. der Grafik!"
 
 In der nachfolgenden Graphik wird gezeigt, wann F2 in BD6 im Filesystem gelöscht wird.
 Das stimmt aber nur, wenn vorher alle Backups, die
